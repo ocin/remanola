@@ -1,5 +1,5 @@
 -- Remanola Novation Launchpad Mini Codec
--- Copyright 2018 Niklas Jakobsson
+-- Copyright 2018 Niklas Jakobsson <nico@niconet.se>
 
 -- This file is part of Remanola.
 
