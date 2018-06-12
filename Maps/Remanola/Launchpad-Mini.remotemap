@@ -28,7 +28,6 @@ Map	Keyboard		Keyboard
 
 // ------------------------------------------------------------------------------------------
 Scope	Propellerheads	Reason Document
-Define Group	Page	Main	Sequencer
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Document"
 Map	Button C1		Target Previous Track
@@ -40,8 +39,6 @@ Map	Button B		Stop
 Map	Button C		Record
 Map	Button D 		Loop On/Off
 Map	Button E 		Click On/Off
-Map	Button C6 		Page=Sequencer			Main
-Map	Button C6 		Page=Main			Sequencer
 Map	BarPosition 		Bar Position
 Map	BeatPosition 		Beat Position
 //Map	Button 1-1 		Tempo BPM
