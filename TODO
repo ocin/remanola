@@ -1,0 +1,98 @@
+* Abort text scroll
+* Horizontal Pan pot
+* Vertical Pan pot
+* Indicate default value
+* Subpages
+* Create separate itemtype for Main Mixer Fader
+* Autodetect when adding
+* Help text for page switching buttons
+* Handle optional viewing (LFO rate/syncrate Antidote/Europa/px7/revival)
+* Look over CPU usage
+	* state + buttonlist
+* Implement value mode
++ Step Sequencer
+	* Redrum
+	+ Thor
+	- RPG-8
+	- Matrix
+- Replace image
+* clean up buttons array
+- Redo colors with bit operators
+* Create variables for midi operations
+* Implement buffer switching
+	* Fix lightshows
+	* Check that stuff is working ok
+- Transport controls
+	- Metronome
+	- Additional controls
+- Keyboard
+- 7 Step Fader?
+- Reset default UD*Button
+
+Map:
++ Master section
+	+ Channel strip
+		- Fader
+			* Fader
+			* Pan
+			- Width
+			* Mute
+			* Solo
+		- Insert
+		- Send
+		- Eq
+			- Filters
+			- Eq
+		- Dynamics
+			- Compressor
+			- Gate
+		- Input
+	- Master Send Return
+	- Master Insert Effects
+	- Master compressor
+	+ Master fader options
+		* Fader
+		- The rest...
++ Mix Channel
+	+ Fader
+		* Fader
+		- Pan
+		- Width
+		* Mute
+		* Solo
+	- Insert
+	* Send
+	- Eq
+		- Filters
+		- Eq
+	- Dynamics
+		- Compressor
+		- Gate
+	- Input
+
+Instruments:
+* Antidote
+* PX-7
+* ID8
+* Malstrom
+* Subtractor
+* Thor
+* Redrum
+* Europa
+* Revival 
++ Parsec
++ NN-XT
++ Dr.OctoRex
++ Kong
+- Radical Piano
+- Grain
+- NN-19
+- Ammo1200
+- Ammo400
+- Ammo100LA
+- Humana
+- Pangea
+- Klang
+
+Effects:
+All...

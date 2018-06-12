@@ -1,0 +1,3863 @@
+Propellerhead Remote Mapping File
+File Format Version	1.0.0
+Control Surface Manufacturer	Remanola
+Control Surface Model	Launchpad Mini
+Map Version	1.0.0
+
+// Copyright 2018 Niklas Jakobsson
+//
+// This file is part of Remanola.
+//
+// Remanola is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Remanola is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Remanola.  If not, see <http://www.gnu.org/licenses/>.
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	Master Keyboard
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	Keyboard		Keyboard
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	Reason Document
+Define Group	Page	Main	Sequencer
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Document"
+Map	Button C1		Target Previous Track
+Map	Button C2		Target Next Track
+Map	Button C3		Select Prev Patch for Target Device
+Map	Button C4		Select Next Patch for Target Device
+Map	Button A		Play
+Map	Button B		Stop
+Map	Button C		Record
+Map	Button D 		Loop On/Off
+Map	Button E 		Click On/Off
+Map	Button C6 		Page=Sequencer			Main
+Map	Button C6 		Page=Main			Sequencer
+Map	BarPosition 		Bar Position
+Map	BeatPosition 		Beat Position
+//Map	Button 1-1 		Tempo BPM
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	Reason Master Section
+Define Group	Page	Main	ChMutesSolos	ChFaders	ChPans	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Master Section"
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-1		Page=ChMutesSolos			Index
+Map	Button 2-2		Page=ChFaders			Index
+Map	Button 2-3		Page=ChPans			Index
+Map	Button 7-1		Previous 8 Remote Base Channel				Index
+Map	Button 7-8		Next 8 Remote Base Channel				Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Meter 6		Master Level Meter Left				Main
+Map	Meter 7		Master Level Meter Right				Main
+Map	BigFader 8		Master Level	2			Main
+// Channel Mutes & Solos
+Map	PageName		"Channel Mutes & Solos" 				ChMutesSolos
+Map	Button 1-1		Channel 1 Mute				ChMutesSolos
+Map	Button 1-2		Channel 2 Mute				ChMutesSolos
+Map	Button 1-3		Channel 3 Mute				ChMutesSolos
+Map	Button 1-4		Channel 4 Mute				ChMutesSolos
+Map	Button 1-5		Channel 5 Mute				ChMutesSolos
+Map	Button 1-6		Channel 6 Mute				ChMutesSolos
+Map	Button 1-7		Channel 7 Mute				ChMutesSolos
+Map	Button 1-8		Channel 8 Mute				ChMutesSolos
+Map	Button 2-1		Channel 1 Solo				ChMutesSolos
+Map	Button 2-2		Channel 2 Solo				ChMutesSolos
+Map	Button 2-3		Channel 3 Solo				ChMutesSolos
+Map	Button 2-4		Channel 4 Solo				ChMutesSolos
+Map	Button 2-5		Channel 5 Solo				ChMutesSolos
+Map	Button 2-6		Channel 6 Solo				ChMutesSolos
+Map	Button 2-7		Channel 7 Solo				ChMutesSolos
+Map	Button 2-8		Channel 8 Solo				ChMutesSolos
+Map	Button 3-1		All Mutes Off				ChMutesSolos
+Map	Button 3-2		All Solo Off				ChMutesSolos
+// Channel Faders
+Map	PageName		"Channel Faders" 				ChFaders
+Map	BigFader 1		Channel 1 Level			ChFaders
+Map	BigFader 2		Channel 2 Level			ChFaders
+Map	BigFader 3		Channel 3 Level			ChFaders
+Map	BigFader 4		Channel 4 Level			ChFaders
+Map	BigFader 5		Channel 5 Level			ChFaders
+Map	BigFader 6		Channel 6 Level			ChFaders
+Map	BigFader 7		Channel 7 Level			ChFaders
+Map	BigFader 8		Channel 8 Level			ChFaders
+// Channel Pans
+Map	PageName		"Channel Pans" 				ChPans
+Map	Knob H1		Channel 1 Pan			ChPans
+Map	Knob H2		Channel 2 Pan			ChPans
+Map	Knob H3		Channel 3 Pan			ChPans
+Map	Knob H4		Channel 4 Pan			ChPans
+Map	Knob H5		Channel 5 Pan			ChPans
+Map	Knob H6		Channel 6 Pan			ChPans
+Map	Knob H7		Channel 7 Pan			ChPans
+Map	Knob H8		Channel 8 Pan			ChPans
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	Reason Main Mixer Channel
+Define Group	Page	Main	Send	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Mix Channel"
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Button 1-1		Mute			Main
+Map	Button 1-2		Solo			Main
+//Map	Meter 6		Output Level Left				Main
+//Map	Meter 7		Output Level Right				Main
+Map	BigFader 8		Level			Main
+// Send
+Map	PageName		"Send" 				Send
+Map	Button 1-1		FX1 Send On			Send
+Map	Button 2-1		FX2 Send On			Send
+Map	Button 3-1		FX3 Send On			Send
+Map	Button 4-1		FX4 Send On			Send
+Map	Button 5-1		FX5 Send On			Send
+Map	Button 6-1		FX6 Send On			Send
+Map	Button 7-1		FX7 Send On			Send
+Map	Button 8-1		FX8 Send On			Send
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	Combinator
+Define Group	Page	Main	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Combinator"
+Map	PatchName		Patch Name
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Button 8-1		Button 1			Main
+Map	Button 8-2		Button 2			Main
+Map	Button 8-3		Button 3			Main
+Map	Button 8-4		Button 4			Main
+Map	Button 5-1		Run Pattern Devices			Main
+Map	Button 8-7		Bypass All FX			Main
+Map	Button 8-8		Enabled			Main
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	Thor Polysonic Synthesizer
+Define Group	Page	Main	Osc1	Osc2	Osc3	Mixer	Filter1	Filter2	Filter3	FilterEnv	Amp	AmpEnv	ModEnv	GlobalEnv	LFO1	LFO2	Seq	Shaper	Delay	Chorus	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Thor"
+Map	PatchName		Patch Name
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=Mixer			Index
+Map	Button 1-3		Page=Amp			Index
+Map	Button 1-4		Page=AmpEnv			Index
+Map	Button 2-1		Page=Osc1			Index
+Map	Button 3-1		Page=Osc2			Index
+Map	Button 4-1		Page=Osc3			Index
+Map	Button 2-4		Page=Filter1			Index
+Map	Button 3-4		Page=Filter2			Index
+Map	Button 4-4		Page=Filter3			Index
+Map	Button 2-5		Page=FilterEnv			Index
+Map	Button 5-4		Page=LFO1			Index
+Map	Button 6-4		Page=LFO2			Index
+Map	Button 7-4		Page=ModEnv			Index
+Map	Button 8-4		Page=GlobalEnv			Index
+Map	Button 8-6		Page=Seq			Index
+Map	Button 2-8		Page=Shaper			Index
+Map	Button 3-8		Page=Delay			Index
+Map	Button 4-8		Page=Chorus			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main page
+Map	PageName		"Main" 				Main
+Map	Button 2-1		Page=Osc1			Main
+Map	Button 3-1		Page=Osc2			Main
+Map	Button 4-1		Page=Osc3			Main
+Map	Button 5-1		Page=Filter1			Main
+Map	Button 6-1		Page=Filter2			Main
+Map	Button 7-1		Page=Filter3			Main
+Map	UDVButton 1-2_2-2		Polyphony 			Main
+Map	UDVButton 3-2_4-2		Release Polyphony 			Main
+Map	Button 6-2		Key Mode 			Main
+Map	Button 8-2		Portamento Mode 			Main
+Map	Fader 3		Portamento			Main
+Map	Button 1-4		Note Trigger MIDI 			Main
+Map	Button 2-4		Note Trigger Step Seq 			Main
+Map	Button 8-4		Button 1 			Main
+Map	Button 8-5		Button 2 			Main
+Map	Fader 6		Rotary 1 			Main
+Map	Fader 7		Rotary 2 			Main
+Map	Fader 8		Master Level 			Main
+// Osc 1
+Map	PageName		"Osc 1" 				Osc1
+Map	Button 2-1		Page=Osc1			Osc1
+Map	Button 3-1		Page=Osc2			Osc1
+Map	Button 4-1		Page=Osc3			Osc1
+Map	Button 5-1		Page=Filter1			Osc1
+Map	Button 6-1		Page=Filter2			Osc1
+Map	Button 7-1		Page=Filter3			Osc1
+Map	Button 1-2		Osc 1 Type 				Osc1
+Map	UDVButton 3-2_4-2		Osc 1 Param B				Osc1
+Map	UDVButton 5-2_6-2		Osc 1 Param C				Osc1
+Map	Fader 3		Osc 1 Mod				Osc1
+Map	UDVButton 1-4_2-4		Osc 1 Kbd	5			Osc1
+Map	UDVButton 1-5_2-5		Osc 1 Oct				Osc1
+Map	UDVButton 1-6_2-6		Osc 1 Semi				Osc1
+Map	UDVButton 1-7_2-7		Osc 1 Tune				Osc1
+Map	Fader 8		Osc 1 AM From Osc 2				Osc1
+// Osc 2
+Map	PageName		"Osc 2" 				Osc2
+Map	Button 2-1		Page=Osc1			Osc2
+Map	Button 3-1		Page=Osc2			Osc2
+Map	Button 4-1		Page=Osc3			Osc2
+Map	Button 5-1		Page=Filter1			Osc2
+Map	Button 6-1		Page=Filter2			Osc2
+Map	Button 7-1		Page=Filter3			Osc2
+Map	Button 1-2		Osc 2 Type 				Osc2
+Map	UDVButton 3-2_4-2		Osc 2 Param B				Osc2
+Map	UDVButton 5-2_6-2		Osc 2 Param C				Osc2
+Map	Fader 3		Osc 2 Mod				Osc2
+Map	UDVButton 1-4_2-4		Osc 2 Kbd	5			Osc2
+Map	UDVButton 1-5_2-5		Osc 2 Oct				Osc2
+Map	UDVButton 1-6_2-6		Osc 2 Semi				Osc2
+Map	UDVButton 1-7_2-7		Osc 2 Tune				Osc2
+Map	Button 8-2		Osc 2 Sync To Osc 1				Osc2
+Map	Fader 8		Osc 2 Sync BW				Osc2
+// Osc 3
+Map	PageName		"Osc 3" 				Osc3
+Map	Button 2-1		Page=Osc1			Osc3
+Map	Button 3-1		Page=Osc2			Osc3
+Map	Button 4-1		Page=Osc3			Osc3
+Map	Button 5-1		Page=Filter1			Osc3
+Map	Button 6-1		Page=Filter2			Osc3
+Map	Button 7-1		Page=Filter3			Osc3
+Map	Button 1-2		Osc 3 Type 				Osc3
+Map	UDVButton 3-2_4-2		Osc 3 Param B				Osc3
+Map	UDVButton 5-2_6-2		Osc 3 Param C				Osc3
+Map	Fader 3		Osc 3 Mod				Osc3
+Map	UDVButton 1-4_2-4		Osc 3 Kbd	5			Osc3
+Map	UDVButton 1-5_2-5		Osc 3 Oct				Osc3
+Map	UDVButton 1-6_2-6		Osc 3 Semi				Osc3
+Map	UDVButton 1-7_2-7		Osc 3 Tune				Osc3
+Map	Button 8-2		Osc 3 Sync To Osc 1				Osc3
+Map	Fader 8		Osc 3 Sync BW				Osc3
+// Mixer
+Map	PageName		"Mixer" 				Mixer
+Map	Knob V3		Osc 1 And 2 Balance				Mixer
+Map	Fader 4		Osc 1 And 2 Level				Mixer
+Map	Fader 5		Osc 3 Level				Mixer
+// Filter 1
+Map	PageName		"Filter 1" 				Filter1
+Map	Button 2-1		Page=Osc1			Filter1
+Map	Button 3-1		Page=Osc2			Filter1
+Map	Button 4-1		Page=Osc3			Filter1
+Map	Button 5-1		Page=Filter1			Filter1
+Map	Button 6-1		Page=Filter2			Filter1
+Map	Button 7-1		Page=Filter3			Filter1
+Map	Button 1-2		Filter 1 Type				Filter1
+Map	UDVButton 3-2_4-2		Filter 1 Param X				Filter1
+Map	Button 5-2		Osc 1 To Filter 1 Enable				Filter1
+Map	Button 6-2		Osc 2 To Filter 1 Enable				Filter1
+Map	Button 7-2		Osc 3 To Filter 1 Enable				Filter1
+Map	Button 8-2		Filter 1 Env Invert				Filter1
+Map	Fader 3		Filter 1 Freq				Filter1
+Map	Fader 4		Filter 1 Res				Filter1
+Map	Fader 5		Filter 1 Env Amount				Filter1
+Map	Fader 6		Filter 1 Velocity				Filter1
+Map	Fader 7		Filter 1 Kbd				Filter1
+Map	Fader 8		Filter 1 Drive				Filter1
+// Filter 2
+Map	Button 2-1		Page=Osc1			Filter2
+Map	Button 3-1		Page=Osc2			Filter2
+Map	Button 4-1		Page=Osc3			Filter2
+Map	Button 5-1		Page=Filter1			Filter2
+Map	Button 6-1		Page=Filter2			Filter2
+Map	Button 7-1		Page=Filter3			Filter2
+Map	PageName		"Filter 2" 				Filter2
+Map	Button 1-2		Filter 2 Type				Filter2
+Map	UDVButton 3-2_4-2		Filter 2 Param X				Filter2
+Map	Button 5-2		Osc 1 To Filter 2 Enable				Filter2
+Map	Button 6-2		Osc 2 To Filter 2 Enable				Filter2
+Map	Button 7-2		Osc 3 To Filter 2 Enable				Filter2
+Map	Button 8-2		Filter 2 Env Invert				Filter2
+Map	Fader 3		Filter 2 Freq				Filter2
+Map	Fader 4		Filter 2 Res				Filter2
+Map	Fader 5		Filter 2 Env Amount				Filter2
+Map	Fader 6		Filter 2 Velocity				Filter2
+Map	Fader 7		Filter 2 Kbd				Filter2
+Map	Fader 8		Filter 2 Drive				Filter2
+// Filter 3
+Map	PageName		"Filter 3" 				Filter3
+Map	Button 2-1		Page=Osc1			Filter3
+Map	Button 3-1		Page=Osc2			Filter3
+Map	Button 4-1		Page=Osc3			Filter3
+Map	Button 5-1		Page=Filter1			Filter3
+Map	Button 6-1		Page=Filter2			Filter3
+Map	Button 7-1		Page=Filter3			Filter3
+Map	Button 1-2		Filter 3 Type				Filter3
+Map	UDVButton 3-2_4-2		Filter 3 Param X				Filter3
+Map	Button 8-2		Filter 3 Global Env Invert				Filter3
+Map	Fader 3		Filter 3 Freq				Filter3
+Map	Fader 4		Filter 3 Res				Filter3
+Map	Fader 5		Filter 3 Global Env Amount				Filter3
+Map	Fader 6		Filter 3 Velocity				Filter3
+Map	Fader 7		Filter 3 Kbd				Filter3
+Map	Fader 8		Filter 3 Drive				Filter3
+// FilterEnv
+Map	PageName		"Filter Env" 				FilterEnv
+Map	Button 2-2		Filter Env Gate Trig On				FilterEnv
+Map	Fader 3		Filter Env Attack				FilterEnv
+Map	Fader 4		Filter Env Decay				FilterEnv
+Map	Fader 5		Filter Env Sustain				FilterEnv
+Map	Fader 6		Filter Env Release				FilterEnv
+// Amp
+Map	PageName		"Amp" 				Amp
+Map	Fader 3		Amplifier Velocity				Amp
+Map	Fader 4		Amplifier Gain				Amp
+Map	Knob V5		Amplifier Pan				Amp
+// AmpEnv
+Map	PageName		"Amp Env" 				AmpEnv
+Map	Button 2-2		Amp Env Gate Trig On				AmpEnv
+Map	Fader 3		Amp Env Attack				AmpEnv
+Map	Fader 4		Amp Env Decay				AmpEnv
+Map	Fader 5		Amp Env Sustain				AmpEnv
+Map	Fader 6		Amp Env Release				AmpEnv
+// ModEnv
+Map	PageName		"Mod Env" 				ModEnv
+Map	Button 2-2		Mod Env Gate Trig On				ModEnv
+Map	Button 3-2		Mod Env Tempo Sync				ModEnv
+Map	Fader 3		Mod Env Delay				ModEnv
+Map	Fader 4		Mod Env Attack				ModEnv
+Map	Fader 5		Mod Env Decay				ModEnv
+Map	Fader 6		Mod Env Release				ModEnv
+Map	Button 8-7		Mod Env Loop				ModEnv
+// GlobalEnv
+Map	PageName		"Global Env" 				GlobalEnv
+Map	Button 2-1		Global Env Gate Trig On				GlobalEnv
+Map	Button 3-1		Global Env Tempo Sync				GlobalEnv
+Map	Fader 2		Global Env Delay				GlobalEnv
+Map	Fader 3		Global Env Attack				GlobalEnv
+Map	Fader 4		Global Env Hold				GlobalEnv
+Map	Fader 5		Global Env Decay				GlobalEnv
+Map	Fader 6		Global Env Sustain				GlobalEnv
+Map	Fader 7		Global Env Release				GlobalEnv
+Map	Button 8-8		Global Env Loop				GlobalEnv
+// LFO1
+Map	PageName		"LFO 1" 				LFO1
+Map	UDVButton 3-1_4-1		LFO 1 Waveform				LFO1
+Map	Button 6-1		LFO 1 Key Sync				LFO1
+Map	Button 7-1		LFO 1 Tempo Sync				LFO1
+Map	Fader 3		LFO 1 Rate				LFO1
+Map	Fader 4		LFO 1 Delay				LFO1
+Map	Fader 5		LFO 1 KbdFollow				LFO1
+// LFO2
+Map	PageName		"LFO 2" 				LFO2
+Map	UDVButton 3-1_4-1		LFO 2 Waveform				LFO2
+Map	Button 6-1		LFO 2 Key Sync				LFO2
+Map	Button 7-1		LFO 2 Tempo Sync				LFO2
+Map	Fader 3		LFO 2 Rate				LFO2
+Map	Fader 4		LFO 2 Delay				LFO2
+// Step Sequencer
+Map	PageName		"Step Sequencer" 				Seq
+Map	Button 3-1		Pattern Step LED 1				Seq
+Map	Button 3-2		Pattern Step LED 2				Seq
+Map	Button 3-3		Pattern Step LED 3				Seq
+Map	Button 3-4		Pattern Step LED 4				Seq
+Map	Button 3-5		Pattern Step LED 5				Seq
+Map	Button 3-6		Pattern Step LED 6				Seq
+Map	Button 3-7		Pattern Step LED 7				Seq
+Map	Button 3-8		Pattern Step LED 8				Seq
+Map	Button 4-1		Pattern Step LED 9				Seq
+Map	Button 4-2		Pattern Step LED 10				Seq
+Map	Button 4-3		Pattern Step LED 11				Seq
+Map	Button 4-4		Pattern Step LED 12				Seq
+Map	Button 4-5		Pattern Step LED 13				Seq
+Map	Button 4-6		Pattern Step LED 14				Seq
+Map	Button 4-7		Pattern Step LED 15				Seq
+Map	Button 4-8		Pattern Step LED 16				Seq
+Map	Button 5-1		Pattern Step Gate 1				Seq
+Map	Button 5-2		Pattern Step Gate 2				Seq
+Map	Button 5-3		Pattern Step Gate 3				Seq
+Map	Button 5-4		Pattern Step Gate 4				Seq
+Map	Button 5-5		Pattern Step Gate 5				Seq
+Map	Button 5-6		Pattern Step Gate 6				Seq
+Map	Button 5-7		Pattern Step Gate 7				Seq
+Map	Button 5-8		Pattern Step Gate 8				Seq
+Map	Button 6-1		Pattern Step Gate 9				Seq
+Map	Button 6-2		Pattern Step Gate 10				Seq
+Map	Button 6-3		Pattern Step Gate 11				Seq
+Map	Button 6-4		Pattern Step Gate 12				Seq
+Map	Button 6-5		Pattern Step Gate 13				Seq
+Map	Button 6-6		Pattern Step Gate 14				Seq
+Map	Button 6-7		Pattern Step Gate 15				Seq
+Map	Button 6-8		Pattern Step Gate 16				Seq
+Map	Button 7-1		Step Sequencer Run				Seq
+// Shaper
+Map	PageName		"Shaper" 				Shaper
+Map	Button 3-1		Shaper On				Shaper
+Map	Button 2-8		Page=Shaper			Shaper
+Map	Button 3-8		Page=Delay			Shaper
+Map	Button 4-8		Page=Chorus			Shaper
+Map	UDVButton 5-1_6-1		Shaper Type				Shaper
+Map	Fader 2		Shaper Drive				Shaper
+// Delay
+Map	PageName		"Delay" 				Delay
+Map	Button 3-1		Delay On				Delay
+Map	Button 5-1		Delay Sync				Delay
+Map	Fader 2		Delay Time				Delay
+Map	Fader 3		Delay Feedback				Delay
+Map	Fader 5		Delay Rate				Delay
+Map	Fader 6		Delay Amt				Delay
+Map	Fader 7		Delay Dry Wet				Delay
+Map	Button 2-8		Page=Shaper			Delay
+Map	Button 3-8		Page=Delay			Delay
+Map	Button 4-8		Page=Chorus			Delay
+// Chorus
+Map	PageName		"Chorus" 				Chorus
+Map	Button 3-1		Chorus On				Chorus
+Map	Fader 2		Chorus Delay				Chorus
+Map	Fader 3		Chorus Feedback				Chorus
+Map	Fader 5		Chorus Rate				Chorus
+Map	Fader 6		Chorus Amt				Chorus
+Map	Fader 7		Chorus Dry Wet				Chorus
+Map	Button 2-8		Page=Shaper			Chorus
+Map	Button 3-8		Page=Delay			Chorus
+Map	Button 4-8		Page=Chorus			Chorus
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	Dr.REX Loop Player
+Define Group	Page	Main	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"DrOctoRex"
+Map	PatchName		Patch Name
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Button 4-3		Select Loop 1			Main
+Map	Button 4-4		Select Loop 2			Main
+Map	Button 4-5		Select Loop 3			Main
+Map	Button 4-6		Select Loop 4			Main
+Map	Button 5-3		Select Loop 5			Main
+Map	Button 5-4		Select Loop 6			Main
+Map	Button 5-5		Select Loop 7			Main
+Map	Button 5-6		Select Loop 8			Main
+Map	Button 5-7		Run			Main
+Map	Button 8-1		Trigger Next Setting			Main
+Map	Fader 8		Master Level			Main
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	RPG-8 Monophonic Arpeggiator
+Define Group	Page	Main	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"RPG-8"
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Button 8-1		Arpeggiator Enable			Main
+Map	Button 8-2		Hold			Main
+Map	Button 8-3		Single Note Repeat			Main
+Map	Button 8-4		Shuffle			Main
+Map	Button 8-5		Sync			Main
+Map	Button 2-1		Pattern Enable			Main
+Map	Button 2-3		Pattern Length Down			Main
+Map	Button 2-4		Pattern Length Up			Main
+Map	Button 3-1		Pattern Step 1			Main
+Map	Button 3-2		Pattern Step 2			Main
+Map	Button 3-3		Pattern Step 3			Main
+Map	Button 3-4		Pattern Step 4			Main
+Map	Button 3-5		Pattern Step 5			Main
+Map	Button 3-6		Pattern Step 6			Main
+Map	Button 3-7		Pattern Step 7			Main
+Map	Button 3-8		Pattern Step 8			Main
+Map	Button 4-1		Pattern Step 9			Main
+Map	Button 4-2		Pattern Step 10			Main
+Map	Button 4-3		Pattern Step 11			Main
+Map	Button 4-4		Pattern Step 12			Main
+Map	Button 4-5		Pattern Step 13			Main
+Map	Button 4-6		Pattern Step 14			Main
+Map	Button 4-7		Pattern Step 15			Main
+Map	Button 4-8		Pattern Step 16			Main
+Map	Button 7-1		Mode			Main
+Map	Button 7-2		Octave Shift			Main
+Map	Button 7-5		Octave 4			Main
+Map	Button 7-6		Octave 3			Main
+Map	Button 7-7		Octave 2			Main
+Map	Button 7-8		Octave 1			Main
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	ID8 Instrument Device
+Define Group	Page	Main	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"ID8"
+Map	PatchName		Patch Name
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Button 1-1		Note On Indicator			Main
+Map	Button 7-1		Select Previous Category			Main
+Map	Button 7-2		Select Next Category			Main
+Map	Button 8-1		Sound A				Main
+Map	Button 8-2		Sound B				Main
+Map	Button 8-3		Sound C				Main
+Map	Button 8-4		Sound D				Main
+Map	Fader 6		Parameter 1			Main
+Map	Fader 7		Parameter 2			Main
+Map	Fader 8		Volume			Main
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	Malstrom Graintable Synthesizer
+Define Group	Page	Main	OscA	OscAEnv	OscB	OscBEnv	FilterA	FilterB	FilterEnv	ModA	ModB	Shaper	Velocity	ModWheel	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Malstrom"
+Map	PatchName		Patch Name
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-1		Page=OscA			Index
+Map	Button 2-2		Page=OscAEnv			Index
+Map	Button 3-1		Page=OscB			Index
+Map	Button 3-2		Page=OscBEnv			Index
+Map	Button 2-4		Page=FilterA			Index
+Map	Button 3-4		Page=FilterB			Index
+Map	Button 2-5		Page=FilterEnv			Index
+Map	Button 5-4		Page=ModA			Index
+Map	Button 6-4		Page=ModB			Index
+Map	Button 2-8		Page=Shaper			Index
+Map	Button 8-5		Page=Velocity			Index
+Map	Button 8-6		Page=ModWheel			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Button 1-1		Page=Main			Main
+Map	UDVButton 5-2_6-2		Polyphony			Main
+Map	Button 8-2		Legato On/Off			Main
+Map	Fader 3		Portamento			Main
+Map	UDVButton 7-4_8-4		Pitch Bend Range			Main
+Map	Fader 7		Spread Amount			Main
+Map	Fader 8		Master Level			Main
+// OscA
+Map	PageName		"Osc A" 				OscA
+Map	Button 1-1		Page=Main			OscA
+Map	Button 8-1		Oscillator A On/Off			OscA
+//Map	UDVButton 3-1_4-1		Oscillator A Mode			OscA
+Map	Fader 2		Oscillator A Motion			OscA
+Map	Fader 3		Oscillator A Index			OscA
+Map	Knob V4		Oscillator A Shift			OscA
+Map	UDVButton 7-5_8-5		Oscillator A Octave			OscA
+Map	UDVButton 7-6_8-6		Oscillator A Semi			OscA
+Map	UDVButton 7-7_8-7		Oscillator A Cent			OscA
+Map	Button 7-8		Route Oscillator A To Shaper			OscA
+Map	Button 8-8		Route Oscillator A To Filter B			OscA
+// OscA Env
+Map	PageName		"Osc A Env" 				OscAEnv
+Map	Button 1-1		Page=Main			OscAEnv
+Map	Fader 3		Oscillator A Attack			OscAEnv
+Map	Fader 4		Oscillator A Decay			OscAEnv
+Map	Fader 5		Oscillator A Sustain			OscAEnv
+Map	Fader 6		Oscillator A Release			OscAEnv
+Map	Fader 8		Oscillator A Gain			OscAEnv
+// OscB
+Map	PageName		"Osc B" 				OscB
+Map	Button 1-1		Page=Main			OscB
+Map	Button 8-1		Oscillator B On/Off			OscB
+//Map	UDVButton 3-1_4-1		Oscillator B Mode			OscB
+Map	Fader 2		Oscillator B Motion			OscB
+Map	Fader 3		Oscillator B Index			OscB
+Map	Knob V4		Oscillator B Shift			OscB
+Map	UDVButton 7-5_8-5		Oscillator B Octave			OscB
+Map	UDVButton 7-6_8-6		Oscillator B Semi			OscB
+Map	UDVButton 7-7_8-7		Oscillator B Cent			OscB
+Map	Button 8-8		Route Oscillator B To Filter B			OscB
+// OscB Env
+Map	PageName		"Osc B Env" 				OscBEnv
+Map	Button 1-1		Page=Main			OscBEnv
+Map	Fader 3		Oscillator B Attack			OscBEnv
+Map	Fader 4		Oscillator B Decay			OscBEnv
+Map	Fader 5		Oscillator B Sustain			OscBEnv
+Map	Fader 6		Oscillator B Release			OscBEnv
+Map	Fader 8		Oscillator B Gain			OscBEnv
+// FilterA
+Map	PageName		"Filter A" 				FilterA
+Map	Button 1-1		Page=Main			FilterA
+Map	Button 8-1		Filter A On/Off			FilterA
+Map	Button 8-4		Filter A Mode			FilterA
+Map	Button 8-5		Filter A Env			FilterA
+Map	Button 8-6		Filter A Kbd Track			FilterA
+Map	Fader 7		Filter A Freq			FilterA
+Map	Fader 8		Filter A Resonance			FilterA
+// FilterB
+Map	PageName		"Filter B" 				FilterB
+Map	Button 1-1		Page=Main			FilterB
+Map	Button 8-1		Filter B On/Off			FilterB
+Map	Button 8-4		Filter B Mode			FilterB
+Map	Button 8-5		Filter B Env			FilterB
+Map	Button 8-6		Filter B Kbd Track			FilterB
+Map	Fader 7		Filter B Freq			FilterB
+Map	Fader 8		Filter B Resonance			FilterB
+// FilterEnv
+Map	PageName		"Filter Env" 				FilterEnv
+Map	Button 1-1		Page=Main			FilterEnv
+Map	Fader 3		Filter Env Attack			FilterEnv
+Map	Fader 4		Filter Env Decay			FilterEnv
+Map	Fader 5		Filter Env Sustain			FilterEnv
+Map	Fader 6		Filter Env Release			FilterEnv
+Map	Button 8-7		Filter Env Invert			FilterEnv
+Map	Fader 8		Filter Env Amount			FilterEnv
+// Shaper
+Map	PageName		"Shaper" 			Shaper
+Map	Button 1-1		Page=Main			Shaper
+Map	Button 8-1		Shaper On/Off			Shaper
+Map	Button 4-1		Shaper Mode			Shaper
+Map	Fader 8		Shaper Amount			Shaper
+// ModA
+Map	PageName		"Mod A" 			ModA
+Map	Button 1-1		Page=Main			ModA
+Map	Button 8-1		Modulator A On/Off			ModA
+Map	UDVButton 3-1_4-1		Modulator A Curve			ModA
+Map	Fader 2		Modulator A Rate			ModA
+Map	Knob V3		Modulator A To Pitch			ModA
+Map	Knob V4		Modulator A To Index			ModA
+Map	Knob V5		Modulator A To Shift			ModA
+Map	Button 4-8		Modulator A Target			ModA
+Map	Button 8-7		Modulator A One Shot			ModA
+Map	Button 8-8		Modulator A Sync			ModA
+// ModB
+Map	PageName		"Mod B" 			ModB
+Map	Button 1-1		Page=Main			ModB
+Map	Button 8-1		Modulator B On/Off			ModB
+Map	UDVButton 3-1_4-1		Modulator B Curve			ModB
+Map	Fader 2		Modulator B Rate			ModB
+Map	Knob V3		Modulator B To Motion			ModB
+Map	Knob V4		Modulator B To Level			ModB
+Map	Knob V5		Modulator B To Filter			ModB
+Map	Knob V6		Modulator B To Modulator A			ModB
+Map	Button 4-8		Modulator B Target			ModB
+Map	Button 8-7		Modulator B One Shot			ModB
+Map	Button 8-8		Modulator B Sync			ModB
+// Velocity
+Map	PageName		"Velocity" 			Velocity
+Map	Button 1-1		Page=Main			Velocity
+Map	Knob V2		Velocity To Level A			Velocity
+Map	Knob V3		Velocity To Level B			Velocity
+Map	Knob V4		Velocity To Filter Env			Velocity
+Map	Knob V5		Velocity To Attack			Velocity
+Map	Knob V6		Velocity To Shift			Velocity
+Map	Knob V7		Velocity To Modulator			Velocity
+Map	Button 8-8		Velocity Target			Velocity
+// ModWheel
+Map	PageName		"ModWheel" 			ModWheel
+Map	Button 1-1		Page=Main			ModWheel
+Map	Knob V2		Mod Wheel To Index			ModWheel
+Map	Knob V3		Mod Wheel To Shift			ModWheel
+Map	Knob V4		Mod Wheel To Filter			ModWheel
+Map	Knob V5		Mod Wheel To Modulator			ModWheel
+Map	Button 8-8		Mod Wheel Target			ModWheel
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	NN19 Digital Sampler
+Define Group	Page	Main	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"NN19"
+Map	PatchName		Patch Name
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Button 1-1		Note On Indicator			Main
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	NN-XT Advanced Sampler
+Define Group	Page	Main	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"NN-XT"
+Map	PatchName		Patch Name
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Fader 1		External Controller				Main
+Map	Knob V2		Filter Freq				Main
+Map	Knob V3		Filter Res				Main
+Map	Knob V4		Amp Env Attack				Main
+Map	Knob V5		Amp Env Decay				Main
+Map	Knob V6		Amp Env Release				Main
+Map	Knob V7		Mod Env Decay				Main
+Map	Fader 8		Master Volume				Main
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	Redrum Drum Computer
+Define Group	Page	Main	Performance	Drum1	Drum1Edit	Drum2	Drum2Edit	Drum3	Drum3Edit	Drum4	Drum4Edit	Drum5	Drum5Edit	Drum6	Drum6Edit	Drum7	Drum7Edit	Drum8	Drum8Edit	Drum9	Drum9Edit	Drum10	Drum10Edit	Drum11	Drum11Edit	Drum12	Drum12Edit	Index	Internal
+Define Group	DrumMode	Play	Solo	Mute
+Define Group	EditMode	Rotate	Toggle	Flam
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Redrum"
+Map	PatchName		Patch Name
+Map	PlayingStep		Playing Step
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=Performance			Index
+Map	Button 6-1		Page=Drum9			Index
+Map	Button 6-2		Page=Drum10			Index
+Map	Button 7-1		Page=Drum5			Index
+Map	Button 7-2		Page=Drum6			Index
+Map	Button 7-3		Page=Drum7			Index
+Map	Button 7-4		Page=Drum8			Index
+Map	Button 8-1		Page=Drum1			Index
+Map	Button 8-2		Page=Drum2			Index
+Map	Button 8-3		Page=Drum3			Index
+Map	Button 8-4		Page=Drum4			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Button 3-5		EditMode=Rotate			Main
+Map	Button 3-6		EditMode=Toggle			Main
+//Map	Button 3-7		EditMode=Flam			Main
+Map	Button 3-8		Run			Main
+Map	Button 4-7		Edit Accent			Main	Toggle
+Map	UDVButton 5-8_6-8		Edit Steps			Main
+Map	UDHButton 7-5_7-6		Flam Amount	5		Main
+Map	Button 7-8		Edit Flam			Main	
+Map	Button 1-1		Selected Drum Step 1			Main	Rotate
+Map	Button 1-2		Selected Drum Step 2			Main	Rotate
+Map	Button 1-3		Selected Drum Step 3			Main	Rotate
+Map	Button 1-4		Selected Drum Step 4			Main	Rotate
+Map	Button 1-5		Selected Drum Step 5			Main	Rotate
+Map	Button 1-6		Selected Drum Step 6			Main	Rotate
+Map	Button 1-7		Selected Drum Step 7			Main	Rotate
+Map	Button 1-8		Selected Drum Step 8			Main	Rotate
+Map	Button 2-1		Selected Drum Step 9			Main	Rotate
+Map	Button 2-2		Selected Drum Step 10			Main	Rotate
+Map	Button 2-3		Selected Drum Step 11			Main	Rotate
+Map	Button 2-4		Selected Drum Step 12			Main	Rotate
+Map	Button 2-5		Selected Drum Step 13			Main	Rotate
+Map	Button 2-6		Selected Drum Step 14			Main	Rotate
+Map	Button 2-7		Selected Drum Step 15			Main	Rotate
+Map	Button 2-8		Selected Drum Step 16			Main	Rotate
+Map	Button 1-1		Selected Drum Toggle Step 1			Main	Toggle
+Map	Button 1-2		Selected Drum Toggle Step 2			Main	Toggle
+Map	Button 1-3		Selected Drum Toggle Step 3			Main	Toggle
+Map	Button 1-4		Selected Drum Toggle Step 4			Main	Toggle
+Map	Button 1-5		Selected Drum Toggle Step 5			Main	Toggle
+Map	Button 1-6		Selected Drum Toggle Step 6			Main	Toggle
+Map	Button 1-7		Selected Drum Toggle Step 7			Main	Toggle
+Map	Button 1-8		Selected Drum Toggle Step 8			Main	Toggle
+Map	Button 2-1		Selected Drum Toggle Step 9			Main	Toggle
+Map	Button 2-2		Selected Drum Toggle Step 10			Main	Toggle
+Map	Button 2-3		Selected Drum Toggle Step 11			Main	Toggle
+Map	Button 2-4		Selected Drum Toggle Step 12			Main	Toggle
+Map	Button 2-5		Selected Drum Toggle Step 13			Main	Toggle
+Map	Button 2-6		Selected Drum Toggle Step 14			Main	Toggle
+Map	Button 2-7		Selected Drum Toggle Step 15			Main	Toggle
+Map	Button 2-8		Selected Drum Toggle Step 16			Main	Toggle
+//Map	Button 1-1		Selected Drum Flam 1			Main	Flam
+//Map	Button 1-2		Selected Drum Flam 2			Main	Flam
+//Map	Button 1-3		Selected Drum Flam 3			Main	Flam
+//Map	Button 1-4		Selected Drum Flam 4			Main	Flam
+//Map	Button 1-5		Selected Drum Flam 5			Main	Flam
+//Map	Button 1-6		Selected Drum Flam 6			Main	Flam
+//Map	Button 1-7		Selected Drum Flam 7			Main	Flam
+//Map	Button 1-8		Selected Drum Flam 8			Main	Flam
+//Map	Button 2-1		Selected Drum Flam 9			Main	Flam
+//Map	Button 2-2		Selected Drum Flam 10			Main	Flam
+//Map	Button 2-3		Selected Drum Flam 11			Main	Flam
+//Map	Button 2-4		Selected Drum Flam 12			Main	Flam
+//Map	Button 2-5		Selected Drum Flam 13			Main	Flam
+//Map	Button 2-6		Selected Drum Flam 14			Main	Flam
+//Map	Button 2-7		Selected Drum Flam 15			Main	Flam
+//Map	Button 2-8		Selected Drum Flam 16			Main	Flam
+Map	Button 3-1		Select Drum 9			Main
+Map	Button 3-2		Select Drum 10			Main
+Map	Button 4-1		Select Drum 5			Main
+Map	Button 4-2		Select Drum 6			Main
+Map	Button 4-3		Select Drum 7			Main
+Map	Button 4-4		Select Drum 8			Main
+Map	Button 5-1		Select Drum 1			Main
+Map	Button 5-2		Select Drum 2			Main
+Map	Button 5-3		Select Drum 3			Main
+Map	Button 5-4		Select Drum 4			Main
+Map	Button 8-6		DrumMode=Mute			Main
+Map	Button 8-7		DrumMode=Solo			Main
+Map	Button 8-8		DrumMode=Play			Main
+Map	Button 6-1		Channel 9 Play			Main	Play
+Map	Button 6-2		Channel 10 Play			Main	Play
+Map	Button 7-1		Channel 5 Play			Main	Play
+Map	Button 7-2		Channel 6 Play			Main	Play
+Map	Button 7-3		Channel 7 Play			Main	Play
+Map	Button 7-4		Channel 8 Play			Main	Play
+Map	Button 8-1		Channel 1 Play			Main	Play
+Map	Button 8-2		Channel 2 Play			Main	Play
+Map	Button 8-3		Channel 3 Play			Main	Play
+Map	Button 8-4		Channel 4 Play			Main	Play
+Map	Button 6-1		Drum 9 Solo			Main	Solo
+Map	Button 6-2		Drum 10 Solo			Main	Solo
+Map	Button 7-1		Drum 5 Solo			Main	Solo
+Map	Button 7-2		Drum 6 Solo			Main	Solo
+Map	Button 7-3		Drum 7 Solo			Main	Solo
+Map	Button 7-4		Drum 8 Solo			Main	Solo
+Map	Button 8-1		Drum 1 Solo			Main	Solo
+Map	Button 8-2		Drum 2 Solo			Main	Solo
+Map	Button 8-3		Drum 3 Solo			Main	Solo
+Map	Button 8-4		Drum 4 Solo			Main	Solo
+Map	Button 6-1		Drum 9 Mute			Main	Mute
+Map	Button 6-2		Drum 10 Mute			Main	Mute
+Map	Button 7-1		Drum 5 Mute			Main	Mute
+Map	Button 7-2		Drum 6 Mute			Main	Mute
+Map	Button 7-3		Drum 7 Mute			Main	Mute
+Map	Button 7-4		Drum 8 Mute			Main	Mute
+Map	Button 8-1		Drum 1 Mute			Main	Mute
+Map	Button 8-2		Drum 2 Mute			Main	Mute
+Map	Button 8-3		Drum 3 Mute			Main	Mute
+Map	Button 8-4		Drum 4 Mute			Main	Mute
+// Performance
+Map	PageName		"Performance" 				Performance
+Map	Button 1-1		Enable Pattern Section Playback			Performance
+Map	Button 1-2		Pattern Enable			Performance
+Map	Button 2-1		Pattern 1			Performance
+Map	Button 2-2		Pattern 2			Performance
+Map	Button 2-3		Pattern 3			Performance
+Map	Button 2-4		Pattern 4			Performance
+Map	Button 3-1		Pattern 5			Performance
+Map	Button 3-2		Pattern 6			Performance
+Map	Button 3-3		Pattern 7			Performance
+Map	Button 3-4		Pattern 8			Performance
+Map	Button 4-1		Bank A			Performance
+Map	Button 4-2		Bank B			Performance
+Map	Button 4-3		Bank C			Performance
+Map	Button 4-4		Bank D			Performance
+Map	UDVButton 7-1_8-1		Steps			Performance
+Map	UDHButton 8-3_8-4		Resolution			Performance
+Map	Button 8-5		Shuffle			Performance
+Map	Fader 8		Master Level				Performance
+// Drum1
+Map	PageName		"Drum 1" 				Drum1
+Map	Button 1-1		Page=Main			Drum1
+Map	Button 1-2		Page=Performance			Drum1
+Map	Button 2-1		Page=Drum1			Drum1
+Map	Button 2-2		Page=Drum1Edit			Drum1
+Map	Button 3-1		Channel 1 Play			Drum1
+Map	Button 3-2		Drum 1 Mute			Drum1
+Map	Button 3-3		Drum 1 Solo			Drum1
+Map	Button 6-1		Page=Drum9			Drum1
+Map	Button 6-2		Page=Drum10			Drum1
+Map	Button 7-1		Page=Drum5			Drum1
+Map	Button 7-2		Page=Drum6			Drum1
+Map	Button 7-3		Page=Drum7			Drum1
+Map	Button 7-4		Page=Drum8			Drum1
+Map	Button 8-1		Page=Drum1			Drum1
+Map	Button 8-2		Page=Drum2			Drum1
+Map	Button 8-3		Page=Drum3			Drum1
+Map	Button 8-4		Page=Drum4			Drum1
+Map	UDVButton 5-4_6-4		Drum 1 Vel to Level	5		Drum1
+Map	Fader 5		Drum 1 Send 1 Amount				Drum1
+Map	Fader 6		Drum 1 Send 2 Amount				Drum1
+Map	Knob V7		Drum 1 Pan				Drum1
+Map	Fader 8		Drum 1 Level				Drum1
+// Drum1Edit
+Map	PageName		"Drum 1 Edit" 				Drum1Edit
+Map	Button 1-1		Page=Main			Drum1Edit
+Map	Button 1-2		Page=Performance			Drum1Edit
+Map	Button 2-1		Page=Drum1			Drum1Edit
+Map	Button 2-2		Page=Drum1Edit			Drum1Edit
+Map	Button 3-1		Channel 1 Play			Drum1Edit
+Map	Button 3-2		Drum 1 Mute			Drum1Edit
+Map	Button 3-3		Drum 1 Solo			Drum1Edit
+Map	Button 6-1		Page=Drum9Edit			Drum1Edit
+Map	Button 6-2		Page=Drum10Edit			Drum1Edit
+Map	Button 7-1		Page=Drum5Edit			Drum1Edit
+Map	Button 7-2		Page=Drum6Edit			Drum1Edit
+Map	Button 7-3		Page=Drum7Edit			Drum1Edit
+Map	Button 7-4		Page=Drum8Edit			Drum1Edit
+Map	Button 8-1		Page=Drum1Edit			Drum1Edit
+Map	Button 8-2		Page=Drum2Edit			Drum1Edit
+Map	Button 8-3		Page=Drum3Edit			Drum1Edit
+Map	Button 8-4		Page=Drum4Edit			Drum1Edit
+Map	Button 5-2		Drum 1 Decay/Gate Mode			Drum1Edit
+Map	Fader 5		Drum 1 Length				Drum1Edit
+Map	Knob V6		Drum 1 Pitch				Drum1Edit
+Map	Knob V7		Drum 1 Tone				Drum1Edit
+Map	Knob V8		Drum 1 Vel to Tone				Drum1Edit
+// Drum2
+Map	PageName		"Drum 2" 				Drum2
+Map	Button 1-1		Page=Main			Drum2
+Map	Button 1-2		Page=Performance			Drum2
+Map	Button 2-1		Page=Drum2			Drum2
+Map	Button 2-2		Page=Drum2Edit			Drum2
+Map	Button 3-1		Channel 2 Play			Drum2
+Map	Button 3-2		Drum 2 Mute			Drum2
+Map	Button 3-3		Drum 2 Solo			Drum2
+Map	Button 6-1		Page=Drum9			Drum2
+Map	Button 6-2		Page=Drum10			Drum2
+Map	Button 7-1		Page=Drum5			Drum2
+Map	Button 7-2		Page=Drum6			Drum2
+Map	Button 7-3		Page=Drum7			Drum2
+Map	Button 7-4		Page=Drum8			Drum2
+Map	Button 8-1		Page=Drum1			Drum2
+Map	Button 8-2		Page=Drum2			Drum2
+Map	Button 8-3		Page=Drum3			Drum2
+Map	Button 8-4		Page=Drum4			Drum2
+Map	UDVButton 5-4_6-4		Drum 2 Vel to Level	5		Drum2
+Map	Fader 5		Drum 2 Send 1 Amount				Drum2
+Map	Fader 6		Drum 2 Send 2 Amount				Drum2
+Map	Knob V7		Drum 2 Pan				Drum2
+Map	Fader 8		Drum 2 Level				Drum2
+// Drum2Edit
+Map	PageName		"Drum 2 Edit" 				Drum2Edit
+Map	Button 1-1		Page=Main			Drum2Edit
+Map	Button 1-2		Page=Performance			Drum2Edit
+Map	Button 2-1		Page=Drum2			Drum2Edit
+Map	Button 2-2		Page=Drum2Edit			Drum2Edit
+Map	Button 3-1		Channel 2 Play			Drum2Edit
+Map	Button 3-2		Drum 2 Mute			Drum2Edit
+Map	Button 3-3		Drum 2 Solo			Drum2Edit
+Map	Button 6-1		Page=Drum9Edit			Drum2Edit
+Map	Button 6-2		Page=Drum10Edit			Drum2Edit
+Map	Button 7-1		Page=Drum5Edit			Drum2Edit
+Map	Button 7-2		Page=Drum6Edit			Drum2Edit
+Map	Button 7-3		Page=Drum7Edit			Drum2Edit
+Map	Button 7-4		Page=Drum8Edit			Drum2Edit
+Map	Button 8-1		Page=Drum1Edit			Drum2Edit
+Map	Button 8-2		Page=Drum2Edit			Drum2Edit
+Map	Button 8-3		Page=Drum3Edit			Drum2Edit
+Map	Button 8-4		Page=Drum4Edit			Drum2Edit
+Map	Button 5-2		Drum 2 Decay/Gate Mode			Drum2Edit
+Map	Fader 5		Drum 2 Length				Drum2Edit
+Map	Knob V6		Drum 2 Pitch				Drum2Edit
+Map	Knob V7		Drum 2 Tone				Drum2Edit
+Map	Knob V8		Drum 2 Vel to Tone				Drum2Edit
+// Drum3
+Map	PageName		"Drum 3" 				Drum3
+Map	Button 1-1		Page=Main			Drum3
+Map	Button 1-2		Page=Performance			Drum3
+Map	Button 2-1		Page=Drum3			Drum3
+Map	Button 2-2		Page=Drum3Edit			Drum3
+Map	Button 3-1		Channel 3 Play			Drum3
+Map	Button 3-2		Drum 3 Mute			Drum3
+Map	Button 3-3		Drum 3 Solo			Drum3
+Map	Button 6-1		Page=Drum9			Drum3
+Map	Button 6-2		Page=Drum10			Drum3
+Map	Button 7-1		Page=Drum5			Drum3
+Map	Button 7-2		Page=Drum6			Drum3
+Map	Button 7-3		Page=Drum7			Drum3
+Map	Button 7-4		Page=Drum8			Drum3
+Map	Button 8-1		Page=Drum1			Drum3
+Map	Button 8-2		Page=Drum2			Drum3
+Map	Button 8-3		Page=Drum3			Drum3
+Map	Button 8-4		Page=Drum4			Drum3
+Map	UDVButton 5-4_6-4		Drum 3 Vel to Level	5		Drum3
+Map	Fader 5		Drum 3 Send 1 Amount				Drum3
+Map	Fader 6		Drum 3 Send 2 Amount				Drum3
+Map	Knob V7		Drum 3 Pan				Drum3
+Map	Fader 8		Drum 3 Level				Drum3
+// Drum3Edit
+Map	PageName		"Drum 3 Edit" 				Drum3Edit
+Map	Button 1-1		Page=Main			Drum3Edit
+Map	Button 1-2		Page=Performance			Drum3Edit
+Map	Button 2-1		Page=Drum3			Drum3Edit
+Map	Button 2-2		Page=Drum3Edit			Drum3Edit
+Map	Button 3-1		Channel 3 Play			Drum3Edit
+Map	Button 3-2		Drum 3 Mute			Drum3Edit
+Map	Button 3-3		Drum 3 Solo			Drum3Edit
+Map	Button 6-1		Page=Drum9Edit			Drum3Edit
+Map	Button 6-2		Page=Drum10Edit			Drum3Edit
+Map	Button 7-1		Page=Drum5Edit			Drum3Edit
+Map	Button 7-2		Page=Drum6Edit			Drum3Edit
+Map	Button 7-3		Page=Drum7Edit			Drum3Edit
+Map	Button 7-4		Page=Drum8Edit			Drum3Edit
+Map	Button 8-1		Page=Drum1Edit			Drum3Edit
+Map	Button 8-2		Page=Drum2Edit			Drum3Edit
+Map	Button 8-3		Page=Drum3Edit			Drum3Edit
+Map	Button 8-4		Page=Drum4Edit			Drum3Edit
+Map	Button 5-2		Drum 3 Decay/Gate Mode			Drum3Edit
+Map	Fader 5		Drum 3 Length				Drum3Edit
+Map	Knob V6		Drum 3 Pitch				Drum3Edit
+Map	Knob V7		Drum 3 Sample Start				Drum3Edit
+Map	Knob V8		Drum 3 Vel to Sample Start				Drum3Edit
+// Drum4
+Map	PageName		"Drum 4" 				Drum4
+Map	Button 1-1		Page=Main			Drum4
+Map	Button 1-2		Page=Performance			Drum4
+Map	Button 2-1		Page=Drum4			Drum4
+Map	Button 2-2		Page=Drum4Edit			Drum4
+Map	Button 3-1		Channel 4 Play			Drum4
+Map	Button 3-2		Drum 4 Mute			Drum4
+Map	Button 3-3		Drum 4 Solo			Drum4
+Map	Button 6-1		Page=Drum9			Drum4
+Map	Button 6-2		Page=Drum10			Drum4
+Map	Button 7-1		Page=Drum5			Drum4
+Map	Button 7-2		Page=Drum6			Drum4
+Map	Button 7-3		Page=Drum7			Drum4
+Map	Button 7-4		Page=Drum8			Drum4
+Map	Button 8-1		Page=Drum1			Drum4
+Map	Button 8-2		Page=Drum2			Drum4
+Map	Button 8-3		Page=Drum3			Drum4
+Map	Button 8-4		Page=Drum4			Drum4
+Map	UDVButton 5-4_6-4		Drum 4 Vel to Level	5		Drum4
+Map	Fader 5		Drum 4 Send 1 Amount				Drum4
+Map	Fader 6		Drum 4 Send 2 Amount				Drum4
+Map	Knob V7		Drum 4 Pan				Drum4
+Map	Fader 8		Drum 4 Level				Drum4
+// Drum4Edit
+Map	PageName		"Drum 4 Edit" 				Drum4Edit
+Map	Button 1-1		Page=Main			Drum4Edit
+Map	Button 1-2		Page=Performance			Drum4Edit
+Map	Button 2-1		Page=Drum4			Drum4Edit
+Map	Button 2-2		Page=Drum4Edit			Drum4Edit
+Map	Button 3-1		Channel 4 Play			Drum4Edit
+Map	Button 3-2		Drum 4 Mute			Drum4Edit
+Map	Button 3-3		Drum 4 Solo			Drum4Edit
+Map	Button 6-1		Page=Drum9Edit			Drum4Edit
+Map	Button 6-2		Page=Drum10Edit			Drum4Edit
+Map	Button 7-1		Page=Drum5Edit			Drum4Edit
+Map	Button 7-2		Page=Drum6Edit			Drum4Edit
+Map	Button 7-3		Page=Drum7Edit			Drum4Edit
+Map	Button 7-4		Page=Drum8Edit			Drum4Edit
+Map	Button 8-1		Page=Drum1Edit			Drum4Edit
+Map	Button 8-2		Page=Drum2Edit			Drum4Edit
+Map	Button 8-3		Page=Drum3Edit			Drum4Edit
+Map	Button 8-4		Page=Drum4Edit			Drum4Edit
+Map	Button 5-2		Drum 4 Decay/Gate Mode			Drum4Edit
+Map	Fader 5		Drum 4 Length				Drum4Edit
+Map	Knob V6		Drum 4 Pitch				Drum4Edit
+Map	Knob V7		Drum 4 Sample Start				Drum4Edit
+Map	Knob V8		Drum 4 Vel to Sample Start				Drum4Edit
+// Drum5
+Map	PageName		"Drum 5" 				Drum5
+Map	Button 1-1		Page=Main			Drum5
+Map	Button 1-2		Page=Performance			Drum5
+Map	Button 2-1		Page=Drum5			Drum5
+Map	Button 2-2		Page=Drum5Edit			Drum5
+Map	Button 3-1		Channel 5 Play			Drum5
+Map	Button 3-2		Drum 5 Mute			Drum5
+Map	Button 3-3		Drum 5 Solo			Drum5
+Map	Button 6-1		Page=Drum9			Drum5
+Map	Button 6-2		Page=Drum10			Drum5
+Map	Button 7-1		Page=Drum5			Drum5
+Map	Button 7-2		Page=Drum6			Drum5
+Map	Button 7-3		Page=Drum7			Drum5
+Map	Button 7-4		Page=Drum8			Drum5
+Map	Button 8-1		Page=Drum1			Drum5
+Map	Button 8-2		Page=Drum2			Drum5
+Map	Button 8-3		Page=Drum3			Drum5
+Map	Button 8-4		Page=Drum4			Drum5
+Map	UDVButton 5-4_6-4		Drum 5 Vel to Level	5		Drum5
+Map	Fader 5		Drum 5 Send 1 Amount				Drum5
+Map	Fader 6		Drum 5 Send 2 Amount				Drum5
+Map	Knob V7		Drum 5 Pan				Drum5
+Map	Fader 8		Drum 5 Level				Drum5
+// Drum5Edit
+Map	PageName		"Drum 5 Edit" 				Drum5Edit
+Map	Button 1-1		Page=Main			Drum5Edit
+Map	Button 1-2		Page=Performance			Drum5Edit
+Map	Button 2-1		Page=Drum5			Drum5Edit
+Map	Button 2-2		Page=Drum5Edit			Drum5Edit
+Map	Button 3-1		Channel 5 Play			Drum5Edit
+Map	Button 3-2		Drum 5 Mute			Drum5Edit
+Map	Button 3-3		Drum 5 Solo			Drum5Edit
+Map	Button 6-1		Page=Drum9Edit			Drum5Edit
+Map	Button 6-2		Page=Drum10Edit			Drum5Edit
+Map	Button 7-1		Page=Drum5Edit			Drum5Edit
+Map	Button 7-2		Page=Drum6Edit			Drum5Edit
+Map	Button 7-3		Page=Drum7Edit			Drum5Edit
+Map	Button 7-4		Page=Drum8Edit			Drum5Edit
+Map	Button 8-1		Page=Drum1Edit			Drum5Edit
+Map	Button 8-2		Page=Drum2Edit			Drum5Edit
+Map	Button 8-3		Page=Drum3Edit			Drum5Edit
+Map	Button 8-4		Page=Drum4Edit			Drum5Edit
+Map	Button 5-2		Drum 5 Decay/Gate Mode			Drum5Edit
+Map	Fader 5		Drum 5 Length				Drum5Edit
+Map	Knob V6		Drum 5 Pitch				Drum5Edit
+Map	Knob V7		Drum 5 Sample Start				Drum5Edit
+Map	Knob V8		Drum 5 Vel to Sample Start				Drum5Edit
+// Drum6
+Map	PageName		"Drum 6" 				Drum6
+Map	Button 1-1		Page=Main			Drum6
+Map	Button 1-2		Page=Performance			Drum6
+Map	Button 2-1		Page=Drum6			Drum6
+Map	Button 2-2		Page=Drum6Edit			Drum6
+Map	Button 3-1		Channel 6 Play			Drum6
+Map	Button 3-2		Drum 6 Mute			Drum6
+Map	Button 3-3		Drum 6 Solo			Drum6
+Map	Button 6-1		Page=Drum9			Drum6
+Map	Button 6-2		Page=Drum10			Drum6
+Map	Button 7-1		Page=Drum5			Drum6
+Map	Button 7-2		Page=Drum6			Drum6
+Map	Button 7-3		Page=Drum7			Drum6
+Map	Button 7-4		Page=Drum8			Drum6
+Map	Button 8-1		Page=Drum1			Drum6
+Map	Button 8-2		Page=Drum2			Drum6
+Map	Button 8-3		Page=Drum3			Drum6
+Map	Button 8-4		Page=Drum4			Drum6
+Map	UDVButton 5-4_6-4		Drum 6 Vel to Level	5		Drum6
+Map	Fader 5		Drum 6 Send 1 Amount				Drum6
+Map	Fader 6		Drum 6 Send 2 Amount				Drum6
+Map	Knob V7		Drum 6 Pan				Drum6
+Map	Fader 8		Drum 6 Level				Drum6
+// Drum6Edit
+Map	PageName		"Drum 6 Edit" 				Drum6Edit
+Map	Button 1-1		Page=Main			Drum6Edit
+Map	Button 1-2		Page=Performance			Drum6Edit
+Map	Button 2-1		Page=Drum6			Drum6Edit
+Map	Button 2-2		Page=Drum6Edit			Drum6Edit
+Map	Button 3-1		Channel 6 Play			Drum6Edit
+Map	Button 3-2		Drum 6 Mute			Drum6Edit
+Map	Button 3-3		Drum 6 Solo			Drum6Edit
+Map	Button 6-1		Page=Drum9Edit			Drum6Edit
+Map	Button 6-2		Page=Drum10Edit			Drum6Edit
+Map	Button 7-1		Page=Drum5Edit			Drum6Edit
+Map	Button 7-2		Page=Drum6Edit			Drum6Edit
+Map	Button 7-3		Page=Drum7Edit			Drum6Edit
+Map	Button 7-4		Page=Drum8Edit			Drum6Edit
+Map	Button 8-1		Page=Drum1Edit			Drum6Edit
+Map	Button 8-2		Page=Drum2Edit			Drum6Edit
+Map	Button 8-3		Page=Drum3Edit			Drum6Edit
+Map	Button 8-4		Page=Drum4Edit			Drum6Edit
+Map	Button 5-2		Drum 6 Decay/Gate Mode			Drum6Edit
+Map	UDVButton 5-4_6-4		Drum 6 Pitch Bend Amount	5		Drum6Edit
+Map	Fader 5		Drum 6 Length				Drum6Edit
+Map	Knob V6		Drum 6 Pitch				Drum6Edit
+Map	Knob V7		Drum 6 Pitch Bend Rate				Drum6Edit
+Map	Knob V8		Drum 6 Vel to Pitch Bend				Drum6Edit
+// Drum7
+Map	PageName		"Drum 7" 				Drum7
+Map	Button 1-1		Page=Main			Drum7
+Map	Button 1-2		Page=Performance			Drum7
+Map	Button 2-1		Page=Drum7			Drum7
+Map	Button 2-2		Page=Drum7Edit			Drum7
+Map	Button 3-1		Channel 7 Play			Drum7
+Map	Button 3-2		Drum 7 Mute			Drum7
+Map	Button 3-3		Drum 7 Solo			Drum7
+Map	Button 6-1		Page=Drum9			Drum7
+Map	Button 6-2		Page=Drum10			Drum7
+Map	Button 7-1		Page=Drum5			Drum7
+Map	Button 7-2		Page=Drum6			Drum7
+Map	Button 7-3		Page=Drum7			Drum7
+Map	Button 7-4		Page=Drum8			Drum7
+Map	Button 8-1		Page=Drum1			Drum7
+Map	Button 8-2		Page=Drum2			Drum7
+Map	Button 8-3		Page=Drum3			Drum7
+Map	Button 8-4		Page=Drum4			Drum7
+Map	UDVButton 5-4_6-4		Drum 7 Vel to Level	5		Drum7
+Map	Fader 5		Drum 7 Send 1 Amount				Drum7
+Map	Fader 6		Drum 7 Send 2 Amount				Drum7
+Map	Knob V7		Drum 7 Pan				Drum7
+Map	Fader 8		Drum 7 Level				Drum7
+// Drum7Edit
+Map	PageName		"Drum 7 Edit" 				Drum7Edit
+Map	Button 1-1		Page=Main			Drum7Edit
+Map	Button 1-2		Page=Performance			Drum7Edit
+Map	Button 2-1		Page=Drum7			Drum7Edit
+Map	Button 2-2		Page=Drum7Edit			Drum7Edit
+Map	Button 3-1		Channel 7 Play			Drum7Edit
+Map	Button 3-2		Drum 7 Mute			Drum7Edit
+Map	Button 3-3		Drum 7 Solo			Drum7Edit
+Map	Button 6-1		Page=Drum9Edit			Drum7Edit
+Map	Button 6-2		Page=Drum10Edit			Drum7Edit
+Map	Button 7-1		Page=Drum5Edit			Drum7Edit
+Map	Button 7-2		Page=Drum6Edit			Drum7Edit
+Map	Button 7-3		Page=Drum7Edit			Drum7Edit
+Map	Button 7-4		Page=Drum8Edit			Drum7Edit
+Map	Button 8-1		Page=Drum1Edit			Drum7Edit
+Map	Button 8-2		Page=Drum2Edit			Drum7Edit
+Map	Button 8-3		Page=Drum3Edit			Drum7Edit
+Map	Button 8-4		Page=Drum4Edit			Drum7Edit
+Map	Button 5-2		Drum 7 Decay/Gate Mode			Drum7Edit
+Map	UDVButton 5-4_6-4		Drum 7 Pitch Bend Amount	5		Drum7Edit
+Map	Fader 5		Drum 7 Length				Drum7Edit
+Map	Knob V6		Drum 7 Pitch				Drum7Edit
+Map	Knob V7		Drum 7 Pitch Bend Rate				Drum7Edit
+Map	Knob V8		Drum 7 Vel to Pitch Bend				Drum7Edit
+// Drum8
+Map	PageName		"Drum 8" 				Drum8
+Map	Button 1-1		Page=Main			Drum8
+Map	Button 1-2		Page=Performance			Drum8
+Map	Button 2-1		Page=Drum8			Drum8
+Map	Button 2-2		Page=Drum8Edit			Drum8
+Map	Button 3-1		Channel 8 Play			Drum8
+Map	Button 3-2		Drum 8 Mute			Drum8
+Map	Button 3-3		Drum 8 Solo			Drum8
+Map	Button 6-1		Page=Drum9			Drum8
+Map	Button 6-2		Page=Drum10			Drum8
+Map	Button 7-1		Page=Drum5			Drum8
+Map	Button 7-2		Page=Drum6			Drum8
+Map	Button 7-3		Page=Drum7			Drum8
+Map	Button 7-4		Page=Drum8			Drum8
+Map	Button 8-1		Page=Drum1			Drum8
+Map	Button 8-2		Page=Drum2			Drum8
+Map	Button 8-3		Page=Drum3			Drum8
+Map	Button 8-4		Page=Drum4			Drum8
+Map	UDVButton 5-4_6-4		Drum 8 Vel to Level	5		Drum8
+Map	Fader 5		Drum 8 Send 1 Amount				Drum8
+Map	Fader 6		Drum 8 Send 2 Amount				Drum8
+Map	Knob V7		Drum 8 Pan				Drum8
+Map	Fader 8		Drum 8 Level				Drum8
+// Drum8Edit
+Map	PageName		"Drum 8 Edit" 				Drum8Edit
+Map	Button 1-1		Page=Main			Drum8Edit
+Map	Button 1-2		Page=Performance			Drum8Edit
+Map	Button 2-1		Page=Drum8			Drum8Edit
+Map	Button 2-2		Page=Drum8Edit			Drum8Edit
+Map	Button 3-1		Channel 8 Play			Drum8Edit
+Map	Button 3-2		Drum 8 Mute			Drum8Edit
+Map	Button 3-3		Drum 8 Solo			Drum8Edit
+Map	Button 6-1		Page=Drum9Edit			Drum8Edit
+Map	Button 6-2		Page=Drum10Edit			Drum8Edit
+Map	Button 7-1		Page=Drum5Edit			Drum8Edit
+Map	Button 7-2		Page=Drum6Edit			Drum8Edit
+Map	Button 7-3		Page=Drum7Edit			Drum8Edit
+Map	Button 7-4		Page=Drum8Edit			Drum8Edit
+Map	Button 8-1		Page=Drum1Edit			Drum8Edit
+Map	Button 8-2		Page=Drum2Edit			Drum8Edit
+Map	Button 8-3		Page=Drum3Edit			Drum8Edit
+Map	Button 8-4		Page=Drum4Edit			Drum8Edit
+Map	Button 5-2		Drum 8 Decay/Gate Mode			Drum8Edit
+Map	Fader 5		Drum 8 Length				Drum8Edit
+Map	Knob V6		Drum 8 Pitch				Drum8Edit
+Map	Knob V7		Drum 8 Sample Start				Drum8Edit
+Map	Knob V8		Drum 8 Vel to Sample Start				Drum8Edit
+// Drum9
+Map	PageName		"Drum 9" 				Drum9
+Map	Button 1-1		Page=Main			Drum9
+Map	Button 1-2		Page=Performance			Drum9
+Map	Button 2-1		Page=Drum9			Drum9
+Map	Button 2-2		Page=Drum9Edit			Drum9
+Map	Button 3-1		Channel 9 Play			Drum9
+Map	Button 3-2		Drum 9 Mute			Drum9
+Map	Button 3-3		Drum 9 Solo			Drum9
+Map	Button 6-1		Page=Drum9			Drum9
+Map	Button 6-2		Page=Drum10			Drum9
+Map	Button 7-1		Page=Drum5			Drum9
+Map	Button 7-2		Page=Drum6			Drum9
+Map	Button 7-3		Page=Drum7			Drum9
+Map	Button 7-4		Page=Drum8			Drum9
+Map	Button 8-1		Page=Drum1			Drum9
+Map	Button 8-2		Page=Drum2			Drum9
+Map	Button 8-3		Page=Drum3			Drum9
+Map	Button 8-4		Page=Drum4			Drum9
+Map	UDVButton 5-4_6-4		Drum 9 Vel to Level	5		Drum9
+Map	Fader 5		Drum 9 Send 1 Amount				Drum9
+Map	Fader 6		Drum 9 Send 2 Amount				Drum9
+Map	Knob V7		Drum 9 Pan				Drum9
+Map	Fader 8		Drum 9 Level				Drum9
+// Drum9Edit
+Map	PageName		"Drum 9 Edit" 				Drum9Edit
+Map	Button 1-1		Page=Main			Drum9Edit
+Map	Button 1-2		Page=Performance			Drum9Edit
+Map	Button 2-1		Page=Drum9			Drum9Edit
+Map	Button 2-2		Page=Drum9Edit			Drum9Edit
+Map	Button 3-1		Channel 9 Play			Drum9Edit
+Map	Button 3-2		Drum 9 Mute			Drum9Edit
+Map	Button 3-3		Drum 9 Solo			Drum9Edit
+Map	Button 6-1		Page=Drum9Edit			Drum9Edit
+Map	Button 6-2		Page=Drum10Edit			Drum9Edit
+Map	Button 7-1		Page=Drum5Edit			Drum9Edit
+Map	Button 7-2		Page=Drum6Edit			Drum9Edit
+Map	Button 7-3		Page=Drum7Edit			Drum9Edit
+Map	Button 7-4		Page=Drum8Edit			Drum9Edit
+Map	Button 8-1		Page=Drum1Edit			Drum9Edit
+Map	Button 8-2		Page=Drum2Edit			Drum9Edit
+Map	Button 8-3		Page=Drum3Edit			Drum9Edit
+Map	Button 8-4		Page=Drum4Edit			Drum9Edit
+Map	Button 5-2		Drum 9 Decay/Gate Mode			Drum9Edit
+Map	Fader 5		Drum 9 Length				Drum9Edit
+Map	Knob V6		Drum 9 Pitch				Drum9Edit
+Map	Knob V7		Drum 9 Sample Start				Drum9Edit
+Map	Knob V8		Drum 9 Vel to Sample Start				Drum9Edit
+// Drum10
+Map	PageName		"Drum 10" 				Drum10
+Map	Button 1-1		Page=Main			Drum10
+Map	Button 1-2		Page=Performance			Drum10
+Map	Button 2-1		Page=Drum10			Drum10
+Map	Button 2-2		Page=Drum10Edit			Drum10
+Map	Button 3-1		Channel 10 Play			Drum10
+Map	Button 3-2		Drum 10 Mute			Drum10
+Map	Button 3-3		Drum 10 Solo			Drum10
+Map	Button 6-1		Page=Drum9			Drum10
+Map	Button 6-2		Page=Drum10			Drum10
+Map	Button 7-1		Page=Drum5			Drum10
+Map	Button 7-2		Page=Drum6			Drum10
+Map	Button 7-3		Page=Drum7			Drum10
+Map	Button 7-4		Page=Drum8			Drum10
+Map	Button 8-1		Page=Drum1			Drum10
+Map	Button 8-2		Page=Drum2			Drum10
+Map	Button 8-3		Page=Drum3			Drum10
+Map	Button 8-4		Page=Drum4			Drum10
+Map	UDVButton 5-4_6-4		Drum 10 Vel to Level	5		Drum10
+Map	Fader 5		Drum 10 Send 1 Amount				Drum10
+Map	Fader 6		Drum 10 Send 2 Amount				Drum10
+Map	Knob V7		Drum 10 Pan				Drum10
+Map	Fader 8		Drum 10 Level				Drum10
+// Drum10Edit
+Map	PageName		"Drum 10 Edit" 				Drum10Edit
+Map	Button 1-1		Page=Main			Drum10Edit
+Map	Button 1-2		Page=Performance			Drum10Edit
+Map	Button 2-1		Page=Drum10			Drum10Edit
+Map	Button 2-2		Page=Drum10Edit			Drum10Edit
+Map	Button 3-1		Channel 10 Play			Drum10Edit
+Map	Button 3-2		Drum 10 Mute			Drum10Edit
+Map	Button 3-3		Drum 10 Solo			Drum10Edit
+Map	Button 6-1		Page=Drum9Edit			Drum10Edit
+Map	Button 6-2		Page=Drum10Edit			Drum10Edit
+Map	Button 7-1		Page=Drum5Edit			Drum10Edit
+Map	Button 7-2		Page=Drum6Edit			Drum10Edit
+Map	Button 7-3		Page=Drum7Edit			Drum10Edit
+Map	Button 7-4		Page=Drum8Edit			Drum10Edit
+Map	Button 8-1		Page=Drum1Edit			Drum10Edit
+Map	Button 8-2		Page=Drum2Edit			Drum10Edit
+Map	Button 8-3		Page=Drum3Edit			Drum10Edit
+Map	Button 8-4		Page=Drum4Edit			Drum10Edit
+Map	Button 5-2		Drum 10 Decay/Gate Mode			Drum10Edit
+Map	Fader 5		Drum 10 Length				Drum10Edit
+Map	Knob V6		Drum 10 Pitch				Drum10Edit
+Map	Knob V7		Drum 10 Tone				Drum10Edit
+Map	Knob V8		Drum 10 Vel to Tone				Drum10Edit
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	Kong Drum Designer
+Define Group	Page	Main	MutesSolos	Drum1	Drum2	Drum3	Drum4	Drum5	Drum6	Drum7	Drum8	Drum9	Drum10	Drum11	Drum12	Drum13	Drum14	Drum15	Drum16	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Kong"
+Map	PatchName		Patch Name
+Map	PlayingStep		PlayingStep
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=MutesSolos			Index
+Map	Button 5-1		Page=Drum13			Index
+Map	Button 5-2		Page=Drum14			Index
+Map	Button 5-3		Page=Drum15			Index
+Map	Button 5-4		Page=Drum16			Index
+Map	Button 6-1		Page=Drum9			Index
+Map	Button 6-2		Page=Drum10			Index
+Map	Button 6-3		Page=Drum11			Index
+Map	Button 6-4		Page=Drum12			Index
+Map	Button 7-1		Page=Drum5			Index
+Map	Button 7-2		Page=Drum6			Index
+Map	Button 7-3		Page=Drum7			Index
+Map	Button 7-4		Page=Drum8			Index
+Map	Button 8-1		Page=Drum1			Index
+Map	Button 8-2		Page=Drum2			Index
+Map	Button 8-3		Page=Drum3			Index
+Map	Button 8-4		Page=Drum4			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Button 5-1		Pad 13 Hit Indication			Main
+Map	Button 5-2		Pad 14 Hit Indication			Main
+Map	Button 5-3		Pad 15 Hit Indication			Main
+Map	Button 5-4		Pad 16 Hit Indication			Main
+Map	Button 6-1		Pad 9 Hit Indication			Main
+Map	Button 6-2		Pad 10 Hit Indication			Main
+Map	Button 6-3		Pad 11 Hit Indication			Main
+Map	Button 6-4		Pad 12 Hit Indication			Main
+Map	Button 7-1		Pad 5 Hit Indication			Main
+Map	Button 7-2		Pad 6 Hit Indication			Main
+Map	Button 7-3		Pad 7 Hit Indication			Main
+Map	Button 7-4		Pad 8 Hit Indication			Main
+Map	Button 8-1		Pad 1 Hit Indication			Main
+Map	Button 8-2		Pad 2 Hit Indication			Main
+Map	Button 8-3		Pad 3 Hit Indication			Main
+Map	Button 8-4		Pad 4 Hit Indication			Main
+Map	Fader 8		Master Level				Main
+// Mutes & Solos
+Map	PageName		"Mutes & Solos" 				MutesSolos
+Map	Button 1-1		Pad 13 Mute				MutesSolos
+Map	Button 1-2		Pad 14 Mute				MutesSolos
+Map	Button 1-3		Pad 15 Mute				MutesSolos
+Map	Button 1-4		Pad 16 Mute				MutesSolos
+Map	Button 2-1		Pad 9 Mute				MutesSolos
+Map	Button 2-2		Pad 10 Mute				MutesSolos
+Map	Button 2-3		Pad 11 Mute				MutesSolos
+Map	Button 2-4		Pad 12 Mute				MutesSolos
+Map	Button 3-1		Pad 5 Mute				MutesSolos
+Map	Button 3-2		Pad 6 Mute				MutesSolos
+Map	Button 3-3		Pad 7 Mute				MutesSolos
+Map	Button 3-4		Pad 8 Mute				MutesSolos
+Map	Button 4-1		Pad 1 Mute				MutesSolos
+Map	Button 4-2		Pad 2 Mute				MutesSolos
+Map	Button 4-3		Pad 3 Mute				MutesSolos
+Map	Button 4-4		Pad 4 Mute				MutesSolos
+Map	Button 1-5		Pad 13 Solo				MutesSolos
+Map	Button 1-6		Pad 14 Solo				MutesSolos
+Map	Button 1-7		Pad 15 Solo				MutesSolos
+Map	Button 1-8		Pad 16 Solo				MutesSolos
+Map	Button 2-5		Pad 9 Solo				MutesSolos
+Map	Button 2-6		Pad 10 Solo				MutesSolos
+Map	Button 2-7		Pad 11 Solo				MutesSolos
+Map	Button 2-8		Pad 12 Solo				MutesSolos
+Map	Button 3-5		Pad 5 Solo				MutesSolos
+Map	Button 3-6		Pad 6 Solo				MutesSolos
+Map	Button 3-7		Pad 7 Solo				MutesSolos
+Map	Button 3-8		Pad 8 Solo				MutesSolos
+Map	Button 4-5		Pad 1 Solo				MutesSolos
+Map	Button 4-6		Pad 2 Solo				MutesSolos
+Map	Button 4-7		Pad 3 Solo				MutesSolos
+Map	Button 4-8		Pad 4 Solo				MutesSolos
+// Drum 1
+Map	PageName		"Drum 1" 				Drum1
+Map	Button 5-1		Page=Drum13			Drum1
+Map	Button 5-2		Page=Drum14			Drum1
+Map	Button 5-3		Page=Drum15			Drum1
+Map	Button 5-4		Page=Drum16			Drum1
+Map	Button 6-1		Page=Drum9			Drum1
+Map	Button 6-2		Page=Drum10			Drum1
+Map	Button 6-3		Page=Drum11			Drum1
+Map	Button 6-4		Page=Drum12			Drum1
+Map	Button 7-1		Page=Drum5			Drum1
+Map	Button 7-2		Page=Drum6			Drum1
+Map	Button 7-3		Page=Drum7			Drum1
+Map	Button 7-4		Page=Drum8			Drum1
+Map	Button 8-1		Page=Drum1			Drum1
+Map	Button 8-2		Page=Drum2			Drum1
+Map	Button 8-3		Page=Drum3			Drum1
+Map	Button 8-4		Page=Drum4			Drum1
+Map	Knob V6		Drum 1 Tone				Drum1
+Map	Knob V7		Drum 1 Pan				Drum1
+Map	Fader 8		Drum 1 Level				Drum1
+// Drum 2
+Map	PageName		"Drum 2" 				Drum2
+Map	Button 5-1		Page=Drum13			Drum2
+Map	Button 5-2		Page=Drum14			Drum2
+Map	Button 5-3		Page=Drum15			Drum2
+Map	Button 5-4		Page=Drum16			Drum2
+Map	Button 6-1		Page=Drum9			Drum2
+Map	Button 6-2		Page=Drum10			Drum2
+Map	Button 6-3		Page=Drum11			Drum2
+Map	Button 6-4		Page=Drum12			Drum2
+Map	Button 7-1		Page=Drum5			Drum2
+Map	Button 7-2		Page=Drum6			Drum2
+Map	Button 7-3		Page=Drum7			Drum2
+Map	Button 7-4		Page=Drum8			Drum2
+Map	Button 8-1		Page=Drum1			Drum2
+Map	Button 8-2		Page=Drum2			Drum2
+Map	Button 8-3		Page=Drum3			Drum2
+Map	Button 8-4		Page=Drum4			Drum2
+// Drum 3
+Map	PageName		"Drum 3" 				Drum3
+Map	Button 5-1		Page=Drum13			Drum3
+Map	Button 5-2		Page=Drum14			Drum3
+Map	Button 5-3		Page=Drum15			Drum3
+Map	Button 5-4		Page=Drum16			Drum3
+Map	Button 6-1		Page=Drum9			Drum3
+Map	Button 6-2		Page=Drum10			Drum3
+Map	Button 6-3		Page=Drum11			Drum3
+Map	Button 6-4		Page=Drum12			Drum3
+Map	Button 7-1		Page=Drum5			Drum3
+Map	Button 7-2		Page=Drum6			Drum3
+Map	Button 7-3		Page=Drum7			Drum3
+Map	Button 7-4		Page=Drum8			Drum3
+Map	Button 8-1		Page=Drum1			Drum3
+Map	Button 8-2		Page=Drum2			Drum3
+Map	Button 8-3		Page=Drum3			Drum3
+Map	Button 8-4		Page=Drum4			Drum3
+// Drum 4
+Map	PageName		"Drum 4" 				Drum4
+Map	Button 5-1		Page=Drum13			Drum4
+Map	Button 5-2		Page=Drum14			Drum4
+Map	Button 5-3		Page=Drum15			Drum4
+Map	Button 5-4		Page=Drum16			Drum4
+Map	Button 6-1		Page=Drum9			Drum4
+Map	Button 6-2		Page=Drum10			Drum4
+Map	Button 6-3		Page=Drum11			Drum4
+Map	Button 6-4		Page=Drum12			Drum4
+Map	Button 7-1		Page=Drum5			Drum4
+Map	Button 7-2		Page=Drum6			Drum4
+Map	Button 7-3		Page=Drum7			Drum4
+Map	Button 7-4		Page=Drum8			Drum4
+Map	Button 8-1		Page=Drum1			Drum4
+Map	Button 8-2		Page=Drum2			Drum4
+Map	Button 8-3		Page=Drum3			Drum4
+Map	Button 8-4		Page=Drum4			Drum4
+// Drum 5
+Map	PageName		"Drum 5" 				Drum5
+Map	Button 5-1		Page=Drum13			Drum5
+Map	Button 5-2		Page=Drum14			Drum5
+Map	Button 5-3		Page=Drum15			Drum5
+Map	Button 5-4		Page=Drum16			Drum5
+Map	Button 6-1		Page=Drum9			Drum5
+Map	Button 6-2		Page=Drum10			Drum5
+Map	Button 6-3		Page=Drum11			Drum5
+Map	Button 6-4		Page=Drum12			Drum5
+Map	Button 7-1		Page=Drum5			Drum5
+Map	Button 7-2		Page=Drum6			Drum5
+Map	Button 7-3		Page=Drum7			Drum5
+Map	Button 7-4		Page=Drum8			Drum5
+Map	Button 8-1		Page=Drum1			Drum5
+Map	Button 8-2		Page=Drum2			Drum5
+Map	Button 8-3		Page=Drum3			Drum5
+Map	Button 8-4		Page=Drum4			Drum5
+// Drum 6
+Map	PageName		"Drum 6" 				Drum6
+Map	Button 5-1		Page=Drum13			Drum6
+Map	Button 5-2		Page=Drum14			Drum6
+Map	Button 5-3		Page=Drum15			Drum6
+Map	Button 5-4		Page=Drum16			Drum6
+Map	Button 6-1		Page=Drum9			Drum6
+Map	Button 6-2		Page=Drum10			Drum6
+Map	Button 6-3		Page=Drum11			Drum6
+Map	Button 6-4		Page=Drum12			Drum6
+Map	Button 7-1		Page=Drum5			Drum6
+Map	Button 7-2		Page=Drum6			Drum6
+Map	Button 7-3		Page=Drum7			Drum6
+Map	Button 7-4		Page=Drum8			Drum6
+Map	Button 8-1		Page=Drum1			Drum6
+Map	Button 8-2		Page=Drum2			Drum6
+Map	Button 8-3		Page=Drum3			Drum6
+Map	Button 8-4		Page=Drum4			Drum6
+// Drum 7
+Map	PageName		"Drum 7" 				Drum7
+Map	Button 5-1		Page=Drum13			Drum7
+Map	Button 5-2		Page=Drum14			Drum7
+Map	Button 5-3		Page=Drum15			Drum7
+Map	Button 5-4		Page=Drum16			Drum7
+Map	Button 6-1		Page=Drum9			Drum7
+Map	Button 6-2		Page=Drum10			Drum7
+Map	Button 6-3		Page=Drum11			Drum7
+Map	Button 6-4		Page=Drum12			Drum7
+Map	Button 7-1		Page=Drum5			Drum7
+Map	Button 7-2		Page=Drum6			Drum7
+Map	Button 7-3		Page=Drum7			Drum7
+Map	Button 7-4		Page=Drum8			Drum7
+Map	Button 8-1		Page=Drum1			Drum7
+Map	Button 8-2		Page=Drum2			Drum7
+Map	Button 8-3		Page=Drum3			Drum7
+Map	Button 8-4		Page=Drum4			Drum7
+// Drum 8
+Map	PageName		"Drum 8" 				Drum8
+Map	Button 5-1		Page=Drum13			Drum8
+Map	Button 5-2		Page=Drum14			Drum8
+Map	Button 5-3		Page=Drum15			Drum8
+Map	Button 5-4		Page=Drum16			Drum8
+Map	Button 6-1		Page=Drum9			Drum8
+Map	Button 6-2		Page=Drum10			Drum8
+Map	Button 6-3		Page=Drum11			Drum8
+Map	Button 6-4		Page=Drum12			Drum8
+Map	Button 7-1		Page=Drum5			Drum8
+Map	Button 7-2		Page=Drum6			Drum8
+Map	Button 7-3		Page=Drum7			Drum8
+Map	Button 7-4		Page=Drum8			Drum8
+Map	Button 8-1		Page=Drum1			Drum8
+Map	Button 8-2		Page=Drum2			Drum8
+Map	Button 8-3		Page=Drum3			Drum8
+Map	Button 8-4		Page=Drum4			Drum8
+// Drum 9
+Map	PageName		"Drum 9" 				Drum9
+Map	Button 5-1		Page=Drum13			Drum9
+Map	Button 5-2		Page=Drum14			Drum9
+Map	Button 5-3		Page=Drum15			Drum9
+Map	Button 5-4		Page=Drum16			Drum9
+Map	Button 6-1		Page=Drum9			Drum9
+Map	Button 6-2		Page=Drum10			Drum9
+Map	Button 6-3		Page=Drum11			Drum9
+Map	Button 6-4		Page=Drum12			Drum9
+Map	Button 7-1		Page=Drum5			Drum9
+Map	Button 7-2		Page=Drum6			Drum9
+Map	Button 7-3		Page=Drum7			Drum9
+Map	Button 7-4		Page=Drum8			Drum9
+Map	Button 8-1		Page=Drum1			Drum9
+Map	Button 8-2		Page=Drum2			Drum9
+Map	Button 8-3		Page=Drum3			Drum9
+Map	Button 8-4		Page=Drum4			Drum9
+// Drum 10
+Map	PageName		"Drum 10" 				Drum10
+Map	Button 5-1		Page=Drum13			Drum10
+Map	Button 5-2		Page=Drum14			Drum10
+Map	Button 5-3		Page=Drum15			Drum10
+Map	Button 5-4		Page=Drum16			Drum10
+Map	Button 6-1		Page=Drum9			Drum10
+Map	Button 6-2		Page=Drum10			Drum10
+Map	Button 6-3		Page=Drum11			Drum10
+Map	Button 6-4		Page=Drum12			Drum10
+Map	Button 7-1		Page=Drum5			Drum10
+Map	Button 7-2		Page=Drum6			Drum10
+Map	Button 7-3		Page=Drum7			Drum10
+Map	Button 7-4		Page=Drum8			Drum10
+Map	Button 8-1		Page=Drum1			Drum10
+Map	Button 8-2		Page=Drum2			Drum10
+Map	Button 8-3		Page=Drum3			Drum10
+Map	Button 8-4		Page=Drum4			Drum10
+// Drum 11
+Map	PageName		"Drum 11" 				Drum11
+Map	Button 5-1		Page=Drum13			Drum11
+Map	Button 5-2		Page=Drum14			Drum11
+Map	Button 5-3		Page=Drum15			Drum11
+Map	Button 5-4		Page=Drum16			Drum11
+Map	Button 6-1		Page=Drum9			Drum11
+Map	Button 6-2		Page=Drum10			Drum11
+Map	Button 6-3		Page=Drum11			Drum11
+Map	Button 6-4		Page=Drum12			Drum11
+Map	Button 7-1		Page=Drum5			Drum11
+Map	Button 7-2		Page=Drum6			Drum11
+Map	Button 7-3		Page=Drum7			Drum11
+Map	Button 7-4		Page=Drum8			Drum11
+Map	Button 8-1		Page=Drum1			Drum11
+Map	Button 8-2		Page=Drum2			Drum11
+Map	Button 8-3		Page=Drum3			Drum11
+Map	Button 8-4		Page=Drum4			Drum11
+// Drum 12
+Map	PageName		"Drum 12" 				Drum12
+Map	Button 5-1		Page=Drum13			Drum12
+Map	Button 5-2		Page=Drum14			Drum12
+Map	Button 5-3		Page=Drum15			Drum12
+Map	Button 5-4		Page=Drum16			Drum12
+Map	Button 6-1		Page=Drum9			Drum12
+Map	Button 6-2		Page=Drum10			Drum12
+Map	Button 6-3		Page=Drum11			Drum12
+Map	Button 6-4		Page=Drum12			Drum12
+Map	Button 7-1		Page=Drum5			Drum12
+Map	Button 7-2		Page=Drum6			Drum12
+Map	Button 7-3		Page=Drum7			Drum12
+Map	Button 7-4		Page=Drum8			Drum12
+Map	Button 8-1		Page=Drum1			Drum12
+Map	Button 8-2		Page=Drum2			Drum12
+Map	Button 8-3		Page=Drum3			Drum12
+Map	Button 8-4		Page=Drum4			Drum12
+// Drum 13
+Map	PageName		"Drum 13" 				Drum13
+Map	Button 5-1		Page=Drum13			Drum13
+Map	Button 5-2		Page=Drum14			Drum13
+Map	Button 5-3		Page=Drum15			Drum13
+Map	Button 5-4		Page=Drum16			Drum13
+Map	Button 6-1		Page=Drum9			Drum13
+Map	Button 6-2		Page=Drum10			Drum13
+Map	Button 6-3		Page=Drum11			Drum13
+Map	Button 6-4		Page=Drum12			Drum13
+Map	Button 7-1		Page=Drum5			Drum13
+Map	Button 7-2		Page=Drum6			Drum13
+Map	Button 7-3		Page=Drum7			Drum13
+Map	Button 7-4		Page=Drum8			Drum13
+Map	Button 8-1		Page=Drum1			Drum13
+Map	Button 8-2		Page=Drum2			Drum13
+Map	Button 8-3		Page=Drum3			Drum13
+Map	Button 8-4		Page=Drum4			Drum13
+// Drum 14
+Map	PageName		"Drum 14" 				Drum14
+Map	Button 5-1		Page=Drum13			Drum14
+Map	Button 5-2		Page=Drum14			Drum14
+Map	Button 5-3		Page=Drum15			Drum14
+Map	Button 5-4		Page=Drum16			Drum14
+Map	Button 6-1		Page=Drum9			Drum14
+Map	Button 6-2		Page=Drum10			Drum14
+Map	Button 6-3		Page=Drum11			Drum14
+Map	Button 6-4		Page=Drum12			Drum14
+Map	Button 7-1		Page=Drum5			Drum14
+Map	Button 7-2		Page=Drum6			Drum14
+Map	Button 7-3		Page=Drum7			Drum14
+Map	Button 7-4		Page=Drum8			Drum14
+Map	Button 8-1		Page=Drum1			Drum14
+Map	Button 8-2		Page=Drum2			Drum14
+Map	Button 8-3		Page=Drum3			Drum14
+Map	Button 8-4		Page=Drum4			Drum14
+// Drum 15
+Map	PageName		"Drum 15" 				Drum15
+Map	Button 5-1		Page=Drum13			Drum15
+Map	Button 5-2		Page=Drum14			Drum15
+Map	Button 5-3		Page=Drum15			Drum15
+Map	Button 5-4		Page=Drum16			Drum15
+Map	Button 6-1		Page=Drum9			Drum15
+Map	Button 6-2		Page=Drum10			Drum15
+Map	Button 6-3		Page=Drum11			Drum15
+Map	Button 6-4		Page=Drum12			Drum15
+Map	Button 7-1		Page=Drum5			Drum15
+Map	Button 7-2		Page=Drum6			Drum15
+Map	Button 7-3		Page=Drum7			Drum15
+Map	Button 7-4		Page=Drum8			Drum15
+Map	Button 8-1		Page=Drum1			Drum15
+Map	Button 8-2		Page=Drum2			Drum15
+Map	Button 8-3		Page=Drum3			Drum15
+Map	Button 8-4		Page=Drum4			Drum15
+// Drum 16
+Map	PageName		"Drum 16" 				Drum16
+Map	Button 5-1		Page=Drum13			Drum16
+Map	Button 5-2		Page=Drum14			Drum16
+Map	Button 5-3		Page=Drum15			Drum16
+Map	Button 5-4		Page=Drum16			Drum16
+Map	Button 6-1		Page=Drum9			Drum16
+Map	Button 6-2		Page=Drum10			Drum16
+Map	Button 6-3		Page=Drum11			Drum16
+Map	Button 6-4		Page=Drum12			Drum16
+Map	Button 7-1		Page=Drum5			Drum16
+Map	Button 7-2		Page=Drum6			Drum16
+Map	Button 7-3		Page=Drum7			Drum16
+Map	Button 7-4		Page=Drum8			Drum16
+Map	Button 8-1		Page=Drum1			Drum16
+Map	Button 8-2		Page=Drum2			Drum16
+Map	Button 8-3		Page=Drum3			Drum16
+Map	Button 8-4		Page=Drum4			Drum16
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	SubTractor Analog Synthesizer
+Define Group	Page	Main	Osc1	Osc2	Noise	Filter	Filter2	FilterEnv	ModEnv	AmpEnv	LFO1	LFO2	Velocity1	Velocity2	ModWheel	ExtMod	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Subtractor"
+Map	PatchName		Patch Name
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=AmpEnv			Index
+Map	Button 2-1		Page=Osc1			Index
+Map	Button 3-1		Page=Osc2			Index
+Map	Button 4-1		Page=Noise			Index
+Map	Button 2-4		Page=Filter			Index
+Map	Button 3-4		Page=Filter2			Index
+Map	Button 2-5		Page=FilterEnv			Index
+Map	Button 5-4		Page=LFO1			Index
+Map	Button 6-4		Page=LFO2			Index
+Map	Button 7-4		Page=ModEnv			Index
+Map	Button 8-5		Page=Velocity1			Index
+Map	Button 8-6		Page=Velocity2			Index
+Map	Button 8-7		Page=ModWheel			Index
+Map	Button 8-8		Page=ExtMod			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Button 1-1		Page=Main			Main
+Map	Button 2-1		Page=Osc1			Main
+Map	Button 3-1		Page=Osc2			Main
+Map	Button 4-1		Page=Noise			Main
+Map	Button 5-1		Page=Filter			Main
+Map	Button 8-3		Key Mode			Main
+Map	Fader 4		Portamento				Main
+Map	UDVButton 7-5_8-5		Polyphony			Main
+Map	Fader 8		Master Level				Main
+// Osc 1
+Map	PageName		"Osc 1" 				Osc1
+Map	Button 1-1		Page=Main			Osc1
+Map	Button 2-1		Page=Osc1			Osc1
+Map	Button 3-1		Page=Osc2			Osc1
+Map	Button 4-1		Page=Noise			Osc1
+Map	Button 5-1		Page=Filter			Osc1
+Map	Knob V2		Osc1 Phase Diff			Osc1
+Map	UDVButton 3-3_4-3		Osc1 Wave			Osc1
+Map	Button 6-3		Osc1 Phase Mode			Osc1
+Map	Button 8-3		Osc1 Kbd Track			Osc1
+Map	UDVButton 3-4_4-4		Osc1 Octave			Osc1
+Map	UDVButton 3-5_4-5		Osc1 Semitone			Osc1
+Map	UDVButton 3-6_4-6		Osc1 Fine Tune			Osc1
+Map	Button 8-6		Ring Mod			Osc1
+Map	Fader 7		FM Amount			Osc1
+Map	Knob V8		Osc Mix			Osc1
+// Osc 2
+Map	PageName		"Osc 2" 				Osc2
+Map	Button 1-1		Page=Main			Osc2
+Map	Button 2-1		Page=Osc1			Osc2
+Map	Button 3-1		Page=Osc2			Osc2
+Map	Button 4-1		Page=Noise			Osc2
+Map	Button 5-1		Page=Filter			Osc2
+Map	Button 8-1		Osc2 On/Off			Osc2
+Map	Knob V2		Osc2 Phase Diff			Osc2
+Map	UDVButton 3-3_4-3		Osc2 Wave			Osc2
+Map	Button 6-3		Osc2 Phase Mode			Osc2
+Map	Button 8-3		Osc2 Kbd Track			Osc2
+Map	UDVButton 3-4_4-4		Osc2 Octave			Osc2
+Map	UDVButton 3-5_4-5		Osc2 Semitone			Osc2
+Map	UDVButton 3-6_4-6		Osc2 Fine Tune			Osc2
+Map	Button 8-6		Ring Mod			Osc2
+Map	Fader 7		FM Amount			Osc2
+Map	Knob V8		Osc Mix			Osc2
+// Noise
+Map	PageName		"Noise" 				Noise
+Map	Button 1-1		Page=Main			Noise
+Map	Button 2-1		Page=Osc1			Noise
+Map	Button 3-1		Page=Osc2			Noise
+Map	Button 4-1		Page=Noise			Noise
+Map	Button 5-1		Page=Filter			Noise
+Map	Button 8-1		Noise On/Off			Noise
+Map	Fader 2		Noise Decay			Noise
+Map	Fader 3		Noise Color			Noise
+Map	Fader 4		Noise Level			Noise
+// Filter
+Map	PageName		"Filter" 				Filter
+Map	Button 1-1		Page=Main			Filter
+Map	Button 2-1		Page=Osc1			Filter
+Map	Button 3-1		Page=Osc2			Filter
+Map	Button 4-1		Page=Noise			Filter
+Map	Button 5-1		Page=Filter			Filter
+Map	Fader 2		Filter Freq				Filter
+Map	Fader 3		Filter Res				Filter
+Map	UDVButton 5-4_6-4		Filter Type				Filter
+Map	Fader 5		Filter Kbd Track				Filter
+Map	Button 8-6		Filter Link Freq On/Off				Filter
+// Filter 2
+Map	PageName		"Filter 2" 				Filter2
+Map	Button 1-1		Page=Main			Filter2
+Map	Button 2-1		Page=Osc1			Filter2
+Map	Button 3-1		Page=Osc2			Filter2
+Map	Button 4-1		Page=Noise			Filter2
+Map	Button 5-1		Page=Filter			Filter2
+Map	Button 8-1		Filter2 On/Off			Filter2
+Map	Fader 2		Filter2 Freq				Filter2
+Map	Fader 3		Filter2 Res				Filter2
+// Filter Env
+Map	PageName		"Filter Env" 				FilterEnv
+Map	Button 1-1		Page=Main			FilterEnv
+Map	Button 2-1		Page=Osc1			FilterEnv
+Map	Button 3-1		Page=Osc2			FilterEnv
+Map	Button 4-1		Page=Noise			FilterEnv
+Map	Button 5-1		Page=Filter			FilterEnv
+Map	Fader 3		Filter Env Attack				FilterEnv
+Map	Fader 4		Filter Env Decay				FilterEnv
+Map	Fader 5		Filter Env Sustain				FilterEnv
+Map	Fader 6		Filter Env Release				FilterEnv
+Map	Button 8-7		Filter Env Invert				FilterEnv
+Map	Fader 8		Filter Env Amount				FilterEnv
+// Amp Env
+Map	PageName		"Amp Env" 				AmpEnv
+Map	Button 1-1		Page=Main			AmpEnv
+Map	Button 2-1		Page=Osc1			AmpEnv
+Map	Button 3-1		Page=Osc2			AmpEnv
+Map	Button 4-1		Page=Noise			AmpEnv
+Map	Button 5-1		Page=Filter			AmpEnv
+Map	Fader 3		Amp Env Attack				AmpEnv
+Map	Fader 4		Amp Env Decay				AmpEnv
+Map	Fader 5		Amp Env Sustain				AmpEnv
+Map	Fader 6		Amp Env Release				AmpEnv
+// Mod Env
+Map	PageName		"Mod Env" 				ModEnv
+Map	Button 1-1		Page=Main			ModEnv
+Map	Button 2-1		Page=Osc1			ModEnv
+Map	Button 3-1		Page=Osc2			ModEnv
+Map	Button 4-1		Page=Noise			ModEnv
+Map	Button 5-1		Page=Filter			ModEnv
+Map	Fader 2		Mod Env Attack				ModEnv
+Map	Fader 3		Mod Env Decay				ModEnv
+Map	Fader 4		Mod Env Sustain				ModEnv
+Map	Fader 5		Mod Env Release				ModEnv
+Map	Fader 6		Mod Env Gain				ModEnv
+Map	UDVButton 5-7_6-7		Mod Env Dest				ModEnv
+Map	Button 8-7		Mod Env Invert				ModEnv
+// LFO1
+Map	PageName		"LFO 1" 				LFO1
+Map	Button 1-1		Page=Main			LFO1
+Map	Button 7-1		Page=LFO1			LFO1
+Map	Button 8-1		Page=LFO2			LFO1
+Map	UDVButton 3-2_4-2		LFO1 Wave				LFO1
+Map	UDVButton 7-2_8-2		LFO1 Dest				LFO1
+Map	Fader 3		LFO1 Rate				LFO1
+Map	Fader 4		LFO1 Amount				LFO1
+Map	Button 8-5		LFO Sync Enable				LFO1
+// LFO2
+Map	PageName		"LFO 2" 				LFO2
+Map	Button 1-1		Page=Main			LFO2
+Map	Button 7-1		Page=LFO1			LFO2
+Map	Button 8-1		Page=LFO2			LFO2
+Map	UDVButton 7-2_8-2		LFO2 Dest				LFO2
+Map	Fader 3		LFO2 Rate				LFO2
+Map	Fader 4		LFO2 Amount				LFO2
+Map	Fader 6		LFO2 Delay				LFO2
+Map	Fader 7		LFO2 Kbd Track				LFO2
+// Velocity1
+Map	PageName		"Velocity1" 				Velocity1
+Map	Button 1-1		Page=Main			Velocity1
+Map	Button 2-1		Page=Osc1			Velocity1
+Map	Button 3-1		Page=Osc2			Velocity1
+Map	Button 4-1		Page=Noise			Velocity1
+Map	Button 5-1		Page=Filter			Velocity1
+Map	Knob V3		Amp Vel Amount				Velocity1
+Map	Knob V4		FM Vel Amount				Velocity1
+Map	Knob V5		Mod Env Vel Amount				Velocity1
+Map	Knob V6		Phase Vel Amount				Velocity1
+// Velocity2
+Map	PageName		"Velocity2" 				Velocity2
+Map	Button 1-1		Page=Main			Velocity2
+Map	Button 2-1		Page=Osc1			Velocity2
+Map	Button 3-1		Page=Osc2			Velocity2
+Map	Button 4-1		Page=Noise			Velocity2
+Map	Button 5-1		Page=Filter			Velocity2
+Map	Knob V3		Filter2 Freq Vel Amount				Velocity2
+Map	Knob V4		Filter Env Vel Amount				Velocity2
+Map	Knob V5		Filter Decay Vel Amount				Velocity2
+Map	Knob V6		Mix Vel Amount				Velocity2
+Map	Knob V7		Amp Attack Vel Amount				Velocity2
+// Modwheel
+Map	PageName		"Modwheel" 				Modwheel
+Map	Button 1-1		Page=Main			Modwheel
+Map	Button 2-1		Page=Osc1			Modwheel
+Map	Button 3-1		Page=Osc2			Modwheel
+Map	Button 4-1		Page=Noise			Modwheel
+Map	Button 5-1		Page=Filter			Modwheel
+Map	Knob V3		Filter Freq Mod Wheel Amount				Modwheel
+Map	Knob V4		Filter Res Mod Wheel Amount				Modwheel
+Map	Knob V5		LFO1 Mod Wheel Amount				Modwheel
+Map	Knob V6		Phase Diff Mod Wheel Amount				Modwheel
+Map	Knob V7		FM Mod Wheel Amount				Modwheel
+// ExtMod
+Map	PageName		"ExtMod" 				ExtMod
+Map	Button 1-1		Page=Main			ExtMod
+Map	Button 2-1		Page=Osc1			ExtMod
+Map	Button 3-1		Page=Osc2			ExtMod
+Map	Button 4-1		Page=Noise			ExtMod
+Map	Button 5-1		Page=Filter			ExtMod
+Map	UDVButton 7-2_8-2		Ext Mod Select				ExtMod
+Map	Knob V3		Filter Freq Ext Mod				ExtMod
+Map	Knob V4		LFO1 Ext Mod				ExtMod
+Map	Knob V5		Amp Ext Mod				ExtMod
+Map	Knob V6		FM Ext Mod				ExtMod
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	Matrix Pattern Sequencer
+Define Group	Page	Main	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Matrix"
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Button 3-1		Pattern Enable			Main
+Map	Button 3-5		Bank A			Main
+Map	Button 3-6		Bank B			Main
+Map	Button 3-7		Bank C			Main
+Map	Button 3-8		Bank D			Main
+Map	Button 4-1		Pattern 1			Main
+Map	Button 4-2		Pattern 2			Main
+Map	Button 4-3		Pattern 3			Main
+Map	Button 4-4		Pattern 4			Main
+Map	Button 4-5		Pattern 5			Main
+Map	Button 4-6		Pattern 6			Main
+Map	Button 4-7		Pattern 7			Main
+Map	Button 4-8		Pattern 8			Main
+Map	Button 7-1		Resolution			Main
+Map	Button 8-1		Run			Main
+
+// ------------------------------------------------------------------------------------------
+Scope	Sononics	com.sononics.Revival
+Define Group	Page	Main	Voicing1	Voicing2	PriSec	Solos	Attack	Primary	Secondary	Release	AttackL	AttackU	PrimaryL	PrimaryU	SecondaryL	SecondaryU	ReleaseL	ReleaseU	AttackModEnable	AttackMod1	AttackMod2	AttackMod3	PrimaryModEnable	PrimaryMod1	PrimaryMod2	PrimaryMod3	SecondaryModEnable	SecondaryMod1	SecondaryMod2	SecondaryMod3	ReleaseModEnable	ReleaseMod1	ReleaseMod2	ReleaseMod3	Effects	PreAmp	Phaser	ModFilter	Speaker	Reverb	Delay	Index	Internal
+Define Group	TempoSync	Free	Sync
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Revival"
+Map	PatchName		Patch Name
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=Voicing1			Index
+Map	Button 1-3		Page=Voicing2			Index
+Map	Button 1-4		Page=PriSec			Index
+Map	Button 1-5		Page=Solos			Index
+Map	Button 2-1		Page=Attack			Index
+Map	Button 3-1		Page=Primary			Index
+Map	Button 4-1		Page=Secondary			Index
+Map	Button 5-1		Page=Release			Index
+Map	Button 2-2		Page=AttackL			Index
+Map	Button 3-2		Page=PrimaryL			Index
+Map	Button 4-2		Page=SecondaryL			Index
+Map	Button 5-2		Page=ReleaseL			Index
+Map	Button 2-3		Page=AttackU			Index
+Map	Button 3-3		Page=PrimaryU			Index
+Map	Button 4-3		Page=SecondaryU			Index
+Map	Button 5-3		Page=ReleaseU			Index
+Map	Button 2-4		Page=AttackModEnable			Index
+Map	Button 3-4		Page=PrimaryModEnable			Index
+Map	Button 4-4		Page=PrimaryModEnable			Index
+Map	Button 5-4		Page=ReleaseModEnable			Index
+Map	Button 2-5		Page=AttackMod1			Index
+Map	Button 3-5		Page=PrimaryMod1			Index
+Map	Button 5-5		Page=ReleaseMod1			Index
+Map	Button 4-5		Page=SecondaryMod1			Index
+Map	Button 2-6		Page=AttackMod2			Index
+Map	Button 3-6		Page=PrimaryMod2			Index
+Map	Button 4-6		Page=SecondaryMod2			Index
+Map	Button 5-6		Page=ReleaseMod2			Index
+Map	Button 2-7		Page=AttackMod3			Index
+Map	Button 3-7		Page=PrimaryMod3			Index
+Map	Button 4-7		Page=SecondaryMod3			Index
+Map	Button 5-7		Page=ReleaseMod3			Index
+Map	Button 1-8		Page=Effects			Index
+Map	Button 2-8		Page=PreAmp			Index
+Map	Button 3-8		Page=Phaser			Index
+Map	Button 4-8		Page=ModFilter			Index
+Map	Button 5-8		Page=Speaker			Index
+Map	Button 6-8		Page=Reverb			Index
+Map	Button 7-8		Page=Delay			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Button 1-1		Note On Indicator			Main
+Map	Button 6-2		S1 Switch			Main
+Map	Button 6-3		S2 Switch			Main
+Map	Button 7-2		Attack Enable Switch			Main
+Map	Button 7-3		Vib/Trem Enable Switch			Main
+Map	Button 8-2		Rotator Speed Switch			Main
+Map	Button 8-3		Rotator Brake Switch			Main
+Map	Fader 4		R1 Knob				Main
+Map	Fader 5		R2 Knob				Main
+Map	BigFader 8		Volume				Main
+// Voicing 1
+Map	PageName		"Voicing 1" 				Voicing1
+Map	Button 2-1		Voicing Monophonic Mode			Voicing1
+Map	UDVButton 3-1_4-1		Voicing Transpose Amount			Voicing1
+Map	UDVButton 5-1_6-1		Voicing Pitch Bend Range			Voicing1
+Map	UDVButton 1-2_2-2		Voicing Overtone Type			Voicing1
+Map	UDVButton 3-2_4-2		Voicing Overlay Type			Voicing1
+Map	UDVButton 5-2_6-2		Voicing Velocity Type			Voicing1
+Map	UDVButton 7-2_8-2		Voicing Click Type			Voicing1
+Map	Fader 4		Voicing Attack First/All				Voicing1
+Map	Fader 7		Voicing Portamento Rate				Voicing1
+Map	UDVButton 7-8_8-8		Voicing Portamento Mode			Voicing1
+// Voicing 2
+Map	PageName		"Voicing 2" 				Voicing2
+Map	Fader 1		Voicing Velocity Sensitivity				Voicing2
+Map	Fader 2		Voicing Chorus Depth				Voicing2
+Map	Fader 3		Voicing Decay Keyboard Track				Voicing2
+Map	Fader 6		Voicing Vibrato Depth				Voicing2
+Map	Fader 7		Voicing Tremolo Depth				Voicing2
+Map	Fader 8		Voicing Vibrato/Tremolo Rate				Voicing2
+// Pri/Sec
+Map	PageName		"Pri/Sec" 				PriSec
+Map	Button 1-2		Pri/Sec Fade Mode			PriSec
+Map	UDVButton 1-3_2-3		Pri/Sec AutoFade Type			PriSec
+Map	Knob V4		Pri/Sec AutoFade CrossFade			PriSec
+Map	Fader 6		Pri/Sec AutoFade Rate			PriSec
+Map	Button 1-7		Pri/Sec Keep Primary			PriSec
+// Solos
+Map	PageName		"Solos" 				Solos
+Map	Button 1-1		Page=Main			Solos
+Map	Button 2-1		Page=Attack			Solos
+Map	Button 3-1		Page=Primary			Solos
+Map	Button 4-1		Page=Secondary			Solos
+Map	Button 5-1		Page=Release			Solos
+Map	UDVButton 1-2_2-2		Drawbar Solo			Solos
+Map	Button 8-2		Attack Section Solo			Solos
+Map	Button 8-4		Primary Section Solo			Solos
+Map	Button 8-6		Secondary Section Solo			Solos
+Map	Button 8-8		Release Section Solo			Solos
+// Attack
+Map	PageName		"Attack" 				Attack
+Map	Button 2-1		Page=Attack			Attack
+Map	Button 3-1		Page=Primary			Attack
+Map	Button 4-1		Page=Secondary			Attack
+Map	Button 5-1		Page=Release			Attack
+Map	UDVButton 1-2_2-2		Attack Wave Set			Attack
+Map	Fader 3		Attack Section Gain Adjust				Attack
+Map	Fader 5		Attack Section Click				Attack
+Map	Fader 6		Attack Section Attack Rate				Attack
+Map	Fader 7		Attack Section Decay Rate				Attack
+Map	Button 1-8		Attack Section FX Bypass			Attack
+// Primary
+Map	PageName		"Primary" 				Primary
+Map	Button 2-1		Page=Attack			Primary
+Map	Button 3-1		Page=Primary			Primary
+Map	Button 4-1		Page=Secondary			Primary
+Map	Button 5-1		Page=Release			Primary
+Map	UDVButton 1-2_2-2		Primary Wave Set			Primary
+Map	Fader 3		Primary Section Gain Adjust				Primary
+Map	Fader 7		Primary Section Decay Rate				Primary
+// Secondary
+Map	PageName		"Secondary" 				Secondary
+Map	Button 2-1		Page=Attack			Secondary
+Map	Button 3-1		Page=Primary			Secondary
+Map	Button 4-1		Page=Secondary			Secondary
+Map	Button 5-1		Page=Release			Secondary
+Map	UDVButton 1-2_2-2		Secondary Wave Set			Secondary
+Map	Fader 3		Secondary Section Gain Adjust				Secondary
+Map	Fader 7		Secondary Section Decay Rate				Secondary
+// Release
+Map	PageName		"Release" 				Release
+Map	Button 2-1		Page=Attack			Release
+Map	Button 3-1		Page=Primary			Release
+Map	Button 4-1		Page=Secondary			Release
+Map	Button 5-1		Page=Release			Release
+Map	UDVButton 1-2_2-2		Release Wave Set			Release
+Map	Fader 3		Release Section Gain Adjust				Release
+Map	Fader 5		Release Section Click				Release
+Map	Fader 6		Release Section Attack Rate				Release
+Map	Fader 7		Release Section Decay Rate				Release
+Map	Button 1-8		Release Decay All Sections			Release
+// Attack Drawbars Lower
+Map	PageName		"Attack Drawbars Lower" 				AttackL
+Map	Button 1-1		Page=Main			AttackL
+Map	Button 2-1		Page=AttackL			AttackL
+Map	Button 3-1		Page=PrimaryL			AttackL
+Map	Button 4-1		Page=SecondaryL			AttackL
+Map	Button 5-1		Page=ReleaseL			AttackL
+Map	Button 8-1		Page=AttackU			AttackL
+Map	Drawbar 2		Attack Drawbar 1				AttackL
+Map	Drawbar 3		Attack Drawbar 2				AttackL
+Map	Drawbar 4		Attack Drawbar 3				AttackL
+Map	Drawbar 5		Attack Drawbar 4				AttackL
+Map	Drawbar 6		Attack Drawbar 5				AttackL
+Map	Drawbar 7		Attack Drawbar 6				AttackL
+Map	Drawbar 8		Attack Drawbar 7				AttackL
+// Attack Drawbars Upper
+Map	PageName		"Attack Drawbars Upper" 				AttackU
+Map	Button 1-1		Page=Main			AttackU
+Map	Button 2-1		Page=AttackU			AttackU
+Map	Button 3-1		Page=PrimaryL			AttackU
+Map	Button 4-1		Page=SecondaryL			AttackU
+Map	Button 5-1		Page=ReleaseL			AttackU
+Map	Button 8-1		Page=AttackL			AttackU
+Map	Drawbar 2		Attack Drawbar 8				AttackU
+Map	Drawbar 3		Attack Drawbar 9				AttackU
+Map	Drawbar 4		Attack Drawbar 10				AttackU
+// Primary Drawbars Lower
+Map	PageName		"Primary Drawbars Lower" 				PrimaryL
+Map	Button 1-1		Page=Main			PrimaryL
+Map	Button 2-1		Page=AttackL			PrimaryL
+Map	Button 3-1		Page=PrimaryL			PrimaryL
+Map	Button 4-1		Page=SecondaryL			PrimaryL
+Map	Button 5-1		Page=ReleaseL			PrimaryL
+Map	Button 8-1		Page=PrimaryU			PrimaryL
+Map	Drawbar 2		Primary Drawbar 1				PrimaryL
+Map	Drawbar 3		Primary Drawbar 2				PrimaryL
+Map	Drawbar 4		Primary Drawbar 3				PrimaryL
+Map	Drawbar 5		Primary Drawbar 4				PrimaryL
+Map	Drawbar 6		Primary Drawbar 5				PrimaryL
+Map	Drawbar 7		Primary Drawbar 6				PrimaryL
+Map	Drawbar 8		Primary Drawbar 7				PrimaryL
+// Primary Drawbars Upper
+Map	PageName		"Primary Drawbars Upper" 				PrimaryU
+Map	Button 1-1		Page=Main			PrimaryU
+Map	Button 2-1		Page=AttackL			PrimaryU
+Map	Button 3-1		Page=PrimaryU			PrimaryU
+Map	Button 4-1		Page=SecondaryL			PrimaryU
+Map	Button 5-1		Page=ReleaseL			PrimaryU
+Map	Button 8-1		Page=PrimaryL			PrimaryU
+Map	Drawbar 2		Primary Drawbar 8				PrimaryU
+Map	Drawbar 3		Primary Drawbar 9				PrimaryU
+Map	Drawbar 4		Primary Drawbar 10				PrimaryU
+// Secondary Drawbar5 Lower
+Map	PageName		"Secondary Drawbars Lower" 				SecondaryL
+Map	Button 1-1		Page=Main			SecondaryL
+Map	Button 2-1		Page=AttackL			SecondaryL
+Map	Button 3-1		Page=PrimaryL			SecondaryL
+Map	Button 4-1		Page=SecondaryL			SecondaryL
+Map	Button 5-1		Page=ReleaseL			SecondaryL
+Map	Button 8-1		Page=SecondaryU			SecondaryL
+Map	Drawbar 2		Secondary Drawbar 1				SecondaryL
+Map	Drawbar 3		Secondary Drawbar 2				SecondaryL
+Map	Drawbar 4		Secondary Drawbar 3				SecondaryL
+Map	Drawbar 5		Secondary Drawbar 4				SecondaryL
+Map	Drawbar 6		Secondary Drawbar 5				SecondaryL
+Map	Drawbar 7		Secondary Drawbar 6				SecondaryL
+Map	Drawbar 8		Secondary Drawbar 7				SecondaryL
+// Secondary Drawbar5 Upper
+Map	PageName		"Secondary Drawbars Upper" 				SecondaryU
+Map	Button 1-1		Page=Main			SecondaryU
+Map	Button 2-1		Page=AttackL			SecondaryU
+Map	Button 3-1		Page=PrimaryL			SecondaryU
+Map	Button 4-1		Page=SecondaryU			SecondaryU
+Map	Button 5-1		Page=ReleaseL			SecondaryU
+Map	Button 8-1		Page=SecondaryL			SecondaryU
+Map	Drawbar 2		Secondary Drawbar 8				SecondaryU
+Map	Drawbar 3		Secondary Drawbar 9				SecondaryU
+Map	Drawbar 4		Secondary Drawbar 10				SecondaryU
+// Release Drawbars Lower
+Map	PageName		"Release Drawbars Lower" 				ReleaseL
+Map	Button 1-1		Page=Main			ReleaseL
+Map	Button 2-1		Page=AttackL			ReleaseL
+Map	Button 3-1		Page=PrimaryL			ReleaseL
+Map	Button 4-1		Page=SecondaryL			ReleaseL
+Map	Button 5-1		Page=ReleaseL			ReleaseL
+Map	Button 8-1		Page=ReleaseU			ReleaseL
+Map	Drawbar 2		Release Drawbar 1				ReleaseL
+Map	Drawbar 3		Release Drawbar 2				ReleaseL
+Map	Drawbar 4		Release Drawbar 3				ReleaseL
+Map	Drawbar 5		Release Drawbar 4				ReleaseL
+Map	Drawbar 6		Release Drawbar 5				ReleaseL
+Map	Drawbar 7		Release Drawbar 6				ReleaseL
+Map	Drawbar 8		Release Drawbar 7				ReleaseL
+// Release Drawbar5 Upper
+Map	PageName		"Release Drawbars Upper" 				ReleaseU
+Map	Button 1-1		Page=Main			ReleaseU
+Map	Button 2-1		Page=AttackL			ReleaseU
+Map	Button 3-1		Page=PrimaryL			ReleaseU
+Map	Button 4-1		Page=SecondaryL			ReleaseU
+Map	Button 5-1		Page=ReleaseU			ReleaseU
+Map	Button 8-1		Page=ReleaseL			ReleaseU
+Map	Drawbar 2		Release Drawbar 8				ReleaseU
+Map	Drawbar 3		Release Drawbar 9				ReleaseU
+Map	Drawbar 4		Release Drawbar 10				ReleaseU
+// Attack Mod Enable
+Map	PageName		"Attack Mod Enable" 				AttackModEnable
+Map	Button 1-1		Page=Main			AttackModEnable
+Map	Button 2-1		Page=AttackModEnable			AttackModEnable
+Map	Button 3-1		Page=PrimaryModEnable			AttackModEnable
+Map	Button 4-1		Page=SecondaryModEnable			AttackModEnable
+Map	Button 5-1		Page=ReleaseModEnable			AttackModEnable
+Map	Button 6-1		Page=AttackMod1			AttackModEnable
+Map	Button 7-1		Page=AttackMod2			AttackModEnable
+Map	Button 8-1		Page=AttackMod3			AttackModEnable
+Map	Button 1-2		Attack Mod3 Enable 1			AttackModEnable
+Map	Button 1-3		Attack Mod3 Enable 2			AttackModEnable
+Map	Button 1-4		Attack Mod3 Enable 3			AttackModEnable
+Map	Button 1-5		Attack Mod3 Enable 4			AttackModEnable
+Map	Button 1-6		Attack Mod3 Enable 5			AttackModEnable
+Map	Button 1-7		Attack Mod3 Enable 6			AttackModEnable
+Map	Button 1-8		Attack Mod3 Enable 7			AttackModEnable
+Map	Button 2-2		Attack Mod3 Enable 8			AttackModEnable
+Map	Button 2-3		Attack Mod3 Enable 9			AttackModEnable
+Map	Button 2-4		Attack Mod3 Enable 10			AttackModEnable
+Map	Button 3-2		Attack Mod2 Enable 1			AttackModEnable
+Map	Button 3-3		Attack Mod2 Enable 2			AttackModEnable
+Map	Button 3-4		Attack Mod2 Enable 3			AttackModEnable
+Map	Button 3-5		Attack Mod2 Enable 4			AttackModEnable
+Map	Button 3-6		Attack Mod2 Enable 5			AttackModEnable
+Map	Button 3-7		Attack Mod2 Enable 6			AttackModEnable
+Map	Button 3-8		Attack Mod2 Enable 7			AttackModEnable
+Map	Button 4-2		Attack Mod2 Enable 8			AttackModEnable
+Map	Button 4-3		Attack Mod2 Enable 9			AttackModEnable
+Map	Button 4-4		Attack Mod2 Enable 10			AttackModEnable
+Map	Button 5-2		Attack Mod1 Enable 1			AttackModEnable
+Map	Button 5-3		Attack Mod1 Enable 2			AttackModEnable
+Map	Button 5-4		Attack Mod1 Enable 3			AttackModEnable
+Map	Button 5-5		Attack Mod1 Enable 4			AttackModEnable
+Map	Button 5-6		Attack Mod1 Enable 5			AttackModEnable
+Map	Button 5-7		Attack Mod1 Enable 6			AttackModEnable
+Map	Button 5-8		Attack Mod1 Enable 7			AttackModEnable
+Map	Button 6-2		Attack Mod1 Enable 8			AttackModEnable
+Map	Button 6-3		Attack Mod1 Enable 9			AttackModEnable
+Map	Button 6-4		Attack Mod1 Enable 10			AttackModEnable
+// Primary Mod Enable
+Map	PageName		"Primary Mod Enable" 				PrimaryModEnable
+Map	Button 1-1		Page=Main			PrimaryModEnable
+Map	Button 2-1		Page=AttackModEnable			PrimaryModEnable
+Map	Button 3-1		Page=PrimaryModEnable			PrimaryModEnable
+Map	Button 4-1		Page=SecondaryModEnable			PrimaryModEnable
+Map	Button 5-1		Page=ReleaseModEnable			PrimaryModEnable
+Map	Button 6-1		Page=PrimaryMod1			PrimaryModEnable
+Map	Button 7-1		Page=PrimaryMod2			PrimaryModEnable
+Map	Button 8-1		Page=PrimaryMod3			PrimaryModEnable
+Map	Button 1-2		Primary Mod3 Enable 1			PrimaryModEnable
+Map	Button 1-3		Primary Mod3 Enable 2			PrimaryModEnable
+Map	Button 1-4		Primary Mod3 Enable 3			PrimaryModEnable
+Map	Button 1-5		Primary Mod3 Enable 4			PrimaryModEnable
+Map	Button 1-6		Primary Mod3 Enable 5			PrimaryModEnable
+Map	Button 1-7		Primary Mod3 Enable 6			PrimaryModEnable
+Map	Button 1-8		Primary Mod3 Enable 7			PrimaryModEnable
+Map	Button 2-2		Primary Mod3 Enable 8			PrimaryModEnable
+Map	Button 2-3		Primary Mod3 Enable 9			PrimaryModEnable
+Map	Button 2-4		Primary Mod3 Enable 10			PrimaryModEnable
+Map	Button 3-2		Primary Mod2 Enable 1			PrimaryModEnable
+Map	Button 3-3		Primary Mod2 Enable 2			PrimaryModEnable
+Map	Button 3-4		Primary Mod2 Enable 3			PrimaryModEnable
+Map	Button 3-5		Primary Mod2 Enable 4			PrimaryModEnable
+Map	Button 3-6		Primary Mod2 Enable 5			PrimaryModEnable
+Map	Button 3-7		Primary Mod2 Enable 6			PrimaryModEnable
+Map	Button 3-8		Primary Mod2 Enable 7			PrimaryModEnable
+Map	Button 4-2		Primary Mod2 Enable 8			PrimaryModEnable
+Map	Button 4-3		Primary Mod2 Enable 9			PrimaryModEnable
+Map	Button 4-4		Primary Mod2 Enable 10			PrimaryModEnable
+Map	Button 5-2		Primary Mod1 Enable 1			PrimaryModEnable
+Map	Button 5-3		Primary Mod1 Enable 2			PrimaryModEnable
+Map	Button 5-4		Primary Mod1 Enable 3			PrimaryModEnable
+Map	Button 5-5		Primary Mod1 Enable 4			PrimaryModEnable
+Map	Button 5-6		Primary Mod1 Enable 5			PrimaryModEnable
+Map	Button 5-7		Primary Mod1 Enable 6			PrimaryModEnable
+Map	Button 5-8		Primary Mod1 Enable 7			PrimaryModEnable
+Map	Button 6-2		Primary Mod1 Enable 8			PrimaryModEnable
+Map	Button 6-3		Primary Mod1 Enable 9			PrimaryModEnable
+Map	Button 6-4		Primary Mod1 Enable 10			PrimaryModEnable
+// Secondary Mod Enable
+Map	PageName		"Secondary Mod Enable" 				SecondaryModEnable
+Map	Button 1-1		Page=Main			SecondaryModEnable
+Map	Button 2-1		Page=AttackModEnable			SecondaryModEnable
+Map	Button 3-1		Page=PrimaryModEnable			SecondaryModEnable
+Map	Button 4-1		Page=SecondaryModEnable			SecondaryModEnable
+Map	Button 5-1		Page=ReleaseModEnable			SecondaryModEnable
+Map	Button 6-1		Page=SecondaryMod1			SecondaryModEnable
+Map	Button 7-1		Page=SecondaryMod2			SecondaryModEnable
+Map	Button 8-1		Page=SecondaryMod3			SecondaryModEnable
+Map	Button 1-2		Secondary Mod3 Enable 1			SecondaryModEnable
+Map	Button 1-3		Secondary Mod3 Enable 2			SecondaryModEnable
+Map	Button 1-4		Secondary Mod3 Enable 3			SecondaryModEnable
+Map	Button 1-5		Secondary Mod3 Enable 4			SecondaryModEnable
+Map	Button 1-6		Secondary Mod3 Enable 5			SecondaryModEnable
+Map	Button 1-7		Secondary Mod3 Enable 6			SecondaryModEnable
+Map	Button 1-8		Secondary Mod3 Enable 7			SecondaryModEnable
+Map	Button 2-2		Secondary Mod3 Enable 8			SecondaryModEnable
+Map	Button 2-3		Secondary Mod3 Enable 9			SecondaryModEnable
+Map	Button 2-4		Secondary Mod3 Enable 10			SecondaryModEnable
+Map	Button 3-2		Secondary Mod2 Enable 1			SecondaryModEnable
+Map	Button 3-3		Secondary Mod2 Enable 2			SecondaryModEnable
+Map	Button 3-4		Secondary Mod2 Enable 3			SecondaryModEnable
+Map	Button 3-5		Secondary Mod2 Enable 4			SecondaryModEnable
+Map	Button 3-6		Secondary Mod2 Enable 5			SecondaryModEnable
+Map	Button 3-7		Secondary Mod2 Enable 6			SecondaryModEnable
+Map	Button 3-8		Secondary Mod2 Enable 7			SecondaryModEnable
+Map	Button 4-2		Secondary Mod2 Enable 8			SecondaryModEnable
+Map	Button 4-3		Secondary Mod2 Enable 9			SecondaryModEnable
+Map	Button 4-4		Secondary Mod2 Enable 10			SecondaryModEnable
+Map	Button 5-2		Secondary Mod1 Enable 1			SecondaryModEnable
+Map	Button 5-3		Secondary Mod1 Enable 2			SecondaryModEnable
+Map	Button 5-4		Secondary Mod1 Enable 3			SecondaryModEnable
+Map	Button 5-5		Secondary Mod1 Enable 4			SecondaryModEnable
+Map	Button 5-6		Secondary Mod1 Enable 5			SecondaryModEnable
+Map	Button 5-7		Secondary Mod1 Enable 6			SecondaryModEnable
+Map	Button 5-8		Secondary Mod1 Enable 7			SecondaryModEnable
+Map	Button 6-2		Secondary Mod1 Enable 8			SecondaryModEnable
+Map	Button 6-3		Secondary Mod1 Enable 9			SecondaryModEnable
+Map	Button 6-4		Secondary Mod1 Enable 10			SecondaryModEnable
+// Release Mod Enable
+Map	PageName		"Release Mod Enable" 				ReleaseModEnable
+Map	Button 1-1		Page=Main			ReleaseModEnable
+Map	Button 2-1		Page=AttackModEnable			ReleaseModEnable
+Map	Button 3-1		Page=PrimaryModEnable			ReleaseModEnable
+Map	Button 4-1		Page=SecondaryModEnable			ReleaseModEnable
+Map	Button 5-1		Page=ReleaseModEnable			ReleaseModEnable
+Map	Button 6-1		Page=ReleaseMod1			ReleaseModEnable
+Map	Button 7-1		Page=ReleaseMod2			ReleaseModEnable
+Map	Button 8-1		Page=ReleaseMod3			ReleaseModEnable
+Map	Button 1-2		Release Mod3 Enable 1			ReleaseModEnable
+Map	Button 1-3		Release Mod3 Enable 2			ReleaseModEnable
+Map	Button 1-4		Release Mod3 Enable 3			ReleaseModEnable
+Map	Button 1-5		Release Mod3 Enable 4			ReleaseModEnable
+Map	Button 1-6		Release Mod3 Enable 5			ReleaseModEnable
+Map	Button 1-7		Release Mod3 Enable 6			ReleaseModEnable
+Map	Button 1-8		Release Mod3 Enable 7			ReleaseModEnable
+Map	Button 2-2		Release Mod3 Enable 8			ReleaseModEnable
+Map	Button 2-3		Release Mod3 Enable 9			ReleaseModEnable
+Map	Button 2-4		Release Mod3 Enable 10			ReleaseModEnable
+Map	Button 3-2		Release Mod2 Enable 1			ReleaseModEnable
+Map	Button 3-3		Release Mod2 Enable 2			ReleaseModEnable
+Map	Button 3-4		Release Mod2 Enable 3			ReleaseModEnable
+Map	Button 3-5		Release Mod2 Enable 4			ReleaseModEnable
+Map	Button 3-6		Release Mod2 Enable 5			ReleaseModEnable
+Map	Button 3-7		Release Mod2 Enable 6			ReleaseModEnable
+Map	Button 3-8		Release Mod2 Enable 7			ReleaseModEnable
+Map	Button 4-2		Release Mod2 Enable 8			ReleaseModEnable
+Map	Button 4-3		Release Mod2 Enable 9			ReleaseModEnable
+Map	Button 4-4		Release Mod2 Enable 10			ReleaseModEnable
+Map	Button 5-2		Release Mod1 Enable 1			ReleaseModEnable
+Map	Button 5-3		Release Mod1 Enable 2			ReleaseModEnable
+Map	Button 5-4		Release Mod1 Enable 3			ReleaseModEnable
+Map	Button 5-5		Release Mod1 Enable 4			ReleaseModEnable
+Map	Button 5-6		Release Mod1 Enable 5			ReleaseModEnable
+Map	Button 5-7		Release Mod1 Enable 6			ReleaseModEnable
+Map	Button 5-8		Release Mod1 Enable 7			ReleaseModEnable
+Map	Button 6-2		Release Mod1 Enable 8			ReleaseModEnable
+Map	Button 6-3		Release Mod1 Enable 9			ReleaseModEnable
+Map	Button 6-4		Release Mod1 Enable 10			ReleaseModEnable
+// Attack Mod 1
+Map	PageName		"Attack Mod 1" 				AttackMod1
+Map	Button 1-1		Page=Main			AttackMod1
+Map	Button 2-1		Page=AttackMod1			AttackMod1
+Map	Button 3-1		Page=PrimaryMod1			AttackMod1
+Map	Button 4-1		Page=SecondaryMod1			AttackMod1
+Map	Button 5-1		Page=ReleaseMod1			AttackMod1
+Map	Button 6-1		Page=AttackMod1			AttackMod1
+Map	Button 7-1		Page=AttackMod2			AttackMod1
+Map	Button 8-1		Page=AttackMod3			AttackMod1
+Map	Button 1-2		Page=AttackModEnable			AttackMod1
+Map	UDVButton 5-2_6-2		Attack Mod1 Type			AttackMod1
+Map	UDVButton 7-2_8-2		Attack Mod1 Animation Type			AttackMod1
+Map	Fader 3		Attack Mod1 Amount				AttackMod1
+Map	Fader 4		Attack Mod1 Tone				AttackMod1
+Map	Fader 5		Attack Mod1 Note Scale				AttackMod1
+Map	Fader 6		Attack Mod1 Velocity Scale				AttackMod1
+Map	Fader 7		Attack Mod1 Animation Amount				AttackMod1
+Map	Fader 8		Attack Mod1 Animation Rate				AttackMod1
+// Attack Mod 2
+Map	PageName		"Attack Mod 2" 				AttackMod2
+Map	Button 1-1		Page=Main			AttackMod2
+Map	Button 2-1		Page=AttackMod2			AttackMod2
+Map	Button 3-1		Page=PrimaryMod2			AttackMod2
+Map	Button 4-1		Page=SecondaryMod2			AttackMod2
+Map	Button 5-1		Page=ReleaseMod2			AttackMod2
+Map	Button 6-1		Page=AttackMod1			AttackMod2
+Map	Button 7-1		Page=AttackMod2			AttackMod2
+Map	Button 8-1		Page=AttackMod3			AttackMod2
+Map	UDVButton 5-2_6-2		Attack Mod2 Type			AttackMod2
+Map	UDVButton 7-2_8-2		Attack Mod2 Animation Type			AttackMod2
+Map	Fader 3		Attack Mod2 Amount				AttackMod2
+Map	Fader 4		Attack Mod2 Tone				AttackMod2
+Map	Fader 5		Attack Mod2 Note Scale				AttackMod2
+Map	Fader 6		Attack Mod2 Velocity Scale				AttackMod2
+Map	Fader 7		Attack Mod2 Animation Amount				AttackMod2
+Map	Fader 8		Attack Mod2 Animation Rate				AttackMod2
+// Attack Mod 3
+Map	PageName		"Attack Mod 3" 				AttackMod3
+Map	Button 1-1		Page=Main			AttackMod3
+Map	Button 2-1		Page=AttackMod3			AttackMod3
+Map	Button 3-1		Page=PrimaryMod3			AttackMod3
+Map	Button 4-1		Page=SecondaryMod3			AttackMod3
+Map	Button 5-1		Page=ReleaseMod3			AttackMod3
+Map	Button 6-1		Page=AttackMod1			AttackMod3
+Map	Button 7-1		Page=AttackMod2			AttackMod3
+Map	Button 8-1		Page=AttackMod3			AttackMod3
+Map	UDVButton 5-2_6-2		Attack Mod3 Type			AttackMod3
+Map	UDVButton 7-2_8-2		Attack Mod3 Animation Type			AttackMod3
+Map	Fader 3		Attack Mod3 Amount				AttackMod3
+Map	Fader 4		Attack Mod3 Tone				AttackMod3
+Map	Fader 5		Attack Mod3 Note Scale				AttackMod3
+Map	Fader 6		Attack Mod3 Velocity Scale				AttackMod3
+Map	Fader 7		Attack Mod3 Animation Amount				AttackMod3
+Map	Fader 8		Attack Mod3 Animation Rate				AttackMod3
+// Primary Mod 1
+Map	PageName		"Primary Mod 1" 				PrimaryMod1
+Map	Button 1-1		Page=Main			PrimaryMod1
+Map	Button 2-1		Page=AttackMod1			PrimaryMod1
+Map	Button 3-1		Page=PrimaryMod1			PrimaryMod1
+Map	Button 4-1		Page=SecondaryMod1			PrimaryMod1
+Map	Button 5-1		Page=ReleaseMod1			PrimaryMod1
+Map	Button 6-1		Page=PrimaryMod1			PrimaryMod1
+Map	Button 7-1		Page=PrimaryMod2			PrimaryMod1
+Map	Button 8-1		Page=PrimaryMod3			PrimaryMod1
+Map	UDVButton 5-2_6-2		Primary Mod1 Type			PrimaryMod1
+Map	UDVButton 7-2_8-2		Primary Mod1 Animation Type			PrimaryMod1
+Map	Fader 3		Primary Mod1 Amount				PrimaryMod1
+Map	Fader 4		Primary Mod1 Tone				PrimaryMod1
+Map	Fader 5		Primary Mod1 Note Scale				PrimaryMod1
+Map	Fader 6		Primary Mod1 Velocity Scale				PrimaryMod1
+Map	Fader 7		Primary Mod1 Animation Amount				PrimaryMod1
+Map	Fader 8		Primary Mod1 Animation Rate				PrimaryMod1
+// Primary Mod 2
+Map	PageName		"Primary Mod 2" 				PrimaryMod2
+Map	Button 1-1		Page=Main			PrimaryMod2
+Map	Button 2-1		Page=AttackMod2			PrimaryMod2
+Map	Button 3-1		Page=PrimaryMod2			PrimaryMod2
+Map	Button 4-1		Page=SecondaryMod2			PrimaryMod2
+Map	Button 5-1		Page=ReleaseMod2			PrimaryMod2
+Map	Button 6-1		Page=PrimaryMod1			PrimaryMod2
+Map	Button 7-1		Page=PrimaryMod2			PrimaryMod2
+Map	Button 8-1		Page=PrimaryMod3			PrimaryMod2
+Map	UDVButton 5-2_6-2		Primary Mod2 Type			PrimaryMod2
+Map	UDVButton 7-2_8-2		Primary Mod2 Animation Type			PrimaryMod2
+Map	Fader 3		Primary Mod2 Amount				PrimaryMod2
+Map	Fader 4		Primary Mod2 Tone				PrimaryMod2
+Map	Fader 5		Primary Mod2 Note Scale				PrimaryMod2
+Map	Fader 6		Primary Mod2 Velocity Scale				PrimaryMod2
+Map	Fader 7		Primary Mod2 Animation Amount				PrimaryMod2
+Map	Fader 8		Primary Mod2 Animation Rate				PrimaryMod2
+// Primary Mod 3
+Map	PageName		"Primary Mod 3" 				PrimaryMod3
+Map	Button 1-1		Page=Main			PrimaryMod3
+Map	Button 2-1		Page=AttackMod3			PrimaryMod3
+Map	Button 3-1		Page=PrimaryMod3			PrimaryMod3
+Map	Button 4-1		Page=SecondaryMod3			PrimaryMod3
+Map	Button 5-1		Page=ReleaseMod3			PrimaryMod3
+Map	Button 6-1		Page=PrimaryMod1			PrimaryMod3
+Map	Button 7-1		Page=PrimaryMod2			PrimaryMod3
+Map	Button 8-1		Page=PrimaryMod3			PrimaryMod3
+Map	UDVButton 5-2_6-2		Primary Mod3 Type			PrimaryMod3
+Map	UDVButton 7-2_8-2		Primary Mod3 Animation Type			PrimaryMod3
+Map	Fader 3		Primary Mod3 Amount				PrimaryMod3
+Map	Fader 4		Primary Mod3 Tone				PrimaryMod3
+Map	Fader 5		Primary Mod3 Note Scale				PrimaryMod3
+Map	Fader 6		Primary Mod3 Velocity Scale				PrimaryMod3
+Map	Fader 7		Primary Mod3 Animation Amount				PrimaryMod3
+Map	Fader 8		Primary Mod3 Animation Rate				PrimaryMod3
+// Secondary Mod 1
+Map	PageName		"Secondary Mod 1" 				SecondaryMod1
+Map	Button 1-1		Page=Main			SecondaryMod1
+Map	Button 2-1		Page=AttackMod1			SecondaryMod1
+Map	Button 3-1		Page=PrimaryMod1			SecondaryMod1
+Map	Button 4-1		Page=SecondaryMod1			SecondaryMod1
+Map	Button 5-1		Page=ReleaseMod1			SecondaryMod1
+Map	Button 6-1		Page=SecondaryMod1			SecondaryMod1
+Map	Button 7-1		Page=SecondaryMod2			SecondaryMod1
+Map	Button 8-1		Page=SecondaryMod3			SecondaryMod1
+Map	UDVButton 5-2_6-2		Secondary Mod1 Type			SecondaryMod1
+Map	UDVButton 7-2_8-2		Secondary Mod1 Animation Type			SecondaryMod1
+Map	Fader 3		Secondary Mod1 Amount				SecondaryMod1
+Map	Fader 4		Secondary Mod1 Tone				SecondaryMod1
+Map	Fader 5		Secondary Mod1 Note Scale				SecondaryMod1
+Map	Fader 6		Secondary Mod1 Velocity Scale				SecondaryMod1
+Map	Fader 7		Secondary Mod1 Animation Amount				SecondaryMod1
+Map	Fader 8		Secondary Mod1 Animation Rate				SecondaryMod1
+// Secondary Mod 2
+Map	PageName		"Secondary Mod 2" 				SecondaryMod2
+Map	Button 1-1		Page=Main			SecondaryMod2
+Map	Button 2-1		Page=AttackMod2			SecondaryMod2
+Map	Button 3-1		Page=PrimaryMod2			SecondaryMod2
+Map	Button 4-1		Page=SecondaryMod2			SecondaryMod2
+Map	Button 5-1		Page=ReleaseMod2			SecondaryMod2
+Map	Button 6-1		Page=SecondaryMod1			SecondaryMod2
+Map	Button 7-1		Page=SecondaryMod2			SecondaryMod2
+Map	Button 8-1		Page=SecondaryMod3			SecondaryMod2
+Map	UDVButton 5-2_6-2		Secondary Mod2 Type			SecondaryMod2
+Map	UDVButton 7-2_8-2		Secondary Mod2 Animation Type			SecondaryMod2
+Map	Fader 3		Secondary Mod2 Amount				SecondaryMod2
+Map	Fader 4		Secondary Mod2 Tone				SecondaryMod2
+Map	Fader 5		Secondary Mod2 Note Scale				SecondaryMod2
+Map	Fader 6		Secondary Mod2 Velocity Scale				SecondaryMod2
+Map	Fader 7		Secondary Mod2 Animation Amount				SecondaryMod2
+Map	Fader 8		Secondary Mod2 Animation Rate				SecondaryMod2
+// Secondary Mod 3
+Map	PageName		"Secondary Mod 3" 				SecondaryMod3
+Map	Button 1-1		Page=Main			SecondaryMod3
+Map	Button 2-1		Page=AttackMod3			SecondaryMod3
+Map	Button 3-1		Page=PrimaryMod3			SecondaryMod3
+Map	Button 4-1		Page=SecondaryMod3			SecondaryMod3
+Map	Button 5-1		Page=ReleaseMod3			SecondaryMod3
+Map	Button 6-1		Page=SecondaryMod1			SecondaryMod3
+Map	Button 7-1		Page=SecondaryMod2			SecondaryMod3
+Map	Button 8-1		Page=SecondaryMod3			SecondaryMod3
+Map	UDVButton 5-2_6-2		Secondary Mod3 Type			SecondaryMod3
+Map	UDVButton 7-2_8-2		Secondary Mod3 Animation Type			SecondaryMod3
+Map	Fader 3		Secondary Mod3 Amount				SecondaryMod3
+Map	Fader 4		Secondary Mod3 Tone				SecondaryMod3
+Map	Fader 5		Secondary Mod3 Note Scale				SecondaryMod3
+Map	Fader 6		Secondary Mod3 Velocity Scale				SecondaryMod3
+Map	Fader 7		Secondary Mod3 Animation Amount				SecondaryMod3
+Map	Fader 8		Secondary Mod3 Animation Rate				SecondaryMod3
+// Release Mod 1
+Map	PageName		"Release Mod 1" 				ReleaseMod1
+Map	Button 1-1		Page=Main			ReleaseMod1
+Map	Button 2-1		Page=AttackMod1			ReleaseMod1
+Map	Button 3-1		Page=PrimaryMod1			ReleaseMod1
+Map	Button 4-1		Page=SecondaryMod1			ReleaseMod1
+Map	Button 5-1		Page=ReleaseMod1			ReleaseMod1
+Map	Button 6-1		Page=ReleaseMod1			ReleaseMod1
+Map	Button 7-1		Page=ReleaseMod2			ReleaseMod1
+Map	Button 8-1		Page=ReleaseMod3			ReleaseMod1
+Map	UDVButton 5-2_6-2		Release Mod1 Type			ReleaseMod1
+Map	UDVButton 7-2_8-2		Release Mod1 Animation Type			ReleaseMod1
+Map	Fader 3		Release Mod1 Amount				ReleaseMod1
+Map	Fader 4		Release Mod1 Tone				ReleaseMod1
+Map	Fader 5		Release Mod1 Note Scale				ReleaseMod1
+Map	Fader 6		Release Mod1 Velocity Scale				ReleaseMod1
+Map	Fader 7		Release Mod1 Animation Amount				ReleaseMod1
+Map	Fader 8		Release Mod1 Animation Rate				ReleaseMod1
+// Release Mod 2
+Map	PageName		"Release Mod 2" 				ReleaseMod2
+Map	Button 1-1		Page=Main			ReleaseMod2
+Map	Button 2-1		Page=AttackMod2			ReleaseMod2
+Map	Button 3-1		Page=PrimaryMod2			ReleaseMod2
+Map	Button 4-1		Page=SecondaryMod2			ReleaseMod2
+Map	Button 5-1		Page=ReleaseMod2			ReleaseMod2
+Map	Button 6-1		Page=ReleaseMod1			ReleaseMod2
+Map	Button 7-1		Page=ReleaseMod2			ReleaseMod2
+Map	Button 8-1		Page=ReleaseMod3			ReleaseMod2
+Map	UDVButton 5-2_6-2		Release Mod2 Type			ReleaseMod2
+Map	UDVButton 7-2_8-2		Release Mod2 Animation Type			ReleaseMod2
+Map	Fader 3		Release Mod2 Amount				ReleaseMod2
+Map	Fader 4		Release Mod2 Tone				ReleaseMod2
+Map	Fader 5		Release Mod2 Note Scale				ReleaseMod2
+Map	Fader 6		Release Mod2 Velocity Scale				ReleaseMod2
+Map	Fader 7		Release Mod2 Animation Amount				ReleaseMod2
+Map	Fader 8		Release Mod2 Animation Rate				ReleaseMod2
+// Release Mod 3
+Map	PageName		"Release Mod 3" 				ReleaseMod3
+Map	Button 1-1		Page=Main			ReleaseMod3
+Map	Button 2-1		Page=AttackMod3			ReleaseMod3
+Map	Button 3-1		Page=PrimaryMod3			ReleaseMod3
+Map	Button 4-1		Page=SecondaryMod3			ReleaseMod3
+Map	Button 5-1		Page=ReleaseMod3			ReleaseMod3
+Map	Button 6-1		Page=ReleaseMod1			ReleaseMod3
+Map	Button 7-1		Page=ReleaseMod2			ReleaseMod3
+Map	Button 8-1		Page=ReleaseMod3			ReleaseMod3
+Map	UDVButton 5-2_6-2		Release Mod3 Type			ReleaseMod3
+Map	UDVButton 7-2_8-2		Release Mod3 Animation Type			ReleaseMod3
+Map	Fader 3		Release Mod3 Amount				ReleaseMod3
+Map	Fader 4		Release Mod3 Tone				ReleaseMod3
+Map	Fader 5		Release Mod3 Note Scale				ReleaseMod3
+Map	Fader 6		Release Mod3 Velocity Scale				ReleaseMod3
+Map	Fader 7		Release Mod3 Animation Amount				ReleaseMod3
+Map	Fader 8		Release Mod3 Animation Rate				ReleaseMod3
+// Effects
+Map	PageName		"Effects" 				Effects
+Map	Button 2-7		FX PreAmp Enable			Effects
+Map	Button 3-7		FX Phaser Enable			Effects
+Map	Button 4-7		FX ModFilter Enable			Effects
+Map	Button 5-7		FX Speaker Enable			Effects
+Map	Button 6-7		FX Reverb Enable			Effects
+Map	Button 7-7		FX Delay Enable			Effects
+Map	Button 1-8		Page=Effects			Effects
+Map	Button 2-8		Page=PreAmp			Effects
+Map	Button 3-8		Page=Phaser			Effects
+Map	Button 4-8		Page=ModFilter			Effects
+Map	Button 5-8		Page=Speaker			Effects
+Map	Button 6-8		Page=Reverb			Effects
+Map	Button 7-8		Page=Delay			Effects
+Map	Button 8-4		FX Limiter Enable			Effects
+Map	Fader 5		FX Limiter Threshold				Effects
+// PreAmp
+Map	PageName		"PreAmp" 				PreAmp
+Map	Button 1-8		Page=Effects			PreAmp
+Map	Button 2-8		Page=PreAmp			PreAmp
+Map	Button 3-8		Page=Phaser			PreAmp
+Map	Button 4-8		Page=ModFilter			PreAmp
+Map	Button 5-8		Page=Speaker			PreAmp
+Map	Button 6-8		Page=Reverb			PreAmp
+Map	Button 7-8		Page=Delay			PreAmp
+Map	Button 1-1		FX Preamp Enable			PreAmp
+Map	UDVButton 1-2_2-2		FX Preamp Type			PreAmp
+Map	Button 8-2		FX Preamp Post-FX			PreAmp
+Map	Fader 3		FX Preamp Drive				PreAmp
+Map	Fader 4		FX Preamp Tone				PreAmp
+Map	Fader 5		FX Preamp Swell				PreAmp
+// Phaser
+Map	PageName		"Phaser" 				Phaser
+Map	Button 1-8		Page=Effects			Phaser
+Map	Button 2-8		Page=PreAmp			Phaser
+Map	Button 3-8		Page=Phaser			Phaser
+Map	Button 4-8		Page=ModFilter			Phaser
+Map	Button 5-8		Page=Speaker			Phaser
+Map	Button 6-8		Page=Reverb			Phaser
+Map	Button 7-8		Page=Delay			Phaser
+Map	Button 1-1		FX Phaser Enable			Phaser
+Map	UDVButton 1-2_2-2		FX Phaser Type			Phaser
+Map	Fader 3		FX Phaser Rate				Phaser
+Map	Fader 4		FX Phaser Depth				Phaser
+Map	Fader 5		FX Phaser Feedback				Phaser
+// ModFilter
+Map	PageName		"ModFilter" 				ModFilter
+Map	Sel1_0		TempoSync=Free			ModFilter
+Map	Sel1_42		TempoSync=Free			ModFilter
+Map	Sel1_85		TempoSync=Sync			ModFilter
+Map	Sel1_127		TempoSync=Sync			ModFilter
+Map	Button 1-8		Page=Effects			ModFilter
+Map	Button 2-8		Page=PreAmp			ModFilter
+Map	Button 3-8		Page=Phaser			ModFilter
+Map	Button 4-8		Page=ModFilter			ModFilter
+Map	Button 5-8		Page=Speaker			ModFilter
+Map	Button 6-8		Page=Reverb			ModFilter
+Map	Button 7-8		Page=Delay			ModFilter
+Map	Button 1-1		FX ModFilter Enable			ModFilter
+Map	UDVButton 1-2_2-2		FX ModFilter Type			ModFilter
+Map	Fader 3		FX ModFilter Frequency				ModFilter
+Map	Fader 4		FX ModFilter Resonance				ModFilter
+Map	UDVButton 1-5_2-5		FX ModFilter Sync Type		SEL1	ModFilter
+Map	UDVButton 7-5_8-5		FX ModFilter LFO Wave			ModFilter
+Map	Fader 6		FX ModFilter LFO Depth				ModFilter
+Map	Fader 7		FX ModFilter LFO Rate				ModFilter	Free
+Map	UDVButton 7-7_8-7		FX ModFilter LFO Synced-Rate			ModFilter	Sync
+// Speaker
+Map	PageName		"Speaker" 				Speaker
+Map	Button 1-8		Page=Effects			Speaker
+Map	Button 2-8		Page=PreAmp			Speaker
+Map	Button 3-8		Page=Phaser			Speaker
+Map	Button 4-8		Page=ModFilter			Speaker
+Map	Button 5-8		Page=Speaker			Speaker
+Map	Button 6-8		Page=Reverb			Speaker
+Map	Button 7-8		Page=Delay			Speaker
+Map	Button 1-1		FX Speaker Enable			Speaker
+Map	UDVButton 1-2_2-2		FX Speaker Type			Speaker
+Map	Fader 3		FX Speaker Rotator Amount				Speaker
+Map	Knob V4		FX Speaker Rotator Balance				Speaker
+Map	Fader 5		FX Speaker Rotator Air				Speaker
+Map	Knob V7		FX Speaker Pan				Speaker
+// Reverb
+Map	PageName		"Reverb" 				Reverb
+Map	Button 1-8		Page=Effects			Reverb
+Map	Button 2-8		Page=PreAmp			Reverb
+Map	Button 3-8		Page=Phaser			Reverb
+Map	Button 4-8		Page=ModFilter			Reverb
+Map	Button 5-8		Page=Speaker			Reverb
+Map	Button 6-8		Page=Reverb			Reverb
+Map	Button 7-8		Page=Delay			Reverb
+Map	Button 1-1		FX Reverb Enable			Reverb
+Map	UDVButton 1-2_2-2		FX Reverb Type			Reverb
+Map	Fader 3		FX Reverb Pre-Delay				Reverb
+Map	Knob V4		FX Reverb L/R Pos				Reverb
+Map	Fader 5		FX Reverb Time				Reverb
+Map	Fader 6		FX Reverb Depth				Reverb
+// Delay
+Map	PageName		"Delay" 				Delay
+Map	Button 1-8		Page=Effects			Delay
+Map	Button 2-8		Page=PreAmp			Delay
+Map	Button 3-8		Page=Phaser			Delay
+Map	Button 4-8		Page=ModFilter			Delay
+Map	Button 5-8		Page=Speaker			Delay
+Map	Button 6-8		Page=Reverb			Delay
+Map	Button 7-8		Page=Delay			Delay
+Map	Button 1-1		FX Delay Enable			Delay
+Map	UDVButton 1-2_2-2		FX Delay Type			Delay
+Map	Fader 3		FX Delay Feedback				Delay
+Map	Fader 4		FX Delay High-Frequency				Delay
+Map	Fader 5		FX Delay Time				Delay
+Map	Fader 6		FX Delay Depth				Delay
+
+// ------------------------------------------------------------------------------------------
+Scope	Synapse Audio	com.synapseAudioSoftware.Antidote
+Define Group	Page	Main	Osc1	Osc2	Mixer	Filter	FilterEnv	Effects	EQBass	Dist	Phaser	Chorus	Delay	Reverb	Comp	LFO1	LFO2	AmpEnv	ModEnv	Arp	Index	Internal
+Define Group	TempoSync	Free	Sync
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Antidote"
+Map	PatchName		Patch Name
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=Mixer			Index
+Map	Button 1-3		Page=AmpEnv			Index
+Map	Button 2-1		Page=Osc1			Index
+Map	Button 3-1		Page=Osc2			Index
+Map	Button 2-4		Page=Filter			Index
+Map	Button 2-5		Page=FilterEnv			Index
+Map	Button 1-8		Page=Effects			Index
+Map	Button 2-8		Page=EQBass			Index
+Map	Button 3-8		Page=Dist			Index
+Map	Button 4-8		Page=Phaser			Index
+Map	Button 5-8		Page=Chorus			Index
+Map	Button 6-8		Page=Delay			Index
+Map	Button 7-8		Page=Reverb			Index
+Map	Button 8-8		Page=Comp			Index
+Map	Button 5-4		Page=LFO1			Index
+Map	Button 6-4		Page=LFO2			Index
+Map	Button 7-4		Page=ModEnv			Index
+Map	Button 8-5		Page=Arp			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Button 1-1		Page=Main			Main
+Map	Button 2-1		Page=Osc1			Main
+Map	Button 3-1		Page=Osc2			Main
+Map	Button 4-1		Page=Mixer			Main
+Map	Button 5-1		Page=Filter			Main
+Map	UDVButton 7-2_8-2		Polyphony				Main
+Map	Fader 3		Glide				Main
+Map	Fader 8		Master Volume				Main
+// Osc 1
+Map	PageName		"Osc 1" 				Osc1
+Map	Button 1-1		Page=Main			Osc1
+Map	Button 2-1		Page=Osc1			Osc1
+Map	Button 3-1		Page=Osc2			Osc1
+Map	Button 4-1		Page=Mixer			Osc1
+Map	Button 5-1		Page=Filter			Osc1
+Map	UDVButton 1-2_2-2		Osc 1 Waveform				Osc1
+Map	UDVButton 3-2_4-2		Osc 1 Voices				Osc1
+Map	UDVButton 5-2_6-2		Osc 1 Dyad				Osc1
+Map	UDVButton 1-3_2-3		Osc 1 Semi				Osc1
+Map	UDVButton 3-3_4-3		Osc 1 Fine				Osc1
+Map	UDVButton 5-3_6-3		Osc 1 Detune				Osc1
+Map	Fader 4		Osc 1 Spread				Osc1
+Map	Fader 5		Osc 1 Phase				Osc1
+Map	Fader 6		Osc 1 Modifier				Osc1
+Map	Fader 7		Osc 1 Key Track				Osc1
+Map	Knob V8		Osc 1 Pan				Osc1
+// Osc 2
+Map	PageName		"Osc 2" 				Osc2
+Map	Button 1-1		Page=Main			Osc2
+Map	Button 2-1		Page=Osc1			Osc2
+Map	Button 3-1		Page=Osc2			Osc2
+Map	Button 4-1		Page=Mixer			Osc2
+Map	Button 5-1		Page=Filter			Osc2
+Map	UDVButton 1-2_2-2		Osc 2 Waveform				Osc2
+Map	UDVButton 3-2_4-2		Osc 2 Voices				Osc2
+Map	UDVButton 5-2_6-2		Osc 2 Dyad				Osc2
+Map	UDVButton 1-3_2-3		Osc 2 Semi				Osc2
+Map	UDVButton 3-3_4-3		Osc 2 Fine				Osc2
+Map	UDVButton 5-3_6-3		Osc 2 Detune				Osc2
+Map	Fader 4		Osc 2 Spread				Osc2
+Map	Fader 5		Osc 2 Phase				Osc2
+Map	Fader 6		Osc 2 Modifier				Osc2
+Map	Fader 7		Osc 2 Key Track				Osc2
+Map	Knob V8		Osc 2 Pan				Osc2
+// Mixer
+Map	PageName		"Mixer" 				Mixer
+Map	Button 1-1		Page=Main			Mixer
+Map	Button 2-1		Page=Osc1			Mixer
+Map	Button 3-1		Page=Osc2			Mixer
+Map	Button 4-1		Page=Mixer			Mixer
+Map	Button 5-1		Page=Filter			Mixer
+Map	Fader 2		Osc 1 Volume				Mixer
+Map	Fader 3		Osc 2 Volume				Mixer
+Map	Fader 4		Sub 1 Volume				Mixer
+Map	Fader 5		Sub 2 Volume				Mixer
+Map	Fader 6		Drift				Mixer
+// Filter
+Map	PageName		"Filter" 				Filter
+Map	Button 1-1		Page=Main			Filter
+Map	Button 2-1		Page=Osc1			Filter
+Map	Button 3-1		Page=Osc2			Filter
+Map	Button 4-1		Page=Mixer			Filter
+Map	Button 5-1		Page=Filter			Filter
+Map	UDVButton 1-2_2-2		Filter Type				Filter
+Map	Fader 3		Filter Cutoff				Filter
+Map	Fader 4		Filter Resonance				Filter
+Map	Fader 8		Filter Key Track				Filter
+// Filter Envelope
+Map	PageName		"Filter Envelope" 				FilterEnv
+Map	Fader 2		Filter Envelope Amount				FilterEnv
+Map	Fader 3		Filter Envelope Attack				FilterEnv
+Map	Fader 4		Filter Envelope Decay				FilterEnv
+Map	Fader 5		Filter Envelope Sustain				FilterEnv
+Map	Fader 6		Filter Envelope Release				FilterEnv
+// Effects
+Map	PageName		"Effects" 				Effects
+Map	Button 1-1		Page=Main			Effects
+Map	Fader 2		External Input Amount				Effects
+Map	Button 1-8		Page=Effects			Effects
+Map	Button 2-8		Page=EQBass			Effects
+Map	Button 3-8		Page=Dist			Effects
+Map	Button 4-8		Page=Phaser			Effects
+Map	Button 5-8		Page=Chorus			Effects
+Map	Button 6-8		Page=Delay			Effects
+Map	Button 7-8		Page=Reverb			Effects
+Map	Button 8-8		Page=Comp			Effects
+Map	Button 2-7		EQ/Bass			Effects
+Map	Button 3-7		Distortion			Effects
+Map	Button 4-7		Phaser			Effects
+Map	Button 5-7		Chorus			Effects
+Map	Button 6-7		Delay			Effects
+Map	Button 7-7		Reverb			Effects
+Map	Button 8-7		Compressor			Effects
+// EQ/Bass
+Map	PageName		"EQ/Bass" 				EQBass
+Map	Button 1-1		EQ/Bass			EQBass
+Map	UDVButton 3-1_4-1		Bass Freq				EQBass
+Map	UDVButton 5-1_6-1		Bass Amount				EQBass
+Map	Fader 2		EQ Low Gain				EQBass
+Map	Fader 3		EQ Mid Freq				EQBass
+Map	Fader 4		EQ Mid Q				EQBass
+Map	Fader 5		EQ Mid Gain				EQBass
+Map	Fader 6		EQ High Gain				EQBass
+Map	Fader 7		EQ Dry/Wet				EQBass
+Map	Button 1-8		Page=Effects			EQBass
+Map	Button 2-8		Page=EQBass			EQBass
+Map	Button 3-8		Page=Dist			EQBass
+Map	Button 4-8		Page=Phaser			EQBass
+Map	Button 5-8		Page=Chorus			EQBass
+Map	Button 6-8		Page=Delay			EQBass
+Map	Button 7-8		Page=Reverb			EQBass
+Map	Button 8-8		Page=Comp			EQBass
+// Dist
+Map	PageName		"Dist" 				Dist
+Map	Button 1-1		Distortion			Dist
+Map	UDVButton 3-1_4-1		Distortion Type				Dist
+Map	UDVButton 5-1_6-1		Distortion Symmetry				Dist
+Map	Fader 2		Distortion Drive				Dist
+Map	Fader 3		Distortion Tone				Dist
+Map	Fader 4		Distortion Low Cut				Dist
+Map	Fader 5		Distortion High Cut				Dist
+Map	Fader 6		Distortion Out Gain				Dist
+Map	Fader 7		Distortion Dry/Wet				Dist
+Map	Button 1-8		Page=Effects			Dist
+Map	Button 2-8		Page=EQBass			Dist
+Map	Button 3-8		Page=Dist			Dist
+Map	Button 4-8		Page=Phaser			Dist
+Map	Button 5-8		Page=Chorus			Dist
+Map	Button 6-8		Page=Delay			Dist
+Map	Button 7-8		Page=Reverb			Dist
+Map	Button 8-8		Page=Comp			Dist
+// Phaser
+Map	PageName		"Phaser" 				Phaser
+Map	Button 1-1		Phaser			Phaser
+Map	UDVButton 3-1_4-1		Phaser Stages				Phaser
+Map	UDVButton 5-1_6-1		Phaser Rate				Phaser
+Map	Fader 2		Phaser Freq				Phaser
+Map	Fader 3		Phaser Spread				Phaser
+Map	Fader 4		Phaser Feedback				Phaser
+Map	Fader 5		Phaser Mod				Phaser
+Map	Fader 6		Phaser LR Offset				Phaser
+Map	Fader 7		Phaser Dry/Wet				Phaser
+Map	Button 1-8		Page=Effects			Phaser
+Map	Button 2-8		Page=EQBass			Phaser
+Map	Button 3-8		Page=Dist			Phaser
+Map	Button 4-8		Page=Phaser			Phaser
+Map	Button 5-8		Page=Chorus			Phaser
+Map	Button 6-8		Page=Delay			Phaser
+Map	Button 7-8		Page=Reverb			Phaser
+Map	Button 8-8		Page=Comp			Phaser
+// Chorus
+Map	PageName		"Chorus" 				Chorus
+Map	Button 1-1		Chorus			Chorus
+Map	Fader 2		Chorus Delay				Chorus
+Map	Fader 3		Chorus Rate				Chorus
+Map	Fader 4		Chorus Depth				Chorus
+Map	Fader 5		Chorus Feedback				Chorus
+Map	Fader 6		Chorus LR Offset				Chorus
+Map	Fader 7		Chorus Dry/Wet				Chorus
+Map	Button 1-8		Page=Effects			Chorus
+Map	Button 2-8		Page=EQBass			Chorus
+Map	Button 3-8		Page=Dist			Chorus
+Map	Button 4-8		Page=Phaser			Chorus
+Map	Button 5-8		Page=Chorus			Chorus
+Map	Button 6-8		Page=Delay			Chorus
+Map	Button 7-8		Page=Reverb			Chorus
+Map	Button 8-8		Page=Comp			Chorus
+// Delay
+Map	PageName		"Delay" 				Delay
+Map	Button 1-1		Delay			Delay
+Map	UDVButton 3-1_4-1		Delay Type				Delay
+Map	UDVButton 5-1_6-1		Delay L-Rate				Delay
+Map	UDVButton 7-1_8-1		Delay R-Rate				Delay
+Map	Fader 2		Delay Color				Delay
+Map	Fader 3		Delay Feedback				Delay
+Map	Fader 5		Delay Mod Rate				Delay
+Map	Fader 6		Delay Mod Amount				Delay
+Map	Fader 7		Delay Dry/Wet				Delay
+Map	Button 1-8		Page=Effects			Delay
+Map	Button 2-8		Page=EQBass			Delay
+Map	Button 3-8		Page=Dist			Delay
+Map	Button 4-8		Page=Phaser			Delay
+Map	Button 5-8		Page=Chorus			Delay
+Map	Button 6-8		Page=Delay			Delay
+Map	Button 7-8		Page=Reverb			Delay
+Map	Button 8-8		Page=Comp			Delay
+// Reverb
+Map	PageName		"Reverb" 				Reverb
+Map	Button 1-1		Reverb			Reverb
+Map	UDVButton 3-1_4-1		Reverb Pre-Delay				Reverb
+Map	Fader 2		Reverb Time				Reverb
+Map	Fader 3		Reverb HF-Damp				Reverb
+Map	Fader 4		Reverb Low Cut				Reverb
+Map	Fader 5		Reverb High Cut				Reverb
+Map	Fader 6		Reverb Mod				Reverb
+Map	Fader 7		Reverb Dry/Wet				Reverb
+Map	Button 1-8		Page=Effects			Reverb
+Map	Button 2-8		Page=EQBass			Reverb
+Map	Button 3-8		Page=Dist			Reverb
+Map	Button 4-8		Page=Phaser			Reverb
+Map	Button 5-8		Page=Chorus			Reverb
+Map	Button 6-8		Page=Delay			Reverb
+Map	Button 7-8		Page=Reverb			Reverb
+Map	Button 8-8		Page=Comp			Reverb
+// Comp
+Map	PageName		"Comp" 				Comp
+Map	Button 1-1		Compressor			Comp
+Map	UDVButton 3-1_4-1		Compressor Ratio				Comp
+Map	Fader 2		Compressor Threshold				Comp
+Map	Fader 4		Compressor Attack				Comp
+Map	Fader 5		Compressor Release				Comp
+Map	Fader 7		Compressor Dry/Wet				Comp
+Map	Button 1-8		Page=Effects			Comp
+Map	Button 2-8		Page=EQBass			Comp
+Map	Button 3-8		Page=Dist			Comp
+Map	Button 4-8		Page=Phaser			Comp
+Map	Button 5-8		Page=Chorus			Comp
+Map	Button 6-8		Page=Delay			Comp
+Map	Button 7-8		Page=Reverb			Comp
+Map	Button 8-8		Page=Comp			Comp
+// LFO 1
+Map	PageName		"LFO 1" 				LFO1
+Map	Sel1_0		TempoSync=Free			LFO1
+Map	Sel1_1		TempoSync=Sync			LFO1
+Map	Button 1-1		Page=Main			LFO1
+Map	Fader 3		Lfo 1 Rate				LFO1	Free
+Map	UDVButton 7-3_8-3		Lfo 1 Rate Sync				LFO1	Sync
+Map	Knob V4		Lfo 1 Target Amount				LFO1
+Map	Button 1-5		Lfo 1 Sync		SEL1	LFO1
+Map	Button 1-6		Lfo 1 Free Run			LFO1
+Map	UDHButton 3-5_3-6		Lfo 1 Shape				LFO1
+Map	UDHButton 5-5_5-6		Lfo 1 Target				LFO1
+// LFO 2
+Map	PageName		"LFO 2" 				LFO2
+Map	Sel1_0		TempoSync=Free			LFO2
+Map	Sel1_1		TempoSync=Sync			LFO2
+Map	Button 1-1		Page=Main			LFO2
+Map	Fader 3		Lfo 2 Rate				LFO2	Free
+Map	UDVButton 7-3_8-3		Lfo 2 Rate Sync				LFO2	Sync
+Map	Knob V4		Lfo 2 Target Amount				LFO2
+Map	Button 1-5		Lfo 2 Sync		SEL1	LFO2
+Map	Button 1-6		Lfo 2 Free Run			LFO2
+Map	UDHButton 3-5_3-6		Lfo 2 Shape				LFO2
+Map	UDHButton 5-5_5-6		Lfo 2 Target				LFO2
+// Amp Env
+Map	PageName		"Amp Env" 				AmpEnv
+Map	Button 1-1		Page=Main			AmpEnv
+Map	Fader 3		Amp Envelope Attack				AmpEnv
+Map	Fader 4		Amp Envelope Decay				AmpEnv
+Map	Fader 5		Amp Envelope Sustain				AmpEnv
+Map	Fader 6		Amp Envelope Release				AmpEnv
+// Mod Env
+Map	PageName		"Mod Env" 				ModEnv
+Map	Button 1-1		Page=Main			ModEnv
+Map	UDVButton 3-1_4-1		Mod Envelope Target				ModEnv
+Map	Fader 3		Mod Envelope Attack				ModEnv
+Map	Fader 4		Mod Envelope Decay				ModEnv
+Map	Fader 5		Mod Envelope Sustain				ModEnv
+Map	Fader 6		Mod Envelope Release				ModEnv
+Map	Knob V8		Mod Envelope Target Amount				ModEnv
+// Arpeggiator
+Map	PageName		"Arpeggiator" 				Arp
+Map	Button 1-1		Page=Main			Arp
+Map	UDHButton 3-1_3-2		Arp Mode				Arp
+Map	UDHButton 5-1_5-2		Arp Pattern				Arp
+Map	UDHButton 6-1_6-2		Arp Rate				Arp
+Map	UDHButton 7-1_7-2		Arp Octave				Arp
+Map	Button 8-1		Arp Hold				Arp
+Map	Knob V4		Arp Gate				Arp
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerhead Software	se.propellerheads.PX7 
+Define Group	Page	Main	OP1	OP2	OP3	OP4	OP5	OP6	LFO	Index	Internal
+Define Group	TempoSync	Free	Sync
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"PX7"
+Map	PatchName		Patch Name
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-1		Page=OP6			Index
+Map	Button 3-1		Page=OP5			Index
+Map	Button 4-1		Page=OP4			Index
+Map	Button 5-1		Page=OP3			Index
+Map	Button 6-1		Page=OP2			Index
+Map	Button 7-1		Page=OP1			Index
+Map	Button 5-4		Page=LFO			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-2_2-2		Algorithm				Main
+Map	Fader 3		Portamento Time				Main
+Map	Knob V4		Brightness				Main
+Map	Knob V5		Touch Senstivity				Main
+Map	Knob V6		Attack				Main
+Map	Knob V7		Decay				Main
+Map	Fader 8		Volume				Main
+// Op 1
+Map	PageName		"Op1" 				OP1
+Map	Button 1-1		Page=Main			OP1
+Map	Button 2-1		Page=OP6			OP1
+Map	Button 3-1		Page=OP5			OP1
+Map	Button 4-1		Page=OP4			OP1
+Map	Button 5-1		Page=OP3			OP1
+Map	Button 6-1		Page=OP2			OP1
+Map	Button 7-1		Page=OP1			OP1
+Map	Button 8-2		Operator 1 Freq Mode				OP1
+Map	UDVButton 7-3_8-3		Operator 1 Freq Coarse				OP1
+Map	UDVButton 7-4_8-4		Operator 1 Freq Fine				OP1
+Map	UDVButton 7-5_8-5		Operator 1 Freq Detune				OP1
+Map	Knob V7		Operator 1 Pan				OP1
+Map	Fader 8		Operator 1 Output Level				OP1
+// Op 2
+Map	PageName		"Op2" 				OP2
+Map	Button 1-1		Page=Main			OP2
+Map	Button 2-1		Page=OP6			OP2
+Map	Button 3-1		Page=OP5			OP2
+Map	Button 4-1		Page=OP4			OP2
+Map	Button 5-1		Page=OP3			OP2
+Map	Button 6-1		Page=OP2			OP2
+Map	Button 7-1		Page=OP1			OP2
+Map	Button 8-2		Operator 2 Freq Mode				OP2
+Map	UDVButton 7-3_8-3		Operator 2 Freq Coarse				OP2
+Map	UDVButton 7-4_8-4		Operator 2 Freq Fine				OP2
+Map	UDVButton 7-5_8-5		Operator 2 Freq Detune				OP2
+Map	Knob V7		Operator 2 Pan				OP2
+Map	Fader 8		Operator 2 Output Level				OP2
+// Op 3
+Map	PageName		"Op3" 				OP3
+Map	Button 1-1		Page=Main			OP3
+Map	Button 2-1		Page=OP6			OP3
+Map	Button 3-1		Page=OP5			OP3
+Map	Button 4-1		Page=OP4			OP3
+Map	Button 5-1		Page=OP3			OP3
+Map	Button 6-1		Page=OP2			OP3
+Map	Button 7-1		Page=OP1			OP3
+Map	Button 8-2		Operator 3 Freq Mode				OP3
+Map	UDVButton 7-3_8-3		Operator 3 Freq Coarse				OP3
+Map	UDVButton 7-4_8-4		Operator 3 Freq Fine				OP3
+Map	UDVButton 7-5_8-5		Operator 3 Freq Detune				OP3
+Map	Knob V7		Operator 3 Pan				OP3
+Map	Fader 8		Operator 3 Output Level				OP3
+// Op 4
+Map	PageName		"Op4" 				OP4
+Map	Button 1-1		Page=Main			OP4
+Map	Button 2-1		Page=OP6			OP4
+Map	Button 3-1		Page=OP5			OP4
+Map	Button 4-1		Page=OP4			OP4
+Map	Button 5-1		Page=OP3			OP4
+Map	Button 6-1		Page=OP2			OP4
+Map	Button 7-1		Page=OP1			OP4
+Map	Button 8-2		Operator 4 Freq Mode				OP4
+Map	UDVButton 7-3_8-3		Operator 4 Freq Coarse				OP4
+Map	UDVButton 7-4_8-4		Operator 4 Freq Fine				OP4
+Map	UDVButton 7-5_8-5		Operator 4 Freq Detune				OP4
+Map	Knob V7		Operator 4 Pan				OP4
+Map	Fader 8		Operator 4 Output Level				OP4
+// Op 5
+Map	PageName		"Op5" 				OP5
+Map	Button 1-1		Page=Main			OP5
+Map	Button 2-1		Page=OP6			OP5
+Map	Button 3-1		Page=OP5			OP5
+Map	Button 4-1		Page=OP4			OP5
+Map	Button 5-1		Page=OP3			OP5
+Map	Button 6-1		Page=OP2			OP5
+Map	Button 7-1		Page=OP1			OP5
+Map	Button 8-2		Operator 5 Freq Mode				OP5
+Map	UDVButton 7-3_8-3		Operator 5 Freq Coarse				OP5
+Map	UDVButton 7-4_8-4		Operator 5 Freq Fine				OP5
+Map	UDVButton 7-5_8-5		Operator 5 Freq Detune				OP5
+Map	Knob V7		Operator 5 Pan				OP5
+Map	Fader 8		Operator 5 Output Level				OP5
+// Op 6
+Map	PageName		"Op6" 				OP6
+Map	Button 1-1		Page=Main			OP6
+Map	Button 2-1		Page=OP6			OP6
+Map	Button 3-1		Page=OP5			OP6
+Map	Button 4-1		Page=OP4			OP6
+Map	Button 5-1		Page=OP3			OP6
+Map	Button 6-1		Page=OP2			OP6
+Map	Button 7-1		Page=OP1			OP6
+Map	Button 8-2		Operator 6 Freq Mode				OP6
+Map	UDVButton 7-3_8-3		Operator 6 Freq Coarse				OP6
+Map	UDVButton 7-4_8-4		Operator 6 Freq Fine				OP6
+Map	UDVButton 7-5_8-5		Operator 6 Freq Detune				OP6
+Map	Knob V7		Operator 6 Pan				OP6
+Map	Fader 8		Operator 6 Output Level				OP6
+// LFO
+Map	PageName		"LFO" 				LFO
+Map	Sel1_0		TempoSync=Free			LFO
+Map	Sel1_1		TempoSync=Sync			LFO
+Map	Button 1-1		Page=Main			LFO
+Map	Fader 3		LFO Speed				LFO	Free
+Map	UDVButton 7-3_8-3		LFO Speed Tempo Synced				LFO	Sync
+Map	Fader 4		LFO Delay				LFO
+Map	UDVButton 1-5_2-5		LFO Waveform				LFO
+Map	Button 8-2		LFO Tempo Sync		SEL1	LFO
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerhead Software	se.propellerheads.Parsec
+Define Group	Page	Main	GenA	ModA	GenB	ModB	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Parsec"
+Map	PatchName		Patch Name
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-1		Page=GenA			Index
+Map	Button 3-1		Page=Genb			Index
+Map	Button 2-4		Page=ModA			Index
+Map	Button 3-4		Page=ModB			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Fader 7		Spread				Main
+Map	Fader 8		Master Level				Main
+// Generator A
+Map	PageName		"Generator A" 				GenA
+// Modifier A
+Map	PageName		"Modifier A" 				ModA
+// Generator B
+Map	PageName		"Generator B" 				GenB
+// Modifier B
+Map	PageName		"Modifier B" 				ModB
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerhead Software	se.propellerheads.Europa
+Define Group	Page	Main	Eng1	Eng2	Eng3	Eng1Mod1	Eng2Mod1	Eng3Mod1	Eng1Mod2	Eng2Mod2	Eng3Mod2	Eng1Harm	Eng2Harm	Eng3Harm	Eng1Filter	Eng2Filter	Eng3Filter	Eng1Unison	Eng2Unison	Eng3Unison	Mixer	Filter	Amp	Effects	Phaser	Dist	Eq	Delay	Reverb	Comp	LFO1	LFO2	LFO3	Env1	Env2	Env3	Env4	Index	Internal
+Define Group	TempoSync	Free	Sync
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Europa"
+Map	PatchName		Patch Name
+Map	EngineSelect		OscSel
+Map	EffectSelect		Effect Select
+Map	LFOSelect		LFO Select
+Map	EnvSelect		Env Select
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=Mixer			Index
+Map	Button 1-3		Page=Amp			Index
+Map	Button 2-1		Page=Eng1			Index
+Map	Button 3-1		Page=Eng2			Index
+Map	Button 4-1		Page=Eng3			Index
+Map	Button 2-2		Page=Eng1Mod1			Index
+Map	Button 3-2		Page=Eng2Mod1			Index
+Map	Button 4-2		Page=Eng3Mod1			Index
+Map	Button 2-3		Page=Eng1Mod2			Index
+Map	Button 3-3		Page=Eng2Mod2			Index
+Map	Button 4-3		Page=Eng3Mod2			Index
+Map	Button 2-4		Page=Eng1Harm			Index
+Map	Button 3-4		Page=Eng2Harm			Index
+Map	Button 4-4		Page=Eng3Harm			Index
+Map	Button 2-5		Page=Eng1Filter			Index
+Map	Button 3-5		Page=Eng2Filter			Index
+Map	Button 4-5		Page=Eng3Filter			Index
+Map	Button 2-6		Page=Eng1Unison			Index
+Map	Button 3-6		Page=Eng2Unison			Index
+Map	Button 4-6		Page=Eng3Unison			Index
+Map	Button 5-4		Page=Filter			Index
+Map	Button 6-4		Page=LFO1			Index
+Map	Button 7-4		Page=LFO2			Index
+Map	Button 8-4		Page=LFO3			Index
+Map	Button 5-5		Page=Env1			Index
+Map	Button 6-5		Page=Env2			Index
+Map	Button 7-5		Page=Env3			Index
+Map	Button 8-5		Page=Env4			Index
+Map	Button 1-8		Page=Effects			Index
+Map	Button 2-8		Page=Phaser			Index
+Map	Button 3-8		Page=Dist			Index
+Map	Button 4-8		Page=Eq			Index
+Map	Button 5-8		Page=Delay			Index
+Map	Button 6-8		Page=Comp			Index
+Map	Button 7-8		Page=Reverb			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Button 1-1		Page=Main			Main
+Map	Button 2-1		Page=Eng1			Main
+Map	Button 3-1		Page=Eng2			Main
+Map	Button 4-1		Page=Eng3			Main
+Map	Button 8-2		Key Mode			Main
+Map	Button 8-4		Portamento Mode			Main
+Map	Fader 5		Portamento				Main
+Map	UDVButton 7-7_8-7		Voices				Main
+Map	Fader 8		Master Volume				Main
+// Mixer 
+Map	PageName		"Mixer" 				Mixer
+Map	Button 1-1		Page=Main			Mixer
+Map	Button 2-1		Page=Eng1			Mixer
+Map	Button 3-1		Page=Eng2			Mixer
+Map	Button 4-1		Page=Eng3			Mixer
+Map	Fader 2		Osc1 Level				Mixer
+Map	Knob V3		Osc1 Pan				Mixer
+Map	Fader 4		Osc2 Level				Mixer
+Map	Knob V5		Osc2 Pan				Mixer
+Map	Fader 6		Osc3 Level				Mixer
+Map	Knob V7		Osc3 Pan				Mixer
+// Filter 
+Map	PageName		"Filter" 				Filter
+Map	Button 1-1		Page=Main			Filter
+Map	Button 2-1		Page=Eng1			Filter
+Map	Button 3-1		Page=Eng2			Filter
+Map	Button 4-1		Page=Eng3			Filter
+Map	Button 5-1		Osc1 To Filter			Filter
+Map	Button 6-1		Osc2 To Filter			Filter
+Map	Button 7-1		Osc3 To Filter			Filter
+Map	UDVButton 1-2_2-2		Filter Type				Filter
+Map	Fader 3		Filter Drive				Filter
+Map	Fader 4		Filter Freq				Filter
+Map	Fader 5		Filter Reso				Filter
+Map	UDVButton 1-6_2-6		Filter Kbd	5			Filter
+Map	UDVButton 3-6_4-6		Filter Mod	5			Filter
+Map	UDVButton 5-6_6-6		Filter Vel	5			Filter
+Map	UDVButton 3-7_4-7		Filter Mod Source				Filter
+// Amp 
+Map	PageName		"Amp" 				Amp
+Map	Button 1-1		Page=Main			Amp
+Map	Button 2-1		Page=Eng1			Amp
+Map	Button 3-1		Page=Eng2			Amp
+Map	Button 4-1		Page=Eng3			Amp
+Map	Knob V2		Pan				Amp
+Map	Fader 3		Amp Gain				Amp
+Map	Fader 4		Amp Velocity				Amp
+Map	Fader 5		Amp Attack				Amp
+Map	Fader 6		Amp Decay				Amp
+Map	Fader 7		Amp Sustain				Amp
+Map	Fader 8		Amp Release				Amp
+// Eng 1
+Map	PageName		"Eng 1" 				Eng1
+Map	Button 1-1		Page=Main			Eng1
+Map	Button 2-1		Page=Eng1			Eng1
+Map	Button 3-1		Page=Eng2			Eng1
+Map	Button 4-1		Page=Eng3			Eng1
+Map	Button 1-2		Osc1 On			Eng1
+Map	UDVButton 1-3_2-3		Osc1 Oct				Eng1
+Map	UDVButton 3-3_4-3		Osc1 Semi				Eng1
+Map	UDVButton 5-3_6-3		Osc1 Tune				Eng1
+Map	UDVButton 7-3_8-3		Osc1 Pitch Kbd				Eng1
+Map	UDVButton 1-4_2-4		Osc1 Wave				Eng1
+Map	Fader 5		Osc1 Shape				Eng1
+Map	Button 1-6		Osc1 SyncPhase			Eng1
+Map	UDVButton 7-6_8-6		Osc1 Shape Source				Eng1
+Map	Fader 7		Osc1 Shape Amt				Eng1
+Map	Fader 8		Osc1 Shape Vel				Eng1
+// Eng 2
+Map	PageName		"Eng 2" 				Eng2
+Map	Button 1-1		Page=Main			Eng2
+Map	Button 2-1		Page=Eng1			Eng2
+Map	Button 3-1		Page=Eng2			Eng2
+Map	Button 4-1		Page=Eng3			Eng2
+Map	Button 1-2		Osc2 On			Eng2
+Map	UDVButton 1-3_2-3		Osc2 Oct				Eng2
+Map	UDVButton 3-3_4-3		Osc2 Semi				Eng2
+Map	UDVButton 5-3_6-3		Osc2 Tune				Eng2
+Map	UDVButton 7-3_8-3		Osc2 Pitch Kbd				Eng2
+Map	UDVButton 1-4_2-4		Osc2 Wave				Eng2
+Map	Fader 5		Osc2 Shape				Eng2
+Map	Button 1-6		Osc2 SyncPhase			Eng2
+Map	UDVButton 7-6_8-6		Osc2 Shape Source				Eng2
+Map	Fader 7		Osc2 Shape Amt				Eng2
+Map	Fader 8		Osc2 Shape Vel				Eng2
+// Eng 3
+Map	PageName		"Eng 3" 				Eng3
+Map	Button 1-1		Page=Main			Eng3
+Map	Button 2-1		Page=Eng1			Eng3
+Map	Button 3-1		Page=Eng2			Eng3
+Map	Button 4-1		Page=Eng3			Eng3
+Map	Button 1-2		Osc3 On			Eng3
+Map	UDVButton 1-3_2-3		Osc3 Oct				Eng3
+Map	UDVButton 3-3_4-3		Osc3 Semi				Eng3
+Map	UDVButton 5-3_6-3		Osc3 Tune				Eng3
+Map	UDVButton 7-3_8-3		Osc3 Pitch Kbd				Eng3
+Map	UDVButton 1-4_2-4		Osc3 Wave				Eng3
+Map	Fader 5		Osc3 Shape				Eng3
+Map	Button 1-6		Osc3 SyncPhase			Eng3
+Map	UDVButton 7-6_8-6		Osc3 Shape Source				Eng3
+Map	Fader 7		Osc3 Shape Amt				Eng3
+Map	Fader 8		Osc3 Shape Vel				Eng3
+// Eng 1 Modifier 1
+Map	PageName		"Eng 1 Mod 1" 				Eng1Mod1
+Map	Button 1-1		Page=Main			Eng1Mod1
+Map	Button 2-1		Page=Eng1Mod1			Eng1Mod1
+Map	Button 3-1		Page=Eng2			Eng1Mod1
+Map	Button 4-1		Page=Eng3			Eng1Mod1
+Map	Button 1-2		Osc1 Mod1 On			Eng1Mod1
+Map	UDVButton 1-3_2-3		Osc1 Mod1				Eng1Mod1
+Map	Fader 4		Osc1 Mod1 Amt				Eng1Mod1
+Map	Fader 5		Osc1 Mod1 Mod				Eng1Mod1
+Map	UDVButton 7-6_8-6		Osc1 Mod1 Source				Eng1Mod1
+// Eng 2 Modifier 1
+Map	PageName		"Eng 2 Mod 1" 				Eng2Mod1
+Map	Button 1-1		Page=Main			Eng2Mod1
+Map	Button 2-1		Page=Eng1			Eng2Mod1
+Map	Button 3-1		Page=Eng2Mod1			Eng2Mod1
+Map	Button 4-1		Page=Eng3			Eng2Mod1
+Map	Button 1-2		Osc2 Mod1 On			Eng2Mod1
+Map	UDVButton 1-3_2-3		Osc2 Mod1				Eng2Mod1
+Map	Fader 4		Osc2 Mod1 Amt				Eng2Mod1
+Map	Fader 5		Osc2 Mod1 Mod				Eng2Mod1
+Map	UDVButton 7-6_8-6		Osc2 Mod1 Source				Eng2Mod1
+// Eng 3 Modifier 1
+Map	PageName		"Eng 3 Mod 1" 				Eng3Mod1
+Map	Button 1-1		Page=Main			Eng3Mod1
+Map	Button 2-1		Page=Eng1			Eng3Mod1
+Map	Button 3-1		Page=Eng2			Eng3Mod1
+Map	Button 4-1		Page=Eng3Mod1			Eng3Mod1
+Map	Button 1-2		Osc3 Mod1 On			Eng3Mod1
+Map	UDVButton 1-3_2-3		Osc3 Mod1				Eng3Mod1
+Map	Fader 4		Osc3 Mod1 Amt				Eng3Mod1
+Map	Fader 5		Osc3 Mod1 Mod				Eng3Mod1
+Map	UDVButton 7-6_8-6		Osc3 Mod1 Source				Eng3Mod1
+// Eng 1 Modifier 2
+Map	PageName		"Eng 1 Mod 2" 				Eng1Mod2
+Map	Button 1-1		Page=Main			Eng1Mod2
+Map	Button 2-1		Page=Eng1Mod2			Eng1Mod2
+Map	Button 3-1		Page=Eng2			Eng1Mod2
+Map	Button 4-1		Page=Eng3			Eng1Mod2
+Map	Button 1-2		Osc1 Mod2 On			Eng1Mod2
+Map	UDVButton 1-3_2-3		Osc1 Mod2				Eng1Mod2
+Map	Fader 4		Osc1 Mod2 Amt				Eng1Mod2
+Map	Fader 5		Osc1 Mod2 Mod				Eng1Mod2
+Map	UDVButton 7-6_8-6		Osc1 Mod2 Source				Eng1Mod2
+// Eng 2 Modifier 2
+Map	PageName		"Eng 2 Mod 2" 				Eng2Mod2
+Map	Button 1-1		Page=Main			Eng2Mod2
+Map	Button 2-1		Page=Eng1			Eng2Mod2
+Map	Button 3-1		Page=Eng2Mod2			Eng2Mod2
+Map	Button 4-1		Page=Eng3			Eng2Mod2
+Map	Button 1-2		Osc2 Mod2 On			Eng2Mod2
+Map	UDVButton 1-3_2-3		Osc2 Mod2				Eng2Mod2
+Map	Fader 4		Osc2 Mod2 Amt				Eng2Mod2
+Map	Fader 5		Osc2 Mod2 Mod				Eng2Mod2
+Map	UDVButton 7-6_8-6		Osc2 Mod2 Source				Eng2Mod2
+// Eng 3 Modifier 2
+Map	PageName		"Eng 3 Mod 2" 				Eng3Mod2
+Map	Button 1-1		Page=Main			Eng3Mod2
+Map	Button 2-1		Page=Eng1			Eng3Mod2
+Map	Button 3-1		Page=Eng2			Eng3Mod2
+Map	Button 4-1		Page=Eng3Mod2			Eng3Mod2
+Map	Button 1-2		Osc3 Mod2 On			Eng3Mod2
+Map	UDVButton 1-3_2-3		Osc3 Mod2				Eng3Mod2
+Map	Fader 4		Osc3 Mod2 Amt				Eng3Mod2
+Map	Fader 5		Osc3 Mod2 Mod				Eng3Mod2
+Map	UDVButton 7-6_8-6		Osc3 Mod2 Source				Eng3Mod2
+// Eng 1 Harmonics
+Map	PageName		"Eng 1 Harmonics" 				Eng1Harm
+Map	Button 1-1		Page=Main			Eng1Harm
+Map	Button 2-1		Page=Eng1Harm			Eng1Harm
+Map	Button 3-1		Page=Eng2			Eng1Harm
+Map	Button 4-1		Page=Eng3			Eng1Harm
+Map	Button 1-2		Osc1 Harm On			Eng1Harm
+Map	UDVButton 1-3_2-3		Osc1 Harm				Eng1Harm
+Map	Fader 4		Osc1 Harm Pos				Eng1Harm
+Map	Fader 5		Osc1 Harm Amt				Eng1Harm
+// Eng 2 Harmonics
+Map	PageName		"Eng 2 Harmonics" 				Eng2Harm
+Map	Button 1-1		Page=Main			Eng2Harm
+Map	Button 2-1		Page=Eng1			Eng2Harm
+Map	Button 3-1		Page=Eng2Harm			Eng2Harm
+Map	Button 4-1		Page=Eng3			Eng2Harm
+Map	Button 1-2		Osc2 Harm On			Eng2Harm
+Map	UDVButton 1-3_2-3		Osc2 Harm				Eng2Harm
+Map	Fader 4		Osc2 Harm Pos				Eng2Harm
+Map	Fader 5		Osc2 Harm Amt				Eng2Harm
+// Eng 3 Harmonics
+Map	PageName		"Eng 3 Harmonics" 				Eng3Harm
+Map	Button 1-1		Page=Main			Eng3Harm
+Map	Button 2-1		Page=Eng1			Eng3Harm
+Map	Button 3-1		Page=Eng2			Eng3Harm
+Map	Button 4-1		Page=Eng3Harm			Eng3Harm
+Map	Button 1-2		Osc3 Harm On			Eng3Harm
+Map	UDVButton 1-3_2-3		Osc3 Harm				Eng3Harm
+Map	Fader 4		Osc3 Harm Pos				Eng3Harm
+Map	Fader 5		Osc3 Harm Amt				Eng3Harm
+// Eng 1 Spectral Filter
+Map	PageName		"Eng 1 Spectral Filter" 				Eng1Filter
+Map	Button 1-1		Page=Main			Eng1Filter
+Map	Button 2-1		Page=Eng1Filter			Eng1Filter
+Map	Button 3-1		Page=Eng2			Eng1Filter
+Map	Button 4-1		Page=Eng3			Eng1Filter
+Map	Button 1-2		Osc1 Filter On			Eng1Filter
+Map	UDVButton 3-2_4-2		Osc1 Filter				Eng1Filter
+Map	Fader 3		Osc1 Filter Freq				Eng1Filter
+Map	Fader 4		Osc1 Filter Reso				Eng1Filter
+Map	Fader 5		Osc1 Filter Kbd				Eng1Filter
+Map	Fader 6		Osc1 Filter Mod				Eng1Filter
+Map	UDVButton 7-7_8-7		Osc1 Filter Source				Eng1Filter
+Map	Fader 8		Osc1 Filter Vel				Eng1Filter
+// Eng 2 Spectral Filter
+Map	PageName		"Eng 2 Spectral Filter" 				Eng2Filter
+Map	Button 1-1		Page=Main			Eng2Filter
+Map	Button 2-1		Page=Eng1			Eng2Filter
+Map	Button 3-1		Page=Eng2Filter			Eng2Filter
+Map	Button 4-1		Page=Eng3			Eng2Filter
+Map	Button 1-2		Osc2 Filter On			Eng2Filter
+Map	UDVButton 3-2_4-2		Osc2 Filter				Eng2Filter
+Map	Fader 3		Osc2 Filter Freq				Eng2Filter
+Map	Fader 4		Osc2 Filter Reso				Eng2Filter
+Map	Fader 5		Osc2 Filter Kbd				Eng2Filter
+Map	Fader 6		Osc2 Filter Mod				Eng2Filter
+Map	UDVButton 7-7_8-7		Osc2 Filter Source				Eng2Filter
+Map	Fader 8		Osc2 Filter Vel				Eng2Filter
+// Eng 3 Spectral Filter
+Map	PageName		"Eng 3 Spectral Filter" 				Eng3Filter
+Map	Button 1-1		Page=Main			Eng3Filter
+Map	Button 2-1		Page=Eng1			Eng3Filter
+Map	Button 3-1		Page=Eng2			Eng3Filter
+Map	Button 4-1		Page=Eng3Filter			Eng3Filter
+Map	Button 1-2		Osc3 Filter On			Eng3Filter
+Map	UDVButton 3-2_4-2		Osc3 Filter				Eng3Filter
+Map	Fader 3		Osc3 Filter Freq				Eng3Filter
+Map	Fader 4		Osc3 Filter Reso				Eng3Filter
+Map	Fader 5		Osc3 Filter Kbd				Eng3Filter
+Map	Fader 6		Osc3 Filter Mod				Eng3Filter
+Map	UDVButton 7-7_8-7		Osc3 Filter Source				Eng3Filter
+Map	Fader 8		Osc3 Filter Vel				Eng3Filter
+// Eng 1 Unison
+Map	PageName		"Eng 1 Unison" 				Eng1Unison
+Map	Button 1-1		Page=Main			Eng1Unison
+Map	Button 2-1		Page=Eng1Unison			Eng1Unison
+Map	Button 3-1		Page=Eng2			Eng1Unison
+Map	Button 4-1		Page=Eng3			Eng1Unison
+Map	Button 1-2		Osc1 Unison On			Eng1Unison
+Map	UDVButton 1-3_2-3		Osc1 Unison Mode				Eng1Unison
+Map	UDVButton 1-4_2-4		Osc1 Count				Eng1Unison
+Map	Fader 5		Osc1 Blend				Eng1Unison
+Map	Fader 6		Osc1 Detune				Eng1Unison
+Map	Fader 7		Osc1 Spread				Eng1Unison
+// Eng 2 Unison
+Map	PageName		"Eng 2 Unison" 				Eng2Unison
+Map	Button 1-1		Page=Main			Eng2Unison
+Map	Button 2-1		Page=Eng1			Eng2Unison
+Map	Button 3-1		Page=Eng2Unison			Eng2Unison
+Map	Button 4-1		Page=Eng3			Eng2Unison
+Map	Button 1-2		Osc2 Unison On			Eng2Unison
+Map	UDVButton 1-3_2-3		Osc2 Unison Mode				Eng2Unison
+Map	UDVButton 1-4_2-4		Osc2 Count				Eng2Unison
+Map	Fader 5		Osc2 Blend				Eng2Unison
+Map	Fader 6		Osc2 Detune				Eng2Unison
+Map	Fader 7		Osc2 Spread				Eng2Unison
+// Eng 3 Unison
+Map	PageName		"Eng 3 Unison" 				Eng3Unison
+Map	Button 1-1		Page=Main			Eng3Unison
+Map	Button 2-1		Page=Eng1			Eng3Unison
+Map	Button 3-1		Page=Eng2			Eng3Unison
+Map	Button 4-1		Page=Eng3Unison			Eng3Unison
+Map	Button 1-2		Osc3 Unison On			Eng3Unison
+Map	UDVButton 1-3_2-3		Osc3 Unison Mode				Eng3Unison
+Map	UDVButton 1-4_2-4		Osc3 Count				Eng3Unison
+Map	Fader 5		Osc3 Blend				Eng3Unison
+Map	Fader 6		Osc3 Detune				Eng3Unison
+Map	Fader 7		Osc3 Spread				Eng3Unison
+// LFO 1
+Map	PageName		"LFO 1" 				LFO1
+Map	Sel1_0		TempoSync=Free			LFO1
+Map	Sel1_1		TempoSync=Sync			LFO1
+Map	Button 1-1		Page=Main			LFO1
+Map	Button 5-1		Page=LFO1			LFO1
+Map	Button 6-1		Page=LFO2			LFO1
+Map	Button 7-1		Page=LFO3			LFO1
+Map	UDVButton 1-2_2-2		LFO 1 Wave				LFO1
+Map	Button 6-2		LFO 1 TempoSync		SEL1	LFO1
+Map	Button 7-2		LFO 1 KeySync			LFO1
+Map	Button 8-2		LFO 1 Global			LFO1
+Map	Fader 3		LFO 1 Rate				LFO1	Free
+Map	UDVButton 7-3_8-3		LFO 1 SyncRate				LFO1	Sync
+Map	Fader 4		LFO 1 Delay				LFO1
+// LFO 2
+Map	PageName		"LFO 2" 				LFO2
+Map	Sel1_0		TempoSync=Free			LFO2
+Map	Sel1_1		TempoSync=Sync			LFO2
+Map	Button 1-1		Page=Main			LFO2
+Map	Button 5-1		Page=LFO1			LFO2
+Map	Button 6-1		Page=LFO2			LFO2
+Map	Button 7-1		Page=LFO3			LFO2
+Map	UDVButton 1-2_2-2		LFO 2 Wave				LFO2
+Map	Button 6-2		LFO 2 TempoSync		SEL1	LFO2
+Map	Button 7-2		LFO 2 KeySync			LFO2
+Map	Button 8-2		LFO 2 Global			LFO2
+Map	Fader 3		LFO 2 Rate				LFO2	Free
+Map	UDVButton 7-3_8-3		LFO 2 SyncRate				LFO2	Sync
+Map	Fader 4		LFO 2 Delay				LFO2
+// LFO 3
+Map	PageName		"LFO 3" 				LFO3
+Map	Sel1_0		TempoSync=Free			LFO3
+Map	Sel1_1		TempoSync=Sync			LFO3
+Map	Button 1-1		Page=Main			LFO3
+Map	Button 5-1		Page=LFO1			LFO3
+Map	Button 6-1		Page=LFO2			LFO3
+Map	Button 7-1		Page=LFO3			LFO3
+Map	UDVButton 1-2_2-2		LFO 3 Wave				LFO3
+Map	Button 6-2		LFO 3 TempoSync		SEL1	LFO3
+Map	Button 7-2		LFO 3 KeySync			LFO3
+Map	Button 8-2		LFO 3 Global			LFO3
+Map	Fader 3		LFO 3 Rate				LFO3	Free
+Map	UDVButton 7-3_8-3		LFO 3 SyncRate				LFO3	Sync
+Map	Fader 4		LFO 3 Delay				LFO3
+// Env 1
+Map	PageName		"Env 1" 				Env1
+Map	Button 1-1		Page=Main			Env1
+Map	Button 5-1		Page=Env1			Env1
+Map	Button 6-1		Page=Env2			Env1
+Map	Button 7-1		Page=Env3			Env1
+Map	Button 8-1		Page=Env4			Env1
+Map	Fader 3		Env 1 Rate				Env1
+Map	UDVButton 7-4_8-4		Env 1 SyncRate				Env1
+// Env 2
+Map	PageName		"Env 2" 				Env2
+Map	Button 1-1		Page=Main			Env2
+Map	Button 5-1		Page=Env1			Env2
+Map	Button 6-1		Page=Env2			Env2
+Map	Button 7-1		Page=Env3			Env2
+Map	Button 8-1		Page=Env4			Env2
+Map	Fader 3		Env 2 Rate				Env2
+Map	UDVButton 7-4_8-4		Env 2 SyncRate				Env2
+// Env 3
+Map	PageName		"Env 3" 				Env3
+Map	Button 1-1		Page=Main			Env3
+Map	Button 5-1		Page=Env1			Env3
+Map	Button 6-1		Page=Env2			Env3
+Map	Button 7-1		Page=Env3			Env3
+Map	Button 8-1		Page=Env4			Env3
+Map	Fader 3		Env 3 Rate				Env3
+Map	UDVButton 7-4_8-4		Env 3 SyncRate				Env3
+// Env 4
+Map	PageName		"Env 4" 				Env4
+Map	Button 1-1		Page=Main			Env4
+Map	Button 5-1		Page=Env1			Env4
+Map	Button 6-1		Page=Env2			Env4
+Map	Button 7-1		Page=Env3			Env4
+Map	Button 8-1		Page=Env4			Env4
+Map	Fader 3		Env 4 Rate				Env4
+Map	UDVButton 7-4_8-4		Env 4 SyncRate				Env4
+// Effects
+Map	PageName		"Effects" 				Effects
+Map	Button 1-2		Effect On			Effects
+Map	Button 1-8		Page=Effects			Effects
+Map	Button 2-8		Page=Phaser			Effects
+Map	Button 3-8		Page=Dist			Effects
+Map	Button 4-8		Page=Eq			Effects
+Map	Button 5-8		Page=Delay			Effects
+Map	Button 6-8		Page=Comp			Effects
+Map	Button 7-8		Page=Reverb			Effects
+Map	Button 2-7		Phaser On			Effects
+Map	Button 3-7		Dist On			Effects
+Map	Button 4-7		Eq On			Effects
+Map	Button 5-7		Delay On			Effects
+Map	Button 6-7		Comp On			Effects
+Map	Button 7-7		Reverb On			Effects
+// Phaser
+Map	PageName		"Phaser" 				Phaser
+Map	Button 1-2		Phaser On			Phaser
+Map	Button 1-8		Page=Effects			Phaser
+Map	Button 2-8		Page=Phaser			Phaser
+Map	Button 3-8		Page=Dist			Phaser
+Map	Button 4-8		Page=Eq			Phaser
+Map	Button 5-8		Page=Delay			Phaser
+Map	Button 6-8		Page=Comp			Phaser
+Map	Button 7-8		Page=Reverb			Phaser
+Map	UDVButton 5-1_6-1		Mod Effect Type				Phaser
+Map	Fader 4		Mod Effect Depth				Phaser
+Map	Fader 5		Mod Effect Rate				Phaser
+Map	Fader 6		Mod Effect Spread				Phaser
+Map	Fader 7		Mod Effect Amount				Phaser
+// Dist
+Map	PageName		"Dist" 				Dist
+Map	Button 1-2		Dist On			Dist
+Map	Button 1-8		Page=Effects			Dist
+Map	Button 2-8		Page=Phaser			Dist
+Map	Button 3-8		Page=Dist			Dist
+Map	Button 4-8		Page=Eq			Dist
+Map	Button 5-8		Page=Delay			Dist
+Map	Button 6-8		Page=Comp			Dist
+Map	Button 7-8		Page=Reverb			Dist
+Map	UDVButton 5-1_6-1		Dist Type				Dist
+Map	Fader 4		Dist Drive				Dist
+Map	Fader 5		Dist Tone				Dist
+Map	Fader 7		Dist Amount				Dist
+// Eq
+Map	PageName		"Eq" 				Eq
+Map	Button 1-2		Eq On			Eq
+Map	Button 1-8		Page=Effects			Eq
+Map	Button 2-8		Page=Phaser			Eq
+Map	Button 3-8		Page=Dist			Eq
+Map	Button 4-8		Page=Eq			Eq
+Map	Button 5-8		Page=Delay			Eq
+Map	Button 6-8		Page=Comp			Eq
+Map	Button 7-8		Page=Reverb			Eq
+Map	Fader 4		Eq Freq				Eq
+Map	Fader 5		Eq Q				Eq
+Map	Fader 7		Eq Gain				Eq
+// Delay
+Map	PageName		"Delay" 				Delay
+Map	Button 1-2		Delay On			Delay
+Map	Button 1-8		Page=Effects			Delay
+Map	Button 2-8		Page=Phaser			Delay
+Map	Button 3-8		Page=Dist			Delay
+Map	Button 4-8		Page=Eq			Delay
+Map	Button 5-8		Page=Delay			Delay
+Map	Button 6-8		Page=Comp			Delay
+Map	Button 7-8		Page=Reverb			Delay
+Map	Button 4-1		Delay Sync			Delay
+Map	Button 6-1		Delay PingPong			Delay
+Map	UDVButton 3-2_4-2		Delay Time				Delay
+Map	UDVButton 5-2_6-2		Delay Synced Time				Delay
+Map	Fader 4		Delay Pan				Delay
+Map	Fader 5		Delay FB				Delay
+Map	Fader 7		Delay Amount				Delay
+// Comp
+Map	PageName		"Comp" 				Comp
+Map	Button 1-2		Comp On			Comp
+Map	Button 1-8		Page=Effects			Comp
+Map	Button 2-8		Page=Phaser			Comp
+Map	Button 3-8		Page=Dist			Comp
+Map	Button 4-8		Page=Eq			Comp
+Map	Button 5-8		Page=Delay			Comp
+Map	Button 6-8		Page=Comp			Comp
+Map	Button 7-8		Page=Reverb			Comp
+Map	Fader 3		Comp Attack				Comp
+Map	Fader 4		Comp Release				Comp
+Map	Fader 6		Comp Threshold				Comp
+Map	Fader 7		Comp Ratio				Comp
+// Reverb
+Map	PageName		"Reverb" 				Reverb
+Map	Button 1-2		Reverb On			Reverb
+Map	Button 1-8		Page=Effects			Reverb
+Map	Button 2-8		Page=Phaser			Reverb
+Map	Button 3-8		Page=Dist			Reverb
+Map	Button 4-8		Page=Eq			Reverb
+Map	Button 5-8		Page=Delay			Reverb
+Map	Button 6-8		Page=Comp			Reverb
+Map	Button 7-8		Page=Reverb			Reverb
+Map	Fader 3		Reverb Decay				Reverb
+Map	Fader 4		Reverb Size				Reverb
+Map	Fader 5		Reverb Damp				Reverb
+Map	Fader 7		Reverb Amount				Reverb
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerhead Software	se.propellerheads.radicalpiano
+Define Group	Page	Main	Velocity	Tune	Resonance	Envelope	Mechanics	Eq	Ambience	Output	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Radical Piano"
+Map	PatchName		Patch Name
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=Velocity			Index
+Map	Button 1-3		Page=Envelope			Index
+Map	Button 2-1		Page=Tune			Index
+Map	Button 3-1		Page=Resonance			Index
+Map	Button 4-1		Page=Mechanics			Index
+Map	Button 2-8		Page=Eq			Index
+Map	Button 3-8		Page=Ambience			Index
+Map	Button 4-8		Page=Output			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Meter 2		Sustain Pedal			Main
+Map	Fader 4		Character			Main
+Map	UDVButton 7-5_8-5		Microphone 1 Type				Main
+Map	Knob V6		Microphone and Instrument Blend			Main
+Map	UDVButton 7-7_8-7		Microphone 2 Type				Main
+Map	Fader 8		Master Volume			Main
+// Velocity
+Map	PageName		"Velocity" 				Velocity
+Map	Button 1-1		Page=Main			Velocity
+Map	Fader 4		Vel Response Low			Velocity
+Map	Fader 5		Vel Response High			Velocity
+Map	Knob V6		Vel Response Curve			Velocity
+// Envelope
+Map	PageName		"Envelope" 				Envelope
+Map	Button 1-1		Page=Main			Envelope
+Map	Fader 4		Env Attack			Envelope
+Map	Knob V5		Env Decay Curve			Envelope
+Map	Knob V6		Env Release			Envelope
+// Tune
+Map	PageName		"Tune" 				Tune
+Map	Button 1-1		Page=Main			Tune
+Map	Button 2-1		Page=Tune			Tune
+Map	Button 3-1		Page=Resonance			Tune
+Map	Button 4-1		Page=Mechanics			Tune
+Map	Button 2-8		Page=Eq			Tune
+Map	Button 3-8		Page=Ambience			Tune
+Map	Button 4-8		Page=Output			Tune
+Map	Knob V4		Tune			Tune
+Map	Fader 5		Tune Drift			Tune
+// Resonance
+Map	PageName		"Resonance" 				Resonance
+Map	Button 1-1		Page=Main			Resonance
+Map	Button 2-1		Page=Tune			Resonance
+Map	Button 3-1		Page=Resonance			Resonance
+Map	Button 4-1		Page=Mechanics			Resonance
+Map	Button 2-8		Page=Eq			Resonance
+Map	Button 3-8		Page=Ambience			Resonance
+Map	Button 4-8		Page=Output			Resonance
+Map	Knob V4		Symp Res Release Time			Resonance
+Map	Knob V5		Symp Res Level			Resonance
+// Mechanics
+Map	PageName		"Mechanics" 				Mechanics
+Map	Button 1-1		Page=Main			Mechanics
+Map	Button 2-1		Page=Tune			Mechanics
+Map	Button 3-1		Page=Resonance			Mechanics
+Map	Button 4-1		Page=Mechanics			Mechanics
+Map	Button 2-8		Page=Eq			Mechanics
+Map	Button 3-8		Page=Ambience			Mechanics
+Map	Button 4-8		Page=Output			Mechanics
+Map	Knob V4		Key Down Level			Mechanics
+Map	Knob V5		Key Up Level			Mechanics
+Map	Knob V6		Pedal Level			Mechanics
+// Eq
+Map	PageName		"Eq" 				Eq
+Map	Button 1-1		Page=Main			Eq
+Map	Button 2-1		Page=Tune			Eq
+Map	Button 3-1		Page=Resonance			Eq
+Map	Button 4-1		Page=Mechanics			Eq
+Map	Button 2-8		Page=Eq			Eq
+Map	Button 3-8		Page=Ambience			Eq
+Map	Button 4-8		Page=Output			Eq
+Map	Button 1-2		EQ On/Off			Eq
+Map	Knob V4		EQ Lo Gain			Eq
+Map	Knob V5		EQ Mid Gain			Eq
+Map	Knob V6		EQ Hi Gain			Eq
+// Ambience
+Map	PageName		"Ambience" 				Ambience
+Map	Button 1-1		Page=Main			Ambience
+Map	Button 2-1		Page=Tune			Ambience
+Map	Button 3-1		Page=Resonance			Ambience
+Map	Button 4-1		Page=Mechanics			Ambience
+Map	Button 2-8		Page=Eq			Ambience
+Map	Button 3-8		Page=Ambience			Ambience
+Map	Button 4-8		Page=Output			Ambience
+Map	UDVButton 7-3_8-3		Ambience Type				Ambience
+Map	Fader 4		Ambience Level			Ambience
+// Output
+Map	PageName		"Output" 				Output
+Map	Button 1-1		Page=Main			Output
+Map	Button 2-1		Page=Tune			Output
+Map	Button 3-1		Page=Resonance			Output
+Map	Button 4-1		Page=Mechanics			Output
+Map	Button 2-8		Page=Eq			Output
+Map	Button 3-8		Page=Ambience			Output
+Map	Button 4-8		Page=Output			Output
+Map	Fader 3		Compression Amount			Output
+Map	Knob V4		Stereo Width			Output
