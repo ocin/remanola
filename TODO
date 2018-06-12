@@ -15,7 +15,7 @@
 	+ Thor
 	- RPG-8
 	- Matrix
-- Replace image
+* Replace image
 * clean up buttons array
 - Redo colors with bit operators
 * Create variables for midi operations
