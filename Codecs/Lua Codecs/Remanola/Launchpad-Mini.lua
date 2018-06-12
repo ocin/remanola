@@ -2679,10 +2679,10 @@ function remote_deliver_midi(maxbytes, port)
 
 			table.insert(ret_events, remote.make_midi(string.format("%s %02x", MIDI_OUT_DOUBLEBUFF, bit.bor(newdisp,newupdate,DBCOPY))))
 			swapbuffers = false
-		end
 
-		g_updateditems = {}
-		g_updateall = false
+			g_updateditems = {}
+			g_updateall = false
+		end
 	end
 
 	if(g_brightness ~= g_brightness_new) then
