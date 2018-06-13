@@ -24,17 +24,17 @@ RED1=tonumber("000001",2)
 RED2=tonumber("000010",2)
 RED3=tonumber("000011",2)
 
-AMBER1=tonumber("010001",2)
-AMBER2=tonumber("100010",2)
-AMBER3=tonumber("110011",2)
+AMBER1=bit.bor(RED1,GREEN1)
+AMBER2=bit.bor(RED2,GREEN2)
+AMBER3=bit.bor(RED3,GREEN3)
 
-ORANGE1=tonumber("010010",2)
-ORANGE2=tonumber("010011",2)
-ORANGE3=tonumber("100011",2)
+ORANGE1=bit.bor(RED2,GREEN1)
+ORANGE2=bit.bor(RED3,GREEN1)
+ORANGE3=bit.bor(RED3,GREEN2)
 
-YELLOW1=tonumber("100001",2)
-YELLOW2=tonumber("110001",2)
-YELLOW3=tonumber("110010",2)
+YELLOW1=bit.bor(RED1,GREEN2)
+YELLOW2=bit.bor(RED1,GREEN3)
+YELLOW3=bit.bor(RED2,GREEN3)
 
 RED=RED3
 WRED=RED1
@@ -343,61 +343,61 @@ local item_conf_map = {
 			["Button C8"]={enabledcolor=YELLOW,      activecolor=RED,     disabledcolor=GREEN},
 		},
 		["Index"]={
-			["Button 1-1"]={enabledcolor=AMBER,    activecolor=RED,   disabledcolor=NOCOLOR, helptext="Goto Main"},
-			["Button 2-1"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 3-1"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 4-1"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 5-1"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 6-1"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 7-1"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 8-1"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 1-1"]={enabledcolor=RED,    activecolor=RED,   disabledcolor=NOCOLOR, helptext="Goto Main"},
+			["Button 2-1"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 3-1"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 4-1"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 5-1"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 6-1"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 7-1"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 8-1"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
 
-			["Button 1-2"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 2-2"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 3-2"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 4-2"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 5-2"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 6-2"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 7-2"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 8-2"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 1-2"]={enabledcolor=WRED,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 2-2"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 3-2"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 4-2"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 5-2"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 6-2"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 7-2"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 8-2"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
 
-			["Button 1-3"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 2-3"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 3-3"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 4-3"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 5-3"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 6-3"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 7-3"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 8-3"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 1-3"]={enabledcolor=WRED,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 2-3"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 3-3"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 4-3"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 5-3"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 6-3"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 7-3"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 8-3"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
 
-			["Button 1-4"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 2-4"]={enabledcolor=GREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 3-4"]={enabledcolor=GREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 4-4"]={enabledcolor=GREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 5-4"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 6-4"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 7-4"]={enabledcolor=ORANGE,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 8-4"]={enabledcolor=ORANGE,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 1-4"]={enabledcolor=WRED,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 2-4"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 3-4"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 4-4"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 5-4"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 6-4"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 7-4"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 8-4"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
 
-			["Button 1-5"]={enabledcolor=WGREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 2-5"]={enabledcolor=WGREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 3-5"]={enabledcolor=WGREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 4-5"]={enabledcolor=WGREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 1-5"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 2-5"]={enabledcolor=GREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 3-5"]={enabledcolor=GREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 4-5"]={enabledcolor=GREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
 			["Button 5-5"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
 			["Button 6-5"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
 			["Button 7-5"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 8-5"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 8-5"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
 
-			["Button 1-6"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 2-6"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 3-6"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 4-6"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 5-6"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 6-6"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 7-6"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 8-6"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 1-6"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 2-6"]={enabledcolor=WGREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 3-6"]={enabledcolor=WGREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 4-6"]={enabledcolor=WGREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 5-6"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 6-6"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 7-6"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 8-6"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
 
-			["Button 1-7"]={enabledcolor=ORANGE,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 1-7"]={enabledcolor=YELLOW,     activecolor=RED,   disabledcolor=NOCOLOR},
 			["Button 2-7"]={enabledcolor=ORANGE,     activecolor=RED,   disabledcolor=NOCOLOR},
 			["Button 3-7"]={enabledcolor=ORANGE,     activecolor=RED,   disabledcolor=NOCOLOR},
 			["Button 4-7"]={enabledcolor=ORANGE,     activecolor=RED,   disabledcolor=NOCOLOR},
@@ -434,12 +434,12 @@ local item_conf_map = {
 			["Button 5-3"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=RED1},
 			["Button 5-4"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=NOCOLOR},
 
-			["Button 6-1"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=YELLOW2},
-			["Button 6-2"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=YELLOW1},
+			["Button 6-1"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=ORANGE2},
+			["Button 6-2"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=ORANGE1},
 			["Button 6-3"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=AMBER1},
 			["Button 6-4"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=GREEN1},
 
-			["Button 7-1"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=YELLOW3},
+			["Button 7-1"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=ORANGE3},
 			["Button 7-2"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=AMBER2},
 			["Button 7-3"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=YELLOW1},
 			["Button 7-4"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=GREEN2},
@@ -691,10 +691,10 @@ local item_conf_map = {
 			["Button 3-3"]={enabledcolor=YELLOW,    activecolor=RED,     disabledcolor=NOCOLOR},
 			["Button 3-4"]={enabledcolor=YELLOW,    activecolor=RED,     disabledcolor=NOCOLOR},
 			-- Bank A-D
-			["Button 4-1"]={enabledcolor=YELLOW1,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 4-2"]={enabledcolor=YELLOW1,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 4-3"]={enabledcolor=YELLOW1,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 4-4"]={enabledcolor=YELLOW1,    activecolor=RED,     disabledcolor=NOCOLOR},
+			["Button 4-1"]={enabledcolor=WAMBER,    activecolor=RED,     disabledcolor=NOCOLOR},
+			["Button 4-2"]={enabledcolor=WAMBER,    activecolor=RED,     disabledcolor=NOCOLOR},
+			["Button 4-3"]={enabledcolor=WAMBER,    activecolor=RED,     disabledcolor=NOCOLOR},
+			["Button 4-4"]={enabledcolor=WAMBER,    activecolor=RED,     disabledcolor=NOCOLOR},
 		},
 	},
 	["Thor"]={
@@ -708,7 +708,7 @@ local item_conf_map = {
 			["Button 7-1"]={enabledcolor=GREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
 		},
 		["Main"]={
-			["UDVButton 3-2_4-2"]={enabledcolor=YELLOW1,     activecolor=YELLOW1,   disabledcolor=YELLOW},
+			["UDVButton 3-2_4-2"]={enabledcolor=YELLOW,     activecolor=YELLOW,   disabledcolor=YELLOW},
 			["Button 6-2"]={enabledcolor=YELLOW,     activecolor=YELLOW,   disabledcolor=NOCOLOR},
 			["Fader 2"]={enabledcolor=WAMBER,     activecolor=YELLOW,   disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=40},
 			["Fader 3"]={enabledcolor=WAMBER,     activecolor=YELLOW,   disabledcolor=NOCOLOR, denabledcolor=GREEN, dactivecolor=GREEN, defaultvalue=40},
@@ -1075,7 +1075,7 @@ local item_conf_map = {
 			["Button 1-1"]={enabledcolor=AMBER,    activecolor=RED,   disabledcolor=NOCOLOR},
 			["Button 2-1"]={enabledcolor=YELLOW,    activecolor=RED,   disabledcolor=NOCOLOR},
 			["Button 3-1"]={enabledcolor=YELLOW,    activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 4-1"]={enabledcolor=YELLOW1,    activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 4-1"]={enabledcolor=WAMBER,    activecolor=RED,   disabledcolor=NOCOLOR},
 			["Button 5-1"]={enabledcolor=GREEN,    activecolor=RED,   disabledcolor=NOCOLOR},
 		},
 		["Main"]={
@@ -1229,14 +1229,14 @@ local item_conf_map = {
 		},
 		["Index"]={
 			["Button 1-5"]={enabledcolor=YELLOW,     activecolor=YELLOW,   disabledcolor=NOCOLOR},
-			["Button 2-2"]={enabledcolor=YELLOW1,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 3-2"]={enabledcolor=YELLOW1,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 4-2"]={enabledcolor=YELLOW1,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 5-2"]={enabledcolor=YELLOW1,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 2-3"]={enabledcolor=YELLOW1,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 3-3"]={enabledcolor=YELLOW1,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 4-3"]={enabledcolor=YELLOW1,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 5-3"]={enabledcolor=YELLOW1,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 2-2"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 3-2"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 4-2"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 5-2"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 2-3"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 3-3"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 4-3"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 5-3"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
 			["Button 2-4"]={enabledcolor=GREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
 			["Button 3-4"]={enabledcolor=GREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
 			["Button 4-4"]={enabledcolor=GREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
@@ -1777,7 +1777,6 @@ local item_conf_map = {
 			["Button 5-1"]={enabledcolor=YELLOW,    activecolor=RED,   disabledcolor=NOCOLOR, helptext="Goto OP 3"},
 			["Button 6-1"]={enabledcolor=YELLOW,    activecolor=RED,   disabledcolor=NOCOLOR, helptext="Goto OP 2"},
 			["Button 7-1"]={enabledcolor=YELLOW,    activecolor=RED,   disabledcolor=NOCOLOR, helptext="Goto OP 1"},
-			["Button 8-1"]={enabledcolor=YELLOW1,    activecolor=RED,   disabledcolor=NOCOLOR},
 			["Button 8-2"]={enabledcolor=WAMBER,    activecolor=GREEN,   disabledcolor=NOCOLOR},
 			["UDVButton 7-3_8-3"]={enabledcolor=WAMBER,      activecolor=GREEN,     disabledcolor=NOCOLOR},
 			["UDVButton 7-4_8-4"]={enabledcolor=WAMBER,      activecolor=GREEN,     disabledcolor=NOCOLOR},
@@ -1804,16 +1803,16 @@ local item_conf_map = {
 	},
 	["Europa"]={
 		["Default"]={
-			["Button 1-1"]={enabledcolor=AMBER,    activecolor=RED,   disabledcolor=NOCOLOR, helptext="Goto Main"},
-			["Button 2-1"]={enabledcolor=YELLOW,    activecolor=RED,   disabledcolor=NOCOLOR, helptext="Goto Engine 1"},
-			["Button 3-1"]={enabledcolor=YELLOW,    activecolor=RED,   disabledcolor=NOCOLOR, helptext="Goto Engine 2"},
-			["Button 4-1"]={enabledcolor=YELLOW,    activecolor=RED,   disabledcolor=NOCOLOR, helptext="Goto Engine 3"},
+			["Button 1-1"]={enabledcolor=RED,    activecolor=RED,   disabledcolor=NOCOLOR, helptext="Goto Main"},
+			["Button 2-1"]={enabledcolor=AMBER,    activecolor=RED,   disabledcolor=NOCOLOR, helptext="Goto Engine 1"},
+			["Button 3-1"]={enabledcolor=AMBER,    activecolor=RED,   disabledcolor=NOCOLOR, helptext="Goto Engine 2"},
+			["Button 4-1"]={enabledcolor=AMBER,    activecolor=RED,   disabledcolor=NOCOLOR, helptext="Goto Engine 3"},
+			["Button 1-2"]={enabledcolor=WAMBER,    activecolor=RED,   disabledcolor=NOCOLOR, helptext="Goto Engine 3"},
 			["UDVButton 1-3_2-3"]={enabledcolor=WAMBER,    activecolor=GREEN,   disabledcolor=NOCOLOR},
 			["UDVButton 3-3_4-3"]={enabledcolor=WAMBER,    activecolor=GREEN,   disabledcolor=NOCOLOR},
 			["UDVButton 5-3_6-3"]={enabledcolor=WAMBER,    activecolor=GREEN,   disabledcolor=NOCOLOR},
 			["UDVButton 1-4_2-4"]={enabledcolor=WAMBER,    activecolor=AMBER,   disabledcolor=NOCOLOR},
 			["UDVButton 7-6_8-6"]={enabledcolor=YELLOW,    activecolor=YELLOW,   disabledcolor=NOCOLOR, inverted=true},
-			["Button 1-2"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
 			["Button 2-7"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
 			["Button 3-7"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
 			["Button 4-7"]={enabledcolor=WAMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
@@ -1829,35 +1828,16 @@ local item_conf_map = {
 			["Button 7-8"]={enabledcolor=ORANGE,     activecolor=RED,   disabledcolor=NOCOLOR},
 		},
 		["Main"]={
-			["Button 2-1"]={enabledcolor=YELLOW,    activecolor=RED,   disabledcolor=NOCOLOR, helptext="Goto Engine 1"},
 			["Fader 5"]={enabledcolor=WAMBER,      activecolor=YELLOW,     disabledcolor=NOCOLOR, denabledcolor=WGREEN, dactivecolor=GREEN, defaultvalue=63},
 			["Fader 8"]={enabledcolor=WAMBER,      activecolor=AMBER,     disabledcolor=NOCOLOR, denabledcolor=WGREEN, dactivecolor=YELLOW, defaultvalue=80},
 		},
 		["Index"]={
-			["Button 2-1"]={enabledcolor=YELLOW,    activecolor=RED,   disabledcolor=NOCOLOR, helptext="Goto Engine 1"},
-			["Button 2-2"]={enabledcolor=WAMBER,    activecolor=WAMBER,   disabledcolor=NOCOLOR, helptext="Goto Eng 1 Modifier 1"},
-			["Button 3-2"]={enabledcolor=WAMBER,    activecolor=WAMBER,   disabledcolor=NOCOLOR, helptext="Goto Eng 2 Modifier 1"},
-			["Button 4-2"]={enabledcolor=WAMBER,    activecolor=WAMBER,   disabledcolor=NOCOLOR, helptext="Goto Eng 3 Modifier 1"},
-			["Button 2-3"]={enabledcolor=WAMBER,    activecolor=WAMBER,   disabledcolor=NOCOLOR, helptext="Goto Eng 1 Modifier 2"},
-			["Button 3-3"]={enabledcolor=WAMBER,    activecolor=WAMBER,   disabledcolor=NOCOLOR, helptext="Goto Eng 2 Modifier 2"},
-			["Button 4-3"]={enabledcolor=WAMBER,    activecolor=WAMBER,   disabledcolor=NOCOLOR, helptext="Goto Eng 3 Modifier 2"},
-			["Button 2-4"]={enabledcolor=AMBER,    activecolor=AMBER,   disabledcolor=NOCOLOR, helptext="Goto Eng 1 Harmonics"},
-			["Button 3-4"]={enabledcolor=AMBER,    activecolor=AMBER,   disabledcolor=NOCOLOR, helptext="Goto Eng 2 Harmonics"},
-			["Button 4-4"]={enabledcolor=AMBER,    activecolor=AMBER,   disabledcolor=NOCOLOR, helptext="Goto Eng 3 Harmonics"},
-			["Button 2-5"]={enabledcolor=GREEN,    activecolor=WAMBER,   disabledcolor=NOCOLOR, helptext="Goto Eng 1 Spectral Filter"},
-			["Button 3-5"]={enabledcolor=GREEN,    activecolor=WAMBER,   disabledcolor=NOCOLOR, helptext="Goto Eng 2 Spectral Filter"},
-			["Button 4-5"]={enabledcolor=GREEN,    activecolor=WAMBER,   disabledcolor=NOCOLOR, helptext="Goto Eng 3 Spectral Filter"},
-			["Button 2-6"]={enabledcolor=ORANGE,    activecolor=ORANGE,   disabledcolor=NOCOLOR, helptext="Goto Eng 1 Unison"},
-			["Button 3-6"]={enabledcolor=ORANGE,    activecolor=ORANGE,   disabledcolor=NOCOLOR, helptext="Goto Eng 2 Unison"},
-			["Button 4-6"]={enabledcolor=ORANGE,    activecolor=ORANGE,   disabledcolor=NOCOLOR, helptext="Goto Eng 3 Unison"},
-			["Button 5-4"]={enabledcolor=GREEN,    activecolor=GREEN,   disabledcolor=NOCOLOR, helptext="Goto Filter"},
-			["Button 6-4"]={enabledcolor=YELLOW,    activecolor=YELLOW,   disabledcolor=NOCOLOR, helptext="Goto LFO 1"},
-			["Button 7-4"]={enabledcolor=YELLOW,    activecolor=YELLOW,   disabledcolor=NOCOLOR, helptext="Goto LFO 2"},
-			["Button 8-4"]={enabledcolor=YELLOW,    activecolor=YELLOW,   disabledcolor=NOCOLOR, helptext="Goto LFO 3"},
-			["Button 5-5"]={enabledcolor=YELLOW1,    activecolor=YELLOW1,   disabledcolor=NOCOLOR, helptext="Goto Env 1"},
-			["Button 6-5"]={enabledcolor=YELLOW1,    activecolor=YELLOW1,   disabledcolor=NOCOLOR, helptext="Goto Env 2"},
-			["Button 7-5"]={enabledcolor=YELLOW1,    activecolor=YELLOW1,   disabledcolor=NOCOLOR, helptext="Goto Env 3"},
-			["Button 8-5"]={enabledcolor=YELLOW1,    activecolor=YELLOW1,   disabledcolor=NOCOLOR, helptext="Goto Env 4"},
+			["Button 2-7"]={enabledcolor=ORANGE,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 3-7"]={enabledcolor=ORANGE,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 4-7"]={enabledcolor=ORANGE,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 5-7"]={enabledcolor=ORANGE,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 6-7"]={enabledcolor=ORANGE,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 7-7"]={enabledcolor=ORANGE,     activecolor=RED,   disabledcolor=NOCOLOR},
 		},
 		["Mixer"]={
 			["Fader 2"]={enabledcolor=WAMBER,      activecolor=AMBER,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=AMBER, defaultvalue=63},
@@ -1890,17 +1870,14 @@ local item_conf_map = {
 			["Fader 8"]={enabledcolor=WAMBER,      activecolor=ORANGE,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=ORANGE, defaultvalue=63},
 		},
 		["Eng 1"]={
-			["Button 2-1"]={enabledcolor=YELLOW,    activecolor=RED,   disabledcolor=NOCOLOR, helptext="Goto Engine 1"},
 			["UDVButton 1-4_2-4"]={enabledcolor=WAMBER,    activecolor=AMBER,   disabledcolor=NOCOLOR, inverted=true},
 			["Fader 5"]={enabledcolor=WAMBER,      activecolor=YELLOW,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=63},
 		},
 		["Eng 2"]={
-			["Button 2-1"]={enabledcolor=YELLOW,    activecolor=RED,   disabledcolor=NOCOLOR, helptext="Goto Engine 1"},
 			["UDVButton 1-4_2-4"]={enabledcolor=WAMBER,    activecolor=AMBER,   disabledcolor=NOCOLOR, inverted=true},
 			["Fader 5"]={enabledcolor=WAMBER,      activecolor=YELLOW,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=63},
 		},
 		["Eng 3"]={
-			["Button 2-1"]={enabledcolor=YELLOW,    activecolor=RED,   disabledcolor=NOCOLOR, helptext="Goto Engine 1"},
 			["UDVButton 1-4_2-4"]={enabledcolor=WAMBER,    activecolor=AMBER,   disabledcolor=NOCOLOR, inverted=true},
 			["Fader 5"]={enabledcolor=WAMBER,      activecolor=YELLOW,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=63},
 		},
@@ -2570,6 +2547,20 @@ function remote_init()
 	remote.define_auto_inputs(inputs)
 end
 
+function remote_release_from_use()
+	local ret_events={}
+
+	return ret_events;
+end
+
+function remote_prepare_for_use()
+	local ret_events={}
+
+	table.insert(ret_events, remote.make_midi(string.format("%s %02x", MIDI_OUT_DOUBLEBUFF, bit.bor(DBDISP0,DBUPDATE1,DBCOPY))))
+
+	return ret_events;
+end
+
 function remote_set_state(changed_items)
 	for i,citemindex in ipairs(changed_items)do
 		local citemname = items[citemindex].name
@@ -2581,6 +2572,7 @@ function remote_set_state(changed_items)
 				g_sel1 = remote.get_item_value(citemindex)
 			end
 			if(string.match(citemname, "DeviceScope")) then
+				-- g_scrolltext = remote.get_item_text_value(itemsindex["DeviceScope"])
 				g_updateall = true
        				if(remote.is_item_enabled(itemsindex["DeviceScope"])) then
                				local newscope = remote.get_item_text_value(itemsindex["DeviceScope"])
@@ -2669,12 +2661,12 @@ function remote_deliver_midi(maxbytes, port)
 				newdisp = DBDISP1
 				newupdate = DBUPDATE0
 				g_currentbuffer = 1
-				-- table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons['Button H'], bit.bor(RED, COPY))))
+				-- table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons['Button H'], bit.bor(GREEN, COPY))))
 			else
 				newdisp = DBDISP0
 				newupdate = DBUPDATE1
 				g_currentbuffer = 0
-				-- table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons['Button H'], bit.bor(GREEN, COPY))))
+				-- table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons['Button H'], bit.bor(RED, COPY))))
 			end
 
 			table.insert(ret_events, remote.make_midi(string.format("%s %02x", MIDI_OUT_DOUBLEBUFF, bit.bor(newdisp,newupdate,DBCOPY))))

@@ -41,7 +41,6 @@ Map	Button D 		Loop On/Off
 Map	Button E 		Click On/Off
 Map	BarPosition 		Bar Position
 Map	BeatPosition 		Beat Position
-//Map	Button 1-1 		Tempo BPM
 
 // ------------------------------------------------------------------------------------------
 Scope	Propellerheads	Reason Master Section
@@ -53,11 +52,11 @@ Map	Button C7		Page=Index
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
-Map	Button 2-1		Page=ChMutesSolos			Index
-Map	Button 2-2		Page=ChFaders			Index
-Map	Button 2-3		Page=ChPans			Index
-Map	Button 7-1		Previous 8 Remote Base Channel				Index
-Map	Button 7-8		Next 8 Remote Base Channel				Index
+Map	Button 1-2		Page=ChMutesSolos			Index
+Map	Button 1-3		Page=ChFaders			Index
+Map	Button 1-4		Page=ChPans			Index
+Map	Button 8-1		Previous 8 Remote Base Channel				Index
+Map	Button 8-8		Next 8 Remote Base Channel				Index
 Map	Button H		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
@@ -179,18 +178,18 @@ Map	Button 1-1		Page=Main			Index
 Map	Button 1-2		Page=Mixer			Index
 Map	Button 1-3		Page=Amp			Index
 Map	Button 1-4		Page=AmpEnv			Index
+Map	Button 1-5		Page=Seq			Index
 Map	Button 2-1		Page=Osc1			Index
 Map	Button 3-1		Page=Osc2			Index
 Map	Button 4-1		Page=Osc3			Index
-Map	Button 2-4		Page=Filter1			Index
-Map	Button 3-4		Page=Filter2			Index
-Map	Button 4-4		Page=Filter3			Index
-Map	Button 2-5		Page=FilterEnv			Index
-Map	Button 5-4		Page=LFO1			Index
-Map	Button 6-4		Page=LFO2			Index
-Map	Button 7-4		Page=ModEnv			Index
-Map	Button 8-4		Page=GlobalEnv			Index
-Map	Button 8-6		Page=Seq			Index
+Map	Button 2-5		Page=Filter1			Index
+Map	Button 3-5		Page=Filter2			Index
+Map	Button 4-5		Page=Filter3			Index
+Map	Button 2-6		Page=FilterEnv			Index
+Map	Button 5-5		Page=LFO1			Index
+Map	Button 6-5		Page=LFO2			Index
+Map	Button 5-6		Page=ModEnv			Index
+Map	Button 6-6		Page=GlobalEnv			Index
 Map	Button 2-8		Page=Shaper			Index
 Map	Button 3-8		Page=Delay			Index
 Map	Button 4-8		Page=Chorus			Index
@@ -569,18 +568,18 @@ Map	Button C7		Page=Index
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
+Map	Button 1-5		Page=Velocity			Index
+Map	Button 1-6		Page=ModWheel			Index
 Map	Button 2-1		Page=OscA			Index
 Map	Button 2-2		Page=OscAEnv			Index
 Map	Button 3-1		Page=OscB			Index
 Map	Button 3-2		Page=OscBEnv			Index
-Map	Button 2-4		Page=FilterA			Index
-Map	Button 3-4		Page=FilterB			Index
-Map	Button 2-5		Page=FilterEnv			Index
-Map	Button 5-4		Page=ModA			Index
-Map	Button 6-4		Page=ModB			Index
+Map	Button 2-5		Page=FilterA			Index
+Map	Button 3-5		Page=FilterB			Index
+Map	Button 2-6		Page=FilterEnv			Index
+Map	Button 5-5		Page=ModA			Index
+Map	Button 6-5		Page=ModB			Index
 Map	Button 2-8		Page=Shaper			Index
-Map	Button 8-5		Page=Velocity			Index
-Map	Button 8-6		Page=ModWheel			Index
 Map	Button H		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
@@ -771,7 +770,7 @@ Map	Button C7		Page=Index
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
-Map	Button 1-2		Page=Performance			Index
+Map	Button 1-5		Page=Performance			Index
 Map	Button 6-1		Page=Drum9			Index
 Map	Button 6-2		Page=Drum10			Index
 Map	Button 7-1		Page=Drum5			Index
@@ -1402,7 +1401,7 @@ Map	Button C7		Page=Index
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
-Map	Button 1-2		Page=MutesSolos			Index
+Map	Button 1-5		Page=MutesSolos			Index
 Map	Button 5-1		Page=Drum13			Index
 Map	Button 5-2		Page=Drum14			Index
 Map	Button 5-3		Page=Drum15			Index
@@ -1780,19 +1779,19 @@ Map	Button C7		Page=Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-2		Page=AmpEnv			Index
+Map	Button 1-4		Page=Velocity1			Index
+Map	Button 1-5		Page=Velocity2			Index
+Map	Button 1-6		Page=ModWheel			Index
+Map	Button 1-7		Page=ExtMod			Index
 Map	Button 2-1		Page=Osc1			Index
 Map	Button 3-1		Page=Osc2			Index
 Map	Button 4-1		Page=Noise			Index
-Map	Button 2-4		Page=Filter			Index
-Map	Button 3-4		Page=Filter2			Index
-Map	Button 2-5		Page=FilterEnv			Index
-Map	Button 5-4		Page=LFO1			Index
-Map	Button 6-4		Page=LFO2			Index
-Map	Button 7-4		Page=ModEnv			Index
-Map	Button 8-5		Page=Velocity1			Index
-Map	Button 8-6		Page=Velocity2			Index
-Map	Button 8-7		Page=ModWheel			Index
-Map	Button 8-8		Page=ExtMod			Index
+Map	Button 2-5		Page=Filter			Index
+Map	Button 3-5		Page=Filter2			Index
+Map	Button 2-6		Page=FilterEnv			Index
+Map	Button 5-5		Page=LFO1			Index
+Map	Button 6-5		Page=LFO2			Index
+Map	Button 5-6		Page=ModEnv			Index
 Map	Button H		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
@@ -2771,10 +2770,11 @@ Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-2		Page=Mixer			Index
 Map	Button 1-3		Page=AmpEnv			Index
+Map	Button 1-5		Page=Arp			Index
 Map	Button 2-1		Page=Osc1			Index
 Map	Button 3-1		Page=Osc2			Index
-Map	Button 2-4		Page=Filter			Index
-Map	Button 2-5		Page=FilterEnv			Index
+Map	Button 2-5		Page=Filter			Index
+Map	Button 2-6		Page=FilterEnv			Index
 Map	Button 1-8		Page=Effects			Index
 Map	Button 2-8		Page=EQBass			Index
 Map	Button 3-8		Page=Dist			Index
@@ -2783,10 +2783,9 @@ Map	Button 5-8		Page=Chorus			Index
 Map	Button 6-8		Page=Delay			Index
 Map	Button 7-8		Page=Reverb			Index
 Map	Button 8-8		Page=Comp			Index
-Map	Button 5-4		Page=LFO1			Index
-Map	Button 6-4		Page=LFO2			Index
-Map	Button 7-4		Page=ModEnv			Index
-Map	Button 8-5		Page=Arp			Index
+Map	Button 5-5		Page=LFO1			Index
+Map	Button 6-5		Page=LFO2			Index
+Map	Button 5-6		Page=ModEnv			Index
 Map	Button H		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
@@ -3081,7 +3080,7 @@ Map	Button 4-1		Page=OP4			Index
 Map	Button 5-1		Page=OP3			Index
 Map	Button 6-1		Page=OP2			Index
 Map	Button 7-1		Page=OP1			Index
-Map	Button 5-4		Page=LFO			Index
+Map	Button 5-5		Page=LFO			Index
 Map	Button H		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
@@ -3255,23 +3254,23 @@ Map	Button 4-2		Page=Eng3Mod1			Index
 Map	Button 2-3		Page=Eng1Mod2			Index
 Map	Button 3-3		Page=Eng2Mod2			Index
 Map	Button 4-3		Page=Eng3Mod2			Index
-Map	Button 2-4		Page=Eng1Harm			Index
-Map	Button 3-4		Page=Eng2Harm			Index
-Map	Button 4-4		Page=Eng3Harm			Index
 Map	Button 2-5		Page=Eng1Filter			Index
 Map	Button 3-5		Page=Eng2Filter			Index
 Map	Button 4-5		Page=Eng3Filter			Index
-Map	Button 2-6		Page=Eng1Unison			Index
-Map	Button 3-6		Page=Eng2Unison			Index
-Map	Button 4-6		Page=Eng3Unison			Index
-Map	Button 5-4		Page=Filter			Index
-Map	Button 6-4		Page=LFO1			Index
-Map	Button 7-4		Page=LFO2			Index
-Map	Button 8-4		Page=LFO3			Index
-Map	Button 5-5		Page=Env1			Index
-Map	Button 6-5		Page=Env2			Index
-Map	Button 7-5		Page=Env3			Index
-Map	Button 8-5		Page=Env4			Index
+Map	Button 2-6		Page=Eng1Harm			Index
+Map	Button 3-6		Page=Eng2Harm			Index
+Map	Button 4-6		Page=Eng3Harm			Index
+Map	Button 2-7		Page=Eng1Unison			Index
+Map	Button 3-7		Page=Eng2Unison			Index
+Map	Button 4-7		Page=Eng3Unison			Index
+Map	Button 5-5		Page=Filter			Index
+Map	Button 6-5		Page=LFO1			Index
+Map	Button 7-5		Page=LFO2			Index
+Map	Button 8-5		Page=LFO3			Index
+Map	Button 5-6		Page=Env1			Index
+Map	Button 6-6		Page=Env2			Index
+Map	Button 7-6		Page=Env3			Index
+Map	Button 8-6		Page=Env4			Index
 Map	Button 1-8		Page=Effects			Index
 Map	Button 2-8		Page=Phaser			Index
 Map	Button 3-8		Page=Dist			Index

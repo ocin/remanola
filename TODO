@@ -17,7 +17,7 @@
 	- Matrix
 * Replace image
 * clean up buttons array
-- Redo colors with bit operators
+* Redo colors with bit operators
 * Create variables for midi operations
 * Implement buffer switching
 	* Fix lightshows
