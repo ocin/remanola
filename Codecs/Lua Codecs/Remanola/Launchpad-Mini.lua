@@ -350,6 +350,9 @@ local color_templates = {
 	-- Mute/Solo
 	["BMute"]={enabledcolor=WRED,   activecolor=RED,  disabledcolor=NOCOLOR},
 	["BSolo"]={enabledcolor=WAMBER,   activecolor=GREEN,  disabledcolor=NOCOLOR},
+	["BSoloRevival"]={enabledcolor=WAMBER,   activecolor=YELLOW,  disabledcolor=NOCOLOR},
+	-- Run
+	["BRun"]={enabledcolor=RED,   activecolor=GREEN,  disabledcolor=NOCOLOR},
 }
 
 local item_conf_map = {
@@ -845,49 +848,54 @@ local item_conf_map = {
                         ["Fader 5"]={template="FYellow"},
 		},
 		["Step Sequencer"]={
-			-- Run
-			["Button 2-1"]={enabledcolor=RED,     activecolor=GREEN,   disabledcolor=NOCOLOR},
-                        ["UDVButton 1-2_2-2"]={template="UDYellow"},
-                        ["UDVButton 1-3_2-3"]={template="UDYellow", inverted=true},
-			["Button 2-4"]={enabledcolor=WAMBER,     activecolor=GREEN,   disabledcolor=NOCOLOR},
-                        ["UDVButton 1-5_2-5"]={template="UDGreen"},
-                        ["UDVButton 1-6_2-6"]={template="UDYellow"},
-                        ["UDVButton 1-7_2-7"]={template="UDGreen", inverted=true},
-                        ["UDVButton 1-8_2-8"]={template="UDYellow"},
-			-- Sequence Step
-			["Button 3-1"]={enabledcolor=GREEN,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 3-2"]={enabledcolor=GREEN,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 3-3"]={enabledcolor=GREEN,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 3-4"]={enabledcolor=GREEN,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 3-5"]={enabledcolor=GREEN,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 3-6"]={enabledcolor=GREEN,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 3-7"]={enabledcolor=GREEN,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 3-8"]={enabledcolor=GREEN,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 4-1"]={enabledcolor=GREEN,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 4-2"]={enabledcolor=GREEN,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 4-3"]={enabledcolor=GREEN,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 4-4"]={enabledcolor=GREEN,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 4-5"]={enabledcolor=GREEN,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 4-6"]={enabledcolor=GREEN,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 4-7"]={enabledcolor=GREEN,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 4-8"]={enabledcolor=GREEN,    activecolor=RED,     disabledcolor=NOCOLOR},
 			-- Sequence select
-			["Button 5-1"]={enabledcolor=YELLOW,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 5-2"]={enabledcolor=YELLOW,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 5-3"]={enabledcolor=YELLOW,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 5-4"]={enabledcolor=YELLOW,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 5-5"]={enabledcolor=YELLOW,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 5-6"]={enabledcolor=YELLOW,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 5-7"]={enabledcolor=YELLOW,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 5-8"]={enabledcolor=YELLOW,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 6-1"]={enabledcolor=YELLOW,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 6-2"]={enabledcolor=YELLOW,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 6-3"]={enabledcolor=YELLOW,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 6-4"]={enabledcolor=YELLOW,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 6-5"]={enabledcolor=YELLOW,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 6-6"]={enabledcolor=YELLOW,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 6-7"]={enabledcolor=YELLOW,    activecolor=RED,     disabledcolor=NOCOLOR},
-			["Button 6-8"]={enabledcolor=YELLOW,    activecolor=RED,     disabledcolor=NOCOLOR},
+			["Button 1-1"]={template="BRedOnOff"},
+			["Button 1-2"]={template="BRedOnOff"},
+			["Button 1-3"]={template="BRedOnOff"},
+			["Button 1-4"]={template="BRedOnOff"},
+			["Button 1-5"]={template="BRedOnOff"},
+			["Button 1-6"]={template="BRedOnOff"},
+			["Button 1-7"]={template="BRedOnOff"},
+			["Button 1-8"]={template="BRedOnOff"},
+			["Button 2-1"]={template="BRedOnOff"},
+			["Button 2-2"]={template="BRedOnOff"},
+			["Button 2-3"]={template="BRedOnOff"},
+			["Button 2-4"]={template="BRedOnOff"},
+			["Button 2-5"]={template="BRedOnOff"},
+			["Button 2-6"]={template="BRedOnOff"},
+			["Button 2-7"]={template="BRedOnOff"},
+			["Button 2-8"]={template="BRedOnOff"},
+			-- Sequence Knobs
+			["UDVButton 3-1_4-1"]={template="UDAmber"},
+			["UDVButton 3-2_4-2"]={template="UDAmber"},
+			["UDVButton 3-3_4-3"]={template="UDAmber"},
+			["UDVButton 3-4_4-4"]={template="UDAmber"},
+			["UDVButton 3-5_4-5"]={template="UDAmber"},
+			["UDVButton 3-6_4-6"]={template="UDAmber"},
+			["UDVButton 3-7_4-7"]={template="UDAmber"},
+			["UDVButton 3-8_4-8"]={template="UDAmber"},
+			["UDVButton 5-1_6-1"]={template="UDAmber"},
+			["UDVButton 5-2_6-2"]={template="UDAmber"},
+			["UDVButton 5-3_6-3"]={template="UDAmber"},
+			["UDVButton 5-4_6-4"]={template="UDAmber"},
+			["UDVButton 5-5_6-5"]={template="UDAmber"},
+			["UDVButton 5-6_6-6"]={template="UDAmber"},
+			["UDVButton 5-7_6-7"]={template="UDAmber"},
+			["UDVButton 5-8_6-8"]={template="UDAmber"},
+			-- Controls
+			["Button 8-1"]={template="BRedOnOff"},
+                        ["UDVButton 7-2_8-2"]={template="UDOrange"},
+                        ["UDVButton 7-3_8-3"]={template="UDOrange", inverted=true},
+			["Button 8-4"]={template="BGreenOnOff"},
+                        ["UDVButton 7-5_8-5"]={template="UDGreen"},
+                        ["UDVButton 7-6_8-6"]={template="UDAmber"},
+                        ["UDVButton 7-7_8-7"]={template="UDGreen", inverted=true},
+                        ["UDVButton 7-8_8-8"]={template="UDYellow"},
+		},
+		["Step Sequencer Edit"]={
+			["Button 8-1"]={template="BRedOnOff"},
+			["Button 8-7"]={template="BPerformancePage"},
+			["Button 8-8"]={template="BPerformancePage"},
 		},
 		["Shaper"]={
 			["Button 2-2"]={template="BGreenOnOff"},
@@ -920,15 +928,22 @@ local item_conf_map = {
 	},
 	["Combinator"]={
 		["Default"]={
+			-- On/Off/Bypass
+			["UDVButton 1-1_2-1"]={template="UDRed"},
 			-- Run
-			["Button 5-1"]={enabledcolor=RED,     activecolor=GREEN,   disabledcolor=NOCOLOR},
+			["Button 5-1"]={template="BRedOnOff"},
+			-- Bypass All Effects
+			["Button 6-1"]={template="BRedOnOff"},
 			-- Buttons
 			["Button 8-1"]={template="BRedOnOff"},
 			["Button 8-2"]={template="BRedOnOff"},
 			["Button 8-3"]={template="BRedOnOff"},
 			["Button 8-4"]={template="BRedOnOff"},
-			["Button 8-7"]={enabledcolor=RED,    activecolor=GREEN,   disabledcolor=NOCOLOR},
-			["Button 8-8"]={enabledcolor=GREEN,    activecolor=RED,   disabledcolor=NOCOLOR},
+			-- Rotaries
+			["Fader 5"]={template="FYellow"},
+			["Fader 6"]={template="FYellow"},
+			["Fader 7"]={template="FYellow"},
+			["Fader 8"]={template="FYellow"},
 		},
 	},
 	["DrOctoRex"]={
@@ -1011,6 +1026,9 @@ local item_conf_map = {
 			["Fader 8"]={template="FRed"},
 		},
 		["Filter *"]={
+			["Button 5-1"]={template="BFilterPage"},
+			["Button 6-1"]={template="BFilterPage"},
+			["Button 1-2"]={template="BYellowOnOff"},
 			["UDVButton 7-4_8-4"]={template="UDGreen", inverted=true},
 			["Button 8-5"]={template="BYellowOnOff"},
 			["Button 8-6"]={template="BYellowOnOff"},
@@ -1026,34 +1044,29 @@ local item_conf_map = {
 			["Fader 8"]={template="FAmber"},
 		},
 		["Mod *"]={
-			["Button 8-1"]={template="BYellowOnOff"},
-			["UDVButton 3-1_4-1"]={template="UDYellow"},
-			["Fader 2"]={template="FGreen"},
-			["Button 4-8"]={enabledcolor=AMBER,     activecolor=AMBER,   disabledcolor=NOCOLOR},
-			["Button 8-7"]={template="BYellowOnOff"},
-			["Button 8-8"]={template="BYellowOnOff"},
-		},
-		["Mod A"]={
-			["Knov V3"]={template="FYellow"},
-			["Knov V4"]={template="FYellow"},
-			["Knov V5"]={template="FYellow"},
-		},
-		["Mod B"]={
-			["Knov V3"]={template="FYellow"},
-			["Knov V4"]={template="FYellow"},
-			["Knov V5"]={template="FYellow"},
-			["Knov V6"]={template="FYellow"},
+			["Button 5-1"]={template="BLFOPage"},
+			["Button 6-1"]={template="BLFOPage"},
+			["Button 1-2"]={template="BYellowOnOff"},
+			["UDVButton 3-2_4-2"]={template="UDYellow"},
+			["Fader 3"]={template="FGreen"},
+			["Knob V4"]={template="FYellow"},
+			["Knob V5"]={template="FYellow"},
+			["Knob V6"]={template="FYellow"},
+			["Knob V7"]={template="FYellow"},
+			["Button 1-8"]={template="BYellowOnOff"},
+			["Button 2-8"]={template="BYellowOnOff"},
+			["UDVButton 7-8_8-8"]={template="UDYellow"},
 		},
 		["Shaper"]={
-			["Button 2-2"]={template="BYellowOnOff"},
+			["Button 1-2"]={template="BYellowOnOff"},
 			["UDVButton 5-2_6-2"]={template="FOrange", inverted=true},
 			["Fader 8"]={template="FOrange"},
 		},
 		["Velocity"]={
-			["Button 8-8"]={enabledcolor=YELLOW,     activecolor=YELLOW,   disabledcolor=NOCOLOR},
+			["UDVButton 7-8_8-8"]={template="UDYellow"},
 		},
 		["ModWheel"]={
-			["Button 8-8"]={enabledcolor=YELLOW,     activecolor=YELLOW,   disabledcolor=NOCOLOR},
+			["UDVButton 7-8_8-8"]={template="UDYellow"},
 		},
 	},
 	["NN19"]={
@@ -1088,11 +1101,11 @@ local item_conf_map = {
 		},
 		["Osc *"]={
 			["Knob V2"]={template="FAmber"},
+			["UDVButton 1-3_2-3"]={template="UDAmber", inverted=true},
 			["UDVButton 3-3_4-3"]={template="UDAmber"},
 			["UDVButton 3-4_4-4"]={template="UDGreen"},
 			["UDVButton 3-5_4-5"]={template="UDGreen"},
 			["UDVButton 3-6_4-6"]={template="UDGreen"},
-			["Button 6-3"]={enabledcolor=AMBER,    activecolor=AMBER,   disabledcolor=NOCOLOR},
 			["Button 8-3"]={template="BRedOnOff"},
 			["Button 8-6"]={template="BRedOnOff"},
 			["Fader 7"]={template="FAmber"},
@@ -1185,24 +1198,14 @@ local item_conf_map = {
 	},
 	["Revival"]={
 		["Default"]={
+			["Button 1-1"]={template="BMainPage"},
+			["Button 2-1"]={template="BOscPage"},
+			["Button 3-1"]={template="BOscPage"},
+			["Button 4-1"]={template="BOscPage"},
+			["Button 5-1"]={template="BOscPage"},
 			["Button 6-1"]={template="BFilterPage"},
 			["Button 7-1"]={template="BFilterPage"},
 			["Button 8-1"]={template="BFilterPage"},
-			["Drawbar 2"]={enabledcolor=NOCOLOR,      activecolor=AMBER,     disabledcolor=NOCOLOR},
-			["Drawbar 3"]={enabledcolor=NOCOLOR,      activecolor=AMBER,     disabledcolor=NOCOLOR},
-			["Drawbar 4"]={enabledcolor=NOCOLOR,      activecolor=GREEN,     disabledcolor=NOCOLOR},
-			["Drawbar 5"]={enabledcolor=NOCOLOR,      activecolor=GREEN,     disabledcolor=NOCOLOR},
-			["Drawbar 6"]={enabledcolor=NOCOLOR,      activecolor=YELLOW,     disabledcolor=NOCOLOR},
-			["Drawbar 7"]={enabledcolor=NOCOLOR,      activecolor=GREEN,     disabledcolor=NOCOLOR},
-			["Drawbar 8"]={enabledcolor=NOCOLOR,      activecolor=YELLOW,     disabledcolor=NOCOLOR},
-			["UDVButton 5-2_6-2"]={enabledcolor=AMBER,    activecolor=AMBER,   disabledcolor=NOCOLOR, inverted=true},
-			["UDVButton 7-2_8-2"]={enabledcolor=YELLOW,    activecolor=YELLOW,   disabledcolor=NOCOLOR, inverted=true},
-			["Fader 3"]={enabledcolor=WAMBER,      activecolor=GREEN,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=GREEN, defaultvalue=0},
-			["Fader 4"]={enabledcolor=WAMBER,      activecolor=RED,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=RED, defaultvalue=0},
-			["Fader 5"]={enabledcolor=WAMBER,      activecolor=YELLOW,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=0},
-			["Fader 6"]={enabledcolor=WAMBER,      activecolor=YELLOW,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=0},
-			["Fader 7"]={enabledcolor=WAMBER,      activecolor=YELLOW,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=0},
-			["Fader 8"]={enabledcolor=WAMBER,      activecolor=GREEN,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=GREEN, defaultvalue=0},
 			["Button 1-8"]={template="BMainEffectPage"},
 			["Button 2-8"]={template="BEffectPage"},
 			["Button 3-8"]={template="BEffectPage"},
@@ -1213,116 +1216,113 @@ local item_conf_map = {
 			["Button 8-8"]={template="BEffectPage"},
 		},
 		["Index"]={
-			["Button 1-5"]={enabledcolor=YELLOW,     activecolor=YELLOW,   disabledcolor=NOCOLOR},
-			["Button 2-2"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 3-2"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 4-2"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 5-2"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 2-3"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 3-3"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 4-3"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 5-3"]={enabledcolor=AMBER,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 2-4"]={enabledcolor=GREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 3-4"]={enabledcolor=GREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 4-4"]={enabledcolor=GREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 5-4"]={enabledcolor=GREEN,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 2-5"]={enabledcolor=GREEN2,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 3-5"]={enabledcolor=GREEN2,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 4-5"]={enabledcolor=GREEN2,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 5-5"]={enabledcolor=GREEN2,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 2-6"]={enabledcolor=GREEN2,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 3-6"]={enabledcolor=GREEN2,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 4-6"]={enabledcolor=GREEN2,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 5-6"]={enabledcolor=GREEN2,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 2-7"]={enabledcolor=GREEN2,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 3-7"]={enabledcolor=GREEN2,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 4-7"]={enabledcolor=GREEN2,     activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 5-7"]={enabledcolor=GREEN2,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 2-4"]={template="BFilterPage"},
+			["Button 3-4"]={template="BFilterPage"},
+			["Button 4-4"]={template="BFilterPage"},
+			["Button 5-4"]={template="BFilterPage"},
+			["Button 2-5"]={template="BFilterModPage"},
+			["Button 3-5"]={template="BFilterModPage"},
+			["Button 4-5"]={template="BFilterModPage"},
+			["Button 5-5"]={template="BFilterModPage"},
+			["Button 2-6"]={template="BFilterModPage"},
+			["Button 3-6"]={template="BFilterModPage"},
+			["Button 4-6"]={template="BFilterModPage"},
+			["Button 5-6"]={template="BFilterModPage"},
+			["Button 2-7"]={template="BFilterModPage"},
+			["Button 3-7"]={template="BFilterModPage"},
+			["Button 4-7"]={template="BFilterModPage"},
+			["Button 5-7"]={template="BFilterModPage"},
 		},
 		["Main"]={
-			["Button 8-2"]={enabledcolor=WAMBER,    activecolor=RED,   disabledcolor=NOCOLOR},
-			["Button 8-3"]={enabledcolor=WAMBER,    activecolor=RED,   disabledcolor=NOCOLOR},
-			["Fader 4"]={enabledcolor=WAMBER,      activecolor=YELLOW,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=0},
-			["Fader 5"]={enabledcolor=WAMBER,      activecolor=YELLOW,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=0},
-			["BigFader 8"]={enabledcolor=WAMBER,      activecolor=AMBER,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=AMBER, defaultvalue=511},
+			-- S1/S2 switches
+			["Button 6-2"]={template="BYellowOnOff"},
+			["Button 6-3"]={template="BYellowOnOff"},
+			-- Attack Vib/Trem switches
+			["Button 7-2"]={template="BYellowOnOff"},
+			["Button 7-3"]={template="BYellowOnOff"},
+			-- Rotator switches
+			["Button 8-2"]={template="BRedOnOff"},
+			["Button 8-3"]={template="BRedOnOff"},
+			-- R1/R2 knobs
+			["Fader 4"]={template="FYellow"},
+			["Fader 5"]={template="FYellow"},
+			["BigFader 8"]={template="FRed"},
 		},
 		["Voicing 1"]={
-			["Button 2-1"]={enabledcolor=WAMBER,    activecolor=RED,   disabledcolor=NOCOLOR},
-			["UDVButton 1-2_2-2"]={enabledcolor=AMBER,    activecolor=AMBER,   disabledcolor=NOCOLOR,inverted=true},
-			["UDVButton 3-2_4-2"]={enabledcolor=AMBER,    activecolor=AMBER,   disabledcolor=NOCOLOR,inverted=true},
-			["UDVButton 5-2_6-2"]={enabledcolor=AMBER,    activecolor=AMBER,   disabledcolor=NOCOLOR,inverted=true},
-			["UDVButton 7-2_8-2"]={enabledcolor=AMBER,    activecolor=AMBER,   disabledcolor=NOCOLOR,inverted=true},
-			["Fader 4"]={enabledcolor=WAMBER,      activecolor=YELLOW,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=0},
-			["Fader 7"]={enabledcolor=WAMBER,      activecolor=YELLOW,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=0},
+			["Button 2-1"]={template="BRedOnOff"},
+			["UDVButton 1-2_2-2"]={template="FAmber",inverted=true},
+			["UDVButton 3-2_4-2"]={template="FAmber",inverted=true},
+			["UDVButton 5-2_6-2"]={template="FYellow",inverted=true},
+			["UDVButton 7-2_8-2"]={template="FAmber",inverted=true},
+			["Fader 4"]={template="FYellow"},
+			["Fader 7"]={template="FYellow"},
 		},
 		["Voicing 2"]={
-			["Fader 1"]={enabledcolor=WAMBER,      activecolor=YELLOW,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=0},
-			["Fader 2"]={enabledcolor=WAMBER,      activecolor=ORANGE,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=ORANGE, defaultvalue=0},
-			["Fader 3"]={enabledcolor=WAMBER,      activecolor=YELLOW,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=0},
-			["Fader 6"]={enabledcolor=WAMBER,      activecolor=ORANGE,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=ORANGE, defaultvalue=0},
-			["Fader 7"]={enabledcolor=WAMBER,      activecolor=ORANGE,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=ORANGE, defaultvalue=0},
-			["Fader 8"]={enabledcolor=WAMBER,      activecolor=GREEN,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=GREEN, defaultvalue=0},
+			["Fader 1"]={template="FYellow"},
+			["Fader 2"]={template="FOrange"},
+			["Fader 3"]={template="FYellow"},
+			["Fader 6"]={template="FOrange"},
+			["Fader 7"]={template="FOrange"},
+			["Fader 8"]={template="FGreen"},
 		},
 		["Pri/Sec"]={
-			["Button 1-2"]={enabledcolor=WAMBER,    activecolor=RED,   disabledcolor=NOCOLOR},
-			["UDVButton 1-3_2-3"]={enabledcolor=AMBER,    activecolor=AMBER,   disabledcolor=NOCOLOR,inverted=true},
-			["Knob V4"]={enabledcolor=WAMBER,      activecolor=AMBER,     disabledcolor=NOCOLOR},
-			["Fader 6"]={enabledcolor=WAMBER,      activecolor=GREEN,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=GREEN, defaultvalue=0},
-			["Button 1-7"]={enabledcolor=WAMBER,    activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button 1-2"]={template="BRedOnOff"},
+			["UDVButton 1-3_2-3"]={template="UDAmber",inverted=true},
+			["Knob V4"]={template="FAmber"},
+			["Fader 6"]={template="FGreen"},
+			["Button 1-7"]={template="BRedOnOff"},
 		},
 		["Solos"]={
-			["Button 8-2"]={enabledcolor=WAMBER,     activecolor=YELLOW,   disabledcolor=NOCOLOR},
-			["Button 8-4"]={enabledcolor=WAMBER,     activecolor=YELLOW,   disabledcolor=NOCOLOR},
-			["Button 8-6"]={enabledcolor=WAMBER,     activecolor=YELLOW,   disabledcolor=NOCOLOR},
-			["Button 8-8"]={enabledcolor=WAMBER,     activecolor=YELLOW,   disabledcolor=NOCOLOR},
+			["Button 8-2"]={template="BSoloRevival"},
+			["Button 8-4"]={template="BSoloRevival"},
+			["Button 8-6"]={template="BSoloRevival"},
+			["Button 8-8"]={template="BSoloRevival"},
 		},
 		["Attack"]={
-			["UDVButton 1-2_2-2"]={enabledcolor=AMBER,    activecolor=AMBER,   disabledcolor=NOCOLOR,inverted=true},
+			["UDVButton 1-2_2-2"]={template="UDAmber",inverted=true},
 			["Fader 3"]={template="FRed"},
-			["Fader 5"]={enabledcolor=WAMBER,      activecolor=AMBER,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=AMBER, defaultvalue=0},
-			["Fader 6"]={enabledcolor=WAMBER,      activecolor=AMBER,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=AMBER, defaultvalue=0},
-			["Fader 7"]={enabledcolor=WAMBER,      activecolor=AMBER,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=AMBER, defaultvalue=0},
-			["Button 1-8"]={enabledcolor=WAMBER,    activecolor=RED,   disabledcolor=NOCOLOR},
+			["Fader 5"]={template="FAmber"},
+			["Fader 6"]={template="FAmber"},
+			["Fader 7"]={template="FAmber"},
+			["Button 1-8"]={template="BRedOnOff"},
 		},
 		["Primary"]={
-			["UDVButton 1-2_2-2"]={enabledcolor=AMBER,    activecolor=AMBER,   disabledcolor=NOCOLOR,inverted=true},
+			["UDVButton 1-2_2-2"]={template="UDAmber",inverted=true},
 			["Fader 3"]={template="FRed"},
-			["Fader 7"]={enabledcolor=WAMBER,      activecolor=AMBER,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=AMBER, defaultvalue=0},
+			["Fader 7"]={template="FAmber"},
 		},
 		["Secondary"]={
-			["UDVButton 1-2_2-2"]={enabledcolor=AMBER,    activecolor=AMBER,   disabledcolor=NOCOLOR,inverted=true},
+			["UDVButton 1-2_2-2"]={template="UDAmber",inverted=true},
 			["Fader 3"]={template="FRed"},
-			["Fader 7"]={enabledcolor=WAMBER,      activecolor=AMBER,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=AMBER, defaultvalue=0},
+			["Fader 7"]={template="FAmber"},
 		},
 		["Release"]={
-			["UDVButton 1-2_2-2"]={enabledcolor=AMBER,    activecolor=AMBER,   disabledcolor=NOCOLOR,inverted=true},
+			["UDVButton 1-2_2-2"]={template="UDAmber",inverted=true},
 			["Fader 3"]={template="FRed"},
-			["Fader 5"]={enabledcolor=WAMBER,      activecolor=AMBER,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=AMBER, defaultvalue=0},
-			["Fader 6"]={enabledcolor=WAMBER,      activecolor=AMBER,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=AMBER, defaultvalue=0},
-			["Fader 7"]={enabledcolor=WAMBER,      activecolor=AMBER,     disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=AMBER, defaultvalue=0},
-			["Button 1-8"]={enabledcolor=WAMBER,    activecolor=RED,   disabledcolor=NOCOLOR},
+			["Fader 5"]={template="FAmber"},
+			["Fader 6"]={template="FAmber"},
+			["Fader 7"]={template="FAmber"},
+			["Button 1-8"]={template="BRedOnOff"},
 		},
-		["Attack Drawbars Upper"]={
-			["Drawbar 2"]={enabledcolor=NOCOLOR,      activecolor=YELLOW,     disabledcolor=NOCOLOR},
-			["Drawbar 3"]={enabledcolor=NOCOLOR,      activecolor=WGREEN,     disabledcolor=NOCOLOR},
-			["Drawbar 4"]={enabledcolor=NOCOLOR,      activecolor=GREEN,     disabledcolor=NOCOLOR},
+		["* Drawbars Lower"]={
+			["Button 7-1"]={template="BOscPage"},
+			["Button 8-1"]={template="BOscPage"},
+			["Drawbar 2"]={template="FAmber"},
+			["Drawbar 3"]={template="FAmber"},
+			["Drawbar 4"]={template="FGreen"},
+			["Drawbar 5"]={template="FGreen"},
+			["Drawbar 6"]={template="FYellow"},
+			["Drawbar 7"]={template="FGreen"},
+			["Drawbar 8"]={template="FYellow"},
 		},
-		["Primary Drawbars Upper"]={
-			["Drawbar 2"]={enabledcolor=NOCOLOR,      activecolor=YELLOW,     disabledcolor=NOCOLOR},
-			["Drawbar 3"]={enabledcolor=NOCOLOR,      activecolor=WGREEN,     disabledcolor=NOCOLOR},
-			["Drawbar 4"]={enabledcolor=NOCOLOR,      activecolor=GREEN,     disabledcolor=NOCOLOR},
+		["* Drawbars Upper"]={
+			["Button 7-1"]={template="BOscPage"},
+			["Button 8-1"]={template="BOscPage"},
+			["Drawbar 2"]={template="FYellow"},
+			["Drawbar 3"]={template="FOrange"},
+			["Drawbar 4"]={template="FGreen"},
 		},
-		["Secondary Drawbars Upper"]={
-			["Drawbar 2"]={enabledcolor=NOCOLOR,      activecolor=YELLOW,     disabledcolor=NOCOLOR},
-			["Drawbar 3"]={enabledcolor=NOCOLOR,      activecolor=WGREEN,     disabledcolor=NOCOLOR},
-			["Drawbar 4"]={enabledcolor=NOCOLOR,      activecolor=GREEN,     disabledcolor=NOCOLOR},
-		},
-		["Release Drawbars Upper"]={
-			["Drawbar 2"]={enabledcolor=NOCOLOR,      activecolor=YELLOW,     disabledcolor=NOCOLOR},
-			["Drawbar 3"]={enabledcolor=NOCOLOR,      activecolor=WGREEN,     disabledcolor=NOCOLOR},
-			["Drawbar 4"]={enabledcolor=NOCOLOR,      activecolor=GREEN,     disabledcolor=NOCOLOR},
-		},
-		["Attack Mod Enable"]={
+		["* Mod Enable"]={
 			["Button 1-2"]={template="BRedOnOff"},
 			["Button 1-3"]={template="BRedOnOff"},
 			["Button 1-4"]={template="BRedOnOff"},
@@ -1354,103 +1354,15 @@ local item_conf_map = {
 			["Button 6-3"]={template="BRedOnOff"},
 			["Button 6-4"]={template="BRedOnOff"},
 		},
-		["Primary Mod Enable"]={
-			["Button 1-2"]={template="BRedOnOff"},
-			["Button 1-3"]={template="BRedOnOff"},
-			["Button 1-4"]={template="BRedOnOff"},
-			["Button 1-5"]={template="BRedOnOff"},
-			["Button 1-6"]={template="BRedOnOff"},
-			["Button 1-7"]={template="BRedOnOff"},
-			["Button 1-8"]={template="BRedOnOff"},
-			["Button 2-2"]={template="BRedOnOff"},
-			["Button 2-3"]={template="BRedOnOff"},
-			["Button 2-4"]={template="BRedOnOff"},
-			["Button 3-2"]={template="BRedOnOff"},
-			["Button 3-3"]={template="BRedOnOff"},
-			["Button 3-4"]={template="BRedOnOff"},
-			["Button 3-5"]={template="BRedOnOff"},
-			["Button 3-6"]={template="BRedOnOff"},
-			["Button 3-7"]={template="BRedOnOff"},
-			["Button 3-8"]={template="BRedOnOff"},
-			["Button 4-2"]={template="BRedOnOff"},
-			["Button 4-3"]={template="BRedOnOff"},
-			["Button 4-4"]={template="BRedOnOff"},
-			["Button 5-2"]={template="BRedOnOff"},
-			["Button 5-3"]={template="BRedOnOff"},
-			["Button 5-4"]={template="BRedOnOff"},
-			["Button 5-5"]={template="BRedOnOff"},
-			["Button 5-6"]={template="BRedOnOff"},
-			["Button 5-7"]={template="BRedOnOff"},
-			["Button 5-8"]={template="BRedOnOff"},
-			["Button 6-2"]={template="BRedOnOff"},
-			["Button 6-3"]={template="BRedOnOff"},
-			["Button 6-4"]={template="BRedOnOff"},
-		},
-		["Secondary Mod Enable"]={
-			["Button 1-2"]={template="BRedOnOff"},
-			["Button 1-3"]={template="BRedOnOff"},
-			["Button 1-4"]={template="BRedOnOff"},
-			["Button 1-5"]={template="BRedOnOff"},
-			["Button 1-6"]={template="BRedOnOff"},
-			["Button 1-7"]={template="BRedOnOff"},
-			["Button 1-8"]={template="BRedOnOff"},
-			["Button 2-2"]={template="BRedOnOff"},
-			["Button 2-3"]={template="BRedOnOff"},
-			["Button 2-4"]={template="BRedOnOff"},
-			["Button 3-2"]={template="BRedOnOff"},
-			["Button 3-3"]={template="BRedOnOff"},
-			["Button 3-4"]={template="BRedOnOff"},
-			["Button 3-5"]={template="BRedOnOff"},
-			["Button 3-6"]={template="BRedOnOff"},
-			["Button 3-7"]={template="BRedOnOff"},
-			["Button 3-8"]={template="BRedOnOff"},
-			["Button 4-2"]={template="BRedOnOff"},
-			["Button 4-3"]={template="BRedOnOff"},
-			["Button 4-4"]={template="BRedOnOff"},
-			["Button 5-2"]={template="BRedOnOff"},
-			["Button 5-3"]={template="BRedOnOff"},
-			["Button 5-4"]={template="BRedOnOff"},
-			["Button 5-5"]={template="BRedOnOff"},
-			["Button 5-6"]={template="BRedOnOff"},
-			["Button 5-7"]={template="BRedOnOff"},
-			["Button 5-8"]={template="BRedOnOff"},
-			["Button 6-2"]={template="BRedOnOff"},
-			["Button 6-3"]={template="BRedOnOff"},
-			["Button 6-4"]={template="BRedOnOff"},
-		},
-		["Release Mod Enable"]={
-			["Button 1-2"]={template="BRedOnOff"},
-			["Button 1-3"]={template="BRedOnOff"},
-			["Button 1-4"]={template="BRedOnOff"},
-			["Button 1-5"]={template="BRedOnOff"},
-			["Button 1-6"]={template="BRedOnOff"},
-			["Button 1-7"]={template="BRedOnOff"},
-			["Button 1-8"]={template="BRedOnOff"},
-			["Button 2-2"]={template="BRedOnOff"},
-			["Button 2-3"]={template="BRedOnOff"},
-			["Button 2-4"]={template="BRedOnOff"},
-			["Button 3-2"]={template="BRedOnOff"},
-			["Button 3-3"]={template="BRedOnOff"},
-			["Button 3-4"]={template="BRedOnOff"},
-			["Button 3-5"]={template="BRedOnOff"},
-			["Button 3-6"]={template="BRedOnOff"},
-			["Button 3-7"]={template="BRedOnOff"},
-			["Button 3-8"]={template="BRedOnOff"},
-			["Button 4-2"]={template="BRedOnOff"},
-			["Button 4-3"]={template="BRedOnOff"},
-			["Button 4-4"]={template="BRedOnOff"},
-			["Button 5-2"]={template="BRedOnOff"},
-			["Button 5-3"]={template="BRedOnOff"},
-			["Button 5-4"]={template="BRedOnOff"},
-			["Button 5-5"]={template="BRedOnOff"},
-			["Button 5-6"]={template="BRedOnOff"},
-			["Button 5-7"]={template="BRedOnOff"},
-			["Button 5-8"]={template="BRedOnOff"},
-			["Button 6-2"]={template="BRedOnOff"},
-			["Button 6-3"]={template="BRedOnOff"},
-			["Button 6-4"]={template="BRedOnOff"},
-		},
-		["Attack Mod 1"]={
+		["* Mod *"]={
+			["UDVButton 5-2_6-2"]={template="UDGreen", inverted=true},
+			["UDVButton 7-2_8-2"]={template="UDOrange", inverted=true},
+			["Fader 3"]={template="FGreen"},
+			["Fader 4"]={template="FOrange"},
+			["Fader 5"]={template="FYellow"},
+			["Fader 6"]={template="FYellow"},
+			["Fader 7"]={template="FOrange"},
+			["Fader 8"]={template="FGreen"},
 		},
 		["Effects"]={
 			["Button 8-4"]={template="BRedOnOff"},
@@ -1721,6 +1633,14 @@ local item_conf_map = {
 			["Button 2-1"]={template="BOscPage", helptext="Goto Engine 1"},
 			["Button 3-1"]={template="BOscPage", helptext="Goto Engine 2"},
 			["Button 4-1"]={template="BOscPage", helptext="Goto Engine 3"},
+			["Button 1-2"]={template="BRedOnOff"},
+			["Button 1-8"]={template="BMainEffectPage"},
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 5-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
 		},
 		["Main"]={
 			["Fader 5"]={template="FYellow"},
@@ -1763,7 +1683,6 @@ local item_conf_map = {
 			["Fader 8"]={template="FRed"},
 		},
 		["Eng *"]={
-			["Button 1-2"]={template="BRedOnOff"},
 			["UDVButton 1-3_2-3"]={template="UDGreen"},
 			["UDVButton 3-3_4-3"]={template="UDGreen"},
 			["UDVButton 5-3_6-3"]={template="UDGreen"},
@@ -1774,14 +1693,12 @@ local item_conf_map = {
 			["Fader 8"]={template="FYellow"},
 		},
 		["Eng * Mod *"]={
-			["Button 1-2"]={template="BRedOnOff"},
 			["UDVButton 1-3_2-3"]={template="UDAmber", inverted=true},
 			["Fader 4"]={template="FAmber"},
 			["Fader 5"]={template="FYellow"},
 			["UDVButton 7-6_8-6"]={template="UDYellow", inverted=true},
 		},
 		["Eng * Spectral Filter"]={
-			["Button 1-2"]={template="BRedOnOff"},
 			["UDVButton 3-2_4-2"]={template="UDGreen", inverted=true},
 			["Fader 3"]={template="FGreen"},
 			["Fader 4"]={template="FOrange"},
@@ -1791,13 +1708,11 @@ local item_conf_map = {
 			["Fader 8"]={template="FYellow"},
 		},
 		["Eng * Harmonics"]={
-			["Button 1-2"]={template="BRedOnOff"},
 			["UDVButton 1-3_2-3"]={template="UDAmber", inverted=true},
 			["Fader 4"]={template="FYellow"},
 			["Fader 5"]={template="FAmber"},
 		},
 		["Eng * Unison"]={
-			["Button 1-2"]={template="BRedOnOff"},
 			["UDVButton 1-3_2-3"]={template="UDOrange", inverted=true},
 			["UDVButton 1-4_2-4"]={template="UDOrange"},
 			["Fader 5"]={template="FOrange"},
@@ -1824,20 +1739,13 @@ local item_conf_map = {
 			["Fader 3"]={template="FGreen"},
 			["UDVButton 7-4_8-4"]={template="UDGreen"},
 		},
-		["Effect"]={
+		["Effects"]={
 			["Button 2-7"]={template="BRedOnOff"},
 			["Button 3-7"]={template="BRedOnOff"},
 			["Button 4-7"]={template="BRedOnOff"},
 			["Button 5-7"]={template="BRedOnOff"},
 			["Button 6-7"]={template="BRedOnOff"},
 			["Button 7-7"]={template="BRedOnOff"},
-			["Button 1-8"]={template="BMainEffectPage"},
-			["Button 2-8"]={template="BEffectPage"},
-			["Button 3-8"]={template="BEffectPage"},
-			["Button 4-8"]={template="BEffectPage"},
-			["Button 5-8"]={template="BEffectPage"},
-			["Button 6-8"]={template="BEffectPage"},
-			["Button 7-8"]={template="BEffectPage"},
 		},
 		["Phaser"]={
 			["UDVButton 5-1_6-1"]={template="UDOrange"},
@@ -1987,8 +1895,14 @@ function get_item_conf_map(itemname, context, page)
 	end
 	if(item_conf_map[context][page] == nil or item_conf_map[context][page][itemname] == nil) then
 		wildpage = string.gsub(page, "%d+", "*")
+		-- Parsec and Malstrom uses A/B naming
 		wildpage = string.gsub(wildpage, " A", " *")
 		wildpage = string.gsub(wildpage, " B", " *")
+		-- Revival uses alternate naming of sections
+		wildpage = string.gsub(wildpage, "Attack", "*")
+		wildpage = string.gsub(wildpage, "Primary", "*")
+		wildpage = string.gsub(wildpage, "Secondary", "*")
+		wildpage = string.gsub(wildpage, "Release", "*")
 		if(item_conf_map[context][wildpage] == nil or item_conf_map[context][wildpage][itemname] == nil) then
 			if(item_conf_map[context]["Default"][itemname] == nil) then
 				if(item_conf_map["Default"][page] == nil or item_conf_map["Default"][page][itemname] == nil) then
@@ -2108,6 +2022,16 @@ function get_button_color(context, itemname, buttonname, value)
                        		color = ORANGE
 			else
                        		color = NOCOLOR
+			end
+		elseif(g_scopetext == "Thor" and string.match(get_current_page(), "Step Sequencer") and (string.match(itemname, "Button [12]%-%d"))) then
+			if(g_playingbutton == itemname and (tonumber(remote.get_item_value(itemsindex["Button 8-1"])) == 1)) then
+                       		color = YELLOW
+			else 
+				if(value == 1) then
+                       			color = RED
+				else
+                       			color = WGREEN
+				end
 			end
 		else
         		if(enabled) then
@@ -2458,7 +2382,6 @@ function remote_set_state(changed_items)
 				if(g_scopetext == "Redrum") then
                				local playingstep = tonumber(remote.get_item_text_value(itemsindex["PlayingStep"]))
 					local editsteps = math.floor(remote.get_item_value(itemsindex["UDVButton 5-8_6-8"])/42)+1
-
 					local cstep = (playingstep-1)%16
 					local cpage = math.floor(((playingstep-1))/16)+1
 					local crowstep = (cstep)%8+1
@@ -2473,6 +2396,16 @@ function remote_set_state(changed_items)
 					else
 						g_playingbutton = "Other page"	
 					end
+				elseif(g_scopetext == "Thor") then
+               				local playingstep = tonumber(remote.get_item_text_value(itemsindex["PlayingStep"]))
+					local crowstep = (playingstep)%8+1
+					local crow = math.floor((playingstep)/8)+1
+
+					-- Old playing button
+					g_updateditems[g_playingbutton] = true
+					g_playingbutton = "Button "..tostring(crow).."-"..tostring(crowstep)
+					-- New playing button
+					g_updateditems[g_playingbutton] = true
 				end
 			elseif(string.match(citemname, "PageName")) then
 				g_updateall = true
