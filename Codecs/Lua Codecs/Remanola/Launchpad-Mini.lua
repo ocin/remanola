@@ -1080,11 +1080,6 @@ local item_conf_map = {
 				["UDVButton 5-8_6-8"]={template="UDYellow"},
 			},
 		},
-		["Step Sequencer Edit"]={
-			["Button 8-1"]={template="BRedOnOff"},
-			["Button 8-7"]={template="BPerformancePage"},
-			["Button 8-8"]={template="BPerformancePage"},
-		},
 		["Shaper"]={
 			["Button 2-2"]={template="BGreenOnOff"},
                         ["UDVButton 5-2_6-2"]={template="UDOrange", inverted=true},
