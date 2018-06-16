@@ -922,6 +922,7 @@ Map	Button 5-4		Select Drum 4			Main
 Map	Button 6-5		DrumMode=Mute			Main
 Map	Button 7-5		DrumMode=Solo			Main
 Map	Button 8-5		DrumMode=Play			Main
+Map	SubPageName		"Play" 				Main	Play
 Map	Button 6-1		Channel 9 Play			Main	Play
 Map	Button 6-2		Channel 10 Play			Main	Play
 Map	Button 7-1		Channel 5 Play			Main	Play
@@ -932,6 +933,7 @@ Map	Button 8-1		Channel 1 Play			Main	Play
 Map	Button 8-2		Channel 2 Play			Main	Play
 Map	Button 8-3		Channel 3 Play			Main	Play
 Map	Button 8-4		Channel 4 Play			Main	Play
+Map	SubPageName		"Solo" 				Main	Solo
 Map	Button 6-1		Drum 9 Solo			Main	Solo
 Map	Button 6-2		Drum 10 Solo			Main	Solo
 Map	Button 7-1		Drum 5 Solo			Main	Solo
@@ -942,6 +944,7 @@ Map	Button 8-1		Drum 1 Solo			Main	Solo
 Map	Button 8-2		Drum 2 Solo			Main	Solo
 Map	Button 8-3		Drum 3 Solo			Main	Solo
 Map	Button 8-4		Drum 4 Solo			Main	Solo
+Map	SubPageName		"Mute" 				Main	Mute
 Map	Button 6-1		Drum 9 Mute			Main	Mute
 Map	Button 6-2		Drum 10 Mute			Main	Mute
 Map	Button 7-1		Drum 5 Mute			Main	Mute
