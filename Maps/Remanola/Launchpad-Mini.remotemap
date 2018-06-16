@@ -171,6 +171,7 @@ Map	Fader 8		Rotary 4			Main
 // ------------------------------------------------------------------------------------------
 Scope	Propellerheads	Thor Polysonic Synthesizer
 Define Group	Page	Main	Osc1	Osc2	Osc3	Mixer	Filter1	Filter2	Filter3	FilterEnv	Amp	AmpEnv	ModEnv	GlobalEnv	LFO1	LFO2	Seq	Shaper	Delay	Chorus	Index	Internal
+Define Group	SeqEditMode	Note	Velocity	GateLen	StepDur	Curve1	Curve2
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Thor"
 Map	PatchName		Patch Name
@@ -430,9 +431,21 @@ Map	UDVButton 7-2_8-2		Step Sequencer Run Mode				Seq
 Map	UDVButton 7-3_8-3		Step Sequencer Direction				Seq
 Map	Button 8-4		Step Sequencer Synced				Seq
 Map	UDVButton 7-5_8-5		Step Sequencer Rate	5			Seq
-Map	UDVButton 7-6_8-6		Step Sequencer Edit Mode				Seq
-Map	UDVButton 7-7_8-7		Step Sequencer Octave Range				Seq
-Map	UDVButton 7-8_8-8		Step Sequencer Step Count				Seq
+Map	UDVButton 7-6_8-6		Step Sequencer Edit Mode		SEL1	Seq
+Map	UDVButton 7-7_8-7		Step Sequencer Octave Range			Seq
+Map	UDVButton 7-8_8-8		Step Sequencer Step Count			Seq
+Map	Sel1_127		SeqEditMode=Note			Seq
+Map	Sel1_102		SeqEditMode=Velocity			Seq
+Map	Sel1_76		SeqEditMode=GateLen			Seq
+Map	Sel1_51		SeqEditMode=StepDur			Seq
+Map	Sel1_25		SeqEditMode=Curve1			Seq
+Map	Sel1_0		SeqEditMode=Curve2			Seq
+Map	SubPageName		"Note" 				Seq	Note
+Map	SubPageName		"Velocity" 				Seq	Velocity
+Map	SubPageName		"GateLen" 				Seq	GateLen
+Map	SubPageName		"StepDur" 				Seq	StepDur
+Map	SubPageName		"Curve1" 				Seq	Curve1
+Map	SubPageName		"Curve2" 				Seq	Curve2
 // Shaper
 Map	PageName		"Shaper" 				Shaper
 Map	Button 2-8		Page=Shaper			Shaper
