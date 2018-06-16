@@ -10,11 +10,9 @@
 * Look over CPU usage
 	* state + buttonlist
 * Implement value mode
-+ Step Sequencer
+* Step Sequencer
 	* Redrum
-	+ Thor
-	- RPG-8
-	- Matrix
+	* Thor
 * Replace image
 * clean up buttons array
 * Redo colors with bit operators
@@ -80,11 +78,11 @@ Instruments:
 * Redrum
 * Europa
 * Revival 
+* Dr.OctoRex
+* Radical Piano
 + Parsec
 + NN-XT
-+ Dr.OctoRex
 + Kong
-- Radical Piano
 - Grain
 - NN-19
 - Ammo1200
@@ -95,4 +93,16 @@ Instruments:
 - Klang
 
 Effects:
+* ECF-42
+* Audiomatic
+* Pulveriser
+All...
+
+Players:
+All...
+
+Utilities:
+* Combinator
+* RPG-8
+* Matrix
 All...

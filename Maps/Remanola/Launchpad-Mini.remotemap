@@ -3978,3 +3978,103 @@ Map	UDVButton 1-4_2-4		Tremor Waveform			Tremor
 Map	Button 1-5		Tremor Spread			Tremor
 Map	Fader 6		Tremor Lag			Tremor
 Map	Knob V8		Tremor to Volume			Tremor
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	Scream 4 Distortion
+Define Group	Page	Main	Cut	Body	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Scream 4 Distortion"
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=Cut			Index
+Map	Button 2-8		Page=Body			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Button 1-2		Damage On/Off			Main
+Map	Fader 3		Damage Control			Main
+Map	UDVButton 1-4_2-4		Damage Type			Main
+Map	Fader 5		Parameter 1			Main
+Map	Fader 6		Parameter 2			Main
+Map	Fader 7		Master Level			Main
+Map	Meter 8		Input Peak Meter			Main
+// Cut
+Map	PageName		"Cut" 				Cut
+Map	Button 1-2		Cut On/Off			Cut
+Map	Knob V4		Cut Lo			Cut
+Map	Knob V5		Cut Mid			Cut
+Map	Knob V6		Cut Hi			Cut
+// Body
+Map	PageName		"Body" 				Body
+Map	Button 1-2		Body On/Off			Body
+Map	Fader 4		Body Resonance			Body
+Map	Fader 5		Body Scale			Body
+Map	Fader 6		Body Auto			Body
+Map	UDVButton 1-7_2-7		Body Type			Body
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	The Echo
+Define Group	Page	Main	Delay	Feedback	Color	Modulation	Index	Internal
+Define Group	TempoSync	Free	Sync
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"The Echo"
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=Delay			Index
+Map	Button 3-8		Page=Feedback			Index
+Map	Button 4-8		Page=Color			Index
+Map	Button 5-5		Page=Modulation			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	UDVButton 1-2_2-2		Input Mode			Main
+Map	Button 1-3		Trig			Main
+Map	Fader 4		Roll Enabled			Main
+Map	Fader 6		Ducking			Main
+Map	Fader 7		Dry/Wet Balance			Main
+Map	Meter 8		Input Peak Meter			Main
+// Delay
+Map	PageName		"Delay" 				Delay
+Map	Sel1_0		TempoSync=Free			Delay
+Map	Sel1_1		TempoSync=Sync			Delay
+Map	Fader 2		Delay Time			Delay	Free
+Map	UDVButton 7-2_8-2		Delay Time	7		Delay	Sync
+Map	Fader 3		Right Ch Time Offset			Delay
+Map	Button 1-4		Keep Pitch			Delay
+Map	Button 1-5		Sync		SEL1	Delay
+Map	Button 8-5		Ping-Pong Mode			Delay
+Map	Knob V6		Ping-Pong Pan			Delay
+// Feedback
+Map	PageName		"Feedback" 				Feedback
+Map	Fader 2		Feedback			Feedback
+Map	Knob V3		Right Ch Feedback Offset			Feedback
+Map	Button 1-5		Diffuse On			Feedback
+Map	Fader 6		Diffuse Spread			Feedback
+Map	Fader 7		Diffuse Amount			Feedback
+// Color
+Map	PageName		"Color" 				Color
+Map	Fader 2		Drive Amount 				Color
+Map	UDVButton 1-3_2-3		Drive Type			Color
+Map	Button 1-5		Filter On			Color
+Map	Fader 6		Filter Frequency 				Color
+Map	Fader 7		Filter Resonance 				Color
+// Modulation
+Map	PageName		"Modulation" 				Modulation
+Map	Knob V2		Envelope 				Modulation
+Map	Fader 3		Wobble 				Modulation
+Map	Fader 5		LFO Rate 				Modulation
+Map	Fader 6		LFO Amount 				Modulation
