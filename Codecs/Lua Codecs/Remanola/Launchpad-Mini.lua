@@ -101,7 +101,11 @@ g_lfonum = 0
 g_lfonumnew = nil
 g_envnum = 0
 g_envnumnew = nil
+g_editnumnew = nil
 g_sel1 = -1
+g_sel2 = -1
+g_sel3 = -1
+g_sel4 = -1
 g_cpage = nil
 g_cstep = nil
 g_updateall = true
@@ -1612,8 +1616,8 @@ local item_conf_map = {
 		["Mixer"]={
 			["Fader 2"]={template="FRed"},
 			["Fader 3"]={template="FRed"},
-			["Fader 4"]={template="FAMber"},
-			["Fader 5"]={template="FAMber"},
+			["Fader 4"]={template="FAmber"},
+			["Fader 5"]={template="FAmber"},
 			["Fader 6"]={template="FYellow"},
 		},
 		["Filter"]={
@@ -2074,6 +2078,123 @@ local item_conf_map = {
 			["Fader 6"]={template="FYellow"},
 		},
 	},
+	["RV7000 Advanced Reverb"]={
+		["Default"]={
+		},
+		["Index"]={
+		},
+		["Main"]={
+			["Button 1-2"]={template="BRedOnOff"},
+			["Button 2-2"]={template="BRedOnOff"},
+			["Fader 3"]={template="FOrange"},
+			["Fader 4"]={template="FGreen"},
+			["Knob V5"]={template="FGreen"},
+			["Fader 7"]={template="FOrange"},
+		},
+		["Reverb"]={
+			["UDVButton 1-1_2-1"]={template="UDOrange"},
+			["SmallSpace"]={
+				["Fader 2"]={template="FOrange"},
+				["Fader 3"]={template="FYellow"},
+				["UDVButton 7-4_8-4"]={template="UDOrange"},
+				["Fader 5"]={template="FGreen"},
+				["Fader 6"]={template="FOrange"},
+				["Fader 7"]={template="FGreen"},
+				["Fader 8"]={template="FYellow"},
+			},
+			["Room"]={
+				["Fader 2"]={template="FOrange"},
+				["Fader 3"]={template="FOrange"},
+				["UDVButton 7-4_8-4"]={template="UDOrange"},
+				["Fader 5"]={template="FOrange"},
+				["Fader 6"]={template="FOrange"},
+				["Fader 7"]={template="FGreen"},
+				["Fader 8"]={template="FYellow"},
+			},
+			["Hall"]={
+				["Fader 2"]={template="FOrange"},
+				["Fader 3"]={template="FOrange"},
+				["UDVButton 7-4_8-4"]={template="UDOrange"},
+				["Fader 5"]={template="FOrange"},
+				["Fader 6"]={template="FOrange"},
+				["Fader 7"]={template="FGreen"},
+				["Fader 8"]={template="FYellow"},
+			},
+			["Arena"]={
+				["Fader 2"]={template="FOrange"},
+				["Fader 3"]={template="FOrange"},
+				["Fader 4"]={template="FGreen"},
+				["Fader 5"]={template="FGreen"},
+				["Fader 6"]={template="FAmber"},
+				["Fader 7"]={template="FGreen"},
+				["Fader 8"]={template="FAmber"},
+			},
+			["Plate"]={
+				["Fader 5"]={template="FGreen"},
+				["Fader 7"]={template="FGreen"},
+			},
+			["Spring"]={
+				["Fader 2"]={template="FOrange"},
+				["Fader 3"]={template="FOrange"},
+				["Fader 4"]={template="FGreen"},
+				["Fader 5"]={template="FGreen"},
+				["Button 8-6"]={template="BRedOnOff"},
+				["Fader 7"]={template="FGreen"},
+				["Fader 8"]={template="FAmber"},
+			},
+			["Echo"]={
+				["Fader 2"]={template="FOrange"},
+				["UDVButton 7-2_8-2"]={template="UDOrange"},
+				["Fader 3"]={template="FOrange"},
+				["Button 8-4"]={template="BRedOnOff"},
+				["Fader 5"]={template="FGreen"},
+				["Fader 6"]={template="FOrange"},
+				["Fader 7"]={template="FGreen"},
+			},
+			["MultiTap"]={
+				["Button 8-2"]={template="BRedOnOff"},
+				["Fader 3"]={template="FOrange"},
+				["Fader 4"]={template="FGreen"},
+				["UDVButton 7-5_8-5"]={template="UDOrange"},
+				["Fader 6"]={template="FGreen"},
+				["UDVButton 7-6_8-6"]={template="UDGreen"},
+				["Fader 7"]={template="FAmber"},
+				["Knob V8"]={template="FAmber"},
+			},
+			["Reverse"]={
+				["Fader 2"]={template="FOrange"},
+				["UDVButton 7-2_8-2"]={template="UDOrange"},
+				["Fader 3"]={template="FOrange"},
+				["Button 8-6"]={template="BRedOnOff"},
+				["Fader 5"]={template="FOrange"},
+			},
+			["Convolution"]={
+				["UDVButton 7-2_8-2"]={template="UDOrange"},
+				["Fader 3"]={template="FOrange"},
+				["Knob V4"]={template="FOrange"},
+				["Fader 5"]={template="FGreen"},
+				["UDVButton 7-6_8-6"]={template="UDAmber"},
+				["Knob V7"]={template="FGreen"},
+				["Fader 8"]={template="FRed"},
+			},
+		},
+		["Eq"]={
+			["Knob V2"]={template="FRed"},
+			["Fader 3"]={template="FGreen"},
+			["Knob V5"]={template="FRed"},
+			["Fader 6"]={template="FGreen"},
+			["Fader 7"]={template="FOrange"},
+		},
+		["Gate"]={
+			["Fader 1"]={template="FOrange"},
+			["Fader 2"]={template="FOrange"},
+			["Button 8-3"]={template="BRedOnOff"},
+			["Fader 4"]={template="FGreen"},
+			["Fader 5"]={template="FOrange"},
+			["Fader 6"]={template="FOrange"},
+			["Fader 7"]={template="FOrange"},
+		},
+	},
 }	
 
 local items = {
@@ -2081,18 +2202,15 @@ local items = {
 	{name = "DeviceScope", output = "text" },
 	{name = "PatchName", output = "text" },
 	{name = "PageName", output = "text" },
+	{name = "SubPageName", output = "text" },
 	{name = "PlayingStep", output = "text" },
 	{name = "BarPosition", input= "button", output = "value", min = 0, max = 127},
 	{name = "BeatPosition", input= "button", output = "value", min = 0, max = 127},
 	{name = "EngineSelect", input= "value", output = "value", min = 0, max = 2},
 	{name = "EffectSelect", input= "value", output = "value", min = 0, max = 5},
+	{name = "EditSelect", input= "value", output = "value", min = 0, max = 2},
 	{name = "LFOSelect", input= "value", output = "value", min = 0, max = 2},
 	{name = "EnvSelect", input= "value", output = "value", min = 0, max = 3},
-	{name = "Sel1_0", input= "button", output = "value", min = 0, max = 1},
-	{name = "Sel1_1", input= "button", output = "value", min = 0, max = 1},
-	{name = "Sel1_42", input= "button", output = "value", min = 0, max = 1},
-	{name = "Sel1_85", input= "button", output = "value", min = 0, max = 1},
-	{name = "Sel1_127", input= "button", output = "value", min = 0, max = 1},
 	{name = "Fader 1", input = "value", output = "value", min = 0, max = 127},
 	{name = "Fader 2", input = "value", output = "value", min = 0, max = 127},
 	{name = "Fader 3", input = "value", output = "value", min = 0, max = 127},
@@ -2181,6 +2299,11 @@ function get_item_conf_map(itemname, context, page)
 	if(item_conf_map[context] == nil) then
 		context = "Default"
 	end
+
+	if((item_conf_map[context][page] ~= nil) and (item_conf_map[context][page][get_current_subpage()] ~= nil) and (item_conf_map[context][page][get_current_subpage()][itemname] ~= nil)) then
+		return(item_conf_map[context][page][get_current_subpage()][itemname])
+	end
+
 	if(item_conf_map[context][page] == nil or item_conf_map[context][page][itemname] == nil) then
 		wildpage = string.gsub(page, "%d+", "*")
 		-- Parsec and Malstrom uses A/B naming
@@ -2517,6 +2640,16 @@ function get_current_page()
 	return pagename
 end
 
+function get_current_subpage()
+	local subpagename = "Unknown"
+
+	if(remote.is_item_enabled(itemsindex["SubPageName"])) then
+		subpagename = remote.get_item_text_value(itemsindex["SubPageName"])
+	end
+
+	return subpagename
+end
+
 function lightshow_bars(buttonname, cyclelength, orientation) 
 	local color
 	
@@ -2595,19 +2728,25 @@ end
 
 function remote_init()
 	for buttonname,buttonmidi in pairs(buttons) do
-		table.insert(items, {name = buttonname, input = "button", output="value", min = 0, max = 127, modes={"NORMAL", "SEL1"}})
+		table.insert(items, {name = buttonname, input = "button", output="value", min = 0, max = 127, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}})
 		table.insert(inputs, {pattern=buttonmidi .. " ?<???x>", name=buttonname})
 	end
 
 	for row=1,8 do
 		for column=1,8,2 do
-			table.insert(items, {name = "UDHButton "..row.."-"..column.."_"..row.."-"..tostring(column+1), input = "delta", output="value", min = 0, max = 127, modes={"NORMAL", "SEL1"}})
+			table.insert(items, {name = "UDHButton "..row.."-"..column.."_"..row.."-"..tostring(column+1), input = "delta", output="value", min = 0, max = 127, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}})
+		end
+	end
+
+	for sel=1,4 do
+		for val=0,127 do
+			table.insert(items, {name = "Sel"..sel.."_"..val, input= "button", output = "value", min = 0, max = 1})
 		end
 	end
 
 	for row=1,8,2 do
 		for column=1,8 do
-			table.insert(items, {name = "UDVButton "..row.."-"..column.."_"..tostring(row+1).."-"..column, input = "delta", output="value", min = 0, max = 127, modes={"NORMAL", "SEL1"}})
+			table.insert(items, {name = "UDVButton "..row.."-"..column.."_"..tostring(row+1).."-"..column, input = "delta", output="value", min = 0, max = 127, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}})
 		end
 	end
 
@@ -2648,6 +2787,12 @@ function remote_set_state(changed_items)
 		if(citemname ~= nil) then
 			if(remote.get_item_mode(citemindex) == itemsmodeindex[citemname]["SEL1"]) then
 				g_sel1 = remote.get_item_value(citemindex)
+			elseif(remote.get_item_mode(citemindex) == itemsmodeindex[citemname]["SEL2"]) then
+				g_sel2 = remote.get_item_value(citemindex)
+			elseif(remote.get_item_mode(citemindex) == itemsmodeindex[citemname]["SEL3"]) then
+				g_sel3 = remote.get_item_value(citemindex)
+			elseif(remote.get_item_mode(citemindex) == itemsmodeindex[citemname]["SEL4"]) then
+				g_sel4 = remote.get_item_value(citemindex)
 			end
 			if(string.match(citemname, "DeviceScope")) then
 				-- g_scrolltext = remote.get_item_text_value(itemsindex["DeviceScope"])
@@ -2714,7 +2859,17 @@ function remote_set_state(changed_items)
 					elseif(string.match(get_current_page(), "Reverb")) then
 						g_effectnumnew = 1
 					end
+				elseif(g_scopetext == "RV7000 Advanced Reverb") then
+					if(string.match(get_current_page(), "Reverb")) then
+						g_editnumnew = 0
+					elseif(string.match(get_current_page(), "Eq")) then
+						g_editnumnew = 1
+					elseif(string.match(get_current_page(), "Gate")) then
+						g_editnumnew = 2
+					end
 				end
+			elseif(string.match(citemname, "SubPageName")) then
+				g_updateall = true
 			end
 		end
 	end
@@ -2903,6 +3058,27 @@ function remote_process_midi(event)
 		g_updateall = true
 	end
 
+	if(g_sel2 ~= -1) then
+		local msg = { time_stamp = event.time_stamp, item = itemsindex["Sel2_"..g_sel2], value = 1 }
+		remote.handle_input(msg)
+		g_sel2 = -1
+		g_updateall = true
+	end
+
+	if(g_sel3 ~= -1) then
+		local msg = { time_stamp = event.time_stamp, item = itemsindex["Sel3_"..g_sel3], value = 1 }
+		remote.handle_input(msg)
+		g_sel3 = -1
+		g_updateall = true
+	end
+
+	if(g_sel4 ~= -1) then
+		local msg = { time_stamp = event.time_stamp, item = itemsindex["Sel4_"..g_sel4], value = 1 }
+		remote.handle_input(msg)
+		g_sel4 = -1
+		g_updateall = true
+	end
+
 	if(g_enginenumnew ~= nil and g_enginenumnew ~= g_enginenum) then
 		g_enginenum = g_enginenumnew
 		g_enginenumnew = nil
@@ -2914,6 +3090,12 @@ function remote_process_midi(event)
 		g_effectnum = g_effectnumnew
 		g_effectnumnew = nil
 		local msg = { time_stamp = event.time_stamp, item = itemsindex["EffectSelect"], value = g_effectnum-1 }
+		remote.handle_input(msg)
+	end
+
+	if(g_editnumnew ~= nil and g_editnumnew ~= remote.get_item_value(itemsindex["EditSelect"])) then
+		local msg = { time_stamp = event.time_stamp, item = itemsindex["EditSelect"], value = g_editnumnew }
+		g_editnumnew = nil
 		remote.handle_input(msg)
 	end
 
