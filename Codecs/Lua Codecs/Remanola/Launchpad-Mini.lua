@@ -64,6 +64,7 @@ MIDI_OUT_SCROLL = "f0 00 20 29 09"
 MIDI_OUT_ENDSCROLL = MIDI_OUT_SCROLL.." 00 f7"
 MIDI_OUT_DOUBLEBUFF = "b0 00"
 MIDI_OUT_BRIGHTNESS = "b0 1e"
+MIDI_OUT_GETVERSION = "f0 00 20 29 00 70 f7"
 MIDI_IN_SCROLLEND = "b0 00 03"
 
 g_scopetext = "none"
@@ -2633,6 +2634,23 @@ local item_conf_map = {
 			["Button 8-8"]={template="BRedOnOff"},
 		},
 	},
+	["BV512 Digital Vocoder"]={
+		["Default"]={
+		},
+		["Index"]={
+		},
+		["Main"]={
+			["UDVButton 1-1_2-1"]={template="UDOrange"},
+			["Button 4-1"]={template="BRedOnOff"},
+			["UDVButton 5-1_6-1"]={template="UDOrange"},
+			["UDVButton 7-1_8-1"]={template="UDOrange"},
+			["Fader 4"]={template="FAmber"},
+			["Fader 5"]={template="FAmber"},
+			["Knob V6"]={template="FRed"},
+			["Fader 7"]={template="FGreen"},
+			["Fader 8"]={template="FOrange"},
+		},
+	},
 }	
 
 local items = {
@@ -2650,6 +2668,7 @@ local items = {
 	{name = "EditSelect", input= "value", output = "value", min = 0, max = 2},
 	{name = "LFOSelect", input= "value", output = "value", min = 0, max = 2},
 	{name = "EnvSelect", input= "value", output = "value", min = 0, max = 3},
+	{name = "Hidden", input = "delta", output = "value", min = 0, max = 127, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}},
 	{name = "Fader 1", input = "value", output = "value", min = 0, max = 127},
 	{name = "Fader 2", input = "value", output = "value", min = 0, max = 127},
 	{name = "Fader 3", input = "value", output = "value", min = 0, max = 127},
@@ -3483,6 +3502,11 @@ function remote_deliver_midi(maxbytes, port)
 		g_startbeat = false
 		g_barupdate = false
 		g_beatupdate = false
+	end
+
+	-- If sel* is updated trigger midi event by sending get version sysex
+	if(g_sel1 ~= -1 or g_sel2 ~= -1 or g_sel3 ~= -1 or g_sel4 ~= -1) then
+		table.insert(ret_events, remote.make_midi(MIDI_OUT_GETVERSION))
 	end
 
 	--if(g_grabbed["Fader 4"] ~= nil) then
