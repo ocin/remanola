@@ -32,8 +32,8 @@ Scope	Propellerheads	Reason Document
 Map	DeviceScope		"Document"
 Map	Button C1		Target Previous Track
 Map	Button C2		Target Next Track
-Map	Button C3		Select Prev Patch for Target Device
-Map	Button C4		Select Next Patch for Target Device
+//Map	Button C3		Select Prev Patch for Target Device
+//Map	Button C4		Select Next Patch for Target Device
 Map	Button A		Play
 Map	Button B		Stop
 Map	Button C		Record
@@ -144,7 +144,10 @@ Scope	Propellerheads	Combinator
 Define Group	Page	Main	Index	Internal
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Combinator"
+Map	DeviceName		Device Name
 Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -174,7 +177,10 @@ Define Group	Page	Main	Osc1	Osc2	Osc3	Mixer	Filter1	Filter2	Filter3	FilterEnv	Am
 Define Group	SeqEditMode	Note	Velocity	GateLen	StepDur	Curve1	Curve2
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Thor"
+Map	DeviceName		Device Name
 Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 Map	PlayingStep		Step Sequencer Step Index
 // Page
 Map	Button C7		Page=Index
@@ -484,7 +490,10 @@ Define Group	Page	Main	Osc	Loop	Performance	Filter	FilterEnv	LFO	AmpEnv	Index	In
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"DrOctoRex"
+Map	DeviceName		Device Name
 Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -574,6 +583,7 @@ Define Group	Page	Main	Pattern	Index	Internal
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"RPG-8"
+Map	DeviceName		Device Name
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -631,7 +641,10 @@ Scope	Propellerheads	ID8 Instrument Device
 Define Group	Page	Main	Index	Internal
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"ID8"
-Map	PatchName		Patch Name
+Map	DeviceName		Device Name
+Map	PatchName		Sound Name
+Map	Button C3		Select Previous Sound
+Map	Button C4		Select Next Sound
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -658,7 +671,10 @@ Scope	Propellerheads	Malstrom Graintable Synthesizer
 Define Group	Page	Main	OscA	OscAEnv	OscB	OscBEnv	FilterA	FilterB	FilterEnv	ModA	ModB	Shaper	Velocity	ModWheel	Index	Internal
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Malstrom"
+Map	DeviceName		Device Name
 Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -812,7 +828,10 @@ Scope	Propellerheads	NN19 Digital Sampler
 Define Group	Page	Main	Index	Internal
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"NN19"
+Map	DeviceName		Device Name
 Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -831,7 +850,10 @@ Scope	Propellerheads	NN-XT Advanced Sampler
 Define Group	Page	Main	Index	Internal
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"NN-XT"
+Map	DeviceName		Device Name
 Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -859,7 +881,10 @@ Define Group	DrumMode	Play	Solo	Mute
 Define Group	EditMode	Rotate	Toggle	Flam
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Redrum"
+Map	DeviceName		Device Name
 Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 Map	PlayingStep		Playing Step
 // Page
 Map	Button C7		Page=Index
@@ -1437,8 +1462,10 @@ Define Group	Page	Main	MutesSolos	Drum1	Drum2	Drum3	Drum4	Drum5	Drum6	Drum7	Drum
 Define Group	DrumPage	DrumMain	DrumModule	DrumFX1	DrumFX2
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Kong"
+Map	DeviceName		Device Name
 Map	PatchName		Patch Name
-Map	PlayingStep		PlayingStep
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -2970,7 +2997,10 @@ Scope	Propellerheads	SubTractor Analog Synthesizer
 Define Group	Page	Main	Osc1	Osc2	Noise	Filter	Filter2	FilterEnv	ModEnv	AmpEnv	LFO1	LFO2	Velocity1	Velocity2	ModWheel	ExtMod	Index	Internal
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Subtractor"
+Map	DeviceName		Device Name
 Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -3184,6 +3214,7 @@ Scope	Propellerheads	Matrix Pattern Sequencer
 Define Group	Page	Main	Index	Internal
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Matrix"
+Map	DeviceName		Device Name
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -3217,7 +3248,10 @@ Define Group	Page	Main	Voicing1	Voicing2	PriSec	Solos	Attack	Primary	Secondary	R
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Revival"
+Map	DeviceName		Device Name
 Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -3943,7 +3977,10 @@ Define Group	Page	Main	Osc1	Osc2	Mixer	Filter	FilterEnv	Effects	EQBass	Dist	Phas
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Antidote"
+Map	DeviceName		Device Name
 Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -4249,7 +4286,10 @@ Define Group	Page	Main	OP1	OP2	OP3	OP4	OP5	OP6	LFO	Index	Internal
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"PX7"
+Map	DeviceName		Device Name
 Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -4381,7 +4421,10 @@ Scope	Propellerhead Software	se.propellerheads.Parsec
 Define Group	Page	Main	GenA	ModA	GenB	ModB	Index	Internal
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Parsec"
+Map	DeviceName		Device Name
 Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -4414,7 +4457,10 @@ Define Group	Page	Main	Eng1	Eng2	Eng3	Eng1Mod1	Eng2Mod1	Eng3Mod1	Eng1Mod2	Eng2Mo
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Europa"
+Map	DeviceName		Device Name
 Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 Map	EngineSelect		OscSel
 Map	EffectSelect		Effect Select
 Map	LFOSelect		LFO Select
@@ -4933,7 +4979,10 @@ Scope	Propellerhead Software	se.propellerheads.radicalpiano
 Define Group	Page	Main	Velocity	Tune	Resonance	Envelope	Mechanics	Eq	Ambience	Output	Index	Internal
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Radical Piano"
+Map	DeviceName		Device Name
 Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -5046,6 +5095,7 @@ Scope	Propellerheads	ECF-42 Envelope Controlled Filter
 Define Group	Page	Main	FilterEnvelope	Index	Internal
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"ECF-42 Filter"
+Map	DeviceName		Device Name
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -5077,6 +5127,7 @@ Scope	Propellerhead Software	se.propellerheads.Audiomatic
 Define Group	Page	Main	Index	Internal
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Audiomatic"
+Map	DeviceName		Device Name
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -5102,6 +5153,10 @@ Define Group	Page	Main	Filter	Follower	Tremor	Index	Internal
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Pulveriser"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -5156,6 +5211,10 @@ Scope	Propellerheads	Scream 4 Distortion
 Define Group	Page	Main	Cut	Body	Index	Internal
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Scream 4 Distortion"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -5197,6 +5256,10 @@ Define Group	Page	Main	Delay	Feedback	Color	Modulation	Index	Internal
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"The Echo"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -5259,6 +5322,10 @@ Define Group	Tap	TapNum	RepeatTap
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"RV7000 Advanced Reverb"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 Map	EditSelect		Edit Mode
 // Page
 Map	Button C7		Page=Index
@@ -5415,6 +5482,10 @@ Define Group	Page	Main	HPFilter	BPFilter	LPFilter	HPEffects	BPEffects	LPEffects	
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Alligator"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -5570,6 +5641,10 @@ Scope	Propellerhead Software	se.propellerheads.ReasonAmp
 Define Group	Page	Main	Eq	Index	Internal
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Softtube Amp"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -5601,6 +5676,10 @@ Scope	Propellerhead Software	se.propellerheads.ReasonBassAmp
 Define Group	Page	Main	Eq	Index	Internal
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Softtube Bass Amp"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 // Page
 Map	Button C7		Page=Index
 // Index
@@ -5633,6 +5712,10 @@ Define Group	Page	Main	Dist	Filter	Delay	Reverb	Index	Internal
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Synchronous"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
 // Page
 Map	Button C7		Page=Index
 // Index

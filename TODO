@@ -20,6 +20,7 @@
 * Implement buffer switching
 	* Fix lightshows
 	* Check that stuff is working ok
+* Fix Select Patch
 - Transport controls
 	- Metronome
 	- Additional controls
@@ -80,9 +81,9 @@ Instruments:
 * Revival 
 * Dr.OctoRex
 * Radical Piano
+* Kong
 + Parsec
 + NN-XT
-+ Kong
 - Grain
 - NN-19
 - Ammo1200

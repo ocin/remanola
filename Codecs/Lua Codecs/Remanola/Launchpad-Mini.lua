@@ -2638,6 +2638,7 @@ local item_conf_map = {
 local items = {
 	{name = "Keyboard", input = "keyboard"},
 	{name = "DeviceScope", output = "text" },
+	{name = "DeviceName", output = "text" },
 	{name = "PatchName", output = "text" },
 	{name = "PageName", output = "text" },
 	{name = "SubPageName", output = "text" },
@@ -3764,7 +3765,7 @@ function remote_process_midi(event)
 			if(button ~= nil) then
 				g_helpmode = false
 				g_stopflashing = true
-				g_scrollcolor = AMBER
+				g_scrollcolor = RED
 				local itemname = get_item_by_button(buttonname)
 
 				if(itemname == "Button C1" or itemname == "Button C2") then
@@ -3804,14 +3805,16 @@ function remote_process_midi(event)
 				g_scrollcolor = YELLOW
 				local itemname = get_item_by_button(buttonname)
 
-				if(itemname == "Button C8") then
+				if(itemname == "Button C1" or itemname == "Button C2") then
+					g_scrolltext = remote.get_item_text_value(itemsindex["DeviceName"])
+				elseif(itemname == "Button C8") then
 					return true
 				else
-					g_scrolltext = "Value: "..tostring(remote.get_item_value(itemsindex[itemname]))
+					g_scrolltext = tostring(remote.get_item_value(itemsindex[itemname]))
 				end
 
 				if(g_scrolltext == "") then
-					g_scrolltext = "Value: Unknown"
+					g_scrolltext = "Unknown"
 				end
 				return true
 			end
