@@ -116,6 +116,8 @@ g_barupdatetime = nil
 g_startbeat = false
 g_beatupdate = false
 g_beatupdatetime = nil
+g_grabbed = {}
+g_pendinggrabrelease = {}
 
 g_updateditems = {}
 
@@ -2197,6 +2199,7 @@ local item_conf_map = {
 		["Index"]={
 		},
 		["Main"]={
+			["UDVButton 1-1_2-1"]={template="UDOrange"},
 			["Button 1-2"]={template="BRedOnOff"},
 			["Button 2-2"]={template="BRedOnOff"},
 			["Fader 3"]={template="FOrange"},
@@ -2306,6 +2309,132 @@ local item_conf_map = {
 			["Fader 5"]={template="FOrange"},
 			["Fader 6"]={template="FOrange"},
 			["Fader 7"]={template="FOrange"},
+		},
+	},
+	["Alligator"]={
+		["Default"]={
+		},
+		["Index"]={
+		},
+		["Main"]={
+			["UDVButton 1-1_2-1"]={template="UDOrange"},
+			["Button 1-2"]={template="BRedOnOff"},
+			["Button 3-2"]={template="BGreenOnOff"},
+			["UDVButton 5-2_6-2"]={template="UDOrange"},
+			["UDVButton 7-2_8-2"]={template="UDGreen"},
+			["UDVButton 7-3_8-3"]={template="UDOrange"},
+			["Button 1-4"]={template="BRedOnOff"},
+			["Button 3-4"]={template="BRedOnOff"},
+			["Button 5-4"]={template="BRedOnOff"},
+			["Button 1-5"]={template="BRedOnOff"},
+			["Button 3-5"]={template="BRedOnOff"},
+			["Button 5-5"]={template="BRedOnOff"},
+			["Fader 7"]={template="FRed"},
+		},
+		["HPFilter"]={
+			["Button 2-1"]={template="BFilterPage"},
+			["Button 3-1"]={template="BFilterPage"},
+			["Button 4-1"]={template="BFilterPage"},
+			["Knob V3"]={template="FYellow"},
+			["Fader 4"]={template="FGreen"},
+			["Fader 5"]={template="FOrange"},
+			["Knob V6"]={template="FYellow"},
+		},
+		["BPFilter"]={
+			["Button 2-1"]={template="BFilterPage"},
+			["Button 3-1"]={template="BFilterPage"},
+			["Button 4-1"]={template="BFilterPage"},
+			["Knob V3"]={template="FYellow"},
+			["Fader 4"]={template="FGreen"},
+			["Fader 5"]={template="FOrange"},
+			["Knob V6"]={template="FYellow"},
+		},
+		["LPFilter"]={
+			["Button 2-1"]={template="BFilterPage"},
+			["Button 3-1"]={template="BFilterPage"},
+			["Button 4-1"]={template="BFilterPage"},
+			["Knob V3"]={template="FYellow"},
+			["Fader 4"]={template="FGreen"},
+			["Fader 5"]={template="FOrange"},
+			["Knob V6"]={template="FYellow"},
+		},
+		["HPEffects"]={
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
+			["Fader 2"]={template="FAmber"},
+			["Fader 3"]={template="FOrange"},
+			["Fader 4"]={template="FOrange"},
+			["Knob V6"]={template="FRed"},
+			["Fader 7"]={template="FRed"},
+		},
+		["BPEffects"]={
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
+			["Fader 2"]={template="FAmber"},
+			["Fader 3"]={template="FOrange"},
+			["Fader 4"]={template="FOrange"},
+			["Knob V6"]={template="FRed"},
+			["Fader 7"]={template="FRed"},
+		},
+		["LPEffects"]={
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
+			["Fader 2"]={template="FAmber"},
+			["Fader 3"]={template="FOrange"},
+			["Fader 4"]={template="FOrange"},
+			["Knob V6"]={template="FRed"},
+			["Fader 7"]={template="FRed"},
+		},
+		["Delay"]={
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
+			["Fader 2"]={template="FGreen"},
+			["UDVButton 7-2_8-2"]={template="UDGreen"},
+			["Button 1-3"]={template="BGreenOnOff"},
+			["Fader 4"]={template="FOrange"},
+			["Knob V5"]={template="FOrange"},
+		},
+		["Phaser"]={
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
+			["Fader 2"]={template="FGreen"},
+			["Fader 4"]={template="FOrange"},
+		},
+		["AmpEnv"]={
+			["Fader 3"]={template="FRed"},
+			["Fader 4"]={template="FRed"},
+			["Fader 5"]={template="FRed"},
+		},
+		["DryLevels"]={
+			["Fader 2"]={template="FOrange"},
+			["Knob V4"]={template="FRed"},
+			["Fader 5"]={template="FRed"},
+		},
+		["FilterEnv"]={
+			["Fader 3"]={template="FGreen"},
+			["Fader 4"]={template="FGreen"},
+			["Fader 5"]={template="FGreen"},
+		},
+		["LFO"]={
+			["UDVButton 1-2_2-2"]={template="UDYellow"},
+			["Fader 4"]={template="FGreen"},
+			["UDVButton 7-4_8-4"]={template="UDGreen"},
+			["Button 1-5"]={template="BGreenOnOff"},
 		},
 	},
 }	
@@ -3156,6 +3285,12 @@ function remote_deliver_midi(maxbytes, port)
 		g_beatupdate = false
 	end
 
+	--if(g_grabbed["Fader 4"] ~= nil) then
+	--	table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button G"], bit.bor(GREEN, COPY))))
+	--else
+	--	table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button G"], bit.bor(RED, COPY))))
+	--end
+
 	return ret_events
 end
 
@@ -3281,9 +3416,34 @@ function remote_process_midi(event)
 			if(remote.is_item_enabled(itemsindex["Fader "..i])) then
 				button = remote.match_midi("90 x"..tostring(i-1).." 7f", event)
 				if(button ~= nil) then
-					local msg = { time_stamp = event.time_stamp, item = itemsindex["Fader "..i], value = get_fader_bvmap("Fader "..i)[button.x] }
+					if(g_grabbed["Fader "..i] ~= nil) then
+						if(g_pendinggrabrelease["Fader "..i] ~= nil) then
+							if(g_pendinggrabrelease["Fader "..i] + 500 > remote.get_time_ms()) then
+								g_pendinggrabrelease["Fader "..i] = nil
+							end
+						end
+					end
+					local newvalue = get_fader_bvmap("Fader "..i)[button.x]
+					if(newvalue == remote.get_item_value(itemsindex["Fader "..i])) then
+						g_grabbed["Fader "..i] = "Button "..tostring(button.x+1).."-"..i
+					end
+					local msg = { time_stamp = event.time_stamp, item = itemsindex["Fader "..i], value = newvalue }
 					remote.handle_input(msg)
 					return true
+				end
+				button = remote.match_midi("90 x"..tostring(i-1).." 00", event)
+				if(button ~= nil) then
+					if(g_grabbed["Fader "..i] ~= nil) then
+						if(g_grabbed["Fader "..i] == "Button "..tostring(button.x+1).."-"..i) then
+							g_pendinggrabrelease["Fader "..i] = remote.get_time_ms()
+						end
+						if(g_pendinggrabrelease["Fader "..i] ~= nil) then
+							if(g_pendinggrabrelease["Fader "..i] + 500 < remote.get_time_ms()) then
+								g_grabbed["Fader "..i] = nil
+								g_pendinggrabrelease["Fader "..i] = nil
+							end
+						end
+					end
 				end
 			end
 		end
