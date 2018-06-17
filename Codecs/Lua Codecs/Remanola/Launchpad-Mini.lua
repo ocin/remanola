@@ -596,6 +596,23 @@ local item_conf_map = {
 			["Button 8-2"]={template="BOscPage"},
 			["Button 8-3"]={template="BOscPage"},
 			["Button 8-4"]={template="BOscPage"},
+			-- Pads
+			["Button 5-5"]={template="BPerformancePage"},
+			["Button 5-6"]={template="BPerformancePage"},
+			["Button 5-7"]={template="BPerformancePage"},
+			["Button 5-8"]={template="BPerformancePage"},
+			["Button 6-5"]={template="BPerformancePage"},
+			["Button 6-6"]={template="BPerformancePage"},
+			["Button 6-7"]={template="BPerformancePage"},
+			["Button 6-8"]={template="BPerformancePage"},
+			["Button 7-5"]={template="BPerformancePage"},
+			["Button 7-6"]={template="BPerformancePage"},
+			["Button 7-7"]={template="BPerformancePage"},
+			["Button 7-8"]={template="BPerformancePage"},
+			["Button 8-5"]={template="BPerformancePage"},
+			["Button 8-6"]={template="BPerformancePage"},
+			["Button 8-7"]={template="BPerformancePage"},
+			["Button 8-8"]={template="BPerformancePage"},
 		},
 		["Main"]={
 			-- Pads
@@ -615,7 +632,7 @@ local item_conf_map = {
 			["Button 8-2"]={template="BPad"},
 			["Button 8-3"]={template="BPad"},
 			["Button 8-4"]={template="BPad"},
-			["Fader 8"]={template="FRed"},
+			["Fader 6"]={template="FRed"},
 		},
 		["Mutes & Solos"]={
 			-- Mute
@@ -654,7 +671,12 @@ local item_conf_map = {
 			["Button 4-8"]={template="BSolo"},
 		},
 		["Drum *"]={
-			-- Pads
+			-- Pages
+			["Button 1-1"]={template="BOscPage"},
+			["Button 2-1"]={template="BOscPage"},
+			["Button 3-1"]={template="BEffectPage"},
+			["Button 4-1"]={template="BEffectPage"},
+			-- Drums
 			["Button 5-1"]={template="BOscPage"},
 			["Button 5-2"]={template="BOscPage"},
 			["Button 5-3"]={template="BOscPage"},
@@ -671,9 +693,93 @@ local item_conf_map = {
 			["Button 8-2"]={template="BOscPage"},
 			["Button 8-3"]={template="BOscPage"},
 			["Button 8-4"]={template="BOscPage"},
-			["Knob V6"]={template="FAmber"},
-			["Knob V7"]={template="FRed"},
-			["Fader 8"]={template="FRed"},
+			["DrumMain"]={
+				-- Offset
+				["UDVButton 1-2_2-2"]={template="UDAmber"},
+				["UDVButton 3-2_4-2"]={template="UDGreen"},
+				-- Sends
+				["UDVButton 1-3_2-3"]={template="UDOrange"},
+				["UDVButton 3-3_4-3"]={template="UDOrange"},
+				["UDVButton 3-4_4-4"]={template="UDOrange"},
+				-- Outputs
+				["UDVButton 5-5_6-5"]={template="UDRed"},
+				-- Pitch Bend Range
+				["UDVButton 7-5_8-5"]={template="UDYellow"},
+				["Knob V6"]={template="FAmber"},
+				["Knob V7"]={template="FRed"},
+				["Fader 8"]={template="FRed"},
+			},
+			["DrumModule"]={
+				["Button 1-2"]={template="BYellowOnOff"},
+				["Fader 5"]={template="FGreen"},
+				["Knob V6"]={template="FAmber"},
+				["Fader 7"]={template="FAmber"},
+				["Fader 8"]={template="FRed"},
+			},
+			["DrumFX1"]={
+				["Button 1-2"]={template="BYellowOnOff"},
+				["Button 1-4"]={template="BYellowOnOff"},
+				["Button 2-4"]={template="BYellowOnOff"},
+				["Button 3-4"]={template="BYellowOnOff"},
+				["Button 4-4"]={template="BYellowOnOff"},
+				["Fader 5"]={template="FOrange"},
+				["Fader 6"]={template="FOrange"},
+			},
+			["DrumFX2"]={
+				["Button 1-2"]={template="BYellowOnOff"},
+				["Button 1-4"]={template="BYellowOnOff"},
+				["Button 2-4"]={template="BYellowOnOff"},
+				["Button 3-4"]={template="BYellowOnOff"},
+				["Button 4-4"]={template="BYellowOnOff"},
+				["Fader 5"]={template="FOrange"},
+				["Fader 6"]={template="FOrange"},
+			},
+		},
+		["Pad *"]={
+			["UDVButton 1-2_2-2"]={template="UDAmber"},
+			["UDVButton 3-2_4-2"]={template="UDAmber", inverted=true},
+			-- Pad Groups
+			["Button 1-6"]={template="BYellowOnOff"},
+			["Button 1-7"]={template="BYellowOnOff"},
+			["Button 1-8"]={template="BYellowOnOff"},
+			["Button 2-6"]={template="BYellowOnOff"},
+			["Button 2-7"]={template="BYellowOnOff"},
+			["Button 2-8"]={template="BYellowOnOff"},
+			["Button 3-6"]={template="BYellowOnOff"},
+			["Button 3-7"]={template="BYellowOnOff"},
+			["Button 3-8"]={template="BYellowOnOff"},
+			-- Pads
+			["Button 5-5"]={template="BPerformancePage"},
+			["Button 5-6"]={template="BPerformancePage"},
+			["Button 5-7"]={template="BPerformancePage"},
+			["Button 5-8"]={template="BPerformancePage"},
+			["Button 6-5"]={template="BPerformancePage"},
+			["Button 6-6"]={template="BPerformancePage"},
+			["Button 6-7"]={template="BPerformancePage"},
+			["Button 6-8"]={template="BPerformancePage"},
+			["Button 7-5"]={template="BPerformancePage"},
+			["Button 7-6"]={template="BPerformancePage"},
+			["Button 7-7"]={template="BPerformancePage"},
+			["Button 7-8"]={template="BPerformancePage"},
+			["Button 8-5"]={template="BPerformancePage"},
+			["Button 8-6"]={template="BPerformancePage"},
+			["Button 8-7"]={template="BPerformancePage"},
+			["Button 8-8"]={template="BPerformancePage"},
+		},
+		["Bus FX"]={
+			["Button 1-2"]={template="BYellowOnOff"},
+			["Fader 3"]={template="FOrange"},
+			["Fader 4"]={template="FOrange"},
+			["Fader 6"]={template="FRed"},
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+		},
+		["Master FX"]={
+			["Button 1-2"]={template="BYellowOnOff"},
+			["Fader 3"]={template="FOrange"},
+			["Fader 4"]={template="FOrange"},
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
 		},
 	},
 	["Redrum"]={
@@ -2646,6 +2752,9 @@ function get_item_conf_map(itemname, context, page)
 		wildpage = string.gsub(wildpage, "Primary", "*")
 		wildpage = string.gsub(wildpage, "Secondary", "*")
 		wildpage = string.gsub(wildpage, "Release", "*")
+		if((item_conf_map[context][wildpage] ~= nil) and (item_conf_map[context][wildpage][get_current_subpage()] ~= nil) and (item_conf_map[context][wildpage][get_current_subpage()][itemname] ~= nil)) then
+			return(item_conf_map[context][wildpage][get_current_subpage()][itemname])
+		end
 		if(item_conf_map[context][wildpage] == nil or item_conf_map[context][wildpage][itemname] == nil) then
 			if(item_conf_map[context]["Default"][itemname] == nil) then
 				if(item_conf_map["Default"][page] == nil or item_conf_map["Default"][page][itemname] == nil) then
