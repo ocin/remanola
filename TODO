@@ -106,7 +106,10 @@ Effects:
 * Synchronous
 * BV512 Digital Vocoder
 - Neptune
-- MClass Equalizer
+* MClass Equalizer
+- MClass Compressor
+- MClass Maximizer
+- MClass Stereo Imager
 All...
 
 Players:
