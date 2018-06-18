@@ -150,6 +150,16 @@ item_bvmap={
 		[7]=20,
 		[8]=0,
 	},
+	["Fader VC"]={
+		[1]=127,
+		[2]=108,
+		[3]=89,
+		[4]=71,
+		[5]=53,
+		[6]=36,
+		[7]=18,
+		[8]=0,
+	},
 	["BigFader"]={
 		[1]=1023,
 		[2]=876,
@@ -320,6 +330,7 @@ local color_templates = {
 	["FGreen"]={enabledcolor=WGREEN, activecolor=GREEN},
 	["FYellow"]={enabledcolor=WGREEN, activecolor=YELLOW},
 	["FOrange"]={enabledcolor=WGREEN, activecolor=ORANGE},
+	["FVCGreen"]={enabledcolor=WGREEN, activecolor=GREEN, disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=89},
 	-- Fader with default value
 	["FAmberDef100"]={enabledcolor=WGREEN, activecolor=AMBER, denabledcolor=WAMBER, dactivecolor=RED, defaultvalue=100},
 	["FRedDef100"]={enabledcolor=WGREEN, activecolor=RED, denabledcolor=WAMBER, dactivecolor=ORANGE, defaultvalue=100},
@@ -2631,14 +2642,14 @@ local item_conf_map = {
 	},
 	["BV512 Digital Vocoder"]={
 		["Default"]={
-			["Fader 1"]={template="FGreen"},
-			["Fader 2"]={template="FGreen"},
-			["Fader 3"]={template="FGreen"},
-			["Fader 4"]={template="FGreen"},
-			["Fader 5"]={template="FGreen"},
-			["Fader 6"]={template="FGreen"},
-			["Fader 7"]={template="FGreen"},
-			["Fader 8"]={template="FGreen"},
+			["Fader 1"]={template="FVCGreen", bvmap="Fader VC"},
+			["Fader 2"]={template="FVCGreen", bvmap="Fader VC"},
+			["Fader 3"]={template="FVCGreen", bvmap="Fader VC"},
+			["Fader 4"]={template="FVCGreen", bvmap="Fader VC"},
+			["Fader 5"]={template="FVCGreen", bvmap="Fader VC"},
+			["Fader 6"]={template="FVCGreen", bvmap="Fader VC"},
+			["Fader 7"]={template="FVCGreen", bvmap="Fader VC"},
+			["Fader 8"]={template="FVCGreen", bvmap="Fader VC"},
 		},
 		["Index"]={
 			["UDVButton 7-1_8-1"]={template="UDNocolor"},
@@ -2745,6 +2756,12 @@ end
 
 function get_item_bvmap(itemname)
 	local itemtype = string.match(itemname, "(.+%w)%s*%d")
+
+	local item_conf_map = get_item_conf_map(itemname, g_colorscheme, get_current_page())
+
+	if(item_conf_map.bvmap ~= nil) then
+		itemtype = item_conf_map.bvmap
+	end
 
 	if(item_bvmap[itemtype] == nil) then
 		itemtype = "Default"
