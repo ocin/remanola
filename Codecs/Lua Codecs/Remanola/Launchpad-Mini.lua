@@ -150,6 +150,26 @@ item_bvmap={
 		[7]=20,
 		[8]=0,
 	},
+	["Fader64"]={
+		[1]=127,
+		[2]=113,
+		[3]=100,
+		[4]=75,
+		[5]=64,
+		[6]=40,
+		[7]=20,
+		[8]=0,
+	},
+	["MeterSI"]={
+		[1]=63,
+		[2]=55,
+		[3]=48,
+		[4]=40,
+		[5]=32,
+		[6]=24,
+		[7]=16,
+		[8]=11,
+	},
 	["Fader VC"]={
 		[1]=127,
 		[2]=108,
@@ -330,6 +350,7 @@ local color_templates = {
 	["FGreen"]={enabledcolor=WGREEN, activecolor=GREEN},
 	["FYellow"]={enabledcolor=WGREEN, activecolor=YELLOW},
 	["FOrange"]={enabledcolor=WGREEN, activecolor=ORANGE},
+	-- Special Vocoder Fader
 	["FVCGreen"]={enabledcolor=WGREEN, activecolor=GREEN, disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=89},
 	-- Fader with default value
 	["FAmberDef100"]={enabledcolor=WGREEN, activecolor=AMBER, denabledcolor=WAMBER, dactivecolor=RED, defaultvalue=100},
@@ -337,6 +358,7 @@ local color_templates = {
 	["FGreenDef100"]={enabledcolor=WAMBER, activecolor=GREEN, denabledcolor=WGREEN, dactivecolor=YELLOW, defaultvalue=100},
 	["FYellowDef100"]={enabledcolor=WGREEN, activecolor=YELLOW, denabledcolor=WAMBER, dactivecolor=RED, defaultvalue=100},
 	["FOrangeDef100"]={enabledcolor=WGREEN, activecolor=ORANGE, denabledcolor=WAMBER, dactivecolor=RED, defaultvalue=100},
+	["InvMeter"]={enabledcolor=GREEN,      activecolor=WGREEN,     disabledcolor=NOCOLOR, maxcolor=RED},
 	-- Up/Down Buttons
 	["UDAmber"]={enabledcolor=AMBER, activecolor=AMBER},
 	["UDRed"]={enabledcolor=RED, activecolor=RED},
@@ -357,6 +379,8 @@ local color_templates = {
 	["BYellowOnOff"]={enabledcolor=WAMBER,   activecolor=YELLOW,  disabledcolor=NOCOLOR},
 	["BGreenOnOff"]={enabledcolor=WAMBER,   activecolor=GREEN,  disabledcolor=NOCOLOR},
 	["BAmberOnOff"]={enabledcolor=WAMBER,   activecolor=AMBER,  disabledcolor=NOCOLOR},
+	-- Red LED
+	["BRedLed"]={enabledcolor=WGREEN,   activecolor=RED,  disabledcolor=NOCOLOR},
 	-- Button Page
 	["BMainPage"]={enabledcolor=RED,   activecolor=RED,  disabledcolor=NOCOLOR},
 	["BAmpPage"]={enabledcolor=WRED,   activecolor=RED,  disabledcolor=NOCOLOR},
@@ -2687,6 +2711,68 @@ local item_conf_map = {
 			["Button 1-5"]={template="BRedOnOff"},
 			["Button 1-6"]={template="BRedOnOff"},
 			["Button 1-7"]={template="BRedOnOff"},
+		},
+	},
+	["MClass Compressor"]={
+		["Default"]={
+		},
+		["Index"]={
+		},
+		["Main"]={
+			["Button 7-1"]={template="BRedLed"},
+			["Button 8-1"]={template="BRedOnOff"},
+			["UDVButton 1-1_2-1"]={template="UDOrange"},
+			["Knob V3"]={template="FRed"},
+			["Fader 4"]={template="FOrange"},
+			["Button 1-5"]={template="BRedOnOff"},
+			["Fader 6"]={template="FOrange"},
+			["Meter 7"]={template="InvMeter"},
+			["Knob V8"]={template="FRed"},
+		},
+		["Env"]={
+			["Fader 4"]={template="FOrange"},
+			["Fader 5"]={template="FOrange"},
+			["Button 1-6"]={template="BRedOnOff"},
+		},
+	},
+	["MClass Maximizer"]={
+		["Default"]={
+		},
+		["Index"]={
+		},
+		["Main"]={
+			["UDVButton 1-1_2-1"]={template="UDOrange"},
+			["Knob V3"]={template="FRed"},
+			["Button 1-6"]={template="BRedOnOff"},
+		},
+		["Limiter"]={
+			["Button 1-2"]={template="BRedOnOff"},
+			["Button 4-2"]={template="BRedOnOff"},
+			["Meter 3"]={template="InvMeter"},
+			["UDVButton 1-4_2-4"]={template="UDOrange", inverted=true},
+			["UDVButton 1-5_2-5"]={template="UDOrange", inverted=true},
+			["Knob V6"]={template="FRed"},
+		},
+		["SoftCLip"]={
+			["Button 1-2"]={template="BRedOnOff"},
+			["Fader 3"]={template="FOrange"},
+		},
+	},
+	["MClass Stereo Imager"]={
+		["Default"]={
+		},
+		["Index"]={
+		},
+		["Main"]={
+			["UDVButton 1-1_2-1"]={template="UDOrange"},
+			["Knob V3"]={template="FOrange"},
+			["Meter 4"]={template="FRed", bvmap="MeterSI"},
+			["Fader 5"]={template="FGreen", bvmap="Fader64"},
+			["Knob V6"]={template="FOrange"},
+			["Meter 7"]={template="FRed", bvmap="MeterSI"},
+			["Button 1-6"]={template="BRedOnOff"},
+			["UDVButton 1-8_2-8"]={template="UDYellow"},
+			["UDVButton 7-8_8-8"]={template="UDOrange"},
 		},
 	},
 }	
