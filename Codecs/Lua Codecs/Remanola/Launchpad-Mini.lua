@@ -117,8 +117,6 @@ g_barupdatetime = nil
 g_startbeat = false
 g_beatupdate = false
 g_beatupdatetime = nil
-g_grabbed = {}
-g_pendinggrabrelease = {}
 
 g_updateditems = {}
 
@@ -141,71 +139,67 @@ brightness={
 	[5]="00",
 }
 
-fader_bvmap={
+item_bvmap={
 	["Default"]={
-		[0]=127,
-		[1]=113,
-		[2]=100,
-		[3]=75,
-		[4]=63,
-		[5]=40,
-		[6]=20,
-		[7]=0,
+		[1]=127,
+		[2]=113,
+		[3]=100,
+		[4]=75,
+		[5]=63,
+		[6]=40,
+		[7]=20,
+		[8]=0,
 	},
 	["BigFader"]={
-		[0]=1023,
-		[1]=876,
-		[2]=751,
-		[3]=631,
-		[4]=511,
-		[5]=340,
-		[6]=170,
-		[7]=0,
+		[1]=1023,
+		[2]=876,
+		[3]=751,
+		[4]=631,
+		[5]=511,
+		[6]=340,
+		[7]=170,
+		[8]=0,
 	},
-}
-
-knobvbutton_to_value={
-	[1]=127,
-	[2]=111,
-	[3]=95,
-	[4]=79,
-	[5]=47,
-	[6]=31,
-	[7]=15,
-	[8]=0,
-}
-
-knobhbutton_to_value={
-	[1]=0,
-	[2]=15,
-	[3]=31,
-	[4]=47,
-	[5]=79,
-	[6]=95,
-	[7]=111,
-	[8]=127,
-}
-
-drawbarbutton_to_value={
-	[0]=0,
-	[1]=20,
-	[2]=40,
-	[3]=63,
-	[4]=80,
-	[5]=100,
-	[6]=113,
-	[7]=127,
-}
-
-meterbutton_to_value={
-	[7]=1,
-	[6]=8,
-	[5]=15,
-	[4]=21,
-	[3]=27,
-	[2]=33,
-	[1]=39,
-	[0]=45,
+	["Knob V"]={
+		[1]=127,
+		[2]=111,
+		[3]=95,
+		[4]=79,
+		[5]=47,
+		[6]=31,
+		[7]=15,
+		[8]=0,
+	},
+	["Knob H"]={
+		[1]=0,
+		[2]=15,
+		[3]=31,
+		[4]=47,
+		[5]=79,
+		[6]=95,
+		[7]=111,
+		[8]=127,
+	},
+	["Drawbar"]={
+		[1]=0,
+		[2]=20,
+		[3]=40,
+		[4]=63,
+		[5]=80,
+		[6]=100,
+		[7]=113,
+		[8]=127,
+	},
+	["Meter"]={
+		[1]=45,
+		[2]=39,
+		[3]=33,
+		[4]=27,
+		[5]=21,
+		[6]=15,
+		[7]=8,
+		[8]=1,
+	},
 }
 
 button_to_padnote={
@@ -339,6 +333,7 @@ local color_templates = {
 	["UDYellow"]={enabledcolor=YELLOW, activecolor=YELLOW},
 	["UDYellow3"]={enabledcolor=YELLOW3, activecolor=YELLOW3},
 	["UDOrange"]={enabledcolor=ORANGE, activecolor=ORANGE},
+	["UDNocolor"]={enabledcolor=NOCOLOR, activecolor=NOCOLOR},
 	-- Buttons
 	["BAmber"]={enabledcolor=AMBER, activecolor=AMBER,  disabledcolor=NOCOLOR},
 	["BRed"]={enabledcolor=RED, activecolor=RED,  disabledcolor=NOCOLOR},
@@ -2636,8 +2631,17 @@ local item_conf_map = {
 	},
 	["BV512 Digital Vocoder"]={
 		["Default"]={
+			["Fader 1"]={template="FGreen"},
+			["Fader 2"]={template="FGreen"},
+			["Fader 3"]={template="FGreen"},
+			["Fader 4"]={template="FGreen"},
+			["Fader 5"]={template="FGreen"},
+			["Fader 6"]={template="FGreen"},
+			["Fader 7"]={template="FGreen"},
+			["Fader 8"]={template="FGreen"},
 		},
 		["Index"]={
+			["UDVButton 7-1_8-1"]={template="UDNocolor"},
 		},
 		["Main"]={
 			["UDVButton 1-1_2-1"]={template="UDOrange"},
@@ -2739,14 +2743,14 @@ function gen_scroll_string(string, color, speed)
 	return(string.format("%s %02x %02x %s F7", MIDI_OUT_SCROLL, color, speed, hex_encode_text(string)))
 end
 
-function get_fader_bvmap(fadername)
-	local fadertype = "Default"
+function get_item_bvmap(itemname)
+	local itemtype = string.match(itemname, "(.+%w)%s*%d")
 
-	if(string.find(fadername, "BigFader %d")) then
-		fadertype = "BigFader"
+	if(item_bvmap[itemtype] == nil) then
+		itemtype = "Default"
 	end
 
-	return(fader_bvmap[fadertype])
+	return(item_bvmap[itemtype])
 end
 
 function get_item_conf_map(itemname, context, page)
@@ -2920,7 +2924,7 @@ function get_button_color(context, itemname, buttonname, value)
 		buttonindex = tonumber(string.sub(buttonname, -1,-1))
 		if(value > 64) then
 			if(buttonindex >= 5) then
-				buttonvalue = knobhbutton_to_value[buttonindex-1]
+				buttonvalue = get_item_bvmap(itemname)[buttonindex-1]
 				if(value > buttonvalue) then
 					color = activecolor
 				else 
@@ -2931,7 +2935,7 @@ function get_button_color(context, itemname, buttonname, value)
 			end
 		elseif(value < 64) then
 			if(buttonindex <= 4) then
-				buttonvalue = knobhbutton_to_value[buttonindex]
+				buttonvalue = get_item_bvmap(itemname)[buttonindex]
 				if(value <= buttonvalue) then
 					color = activecolor
 				else 
@@ -2951,7 +2955,7 @@ function get_button_color(context, itemname, buttonname, value)
 		buttonindex = tonumber(string.sub(buttonname, -3,-3))
 		if(value > 64) then
 			if(buttonindex <= 4) then
-				buttonvalue = knobvbutton_to_value[buttonindex+1]
+				buttonvalue = get_item_bvmap(itemname)[buttonindex+1]
 				if(value > buttonvalue) then
 					color = activecolor
 				else 
@@ -2962,7 +2966,7 @@ function get_button_color(context, itemname, buttonname, value)
 			end
 		elseif(value < 64) then
 			if(buttonindex >= 5) then
-				buttonvalue = knobvbutton_to_value[buttonindex-1]
+				buttonvalue = get_item_bvmap(itemname)[buttonindex-1]
 				if(value < buttonvalue) then
 					color = activecolor
 				else 
@@ -2980,17 +2984,17 @@ function get_button_color(context, itemname, buttonname, value)
 		end
 	else
 		if(string.find(itemname, "Drawbar %d")) then
-			buttonindex = tonumber(string.sub(buttonname, -3,-3))-1
-			buttonvalue = drawbarbutton_to_value[buttonindex]
+			buttonindex = tonumber(string.sub(buttonname, -3,-3))
+			buttonvalue = get_item_bvmap(itemname)[buttonindex]
 		elseif(string.find(itemname, "Meter %d")) then
-			buttonindex = tonumber(string.sub(buttonname, -3,-3))-1
-			buttonvalue = meterbutton_to_value[buttonindex]
+			buttonindex = tonumber(string.sub(buttonname, -3,-3))
+			buttonvalue = get_item_bvmap(itemname)[buttonindex]
 		elseif(string.find(itemname, "BigFader %d")) then
-			buttonindex = tonumber(string.sub(buttonname, -3,-3))-1
-			buttonvalue = get_fader_bvmap(itemname)[buttonindex]
+			buttonindex = tonumber(string.sub(buttonname, -3,-3))
+			buttonvalue = get_item_bvmap(itemname)[buttonindex]
 		elseif(string.find(itemname, "Fader %d")) then
-			buttonindex = tonumber(string.sub(buttonname, -3,-3))-1
-			buttonvalue = get_fader_bvmap(itemname)[buttonindex]
+			buttonindex = tonumber(string.sub(buttonname, -3,-3))
+			buttonvalue = get_item_bvmap(itemname)[buttonindex]
 		end
 
 		if(value >= buttonvalue) then
@@ -3509,12 +3513,6 @@ function remote_deliver_midi(maxbytes, port)
 		table.insert(ret_events, remote.make_midi(MIDI_OUT_GETVERSION))
 	end
 
-	--if(g_grabbed["Fader 4"] ~= nil) then
-	--	table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button G"], bit.bor(GREEN, COPY))))
-	--else
-	--	table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button G"], bit.bor(RED, COPY))))
-	--end
-
 	return ret_events
 end
 
@@ -3640,34 +3638,9 @@ function remote_process_midi(event)
 			if(remote.is_item_enabled(itemsindex["Fader "..i])) then
 				button = remote.match_midi("90 x"..tostring(i-1).." 7f", event)
 				if(button ~= nil) then
-					if(g_grabbed["Fader "..i] ~= nil) then
-						if(g_pendinggrabrelease["Fader "..i] ~= nil) then
-							if(g_pendinggrabrelease["Fader "..i] + 500 > remote.get_time_ms()) then
-								g_pendinggrabrelease["Fader "..i] = nil
-							end
-						end
-					end
-					local newvalue = get_fader_bvmap("Fader "..i)[button.x]
-					if(newvalue == remote.get_item_value(itemsindex["Fader "..i])) then
-						g_grabbed["Fader "..i] = "Button "..tostring(button.x+1).."-"..i
-					end
-					local msg = { time_stamp = event.time_stamp, item = itemsindex["Fader "..i], value = newvalue }
+					local msg = { time_stamp = event.time_stamp, item = itemsindex["Fader "..i], value = get_item_bvmap("Fader "..i)[button.x+1] }
 					remote.handle_input(msg)
 					return true
-				end
-				button = remote.match_midi("90 x"..tostring(i-1).." 00", event)
-				if(button ~= nil) then
-					if(g_grabbed["Fader "..i] ~= nil) then
-						if(g_grabbed["Fader "..i] == "Button "..tostring(button.x+1).."-"..i) then
-							g_pendinggrabrelease["Fader "..i] = remote.get_time_ms()
-						end
-						if(g_pendinggrabrelease["Fader "..i] ~= nil) then
-							if(g_pendinggrabrelease["Fader "..i] + 500 < remote.get_time_ms()) then
-								g_grabbed["Fader "..i] = nil
-								g_pendinggrabrelease["Fader "..i] = nil
-							end
-						end
-					end
 				end
 			end
 		end
@@ -3676,7 +3649,7 @@ function remote_process_midi(event)
 			if(remote.is_item_enabled(itemsindex["BigFader "..i])) then
 				button = remote.match_midi("90 x"..tostring(i-1).." 7f", event)
 				if(button ~= nil) then
-					local msg = { time_stamp = event.time_stamp, item = itemsindex["BigFader "..i], value = get_fader_bvmap("BigFader "..i)[button.x] }
+					local msg = { time_stamp = event.time_stamp, item = itemsindex["BigFader "..i], value = get_item_bvmap("BigFader "..i)[button.x+1] }
 					remote.handle_input(msg)
 					return true
 				end
@@ -3687,7 +3660,7 @@ function remote_process_midi(event)
 			if(remote.is_item_enabled(itemsindex["Drawbar "..i])) then
 				button = remote.match_midi("90 x"..tostring(i-1).." 7f", event)
 				if(button ~= nil) then
-					local msg = { time_stamp = event.time_stamp, item = itemsindex["Drawbar "..i], value = drawbarbutton_to_value[button.x] }
+					local msg = { time_stamp = event.time_stamp, item = itemsindex["Drawbar "..i], value = get_item_bvmap("Drawbar "..i)[button.x+1] }
 					remote.handle_input(msg)
 					return true
 				end
@@ -3699,7 +3672,7 @@ function remote_process_midi(event)
 				button = remote.match_midi("90 "..tostring(i-1).."x 7f", event)
 				if(button ~= nil) then
 					local oldvalue = remote.get_item_value(itemsindex["Knob H"..i])
-					local value = knobhbutton_to_value[button.x+1]
+					local value = get_item_bvmap("Knob H"..i)[button.x+1]
 					if((oldvalue < 64 and button.x+1 == 5) or (oldvalue > 64 and button.x+1 == 4)) then
 						value = 64
 					end
@@ -3715,7 +3688,7 @@ function remote_process_midi(event)
 				button = remote.match_midi("90 x"..tostring(i-1).." 7f", event)
 				if(button ~= nil) then
 					local oldvalue = remote.get_item_value(itemsindex["Knob V"..i])
-					local value = knobvbutton_to_value[button.x+1]
+					local value = get_item_bvmap("Knob V"..i)[button.x+1]
 					if((oldvalue > 64 and button.x+1 == 5) or (oldvalue < 64 and button.x+1 == 4)) then
 						value = 64
 					end

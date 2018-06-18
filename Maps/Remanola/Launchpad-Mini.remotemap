@@ -5786,11 +5786,22 @@ Map	DeviceName		Device Name
 Map	Button C7		Page=Index
 // Index
 Map	PageName		"Index" 				Index
+Map	UDVButton 7-1_8-1		Band Count 		SEL1	Index
+//Map	Hidden		Band Count 		SEL1	Index
+Map	Sel1_0		BandCount=4Band 			Index
+Map	Sel1_32		BandCount=8Band 			Index
+Map	Sel1_64		BandCount=16Band 			Index
+Map	Sel1_95		BandCount=32Band 			Index
+Map	Sel1_127		BandCount=32Band 			Index
 Map	Button 1-1		Page=Main			Index
-Map	Button 2-8		Page=Band1-8			Index
-Map	Button 3-8		Page=Band9-16			Index
-Map	Button 4-8		Page=Band17-24			Index
-Map	Button 5-8		Page=Band25-32			Index
+Map	Button 2-8		Page=Band1-8			Index	4Band
+Map	Button 2-8		Page=Band1-8			Index	8Band
+Map	Button 2-8		Page=Band1-8			Index	16Band
+Map	Button 2-8		Page=Band1-8			Index	32Band
+Map	Button 3-8		Page=Band9-16			Index	16Band
+Map	Button 3-8		Page=Band9-16			Index	32Band
+Map	Button 4-8		Page=Band17-24			Index	32Band
+Map	Button 5-8		Page=Band25-32			Index	32Band
 Map	Button H		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
