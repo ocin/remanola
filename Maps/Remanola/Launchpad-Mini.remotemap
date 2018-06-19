@@ -6295,3 +6295,61 @@ Map	Knob V5		Filter A Gain			Main
 Map	Fader 6		Filter B Freq			Main	On
 Map	Fader 7		Filter B Q			Main	On
 Map	Knob V8		Filter B Gain			Main	On
+
+// ------------------------------------------------------------------------------------------
+Scope	Softube	com.softube.re.SaturationKnob
+Define Group	Page	Main	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Saturation Knob"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Fader 3		Saturation			Main
+Map	UDVButton 1-4_2-4		Saturation Type			Main
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerhead Software	se.propellerheads.Polar
+Define Group	Page	Main	Dry	DelayBuffer	Shifter1	Shifter2	Filter	LFO	Env	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Polar Dual Pitch Shifter"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
+// Page
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=Dry			Index
+Map	Button 2-5		Page=Filter			Index
+Map	Button 5-5		Page=LFO			Index
+Map	Button 5-6		Page=Env			Index
+Map	Button 2-8		Page=DelayBuffer			Index
+Map	Button 3-8		Page=Shifter1			Index
+Map	Button 4-8		Page=Shifter2			Index
+Map	Button H		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	UDVButton 1-2_2-2		Analysis Type			Main
+Map	UDVButton 5-2_6-2		Algorithm Type			Main
+Map	Button 8-2		Keyboard Input Enable			Main
+Map	Fader 3		Loop Length			Main
+Map	Fader 8		Auto Pan Rate			Main

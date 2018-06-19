@@ -2195,20 +2195,6 @@ local item_conf_map = {
 			["Fader 7"]={template="FAmber"},
 		},
 	},
-	["ECF-42 Filter"]={
-		["Default"]={
-		},
-		["Index"]={
-		},
-		["Main"]={
-			["UDVButton 1-1_2-1"]={template="UDOrange"},
-			["Fader 3"]={template="FGreen"},
-			["Fader 4"]={template="FOrange"},
-			["Fader 5"]={template="FAmber"},
-			["Fader 6"]={template="FYellow"},
-			["UDVButton 1-7_2-7"]={template="UDGreen", inverted=true},
-		},
-	},
 	["Audiomatic"]={
 		["Default"]={
 		},
@@ -2848,6 +2834,20 @@ local item_conf_map = {
 			["Fader 8"]={template="FOrange"},
 		},
 	},
+	["ECF-42 Filter"]={
+		["Default"]={
+		},
+		["Index"]={
+		},
+		["Main"]={
+			["UDVButton 1-1_2-1"]={template="UDOrange"},
+			["Fader 3"]={template="FGreen"},
+			["Fader 4"]={template="FOrange"},
+			["Fader 5"]={template="FAmber"},
+			["Fader 6"]={template="FYellow"},
+			["UDVButton 1-7_2-7"]={template="UDGreen", inverted=true},
+		},
+	},
 	["CF-101 Chorus/Flanger"]={
 		["Default"]={
 		},
@@ -2921,6 +2921,31 @@ local item_conf_map = {
 			["Fader 6"]={template="FGreen"},
 			["Fader 7"]={template="FYellow"},
 			["Knob V8"]={template="FRed"},
+		},
+	},
+	["Saturation Knob"]={
+		["Default"]={
+		},
+		["Index"]={
+		},
+		["Main"]={
+			["UDVButton 1-1_2-1"]={template="UDOrange"},
+			["Fader 3"]={template="FOrange"},
+			["UDVButton 1-4_2-4"]={template="UDOrange"},
+		},
+	},
+	["Polar Dual Pitch Shifter"]={
+		["Default"]={
+		},
+		["Index"]={
+		},
+		["Main"]={
+			["UDVButton 1-1_2-1"]={template="UDOrange"},
+			["UDVButton 1-2_2-2"]={template="UDOrange", inverted=true},
+			["UDVButton 5-2_6-2"]={template="UDOrange", inverted=true},
+			["Button 8-2"]={template="BRedOnOff"},
+			["Fader 3"]={template="FGreen"},
+			["Fader 8"]={template="FGreen"},
 		},
 	},
 }	
