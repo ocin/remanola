@@ -358,7 +358,9 @@ local color_templates = {
 	["FGreenDef100"]={enabledcolor=WAMBER, activecolor=GREEN, denabledcolor=WGREEN, dactivecolor=YELLOW, defaultvalue=100},
 	["FYellowDef100"]={enabledcolor=WGREEN, activecolor=YELLOW, denabledcolor=WAMBER, dactivecolor=RED, defaultvalue=100},
 	["FOrangeDef100"]={enabledcolor=WGREEN, activecolor=ORANGE, denabledcolor=WAMBER, dactivecolor=RED, defaultvalue=100},
+	-- Meters
 	["InvMeter"]={enabledcolor=GREEN,      activecolor=WGREEN,     disabledcolor=NOCOLOR, maxcolor=RED},
+	["FRed"]={enabledcolor=WAMBER, activecolor=RED, disabledcolor=NOCOLOR, maxcolor=RED},
 	-- Up/Down Buttons
 	["UDAmber"]={enabledcolor=AMBER, activecolor=AMBER},
 	["UDRed"]={enabledcolor=RED, activecolor=RED},
@@ -418,7 +420,7 @@ local item_conf_map = {
 			["Fader *"]={template="FYellow"},
 			["BigFader *"]={enabledcolor=WAMBER,      activecolor=GREEN,     disabledcolor=NOCOLOR, denabledcolor=WGREEN, dactivecolor=YELLOW, defaultvalue=751},
 			["Drawbar *"]={ttemplate="FYellow"},
-			["Meter *"]={enabledcolor=WGREEN,      activecolor=GREEN,     disabledcolor=NOCOLOR, maxcolor=RED},
+			["Meter *"]={enabledcolor=WAMBER,      activecolor=GREEN,     disabledcolor=NOCOLOR, maxcolor=RED},
 			["Knob *"]={template="FYellow"},
 			["UDHButton *"]={enabledcolor=YELLOW,      activecolor=YELLOW,     disabledcolor=NOCOLOR},
 			["UDVButton *"]={enabledcolor=YELLOW,      activecolor=YELLOW,     disabledcolor=NOCOLOR},
@@ -2200,11 +2202,11 @@ local item_conf_map = {
 		},
 		["Main"]={
 			["UDVButton 1-1_2-1"]={template="UDOrange"},
-			["UDVButton 1-2_2-2"]={template="UDGreen", inverted=true},
 			["Fader 3"]={template="FGreen"},
 			["Fader 4"]={template="FOrange"},
 			["Fader 5"]={template="FAmber"},
 			["Fader 6"]={template="FYellow"},
+			["UDVButton 1-7_2-7"]={template="UDGreen", inverted=true},
 		},
 	},
 	["Audiomatic"]={
@@ -2773,6 +2775,152 @@ local item_conf_map = {
 			["Button 1-6"]={template="BRedOnOff"},
 			["UDVButton 1-8_2-8"]={template="UDYellow"},
 			["UDVButton 7-8_8-8"]={template="UDOrange"},
+		},
+	},
+	["Neptune Pitch Adjuster"]={
+		["Default"]={
+		},
+		["Index"]={
+		},
+		["Main"]={
+			["UDVButton 1-1_2-1"]={template="UDOrange"},
+			["Fader 3"]={template="FOrange"},
+			["Button 1-4"]={template="BYellowOnOff"},
+			["Button 3-4"]={template="BYellowOnOff"},
+			["Button 5-4"]={template="BYellowOnOff"},
+			["UDVButton 7-4_8-4"]={template="UDOrange", inverted=true},
+			["UDVButton 1-5_2-5"]={template="UDOrange"},
+			["Fader 7"]={template="FOrange"},
+			["Fader 8"]={template="FOrange"},
+		},
+		["PitchAdjust"]={
+			["Button 1-2"]={template="BYellowOnOff"},
+			["Fader 4"]={template="FOrange"},
+			["Fader 5"]={template="FOrange"},
+		},
+		["Transpose"]={
+			["Button 1-2"]={template="BYellowOnOff"},
+			["UDVButton 1-4_2-4"]={template="UDGreen"},
+			["UDVButton 5-4_6-4"]={template="UDGreen"},
+		},
+		["Formant"]={
+			["Button 1-2"]={template="BYellowOnOff"},
+			["Knob V5"]={template="FOrange"},
+		},
+	},
+	["RV-7 Digital Reverb"]={
+		["Default"]={
+		},
+		["Index"]={
+		},
+		["Main"]={
+			["UDVButton 1-1_2-1"]={template="UDOrange"},
+			["UDVButton 1-3_2-3"]={template="UDOrange"},
+			["Knob V4"]={template="FOrange"},
+			["Knob V5"]={template="FOrange"},
+			["Fader 7"]={template="FOrange"},
+			["Fader 8"]={template="FOrange"},
+		},
+	},
+	["DDL-1 Digital Delay Line"]={
+		["Default"]={
+		},
+		["Index"]={
+		},
+		["Main"]={
+			["UDVButton 1-1_2-1"]={template="UDOrange"},
+			["UDVButton 1-3_2-3"]={template="UDGreen"},
+			["UDVButton 1-4_2-4"]={template="UDGreen", inverted=true},
+			["UDVButton 1-5_2-5"]={template="UDGreen", inverted=true},
+			["Fader 6"]={template="FOrange"},
+			["Knob V7"]={template="FRed"},
+			["Fader 8"]={template="FOrange"},
+		},
+	},
+	["D-11 Foldback Distortion"]={
+		["Default"]={
+		},
+		["Index"]={
+		},
+		["Main"]={
+			["UDVButton 1-1_2-1"]={template="UDOrange"},
+			["Fader 4"]={template="FOrange"},
+			["Fader 8"]={template="FOrange"},
+		},
+	},
+	["CF-101 Chorus/Flanger"]={
+		["Default"]={
+		},
+		["Index"]={
+		},
+		["Main"]={
+			["UDVButton 1-1_2-1"]={template="UDOrange"},
+			["Fader 3"]={template="FGreen"},
+			["Knob V4"]={template="FOrange"},
+			["Fader 5"]={template="FGreen"},
+			["Button 1-6"]={template="BRedOnOff"},
+			["Fader 7"]={template="FYellow"},
+			["Button 1-8"]={template="BRedOnOff"},
+		},
+	},
+	["PH-90 Phaser"]={
+		["Default"]={
+		},
+		["Index"]={
+		},
+		["Main"]={
+			["UDVButton 1-1_2-1"]={template="UDOrange"},
+			["Fader 3"]={template="FGreen"},
+			["Fader 4"]={template="FOrange"},
+			["Fader 5"]={template="FOrange"},
+			["Fader 6"]={template="FOrange"},
+		},
+		["LFO"]={
+			["Fader 5"]={template="FGreen"},
+			["Button 1-6"]={template="BRedOnOff"},
+			["Fader 7"]={template="FYellow"},
+		},
+	},
+	["UN-16 Unison"]={
+		["Default"]={
+		},
+		["Index"]={
+		},
+		["Main"]={
+			["UDVButton 1-1_2-1"]={template="UDOrange"},
+			["UDVButton 1-3_2-3"]={template="UDOrange", inverted=true},
+			["Fader 4"]={template="FOrange"},
+			["Fader 8"]={template="FOrange"},
+		},
+	},
+	["COMP-01 Compressor/Limiter"]={
+		["Default"]={
+		},
+		["Index"]={
+		},
+		["Main"]={
+			["UDVButton 1-1_2-1"]={template="UDOrange"},
+			["Fader 3"]={template="FOrange"},
+			["Fader 4"]={template="FOrange"},
+			["Fader 5"]={template="FYellow"},
+			["Fader 6"]={template="FYellow"},
+			["Meter 8"]={template="FRed", bvmap="MeterSI"},
+		},
+	},
+	["PEQ-2 Two Band Parametric EQ"]={
+		["Default"]={
+		},
+		["Index"]={
+		},
+		["Main"]={
+			["UDVButton 1-1_2-1"]={template="UDOrange"},
+			["Button 8-1"]={template="BRedOnOff"},
+			["Fader 3"]={template="FGreen"},
+			["Fader 4"]={template="FYellow"},
+			["Knob V5"]={template="FRed"},
+			["Fader 6"]={template="FGreen"},
+			["Fader 7"]={template="FYellow"},
+			["Knob V8"]={template="FRed"},
 		},
 	},
 }	
