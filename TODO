@@ -69,6 +69,8 @@ Map:
 		- Gate
 	- Input
 
+- Audio Track
+
 Instruments:
 * Antidote
 * PX-7
@@ -82,9 +84,9 @@ Instruments:
 * Dr.OctoRex
 * Radical Piano
 * Kong
+* NN-XT
+* Grain
 + Parsec
-+ NN-XT
-- Grain
 - NN-19
 - Ammo1200
 - Ammo400
@@ -92,6 +94,7 @@ Instruments:
 - Humana
 - Pangea
 - Klang
+- MIDI Instrument
 
 Effects:
 * ECF-42
@@ -114,10 +117,17 @@ Effects:
 * Mini Effects
 
 Players:
-All...
+- Scales & Chords
+- Dual Arpegggio
+- Note Echo
+- Drum Sequencer
 
 Utilities:
 * Combinator
 * RPG-8
 * Matrix
-All...
+- Pulsar
+- Mixer 14-2
+- Line Mixer 6-2
+- Jiggery Pokery Utilities
+- Hamu Utilities
