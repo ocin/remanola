@@ -5046,7 +5046,7 @@ Map	UDVButton 1-8_2-8		Mod8 Scale			 ModMatrix8
 
 // ------------------------------------------------------------------------------------------
 Scope	Propellerhead Software	se.propellerheads.Europa
-Define Group	Page	Main	Eng1	Eng2	Eng3	Eng1Mod1	Eng2Mod1	Eng3Mod1	Eng1Mod2	Eng2Mod2	Eng3Mod2	Eng1Harm	Eng2Harm	Eng3Harm	Eng1Filter	Eng2Filter	Eng3Filter	Eng1Unison	Eng2Unison	Eng3Unison	Mixer	Filter	Amp	Effects	Phaser	Dist	Eq	Delay	Reverb	Comp	LFO1	LFO2	LFO3	Env1	Env2	Env3	Env4	Index	Internal
+Define Group	Page	Main	Eng1	Eng2	Eng3	Eng1Mod1	Eng2Mod1	Eng3Mod1	Eng1Mod2	Eng2Mod2	Eng3Mod2	Eng1Harm	Eng2Harm	Eng3Harm	Eng1Filter	Eng2Filter	Eng3Filter	Eng1Unison	Eng2Unison	Eng3Unison	Mixer	Filter	Amp	Effects	Phaser	Dist	Eq	Delay	Reverb	Comp	LFO1	LFO2	LFO3	Env1	Env2	Env3	Env4	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Internal
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Europa"
@@ -5084,6 +5084,14 @@ Map	Button 2-7		Page=Eng1Unison			Index
 Map	Button 3-7		Page=Eng2Unison			Index
 Map	Button 4-7		Page=Eng3Unison			Index
 Map	Button 5-5		Page=Filter			Index
+Map	Button 7-1		Page=ModMatrix1			Index
+Map	Button 7-2		Page=ModMatrix2			Index
+Map	Button 7-3		Page=ModMatrix3			Index
+Map	Button 7-4		Page=ModMatrix4			Index
+Map	Button 8-1		Page=ModMatrix5			Index
+Map	Button 8-2		Page=ModMatrix6			Index
+Map	Button 8-3		Page=ModMatrix7			Index
+Map	Button 8-4		Page=ModMatrix8			Index
 Map	Button 6-5		Page=LFO1			Index
 Map	Button 7-5		Page=LFO2			Index
 Map	Button 8-5		Page=LFO3			Index
@@ -5566,10 +5574,146 @@ Map	Fader 3		Reverb Decay				Reverb
 Map	Fader 4		Reverb Size				Reverb
 Map	Fader 5		Reverb Damp				Reverb
 Map	Fader 7		Reverb Amount				Reverb
+// Mod Matrix 1
+Map	PageName		"Mod Matrix 1" 			ModMatrix1
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix1
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix1
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix1
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix1
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix1
+Map	Button 6-1		Page=ModMatrix6 			ModMatrix1
+Map	Button 7-1		Page=ModMatrix7 			ModMatrix1
+Map	Button 8-1		Page=ModMatrix8 			ModMatrix1
+Map	UDVButton 1-2_2-2		Mod1 Source			 ModMatrix1
+Map	Knob V3		Mod1 Dest1 Amt			ModMatrix1
+Map	UDVButton 1-4_2-4		Mod1 Dest1			 ModMatrix1
+Map	Knob V5		Mod1 Dest2 Amt			ModMatrix1
+Map	UDVButton 1-6_2-6		Mod1 Dest2			 ModMatrix1
+Map	Knob V7		Mod1 Scale Amt			ModMatrix1
+Map	UDVButton 1-8_2-8		Mod1 Scale			 ModMatrix1
+// Mod Matrix 2
+Map	PageName		"Mod Matrix 2" 			ModMatrix2
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix2
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix2
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix2
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix2
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix2
+Map	Button 6-1		Page=ModMatrix6 			ModMatrix2
+Map	Button 7-1		Page=ModMatrix7 			ModMatrix2
+Map	Button 8-1		Page=ModMatrix8 			ModMatrix2
+Map	UDVButton 1-2_2-2		Mod2 Source			 ModMatrix2
+Map	Knob V3		Mod2 Dest1 Amt			ModMatrix2
+Map	UDVButton 1-4_2-4		Mod2 Dest1			 ModMatrix2
+Map	Knob V5		Mod2 Dest2 Amt			ModMatrix2
+Map	UDVButton 1-6_2-6		Mod2 Dest2			 ModMatrix2
+Map	Knob V7		Mod2 Scale Amt			ModMatrix2
+Map	UDVButton 1-8_2-8		Mod2 Scale			 ModMatrix2
+// Mod Matrix 3
+Map	PageName		"Mod Matrix 3" 			ModMatrix3
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix3
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix3
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix3
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix3
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix3
+Map	Button 6-1		Page=ModMatrix6 			ModMatrix3
+Map	Button 7-1		Page=ModMatrix7 			ModMatrix3
+Map	Button 8-1		Page=ModMatrix8 			ModMatrix3
+Map	UDVButton 1-2_2-2		Mod3 Source			 ModMatrix3
+Map	Knob V3		Mod3 Dest1 Amt			ModMatrix3
+Map	UDVButton 1-4_2-4		Mod3 Dest1			 ModMatrix3
+Map	Knob V5		Mod3 Dest2 Amt			ModMatrix3
+Map	UDVButton 1-6_2-6		Mod3 Dest2			 ModMatrix3
+Map	Knob V7		Mod3 Scale Amt			ModMatrix3
+Map	UDVButton 1-8_2-8		Mod3 Scale			 ModMatrix3
+// Mod Matrix 4
+Map	PageName		"Mod Matrix 4" 			ModMatrix4
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix4
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix4
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix4
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix4
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix4
+Map	Button 6-1		Page=ModMatrix6 			ModMatrix4
+Map	Button 7-1		Page=ModMatrix7 			ModMatrix4
+Map	Button 8-1		Page=ModMatrix8 			ModMatrix4
+Map	UDVButton 1-2_2-2		Mod4 Source			 ModMatrix4
+Map	Knob V3		Mod4 Dest1 Amt			ModMatrix4
+Map	UDVButton 1-4_2-4		Mod4 Dest1			 ModMatrix4
+Map	Knob V5		Mod4 Dest2 Amt			ModMatrix4
+Map	UDVButton 1-6_2-6		Mod4 Dest2			 ModMatrix4
+Map	Knob V7		Mod4 Scale Amt			ModMatrix4
+Map	UDVButton 1-8_2-8		Mod4 Scale			 ModMatrix4
+// Mod Matrix 5
+Map	PageName		"Mod Matrix 5" 			ModMatrix5
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix5
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix5
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix5
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix5
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix5
+Map	Button 6-1		Page=ModMatrix6 			ModMatrix5
+Map	Button 7-1		Page=ModMatrix7 			ModMatrix5
+Map	Button 8-1		Page=ModMatrix8 			ModMatrix5
+Map	UDVButton 1-2_2-2		Mod5 Source			 ModMatrix5
+Map	Knob V3		Mod5 Dest1 Amt			ModMatrix5
+Map	UDVButton 1-4_2-4		Mod5 Dest1			 ModMatrix5
+Map	Knob V5		Mod5 Dest2 Amt			ModMatrix5
+Map	UDVButton 1-6_2-6		Mod5 Dest2			 ModMatrix5
+Map	Knob V7		Mod5 Scale Amt			ModMatrix5
+Map	UDVButton 1-8_2-8		Mod5 Scale			 ModMatrix5
+// Mod Matrix 6
+Map	PageName		"Mod Matrix 6" 			ModMatrix6
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix6
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix6
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix6
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix6
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix6
+Map	Button 6-1		Page=ModMatrix6 			ModMatrix6
+Map	Button 7-1		Page=ModMatrix7 			ModMatrix6
+Map	Button 8-1		Page=ModMatrix8 			ModMatrix6
+Map	UDVButton 1-2_2-2		Mod6 Source			 ModMatrix6
+Map	Knob V3		Mod6 Dest1 Amt			ModMatrix6
+Map	UDVButton 1-4_2-4		Mod6 Dest1			 ModMatrix6
+Map	Knob V5		Mod6 Dest2 Amt			ModMatrix6
+Map	UDVButton 1-6_2-6		Mod6 Dest2			 ModMatrix6
+Map	Knob V7		Mod6 Scale Amt			ModMatrix6
+Map	UDVButton 1-8_2-8		Mod6 Scale			 ModMatrix6
+// Mod Matrix 7
+Map	PageName		"Mod Matrix 7" 			ModMatrix7
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix7
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix7
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix7
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix7
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix7
+Map	Button 6-1		Page=ModMatrix6 			ModMatrix7
+Map	Button 7-1		Page=ModMatrix7 			ModMatrix7
+Map	Button 8-1		Page=ModMatrix8 			ModMatrix7
+Map	UDVButton 1-2_2-2		Mod7 Source			 ModMatrix7
+Map	Knob V3		Mod7 Dest1 Amt			ModMatrix7
+Map	UDVButton 1-4_2-4		Mod7 Dest1			 ModMatrix7
+Map	Knob V5		Mod7 Dest2 Amt			ModMatrix7
+Map	UDVButton 1-6_2-6		Mod7 Dest2			 ModMatrix7
+Map	Knob V7		Mod7 Scale Amt			ModMatrix7
+Map	UDVButton 1-8_2-8		Mod7 Scale			 ModMatrix7
+// Mod Matrix 8
+Map	PageName		"Mod Matrix 8" 			ModMatrix8
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix8
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix8
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix8
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix8
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix8
+Map	Button 6-1		Page=ModMatrix6 			ModMatrix8
+Map	Button 7-1		Page=ModMatrix7 			ModMatrix8
+Map	Button 8-1		Page=ModMatrix8 			ModMatrix8
+Map	UDVButton 1-2_2-2		Mod8 Source			 ModMatrix8
+Map	Knob V3		Mod8 Dest1 Amt			ModMatrix8
+Map	UDVButton 1-4_2-4		Mod8 Dest1			 ModMatrix8
+Map	Knob V5		Mod8 Dest2 Amt			ModMatrix8
+Map	UDVButton 1-6_2-6		Mod8 Dest2			 ModMatrix8
+Map	Knob V7		Mod8 Scale Amt			ModMatrix8
+Map	UDVButton 1-8_2-8		Mod8 Scale			 ModMatrix8
 
 // ------------------------------------------------------------------------------------------
 Scope	Propellerhead Software	se.propellerheads.Grain
-Define Group	Page	Main	Sample	Grains	Pitch	Osc	Mixer	Filter	Amp	Effects	Phaser	Dist	Eq	Delay	Reverb	Comp	LFO1	LFO2	LFO3	Env1	Env2	Env3	Env4	Index	Internal
+Define Group	Page	Main	Sample	Grains	Pitch	Osc	Mixer	Filter	Amp	Effects	Phaser	Dist	Eq	Delay	Reverb	Comp	LFO1	LFO2	LFO3	Env1	Env2	Env3	Env4	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Internal
 Define Group	Grains	SpectralGrains	GrainOsc	LongGrains	Tape
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
@@ -5593,6 +5737,14 @@ Map	Button 2-2		Page=Grains			Index
 Map	Button 2-3		Page=Pitch			Index
 Map	Button 2-4		Page=Osc			Index
 Map	Button 2-5		Page=Filter			Index
+Map	Button 7-1		Page=ModMatrix1			Index
+Map	Button 7-2		Page=ModMatrix2			Index
+Map	Button 7-3		Page=ModMatrix3			Index
+Map	Button 7-4		Page=ModMatrix4			Index
+Map	Button 8-1		Page=ModMatrix5			Index
+Map	Button 8-2		Page=ModMatrix6			Index
+Map	Button 8-3		Page=ModMatrix7			Index
+Map	Button 8-4		Page=ModMatrix8			Index
 Map	Button 6-5		Page=LFO1			Index
 Map	Button 7-5		Page=LFO2			Index
 Map	Button 8-5		Page=LFO3			Index
@@ -5886,6 +6038,143 @@ Map	Fader 3		Reverb Decay				Reverb
 Map	Fader 4		Reverb Size				Reverb
 Map	Fader 5		Reverb Damp				Reverb
 Map	Fader 7		Reverb Amount				Reverb
+// Mod Matrix 1
+Map	PageName		"Mod Matrix 1" 			ModMatrix1
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix1
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix1
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix1
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix1
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix1
+Map	Button 6-1		Page=ModMatrix6 			ModMatrix1
+Map	Button 7-1		Page=ModMatrix7 			ModMatrix1
+Map	Button 8-1		Page=ModMatrix8 			ModMatrix1
+Map	UDVButton 1-2_2-2		Mod1 Source			 ModMatrix1
+Map	Knob V3		Mod1 Dest1 Amt			ModMatrix1
+Map	UDVButton 1-4_2-4		Mod1 Dest1			 ModMatrix1
+Map	Knob V5		Mod1 Dest2 Amt			ModMatrix1
+Map	UDVButton 1-6_2-6		Mod1 Dest2			 ModMatrix1
+Map	Knob V7		Mod1 Scale Amt			ModMatrix1
+Map	UDVButton 1-8_2-8		Mod1 Scale			 ModMatrix1
+// Mod Matrix 2
+Map	PageName		"Mod Matrix 2" 			ModMatrix2
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix2
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix2
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix2
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix2
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix2
+Map	Button 6-1		Page=ModMatrix6 			ModMatrix2
+Map	Button 7-1		Page=ModMatrix7 			ModMatrix2
+Map	Button 8-1		Page=ModMatrix8 			ModMatrix2
+Map	UDVButton 1-2_2-2		Mod2 Source			 ModMatrix2
+Map	Knob V3		Mod2 Dest1 Amt			ModMatrix2
+Map	UDVButton 1-4_2-4		Mod2 Dest1			 ModMatrix2
+Map	Knob V5		Mod2 Dest2 Amt			ModMatrix2
+Map	UDVButton 1-6_2-6		Mod2 Dest2			 ModMatrix2
+Map	Knob V7		Mod2 Scale Amt			ModMatrix2
+Map	UDVButton 1-8_2-8		Mod2 Scale			 ModMatrix2
+// Mod Matrix 3
+Map	PageName		"Mod Matrix 3" 			ModMatrix3
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix3
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix3
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix3
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix3
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix3
+Map	Button 6-1		Page=ModMatrix6 			ModMatrix3
+Map	Button 7-1		Page=ModMatrix7 			ModMatrix3
+Map	Button 8-1		Page=ModMatrix8 			ModMatrix3
+Map	UDVButton 1-2_2-2		Mod3 Source			 ModMatrix3
+Map	Knob V3		Mod3 Dest1 Amt			ModMatrix3
+Map	UDVButton 1-4_2-4		Mod3 Dest1			 ModMatrix3
+Map	Knob V5		Mod3 Dest2 Amt			ModMatrix3
+Map	UDVButton 1-6_2-6		Mod3 Dest2			 ModMatrix3
+Map	Knob V7		Mod3 Scale Amt			ModMatrix3
+Map	UDVButton 1-8_2-8		Mod3 Scale			 ModMatrix3
+// Mod Matrix 4
+Map	PageName		"Mod Matrix 4" 			ModMatrix4
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix4
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix4
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix4
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix4
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix4
+Map	Button 6-1		Page=ModMatrix6 			ModMatrix4
+Map	Button 7-1		Page=ModMatrix7 			ModMatrix4
+Map	Button 8-1		Page=ModMatrix8 			ModMatrix4
+Map	UDVButton 1-2_2-2		Mod4 Source			 ModMatrix4
+Map	Knob V3		Mod4 Dest1 Amt			ModMatrix4
+Map	UDVButton 1-4_2-4		Mod4 Dest1			 ModMatrix4
+Map	Knob V5		Mod4 Dest2 Amt			ModMatrix4
+Map	UDVButton 1-6_2-6		Mod4 Dest2			 ModMatrix4
+Map	Knob V7		Mod4 Scale Amt			ModMatrix4
+Map	UDVButton 1-8_2-8		Mod4 Scale			 ModMatrix4
+// Mod Matrix 5
+Map	PageName		"Mod Matrix 5" 			ModMatrix5
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix5
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix5
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix5
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix5
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix5
+Map	Button 6-1		Page=ModMatrix6 			ModMatrix5
+Map	Button 7-1		Page=ModMatrix7 			ModMatrix5
+Map	Button 8-1		Page=ModMatrix8 			ModMatrix5
+Map	UDVButton 1-2_2-2		Mod5 Source			 ModMatrix5
+Map	Knob V3		Mod5 Dest1 Amt			ModMatrix5
+Map	UDVButton 1-4_2-4		Mod5 Dest1			 ModMatrix5
+Map	Knob V5		Mod5 Dest2 Amt			ModMatrix5
+Map	UDVButton 1-6_2-6		Mod5 Dest2			 ModMatrix5
+Map	Knob V7		Mod5 Scale Amt			ModMatrix5
+Map	UDVButton 1-8_2-8		Mod5 Scale			 ModMatrix5
+// Mod Matrix 6
+Map	PageName		"Mod Matrix 6" 			ModMatrix6
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix6
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix6
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix6
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix6
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix6
+Map	Button 6-1		Page=ModMatrix6 			ModMatrix6
+Map	Button 7-1		Page=ModMatrix7 			ModMatrix6
+Map	Button 8-1		Page=ModMatrix8 			ModMatrix6
+Map	UDVButton 1-2_2-2		Mod6 Source			 ModMatrix6
+Map	Knob V3		Mod6 Dest1 Amt			ModMatrix6
+Map	UDVButton 1-4_2-4		Mod6 Dest1			 ModMatrix6
+Map	Knob V5		Mod6 Dest2 Amt			ModMatrix6
+Map	UDVButton 1-6_2-6		Mod6 Dest2			 ModMatrix6
+Map	Knob V7		Mod6 Scale Amt			ModMatrix6
+Map	UDVButton 1-8_2-8		Mod6 Scale			 ModMatrix6
+// Mod Matrix 7
+Map	PageName		"Mod Matrix 7" 			ModMatrix7
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix7
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix7
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix7
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix7
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix7
+Map	Button 6-1		Page=ModMatrix6 			ModMatrix7
+Map	Button 7-1		Page=ModMatrix7 			ModMatrix7
+Map	Button 8-1		Page=ModMatrix8 			ModMatrix7
+Map	UDVButton 1-2_2-2		Mod7 Source			 ModMatrix7
+Map	Knob V3		Mod7 Dest1 Amt			ModMatrix7
+Map	UDVButton 1-4_2-4		Mod7 Dest1			 ModMatrix7
+Map	Knob V5		Mod7 Dest2 Amt			ModMatrix7
+Map	UDVButton 1-6_2-6		Mod7 Dest2			 ModMatrix7
+Map	Knob V7		Mod7 Scale Amt			ModMatrix7
+Map	UDVButton 1-8_2-8		Mod7 Scale			 ModMatrix7
+// Mod Matrix 8
+Map	PageName		"Mod Matrix 8" 			ModMatrix8
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix8
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix8
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix8
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix8
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix8
+Map	Button 6-1		Page=ModMatrix6 			ModMatrix8
+Map	Button 7-1		Page=ModMatrix7 			ModMatrix8
+Map	Button 8-1		Page=ModMatrix8 			ModMatrix8
+Map	UDVButton 1-2_2-2		Mod8 Source			 ModMatrix8
+Map	Knob V3		Mod8 Dest1 Amt			ModMatrix8
+Map	UDVButton 1-4_2-4		Mod8 Dest1			 ModMatrix8
+Map	Knob V5		Mod8 Dest2 Amt			ModMatrix8
+Map	UDVButton 1-6_2-6		Mod8 Dest2			 ModMatrix8
+Map	Knob V7		Mod8 Scale Amt			ModMatrix8
+Map	UDVButton 1-8_2-8		Mod8 Scale			 ModMatrix8
+
 // ------------------------------------------------------------------------------------------
 Scope	Propellerhead Software	se.propellerheads.radicalpiano
 Define Group	Page	Main	Velocity	Tune	Resonance	Envelope	Mechanics	Eq	Ambience	Output	Index	Internal
