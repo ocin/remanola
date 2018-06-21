@@ -4314,7 +4314,7 @@ Map	Fader 6		FX Delay Depth				Delay
 
 // ------------------------------------------------------------------------------------------
 Scope	Synapse Audio	com.synapseAudioSoftware.Antidote
-Define Group	Page	Main	Osc1	Osc2	Mixer	Filter	FilterEnv	Effects	EQBass	Dist	Phaser	Chorus	Delay	Reverb	Comp	LFO1	LFO2	AmpEnv	ModEnv	Arp	Index	Internal
+Define Group	Page	Main	Osc1	Osc2	Mixer	Filter	FilterEnv	Effects	EQBass	Dist	Phaser	Chorus	Delay	Reverb	Comp	LFO1	LFO2	AmpEnv	ModEnv	Arp	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	Index	Internal
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Antidote"
@@ -4334,6 +4334,11 @@ Map	Button 2-1		Page=Osc1			Index
 Map	Button 3-1		Page=Osc2			Index
 Map	Button 2-5		Page=Filter			Index
 Map	Button 2-6		Page=FilterEnv			Index
+Map	Button 8-1		Page=ModMatrix1			Index
+Map	Button 8-2		Page=ModMatrix2			Index
+Map	Button 8-3		Page=ModMatrix3			Index
+Map	Button 8-4		Page=ModMatrix4			Index
+Map	Button 8-5		Page=ModMatrix5			Index
 Map	Button 1-8		Page=Effects			Index
 Map	Button 2-8		Page=EQBass			Index
 Map	Button 3-8		Page=Dist			Index
@@ -4620,6 +4625,56 @@ Map	UDHButton 6-1_6-2		Arp Rate				Arp
 Map	UDHButton 7-1_7-2		Arp Octave				Arp
 Map	Button 8-1		Arp Hold				Arp
 Map	Knob V4		Arp Gate				Arp
+// Mod Matrix 1
+Map	PageName		"Mod Matrix 1" 			ModMatrix1
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix1
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix1
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix1
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix1
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix1
+Map	UDVButton 1-2_2-2		MM Slot 1 Source			 ModMatrix1
+Map	Knob V3		MM Slot 1 Amount			ModMatrix1
+Map	UDVButton 1-4_2-4		MM Slot 1 Destination			 ModMatrix1
+// Mod Matrix 2
+Map	PageName		"Mod Matrix 2" 			ModMatrix2
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix2
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix2
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix2
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix2
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix2
+Map	UDVButton 1-2_2-2		MM Slot 2 Source			 ModMatrix2
+Map	Knob V3		MM Slot 2 Amount			ModMatrix2
+Map	UDVButton 1-4_2-4		MM Slot 2 Destination			 ModMatrix2
+// Mod Matrix 3
+Map	PageName		"Mod Matrix 3" 			ModMatrix3
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix3
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix3
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix3
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix3
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix3
+Map	UDVButton 1-2_2-2		MM Slot 3 Source			 ModMatrix3
+Map	Knob V3		MM Slot 3 Amount			ModMatrix3
+Map	UDVButton 1-4_2-4		MM Slot 3 Destination			 ModMatrix3
+// Mod Matrix 4
+Map	PageName		"Mod Matrix 4" 			ModMatrix4
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix4
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix4
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix4
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix4
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix4
+Map	UDVButton 1-2_2-2		MM Slot 4 Source			 ModMatrix4
+Map	Knob V3		MM Slot 4 Amount			ModMatrix4
+Map	UDVButton 1-4_2-4		MM Slot 4 Destination			 ModMatrix4
+// Mod Matrix 5
+Map	PageName		"Mod Matrix 5" 			ModMatrix5
+Map	Button 1-1		Page=ModMatrix1 			ModMatrix5
+Map	Button 2-1		Page=ModMatrix2 			ModMatrix5
+Map	Button 3-1		Page=ModMatrix3 			ModMatrix5
+Map	Button 4-1		Page=ModMatrix4 			ModMatrix5
+Map	Button 5-1		Page=ModMatrix5 			ModMatrix5
+Map	UDVButton 1-2_2-2		MM Slot 5 Source			 ModMatrix5
+Map	Knob V3		MM Slot 5 Amount			ModMatrix5
+Map	UDVButton 1-4_2-4		MM Slot 5 Destination			 ModMatrix5
 
 // ------------------------------------------------------------------------------------------
 Scope	Propellerhead Software	se.propellerheads.PX7 

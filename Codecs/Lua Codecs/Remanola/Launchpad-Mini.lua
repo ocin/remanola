@@ -1984,6 +1984,13 @@ local item_conf_map = {
 			["Button 7-8"]={template="BEffectPage"},
 			["Button 8-8"]={template="BEffectPage"},
 		},
+		["Index"]={
+			["Button 8-1"]={template="BPerformancePage"},
+			["Button 8-2"]={template="BPerformancePage"},
+			["Button 8-3"]={template="BPerformancePage"},
+			["Button 8-4"]={template="BPerformancePage"},
+			["Button 8-5"]={template="BPerformancePage"},
+		},
 		["Main"]={
 			["Fader 3"]={template="FYellow"},
 			["Fader 8"]={template="FRed"},
@@ -2132,6 +2139,16 @@ local item_conf_map = {
                         ["UDHButton 7-1_7-2"]={template="UDYellow"},
                         ["Button 8-1"]={template="BGreenOnOff"},
 		},
+		["Mod Matrix *"]={
+			["Button 1-1"]={template="BPerformancePage"},
+			["Button 2-1"]={template="BPerformancePage"},
+			["Button 3-1"]={template="BPerformancePage"},
+			["Button 4-1"]={template="BPerformancePage"},
+			["Button 5-1"]={template="BPerformancePage"},
+			["UDVButton 1-2_2-2"]={template="UDAmber", inverted=true},
+			["Knob V3"]={template="FAmber"},
+			["UDVButton 1-4_2-4"]={template="UDOrange", inverted=true},
+		},
 	},
 	["PX7"]={
 		["Default"]={
@@ -2277,6 +2294,12 @@ local item_conf_map = {
 			["Button 5-8"]={template="BEffectPage"},
 			["Button 6-8"]={template="BEffectPage"},
 			["Button 7-8"]={template="BEffectPage"},
+		},
+		["Main"]={
+			["Fader 5"]={template="FYellow"},
+			["Fader 8"]={template="FRed"},
+		},
+		["Index"]={
 			["Button 7-1"]={template="BPerformancePage"},
 			["Button 7-2"]={template="BPerformancePage"},
 			["Button 7-3"]={template="BPerformancePage"},
@@ -2285,12 +2308,6 @@ local item_conf_map = {
 			["Button 8-2"]={template="BPerformancePage"},
 			["Button 8-3"]={template="BPerformancePage"},
 			["Button 8-4"]={template="BPerformancePage"},
-		},
-		["Main"]={
-			["Fader 5"]={template="FYellow"},
-			["Fader 8"]={template="FRed"},
-		},
-		["Index"]={
 			["Button 5-5"]={template="BFilterPage"},
 			["Button 2-7"]={template="BEffectPage"},
 			["Button 3-7"]={template="BEffectPage"},
