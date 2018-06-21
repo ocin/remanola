@@ -72,22 +72,26 @@ Map:
 - Audio Track
 
 Instruments:
-* Antidote
 * PX-7
 * ID8
 * Malstrom
 * Subtractor
-* Thor
 * Redrum
-* Europa
 * Revival 
 * Dr.OctoRex
 * Radical Piano
 * Kong
 * NN-XT
-* Grain
 * NN-19
-+ Parsec
+* Parsec
++ Antidote
+	- Mod Matrix
++ Europa
+	- Mod Matrix
++ Grain
+	- Mod Matrix
++ Thor
+	- Mod Matrix
 - Ammo1200
 - Ammo400
 - Ammo100LA
