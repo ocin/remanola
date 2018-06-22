@@ -44,7 +44,8 @@ Map	BeatPosition 		Beat Position
 
 // ------------------------------------------------------------------------------------------
 Scope	Propellerheads	Reason Master Section
-Define Group	Page	Main	ChMutesSolos	ChFaders	ChPans	Index	Internal
+Define Group	Page	Main	ChMutesSolos	ChFaders	ChPans	MasterComp	MasterSend	MasterInsert	SendReturn1	SendReturn2	SendReturn3	SendReturn4	SendReturn5	SendReturn6	SendReturn7	SendReturn8	Index	Internal
+Define Group	MeterMode	Vu	Peak
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Master Section"
 // Page
@@ -55,17 +56,41 @@ Map	Button 1-1		Page=Main			Index
 Map	Button 1-2		Page=ChFaders			Index
 Map	Button 1-3		Page=ChPans			Index
 Map	Button 1-5		Page=ChMutesSolos			Index
+Map	Button 1-7		Page=SendReturn1			Index
+Map	Button 2-7		Page=SendReturn2			Index
+Map	Button 3-7		Page=SendReturn3			Index
+Map	Button 4-7		Page=SendReturn4			Index
+Map	Button 5-7		Page=SendReturn5			Index
+Map	Button 6-7		Page=SendReturn6			Index
+Map	Button 7-7		Page=SendReturn7			Index
+Map	Button 8-7		Page=SendReturn8			Index
+Map	Button 2-8		Page=MasterComp			Index
+Map	Button 3-8		Page=MasterSend			Index
+Map	Button 4-8		Page=MasterInsert			Index
 Map	Button 8-1		Previous 8 Remote Base Channel				Index
-Map	Button 8-8		Next 8 Remote Base Channel				Index
+Map	Button 8-2		Next 8 Remote Base Channel				Index
 Map	Button H		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
-Map	Meter 6		Master Level Meter Left				Main
-Map	Meter 7		Master Level Meter Right				Main
-Map	BigFader 8		Master Level	2			Main
+Map	SubPageName		"Vu" 				Main	Vu
+Map	Meter 1		Master Level Meter Left			Main	Vu
+Map	Meter 2		Master Level Meter Right			Main	Vu
+Map	SubPageName		"Peak" 				Main	Peak
+Map	Meter 1		Master Level Left Peak			Main	Peak
+Map	Meter 2		Master Level Right Peak			Main	Peak
+Map	BigFader 3		Master Level	2		Main
+Map	Button 6-4		MeterMode=Vu			Main
+Map	Button 7-4		MeterMode=Peak			Main
+Map	Button 8-4		Reset Clip			Main
+Map	UDVButton 1-6_2-6		Ctrl Room Source			Main
+Map	UDVButton 1-7_2-7		Ctrl Room FX Select			Main
+Map	Fader 5		Ctrl Room Level				Main
+Map	Button 8-6		All Mutes Off			Main
+Map	Button 8-7		All Solo Off			Main
+Map	Button 8-8		Dim -20dB			Main
 // Channel Mutes & Solos
 Map	PageName		"Channel Mutes & Solos" 				ChMutesSolos
 Map	Button 1-1		Channel 1 Mute				ChMutesSolos
@@ -106,17 +131,184 @@ Map	Knob H5		Channel 5 Pan			ChPans
 Map	Knob H6		Channel 6 Pan			ChPans
 Map	Knob H7		Channel 7 Pan			ChPans
 Map	Knob H8		Channel 8 Pan			ChPans
+// Master Compressor
+Map	PageName		"Master Compressor" 			MasterComp
+Map	Button 1-2		Compressor On			MasterComp
+Map	Button 4-2		Key On			MasterComp
+Map	Fader 3		Threshold			MasterComp
+Map	UDVButton 1-4_2-4		Ratio			MasterComp
+Map	UDVButton 1-5_2-5		Attack			MasterComp
+Map	UDVButton 1-6_2-6		Release			MasterComp
+Map	Fader 7		Make-Up Gain			MasterComp
+Map	Meter 8		Gain Reduction			MasterComp
+// Master Send
+Map	PageName		"Master Send" 			MasterSend
+Map	Fader 1		FX1 Send Level			MasterSend
+Map	Fader 2		FX2 Send Level			MasterSend
+Map	Fader 3		FX3 Send Level			MasterSend
+Map	Fader 4		FX4 Send Level			MasterSend
+Map	Fader 5		FX5 Send Level			MasterSend
+Map	Fader 6		FX6 Send Level			MasterSend
+Map	Fader 7		FX7 Send Level			MasterSend
+Map	Fader 8		FX8 Send Level			MasterSend
+// Master Insert
+Map	PageName		"Master Insert" 				MasterInsert
+Map	Button C3		Select Prev Insert FX Patch			MasterInsert
+Map	Button C4		Select Next Insert FX Patch			MasterInsert
+Map	PatchName		Insert FX Patch Name			MasterInsert
+Map	Meter 1		To Insert FX Peak Meter			MasterInsert
+Map	Button 1-2		Bypass Insert FX			MasterInsert
+Map	Button 3-2		Inserts Pre			MasterInsert
+Map	Button 5-2		Button 1			MasterInsert
+Map	Button 6-2		Button 2			MasterInsert
+Map	Button 7-2		Button 3			MasterInsert
+Map	Button 8-2		Button 4			MasterInsert
+Map	Fader 3		Rotary 1			MasterInsert
+Map	Fader 4		Rotary 2			MasterInsert
+Map	Fader 5		Rotary 3			MasterInsert
+Map	Fader 6		Rotary 4			MasterInsert
+Map	Meter 8		From Insert FX Peak Meter			MasterInsert
+// Send Return 1
+Map	PageName		"Send Return 1" 				SendReturn1
+Map	PatchName		FX1 Name			SendReturn1
+Map	Button 1-8		Page=SendReturn1			SendReturn1
+Map	Button 2-8		Page=SendReturn2			SendReturn1
+Map	Button 3-8		Page=SendReturn3			SendReturn1
+Map	Button 4-8		Page=SendReturn4			SendReturn1
+Map	Button 5-8		Page=SendReturn5			SendReturn1
+Map	Button 6-8		Page=SendReturn6			SendReturn1
+Map	Button 7-8		Page=SendReturn7			SendReturn1
+Map	Button 8-8		Page=SendReturn8			SendReturn1
+Map	Button 1-2		FX1 Mute			SendReturn1
+Map	Fader 3		FX1 Return Level			SendReturn1
+Map	Knob V4		FX1 Pan			SendReturn1
+Map	Meter 8		FX1 Return Level Meter			SendReturn1
+// Send Return 2
+Map	PageName		"Send Return 2" 				SendReturn2
+Map	PatchName		FX2 Name			SendReturn2
+Map	Button 1-8		Page=SendReturn1			SendReturn2
+Map	Button 2-8		Page=SendReturn2			SendReturn2
+Map	Button 3-8		Page=SendReturn3			SendReturn2
+Map	Button 4-8		Page=SendReturn4			SendReturn2
+Map	Button 5-8		Page=SendReturn5			SendReturn2
+Map	Button 6-8		Page=SendReturn6			SendReturn2
+Map	Button 7-8		Page=SendReturn7			SendReturn2
+Map	Button 8-8		Page=SendReturn8			SendReturn2
+Map	Button 1-2		FX2 Mute			SendReturn2
+Map	Fader 3		FX2 Return Level			SendReturn2
+Map	Knob V4		FX2 Pan			SendReturn2
+Map	Meter 8		FX2 Return Level Meter			SendReturn2
+// Send Return 3
+Map	PageName		"Send Return 3" 				SendReturn3
+Map	PatchName		FX3 Name			SendReturn3
+Map	Button 1-8		Page=SendReturn1			SendReturn3
+Map	Button 2-8		Page=SendReturn2			SendReturn3
+Map	Button 3-8		Page=SendReturn3			SendReturn3
+Map	Button 4-8		Page=SendReturn4			SendReturn3
+Map	Button 5-8		Page=SendReturn5			SendReturn3
+Map	Button 6-8		Page=SendReturn6			SendReturn3
+Map	Button 7-8		Page=SendReturn7			SendReturn3
+Map	Button 8-8		Page=SendReturn8			SendReturn3
+Map	Button 1-2		FX3 Mute			SendReturn3
+Map	Fader 3		FX3 Return Level			SendReturn3
+Map	Knob V4		FX3 Pan			SendReturn3
+Map	Meter 8		FX3 Return Level Meter			SendReturn3
+// Send Return 4
+Map	PageName		"Send Return 4" 				SendReturn4
+Map	PatchName		FX4 Name			SendReturn4
+Map	Button 1-8		Page=SendReturn1			SendReturn4
+Map	Button 2-8		Page=SendReturn2			SendReturn4
+Map	Button 3-8		Page=SendReturn3			SendReturn4
+Map	Button 4-8		Page=SendReturn4			SendReturn4
+Map	Button 5-8		Page=SendReturn5			SendReturn4
+Map	Button 6-8		Page=SendReturn6			SendReturn4
+Map	Button 7-8		Page=SendReturn7			SendReturn4
+Map	Button 8-8		Page=SendReturn8			SendReturn4
+Map	Button 1-2		FX4 Mute			SendReturn4
+Map	Fader 3		FX4 Return Level			SendReturn4
+Map	Knob V4		FX4 Pan			SendReturn4
+Map	Meter 8		FX4 Return Level Meter			SendReturn4
+// Send Return 5
+Map	PageName		"Send Return 5" 				SendReturn5
+Map	PatchName		FX5 Name			SendReturn5
+Map	Button 1-8		Page=SendReturn1			SendReturn5
+Map	Button 2-8		Page=SendReturn2			SendReturn5
+Map	Button 3-8		Page=SendReturn3			SendReturn5
+Map	Button 4-8		Page=SendReturn4			SendReturn5
+Map	Button 5-8		Page=SendReturn5			SendReturn5
+Map	Button 6-8		Page=SendReturn6			SendReturn5
+Map	Button 7-8		Page=SendReturn7			SendReturn5
+Map	Button 8-8		Page=SendReturn8			SendReturn5
+Map	Button 1-2		FX5 Mute			SendReturn5
+Map	Fader 3		FX5 Return Level			SendReturn5
+Map	Knob V4		FX5 Pan			SendReturn5
+Map	Meter 8		FX5 Return Level Meter			SendReturn5
+// Send Return 6
+Map	PageName		"Send Return 6" 				SendReturn6
+Map	PatchName		FX6 Name			SendReturn6
+Map	Button 1-8		Page=SendReturn1			SendReturn6
+Map	Button 2-8		Page=SendReturn2			SendReturn6
+Map	Button 3-8		Page=SendReturn3			SendReturn6
+Map	Button 4-8		Page=SendReturn4			SendReturn6
+Map	Button 5-8		Page=SendReturn5			SendReturn6
+Map	Button 6-8		Page=SendReturn6			SendReturn6
+Map	Button 7-8		Page=SendReturn7			SendReturn6
+Map	Button 8-8		Page=SendReturn8			SendReturn6
+Map	Button 1-2		FX6 Mute			SendReturn6
+Map	Fader 3		FX6 Return Level			SendReturn6
+Map	Knob V4		FX6 Pan			SendReturn6
+Map	Meter 8		FX6 Return Level Meter			SendReturn6
+// Send Return 7
+Map	PageName		"Send Return 7" 				SendReturn7
+Map	PatchName		FX7 Name			SendReturn7
+Map	Button 1-8		Page=SendReturn1			SendReturn7
+Map	Button 2-8		Page=SendReturn2			SendReturn7
+Map	Button 3-8		Page=SendReturn3			SendReturn7
+Map	Button 4-8		Page=SendReturn4			SendReturn7
+Map	Button 5-8		Page=SendReturn5			SendReturn7
+Map	Button 6-8		Page=SendReturn6			SendReturn7
+Map	Button 7-8		Page=SendReturn7			SendReturn7
+Map	Button 8-8		Page=SendReturn8			SendReturn7
+Map	Button 1-2		FX7 Mute			SendReturn7
+Map	Fader 3		FX7 Return Level			SendReturn7
+Map	Knob V4		FX7 Pan			SendReturn7
+Map	Meter 8		FX7 Return Level Meter			SendReturn7
+// Send Return 8
+Map	PageName		"Send Return 8" 				SendReturn8
+Map	PatchName		FX8 Name			SendReturn8
+Map	Button 1-8		Page=SendReturn1			SendReturn8
+Map	Button 2-8		Page=SendReturn2			SendReturn8
+Map	Button 3-8		Page=SendReturn3			SendReturn8
+Map	Button 4-8		Page=SendReturn4			SendReturn8
+Map	Button 5-8		Page=SendReturn5			SendReturn8
+Map	Button 6-8		Page=SendReturn6			SendReturn8
+Map	Button 7-8		Page=SendReturn7			SendReturn8
+Map	Button 8-8		Page=SendReturn8			SendReturn8
+Map	Button 1-2		FX8 Mute			SendReturn8
+Map	Fader 3		FX8 Return Level			SendReturn8
+Map	Knob V4		FX8 Pan			SendReturn8
+Map	Meter 8		FX8 Return Level Meter			SendReturn8
 
 // ------------------------------------------------------------------------------------------
 Scope	Propellerheads	Reason Main Mixer Channel
-Define Group	Page	Main	Send	Index	Internal
+Define Group	Page	Main	Input	Send1	Send2	Insert	EqLow	EqHi	Filter	Comp	Gate	Index	Internal
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Mix Channel"
+Map	DeviceName		Channel Name
 // Page
 Map	Button C7		Page=Index
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
+Map	Button 1-8		Page=Input			Index
+Map	Button 2-8		Page=Comp			Index
+Map	Button 3-8		Page=Gate			Index
+Map	Button 4-8		Page=EqLow			Index
+Map	Button 5-8		Page=EqHi			Index
+Map	Button 6-8		Page=Filter			Index
+Map	Button 7-7		Page=Send1			Index
+Map	Button 7-8		Page=Send2			Index
+Map	Button 8-8		Page=Insert			Index
 Map	Button H		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
@@ -125,19 +317,112 @@ Map	Button 1-1		Page=Main			Internal
 Map	PageName		"Main" 				Main
 Map	Button 1-1		Mute			Main
 Map	Button 1-2		Solo			Main
-//Map	Meter 6		Output Level Left				Main
-//Map	Meter 7		Output Level Right				Main
-Map	BigFader 8		Level			Main
-// Send
-Map	PageName		"Send" 				Send
-Map	Button 1-1		FX1 Send On			Send
-Map	Button 2-1		FX2 Send On			Send
-Map	Button 3-1		FX3 Send On			Send
-Map	Button 4-1		FX4 Send On			Send
-Map	Button 5-1		FX5 Send On			Send
-Map	Button 6-1		FX6 Send On			Send
-Map	Button 7-1		FX7 Send On			Send
-Map	Button 8-1		FX8 Send On			Send
+Map	Fader 4		Width			Main
+Map	Knob V5		Pan			Main
+Map	BigFader 6		Level			Main
+Map	Meter 7		VU Meter L				Main
+Map	Meter 8		VU Meter R				Main
+// Input
+Map	PageName		"Input" 				Input
+Map	Knob V2		Input Gain			Input
+Map	Button 1-3		Invert Phase			Input
+Map	Button 1-4		Insert Pre			Input
+Map	Button 1-5		Dyn Post EQ			Input
+Map	Button 1-7		Filters Dyn S/C			Input
+// Compressor
+Map	PageName		"Compressor" 				Comp
+Map	Button 1-2		Comp On			Comp
+Map	Button 4-2		C Peak			Comp
+Map	Fader 3		C Ratio			Comp
+Map	Fader 4		C Threshold			Comp
+Map	Fader 5		C Release			Comp
+Map	Button 1-6		C Fast Atk			Comp
+Map	Meter 8		Comp Gain Reduction			Comp
+// Gate
+Map	PageName		"Gate" 				Gate
+Map	Button 1-2		Gate On			Gate
+Map	Button 4-2		Expander			Gate
+Map	Fader 3		G Range			Gate
+Map	Fader 4		G Threshold			Gate
+Map	Fader 5		G Release			Gate
+Map	Fader 6		G Hold			Gate
+Map	Button 1-7		G Fast Atk			Gate
+Map	Meter 8		Gate Gain Reduction			Gate
+// Filter
+Map	PageName		"Filter" 				Filter
+Map	Button 1-2		LPF On			Filter
+Map	Fader 3		LPF Frequency			Filter
+Map	Button 1-4		HPF On			Filter
+Map	Fader 5		HPF Frequency			Filter
+Map	Button 1-7		Filters Dyn S/C			Filter
+// EqHi
+Map	PageName		"Equalizer High" 				EqHi
+Map	Button 1-1		Eq On			EqHi
+Map	Button 4-1		EQ E Mode			EqHi
+Map	Knob V3		HMF Gain			EqHi
+Map	Fader 4		HMF Frequency			EqHi
+Map	Fader 5		HMF Q			EqHi
+Map	Button 1-6		HF Bell			EqHi
+Map	Knob V7		HF Gain			EqHi
+Map	Fader 8		HF Frequency			EqHi
+// EqLow
+Map	PageName		"Equalizer Low" 				EqLow
+Map	Button 1-1		Eq On			EqLow
+Map	Button 4-1		EQ E Mode			EqLow
+Map	Button 1-2		LF Bell			EqLow
+Map	Knob V3		LF Gain			EqLow
+Map	Fader 4		LF Frequency			EqLow
+Map	Knob V6		LMF Gain			EqLow
+Map	Fader 7		LMF Frequency			EqLow
+Map	Fader 8		LMF Q			EqLow
+// Insert
+Map	PageName		"Insert" 				Insert
+Map	Button C3		Select Prev Insert FX Patch			Insert
+Map	Button C4		Select Next Insert FX Patch			Insert
+Map	PatchName		Insert FX Patch Name			Insert
+Map	Meter 1		To Insert FX Peak Meter			Insert
+Map	Button 1-2		Bypass Insert FX			Insert
+Map	Button 5-2		Button 1			Insert
+Map	Button 6-2		Button 2			Insert
+Map	Button 7-2		Button 3			Insert
+Map	Button 8-2		Button 4			Insert
+Map	Fader 3		Rotary 1			Insert
+Map	Fader 4		Rotary 2			Insert
+Map	Fader 5		Rotary 3			Insert
+Map	Fader 6		Rotary 4			Insert
+Map	Meter 8		From Insert FX Peak Meter			Insert
+// Send 1
+Map	PageName		"Send 1" 				Send1
+Map	Button 7-1		Page=Send1			Send1
+Map	Button 8-1		Page=Send2			Send1
+Map	Button 1-1		FX1 Send On			Send1
+Map	Button 2-1		FX1 Pre Fader			Send1
+Map	Fader 2		FX1 Send Level			Send1
+Map	Button 1-3		FX2 Send On			Send1
+Map	Button 2-3		FX2 Pre Fader			Send1
+Map	Fader 4		FX2 Send Level			Send1
+Map	Button 1-5		FX3 Send On			Send1
+Map	Button 2-5		FX3 Pre Fader			Send1
+Map	Fader 6		FX3 Send Level			Send1
+Map	Button 1-7		FX4 Send On			Send1
+Map	Button 2-7		FX4 Pre Fader			Send1
+Map	Fader 8		FX4 Send Level			Send1
+// Send 2
+Map	PageName		"Send 2" 				Send2
+Map	Button 7-1		Page=Send1			Send2
+Map	Button 8-1		Page=Send2			Send2
+Map	Button 1-1		FX5 Send On			Send2
+Map	Button 2-1		FX5 Pre Fader			Send2
+Map	Fader 2		FX5 Send Level			Send2
+Map	Button 1-3		FX6 Send On			Send2
+Map	Button 2-3		FX6 Pre Fader			Send2
+Map	Fader 4		FX6 Send Level			Send2
+Map	Button 1-5		FX7 Send On			Send2
+Map	Button 2-5		FX7 Pre Fader			Send2
+Map	Fader 6		FX7 Send Level			Send2
+Map	Button 1-7		FX8 Send On			Send2
+Map	Button 2-7		FX8 Pre Fader			Send2
+Map	Fader 8		FX8 Send Level			Send2
 
 // ------------------------------------------------------------------------------------------
 Scope	Propellerheads	Combinator
@@ -4356,21 +4641,13 @@ Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
-Map	Button 1-1		Page=Main			Main
-Map	Button 2-1		Page=Osc1			Main
-Map	Button 3-1		Page=Osc2			Main
-Map	Button 4-1		Page=Mixer			Main
-Map	Button 5-1		Page=Filter			Main
 Map	UDVButton 7-2_8-2		Polyphony				Main
 Map	Fader 3		Glide				Main
 Map	Fader 8		Master Volume				Main
 // Osc 1
 Map	PageName		"Osc 1" 				Osc1
-Map	Button 1-1		Page=Main			Osc1
 Map	Button 2-1		Page=Osc1			Osc1
 Map	Button 3-1		Page=Osc2			Osc1
-Map	Button 4-1		Page=Mixer			Osc1
-Map	Button 5-1		Page=Filter			Osc1
 Map	UDVButton 1-2_2-2		Osc 1 Waveform				Osc1
 Map	UDVButton 3-2_4-2		Osc 1 Voices				Osc1
 Map	UDVButton 5-2_6-2		Osc 1 Dyad				Osc1
@@ -4384,11 +4661,8 @@ Map	Fader 7		Osc 1 Key Track				Osc1
 Map	Knob V8		Osc 1 Pan				Osc1
 // Osc 2
 Map	PageName		"Osc 2" 				Osc2
-Map	Button 1-1		Page=Main			Osc2
 Map	Button 2-1		Page=Osc1			Osc2
 Map	Button 3-1		Page=Osc2			Osc2
-Map	Button 4-1		Page=Mixer			Osc2
-Map	Button 5-1		Page=Filter			Osc2
 Map	UDVButton 1-2_2-2		Osc 2 Waveform				Osc2
 Map	UDVButton 3-2_4-2		Osc 2 Voices				Osc2
 Map	UDVButton 5-2_6-2		Osc 2 Dyad				Osc2
@@ -4402,11 +4676,6 @@ Map	Fader 7		Osc 2 Key Track				Osc2
 Map	Knob V8		Osc 2 Pan				Osc2
 // Mixer
 Map	PageName		"Mixer" 				Mixer
-Map	Button 1-1		Page=Main			Mixer
-Map	Button 2-1		Page=Osc1			Mixer
-Map	Button 3-1		Page=Osc2			Mixer
-Map	Button 4-1		Page=Mixer			Mixer
-Map	Button 5-1		Page=Filter			Mixer
 Map	Fader 2		Osc 1 Volume				Mixer
 Map	Fader 3		Osc 2 Volume				Mixer
 Map	Fader 4		Sub 1 Volume				Mixer
@@ -4414,11 +4683,6 @@ Map	Fader 5		Sub 2 Volume				Mixer
 Map	Fader 6		Drift				Mixer
 // Filter
 Map	PageName		"Filter" 				Filter
-Map	Button 1-1		Page=Main			Filter
-Map	Button 2-1		Page=Osc1			Filter
-Map	Button 3-1		Page=Osc2			Filter
-Map	Button 4-1		Page=Mixer			Filter
-Map	Button 5-1		Page=Filter			Filter
 Map	UDVButton 1-2_2-2		Filter Type				Filter
 Map	Fader 3		Filter Cutoff				Filter
 Map	Fader 4		Filter Resonance				Filter
@@ -4432,7 +4696,6 @@ Map	Fader 5		Filter Envelope Sustain				FilterEnv
 Map	Fader 6		Filter Envelope Release				FilterEnv
 // Effects
 Map	PageName		"Effects" 				Effects
-Map	Button 1-1		Page=Main			Effects
 Map	Fader 2		External Input Amount				Effects
 Map	Button 1-8		Page=Effects			Effects
 Map	Button 2-8		Page=EQBass			Effects

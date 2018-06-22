@@ -21,55 +21,36 @@
 	* Fix lightshows
 	* Check that stuff is working ok
 * Fix Select Patch
-- Transport controls
-	- Metronome
++ Transport controls
+	* Metronome
 	- Additional controls
 - Keyboard
 - 7 Step Fader?
 - Reset default UD*Button
 
 Map:
-+ Master section
-	+ Channel strip
-		- Fader
-			* Fader
-			* Pan
-			- Width
-			* Mute
-			* Solo
-		- Insert
-		- Send
-		- Eq
-			- Filters
-			- Eq
-		- Dynamics
-			- Compressor
-			- Gate
-		- Input
-	- Master Send Return
-	- Master Insert Effects
-	- Master compressor
-	+ Master fader options
+* Master section
+	* Master Send Return
+	* Master Insert Effects
+	* Master compressor
+	* Master fader options
 		* Fader
-		- The rest...
-+ Mix Channel
-	+ Fader
+* Mix Channel
+	* Fader
 		* Fader
-		- Pan
-		- Width
+		* Pan
+		* Width
 		* Mute
 		* Solo
-	- Insert
+	* Insert
 	* Send
-	- Eq
-		- Filters
-		- Eq
-	- Dynamics
-		- Compressor
-		- Gate
-	- Input
-
-- Audio Track
+	* Eq
+		* Filters
+		* Eq
+	* Dynamics
+		* Compressor
+		* Gate
+	* Input
 
 Instruments:
 * PX-7
@@ -86,8 +67,7 @@ Instruments:
 * Parsec
 * Europa
 * Grain
-+ Antidote
-	- Mod Matrix
+* Antidote
 + Thor
 	- Mod Matrix
 - Ammo1200
