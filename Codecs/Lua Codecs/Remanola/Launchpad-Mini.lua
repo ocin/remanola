@@ -261,6 +261,48 @@ button_to_padnote={
        	[43]=51,
 }
 
+button_to_keynote={
+	-- C2
+	["Button 8-2"]=48,
+       	["Button 7-2"]=49,
+	["Button 8-3"]=50,
+       	["Button 7-3"]=51,
+      	["Button 8-4"]=52,
+       	["Button 8-5"]=53,
+       	["Button 7-5"]=54,
+       	["Button 8-6"]=55,
+       	["Button 7-6"]=56,
+       	["Button 8-7"]=57,
+       	["Button 7-7"]=58,
+       	["Button 8-8"]=59,
+	-- C3
+	["Button 6-2"]=60,
+       	["Button 5-2"]=61,
+	["Button 6-3"]=62,
+       	["Button 5-3"]=63,
+      	["Button 6-4"]=64,
+       	["Button 6-5"]=65,
+       	["Button 5-5"]=66,
+       	["Button 6-6"]=67,
+       	["Button 5-6"]=68,
+       	["Button 6-7"]=69,
+       	["Button 5-7"]=70,
+       	["Button 6-8"]=71,
+	-- C4
+	["Button 4-2"]=72,
+       	["Button 3-2"]=73,
+	["Button 4-3"]=74,
+       	["Button 3-3"]=75,
+      	["Button 4-4"]=76,
+       	["Button 4-5"]=77,
+       	["Button 3-5"]=78,
+       	["Button 4-6"]=79,
+       	["Button 3-6"]=80,
+       	["Button 4-7"]=81,
+       	["Button 3-7"]=82,
+       	["Button 4-8"]=83,
+}
+
 local buttons = {
 	["Button 1-1"]="90 00",
 	["Button 1-2"]="90 01",
@@ -423,6 +465,9 @@ local color_templates = {
 	["BStep"]={enabledcolor=WGREEN,   activecolor=RED,  disabledcolor=NOCOLOR},
 	-- Pad
 	["BPad"]={enabledcolor=WGREEN,   activecolor=GREEN,  disabledcolor=NOCOLOR},
+	-- Keyboard
+	["BWhitekey"]={enabledcolor=GREEN,   activecolor=GREEN,  disabledcolor=GREEN},
+	["BBlackkey"]={enabledcolor=WGREEN,   activecolor=WGREEN,  disabledcolor=WGREEN},
 }
 
 local item_conf_map = {
@@ -450,7 +495,7 @@ local item_conf_map = {
 			["Button C2"]={enabledcolor=ORANGE,   activecolor=ORANGE,  disabledcolor=NOCOLOR},
 			["Button C3"]={enabledcolor=GREEN,    activecolor=GREEN,   disabledcolor=NOCOLOR},
 			["Button C4"]={enabledcolor=GREEN,    activecolor=GREEN,   disabledcolor=NOCOLOR},
-			["Button C5"]={enabledcolor=WAMBER,     activecolor=GREEN,   disabledcolor=NOCOLOR},
+			["Button C5"]={enabledcolor=WGREEN,     activecolor=GREEN,   disabledcolor=NOCOLOR},
 			["Button C6"]={enabledcolor=WAMBER,     activecolor=GREEN,   disabledcolor=NOCOLOR},
 			["Button C7"]={enabledcolor=RED,      activecolor=RED,     disabledcolor=NOCOLOR},
 			["Button C8"]={enabledcolor=YELLOW,      activecolor=RED,     disabledcolor=GREEN},
@@ -561,6 +606,52 @@ local item_conf_map = {
 			["Button 8-2"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=YELLOW3},
 			["Button 8-3"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=YELLOW2},
 			["Button 8-4"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=GREEN3},
+		},
+		["Keyboard"]={
+			["Button C5"]={enabledcolor=GREEN,     activecolor=GREEN,   disabledcolor=NOCOLOR},
+			["Button 1-2"]={template="BPerformancePage"},
+			["Button 2-2"]={template="BPerformancePage"},
+			["Fader 1"]={template="FOrange"},
+			["Knob V1"]={template="FGreen"},
+			--
+			["Button 8-2"]={template="BWhitekey"},
+			["Button 7-2"]={template="BBlackkey"},
+			["Button 8-3"]={template="BWhitekey"},
+			["Button 7-3"]={template="BBlackkey"},
+			["Button 8-4"]={template="BWhitekey"},
+			["Button 8-5"]={template="BWhitekey"},
+			["Button 7-5"]={template="BBlackkey"},
+			["Button 8-6"]={template="BWhitekey"},
+			["Button 7-6"]={template="BBlackkey"},
+			["Button 8-7"]={template="BWhitekey"},
+			["Button 7-7"]={template="BBlackkey"},
+			["Button 8-8"]={template="BWhitekey"},
+			--
+			["Button 6-2"]={template="BWhitekey"},
+			["Button 5-2"]={template="BBlackkey"},
+			["Button 6-3"]={template="BWhitekey"},
+			["Button 5-3"]={template="BBlackkey"},
+			["Button 6-4"]={template="BWhitekey"},
+			["Button 6-5"]={template="BWhitekey"},
+			["Button 5-5"]={template="BBlackkey"},
+			["Button 6-6"]={template="BWhitekey"},
+			["Button 5-6"]={template="BBlackkey"},
+			["Button 6-7"]={template="BWhitekey"},
+			["Button 5-7"]={template="BBlackkey"},
+			["Button 6-8"]={template="BWhitekey"},
+			--
+			["Button 4-2"]={template="BWhitekey"},
+			["Button 3-2"]={template="BBlackkey"},
+			["Button 4-3"]={template="BWhitekey"},
+			["Button 3-3"]={template="BBlackkey"},
+			["Button 4-4"]={template="BWhitekey"},
+			["Button 4-5"]={template="BWhitekey"},
+			["Button 3-5"]={template="BBlackkey"},
+			["Button 4-6"]={template="BWhitekey"},
+			["Button 3-6"]={template="BBlackkey"},
+			["Button 4-7"]={template="BWhitekey"},
+			["Button 3-7"]={template="BBlackkey"},
+			["Button 4-8"]={template="BWhitekey"},
 		},
 	},
 	["Master Section"]={
@@ -1467,6 +1558,8 @@ local item_conf_map = {
 	},
 	["Combinator"]={
 		["Default"]={
+		},
+		["Main"]={
 			-- On/Off/Bypass
 			["UDVButton 1-1_2-1"]={template="UDRed"},
 			-- Run
@@ -1696,6 +1789,9 @@ local item_conf_map = {
 	["NN-19"]={
 		["Default"]={
 		},
+		["Index"]={
+			["Button 1-4"]={template="BPerformancePage"},
+		},
 		["Main"]={
 			["Fader 1"]={template="FYellow"},
 			["UDVButton 1-2_2-2"]={template="UDYellow"},
@@ -1786,6 +1882,10 @@ local item_conf_map = {
 			["Button 4-1"]={template="BOscModPage"},
 			["Button 5-1"]={template="BFilterPage"},
 		},
+		["Index"]={
+			["Button 1-3"]={template="BPerformancePage"},
+			["Button 1-4"]={template="BPerformancePage"},
+		},
 		["Main"]={
 			["Button 8-3"]={template="BRedOnOff"},
 			["Fader 4"]={template="FYellow"},
@@ -1862,6 +1962,10 @@ local item_conf_map = {
 		},
 		["ExtMod"]={
 			["UDVButton 7-2_8-2"]={template="UDYellow", inverted=true},
+		},
+		["Velocity *"]={
+			["Button 2-1"]={template="BPerformancePage"},
+			["Button 3-1"]={template="BPerformancePage"},
 		},
 	},
 	["Matrix"]={
@@ -2624,14 +2728,6 @@ local item_conf_map = {
 			["Button 5-8"]={template="BEffectPage"},
 			["Button 6-8"]={template="BEffectPage"},
 			["Button 7-8"]={template="BEffectPage"},
-			["Button 7-1"]={template="BPerformancePage"},
-			["Button 7-2"]={template="BPerformancePage"},
-			["Button 7-3"]={template="BPerformancePage"},
-			["Button 7-4"]={template="BPerformancePage"},
-			["Button 8-1"]={template="BPerformancePage"},
-			["Button 8-2"]={template="BPerformancePage"},
-			["Button 8-3"]={template="BPerformancePage"},
-			["Button 8-4"]={template="BPerformancePage"},
 		},
 		["Main"]={
 			["Fader 3"]={template="FYellow"},
@@ -2640,6 +2736,14 @@ local item_conf_map = {
 		},
 		["Index"]={
 			["Button 1-2"]={template="BAmpPage"},
+			["Button 7-1"]={template="BPerformancePage"},
+			["Button 7-2"]={template="BPerformancePage"},
+			["Button 7-3"]={template="BPerformancePage"},
+			["Button 7-4"]={template="BPerformancePage"},
+			["Button 8-1"]={template="BPerformancePage"},
+			["Button 8-2"]={template="BPerformancePage"},
+			["Button 8-3"]={template="BPerformancePage"},
+			["Button 8-4"]={template="BPerformancePage"},
 		},
 		["Sample"]={
 			["Fader 1"]={template="FYellow"},
@@ -3623,6 +3727,7 @@ local items = {
 	{name = "PageName", output = "text" },
 	{name = "SubPageName", output = "text" },
 	{name = "PlayingStep", output = "text" },
+	{name = "KeyboardMode", output = "text" },
 	{name = "BarPosition", input= "button", output = "value", min = 0, max = 127},
 	{name = "BeatPosition", input= "button", output = "value", min = 0, max = 127},
 	{name = "EngineSelect", input= "value", output = "value", min = 0, max = 2},
@@ -4593,6 +4698,15 @@ function remote_process_midi(event)
                 		pad = remote.match_midi("<100x>? "..tostring(button).." zz", event)
                 		if(pad ~= nil) then
                         		remote.handle_input({ time_stamp = event.time_stamp, item = 1, value = pad.x, note = padnote, velocity = pad.z })
+					return true
+				end
+			end
+		end
+        	if(string.match(get_current_page(), "Keyboard")) then
+			for button,keynote in pairs(button_to_keynote) do
+                		key = remote.match_midi(buttons[button].." zz", event)
+                		if(key ~= nil) then
+                        		remote.handle_input({ time_stamp = event.time_stamp, item = 1, value = 1, note = keynote, velocity = key.z })
 					return true
 				end
 			end
