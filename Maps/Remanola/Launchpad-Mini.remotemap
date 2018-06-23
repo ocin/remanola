@@ -426,6 +426,8 @@ Map	Fader 8		FX8 Send Level			Send2
 Scope	Propellerheads	Combinator
 Define Group	Page	Main	Index	Keyboard	Internal
 Define Group	KeyMod	ModWheel	PitchBend
+Define Group	KbdVel	V100	V25	V50	V75	V127
+Define Group	BaseKey	C2	C0	C1	C3	C4
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Combinator"
 Map	DeviceName		Device Name
@@ -441,6 +443,26 @@ Map	Button 1-7		Page=Keyboard			Index
 Map	Button H		Page=Internal			Index
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
+Map	Button 1-4		KbdVel=V25			Keyboard	
+Map	Button 1-5		KbdVel=V50			Keyboard	
+Map	Button 1-6		KbdVel=V75			Keyboard	
+Map	Button 1-7		KbdVel=V100			Keyboard	
+Map	Button 1-8		KbdVel=V127			Keyboard	
+Map	KbdVel		"25"			Keyboard	V25
+Map	KbdVel		"50"			Keyboard	V50
+Map	KbdVel		"75"			Keyboard	V75
+Map	KbdVel		"100"			Keyboard	V100
+Map	KbdVel		"127"			Keyboard	V127
+Map	Button 2-4		BaseKey=C0			Keyboard	
+Map	Button 2-5		BaseKey=C1			Keyboard	
+Map	Button 2-6		BaseKey=C2			Keyboard	
+Map	Button 2-7		BaseKey=C3			Keyboard	
+Map	Button 2-8		BaseKey=C4			Keyboard	
+Map	BaseKey		"0"			Keyboard	C0
+Map	BaseKey		"1"			Keyboard	C1
+Map	BaseKey		"2"			Keyboard	C2
+Map	BaseKey		"3"			Keyboard	C3
+Map	BaseKey		"4"			Keyboard	C4
 Map	Button 1-2		KeyMod=ModWheel			Keyboard
 Map	Button 2-2		KeyMod=PitchBend			Keyboard
 // Mod Wheel
@@ -470,6 +492,8 @@ Map	Fader 8		Rotary 4			Main
 Scope	Propellerheads	Thor Polysonic Synthesizer
 Define Group	Page	Main	Osc1	Osc2	Osc3	Mixer	Filter1	Filter2	Filter3	FilterEnv	Amp	AmpEnv	ModEnv	GlobalEnv	LFO1	LFO2	Seq	Shaper	Delay	Chorus	Index	Keyboard	Internal
 Define Group	KeyMod	ModWheel	PitchBend
+Define Group	KbdVel	V100	V25	V50	V75	V127
+Define Group	BaseKey	C2	C0	C1	C3	C4
 Define Group	OscType	Analog	Wavetable	Phase	FM	Multi	Noise	Off
 Define Group	FilterType	LP	State	Comb	Formant	Bypass
 Define Group	SeqEditMode	Note	Velocity	GateLen	StepDur	Curve1	Curve2
@@ -484,6 +508,26 @@ Map	PlayingStep		Step Sequencer Step Index
 Map	Button C7		Page=Index
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
+Map	Button 1-4		KbdVel=V25			Keyboard	
+Map	Button 1-5		KbdVel=V50			Keyboard	
+Map	Button 1-6		KbdVel=V75			Keyboard	
+Map	Button 1-7		KbdVel=V100			Keyboard	
+Map	Button 1-8		KbdVel=V127			Keyboard	
+Map	KbdVel		"25"			Keyboard	V25
+Map	KbdVel		"50"			Keyboard	V50
+Map	KbdVel		"75"			Keyboard	V75
+Map	KbdVel		"100"			Keyboard	V100
+Map	KbdVel		"127"			Keyboard	V127
+Map	Button 2-4		BaseKey=C0			Keyboard	
+Map	Button 2-5		BaseKey=C1			Keyboard	
+Map	Button 2-6		BaseKey=C2			Keyboard	
+Map	Button 2-7		BaseKey=C3			Keyboard	
+Map	Button 2-8		BaseKey=C4			Keyboard	
+Map	BaseKey		"0"			Keyboard	C0
+Map	BaseKey		"1"			Keyboard	C1
+Map	BaseKey		"2"			Keyboard	C2
+Map	BaseKey		"3"			Keyboard	C3
+Map	BaseKey		"4"			Keyboard	C4
 Map	Button 1-2		KeyMod=ModWheel			Keyboard
 Map	Button 2-2		KeyMod=PitchBend			Keyboard
 // Mod Wheel
@@ -1060,6 +1104,8 @@ Map	Button 4-8		Page=Chorus			Chorus
 Scope	Propellerheads	Dr.REX Loop Player
 Define Group	Page	Main	Osc	Loop	Performance	Filter	FilterEnv	LFO	AmpEnv	Index	Keyboard	Internal
 Define Group	KeyMod	ModWheel	PitchBend
+Define Group	KbdVel	V100	V25	V50	V75	V127
+Define Group	BaseKey	C2	C0	C1	C3	C4
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"DrOctoRex"
@@ -1071,6 +1117,26 @@ Map	Button C4		Select Next Patch
 Map	Button C7		Page=Index
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
+Map	Button 1-4		KbdVel=V25			Keyboard	
+Map	Button 1-5		KbdVel=V50			Keyboard	
+Map	Button 1-6		KbdVel=V75			Keyboard	
+Map	Button 1-7		KbdVel=V100			Keyboard	
+Map	Button 1-8		KbdVel=V127			Keyboard	
+Map	KbdVel		"25"			Keyboard	V25
+Map	KbdVel		"50"			Keyboard	V50
+Map	KbdVel		"75"			Keyboard	V75
+Map	KbdVel		"100"			Keyboard	V100
+Map	KbdVel		"127"			Keyboard	V127
+Map	Button 2-4		BaseKey=C0			Keyboard	
+Map	Button 2-5		BaseKey=C1			Keyboard	
+Map	Button 2-6		BaseKey=C2			Keyboard	
+Map	Button 2-7		BaseKey=C3			Keyboard	
+Map	Button 2-8		BaseKey=C4			Keyboard	
+Map	BaseKey		"0"			Keyboard	C0
+Map	BaseKey		"1"			Keyboard	C1
+Map	BaseKey		"2"			Keyboard	C2
+Map	BaseKey		"3"			Keyboard	C3
+Map	BaseKey		"4"			Keyboard	C4
 Map	Button 1-2		KeyMod=ModWheel			Keyboard
 Map	Button 2-2		KeyMod=PitchBend			Keyboard
 // Mod Wheel
@@ -1225,6 +1291,8 @@ Map	Button 8-1		Shuffle			Pattern
 Scope	Propellerheads	ID8 Instrument Device
 Define Group	Page	Main	Index	Keyboard	Internal
 Define Group	KeyMod	ModWheel	PitchBend
+Define Group	KbdVel	V100	V25	V50	V75	V127
+Define Group	BaseKey	C2	C0	C1	C3	C4
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"ID8"
 Map	DeviceName		Device Name
@@ -1235,6 +1303,26 @@ Map	Button C4		Select Next Sound
 Map	Button C7		Page=Index
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
+Map	Button 1-4		KbdVel=V25			Keyboard	
+Map	Button 1-5		KbdVel=V50			Keyboard	
+Map	Button 1-6		KbdVel=V75			Keyboard	
+Map	Button 1-7		KbdVel=V100			Keyboard	
+Map	Button 1-8		KbdVel=V127			Keyboard	
+Map	KbdVel		"25"			Keyboard	V25
+Map	KbdVel		"50"			Keyboard	V50
+Map	KbdVel		"75"			Keyboard	V75
+Map	KbdVel		"100"			Keyboard	V100
+Map	KbdVel		"127"			Keyboard	V127
+Map	Button 2-4		BaseKey=C0			Keyboard	
+Map	Button 2-5		BaseKey=C1			Keyboard	
+Map	Button 2-6		BaseKey=C2			Keyboard	
+Map	Button 2-7		BaseKey=C3			Keyboard	
+Map	Button 2-8		BaseKey=C4			Keyboard	
+Map	BaseKey		"0"			Keyboard	C0
+Map	BaseKey		"1"			Keyboard	C1
+Map	BaseKey		"2"			Keyboard	C2
+Map	BaseKey		"3"			Keyboard	C3
+Map	BaseKey		"4"			Keyboard	C4
 Map	Button 1-2		KeyMod=ModWheel			Keyboard
 Map	Button 2-2		KeyMod=PitchBend			Keyboard
 // Mod Wheel
@@ -1267,6 +1355,8 @@ Map	Fader 8		Volume			Main
 Scope	Propellerheads	Malstrom Graintable Synthesizer
 Define Group	Page	Main	OscA	OscAEnv	OscB	OscBEnv	FilterA	FilterB	FilterEnv	ModA	ModB	Shaper	Velocity	ModWheelContr	Index	Keyboard	Internal
 Define Group	KeyMod	ModWheel	PitchBend
+Define Group	KbdVel	V100	V25	V50	V75	V127
+Define Group	BaseKey	C2	C0	C1	C3	C4
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Malstrom"
 Map	DeviceName		Device Name
@@ -1277,6 +1367,26 @@ Map	Button C4		Select Next Patch
 Map	Button C7		Page=Index
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
+Map	Button 1-4		KbdVel=V25			Keyboard	
+Map	Button 1-5		KbdVel=V50			Keyboard	
+Map	Button 1-6		KbdVel=V75			Keyboard	
+Map	Button 1-7		KbdVel=V100			Keyboard	
+Map	Button 1-8		KbdVel=V127			Keyboard	
+Map	KbdVel		"25"			Keyboard	V25
+Map	KbdVel		"50"			Keyboard	V50
+Map	KbdVel		"75"			Keyboard	V75
+Map	KbdVel		"100"			Keyboard	V100
+Map	KbdVel		"127"			Keyboard	V127
+Map	Button 2-4		BaseKey=C0			Keyboard	
+Map	Button 2-5		BaseKey=C1			Keyboard	
+Map	Button 2-6		BaseKey=C2			Keyboard	
+Map	Button 2-7		BaseKey=C3			Keyboard	
+Map	Button 2-8		BaseKey=C4			Keyboard	
+Map	BaseKey		"0"			Keyboard	C0
+Map	BaseKey		"1"			Keyboard	C1
+Map	BaseKey		"2"			Keyboard	C2
+Map	BaseKey		"3"			Keyboard	C3
+Map	BaseKey		"4"			Keyboard	C4
 Map	Button 1-2		KeyMod=ModWheel			Keyboard
 Map	Button 2-2		KeyMod=PitchBend			Keyboard
 // Mod Wheel
@@ -1437,6 +1547,8 @@ Map	UDVButton 7-8_8-8		Mod Wheel Target			ModWheelContr
 Scope	Propellerheads	NN19 Digital Sampler
 Define Group	Page	Main	Osc	Filter	FilterEnv	Amp	LFO	Velocity	ModWheelContr	Controller	Index	Keyboard	Internal
 Define Group	KeyMod	ModWheel	PitchBend
+Define Group	KbdVel	V100	V25	V50	V75	V127
+Define Group	BaseKey	C2	C0	C1	C3	C4
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"NN-19"
@@ -1461,6 +1573,26 @@ Map	Button 5-5		Page=LFO			Index
 Map	Button H		Page=Internal			Index
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
+Map	Button 1-4		KbdVel=V25			Keyboard	
+Map	Button 1-5		KbdVel=V50			Keyboard	
+Map	Button 1-6		KbdVel=V75			Keyboard	
+Map	Button 1-7		KbdVel=V100			Keyboard	
+Map	Button 1-8		KbdVel=V127			Keyboard	
+Map	KbdVel		"25"			Keyboard	V25
+Map	KbdVel		"50"			Keyboard	V50
+Map	KbdVel		"75"			Keyboard	V75
+Map	KbdVel		"100"			Keyboard	V100
+Map	KbdVel		"127"			Keyboard	V127
+Map	Button 2-4		BaseKey=C0			Keyboard	
+Map	Button 2-5		BaseKey=C1			Keyboard	
+Map	Button 2-6		BaseKey=C2			Keyboard	
+Map	Button 2-7		BaseKey=C3			Keyboard	
+Map	Button 2-8		BaseKey=C4			Keyboard	
+Map	BaseKey		"0"			Keyboard	C0
+Map	BaseKey		"1"			Keyboard	C1
+Map	BaseKey		"2"			Keyboard	C2
+Map	BaseKey		"3"			Keyboard	C3
+Map	BaseKey		"4"			Keyboard	C4
 // Mod Wheel
 Map	SubPageName		"Mod Wheel"			Keyboard	ModWheel
 Map	Button 1-2		KeyMod=ModWheel			Keyboard
@@ -1549,6 +1681,8 @@ Map	UDVButton 1-6_2-6		LFO Dest			LFO
 Scope	Propellerheads	NN-XT Advanced Sampler
 Define Group	Page	Main	Index	Keyboard	Internal
 Define Group	KeyMod	ModWheel	PitchBend
+Define Group	KbdVel	V100	V25	V50	V75	V127
+Define Group	BaseKey	C2	C0	C1	C3	C4
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"NN-XT"
 Map	DeviceName		Device Name
@@ -1564,6 +1698,26 @@ Map	Button 1-7		Page=Keyboard			Index
 Map	Button H		Page=Internal			Index
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
+Map	Button 1-4		KbdVel=V25			Keyboard	
+Map	Button 1-5		KbdVel=V50			Keyboard	
+Map	Button 1-6		KbdVel=V75			Keyboard	
+Map	Button 1-7		KbdVel=V100			Keyboard	
+Map	Button 1-8		KbdVel=V127			Keyboard	
+Map	KbdVel		"25"			Keyboard	V25
+Map	KbdVel		"50"			Keyboard	V50
+Map	KbdVel		"75"			Keyboard	V75
+Map	KbdVel		"100"			Keyboard	V100
+Map	KbdVel		"127"			Keyboard	V127
+Map	Button 2-4		BaseKey=C0			Keyboard	
+Map	Button 2-5		BaseKey=C1			Keyboard	
+Map	Button 2-6		BaseKey=C2			Keyboard	
+Map	Button 2-7		BaseKey=C3			Keyboard	
+Map	Button 2-8		BaseKey=C4			Keyboard	
+Map	BaseKey		"0"			Keyboard	C0
+Map	BaseKey		"1"			Keyboard	C1
+Map	BaseKey		"2"			Keyboard	C2
+Map	BaseKey		"3"			Keyboard	C3
+Map	BaseKey		"4"			Keyboard	C4
 Map	Button 1-2		KeyMod=ModWheel			Keyboard
 Map	Button 2-2		KeyMod=PitchBend			Keyboard
 // Mod Wheel
@@ -2173,6 +2327,8 @@ Scope	Propellerheads	Kong Drum Designer
 Define Group	Page	Main	MutesSolos	Drum1	Drum2	Drum3	Drum4	Drum5	Drum6	Drum7	Drum8	Drum9	Drum10	Drum11	Drum12	Drum13	Drum14	Drum15	Drum16	Pad1	Pad2	Pad3	Pad4	Pad5	Pad6	Pad7	Pad8	Pad9	Pad10	Pad11	Pad12	Pad13	Pad14	Pad15	Pad16	BusFX	MasterFX	Index	Keyboard	Internal
 Define Group	DrumPage	DrumMain	DrumModule	DrumFX1	DrumFX2
 Define Group	KeyMod	ModWheel	PitchBend
+Define Group	KbdVel	V100	V25	V50	V75	V127
+Define Group	BaseKey	C2	C0	C1	C3	C4
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Kong"
 Map	DeviceName		Device Name
@@ -2183,6 +2339,26 @@ Map	Button C4		Select Next Patch
 Map	Button C7		Page=Index
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
+Map	Button 1-4		KbdVel=V25			Keyboard	
+Map	Button 1-5		KbdVel=V50			Keyboard	
+Map	Button 1-6		KbdVel=V75			Keyboard	
+Map	Button 1-7		KbdVel=V100			Keyboard	
+Map	Button 1-8		KbdVel=V127			Keyboard	
+Map	KbdVel		"25"			Keyboard	V25
+Map	KbdVel		"50"			Keyboard	V50
+Map	KbdVel		"75"			Keyboard	V75
+Map	KbdVel		"100"			Keyboard	V100
+Map	KbdVel		"127"			Keyboard	V127
+Map	Button 2-4		BaseKey=C0			Keyboard	
+Map	Button 2-5		BaseKey=C1			Keyboard	
+Map	Button 2-6		BaseKey=C2			Keyboard	
+Map	Button 2-7		BaseKey=C3			Keyboard	
+Map	Button 2-8		BaseKey=C4			Keyboard	
+Map	BaseKey		"0"			Keyboard	C0
+Map	BaseKey		"1"			Keyboard	C1
+Map	BaseKey		"2"			Keyboard	C2
+Map	BaseKey		"3"			Keyboard	C3
+Map	BaseKey		"4"			Keyboard	C4
 Map	Button 1-2		KeyMod=ModWheel			Keyboard
 Map	Button 2-2		KeyMod=PitchBend			Keyboard
 // Mod Wheel
@@ -3720,6 +3896,8 @@ Map	Meter 7		Master FX Peak Meter			MasterFX
 Scope	Propellerheads	SubTractor Analog Synthesizer
 Define Group	Page	Main	Osc1	Osc2	Noise	Filter	Filter2	FilterEnv	ModEnv	AmpEnv	LFO1	LFO2	Velocity1	Velocity2	ModWheelContr	ExtMod	Index	Keyboard	Internal
 Define Group	KeyMod	ModWheel	PitchBend
+Define Group	KbdVel	V100	V25	V50	V75	V127
+Define Group	BaseKey	C2	C0	C1	C3	C4
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Subtractor"
 Map	DeviceName		Device Name
@@ -3730,6 +3908,26 @@ Map	Button C4		Select Next Patch
 Map	Button C7		Page=Index
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
+Map	Button 1-4		KbdVel=V25			Keyboard	
+Map	Button 1-5		KbdVel=V50			Keyboard	
+Map	Button 1-6		KbdVel=V75			Keyboard	
+Map	Button 1-7		KbdVel=V100			Keyboard	
+Map	Button 1-8		KbdVel=V127			Keyboard	
+Map	KbdVel		"25"			Keyboard	V25
+Map	KbdVel		"50"			Keyboard	V50
+Map	KbdVel		"75"			Keyboard	V75
+Map	KbdVel		"100"			Keyboard	V100
+Map	KbdVel		"127"			Keyboard	V127
+Map	Button 2-4		BaseKey=C0			Keyboard	
+Map	Button 2-5		BaseKey=C1			Keyboard	
+Map	Button 2-6		BaseKey=C2			Keyboard	
+Map	Button 2-7		BaseKey=C3			Keyboard	
+Map	Button 2-8		BaseKey=C4			Keyboard	
+Map	BaseKey		"0"			Keyboard	C0
+Map	BaseKey		"1"			Keyboard	C1
+Map	BaseKey		"2"			Keyboard	C2
+Map	BaseKey		"3"			Keyboard	C3
+Map	BaseKey		"4"			Keyboard	C4
 Map	Button 1-2		KeyMod=ModWheel			Keyboard
 Map	Button 2-2		KeyMod=PitchBend			Keyboard
 // Mod Wheel
@@ -3977,6 +4175,8 @@ Map	Button 8-1		Run			Main
 Scope	Sononics	com.sononics.Revival
 Define Group	Page	Main	Voicing1	Voicing2	PriSec	Solos	Attack	Primary	Secondary	Release	AttackL	AttackU	PrimaryL	PrimaryU	SecondaryL	SecondaryU	ReleaseL	ReleaseU	AttackModEnable	AttackMod1	AttackMod2	AttackMod3	PrimaryModEnable	PrimaryMod1	PrimaryMod2	PrimaryMod3	SecondaryModEnable	SecondaryMod1	SecondaryMod2	SecondaryMod3	ReleaseModEnable	ReleaseMod1	ReleaseMod2	ReleaseMod3	Effects	PreAmp	Phaser	ModFilter	Speaker	Reverb	Delay	Index	Keyboard	Internal
 Define Group	KeyMod	ModWheel	PitchBend
+Define Group	KbdVel	V100	V25	V50	V75	V127
+Define Group	BaseKey	C2	C0	C1	C3	C4
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Revival"
@@ -3988,6 +4188,26 @@ Map	Button C4		Select Next Patch
 Map	Button C7		Page=Index
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
+Map	Button 1-4		KbdVel=V25			Keyboard	
+Map	Button 1-5		KbdVel=V50			Keyboard	
+Map	Button 1-6		KbdVel=V75			Keyboard	
+Map	Button 1-7		KbdVel=V100			Keyboard	
+Map	Button 1-8		KbdVel=V127			Keyboard	
+Map	KbdVel		"25"			Keyboard	V25
+Map	KbdVel		"50"			Keyboard	V50
+Map	KbdVel		"75"			Keyboard	V75
+Map	KbdVel		"100"			Keyboard	V100
+Map	KbdVel		"127"			Keyboard	V127
+Map	Button 2-4		BaseKey=C0			Keyboard	
+Map	Button 2-5		BaseKey=C1			Keyboard	
+Map	Button 2-6		BaseKey=C2			Keyboard	
+Map	Button 2-7		BaseKey=C3			Keyboard	
+Map	Button 2-8		BaseKey=C4			Keyboard	
+Map	BaseKey		"0"			Keyboard	C0
+Map	BaseKey		"1"			Keyboard	C1
+Map	BaseKey		"2"			Keyboard	C2
+Map	BaseKey		"3"			Keyboard	C3
+Map	BaseKey		"4"			Keyboard	C4
 Map	Button 1-2		KeyMod=ModWheel			Keyboard
 Map	Button 2-2		KeyMod=PitchBend			Keyboard
 // Mod Wheel
@@ -4719,6 +4939,8 @@ Map	Fader 6		FX Delay Depth				Delay
 Scope	Synapse Audio	com.synapseAudioSoftware.Antidote
 Define Group	Page	Main	Osc1	Osc2	Mixer	Filter	FilterEnv	Effects	EQBass	Dist	Phaser	Chorus	Delay	Reverb	Comp	LFO1	LFO2	AmpEnv	ModEnv	Arp	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	Index	Keyboard	Internal
 Define Group	KeyMod	ModWheel	PitchBend
+Define Group	KbdVel	V100	V25	V50	V75	V127
+Define Group	BaseKey	C2	C0	C1	C3	C4
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Antidote"
@@ -4730,6 +4952,26 @@ Map	Button C4		Select Next Patch
 Map	Button C7		Page=Index
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
+Map	Button 1-4		KbdVel=V25			Keyboard	
+Map	Button 1-5		KbdVel=V50			Keyboard	
+Map	Button 1-6		KbdVel=V75			Keyboard	
+Map	Button 1-7		KbdVel=V100			Keyboard	
+Map	Button 1-8		KbdVel=V127			Keyboard	
+Map	KbdVel		"25"			Keyboard	V25
+Map	KbdVel		"50"			Keyboard	V50
+Map	KbdVel		"75"			Keyboard	V75
+Map	KbdVel		"100"			Keyboard	V100
+Map	KbdVel		"127"			Keyboard	V127
+Map	Button 2-4		BaseKey=C0			Keyboard	
+Map	Button 2-5		BaseKey=C1			Keyboard	
+Map	Button 2-6		BaseKey=C2			Keyboard	
+Map	Button 2-7		BaseKey=C3			Keyboard	
+Map	Button 2-8		BaseKey=C4			Keyboard	
+Map	BaseKey		"0"			Keyboard	C0
+Map	BaseKey		"1"			Keyboard	C1
+Map	BaseKey		"2"			Keyboard	C2
+Map	BaseKey		"3"			Keyboard	C3
+Map	BaseKey		"4"			Keyboard	C4
 Map	Button 1-2		KeyMod=ModWheel			Keyboard
 Map	Button 2-2		KeyMod=PitchBend			Keyboard
 // Mod Wheel
@@ -5074,6 +5316,8 @@ Map	UDVButton 1-4_2-4		MM Slot 5 Destination			 ModMatrix5
 Scope	Propellerhead Software	se.propellerheads.PX7 
 Define Group	Page	Main	OP1	OP2	OP3	OP4	OP5	OP6	LFO	Index	Keyboard	Internal
 Define Group	KeyMod	ModWheel	PitchBend
+Define Group	KbdVel	V100	V25	V50	V75	V127
+Define Group	BaseKey	C2	C0	C1	C3	C4
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"PX7"
@@ -5085,6 +5329,26 @@ Map	Button C4		Select Next Patch
 Map	Button C7		Page=Index
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
+Map	Button 1-4		KbdVel=V25			Keyboard	
+Map	Button 1-5		KbdVel=V50			Keyboard	
+Map	Button 1-6		KbdVel=V75			Keyboard	
+Map	Button 1-7		KbdVel=V100			Keyboard	
+Map	Button 1-8		KbdVel=V127			Keyboard	
+Map	KbdVel		"25"			Keyboard	V25
+Map	KbdVel		"50"			Keyboard	V50
+Map	KbdVel		"75"			Keyboard	V75
+Map	KbdVel		"100"			Keyboard	V100
+Map	KbdVel		"127"			Keyboard	V127
+Map	Button 2-4		BaseKey=C0			Keyboard	
+Map	Button 2-5		BaseKey=C1			Keyboard	
+Map	Button 2-6		BaseKey=C2			Keyboard	
+Map	Button 2-7		BaseKey=C3			Keyboard	
+Map	Button 2-8		BaseKey=C4			Keyboard	
+Map	BaseKey		"0"			Keyboard	C0
+Map	BaseKey		"1"			Keyboard	C1
+Map	BaseKey		"2"			Keyboard	C2
+Map	BaseKey		"3"			Keyboard	C3
+Map	BaseKey		"4"			Keyboard	C4
 Map	Button 1-2		KeyMod=ModWheel			Keyboard
 Map	Button 2-2		KeyMod=PitchBend			Keyboard
 // Mod Wheel
@@ -5222,6 +5486,8 @@ Map	Button 8-2		LFO Tempo Sync		SEL1	LFO
 Scope	Propellerhead Software	se.propellerheads.Parsec
 Define Group	Page	Main	GenereratorA	GenereratorB	SoundEngineA	SoundEngineB	AmpEnv	LFO1	LFO2	Env1	Env2	Reverb	Delay	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
 Define Group	KeyMod	ModWheel	PitchBend
+Define Group	KbdVel	V100	V25	V50	V75	V127
+Define Group	BaseKey	C2	C0	C1	C3	C4
 Define Group	Enabled	On	Off
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
@@ -5234,6 +5500,26 @@ Map	Button C4		Select Next Patch
 Map	Button C7		Page=Index
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
+Map	Button 1-4		KbdVel=V25			Keyboard	
+Map	Button 1-5		KbdVel=V50			Keyboard	
+Map	Button 1-6		KbdVel=V75			Keyboard	
+Map	Button 1-7		KbdVel=V100			Keyboard	
+Map	Button 1-8		KbdVel=V127			Keyboard	
+Map	KbdVel		"25"			Keyboard	V25
+Map	KbdVel		"50"			Keyboard	V50
+Map	KbdVel		"75"			Keyboard	V75
+Map	KbdVel		"100"			Keyboard	V100
+Map	KbdVel		"127"			Keyboard	V127
+Map	Button 2-4		BaseKey=C0			Keyboard	
+Map	Button 2-5		BaseKey=C1			Keyboard	
+Map	Button 2-6		BaseKey=C2			Keyboard	
+Map	Button 2-7		BaseKey=C3			Keyboard	
+Map	Button 2-8		BaseKey=C4			Keyboard	
+Map	BaseKey		"0"			Keyboard	C0
+Map	BaseKey		"1"			Keyboard	C1
+Map	BaseKey		"2"			Keyboard	C2
+Map	BaseKey		"3"			Keyboard	C3
+Map	BaseKey		"4"			Keyboard	C4
 Map	Button 1-2		KeyMod=ModWheel			Keyboard
 Map	Button 2-2		KeyMod=PitchBend			Keyboard
 // Mod Wheel
@@ -5522,6 +5808,8 @@ Map	UDVButton 1-8_2-8		Mod8 Scale			 ModMatrix8
 Scope	Propellerhead Software	se.propellerheads.Europa
 Define Group	Page	Main	Eng1	Eng2	Eng3	Eng1Mod1	Eng2Mod1	Eng3Mod1	Eng1Mod2	Eng2Mod2	Eng3Mod2	Eng1Harm	Eng2Harm	Eng3Harm	Eng1Filter	Eng2Filter	Eng3Filter	Eng1Unison	Eng2Unison	Eng3Unison	Mixer	Filter	Amp	Effects	Phaser	Dist	Eq	Delay	Reverb	Comp	LFO1	LFO2	LFO3	Env1	Env2	Env3	Env4	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
 Define Group	KeyMod	ModWheel	PitchBend
+Define Group	KbdVel	V100	V25	V50	V75	V127
+Define Group	BaseKey	C2	C0	C1	C3	C4
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Europa"
@@ -5537,6 +5825,26 @@ Map	EnvSelect		Env Select
 Map	Button C7		Page=Index
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
+Map	Button 1-4		KbdVel=V25			Keyboard	
+Map	Button 1-5		KbdVel=V50			Keyboard	
+Map	Button 1-6		KbdVel=V75			Keyboard	
+Map	Button 1-7		KbdVel=V100			Keyboard	
+Map	Button 1-8		KbdVel=V127			Keyboard	
+Map	KbdVel		"25"			Keyboard	V25
+Map	KbdVel		"50"			Keyboard	V50
+Map	KbdVel		"75"			Keyboard	V75
+Map	KbdVel		"100"			Keyboard	V100
+Map	KbdVel		"127"			Keyboard	V127
+Map	Button 2-4		BaseKey=C0			Keyboard	
+Map	Button 2-5		BaseKey=C1			Keyboard	
+Map	Button 2-6		BaseKey=C2			Keyboard	
+Map	Button 2-7		BaseKey=C3			Keyboard	
+Map	Button 2-8		BaseKey=C4			Keyboard	
+Map	BaseKey		"0"			Keyboard	C0
+Map	BaseKey		"1"			Keyboard	C1
+Map	BaseKey		"2"			Keyboard	C2
+Map	BaseKey		"3"			Keyboard	C3
+Map	BaseKey		"4"			Keyboard	C4
 Map	Button 1-2		KeyMod=ModWheel			Keyboard
 Map	Button 2-2		KeyMod=PitchBend			Keyboard
 // Mod Wheel
@@ -6202,6 +6510,8 @@ Map	UDVButton 1-8_2-8		Mod8 Scale			 ModMatrix8
 Scope	Propellerhead Software	se.propellerheads.Grain
 Define Group	Page	Main	Sample	Grains	Pitch	Osc	Mixer	Filter	Amp	Effects	Phaser	Dist	Eq	Delay	Reverb	Comp	LFO1	LFO2	LFO3	Env1	Env2	Env3	Env4	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
 Define Group	KeyMod	ModWheel	PitchBend
+Define Group	KbdVel	V100	V25	V50	V75	V127
+Define Group	BaseKey	C2	C0	C1	C3	C4
 Define Group	Grains	SpectralGrains	GrainOsc	LongGrains	Tape
 Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
@@ -6217,6 +6527,26 @@ Map	EnvSelect		Env Select
 Map	Button C7		Page=Index
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
+Map	Button 1-4		KbdVel=V25			Keyboard	
+Map	Button 1-5		KbdVel=V50			Keyboard	
+Map	Button 1-6		KbdVel=V75			Keyboard	
+Map	Button 1-7		KbdVel=V100			Keyboard	
+Map	Button 1-8		KbdVel=V127			Keyboard	
+Map	KbdVel		"25"			Keyboard	V25
+Map	KbdVel		"50"			Keyboard	V50
+Map	KbdVel		"75"			Keyboard	V75
+Map	KbdVel		"100"			Keyboard	V100
+Map	KbdVel		"127"			Keyboard	V127
+Map	Button 2-4		BaseKey=C0			Keyboard	
+Map	Button 2-5		BaseKey=C1			Keyboard	
+Map	Button 2-6		BaseKey=C2			Keyboard	
+Map	Button 2-7		BaseKey=C3			Keyboard	
+Map	Button 2-8		BaseKey=C4			Keyboard	
+Map	BaseKey		"0"			Keyboard	C0
+Map	BaseKey		"1"			Keyboard	C1
+Map	BaseKey		"2"			Keyboard	C2
+Map	BaseKey		"3"			Keyboard	C3
+Map	BaseKey		"4"			Keyboard	C4
 Map	Button 1-2		KeyMod=ModWheel			Keyboard
 Map	Button 2-2		KeyMod=PitchBend			Keyboard
 // Mod Wheel
@@ -6678,6 +7008,8 @@ Map	UDVButton 1-8_2-8		Mod8 Scale			 ModMatrix8
 // ------------------------------------------------------------------------------------------
 Scope	Propellerhead Software	se.propellerheads.radicalpiano
 Define Group	Page	Main	Velocity	Tune	Resonance	Envelope	Mechanics	Eq	Ambience	Output	Index	Keyboard	Internal
+Define Group	KbdVel	V100	V25	V50	V75	V127
+Define Group	BaseKey	C2	C0	C1	C3	C4
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Radical Piano"
 Map	DeviceName		Device Name
@@ -6688,6 +7020,26 @@ Map	Button C4		Select Next Patch
 Map	Button C7		Page=Index
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
+Map	Button 1-4		KbdVel=V25			Keyboard	
+Map	Button 1-5		KbdVel=V50			Keyboard	
+Map	Button 1-6		KbdVel=V75			Keyboard	
+Map	Button 1-7		KbdVel=V100			Keyboard	
+Map	Button 1-8		KbdVel=V127			Keyboard	
+Map	KbdVel		"25"			Keyboard	V25
+Map	KbdVel		"50"			Keyboard	V50
+Map	KbdVel		"75"			Keyboard	V75
+Map	KbdVel		"100"			Keyboard	V100
+Map	KbdVel		"127"			Keyboard	V127
+Map	Button 2-4		BaseKey=C0			Keyboard	
+Map	Button 2-5		BaseKey=C1			Keyboard	
+Map	Button 2-6		BaseKey=C2			Keyboard	
+Map	Button 2-7		BaseKey=C3			Keyboard	
+Map	Button 2-8		BaseKey=C4			Keyboard	
+Map	BaseKey		"0"			Keyboard	C0
+Map	BaseKey		"1"			Keyboard	C1
+Map	BaseKey		"2"			Keyboard	C2
+Map	BaseKey		"3"			Keyboard	C3
+Map	BaseKey		"4"			Keyboard	C4
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index

@@ -117,6 +117,8 @@ g_barupdatetime = nil
 g_startbeat = false
 g_beatupdate = false
 g_beatupdatetime = nil
+g_basekey = 2
+g_kbdvel = 100
 
 g_updateditems = {}
 
@@ -262,45 +264,45 @@ button_to_padnote={
 }
 
 button_to_keynote={
+	-- C0
+	["Button 8-2"]=24,
+       	["Button 7-2"]=25,
+	["Button 8-3"]=26,
+       	["Button 7-3"]=27,
+      	["Button 8-4"]=28,
+       	["Button 8-5"]=29,
+       	["Button 7-5"]=30,
+       	["Button 8-6"]=31,
+       	["Button 7-6"]=32,
+       	["Button 8-7"]=33,
+       	["Button 7-7"]=34,
+       	["Button 8-8"]=35,
+	-- C1
+	["Button 6-2"]=36,
+       	["Button 5-2"]=37,
+	["Button 6-3"]=38,
+       	["Button 5-3"]=39,
+      	["Button 6-4"]=40,
+       	["Button 6-5"]=41,
+       	["Button 5-5"]=42,
+       	["Button 6-6"]=43,
+       	["Button 5-6"]=44,
+       	["Button 6-7"]=45,
+       	["Button 5-7"]=46,
+       	["Button 6-8"]=47,
 	-- C2
-	["Button 8-2"]=48,
-       	["Button 7-2"]=49,
-	["Button 8-3"]=50,
-       	["Button 7-3"]=51,
-      	["Button 8-4"]=52,
-       	["Button 8-5"]=53,
-       	["Button 7-5"]=54,
-       	["Button 8-6"]=55,
-       	["Button 7-6"]=56,
-       	["Button 8-7"]=57,
-       	["Button 7-7"]=58,
-       	["Button 8-8"]=59,
-	-- C3
-	["Button 6-2"]=60,
-       	["Button 5-2"]=61,
-	["Button 6-3"]=62,
-       	["Button 5-3"]=63,
-      	["Button 6-4"]=64,
-       	["Button 6-5"]=65,
-       	["Button 5-5"]=66,
-       	["Button 6-6"]=67,
-       	["Button 5-6"]=68,
-       	["Button 6-7"]=69,
-       	["Button 5-7"]=70,
-       	["Button 6-8"]=71,
-	-- C4
-	["Button 4-2"]=72,
-       	["Button 3-2"]=73,
-	["Button 4-3"]=74,
-       	["Button 3-3"]=75,
-      	["Button 4-4"]=76,
-       	["Button 4-5"]=77,
-       	["Button 3-5"]=78,
-       	["Button 4-6"]=79,
-       	["Button 3-6"]=80,
-       	["Button 4-7"]=81,
-       	["Button 3-7"]=82,
-       	["Button 4-8"]=83,
+	["Button 4-2"]=48,
+       	["Button 3-2"]=49,
+	["Button 4-3"]=50,
+       	["Button 3-3"]=51,
+      	["Button 4-4"]=52,
+       	["Button 4-5"]=53,
+       	["Button 3-5"]=54,
+       	["Button 4-6"]=55,
+       	["Button 3-6"]=56,
+       	["Button 4-7"]=57,
+       	["Button 3-7"]=58,
+       	["Button 4-8"]=59,
 }
 
 local buttons = {
@@ -613,6 +615,16 @@ local item_conf_map = {
 			["Button 2-2"]={template="BPerformancePage"},
 			["Fader 1"]={template="FOrange"},
 			["Knob V1"]={template="FGreen"},
+			["Button 1-4"]={template="BPerformancePage"},
+			["Button 1-5"]={template="BPerformancePage"},
+			["Button 1-6"]={template="BPerformancePage"},
+			["Button 1-7"]={template="BPerformancePage"},
+			["Button 1-8"]={template="BPerformancePage"},
+			["Button 2-4"]={template="BFilterPage"},
+			["Button 2-5"]={template="BFilterPage"},
+			["Button 2-6"]={template="BFilterPage"},
+			["Button 2-7"]={template="BFilterPage"},
+			["Button 2-8"]={template="BFilterPage"},
 			--
 			["Button 8-2"]={template="BWhitekey"},
 			["Button 7-2"]={template="BBlackkey"},
@@ -3728,6 +3740,8 @@ local items = {
 	{name = "SubPageName", output = "text" },
 	{name = "PlayingStep", output = "text" },
 	{name = "KeyboardMode", output = "text" },
+	{name = "KbdVel", output = "text" },
+	{name = "BaseKey", output = "text" },
 	{name = "BarPosition", input= "button", output = "value", min = 0, max = 127},
 	{name = "BeatPosition", input= "button", output = "value", min = 0, max = 127},
 	{name = "EngineSelect", input= "value", output = "value", min = 0, max = 2},
@@ -4404,6 +4418,16 @@ function remote_set_state(changed_items)
 				end
 			elseif(string.match(citemname, "SubPageName")) then
 				g_updateall = true
+			elseif(string.match(citemname, "KbdVel")) then
+               			local newkbdvel = tonumber(remote.get_item_text_value(itemsindex["KbdVel"]))
+				if(newkbdvel ~= nil) then
+               				g_kbdvel = newkbdvel
+				end
+			elseif(string.match(citemname, "BaseKey")) then
+               			local newbasekey = tonumber(remote.get_item_text_value(itemsindex["BaseKey"]))
+				if(newbasekey ~= nil) then
+               				g_basekey = newbasekey
+				end
 			end
 		end
 	end
@@ -4703,10 +4727,14 @@ function remote_process_midi(event)
 			end
 		end
         	if(string.match(get_current_page(), "Keyboard")) then
-			for button,keynote in pairs(button_to_keynote) do
+			for button,note in pairs(button_to_keynote) do
                 		key = remote.match_midi(buttons[button].." zz", event)
                 		if(key ~= nil) then
-                        		remote.handle_input({ time_stamp = event.time_stamp, item = 1, value = 1, note = keynote, velocity = key.z })
+					local velocity = g_kbdvel
+					if(key.z == 0) then
+						velocity = 0
+					end
+                        		remote.handle_input({ time_stamp = event.time_stamp, item = 1, value = 1, note = (note+12*g_basekey), velocity = velocity })
 					return true
 				end
 			end
