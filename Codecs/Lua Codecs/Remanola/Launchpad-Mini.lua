@@ -667,6 +667,27 @@ local item_conf_map = {
 			["Button 3-7"]={template="BBlackkey"},
 			["Button 4-8"]={template="BWhitekey"},
 		},
+		["Transport"]={
+			["Button A"]={enabledcolor=WGREEN, activecolor=WGREEN, disabledcolor=NOCOLOR}, 
+			["Button B"]={enabledcolor=ORANGE, activecolor=YELLOW, disabledcolor=NOCOLOR}, 
+			["Button C"]={enabledcolor=WRED, activecolor=RED, disabledcolor=NOCOLOR}, 
+			["Button D"]={enabledcolor=AMBER, activecolor=GREEN, disabledcolor=NOCOLOR}, 
+			["Button E"]={enabledcolor=AMBER, activecolor=GREEN, disabledcolor=NOCOLOR}, 
+			["Button F"]={template="BGreenOnOff"}, 
+			["Button G"]={template="BGreenOnOff"}, 
+			["Button H"]={enabledcolor=YELLOW, activecolor=YELLOW, disabledcolor=NOCOLOR},
+		
+		},
+		["Options"]={
+			["Button A"]={template="BRedOnOff"},
+			["Button B"]={template="BRed"},
+			["Button C"]={template="BGreen"},
+			["Button D"]={template="BGreenOnOff"},
+			["Button E"]={template="BRedOnOff"},
+			["Button F"]={template="BRedOnOff"},
+			["Button G"]={template="BRedOnOff"},
+			["Button H"]={enabledcolor=GREEN, activecolor=GREEN, disabledcolor=NOCOLOR},
+		},
 	},
 	["Master Section"]={
 		["Default"]={
@@ -2242,14 +2263,6 @@ local item_conf_map = {
 			["Button 3-1"]={template="BOscPage", helptext="Goto Osc 2"},
 			["Button 4-1"]={template="BAmpPage", helptext="Goto Mixer"},
 			["Button 5-1"]={template="BFilterPage", helptext="Goto Filter"},
-			["Button 1-8"]={template="BMainEffectPage"},
-			["Button 2-8"]={template="BEffectPage"},
-			["Button 3-8"]={template="BEffectPage"},
-			["Button 4-8"]={template="BEffectPage"},
-			["Button 5-8"]={template="BEffectPage"},
-			["Button 6-8"]={template="BEffectPage"},
-			["Button 7-8"]={template="BEffectPage"},
-			["Button 8-8"]={template="BEffectPage"},
 		},
 		["Index"]={
 			["Button 8-1"]={template="BPerformancePage"},
@@ -2304,17 +2317,33 @@ local item_conf_map = {
 			["Button 6-7"]={template="BGreenOnOff"},
 			["Button 7-7"]={template="BGreenOnOff"},
 			["Button 8-7"]={template="BGreenOnOff"},
+			["Button 1-8"]={template="BMainEffectPage"},
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 5-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
+			["Button 8-8"]={template="BEffectPage"},
 		},
 		["EQ/Bass"]={ --EQBass
 			["Button 1-1"]={template="BGreenOnOff"},
 			["UDVButton 3-1_4-1"]={template="UDGreen"},
 			["UDVButton 5-1_6-1"]={template="UDOrange"},
-			["Fader 2"]={template="UDRed"},
-			["Fader 3"]={template="UDGreen"},
-			["Fader 4"]={template="UDOrange"},
-			["Fader 5"]={template="UDRed"},
-			["Fader 6"]={template="UDRed"},
-			["Fader 7"]={template="UDOrange"},
+			["Fader 2"]={template="FRed"},
+			["Fader 3"]={template="FGreen"},
+			["Fader 4"]={template="FOrange"},
+			["Fader 5"]={template="FRed"},
+			["Fader 6"]={template="FRed"},
+			["Fader 7"]={template="FOrange"},
+			["Button 1-8"]={template="BMainEffectPage"},
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 5-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
+			["Button 8-8"]={template="BEffectPage"},
 		},
 		["Dist"]={
 			["Button 1-1"]={template="BGreenOnOff"},
@@ -2326,6 +2355,14 @@ local item_conf_map = {
 			["Fader 5"]={template="FGreen"},
 			["Fader 6"]={template="FAmber"},
 			["Fader 7"]={template="FOrange"},
+			["Button 1-8"]={template="BMainEffectPage"},
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 5-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
+			["Button 8-8"]={template="BEffectPage"},
 		},
 		["Phaser"]={
 			["Button 1-1"]={template="BGreenOnOff"},
@@ -2337,6 +2374,14 @@ local item_conf_map = {
 			["Fader 5"]={template="FYellow"},
 			["Fader 6"]={template="FOrange"},
 			["Fader 7"]={template="FOrange"},
+			["Button 1-8"]={template="BMainEffectPage"},
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 5-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
+			["Button 8-8"]={template="BEffectPage"},
 		},
 		["Chorus"]={
 			["Button 1-1"]={template="BGreenOnOff"},
@@ -2346,6 +2391,14 @@ local item_conf_map = {
 			["Fader 5"]={template="FYellow"},
 			["Fader 6"]={template="FOrange"},
 			["Fader 7"]={template="FOrange"},
+			["Button 1-8"]={template="BMainEffectPage"},
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 5-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
+			["Button 8-8"]={template="BEffectPage"},
 		},
 		["Delay"]={
 			["Button 1-1"]={template="BGreenOnOff"},
@@ -2357,6 +2410,14 @@ local item_conf_map = {
 			["Fader 5"]={template="FGreen"},
 			["Fader 6"]={template="FAmber"},
 			["Fader 7"]={template="FOrange"},
+			["Button 1-8"]={template="BMainEffectPage"},
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 5-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
+			["Button 8-8"]={template="BEffectPage"},
 		},
 		["Reverb"]={
 			["Button 1-1"]={template="BGreenOnOff"},
@@ -2367,6 +2428,14 @@ local item_conf_map = {
 			["Fader 5"]={template="FGreen"},
 			["Fader 6"]={template="FYellow"},
 			["Fader 7"]={template="FOrange"},
+			["Button 1-8"]={template="BMainEffectPage"},
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 5-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
+			["Button 8-8"]={template="BEffectPage"},
 		},
 		["Comp"]={
 			["Button 1-1"]={template="BGreenOnOff"},
@@ -2375,6 +2444,14 @@ local item_conf_map = {
 			["Fader 4"]={template="FAmber"},
 			["Fader 5"]={template="FAmber"},
 			["Fader 7"]={template="FOrange"},
+			["Button 1-8"]={template="BMainEffectPage"},
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 5-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
+			["Button 8-8"]={template="BEffectPage"},
 		},
 		["LFO *"]={
                         ["Fader 3"]={template="FGreen"},
@@ -2735,13 +2812,6 @@ local item_conf_map = {
 		["Default"]={
 			["Button 1-1"]={template="BMainPage", helptext="Goto Main"},
 			["Button 1-2"]={template="BRedOnOff"},
-			["Button 1-8"]={template="BMainEffectPage"},
-			["Button 2-8"]={template="BEffectPage"},
-			["Button 3-8"]={template="BEffectPage"},
-			["Button 4-8"]={template="BEffectPage"},
-			["Button 5-8"]={template="BEffectPage"},
-			["Button 6-8"]={template="BEffectPage"},
-			["Button 7-8"]={template="BEffectPage"},
 		},
 		["Main"]={
 			["Fader 3"]={template="FYellow"},
@@ -2863,6 +2933,13 @@ local item_conf_map = {
 			["Button 5-7"]={template="BRedOnOff"},
 			["Button 6-7"]={template="BRedOnOff"},
 			["Button 7-7"]={template="BRedOnOff"},
+			["Button 1-8"]={template="BMainEffectPage"},
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 5-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
 		},
 		["Phaser"]={
 			["UDVButton 5-1_6-1"]={template="UDOrange"},
@@ -2870,17 +2947,38 @@ local item_conf_map = {
 			["Fader 5"]={template="FGreen"},
 			["Fader 6"]={template="FOrange"},
 			["Fader 7"]={template="FAmber"},
+			["Button 1-8"]={template="BMainEffectPage"},
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 5-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
 		},
 		["Dist"]={
 			["UDVButton 5-1_6-1"]={template="UDOrange"},
 			["Fader 4"]={template="FOrange"},
 			["Fader 5"]={template="FGreen"},
 			["Fader 7"]={template="FAmber"},
+			["Button 1-8"]={template="BMainEffectPage"},
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 5-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
 		},
 		["Eq"]={
 			["Fader 4"]={template="FGreen"},
 			["Fader 5"]={template="FYellow"},
 			["Fader 7"]={template="FAmber"},
+			["Button 1-8"]={template="BMainEffectPage"},
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 5-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
 		},
 		["Delay"]={
 			["Button 4-1"]={template="BRedOnOff"},
@@ -2889,18 +2987,39 @@ local item_conf_map = {
 			["Fader 4"]={template="FOrange"},
 			["Fader 5"]={template="FOrange"},
 			["Fader 7"]={template="FAmber"},
+			["Button 1-8"]={template="BMainEffectPage"},
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 5-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
 		},
 		["Comp"]={
 			["Fader 3"]={template="FYellow"},
 			["Fader 4"]={template="FYellow"},
 			["Fader 6"]={template="FOrange"},
 			["Fader 7"]={template="FOrange"},
+			["Button 1-8"]={template="BMainEffectPage"},
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 5-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
 		},
 		["Reverb"]={
 			["Fader 3"]={template="FGreen"},
 			["Fader 4"]={template="FOrange"},
 			["Fader 5"]={template="FYellow"},
 			["Fader 7"]={template="FAmber"},
+			["Button 1-8"]={template="BMainEffectPage"},
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+			["Button 5-8"]={template="BEffectPage"},
+			["Button 6-8"]={template="BEffectPage"},
+			["Button 7-8"]={template="BEffectPage"},
 		},
 		["Mod Matrix *"]={
 			["Button 1-1"]={template="BPerformancePage"},
@@ -3740,6 +3859,7 @@ local items = {
 	{name = "PatchName", output = "text" },
 	{name = "PageName", output = "text" },
 	{name = "SubPageName", output = "text" },
+	{name = "DocPageName", output = "text" },
 	{name = "PlayingStep", output = "text" },
 	{name = "KeyboardMode", output = "text" },
 	{name = "KbdVel", output = "text" },
@@ -3825,7 +3945,10 @@ end
 function get_item_bvmap(itemname)
 	local itemtype = string.match(itemname, "(.+%w)%s*%d")
 
-	local item_conf_map = get_item_conf_map(itemname, g_colorscheme, get_current_page())
+	local currentpage = get_current_page()
+	local scope = g_colorscheme
+
+	local item_conf_map = get_item_conf_map(itemname, scope, currentpage)
 
 	if(item_conf_map.bvmap ~= nil) then
 		itemtype = item_conf_map.bvmap
@@ -3844,6 +3967,11 @@ function get_item_conf_map(itemname, context, page)
 	end
 	
 	if(item_conf_map[context] == nil) then
+		context = "Default"
+	end
+
+	if(string.match(itemname, "Button [A-H]")) then
+		page = get_current_docpage()
 		context = "Default"
 	end
 
@@ -4198,6 +4326,16 @@ function get_current_subpage()
 	end
 
 	return subpagename
+end
+
+function get_current_docpage()
+	local pagename = "Unknown"
+
+	if(remote.is_item_enabled(itemsindex["DocPageName"])) then
+		pagename = remote.get_item_text_value(itemsindex["DocPageName"])
+	end
+
+	return pagename
 end
 
 function lightshow_bars(buttonname, cyclelength, orientation) 
@@ -4572,29 +4710,36 @@ function remote_deliver_midi(maxbytes, port)
 		table.insert(ret_events, remote.make_midi(string.format("%s %02x", MIDI_OUT_DOUBLEBUFF, bit.bor(newdisp,newupdate,DBCOPY))))
 	end
 
-	if(remote.get_item_value(itemsindex["Button A"]) > 0) then
-		if(g_startbar) then
-			g_barupdatetime = remote.get_time_ms()
-			g_startbar = false	
-			g_barupdate = true
-			table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button A"], bit.bor(RED, COPY))))
-		elseif(g_startbeat) then
-			g_beatupdatetime = remote.get_time_ms()
-			g_startbeat = false	
-			g_beatupdate = true
-			table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button A"], bit.bor(WAMBER, COPY))))
-		end
-	
-		if(g_barupdate) then
-			if(g_barupdatetime + 200 < remote.get_time_ms()) then
-				g_barupdate = false
-				table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button A"], bit.bor(WGREEN, COPY))))
+	if(get_current_docpage() == "Transport") then
+		if(remote.get_item_value(itemsindex["Button A"]) > 0) then
+			if(g_startbar) then
+				g_barupdatetime = remote.get_time_ms()
+				g_startbar = false	
+				g_barupdate = true
+				table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button A"], bit.bor(RED, COPY))))
+			elseif(g_startbeat) then
+				g_beatupdatetime = remote.get_time_ms()
+				g_startbeat = false	
+				g_beatupdate = true
+				table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button A"], bit.bor(WAMBER, COPY))))
 			end
-		elseif(g_beatupdate) then
-			if(g_beatupdatetime + 200 < remote.get_time_ms()) then
-				g_beatupdate = false
-				table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button A"], bit.bor(WGREEN, COPY))))
+		
+			if(g_barupdate) then
+				if(g_barupdatetime + 200 < remote.get_time_ms()) then
+					g_barupdate = false
+					table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button A"], bit.bor(WGREEN, COPY))))
+				end
+			elseif(g_beatupdate) then
+				if(g_beatupdatetime + 200 < remote.get_time_ms()) then
+					g_beatupdate = false
+					table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button A"], bit.bor(WGREEN, COPY))))
+				end
 			end
+		else
+			g_startbar = false
+			g_startbeat = false
+			g_barupdate = false
+			g_beatupdate = false
 		end
 	else
 		g_startbar = false
@@ -4879,6 +5024,8 @@ function remote_process_midi(event)
 					g_scrolltext = remote.get_item_text_value(itemsindex["PatchName"])
 				elseif(itemname == "Button C7") then
 					g_scrolltext = get_current_page()
+				elseif(itemname == "Button H") then
+					g_scrolltext = get_current_docpage()
 				elseif(itemname == "Button C8") then
 					g_valuemode = true
 					g_startflashing = true
