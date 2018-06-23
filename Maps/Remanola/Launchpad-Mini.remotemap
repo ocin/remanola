@@ -67,10 +67,11 @@ Map	Button 3-8		Page=MasterSend			Index
 Map	Button 4-8		Page=MasterInsert			Index
 Map	Button 8-1		Previous 8 Remote Base Channel				Index
 Map	Button 8-2		Next 8 Remote Base Channel				Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	SubPageName		"Vu" 				Main	Vu
@@ -307,10 +308,11 @@ Map	Button 6-8		Page=Filter			Index
 Map	Button 7-7		Page=Send1			Index
 Map	Button 7-8		Page=Send2			Index
 Map	Button 8-8		Page=Insert			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	Button 1-1		Mute			Main
@@ -440,7 +442,7 @@ Map	Button C7		Page=Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-7		Page=Keyboard			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -474,6 +476,7 @@ Map	Knob V1		Pitch Bend			Keyboard	PitchBend
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -559,10 +562,11 @@ Map	Button 6-6		Page=GlobalEnv			Index
 Map	Button 2-8		Page=Shaper			Index
 Map	Button 3-8		Page=Delay			Index
 Map	Button 4-8		Page=Chorus			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main page
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-2_2-2		Polyphony 			Main
@@ -1157,10 +1161,11 @@ Map	Button 1-7		Page=Keyboard			Index
 Map	Button 2-5		Page=Filter			Index
 Map	Button 2-6		Page=FilterEnv			Index
 Map	Button 5-5		Page=LFO			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-2_2-2		Trigger Next Setting			Main
@@ -1241,10 +1246,11 @@ Map	Button C7		Page=Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-5		Page=Pattern			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	Button 5-1		Page=Main			Main
@@ -1335,10 +1341,11 @@ Map	Knob V1		Pitch Bend			Keyboard	PitchBend
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-7		Page=Keyboard			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	Button 7-1		Select Previous Category			Main
@@ -1412,10 +1419,11 @@ Map	Button 2-6		Page=FilterEnv			Index
 Map	Button 5-5		Page=ModA			Index
 Map	Button 6-5		Page=ModB			Index
 Map	Button 2-8		Page=Shaper			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	Button 1-1		Page=Main			Main
@@ -1570,7 +1578,7 @@ Map	Button 2-1		Page=Osc			Index
 Map	Button 2-5		Page=Filter			Index
 Map	Button 2-6		Page=FilterEnv			Index
 Map	Button 5-5		Page=LFO			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -1605,6 +1613,7 @@ Map	UDVButton 1-3_2-3		Pitch Bend Range 			Keyboard	PitchBend
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	Fader 1		Portamento 				Main
@@ -1695,7 +1704,7 @@ Map	Button C7		Page=Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-7		Page=Keyboard			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -1729,6 +1738,7 @@ Map	Knob V1		Pitch Bend			Keyboard	PitchBend
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	Fader 1		External Controller				Main
@@ -1768,10 +1778,11 @@ Map	Button 8-1		Page=Drum1			Index
 Map	Button 8-2		Page=Drum2			Index
 Map	Button 8-3		Page=Drum3			Index
 Map	Button 8-4		Page=Drum4			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	Button 3-5		EditMode=Rotate			Main
@@ -2406,10 +2417,11 @@ Map	Button 8-5		Page=Pad1			Index
 Map	Button 8-6		Page=Pad2			Index
 Map	Button 8-7		Page=Pad3			Index
 Map	Button 8-8		Page=Pad4			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	Button 5-1		Pad 13 Hit Indication			Main
@@ -3955,10 +3967,11 @@ Map	Button 2-6		Page=FilterEnv			Index
 Map	Button 5-5		Page=LFO1			Index
 Map	Button 6-5		Page=LFO2			Index
 Map	Button 5-6		Page=ModEnv			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	Button 1-1		Page=Main			Main
@@ -4149,10 +4162,11 @@ Map	Button C7		Page=Index
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	Button 3-1		Pattern Enable			Main
@@ -4260,10 +4274,11 @@ Map	Button 4-8		Page=ModFilter			Index
 Map	Button 5-8		Page=Speaker			Index
 Map	Button 6-8		Page=Reverb			Index
 Map	Button 7-8		Page=Delay			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	Button 1-1		Note On Indicator			Main
@@ -5008,10 +5023,11 @@ Map	Button 8-8		Page=Comp			Index
 Map	Button 5-5		Page=LFO1			Index
 Map	Button 6-5		Page=LFO2			Index
 Map	Button 5-6		Page=ModEnv			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 7-2_8-2		Polyphony				Main
@@ -5368,10 +5384,11 @@ Map	Button 5-1		Page=OP3			Index
 Map	Button 6-1		Page=OP2			Index
 Map	Button 7-1		Page=OP1			Index
 Map	Button 5-5		Page=LFO			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-2_2-2		Algorithm				Main
@@ -5552,10 +5569,11 @@ Map	Button 8-5		Page=ModMatrix5			Index
 Map	Button 8-6		Page=ModMatrix6			Index
 Map	Button 8-7		Page=ModMatrix7			Index
 Map	Button 8-8		Page=ModMatrix8			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 7-1_8-1		Pitch Bend Range				Main
@@ -5901,10 +5919,11 @@ Map	Button 4-8		Page=Eq			Index
 Map	Button 5-8		Page=Delay			Index
 Map	Button 6-8		Page=Comp			Index
 Map	Button 7-8		Page=Reverb			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	Button 1-1		Page=Main			Main
@@ -6589,10 +6608,11 @@ Map	Button 4-8		Page=Eq			Index
 Map	Button 5-8		Page=Delay			Index
 Map	Button 6-8		Page=Comp			Index
 Map	Button 7-8		Page=Reverb			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-2_2-2		Key Mode			Main
@@ -7052,10 +7072,11 @@ Map	Button 4-1		Page=Mechanics			Index
 Map	Button 2-8		Page=Eq			Index
 Map	Button 3-8		Page=Ambience			Index
 Map	Button 4-8		Page=Output			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	Meter 2		Sustain Pedal			Main
@@ -7157,10 +7178,11 @@ Map	Button C7		Page=Index
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -7189,10 +7211,11 @@ Map	Button 1-1		Page=Main			Index
 Map	Button 2-5		Page=Filter			Index
 Map	Button 2-6		Page=Follower			Index
 Map	Button 2-8		Page=Tremor			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -7246,10 +7269,11 @@ Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-2		Page=Cut			Index
 Map	Button 2-8		Page=Body			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -7293,10 +7317,11 @@ Map	Button 2-8		Page=Delay			Index
 Map	Button 3-8		Page=Feedback			Index
 Map	Button 4-8		Page=Color			Index
 Map	Button 5-5		Page=Modulation			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -7359,10 +7384,11 @@ Map	Button 1-1		Page=Main			Index
 Map	Button 2-8		Page=Reverb			Index
 Map	Button 3-8		Page=Eq			Index
 Map	Button 4-8		Page=Gate			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -7527,10 +7553,11 @@ Map	Button 4-8		Page=LPEffects			Index
 Map	Button 6-8		Page=Delay			Index
 Map	Button 7-8		Page=Phaser			Index
 Map	Button 5-5		Page=LFO			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -7675,10 +7702,11 @@ Map	Button C7		Page=Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 2-8		Page=Eq			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -7710,10 +7738,11 @@ Map	Button C7		Page=Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 2-8		Page=Eq			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -7749,10 +7778,11 @@ Map	Button 2-5		Page=Filter			Index
 Map	Button 2-8		Page=Dist			Index
 Map	Button 3-8		Page=Delay			Index
 Map	Button 4-8		Page=Reverb			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -7826,10 +7856,11 @@ Map	Button 3-8		Page=Band9-16			Index	16Band
 Map	Button 3-8		Page=Band9-16			Index	32Band
 Map	Button 4-8		Page=Band17-24			Index	32Band
 Map	Button 5-8		Page=Band25-32			Index	32Band
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -7927,10 +7958,11 @@ Map	Button 2-8		Page=Low			Index
 Map	Button 3-8		Page=Param1			Index
 Map	Button 4-8		Page=Param2			Index
 Map	Button 5-8		Page=Hi			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -7977,10 +8009,11 @@ Map	Button C7		Page=Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 2-8		Page=Env			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8012,10 +8045,11 @@ Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 2-8		Page=Limiter			Index
 Map	Button 3-8		Page=SoftCLip			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8048,10 +8082,11 @@ Map	Button C7		Page=Index
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8078,10 +8113,11 @@ Map	Button 1-1		Page=Main			Index
 Map	Button 2-8		Page=PitchAdjust			Index
 Map	Button 3-8		Page=Transpose			Index
 Map	Button 4-8		Page=Formant			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8120,10 +8156,11 @@ Map	Button C7		Page=Index
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8146,10 +8183,11 @@ Map	Button C7		Page=Index
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	Sel1_0		DelayUnit=MS			Main
@@ -8175,10 +8213,11 @@ Map	Button C7		Page=Index
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8198,10 +8237,11 @@ Map	Button C7		Page=Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 2-6		Page=FilterEnvelope			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8229,10 +8269,11 @@ Map	Button C7		Page=Index
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8256,10 +8297,11 @@ Map	Button C7		Page=Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 5-5		Page=LFO			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8285,10 +8327,11 @@ Map	Button C7		Page=Index
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8308,10 +8351,11 @@ Map	Button C7		Page=Index
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8334,10 +8378,11 @@ Map	Button C7		Page=Index
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	Sel1_0		FilterB=Off			Main
@@ -8366,10 +8411,11 @@ Map	Button C7		Page=Index
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8400,10 +8446,11 @@ Map	Button 3-8		Page=Shifter1			Index
 Map	Button 4-8		Page=ShifterVol1			Index
 Map	Button 5-8		Page=Shifter2			Index
 Map	Button 6-8		Page=ShifterVol2			Index
-Map	Button H		Page=Internal			Index
+Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main

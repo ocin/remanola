@@ -499,10 +499,11 @@ local item_conf_map = {
 			["Button C4"]={enabledcolor=GREEN,    activecolor=GREEN,   disabledcolor=NOCOLOR},
 			["Button C5"]={enabledcolor=WGREEN,     activecolor=GREEN,   disabledcolor=NOCOLOR},
 			["Button C6"]={enabledcolor=WAMBER,     activecolor=GREEN,   disabledcolor=NOCOLOR},
-			["Button C7"]={enabledcolor=RED,      activecolor=RED,     disabledcolor=NOCOLOR},
+			["Button C7"]={enabledcolor=WAMBER,      activecolor=AMBER,     disabledcolor=NOCOLOR},
 			["Button C8"]={enabledcolor=YELLOW,      activecolor=RED,     disabledcolor=GREEN},
 		},
 		["Index"]={
+			["Button C7"]={enabledcolor=AMBER,      activecolor=AMBER,     disabledcolor=NOCOLOR},
 			["Button 1-1"]={template="BMainPage", helptext="Goto Main"},
 			["Button 2-1"]={template="BOscPage"},
 			["Button 3-1"]={template="BOscPage"},
@@ -576,6 +577,7 @@ local item_conf_map = {
 			["Button 8-8"]={template="BEffectPage"},
 		},
 		["Internal"]={
+			["Button C7"]={enabledcolor=RED,      activecolor=RED,     disabledcolor=NOCOLOR},
 			["Button 1-1"]={template="BMainPage"},
 			["Button 1-6"]={enabledcolor=NOCOLOR,    activecolor=GREEN,  disabledcolor=GREEN},
 			["Button 1-7"]={enabledcolor=NOCOLOR,    activecolor=GREEN,  disabledcolor=GREEN},
@@ -4880,9 +4882,6 @@ function remote_process_midi(event)
 				elseif(itemname == "Button C8") then
 					g_valuemode = true
 					g_startflashing = true
-				-- This is used to debug a value
-				elseif(itemname == "Button H") then
-					g_scrolltext = tostring(remote.get_item_value(itemsindex["Button 5-8"]))
 				else
 					g_scrolltext = remote.get_item_name(itemsindex[itemname])
 				end
