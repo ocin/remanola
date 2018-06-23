@@ -435,6 +435,7 @@ local color_templates = {
 	["BYellowOnOff"]={enabledcolor=WAMBER,   activecolor=YELLOW,  disabledcolor=NOCOLOR},
 	["BGreenOnOff"]={enabledcolor=WAMBER,   activecolor=GREEN,  disabledcolor=NOCOLOR},
 	["BAmberOnOff"]={enabledcolor=WAMBER,   activecolor=AMBER,  disabledcolor=NOCOLOR},
+	["BBGreenOnOff"]={enabledcolor=WGREEN,   activecolor=GREEN,  disabledcolor=NOCOLOR},
 	-- Red LED
 	["BRedLed"]={enabledcolor=WGREEN,   activecolor=RED,  disabledcolor=NOCOLOR},
 	-- Button Page
@@ -668,13 +669,13 @@ local item_conf_map = {
 			["Button 4-8"]={template="BWhitekey"},
 		},
 		["Transport"]={
-			["Button A"]={enabledcolor=WGREEN, activecolor=WGREEN, disabledcolor=NOCOLOR}, 
+			["Button A"]={enabledcolor=GREEN, activecolor=GREEN, disabledcolor=NOCOLOR}, 
 			["Button B"]={enabledcolor=ORANGE, activecolor=YELLOW, disabledcolor=NOCOLOR}, 
 			["Button C"]={enabledcolor=WRED, activecolor=RED, disabledcolor=NOCOLOR}, 
 			["Button D"]={enabledcolor=AMBER, activecolor=GREEN, disabledcolor=NOCOLOR}, 
 			["Button E"]={enabledcolor=AMBER, activecolor=GREEN, disabledcolor=NOCOLOR}, 
-			["Button F"]={template="BGreenOnOff"}, 
-			["Button G"]={template="BGreenOnOff"}, 
+			["Button F"]={template="BBGreenOnOff"}, 
+			["Button G"]={template="BBGreenOnOff"}, 
 			["Button H"]={enabledcolor=YELLOW, activecolor=YELLOW, disabledcolor=NOCOLOR},
 		
 		},
@@ -4907,12 +4908,12 @@ function remote_deliver_midi(maxbytes, port)
 			if(g_barupdate) then
 				if(g_barupdatetime + 200 < remote.get_time_ms()) then
 					g_barupdate = false
-					table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button A"], bit.bor(WGREEN, COPY))))
+					table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button A"], bit.bor(GREEN, COPY))))
 				end
 			elseif(g_beatupdate) then
 				if(g_beatupdatetime + 200 < remote.get_time_ms()) then
 					g_beatupdate = false
-					table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button A"], bit.bor(WGREEN, COPY))))
+					table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button A"], bit.bor(GREEN, COPY))))
 				end
 			end
 		else
