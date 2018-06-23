@@ -616,7 +616,7 @@ local item_conf_map = {
 			["Button 1-2"]={template="BPerformancePage"},
 			["Button 2-2"]={template="BPerformancePage"},
 			["Fader 1"]={template="FOrange"},
-			["Knob V1"]={template="FGreen"},
+			["Knob V1"]={template="FGreen", resetonrel=true},
 			["Button 1-4"]={template="BPerformancePage"},
 			["Button 1-5"]={template="BPerformancePage"},
 			["Button 1-6"]={template="BPerformancePage"},
@@ -4948,6 +4948,15 @@ function remote_process_midi(event)
 					local msg = { time_stamp = event.time_stamp, item = itemsindex["Knob V"..i], value = value }
 					remote.handle_input(msg)
 					return true
+				end
+
+				if(get_item_conf_map("Knob V"..i,g_colorscheme, get_current_page()).resetonrel) then
+					button = remote.match_midi("90 x"..tostring(i-1).." 00", event)
+					if(button ~= nil) then
+						local msg = { time_stamp = event.time_stamp, item = itemsindex["Knob V"..i], value = 64 }
+						remote.handle_input(msg)
+						return true
+					end
 				end
 			end
 		end
