@@ -498,8 +498,8 @@ local item_conf_map = {
 			["Button C2"]={enabledcolor=ORANGE,   activecolor=ORANGE,  disabledcolor=NOCOLOR},
 			["Button C3"]={enabledcolor=GREEN,    activecolor=GREEN,   disabledcolor=NOCOLOR},
 			["Button C4"]={enabledcolor=GREEN,    activecolor=GREEN,   disabledcolor=NOCOLOR},
-			["Button C5"]={enabledcolor=WGREEN,     activecolor=GREEN,   disabledcolor=NOCOLOR},
-			["Button C6"]={enabledcolor=WAMBER,     activecolor=GREEN,   disabledcolor=NOCOLOR},
+			["Button C5"]={enabledcolor=WRED,     activecolor=RED,   disabledcolor=NOCOLOR},
+			["Button C6"]={enabledcolor=WGREEN,     activecolor=GREEN,   disabledcolor=NOCOLOR},
 			["Button C7"]={enabledcolor=WAMBER,      activecolor=AMBER,     disabledcolor=NOCOLOR},
 			["Button C8"]={enabledcolor=YELLOW,      activecolor=RED,     disabledcolor=GREEN},
 		},
@@ -613,7 +613,6 @@ local item_conf_map = {
 			["Button 8-4"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=GREEN3},
 		},
 		["Keyboard"]={
-			["Button C5"]={enabledcolor=GREEN,     activecolor=GREEN,   disabledcolor=NOCOLOR},
 			["Button 1-2"]={template="BPerformancePage"},
 			["Button 2-2"]={template="BPerformancePage"},
 			["Fader 1"]={template="FOrange"},
@@ -4151,7 +4150,7 @@ function get_item_conf_map(itemname, context, page)
 		context = "Default"
 	end
 
-	if(string.match(itemname, "Button [A-H]")) then
+	if(string.match(itemname, "Button [A-H]$")) then
 		page = get_current_docpage()
 		context = "Default"
 	end
