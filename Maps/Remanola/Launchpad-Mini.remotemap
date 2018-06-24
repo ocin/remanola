@@ -5948,6 +5948,64 @@ Map	Button 1-6		Osc1 SyncPhase			Eng1
 Map	UDVButton 7-6_8-6		Osc1 Shape Source				Eng1
 Map	Fader 7		Osc1 Shape Amt				Eng1
 Map	Fader 8		Osc1 Shape Vel				Eng1
+// Eng 1 Modifier 1
+Map	PageName		"Eng 1 Mod 1" 				Eng1Mod1
+Map	Button 1-1		Page=Main			Eng1Mod1
+Map	Button 2-1		Page=Eng1Mod1			Eng1Mod1
+Map	Button 3-1		Page=Eng2Mod1			Eng1Mod1
+Map	Button 4-1		Page=Eng3Mod1			Eng1Mod1
+Map	Button 1-2		Osc1 Mod1 On			Eng1Mod1
+Map	UDVButton 1-3_2-3		Osc1 Mod1				Eng1Mod1
+Map	Fader 4		Osc1 Mod1 Amt				Eng1Mod1
+Map	Fader 5		Osc1 Mod1 Mod				Eng1Mod1
+Map	UDVButton 7-6_8-6		Osc1 Mod1 Source				Eng1Mod1
+// Eng 1 Modifier 2
+Map	PageName		"Eng 1 Mod 2" 				Eng1Mod2
+Map	Button 1-1		Page=Main			Eng1Mod2
+Map	Button 2-1		Page=Eng1Mod2			Eng1Mod2
+Map	Button 3-1		Page=Eng2Mod2			Eng1Mod2
+Map	Button 4-1		Page=Eng3Mod2			Eng1Mod2
+Map	Button 1-2		Osc1 Mod2 On			Eng1Mod2
+Map	UDVButton 1-3_2-3		Osc1 Mod2				Eng1Mod2
+Map	Fader 4		Osc1 Mod2 Amt				Eng1Mod2
+Map	Fader 5		Osc1 Mod2 Mod				Eng1Mod2
+Map	UDVButton 7-6_8-6		Osc1 Mod2 Source				Eng1Mod2
+// Eng 1 Spectral Filter
+Map	PageName		"Eng 1 Spectral Filter" 				Eng1Filter
+Map	Button 1-1		Page=Main			Eng1Filter
+Map	Button 2-1		Page=Eng1Filter			Eng1Filter
+Map	Button 3-1		Page=Eng2Filter			Eng1Filter
+Map	Button 4-1		Page=Eng3Filter			Eng1Filter
+Map	Button 1-2		Osc1 Filter On			Eng1Filter
+Map	UDVButton 3-2_4-2		Osc1 Filter				Eng1Filter
+Map	Fader 3		Osc1 Filter Freq				Eng1Filter
+Map	Fader 4		Osc1 Filter Reso				Eng1Filter
+Map	Fader 5		Osc1 Filter Kbd				Eng1Filter
+Map	Fader 6		Osc1 Filter Mod				Eng1Filter
+Map	UDVButton 7-7_8-7		Osc1 Filter Source				Eng1Filter
+Map	Fader 8		Osc1 Filter Vel				Eng1Filter
+// Eng 1 Harmonics
+Map	PageName		"Eng 1 Harmonics" 				Eng1Harm
+Map	Button 1-1		Page=Main			Eng1Harm
+Map	Button 2-1		Page=Eng1Harm			Eng1Harm
+Map	Button 3-1		Page=Eng2Harm			Eng1Harm
+Map	Button 4-1		Page=Eng3Harm			Eng1Harm
+Map	Button 1-2		Osc1 Harm On			Eng1Harm
+Map	UDVButton 1-3_2-3		Osc1 Harm				Eng1Harm
+Map	Fader 4		Osc1 Harm Pos				Eng1Harm
+Map	Fader 5		Osc1 Harm Amt				Eng1Harm
+// Eng 1 Unison
+Map	PageName		"Eng 1 Unison" 				Eng1Unison
+Map	Button 1-1		Page=Main			Eng1Unison
+Map	Button 2-1		Page=Eng1Unison			Eng1Unison
+Map	Button 3-1		Page=Eng2Unison			Eng1Unison
+Map	Button 4-1		Page=Eng3Unison			Eng1Unison
+Map	Button 1-2		Osc1 Unison On			Eng1Unison
+Map	UDVButton 1-3_2-3		Osc1 Unison Mode				Eng1Unison
+Map	UDVButton 1-4_2-4		Osc1 Count				Eng1Unison
+Map	Fader 5		Osc1 Blend				Eng1Unison
+Map	Fader 6		Osc1 Detune				Eng1Unison
+Map	Fader 7		Osc1 Spread				Eng1Unison
 // Eng 2
 Map	PageName		"Eng 2" 				Eng2
 Map	Button 1-1		Page=Main			Eng2
@@ -5965,6 +6023,64 @@ Map	Button 1-6		Osc2 SyncPhase			Eng2
 Map	UDVButton 7-6_8-6		Osc2 Shape Source				Eng2
 Map	Fader 7		Osc2 Shape Amt				Eng2
 Map	Fader 8		Osc2 Shape Vel				Eng2
+// Eng 2 Modifier 1
+Map	PageName		"Eng 2 Mod 1" 				Eng2Mod1
+Map	Button 1-1		Page=Main			Eng2Mod1
+Map	Button 2-1		Page=Eng1Mod1			Eng2Mod1
+Map	Button 3-1		Page=Eng2Mod1			Eng2Mod1
+Map	Button 4-1		Page=Eng3Mod1			Eng2Mod1
+Map	Button 1-2		Osc2 Mod1 On			Eng2Mod1
+Map	UDVButton 1-3_2-3		Osc2 Mod1				Eng2Mod1
+Map	Fader 4		Osc2 Mod1 Amt				Eng2Mod1
+Map	Fader 5		Osc2 Mod1 Mod				Eng2Mod1
+Map	UDVButton 7-6_8-6		Osc2 Mod1 Source				Eng2Mod1
+// Eng 2 Modifier 2
+Map	PageName		"Eng 2 Mod 2" 				Eng2Mod2
+Map	Button 1-1		Page=Main			Eng2Mod2
+Map	Button 2-1		Page=Eng1Mod2			Eng2Mod2
+Map	Button 3-1		Page=Eng2Mod2			Eng2Mod2
+Map	Button 4-1		Page=Eng3Mod2			Eng2Mod2
+Map	Button 1-2		Osc2 Mod2 On			Eng2Mod2
+Map	UDVButton 1-3_2-3		Osc2 Mod2				Eng2Mod2
+Map	Fader 4		Osc2 Mod2 Amt				Eng2Mod2
+Map	Fader 5		Osc2 Mod2 Mod				Eng2Mod2
+Map	UDVButton 7-6_8-6		Osc2 Mod2 Source				Eng2Mod2
+// Eng 2 Spectral Filter
+Map	PageName		"Eng 2 Spectral Filter" 				Eng2Filter
+Map	Button 1-1		Page=Main			Eng2Filter
+Map	Button 2-1		Page=Eng1Filter			Eng2Filter
+Map	Button 3-1		Page=Eng2Filter			Eng2Filter
+Map	Button 4-1		Page=Eng3Filter			Eng2Filter
+Map	Button 1-2		Osc2 Filter On			Eng2Filter
+Map	UDVButton 3-2_4-2		Osc2 Filter				Eng2Filter
+Map	Fader 3		Osc2 Filter Freq				Eng2Filter
+Map	Fader 4		Osc2 Filter Reso				Eng2Filter
+Map	Fader 5		Osc2 Filter Kbd				Eng2Filter
+Map	Fader 6		Osc2 Filter Mod				Eng2Filter
+Map	UDVButton 7-7_8-7		Osc2 Filter Source				Eng2Filter
+Map	Fader 8		Osc2 Filter Vel				Eng2Filter
+// Eng 2 Harmonics
+Map	PageName		"Eng 2 Harmonics" 				Eng2Harm
+Map	Button 1-1		Page=Main			Eng2Harm
+Map	Button 2-1		Page=Eng1Harm			Eng2Harm
+Map	Button 3-1		Page=Eng2Harm			Eng2Harm
+Map	Button 4-1		Page=Eng3Harm			Eng2Harm
+Map	Button 1-2		Osc2 Harm On			Eng2Harm
+Map	UDVButton 1-3_2-3		Osc2 Harm				Eng2Harm
+Map	Fader 4		Osc2 Harm Pos				Eng2Harm
+Map	Fader 5		Osc2 Harm Amt				Eng2Harm
+// Eng 2 Unison
+Map	PageName		"Eng 2 Unison" 				Eng2Unison
+Map	Button 1-1		Page=Main			Eng2Unison
+Map	Button 2-1		Page=Eng1Unison			Eng2Unison
+Map	Button 3-1		Page=Eng2Unison			Eng2Unison
+Map	Button 4-1		Page=Eng3Unison			Eng2Unison
+Map	Button 1-2		Osc2 Unison On			Eng2Unison
+Map	UDVButton 1-3_2-3		Osc2 Unison Mode				Eng2Unison
+Map	UDVButton 1-4_2-4		Osc2 Count				Eng2Unison
+Map	Fader 5		Osc2 Blend				Eng2Unison
+Map	Fader 6		Osc2 Detune				Eng2Unison
+Map	Fader 7		Osc2 Spread				Eng2Unison
 // Eng 3
 Map	PageName		"Eng 3" 				Eng3
 Map	Button 1-1		Page=Main			Eng3
@@ -5982,105 +6098,33 @@ Map	Button 1-6		Osc3 SyncPhase			Eng3
 Map	UDVButton 7-6_8-6		Osc3 Shape Source				Eng3
 Map	Fader 7		Osc3 Shape Amt				Eng3
 Map	Fader 8		Osc3 Shape Vel				Eng3
-// Eng 1 Modifier 1
-Map	PageName		"Eng 1 Mod 1" 				Eng1Mod1
-Map	Button 1-1		Page=Main			Eng1Mod1
-Map	Button 2-1		Page=Eng1Mod1			Eng1Mod1
-Map	Button 3-1		Page=Eng2			Eng1Mod1
-Map	Button 4-1		Page=Eng3			Eng1Mod1
-Map	Button 1-2		Osc1 Mod1 On			Eng1Mod1
-Map	UDVButton 1-3_2-3		Osc1 Mod1				Eng1Mod1
-Map	Fader 4		Osc1 Mod1 Amt				Eng1Mod1
-Map	Fader 5		Osc1 Mod1 Mod				Eng1Mod1
-Map	UDVButton 7-6_8-6		Osc1 Mod1 Source				Eng1Mod1
-// Eng 2 Modifier 1
-Map	PageName		"Eng 2 Mod 1" 				Eng2Mod1
-Map	Button 1-1		Page=Main			Eng2Mod1
-Map	Button 2-1		Page=Eng1			Eng2Mod1
-Map	Button 3-1		Page=Eng2Mod1			Eng2Mod1
-Map	Button 4-1		Page=Eng3			Eng2Mod1
-Map	Button 1-2		Osc2 Mod1 On			Eng2Mod1
-Map	UDVButton 1-3_2-3		Osc2 Mod1				Eng2Mod1
-Map	Fader 4		Osc2 Mod1 Amt				Eng2Mod1
-Map	Fader 5		Osc2 Mod1 Mod				Eng2Mod1
-Map	UDVButton 7-6_8-6		Osc2 Mod1 Source				Eng2Mod1
 // Eng 3 Modifier 1
 Map	PageName		"Eng 3 Mod 1" 				Eng3Mod1
 Map	Button 1-1		Page=Main			Eng3Mod1
-Map	Button 2-1		Page=Eng1			Eng3Mod1
-Map	Button 3-1		Page=Eng2			Eng3Mod1
+Map	Button 2-1		Page=Eng1Mod1			Eng3Mod1
+Map	Button 3-1		Page=Eng2Mod1			Eng3Mod1
 Map	Button 4-1		Page=Eng3Mod1			Eng3Mod1
 Map	Button 1-2		Osc3 Mod1 On			Eng3Mod1
 Map	UDVButton 1-3_2-3		Osc3 Mod1				Eng3Mod1
 Map	Fader 4		Osc3 Mod1 Amt				Eng3Mod1
 Map	Fader 5		Osc3 Mod1 Mod				Eng3Mod1
 Map	UDVButton 7-6_8-6		Osc3 Mod1 Source				Eng3Mod1
-// Eng 1 Modifier 2
-Map	PageName		"Eng 1 Mod 2" 				Eng1Mod2
-Map	Button 1-1		Page=Main			Eng1Mod2
-Map	Button 2-1		Page=Eng1Mod2			Eng1Mod2
-Map	Button 3-1		Page=Eng2			Eng1Mod2
-Map	Button 4-1		Page=Eng3			Eng1Mod2
-Map	Button 1-2		Osc1 Mod2 On			Eng1Mod2
-Map	UDVButton 1-3_2-3		Osc1 Mod2				Eng1Mod2
-Map	Fader 4		Osc1 Mod2 Amt				Eng1Mod2
-Map	Fader 5		Osc1 Mod2 Mod				Eng1Mod2
-Map	UDVButton 7-6_8-6		Osc1 Mod2 Source				Eng1Mod2
-// Eng 2 Modifier 2
-Map	PageName		"Eng 2 Mod 2" 				Eng2Mod2
-Map	Button 1-1		Page=Main			Eng2Mod2
-Map	Button 2-1		Page=Eng1			Eng2Mod2
-Map	Button 3-1		Page=Eng2Mod2			Eng2Mod2
-Map	Button 4-1		Page=Eng3			Eng2Mod2
-Map	Button 1-2		Osc2 Mod2 On			Eng2Mod2
-Map	UDVButton 1-3_2-3		Osc2 Mod2				Eng2Mod2
-Map	Fader 4		Osc2 Mod2 Amt				Eng2Mod2
-Map	Fader 5		Osc2 Mod2 Mod				Eng2Mod2
-Map	UDVButton 7-6_8-6		Osc2 Mod2 Source				Eng2Mod2
 // Eng 3 Modifier 2
 Map	PageName		"Eng 3 Mod 2" 				Eng3Mod2
 Map	Button 1-1		Page=Main			Eng3Mod2
-Map	Button 2-1		Page=Eng1			Eng3Mod2
-Map	Button 3-1		Page=Eng2			Eng3Mod2
+Map	Button 2-1		Page=Eng1Mod2			Eng3Mod2
+Map	Button 3-1		Page=Eng2Mod2			Eng3Mod2
 Map	Button 4-1		Page=Eng3Mod2			Eng3Mod2
 Map	Button 1-2		Osc3 Mod2 On			Eng3Mod2
 Map	UDVButton 1-3_2-3		Osc3 Mod2				Eng3Mod2
 Map	Fader 4		Osc3 Mod2 Amt				Eng3Mod2
 Map	Fader 5		Osc3 Mod2 Mod				Eng3Mod2
 Map	UDVButton 7-6_8-6		Osc3 Mod2 Source				Eng3Mod2
-// Eng 1 Spectral Filter
-Map	PageName		"Eng 1 Spectral Filter" 				Eng1Filter
-Map	Button 1-1		Page=Main			Eng1Filter
-Map	Button 2-1		Page=Eng1Filter			Eng1Filter
-Map	Button 3-1		Page=Eng2			Eng1Filter
-Map	Button 4-1		Page=Eng3			Eng1Filter
-Map	Button 1-2		Osc1 Filter On			Eng1Filter
-Map	UDVButton 3-2_4-2		Osc1 Filter				Eng1Filter
-Map	Fader 3		Osc1 Filter Freq				Eng1Filter
-Map	Fader 4		Osc1 Filter Reso				Eng1Filter
-Map	Fader 5		Osc1 Filter Kbd				Eng1Filter
-Map	Fader 6		Osc1 Filter Mod				Eng1Filter
-Map	UDVButton 7-7_8-7		Osc1 Filter Source				Eng1Filter
-Map	Fader 8		Osc1 Filter Vel				Eng1Filter
-// Eng 2 Spectral Filter
-Map	PageName		"Eng 2 Spectral Filter" 				Eng2Filter
-Map	Button 1-1		Page=Main			Eng2Filter
-Map	Button 2-1		Page=Eng1			Eng2Filter
-Map	Button 3-1		Page=Eng2Filter			Eng2Filter
-Map	Button 4-1		Page=Eng3			Eng2Filter
-Map	Button 1-2		Osc2 Filter On			Eng2Filter
-Map	UDVButton 3-2_4-2		Osc2 Filter				Eng2Filter
-Map	Fader 3		Osc2 Filter Freq				Eng2Filter
-Map	Fader 4		Osc2 Filter Reso				Eng2Filter
-Map	Fader 5		Osc2 Filter Kbd				Eng2Filter
-Map	Fader 6		Osc2 Filter Mod				Eng2Filter
-Map	UDVButton 7-7_8-7		Osc2 Filter Source				Eng2Filter
-Map	Fader 8		Osc2 Filter Vel				Eng2Filter
 // Eng 3 Spectral Filter
 Map	PageName		"Eng 3 Spectral Filter" 				Eng3Filter
 Map	Button 1-1		Page=Main			Eng3Filter
-Map	Button 2-1		Page=Eng1			Eng3Filter
-Map	Button 3-1		Page=Eng2			Eng3Filter
+Map	Button 2-1		Page=Eng1Filter			Eng3Filter
+Map	Button 3-1		Page=Eng2Filter			Eng3Filter
 Map	Button 4-1		Page=Eng3Filter			Eng3Filter
 Map	Button 1-2		Osc3 Filter On			Eng3Filter
 Map	UDVButton 3-2_4-2		Osc3 Filter				Eng3Filter
@@ -6090,65 +6134,21 @@ Map	Fader 5		Osc3 Filter Kbd				Eng3Filter
 Map	Fader 6		Osc3 Filter Mod				Eng3Filter
 Map	UDVButton 7-7_8-7		Osc3 Filter Source				Eng3Filter
 Map	Fader 8		Osc3 Filter Vel				Eng3Filter
-// Eng 1 Harmonics
-Map	PageName		"Eng 1 Harmonics" 				Eng1Harm
-Map	Button 1-1		Page=Main			Eng1Harm
-Map	Button 2-1		Page=Eng1Harm			Eng1Harm
-Map	Button 3-1		Page=Eng2			Eng1Harm
-Map	Button 4-1		Page=Eng3			Eng1Harm
-Map	Button 1-2		Osc1 Harm On			Eng1Harm
-Map	UDVButton 1-3_2-3		Osc1 Harm				Eng1Harm
-Map	Fader 4		Osc1 Harm Pos				Eng1Harm
-Map	Fader 5		Osc1 Harm Amt				Eng1Harm
-// Eng 2 Harmonics
-Map	PageName		"Eng 2 Harmonics" 				Eng2Harm
-Map	Button 1-1		Page=Main			Eng2Harm
-Map	Button 2-1		Page=Eng1			Eng2Harm
-Map	Button 3-1		Page=Eng2Harm			Eng2Harm
-Map	Button 4-1		Page=Eng3			Eng2Harm
-Map	Button 1-2		Osc2 Harm On			Eng2Harm
-Map	UDVButton 1-3_2-3		Osc2 Harm				Eng2Harm
-Map	Fader 4		Osc2 Harm Pos				Eng2Harm
-Map	Fader 5		Osc2 Harm Amt				Eng2Harm
 // Eng 3 Harmonics
 Map	PageName		"Eng 3 Harmonics" 				Eng3Harm
 Map	Button 1-1		Page=Main			Eng3Harm
-Map	Button 2-1		Page=Eng1			Eng3Harm
-Map	Button 3-1		Page=Eng2			Eng3Harm
+Map	Button 2-1		Page=Eng1Harm			Eng3Harm
+Map	Button 3-1		Page=Eng2Harm			Eng3Harm
 Map	Button 4-1		Page=Eng3Harm			Eng3Harm
 Map	Button 1-2		Osc3 Harm On			Eng3Harm
 Map	UDVButton 1-3_2-3		Osc3 Harm				Eng3Harm
 Map	Fader 4		Osc3 Harm Pos				Eng3Harm
 Map	Fader 5		Osc3 Harm Amt				Eng3Harm
-// Eng 1 Unison
-Map	PageName		"Eng 1 Unison" 				Eng1Unison
-Map	Button 1-1		Page=Main			Eng1Unison
-Map	Button 2-1		Page=Eng1Unison			Eng1Unison
-Map	Button 3-1		Page=Eng2			Eng1Unison
-Map	Button 4-1		Page=Eng3			Eng1Unison
-Map	Button 1-2		Osc1 Unison On			Eng1Unison
-Map	UDVButton 1-3_2-3		Osc1 Unison Mode				Eng1Unison
-Map	UDVButton 1-4_2-4		Osc1 Count				Eng1Unison
-Map	Fader 5		Osc1 Blend				Eng1Unison
-Map	Fader 6		Osc1 Detune				Eng1Unison
-Map	Fader 7		Osc1 Spread				Eng1Unison
-// Eng 2 Unison
-Map	PageName		"Eng 2 Unison" 				Eng2Unison
-Map	Button 1-1		Page=Main			Eng2Unison
-Map	Button 2-1		Page=Eng1			Eng2Unison
-Map	Button 3-1		Page=Eng2Unison			Eng2Unison
-Map	Button 4-1		Page=Eng3			Eng2Unison
-Map	Button 1-2		Osc2 Unison On			Eng2Unison
-Map	UDVButton 1-3_2-3		Osc2 Unison Mode				Eng2Unison
-Map	UDVButton 1-4_2-4		Osc2 Count				Eng2Unison
-Map	Fader 5		Osc2 Blend				Eng2Unison
-Map	Fader 6		Osc2 Detune				Eng2Unison
-Map	Fader 7		Osc2 Spread				Eng2Unison
 // Eng 3 Unison
 Map	PageName		"Eng 3 Unison" 				Eng3Unison
 Map	Button 1-1		Page=Main			Eng3Unison
-Map	Button 2-1		Page=Eng1			Eng3Unison
-Map	Button 3-1		Page=Eng2			Eng3Unison
+Map	Button 2-1		Page=Eng1Unison			Eng3Unison
+Map	Button 3-1		Page=Eng2Unison			Eng3Unison
 Map	Button 4-1		Page=Eng3Unison			Eng3Unison
 Map	Button 1-2		Osc3 Unison On			Eng3Unison
 Map	UDVButton 1-3_2-3		Osc3 Unison Mode				Eng3Unison

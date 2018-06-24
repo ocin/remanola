@@ -452,6 +452,9 @@ Map	Button 2-7		FX8 Pre Fader			Send2
 Map	Fader 8		FX8 Send Level			Send2
 
 
+
+
+
 // ------------------------------------------------------------------------------------------
 Scope	Propellerheads	Combinator
 Define Group	Page	Main	Index	Keyboard	Internal
@@ -521,6 +524,9 @@ Map	Fader 5		Rotary 1			Main
 Map	Fader 6		Rotary 2			Main
 Map	Fader 7		Rotary 3			Main
 Map	Fader 8		Rotary 4			Main
+
+
+
 // ------------------------------------------------------------------------------------------
 Scope	Propellerheads	Thor Polysonic Synthesizer
 Define Group	Page	Main	Osc1	Osc2	Osc3	Mixer	Filter1	Filter2	Filter3	FilterEnv	Amp	AmpEnv	ModEnv	GlobalEnv	LFO1	LFO2	Seq	Shaper	Delay	Chorus	Index	Keyboard	Internal
@@ -536,11 +542,12 @@ Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
-Map	PlayingStep		Step Sequencer Step Index
 // Page
 Map	Button C5		Page=Main
 Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
+Map	PlayingStep		Step Sequencer Step Index
+
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -571,7 +578,9 @@ Map	Fader 1		Mod Wheel			Keyboard	ModWheel
 // Pitch Bend
 Map	SubPageName		"Pitch Bend"			Keyboard	PitchBend
 Map	Knob V1		Pitch Bend			Keyboard	PitchBend
+
 Map	UDVButton 1-3_2-3		Pitch Bend Range 			Keyboard	PitchBend
+
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -4897,6 +4906,8 @@ Map	Fader 4		FX Delay High-Frequency				Delay
 Map	Fader 5		FX Delay Time				Delay
 Map	Fader 6		FX Delay Depth				Delay
 
+
+
 // ------------------------------------------------------------------------------------------
 Scope	Synapse Audio	com.synapseAudioSoftware.Antidote
 Define Group	Page	Main	Osc1	Osc2	Mixer	Filter	FilterEnv	Effects	EQBass	Dist	Phaser	Chorus	Delay	Reverb	Comp	LFO1	LFO2	AmpEnv	ModEnv	Arp	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	Index	Keyboard	Internal
@@ -4914,6 +4925,7 @@ Map	Button C4		Select Next Patch
 Map	Button C5		Page=Main
 Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
+
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -4984,6 +4996,7 @@ Map	PageName		"Main" 				Main
 Map	UDVButton 7-2_8-2		Polyphony				Main
 Map	Fader 3		Glide				Main
 Map	Fader 8		Master Volume				Main
+
 // Osc 1
 Map	PageName		"Osc 1" 				Osc1
 Map	Button 2-1		Page=Osc1			Osc1
@@ -4999,6 +5012,7 @@ Map	Fader 5		Osc 1 Phase				Osc1
 Map	Fader 6		Osc 1 Modifier				Osc1
 Map	Fader 7		Osc 1 Key Track				Osc1
 Map	Knob V8		Osc 1 Pan				Osc1
+
 // Osc 2
 Map	PageName		"Osc 2" 				Osc2
 Map	Button 2-1		Page=Osc1			Osc2
@@ -5014,6 +5028,7 @@ Map	Fader 5		Osc 2 Phase				Osc2
 Map	Fader 6		Osc 2 Modifier				Osc2
 Map	Fader 7		Osc 2 Key Track				Osc2
 Map	Knob V8		Osc 2 Pan				Osc2
+
 // Mixer
 Map	PageName		"Mixer" 				Mixer
 Map	Fader 2		Osc 1 Volume				Mixer
@@ -5179,6 +5194,7 @@ Map	Button 5-8		Page=Chorus			Comp
 Map	Button 6-8		Page=Delay			Comp
 Map	Button 7-8		Page=Reverb			Comp
 Map	Button 8-8		Page=Comp			Comp
+
 // LFO 1
 Map	PageName		"LFO 1" 				LFO1
 Map	Sel1_0		TempoSync=Free			LFO1
@@ -5191,6 +5207,7 @@ Map	Button 1-5		Lfo 1 Sync		SEL1	LFO1
 Map	Button 1-6		Lfo 1 Free Run			LFO1
 Map	UDHButton 3-5_3-6		Lfo 1 Shape				LFO1
 Map	UDHButton 5-5_5-6		Lfo 1 Target				LFO1
+
 // LFO 2
 Map	PageName		"LFO 2" 				LFO2
 Map	Sel1_0		TempoSync=Free			LFO2
@@ -5203,6 +5220,7 @@ Map	Button 1-5		Lfo 2 Sync		SEL1	LFO2
 Map	Button 1-6		Lfo 2 Free Run			LFO2
 Map	UDHButton 3-5_3-6		Lfo 2 Shape				LFO2
 Map	UDHButton 5-5_5-6		Lfo 2 Target				LFO2
+
 // Amp Env
 Map	PageName		"Amp Env" 				AmpEnv
 Map	Button 1-1		Page=Main			AmpEnv
@@ -5228,6 +5246,7 @@ Map	UDHButton 6-1_6-2		Arp Rate				Arp
 Map	UDHButton 7-1_7-2		Arp Octave				Arp
 Map	Button 8-1		Arp Hold				Arp
 Map	Knob V4		Arp Gate				Arp
+
 // Mod Matrix 1
 Map	PageName		"Mod Matrix 1" 			ModMatrix1
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix1
@@ -5238,6 +5257,7 @@ Map	Button 5-1		Page=ModMatrix5 			ModMatrix1
 Map	UDVButton 1-2_2-2		MM Slot 1 Source			 ModMatrix1
 Map	Knob V3		MM Slot 1 Amount			ModMatrix1
 Map	UDVButton 1-4_2-4		MM Slot 1 Destination			 ModMatrix1
+
 // Mod Matrix 2
 Map	PageName		"Mod Matrix 2" 			ModMatrix2
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix2
@@ -5248,6 +5268,7 @@ Map	Button 5-1		Page=ModMatrix5 			ModMatrix2
 Map	UDVButton 1-2_2-2		MM Slot 2 Source			 ModMatrix2
 Map	Knob V3		MM Slot 2 Amount			ModMatrix2
 Map	UDVButton 1-4_2-4		MM Slot 2 Destination			 ModMatrix2
+
 // Mod Matrix 3
 Map	PageName		"Mod Matrix 3" 			ModMatrix3
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix3
@@ -5258,6 +5279,7 @@ Map	Button 5-1		Page=ModMatrix5 			ModMatrix3
 Map	UDVButton 1-2_2-2		MM Slot 3 Source			 ModMatrix3
 Map	Knob V3		MM Slot 3 Amount			ModMatrix3
 Map	UDVButton 1-4_2-4		MM Slot 3 Destination			 ModMatrix3
+
 // Mod Matrix 4
 Map	PageName		"Mod Matrix 4" 			ModMatrix4
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix4
@@ -5268,6 +5290,7 @@ Map	Button 5-1		Page=ModMatrix5 			ModMatrix4
 Map	UDVButton 1-2_2-2		MM Slot 4 Source			 ModMatrix4
 Map	Knob V3		MM Slot 4 Amount			ModMatrix4
 Map	UDVButton 1-4_2-4		MM Slot 4 Destination			 ModMatrix4
+
 // Mod Matrix 5
 Map	PageName		"Mod Matrix 5" 			ModMatrix5
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix5
@@ -5278,6 +5301,7 @@ Map	Button 5-1		Page=ModMatrix5 			ModMatrix5
 Map	UDVButton 1-2_2-2		MM Slot 5 Source			 ModMatrix5
 Map	Knob V3		MM Slot 5 Amount			ModMatrix5
 Map	UDVButton 1-4_2-4		MM Slot 5 Destination			 ModMatrix5
+
 // ------------------------------------------------------------------------------------------
 Scope	Propellerhead Software	se.propellerheads.PX7 
 Define Group	Page	Main	OP1	OP2	OP3	OP4	OP5	OP6	LFO	Index	Keyboard	Internal
@@ -5781,6 +5805,7 @@ Map	Knob V5		Mod8 Dest2 Amt			ModMatrix8
 Map	UDVButton 1-6_2-6		Mod8 Dest2			 ModMatrix8
 Map	Knob V7		Mod8 Scale Amt			ModMatrix8
 Map	UDVButton 1-8_2-8		Mod8 Scale			 ModMatrix8
+
 // ------------------------------------------------------------------------------------------
 Scope	Propellerhead Software	se.propellerheads.Europa
 Define Group	Page	Main	Eng1	Eng2	Eng3	Eng1Mod1	Eng2Mod1	Eng3Mod1	Eng1Mod2	Eng2Mod2	Eng3Mod2	Eng1Harm	Eng2Harm	Eng3Harm	Eng1Filter	Eng2Filter	Eng3Filter	Eng1Unison	Eng2Unison	Eng3Unison	Mixer	Filter	Amp	Effects	Phaser	Dist	Eq	Delay	Reverb	Comp	LFO1	LFO2	LFO3	Env1	Env2	Env3	Env4	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
@@ -5832,7 +5857,9 @@ Map	Fader 1		Mod Wheel			Keyboard	ModWheel
 // Pitch Bend
 Map	SubPageName		"Pitch Bend"			Keyboard	PitchBend
 Map	Knob V1		Pitch Bend			Keyboard	PitchBend
+
 Map	UDVButton 1-3_2-3		Pitch Bend Range 			Keyboard	PitchBend
+
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -5938,6 +5965,7 @@ Map	Fader 5		Amp Attack				Amp
 Map	Fader 6		Amp Decay				Amp
 Map	Fader 7		Amp Sustain				Amp
 Map	Fader 8		Amp Release				Amp
+
 // Eng 1
 Map	PageName		"Eng 1" 				Eng1
 Map	Button 1-1		Page=Main			Eng1
@@ -5955,6 +5983,68 @@ Map	Button 1-6		Osc1 SyncPhase			Eng1
 Map	UDVButton 7-6_8-6		Osc1 Shape Source				Eng1
 Map	Fader 7		Osc1 Shape Amt				Eng1
 Map	Fader 8		Osc1 Shape Vel				Eng1
+
+// Eng 1 Modifier 1
+Map	PageName		"Eng 1 Mod 1" 				Eng1Mod1
+Map	Button 1-1		Page=Main			Eng1Mod1
+Map	Button 2-1		Page=Eng1Mod1			Eng1Mod1
+Map	Button 3-1		Page=Eng2Mod1			Eng1Mod1
+Map	Button 4-1		Page=Eng3Mod1			Eng1Mod1
+Map	Button 1-2		Osc1 Mod1 On			Eng1Mod1
+Map	UDVButton 1-3_2-3		Osc1 Mod1				Eng1Mod1
+Map	Fader 4		Osc1 Mod1 Amt				Eng1Mod1
+Map	Fader 5		Osc1 Mod1 Mod				Eng1Mod1
+Map	UDVButton 7-6_8-6		Osc1 Mod1 Source				Eng1Mod1
+
+// Eng 1 Modifier 2
+Map	PageName		"Eng 1 Mod 2" 				Eng1Mod2
+Map	Button 1-1		Page=Main			Eng1Mod2
+Map	Button 2-1		Page=Eng1Mod2			Eng1Mod2
+Map	Button 3-1		Page=Eng2Mod2			Eng1Mod2
+Map	Button 4-1		Page=Eng3Mod2			Eng1Mod2
+Map	Button 1-2		Osc1 Mod2 On			Eng1Mod2
+Map	UDVButton 1-3_2-3		Osc1 Mod2				Eng1Mod2
+Map	Fader 4		Osc1 Mod2 Amt				Eng1Mod2
+Map	Fader 5		Osc1 Mod2 Mod				Eng1Mod2
+Map	UDVButton 7-6_8-6		Osc1 Mod2 Source				Eng1Mod2
+
+// Eng 1 Spectral Filter
+Map	PageName		"Eng 1 Spectral Filter" 				Eng1Filter
+Map	Button 1-1		Page=Main			Eng1Filter
+Map	Button 2-1		Page=Eng1Filter			Eng1Filter
+Map	Button 3-1		Page=Eng2Filter			Eng1Filter
+Map	Button 4-1		Page=Eng3Filter			Eng1Filter
+Map	Button 1-2		Osc1 Filter On			Eng1Filter
+Map	UDVButton 3-2_4-2		Osc1 Filter				Eng1Filter
+Map	Fader 3		Osc1 Filter Freq				Eng1Filter
+Map	Fader 4		Osc1 Filter Reso				Eng1Filter
+Map	Fader 5		Osc1 Filter Kbd				Eng1Filter
+Map	Fader 6		Osc1 Filter Mod				Eng1Filter
+Map	UDVButton 7-7_8-7		Osc1 Filter Source				Eng1Filter
+Map	Fader 8		Osc1 Filter Vel				Eng1Filter
+// Eng 1 Harmonics
+Map	PageName		"Eng 1 Harmonics" 				Eng1Harm
+Map	Button 1-1		Page=Main			Eng1Harm
+Map	Button 2-1		Page=Eng1Harm			Eng1Harm
+Map	Button 3-1		Page=Eng2Harm			Eng1Harm
+Map	Button 4-1		Page=Eng3Harm			Eng1Harm
+Map	Button 1-2		Osc1 Harm On			Eng1Harm
+Map	UDVButton 1-3_2-3		Osc1 Harm				Eng1Harm
+Map	Fader 4		Osc1 Harm Pos				Eng1Harm
+Map	Fader 5		Osc1 Harm Amt				Eng1Harm
+// Eng 1 Unison
+Map	PageName		"Eng 1 Unison" 				Eng1Unison
+Map	Button 1-1		Page=Main			Eng1Unison
+Map	Button 2-1		Page=Eng1Unison			Eng1Unison
+Map	Button 3-1		Page=Eng2Unison			Eng1Unison
+Map	Button 4-1		Page=Eng3Unison			Eng1Unison
+Map	Button 1-2		Osc1 Unison On			Eng1Unison
+Map	UDVButton 1-3_2-3		Osc1 Unison Mode				Eng1Unison
+Map	UDVButton 1-4_2-4		Osc1 Count				Eng1Unison
+Map	Fader 5		Osc1 Blend				Eng1Unison
+Map	Fader 6		Osc1 Detune				Eng1Unison
+Map	Fader 7		Osc1 Spread				Eng1Unison
+
 // Eng 2
 Map	PageName		"Eng 2" 				Eng2
 Map	Button 1-1		Page=Main			Eng2
@@ -5972,6 +6062,68 @@ Map	Button 1-6		Osc2 SyncPhase			Eng2
 Map	UDVButton 7-6_8-6		Osc2 Shape Source				Eng2
 Map	Fader 7		Osc2 Shape Amt				Eng2
 Map	Fader 8		Osc2 Shape Vel				Eng2
+
+// Eng 2 Modifier 1
+Map	PageName		"Eng 2 Mod 1" 				Eng2Mod1
+Map	Button 1-1		Page=Main			Eng2Mod1
+Map	Button 2-1		Page=Eng1Mod1			Eng2Mod1
+Map	Button 3-1		Page=Eng2Mod1			Eng2Mod1
+Map	Button 4-1		Page=Eng3Mod1			Eng2Mod1
+Map	Button 1-2		Osc2 Mod1 On			Eng2Mod1
+Map	UDVButton 1-3_2-3		Osc2 Mod1				Eng2Mod1
+Map	Fader 4		Osc2 Mod1 Amt				Eng2Mod1
+Map	Fader 5		Osc2 Mod1 Mod				Eng2Mod1
+Map	UDVButton 7-6_8-6		Osc2 Mod1 Source				Eng2Mod1
+
+// Eng 2 Modifier 2
+Map	PageName		"Eng 2 Mod 2" 				Eng2Mod2
+Map	Button 1-1		Page=Main			Eng2Mod2
+Map	Button 2-1		Page=Eng1Mod2			Eng2Mod2
+Map	Button 3-1		Page=Eng2Mod2			Eng2Mod2
+Map	Button 4-1		Page=Eng3Mod2			Eng2Mod2
+Map	Button 1-2		Osc2 Mod2 On			Eng2Mod2
+Map	UDVButton 1-3_2-3		Osc2 Mod2				Eng2Mod2
+Map	Fader 4		Osc2 Mod2 Amt				Eng2Mod2
+Map	Fader 5		Osc2 Mod2 Mod				Eng2Mod2
+Map	UDVButton 7-6_8-6		Osc2 Mod2 Source				Eng2Mod2
+
+// Eng 2 Spectral Filter
+Map	PageName		"Eng 2 Spectral Filter" 				Eng2Filter
+Map	Button 1-1		Page=Main			Eng2Filter
+Map	Button 2-1		Page=Eng1Filter			Eng2Filter
+Map	Button 3-1		Page=Eng2Filter			Eng2Filter
+Map	Button 4-1		Page=Eng3Filter			Eng2Filter
+Map	Button 1-2		Osc2 Filter On			Eng2Filter
+Map	UDVButton 3-2_4-2		Osc2 Filter				Eng2Filter
+Map	Fader 3		Osc2 Filter Freq				Eng2Filter
+Map	Fader 4		Osc2 Filter Reso				Eng2Filter
+Map	Fader 5		Osc2 Filter Kbd				Eng2Filter
+Map	Fader 6		Osc2 Filter Mod				Eng2Filter
+Map	UDVButton 7-7_8-7		Osc2 Filter Source				Eng2Filter
+Map	Fader 8		Osc2 Filter Vel				Eng2Filter
+// Eng 2 Harmonics
+Map	PageName		"Eng 2 Harmonics" 				Eng2Harm
+Map	Button 1-1		Page=Main			Eng2Harm
+Map	Button 2-1		Page=Eng1Harm			Eng2Harm
+Map	Button 3-1		Page=Eng2Harm			Eng2Harm
+Map	Button 4-1		Page=Eng3Harm			Eng2Harm
+Map	Button 1-2		Osc2 Harm On			Eng2Harm
+Map	UDVButton 1-3_2-3		Osc2 Harm				Eng2Harm
+Map	Fader 4		Osc2 Harm Pos				Eng2Harm
+Map	Fader 5		Osc2 Harm Amt				Eng2Harm
+// Eng 2 Unison
+Map	PageName		"Eng 2 Unison" 				Eng2Unison
+Map	Button 1-1		Page=Main			Eng2Unison
+Map	Button 2-1		Page=Eng1Unison			Eng2Unison
+Map	Button 3-1		Page=Eng2Unison			Eng2Unison
+Map	Button 4-1		Page=Eng3Unison			Eng2Unison
+Map	Button 1-2		Osc2 Unison On			Eng2Unison
+Map	UDVButton 1-3_2-3		Osc2 Unison Mode				Eng2Unison
+Map	UDVButton 1-4_2-4		Osc2 Count				Eng2Unison
+Map	Fader 5		Osc2 Blend				Eng2Unison
+Map	Fader 6		Osc2 Detune				Eng2Unison
+Map	Fader 7		Osc2 Spread				Eng2Unison
+
 // Eng 3
 Map	PageName		"Eng 3" 				Eng3
 Map	Button 1-1		Page=Main			Eng3
@@ -5989,105 +6141,36 @@ Map	Button 1-6		Osc3 SyncPhase			Eng3
 Map	UDVButton 7-6_8-6		Osc3 Shape Source				Eng3
 Map	Fader 7		Osc3 Shape Amt				Eng3
 Map	Fader 8		Osc3 Shape Vel				Eng3
-// Eng 1 Modifier 1
-Map	PageName		"Eng 1 Mod 1" 				Eng1Mod1
-Map	Button 1-1		Page=Main			Eng1Mod1
-Map	Button 2-1		Page=Eng1Mod1			Eng1Mod1
-Map	Button 3-1		Page=Eng2			Eng1Mod1
-Map	Button 4-1		Page=Eng3			Eng1Mod1
-Map	Button 1-2		Osc1 Mod1 On			Eng1Mod1
-Map	UDVButton 1-3_2-3		Osc1 Mod1				Eng1Mod1
-Map	Fader 4		Osc1 Mod1 Amt				Eng1Mod1
-Map	Fader 5		Osc1 Mod1 Mod				Eng1Mod1
-Map	UDVButton 7-6_8-6		Osc1 Mod1 Source				Eng1Mod1
-// Eng 2 Modifier 1
-Map	PageName		"Eng 2 Mod 1" 				Eng2Mod1
-Map	Button 1-1		Page=Main			Eng2Mod1
-Map	Button 2-1		Page=Eng1			Eng2Mod1
-Map	Button 3-1		Page=Eng2Mod1			Eng2Mod1
-Map	Button 4-1		Page=Eng3			Eng2Mod1
-Map	Button 1-2		Osc2 Mod1 On			Eng2Mod1
-Map	UDVButton 1-3_2-3		Osc2 Mod1				Eng2Mod1
-Map	Fader 4		Osc2 Mod1 Amt				Eng2Mod1
-Map	Fader 5		Osc2 Mod1 Mod				Eng2Mod1
-Map	UDVButton 7-6_8-6		Osc2 Mod1 Source				Eng2Mod1
+
 // Eng 3 Modifier 1
 Map	PageName		"Eng 3 Mod 1" 				Eng3Mod1
 Map	Button 1-1		Page=Main			Eng3Mod1
-Map	Button 2-1		Page=Eng1			Eng3Mod1
-Map	Button 3-1		Page=Eng2			Eng3Mod1
+Map	Button 2-1		Page=Eng1Mod1			Eng3Mod1
+Map	Button 3-1		Page=Eng2Mod1			Eng3Mod1
 Map	Button 4-1		Page=Eng3Mod1			Eng3Mod1
 Map	Button 1-2		Osc3 Mod1 On			Eng3Mod1
 Map	UDVButton 1-3_2-3		Osc3 Mod1				Eng3Mod1
 Map	Fader 4		Osc3 Mod1 Amt				Eng3Mod1
 Map	Fader 5		Osc3 Mod1 Mod				Eng3Mod1
 Map	UDVButton 7-6_8-6		Osc3 Mod1 Source				Eng3Mod1
-// Eng 1 Modifier 2
-Map	PageName		"Eng 1 Mod 2" 				Eng1Mod2
-Map	Button 1-1		Page=Main			Eng1Mod2
-Map	Button 2-1		Page=Eng1Mod2			Eng1Mod2
-Map	Button 3-1		Page=Eng2			Eng1Mod2
-Map	Button 4-1		Page=Eng3			Eng1Mod2
-Map	Button 1-2		Osc1 Mod2 On			Eng1Mod2
-Map	UDVButton 1-3_2-3		Osc1 Mod2				Eng1Mod2
-Map	Fader 4		Osc1 Mod2 Amt				Eng1Mod2
-Map	Fader 5		Osc1 Mod2 Mod				Eng1Mod2
-Map	UDVButton 7-6_8-6		Osc1 Mod2 Source				Eng1Mod2
-// Eng 2 Modifier 2
-Map	PageName		"Eng 2 Mod 2" 				Eng2Mod2
-Map	Button 1-1		Page=Main			Eng2Mod2
-Map	Button 2-1		Page=Eng1			Eng2Mod2
-Map	Button 3-1		Page=Eng2Mod2			Eng2Mod2
-Map	Button 4-1		Page=Eng3			Eng2Mod2
-Map	Button 1-2		Osc2 Mod2 On			Eng2Mod2
-Map	UDVButton 1-3_2-3		Osc2 Mod2				Eng2Mod2
-Map	Fader 4		Osc2 Mod2 Amt				Eng2Mod2
-Map	Fader 5		Osc2 Mod2 Mod				Eng2Mod2
-Map	UDVButton 7-6_8-6		Osc2 Mod2 Source				Eng2Mod2
+
 // Eng 3 Modifier 2
 Map	PageName		"Eng 3 Mod 2" 				Eng3Mod2
 Map	Button 1-1		Page=Main			Eng3Mod2
-Map	Button 2-1		Page=Eng1			Eng3Mod2
-Map	Button 3-1		Page=Eng2			Eng3Mod2
+Map	Button 2-1		Page=Eng1Mod2			Eng3Mod2
+Map	Button 3-1		Page=Eng2Mod2			Eng3Mod2
 Map	Button 4-1		Page=Eng3Mod2			Eng3Mod2
 Map	Button 1-2		Osc3 Mod2 On			Eng3Mod2
 Map	UDVButton 1-3_2-3		Osc3 Mod2				Eng3Mod2
 Map	Fader 4		Osc3 Mod2 Amt				Eng3Mod2
 Map	Fader 5		Osc3 Mod2 Mod				Eng3Mod2
 Map	UDVButton 7-6_8-6		Osc3 Mod2 Source				Eng3Mod2
-// Eng 1 Spectral Filter
-Map	PageName		"Eng 1 Spectral Filter" 				Eng1Filter
-Map	Button 1-1		Page=Main			Eng1Filter
-Map	Button 2-1		Page=Eng1Filter			Eng1Filter
-Map	Button 3-1		Page=Eng2			Eng1Filter
-Map	Button 4-1		Page=Eng3			Eng1Filter
-Map	Button 1-2		Osc1 Filter On			Eng1Filter
-Map	UDVButton 3-2_4-2		Osc1 Filter				Eng1Filter
-Map	Fader 3		Osc1 Filter Freq				Eng1Filter
-Map	Fader 4		Osc1 Filter Reso				Eng1Filter
-Map	Fader 5		Osc1 Filter Kbd				Eng1Filter
-Map	Fader 6		Osc1 Filter Mod				Eng1Filter
-Map	UDVButton 7-7_8-7		Osc1 Filter Source				Eng1Filter
-Map	Fader 8		Osc1 Filter Vel				Eng1Filter
-// Eng 2 Spectral Filter
-Map	PageName		"Eng 2 Spectral Filter" 				Eng2Filter
-Map	Button 1-1		Page=Main			Eng2Filter
-Map	Button 2-1		Page=Eng1			Eng2Filter
-Map	Button 3-1		Page=Eng2Filter			Eng2Filter
-Map	Button 4-1		Page=Eng3			Eng2Filter
-Map	Button 1-2		Osc2 Filter On			Eng2Filter
-Map	UDVButton 3-2_4-2		Osc2 Filter				Eng2Filter
-Map	Fader 3		Osc2 Filter Freq				Eng2Filter
-Map	Fader 4		Osc2 Filter Reso				Eng2Filter
-Map	Fader 5		Osc2 Filter Kbd				Eng2Filter
-Map	Fader 6		Osc2 Filter Mod				Eng2Filter
-Map	UDVButton 7-7_8-7		Osc2 Filter Source				Eng2Filter
-Map	Fader 8		Osc2 Filter Vel				Eng2Filter
+
 // Eng 3 Spectral Filter
 Map	PageName		"Eng 3 Spectral Filter" 				Eng3Filter
 Map	Button 1-1		Page=Main			Eng3Filter
-Map	Button 2-1		Page=Eng1			Eng3Filter
-Map	Button 3-1		Page=Eng2			Eng3Filter
+Map	Button 2-1		Page=Eng1Filter			Eng3Filter
+Map	Button 3-1		Page=Eng2Filter			Eng3Filter
 Map	Button 4-1		Page=Eng3Filter			Eng3Filter
 Map	Button 1-2		Osc3 Filter On			Eng3Filter
 Map	UDVButton 3-2_4-2		Osc3 Filter				Eng3Filter
@@ -6097,65 +6180,21 @@ Map	Fader 5		Osc3 Filter Kbd				Eng3Filter
 Map	Fader 6		Osc3 Filter Mod				Eng3Filter
 Map	UDVButton 7-7_8-7		Osc3 Filter Source				Eng3Filter
 Map	Fader 8		Osc3 Filter Vel				Eng3Filter
-// Eng 1 Harmonics
-Map	PageName		"Eng 1 Harmonics" 				Eng1Harm
-Map	Button 1-1		Page=Main			Eng1Harm
-Map	Button 2-1		Page=Eng1Harm			Eng1Harm
-Map	Button 3-1		Page=Eng2			Eng1Harm
-Map	Button 4-1		Page=Eng3			Eng1Harm
-Map	Button 1-2		Osc1 Harm On			Eng1Harm
-Map	UDVButton 1-3_2-3		Osc1 Harm				Eng1Harm
-Map	Fader 4		Osc1 Harm Pos				Eng1Harm
-Map	Fader 5		Osc1 Harm Amt				Eng1Harm
-// Eng 2 Harmonics
-Map	PageName		"Eng 2 Harmonics" 				Eng2Harm
-Map	Button 1-1		Page=Main			Eng2Harm
-Map	Button 2-1		Page=Eng1			Eng2Harm
-Map	Button 3-1		Page=Eng2Harm			Eng2Harm
-Map	Button 4-1		Page=Eng3			Eng2Harm
-Map	Button 1-2		Osc2 Harm On			Eng2Harm
-Map	UDVButton 1-3_2-3		Osc2 Harm				Eng2Harm
-Map	Fader 4		Osc2 Harm Pos				Eng2Harm
-Map	Fader 5		Osc2 Harm Amt				Eng2Harm
 // Eng 3 Harmonics
 Map	PageName		"Eng 3 Harmonics" 				Eng3Harm
 Map	Button 1-1		Page=Main			Eng3Harm
-Map	Button 2-1		Page=Eng1			Eng3Harm
-Map	Button 3-1		Page=Eng2			Eng3Harm
+Map	Button 2-1		Page=Eng1Harm			Eng3Harm
+Map	Button 3-1		Page=Eng2Harm			Eng3Harm
 Map	Button 4-1		Page=Eng3Harm			Eng3Harm
 Map	Button 1-2		Osc3 Harm On			Eng3Harm
 Map	UDVButton 1-3_2-3		Osc3 Harm				Eng3Harm
 Map	Fader 4		Osc3 Harm Pos				Eng3Harm
 Map	Fader 5		Osc3 Harm Amt				Eng3Harm
-// Eng 1 Unison
-Map	PageName		"Eng 1 Unison" 				Eng1Unison
-Map	Button 1-1		Page=Main			Eng1Unison
-Map	Button 2-1		Page=Eng1Unison			Eng1Unison
-Map	Button 3-1		Page=Eng2			Eng1Unison
-Map	Button 4-1		Page=Eng3			Eng1Unison
-Map	Button 1-2		Osc1 Unison On			Eng1Unison
-Map	UDVButton 1-3_2-3		Osc1 Unison Mode				Eng1Unison
-Map	UDVButton 1-4_2-4		Osc1 Count				Eng1Unison
-Map	Fader 5		Osc1 Blend				Eng1Unison
-Map	Fader 6		Osc1 Detune				Eng1Unison
-Map	Fader 7		Osc1 Spread				Eng1Unison
-// Eng 2 Unison
-Map	PageName		"Eng 2 Unison" 				Eng2Unison
-Map	Button 1-1		Page=Main			Eng2Unison
-Map	Button 2-1		Page=Eng1			Eng2Unison
-Map	Button 3-1		Page=Eng2Unison			Eng2Unison
-Map	Button 4-1		Page=Eng3			Eng2Unison
-Map	Button 1-2		Osc2 Unison On			Eng2Unison
-Map	UDVButton 1-3_2-3		Osc2 Unison Mode				Eng2Unison
-Map	UDVButton 1-4_2-4		Osc2 Count				Eng2Unison
-Map	Fader 5		Osc2 Blend				Eng2Unison
-Map	Fader 6		Osc2 Detune				Eng2Unison
-Map	Fader 7		Osc2 Spread				Eng2Unison
 // Eng 3 Unison
 Map	PageName		"Eng 3 Unison" 				Eng3Unison
 Map	Button 1-1		Page=Main			Eng3Unison
-Map	Button 2-1		Page=Eng1			Eng3Unison
-Map	Button 3-1		Page=Eng2			Eng3Unison
+Map	Button 2-1		Page=Eng1Unison			Eng3Unison
+Map	Button 3-1		Page=Eng2Unison			Eng3Unison
 Map	Button 4-1		Page=Eng3Unison			Eng3Unison
 Map	Button 1-2		Osc3 Unison On			Eng3Unison
 Map	UDVButton 1-3_2-3		Osc3 Unison Mode				Eng3Unison
@@ -6163,6 +6202,8 @@ Map	UDVButton 1-4_2-4		Osc3 Count				Eng3Unison
 Map	Fader 5		Osc3 Blend				Eng3Unison
 Map	Fader 6		Osc3 Detune				Eng3Unison
 Map	Fader 7		Osc3 Spread				Eng3Unison
+
+
 // LFO 1
 Map	PageName		"LFO 1" 				LFO1
 Map	Sel1_0		TempoSync=Free			LFO1
@@ -6178,6 +6219,7 @@ Map	Button 8-2		LFO 1 Global			LFO1
 Map	Fader 3		LFO 1 Rate				LFO1	Free
 Map	UDVButton 7-3_8-3		LFO 1 SyncRate				LFO1	Sync
 Map	Fader 4		LFO 1 Delay				LFO1
+
 // LFO 2
 Map	PageName		"LFO 2" 				LFO2
 Map	Sel1_0		TempoSync=Free			LFO2
@@ -6193,6 +6235,7 @@ Map	Button 8-2		LFO 2 Global			LFO2
 Map	Fader 3		LFO 2 Rate				LFO2	Free
 Map	UDVButton 7-3_8-3		LFO 2 SyncRate				LFO2	Sync
 Map	Fader 4		LFO 2 Delay				LFO2
+
 // LFO 3
 Map	PageName		"LFO 3" 				LFO3
 Map	Sel1_0		TempoSync=Free			LFO3
@@ -6208,6 +6251,8 @@ Map	Button 8-2		LFO 3 Global			LFO3
 Map	Fader 3		LFO 3 Rate				LFO3	Free
 Map	UDVButton 7-3_8-3		LFO 3 SyncRate				LFO3	Sync
 Map	Fader 4		LFO 3 Delay				LFO3
+
+
 // Env 1
 Map	PageName		"Env 1" 				Env1
 Map	Button 1-1		Page=Main			Env1
@@ -6217,6 +6262,7 @@ Map	Button 7-1		Page=Env3			Env1
 Map	Button 8-1		Page=Env4			Env1
 Map	Fader 3		Env 1 Rate				Env1
 Map	UDVButton 7-4_8-4		Env 1 SyncRate				Env1
+
 // Env 2
 Map	PageName		"Env 2" 				Env2
 Map	Button 1-1		Page=Main			Env2
@@ -6226,6 +6272,7 @@ Map	Button 7-1		Page=Env3			Env2
 Map	Button 8-1		Page=Env4			Env2
 Map	Fader 3		Env 2 Rate				Env2
 Map	UDVButton 7-4_8-4		Env 2 SyncRate				Env2
+
 // Env 3
 Map	PageName		"Env 3" 				Env3
 Map	Button 1-1		Page=Main			Env3
@@ -6235,6 +6282,7 @@ Map	Button 7-1		Page=Env3			Env3
 Map	Button 8-1		Page=Env4			Env3
 Map	Fader 3		Env 3 Rate				Env3
 Map	UDVButton 7-4_8-4		Env 3 SyncRate				Env3
+
 // Env 4
 Map	PageName		"Env 4" 				Env4
 Map	Button 1-1		Page=Main			Env4
@@ -6244,6 +6292,7 @@ Map	Button 7-1		Page=Env3			Env4
 Map	Button 8-1		Page=Env4			Env4
 Map	Fader 3		Env 4 Rate				Env4
 Map	UDVButton 7-4_8-4		Env 4 SyncRate				Env4
+
 // Effects
 Map	PageName		"Effects" 				Effects
 Map	Button 1-2		Effect On			Effects
@@ -6349,6 +6398,7 @@ Map	Fader 3		Reverb Decay				Reverb
 Map	Fader 4		Reverb Size				Reverb
 Map	Fader 5		Reverb Damp				Reverb
 Map	Fader 7		Reverb Amount				Reverb
+
 // Mod Matrix 1
 Map	PageName		"Mod Matrix 1" 			ModMatrix1
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix1
@@ -6366,6 +6416,7 @@ Map	Knob V5		Mod1 Dest2 Amt			ModMatrix1
 Map	UDVButton 1-6_2-6		Mod1 Dest2			 ModMatrix1
 Map	Knob V7		Mod1 Scale Amt			ModMatrix1
 Map	UDVButton 1-8_2-8		Mod1 Scale			 ModMatrix1
+
 // Mod Matrix 2
 Map	PageName		"Mod Matrix 2" 			ModMatrix2
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix2
@@ -6383,6 +6434,7 @@ Map	Knob V5		Mod2 Dest2 Amt			ModMatrix2
 Map	UDVButton 1-6_2-6		Mod2 Dest2			 ModMatrix2
 Map	Knob V7		Mod2 Scale Amt			ModMatrix2
 Map	UDVButton 1-8_2-8		Mod2 Scale			 ModMatrix2
+
 // Mod Matrix 3
 Map	PageName		"Mod Matrix 3" 			ModMatrix3
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix3
@@ -6400,6 +6452,7 @@ Map	Knob V5		Mod3 Dest2 Amt			ModMatrix3
 Map	UDVButton 1-6_2-6		Mod3 Dest2			 ModMatrix3
 Map	Knob V7		Mod3 Scale Amt			ModMatrix3
 Map	UDVButton 1-8_2-8		Mod3 Scale			 ModMatrix3
+
 // Mod Matrix 4
 Map	PageName		"Mod Matrix 4" 			ModMatrix4
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix4
@@ -6417,6 +6470,7 @@ Map	Knob V5		Mod4 Dest2 Amt			ModMatrix4
 Map	UDVButton 1-6_2-6		Mod4 Dest2			 ModMatrix4
 Map	Knob V7		Mod4 Scale Amt			ModMatrix4
 Map	UDVButton 1-8_2-8		Mod4 Scale			 ModMatrix4
+
 // Mod Matrix 5
 Map	PageName		"Mod Matrix 5" 			ModMatrix5
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix5
@@ -6434,6 +6488,7 @@ Map	Knob V5		Mod5 Dest2 Amt			ModMatrix5
 Map	UDVButton 1-6_2-6		Mod5 Dest2			 ModMatrix5
 Map	Knob V7		Mod5 Scale Amt			ModMatrix5
 Map	UDVButton 1-8_2-8		Mod5 Scale			 ModMatrix5
+
 // Mod Matrix 6
 Map	PageName		"Mod Matrix 6" 			ModMatrix6
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix6
@@ -6451,6 +6506,7 @@ Map	Knob V5		Mod6 Dest2 Amt			ModMatrix6
 Map	UDVButton 1-6_2-6		Mod6 Dest2			 ModMatrix6
 Map	Knob V7		Mod6 Scale Amt			ModMatrix6
 Map	UDVButton 1-8_2-8		Mod6 Scale			 ModMatrix6
+
 // Mod Matrix 7
 Map	PageName		"Mod Matrix 7" 			ModMatrix7
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix7
@@ -6468,6 +6524,7 @@ Map	Knob V5		Mod7 Dest2 Amt			ModMatrix7
 Map	UDVButton 1-6_2-6		Mod7 Dest2			 ModMatrix7
 Map	Knob V7		Mod7 Scale Amt			ModMatrix7
 Map	UDVButton 1-8_2-8		Mod7 Scale			 ModMatrix7
+
 // Mod Matrix 8
 Map	PageName		"Mod Matrix 8" 			ModMatrix8
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix8
@@ -6485,6 +6542,7 @@ Map	Knob V5		Mod8 Dest2 Amt			ModMatrix8
 Map	UDVButton 1-6_2-6		Mod8 Dest2			 ModMatrix8
 Map	Knob V7		Mod8 Scale Amt			ModMatrix8
 Map	UDVButton 1-8_2-8		Mod8 Scale			 ModMatrix8
+
 // ------------------------------------------------------------------------------------------
 Scope	Propellerhead Software	se.propellerheads.Grain
 Define Group	Page	Main	Sample	Grains	Pitch	Osc	Mixer	Filter	Amp	Effects	Phaser	Dist	Eq	Delay	Reverb	Comp	LFO1	LFO2	LFO3	Env1	Env2	Env3	Env4	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
@@ -6664,6 +6722,7 @@ Map	Fader 5		Amp Release				Amp
 Map	Fader 6		Amp Gain				Amp
 Map	Fader 7		Amp Velocity				Amp
 Map	Knob V8		Pan				Amp
+
 // LFO 1
 Map	PageName		"LFO 1" 				LFO1
 Map	Sel1_0		TempoSync=Free			LFO1
@@ -6679,6 +6738,7 @@ Map	Button 8-2		LFO 1 Global			LFO1
 Map	Fader 3		LFO 1 Rate				LFO1	Free
 Map	UDVButton 7-3_8-3		LFO 1 SyncRate				LFO1	Sync
 Map	Fader 4		LFO 1 Delay				LFO1
+
 // LFO 2
 Map	PageName		"LFO 2" 				LFO2
 Map	Sel1_0		TempoSync=Free			LFO2
@@ -6694,6 +6754,7 @@ Map	Button 8-2		LFO 2 Global			LFO2
 Map	Fader 3		LFO 2 Rate				LFO2	Free
 Map	UDVButton 7-3_8-3		LFO 2 SyncRate				LFO2	Sync
 Map	Fader 4		LFO 2 Delay				LFO2
+
 // LFO 3
 Map	PageName		"LFO 3" 				LFO3
 Map	Sel1_0		TempoSync=Free			LFO3
@@ -6709,6 +6770,8 @@ Map	Button 8-2		LFO 3 Global			LFO3
 Map	Fader 3		LFO 3 Rate				LFO3	Free
 Map	UDVButton 7-3_8-3		LFO 3 SyncRate				LFO3	Sync
 Map	Fader 4		LFO 3 Delay				LFO3
+
+
 // Env 1
 Map	PageName		"Env 1" 				Env1
 Map	Button 1-1		Page=Main			Env1
@@ -6718,6 +6781,7 @@ Map	Button 7-1		Page=Env3			Env1
 Map	Button 8-1		Page=Env4			Env1
 Map	Fader 3		Env 1 Rate				Env1
 Map	UDVButton 7-4_8-4		Env 1 SyncRate				Env1
+
 // Env 2
 Map	PageName		"Env 2" 				Env2
 Map	Button 1-1		Page=Main			Env2
@@ -6727,6 +6791,7 @@ Map	Button 7-1		Page=Env3			Env2
 Map	Button 8-1		Page=Env4			Env2
 Map	Fader 3		Env 2 Rate				Env2
 Map	UDVButton 7-4_8-4		Env 2 SyncRate				Env2
+
 // Env 3
 Map	PageName		"Env 3" 				Env3
 Map	Button 1-1		Page=Main			Env3
@@ -6736,6 +6801,7 @@ Map	Button 7-1		Page=Env3			Env3
 Map	Button 8-1		Page=Env4			Env3
 Map	Fader 3		Env 3 Rate				Env3
 Map	UDVButton 7-4_8-4		Env 3 SyncRate				Env3
+
 // Env 4
 Map	PageName		"Env 4" 				Env4
 Map	Button 1-1		Page=Main			Env4
@@ -6745,6 +6811,7 @@ Map	Button 7-1		Page=Env3			Env4
 Map	Button 8-1		Page=Env4			Env4
 Map	Fader 3		Env 4 Rate				Env4
 Map	UDVButton 7-4_8-4		Env 4 SyncRate				Env4
+
 // Effects
 Map	PageName		"Effects" 				Effects
 Map	Button 1-2		Effect On			Effects
@@ -6850,6 +6917,7 @@ Map	Fader 3		Reverb Decay				Reverb
 Map	Fader 4		Reverb Size				Reverb
 Map	Fader 5		Reverb Damp				Reverb
 Map	Fader 7		Reverb Amount				Reverb
+
 // Mod Matrix 1
 Map	PageName		"Mod Matrix 1" 			ModMatrix1
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix1
@@ -6867,6 +6935,7 @@ Map	Knob V5		Mod1 Dest2 Amt			ModMatrix1
 Map	UDVButton 1-6_2-6		Mod1 Dest2			 ModMatrix1
 Map	Knob V7		Mod1 Scale Amt			ModMatrix1
 Map	UDVButton 1-8_2-8		Mod1 Scale			 ModMatrix1
+
 // Mod Matrix 2
 Map	PageName		"Mod Matrix 2" 			ModMatrix2
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix2
@@ -6884,6 +6953,7 @@ Map	Knob V5		Mod2 Dest2 Amt			ModMatrix2
 Map	UDVButton 1-6_2-6		Mod2 Dest2			 ModMatrix2
 Map	Knob V7		Mod2 Scale Amt			ModMatrix2
 Map	UDVButton 1-8_2-8		Mod2 Scale			 ModMatrix2
+
 // Mod Matrix 3
 Map	PageName		"Mod Matrix 3" 			ModMatrix3
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix3
@@ -6901,6 +6971,7 @@ Map	Knob V5		Mod3 Dest2 Amt			ModMatrix3
 Map	UDVButton 1-6_2-6		Mod3 Dest2			 ModMatrix3
 Map	Knob V7		Mod3 Scale Amt			ModMatrix3
 Map	UDVButton 1-8_2-8		Mod3 Scale			 ModMatrix3
+
 // Mod Matrix 4
 Map	PageName		"Mod Matrix 4" 			ModMatrix4
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix4
@@ -6918,6 +6989,7 @@ Map	Knob V5		Mod4 Dest2 Amt			ModMatrix4
 Map	UDVButton 1-6_2-6		Mod4 Dest2			 ModMatrix4
 Map	Knob V7		Mod4 Scale Amt			ModMatrix4
 Map	UDVButton 1-8_2-8		Mod4 Scale			 ModMatrix4
+
 // Mod Matrix 5
 Map	PageName		"Mod Matrix 5" 			ModMatrix5
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix5
@@ -6935,6 +7007,7 @@ Map	Knob V5		Mod5 Dest2 Amt			ModMatrix5
 Map	UDVButton 1-6_2-6		Mod5 Dest2			 ModMatrix5
 Map	Knob V7		Mod5 Scale Amt			ModMatrix5
 Map	UDVButton 1-8_2-8		Mod5 Scale			 ModMatrix5
+
 // Mod Matrix 6
 Map	PageName		"Mod Matrix 6" 			ModMatrix6
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix6
@@ -6952,6 +7025,7 @@ Map	Knob V5		Mod6 Dest2 Amt			ModMatrix6
 Map	UDVButton 1-6_2-6		Mod6 Dest2			 ModMatrix6
 Map	Knob V7		Mod6 Scale Amt			ModMatrix6
 Map	UDVButton 1-8_2-8		Mod6 Scale			 ModMatrix6
+
 // Mod Matrix 7
 Map	PageName		"Mod Matrix 7" 			ModMatrix7
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix7
@@ -6969,6 +7043,7 @@ Map	Knob V5		Mod7 Dest2 Amt			ModMatrix7
 Map	UDVButton 1-6_2-6		Mod7 Dest2			 ModMatrix7
 Map	Knob V7		Mod7 Scale Amt			ModMatrix7
 Map	UDVButton 1-8_2-8		Mod7 Scale			 ModMatrix7
+
 // Mod Matrix 8
 Map	PageName		"Mod Matrix 8" 			ModMatrix8
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix8
@@ -6986,6 +7061,7 @@ Map	Knob V5		Mod8 Dest2 Amt			ModMatrix8
 Map	UDVButton 1-6_2-6		Mod8 Dest2			 ModMatrix8
 Map	Knob V7		Mod8 Scale Amt			ModMatrix8
 Map	UDVButton 1-8_2-8		Mod8 Scale			 ModMatrix8
+
 // ------------------------------------------------------------------------------------------
 Scope	Propellerhead Software	se.propellerheads.radicalpiano
 Define Group	Page	Main	Velocity	Tune	Resonance	Envelope	Mechanics	Eq	Ambience	Output	Index	Keyboard	Internal

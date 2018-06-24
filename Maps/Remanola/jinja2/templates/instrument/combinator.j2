@@ -1,29 +1,21 @@
+{% set deviceman="Propellerheads" %}
+{% set devicescope="Combinator" %}
+{% set devicename="Combinator" %}
 // ------------------------------------------------------------------------------------------
-Scope	Propellerheads	Combinator
+Scope	{{ deviceman }}	{{ devicescope }}
 Define Group	Page	Main	Index	Keyboard	Internal
 Define Group	KeyMod	ModWheel	PitchBend
 Define Group	KbdVel	V100	V25	V50	V75	V127
 Define Group	BaseKey	C2	C0	C1	C3	C4
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
-Map	DeviceScope		"Combinator"
-Map	DeviceName		Device Name
-Map	PatchName		Patch Name
-Map	Button C3		Select Previous Patch
-Map	Button C4		Select Next Patch
-// Page
-Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
-Map	Button C7		Page=Index
+{% include "device-header.j2" %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-7		Page=Keyboard			Index
 Map	Button C7		Page=Internal			Index
 {% include "keyboard.j2" %}
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
+{% include "internal.j2" %}
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
