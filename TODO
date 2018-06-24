@@ -60,7 +60,6 @@ Instruments:
 * Redrum
 * Revival 
 * Dr.OctoRex
-* Radical Piano
 * Kong
 * NN-XT
 * NN-19
@@ -73,6 +72,8 @@ Instruments:
 * Pangea
 + Thor
 	- Mod Matrix
++ Radical Piano
+	- Color mapping
 - Ammo1200
 - Ammo400
 - Ammo100LA

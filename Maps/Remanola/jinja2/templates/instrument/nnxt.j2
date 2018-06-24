@@ -1,0 +1,65 @@
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	NN-XT Advanced Sampler
+Define Group	Page	Main	Index	Keyboard	Internal
+Define Group	KeyMod	ModWheel	PitchBend
+Define Group	KbdVel	V100	V25	V50	V75	V127
+Define Group	BaseKey	C2	C0	C1	C3	C4
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"NN-XT"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
+// Page
+Map	Button C5		Page=Main
+Map	Button C6		Page=Keyboard
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-7		Page=Keyboard			Index
+Map	Button C7		Page=Internal			Index
+// Keyboard
+Map	PageName		"Keyboard"			Keyboard	
+Map	Button 1-4		KbdVel=V25			Keyboard	
+Map	Button 1-5		KbdVel=V50			Keyboard	
+Map	Button 1-6		KbdVel=V75			Keyboard	
+Map	Button 1-7		KbdVel=V100			Keyboard	
+Map	Button 1-8		KbdVel=V127			Keyboard	
+Map	KbdVel		"25"			Keyboard	V25
+Map	KbdVel		"50"			Keyboard	V50
+Map	KbdVel		"75"			Keyboard	V75
+Map	KbdVel		"100"			Keyboard	V100
+Map	KbdVel		"127"			Keyboard	V127
+Map	Button 2-4		BaseKey=C0			Keyboard	
+Map	Button 2-5		BaseKey=C1			Keyboard	
+Map	Button 2-6		BaseKey=C2			Keyboard	
+Map	Button 2-7		BaseKey=C3			Keyboard	
+Map	Button 2-8		BaseKey=C4			Keyboard	
+Map	BaseKey		"0"			Keyboard	C0
+Map	BaseKey		"1"			Keyboard	C1
+Map	BaseKey		"2"			Keyboard	C2
+Map	BaseKey		"3"			Keyboard	C3
+Map	BaseKey		"4"			Keyboard	C4
+Map	Button 1-2		KeyMod=ModWheel			Keyboard
+Map	Button 2-2		KeyMod=PitchBend			Keyboard
+// Mod Wheel
+Map	SubPageName		"Mod Wheel"			Keyboard	ModWheel
+Map	Fader 1		Mod Wheel			Keyboard	ModWheel
+// Pitch Bend
+Map	SubPageName		"Pitch Bend"			Keyboard	PitchBend
+Map	Knob V1		Pitch Bend			Keyboard	PitchBend
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Fader 1		External Controller				Main
+Map	Knob V2		Filter Freq				Main
+Map	Knob V3		Filter Res				Main
+Map	Knob V4		Amp Env Attack				Main
+Map	Knob V5		Amp Env Decay				Main
+Map	Knob V6		Amp Env Release				Main
+Map	Knob V7		Mod Env Decay				Main
+Map	Fader 8		Master Volume				Main

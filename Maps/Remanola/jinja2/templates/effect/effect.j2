@@ -1,0 +1,1411 @@
+// ------------------------------------------------------------------------------------------
+Scope	Propellerhead Software	se.propellerheads.Audiomatic
+Define Group	Page	Main	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Audiomatic"
+Map	DeviceName		Device Name
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Fader 2		Input Gain			Main
+Map	UDVButton 1-3_2-3		Preset			Main
+Map	Fader 5		Transform			Main
+Map	Fader 6		Dry Wet			Main
+Map	Fader 7		Volume			Main
+Map	Meter 8		Input Peak Meter			Main
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	Pulveriser
+Define Group	Page	Main	Filter	Follower	Tremor	Index	Internal
+Define Group	TempoSync	Free	Sync
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Pulveriser"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-5		Page=Filter			Index
+Map	Button 2-6		Page=Follower			Index
+Map	Button 2-8		Page=Tremor			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	UDVButton 7-1_8-1		Routing			Main
+Map	Fader 2		Squash			Main
+Map	Fader 3		Release			Main
+Map	Fader 4		Dirt			Main
+Map	Fader 5		Tone			Main
+Map	Fader 6		Blend			Main
+Map	Fader 7		Volume			Main
+Map	Meter 8		Input Peak Meter			Main
+// Filter
+Map	PageName		"Filter" 				Filter
+Map	UDVButton 1-2_2-2		Filter Mode			Filter
+Map	Fader 3		Filter Frequency			Filter
+Map	Fader 4		Peak			Filter
+Map	Knob V7		Tremor to Frequency			Filter
+Map	Knob V8		Follower to Frequency			Filter
+// Follower
+Map	PageName		"Follower" 				Follower
+Map	Button 8-1		Follower Trig			Follower
+Map	Fader 2		Follower Threshold			Follower
+Map	Fader 4		Follower Attack			Follower
+Map	Fader 5		Follower Release			Follower
+Map	Meter 8		Follow			Follower
+// Tremor
+Map	PageName		"Tremor" 				Tremor
+Map	Sel1_0		TempoSync=Free			Tremor
+Map	Sel1_1		TempoSync=Sync			Tremor
+Map	Fader 2		Tremor Rate			Tremor	Free
+Map	UDVButton 7-2_8-2		Tremor Rate	9		Tremor	Sync
+Map	Button 1-3		Sync		SEL1	Tremor
+Map	UDVButton 1-4_2-4		Tremor Waveform			Tremor
+Map	Button 1-5		Tremor Spread			Tremor
+Map	Fader 6		Tremor Lag			Tremor
+Map	Knob V8		Tremor to Volume			Tremor
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	Scream 4 Distortion
+Define Group	Page	Main	Cut	Body	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Scream 4 Distortion"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=Cut			Index
+Map	Button 2-8		Page=Body			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Button 1-2		Damage On/Off			Main
+Map	Fader 3		Damage Control			Main
+Map	UDVButton 1-4_2-4		Damage Type			Main
+Map	Fader 5		Parameter 1			Main
+Map	Fader 6		Parameter 2			Main
+Map	Fader 7		Master Level			Main
+Map	Meter 8		Input Peak Meter			Main
+// Cut
+Map	PageName		"Cut" 				Cut
+Map	Button 1-2		Cut On/Off			Cut
+Map	Knob V4		Cut Lo			Cut
+Map	Knob V5		Cut Mid			Cut
+Map	Knob V6		Cut Hi			Cut
+// Body
+Map	PageName		"Body" 				Body
+Map	Button 1-2		Body On/Off			Body
+Map	Fader 4		Body Resonance			Body
+Map	Fader 5		Body Scale			Body
+Map	Fader 6		Body Auto			Body
+Map	UDVButton 1-7_2-7		Body Type			Body
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	The Echo
+Define Group	Page	Main	Delay	Feedback	Color	Modulation	Index	Internal
+Define Group	TempoSync	Free	Sync
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"The Echo"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=Delay			Index
+Map	Button 3-8		Page=Feedback			Index
+Map	Button 4-8		Page=Color			Index
+Map	Button 5-5		Page=Modulation			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	UDVButton 1-2_2-2		Input Mode			Main
+Map	Button 1-3		Trig			Main
+Map	Fader 4		Roll Enabled			Main
+Map	Fader 6		Ducking			Main
+Map	Fader 7		Dry/Wet Balance			Main
+Map	Meter 8		Input Peak Meter			Main
+// Delay
+Map	PageName		"Delay" 				Delay
+Map	Sel1_0		TempoSync=Free			Delay
+Map	Sel1_1		TempoSync=Sync			Delay
+Map	Fader 2		Delay Time			Delay	Free
+Map	UDVButton 7-2_8-2		Delay Time	7		Delay	Sync
+Map	Fader 3		Right Ch Time Offset			Delay
+Map	Button 1-4		Keep Pitch			Delay
+Map	Button 1-5		Sync		SEL1	Delay
+Map	Button 8-5		Ping-Pong Mode			Delay
+Map	Knob V6		Ping-Pong Pan			Delay
+// Feedback
+Map	PageName		"Feedback" 				Feedback
+Map	Fader 2		Feedback			Feedback
+Map	Knob V3		Right Ch Feedback Offset			Feedback
+Map	Button 1-5		Diffuse On			Feedback
+Map	Fader 6		Diffuse Spread			Feedback
+Map	Fader 7		Diffuse Amount			Feedback
+// Color
+Map	PageName		"Color" 				Color
+Map	Fader 2		Drive Amount 				Color
+Map	UDVButton 1-3_2-3		Drive Type			Color
+Map	Button 1-5		Filter On			Color
+Map	Fader 6		Filter Frequency 				Color
+Map	Fader 7		Filter Resonance 				Color
+// Modulation
+Map	PageName		"Modulation" 				Modulation
+Map	Knob V2		Envelope 				Modulation
+Map	Fader 3		Wobble 				Modulation
+Map	Fader 5		LFO Rate 				Modulation
+Map	Fader 6		LFO Amount 				Modulation
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	RV7000 Advanced Reverb
+Define Group	Page	Main	Reverb	Eq	Gate	Index	Internal
+Define Group	Algorithm	SmallSpace	Room	Hall	Arena	Plate	Spring	Echo	MultiTap	Reverse	Convolution
+Define Group	Tap	TapNum	RepeatTap
+Define Group	TempoSync	Free	Sync
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"RV7000 Advanced Reverb"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
+Map	EditSelect		Edit Mode
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=Reverb			Index
+Map	Button 3-8		Page=Eq			Index
+Map	Button 4-8		Page=Gate			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Button 1-2		EQ On/Off			Main
+Map	Button 2-2		Gate On/Off			Main
+Map	Fader 3		Decay 				Main
+Map	Fader 4		HF Damp 				Main
+Map	Knob V5		Hi EQ 				Main
+Map	Fader 7		Dry/Wet 				Main
+Map	Meter 8		Input Peak Meter			Main
+// Reverb
+Map	PageName		"Reverb" 				Reverb
+Map	Sel1_0		Algorithm=SmallSpace			Reverb
+Map	Sel1_14		Algorithm=Room			Reverb
+Map	Sel1_28		Algorithm=Hall			Reverb
+Map	Sel1_42		Algorithm=Arena			Reverb
+Map	Sel1_56		Algorithm=Plate			Reverb
+Map	Sel1_71		Algorithm=Spring			Reverb
+Map	Sel1_85		Algorithm=Echo			Reverb
+Map	Sel1_99		Algorithm=MultiTap			Reverb
+Map	Sel1_113		Algorithm=Reverse			Reverb
+Map	Sel1_127		Algorithm=Convolution			Reverb
+Map	UDVButton 1-1_2-1		Soft Knob 1		SEL1	Reverb
+// SmallSpace
+Map	SubPageName		"SmallSpace" 				Reverb	SmallSpace
+Map	Fader 2		Soft Knob 2 			Reverb	SmallSpace
+Map	Fader 3		Soft Knob 3 			Reverb	SmallSpace
+Map	UDVButton 7-4_8-4		Soft Knob 4 			Reverb	SmallSpace
+Map	Fader 5		Soft Knob 5 			Reverb	SmallSpace
+Map	Fader 6		Soft Knob 6 			Reverb	SmallSpace
+Map	Fader 7		Soft Knob 7 			Reverb	SmallSpace
+Map	Fader 8		Soft Knob 8 			Reverb	SmallSpace
+// Room
+Map	SubPageName		"Room" 				Reverb	Room
+Map	Fader 2		Soft Knob 2 			Reverb	Room
+Map	Fader 3		Soft Knob 3 			Reverb	Room
+Map	UDVButton 7-4_8-4		Soft Knob 4 			Reverb	Room
+Map	Fader 5		Soft Knob 5 			Reverb	Room
+Map	Fader 6		Soft Knob 6 			Reverb	Room
+Map	Fader 7		Soft Knob 7 			Reverb	Room
+Map	Fader 8		Soft Knob 8 			Reverb	Room
+// Hall
+Map	SubPageName		"Hall" 				Reverb	Hall
+Map	Fader 2		Soft Knob 2 			Reverb	Hall
+Map	Fader 3		Soft Knob 3 			Reverb	Hall
+Map	UDVButton 7-4_8-4		Soft Knob 4 			Reverb	Hall
+Map	Fader 5		Soft Knob 5 			Reverb	Hall
+Map	Fader 6		Soft Knob 6 			Reverb	Hall
+Map	Fader 7		Soft Knob 7 			Reverb	Hall
+Map	Fader 8		Soft Knob 8 			Reverb	Hall
+// Arena
+Map	SubPageName		"Arena" 				Reverb	Arena
+Map	Fader 2		Soft Knob 2 			Reverb	Arena
+Map	Fader 3		Soft Knob 3 			Reverb	Arena
+Map	Fader 4		Soft Knob 4 			Reverb	Arena
+Map	Fader 5		Soft Knob 5 			Reverb	Arena
+Map	Fader 6		Soft Knob 6 			Reverb	Arena
+Map	Fader 7		Soft Knob 7 			Reverb	Arena
+Map	Fader 8		Soft Knob 8 			Reverb	Arena
+// Plate
+Map	SubPageName		"Plate" 				Reverb	Plate
+Map	Fader 5		Soft Knob 5 			Reverb	Plate
+Map	Fader 7		Soft Knob 7 			Reverb	Plate
+// Spring
+Map	SubPageName		"Spring" 				Reverb	Spring
+Map	Fader 2		Soft Knob 2 			Reverb	Spring
+Map	Fader 3		Soft Knob 3 			Reverb	Spring
+Map	Fader 4		Soft Knob 4 			Reverb	Spring
+Map	Fader 5		Soft Knob 5 			Reverb	Spring
+Map	Button 8-6		Soft Knob 6 			Reverb	Spring
+Map	Fader 7		Soft Knob 7 			Reverb	Spring
+Map	Fader 8		Soft Knob 8 			Reverb	Spring
+// Echo
+Map	SubPageName		"Echo" 				Reverb	Echo
+Map	Sel2_0		TempoSync=Free			Reverb	Echo
+Map	Sel2_1		TempoSync=Sync			Reverb	Echo
+Map	Fader 2		Soft Knob 2 			Reverb	Echo	Free
+Map	UDVButton 7-2_8-2		Soft Knob 2 			Reverb	Echo	Sync
+Map	Fader 3		Soft Knob 3 			Reverb	Echo
+Map	Button 8-4		Soft Knob 4 		SEL2	Reverb	Echo
+Map	Fader 5		Soft Knob 5 			Reverb	Echo
+Map	Fader 6		Soft Knob 6 			Reverb	Echo
+Map	Fader 7		Soft Knob 7 			Reverb	Echo
+// MultiTap
+Map	SubPageName		"MultiTap" 				Reverb	MultiTap
+Map	Sel2_0		TempoSync=Free			Reverb	MultiTap
+Map	Sel2_1		TempoSync=Sync			Reverb	MultiTap
+Map	Sel3_0		Tap=TapNum			Reverb	MultiTap
+Map	Sel3_32		Tap=TapNum			Reverb	MultiTap
+Map	Sel3_64		Tap=TapNum			Reverb	MultiTap
+Map	Sel3_95		Tap=TapNum			Reverb	MultiTap
+Map	Sel3_127		Tap=RepeatTap			Reverb	MultiTap
+Map	Button 8-2		Soft Knob 2 		SEL2	Reverb	MultiTap
+Map	Fader 3		Soft Knob 3 			Reverb	MultiTap
+Map	Fader 4		Soft Knob 4 			Reverb	MultiTap
+Map	UDVButton 7-5_8-5		Soft Knob 5 		SEL3	Reverb	MultiTap
+Map	Fader 6		Soft Knob 6 			Reverb	MultiTap	TapNum	Free
+Map	UDVButton 7-6_8-6		Soft Knob 6 			Reverb	MultiTap	TapNum	Sync
+Map	Fader 7		Soft Knob 7 			Reverb	MultiTap	TapNum
+Map	Knob V8		Soft Knob 8 			Reverb	MultiTap	TapNum
+Map	Fader 6		Soft Knob 6 			Reverb	MultiTap	RepeatTap	Free
+Map	UDVButton 7-6_8-6		Soft Knob 6 			Reverb	MultiTap	RepeatTap	Sync
+// Reverse
+Map	SubPageName		"Reverse" 				Reverb	Reverse
+Map	Sel2_0		TempoSync=Free			Reverb	Reverse
+Map	Sel2_1		TempoSync=Sync			Reverb	Reverse
+Map	Fader 2		Soft Knob 2 			Reverb	Reverse	Free
+Map	UDVButton 7-2_8-2		Soft Knob 2 			Reverb	Reverse	Sync
+Map	Fader 3		Soft Knob 3 			Reverb	Reverse
+Map	Button 8-4		Soft Knob 4 		SEL2	Reverb	Reverse
+Map	Fader 5		Soft Knob 5 			Reverb	Reverse
+// Convolution
+Map	SubPageName		"Convolution" 				Reverb	Convolution
+Map	UDVButton 7-2_8-2		Soft Knob 2 			Reverb	Convolution
+Map	Fader 3		Soft Knob 3 			Reverb	Convolution
+Map	Knob V4		Soft Knob 4 			Reverb	Convolution
+Map	Fader 5		Soft Knob 5 			Reverb	Convolution
+Map	UDVButton 7-6_8-6		Soft Knob 6 			Reverb	Convolution
+Map	Knob V7		Soft Knob 7 			Reverb	Convolution
+Map	Fader 8		Soft Knob 8 			Reverb	Convolution
+// Eq
+Map	PageName		"Eq" 				Eq
+Map	Knob V1		Soft Knob 1 			Eq
+Map	Fader 2		Soft Knob 2 			Eq
+Map	Knob V5		Soft Knob 5 			Eq
+Map	Fader 6		Soft Knob 6 			Eq
+Map	Fader 7		Soft Knob 7 			Eq
+// Gate
+Map	PageName		"Gate" 				Gate
+Map	Fader 1		Soft Knob 1 			Gate	
+Map	Fader 2		Soft Knob 2 			Gate	
+Map	Button 8-3		Soft Knob 3 			Gate
+Map	Fader 4		Soft Knob 4 			Gate
+Map	Fader 5		Soft Knob 5 			Gate
+Map	Fader 6		Soft Knob 6 			Gate
+Map	Fader 7		Soft Knob 7 			Gate
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	Alligator
+Define Group	Page	Main	HPFilter	BPFilter	LPFilter	HPEffects	BPEffects	LPEffects	DryLevels	AmpEnv	LFO	FilterEnv	Delay	Phaser	Index	Internal
+Define Group	TempoSync	Free	Sync
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Alligator"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=AmpEnv			Index
+Map	Button 1-3		Page=DryLevels			Index
+Map	Button 2-5		Page=HPFilter			Index
+Map	Button 2-6		Page=FilterEnv			Index
+Map	Button 3-5		Page=BPFilter			Index
+Map	Button 4-5		Page=LPFilter			Index
+Map	Button 2-8		Page=HPEffects			Index
+Map	Button 3-8		Page=BPEffects			Index
+Map	Button 4-8		Page=LPEffects			Index
+Map	Button 6-8		Page=Delay			Index
+Map	Button 7-8		Page=Phaser			Index
+Map	Button 5-5		Page=LFO			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Button 1-2		Pattern Enable			Main
+Map	Button 3-2		Shuffle			Main
+Map	UDVButton 5-2_6-2		Pattern			Main
+Map	UDVButton 7-2_8-2		Resolution			Main
+Map	UDVButton 7-3_8-3		Shift			Main
+Map	Button 1-4		Gate 1 Trig			Main
+Map	Button 3-4		Gate 2 Trig			Main
+Map	Button 5-4		Gate 3 Trig			Main
+Map	Button 1-5		Gate 1 Open			Main
+Map	Button 3-5		Gate 2 Open			Main
+Map	Button 5-5		Gate 3 Open			Main
+Map	Fader 7		Master Volume 				Main
+Map	Meter 8		Input Peak Meter			Main
+// HPFilter
+Map	PageName		"HPFilter" 				HPFilter
+Map	Button 2-1		Page=HPFilter			HPFilter
+Map	Button 3-1		Page=BPFilter			HPFilter
+Map	Button 4-1		Page=LPFilter			HPFilter
+Map	Button 1-2		High Pass Filter On			HPFilter
+Map	Knob V3		High Pass LFO Amount 				HPFilter
+Map	Fader 4		High Pass Frequency 				HPFilter
+Map	Fader 5		High Pass Resonance 				HPFilter
+Map	Knob V6		High Pass Env Amount 				HPFilter
+// BPFilter
+Map	PageName		"BPFilter" 				BPFilter
+Map	Button 2-1		Page=HPFilter			BPFilter
+Map	Button 3-1		Page=BPFilter			BPFilter
+Map	Button 4-1		Page=LPFilter			BPFilter
+Map	Button 1-2		Band Pass Filter On			BPFilter
+Map	Knob V3		Band Pass LFO Amount 				BPFilter
+Map	Fader 4		Band Pass Frequency 				BPFilter
+Map	Fader 5		Band Pass Resonance 				BPFilter
+Map	Knob V6		Band Pass Env Amount 				BPFilter
+// LPFilter
+Map	PageName		"LPFilter" 				LPFilter
+Map	Button 2-1		Page=HPFilter			LPFilter
+Map	Button 3-1		Page=BPFilter			LPFilter
+Map	Button 4-1		Page=LPFilter			LPFilter
+Map	Button 1-2		Low Pass Filter On			LPFilter
+Map	Knob V3		Low Pass LFO Amount 				LPFilter
+Map	Fader 4		Low Pass Frequency 				LPFilter
+Map	Fader 5		Low Pass Resonance 				LPFilter
+Map	Knob V6		Low Pass Env Amount 				LPFilter
+// HPEffects
+Map	PageName		"HPEffects" 				HPEffects
+Map	Button 2-8		Page=HPEffects			HPEffects
+Map	Button 3-8		Page=BPEffects			HPEffects
+Map	Button 4-8		Page=LPEffects			HPEffects
+Map	Button 6-8		Page=Delay			HPEffects
+Map	Button 7-8		Page=Phaser			HPEffects
+Map	Fader 2		High Pass Drive Amount 				HPEffects
+Map	Fader 3		High Pass Phaser Amount 				HPEffects
+Map	Fader 4		High Pass Delay Amount 				HPEffects
+Map	Knob V6		High Pass Pan 				HPEffects
+Map	Fader 7		High Pass Volume 				HPEffects
+// BPEffects
+Map	PageName		"BPEffects" 				BPEffects
+Map	Button 2-8		Page=HPEffects			BPEffects
+Map	Button 3-8		Page=BPEffects			BPEffects
+Map	Button 4-8		Page=LPEffects			BPEffects
+Map	Button 6-8		Page=Delay			BPEffects
+Map	Button 7-8		Page=Phaser			BPEffects
+Map	Fader 2		Band Pass Drive Amount 				BPEffects
+Map	Fader 3		Band Pass Phaser Amount 				BPEffects
+Map	Fader 4		Band Pass Delay Amount 				BPEffects
+Map	Knob V6		Band Pass Pan 				BPEffects
+Map	Fader 7		Band Pass Volume 				BPEffects
+// LPEffects
+Map	PageName		"LPEffects" 				LPEffects
+Map	Button 2-8		Page=HPEffects			LPEffects
+Map	Button 3-8		Page=BPEffects			LPEffects
+Map	Button 4-8		Page=LPEffects			LPEffects
+Map	Button 6-8		Page=Delay			LPEffects
+Map	Button 7-8		Page=Phaser			LPEffects
+Map	Fader 2		Low Pass Drive Amount 				LPEffects
+Map	Fader 3		Low Pass Phaser Amount 				LPEffects
+Map	Fader 4		Low Pass Delay Amount 				LPEffects
+Map	Knob V6		Low Pass Pan 				LPEffects
+Map	Fader 7		Low Pass Volume 				LPEffects
+// Delay
+Map	PageName		"Delay" 				Delay
+Map	Sel1_0		TempoSync=Free			Delay
+Map	Sel1_1		TempoSync=Sync			Delay
+Map	Button 2-8		Page=HPEffects			Delay
+Map	Button 3-8		Page=BPEffects			Delay
+Map	Button 4-8		Page=LPEffects			Delay
+Map	Button 6-8		Page=Delay			Delay
+Map	Button 7-8		Page=Phaser			Delay
+Map	Fader 2		Delay Time 			Delay	Free
+Map	UDVButton 7-2_8-2		Delay Time	10		Delay	Sync
+Map	Button 1-3		DelaySync		SEL1	Delay
+Map	Fader 4		Delay Feedback 				Delay
+Map	Knob V5		Delay Pan 				Delay
+// Phaser
+Map	PageName		"Phaser" 				Phaser
+Map	Button 2-8		Page=HPEffects			Phaser
+Map	Button 3-8		Page=BPEffects			Phaser
+Map	Button 4-8		Page=LPEffects			Phaser
+Map	Button 6-8		Page=Delay			Phaser
+Map	Button 7-8		Page=Phaser			Phaser
+Map	Fader 2		Phaser Rate 			Phaser
+Map	Fader 4		Phaser Feedback 			Phaser
+// AmpEnv
+Map	PageName		"AmpEnv" 				AmpEnv
+Map	Fader 3		Amp Env Attack 			AmpEnv
+Map	Fader 4		Amp Env Decay 			AmpEnv
+Map	Fader 5		Amp Env Release 			AmpEnv
+// DryLevels
+Map	PageName		"DryLevels" 				DryLevels
+Map	Fader 2		Ducking 			DryLevels
+Map	Knob V4		Dry Pan 			DryLevels
+Map	Fader 5		Dry Volume 			DryLevels
+// FilterEnv
+Map	PageName		"FilterEnv" 				FilterEnv
+Map	Fader 3		Filter Env Attack 			FilterEnv
+Map	Fader 4		Filter Env Decay 			FilterEnv
+Map	Fader 5		Filter Env Release 			FilterEnv
+// LFO
+Map	PageName		"LFO" 				LFO
+Map	Sel1_0		TempoSync=Free			LFO
+Map	Sel1_1		TempoSync=Sync			LFO
+Map	UDVButton 1-2_2-2		LFO Waveform			LFO
+Map	Fader 4		LFO Freq 			LFO	Free
+Map	UDVButton 7-4_8-4		LFO Freq	8		LFO	Sync
+Map	Button 1-5		LFOSync		SEL1	LFO
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerhead Software	se.propellerheads.ReasonAmp
+Define Group	Page	Main	Eq	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Softtube Amp"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=Eq			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	UDVButton 1-2_2-2		Amp Switch			Main
+Map	UDVButton 3-2_4-2		Cab Switch			Main
+Map	Button 8-2		Boost			Main
+Map	Fader 3		Gate 				Main
+Map	Fader 4		Gain 				Main
+Map	Fader 7		Poweramp Gain 				Main
+Map	Fader 8		Volume 				Main
+// Eq
+Map	PageName		"Eq" 				Eq
+Map	Fader 3		Bass 				Eq
+Map	Fader 4		Mid 				Eq
+Map	Fader 5		Treble 				Eq
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerhead Software	se.propellerheads.ReasonBassAmp
+Define Group	Page	Main	Eq	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Softtube Bass Amp"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=Eq			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	UDVButton 1-2_2-2		Amp Switch			Main
+Map	UDVButton 3-2_4-2		Cab Switch			Main
+Map	Fader 3		Drive 				Main
+Map	Fader 8		Volume 				Main
+// Eq
+Map	PageName		"Eq" 				Eq
+Map	Button 8-2		Ultra Lo			Eq
+Map	Fader 3		Bass 				Eq
+Map	Fader 4		Middle 				Eq
+Map	UDVButton 7-5_8-5		Mid Freq			Eq
+Map	Button 8-6		Ultra Hi			Eq
+Map	Fader 7		Treble 				Eq
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerhead Software	se.propellerheads.Synchronous
+Define Group	Page	Main	Dist	Filter	Delay	Reverb	Index	Internal
+Define Group	TempoSync	Free	Sync
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Synchronous"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-5		Page=Filter			Index
+Map	Button 2-8		Page=Dist			Index
+Map	Button 3-8		Page=Delay			Index
+Map	Button 4-8		Page=Reverb			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Fader 3		Level 				Main
+Map	Button 8-4		Level InOut			Main
+Map	Fader 6		DryWet 				Main
+Map	Fader 7		Master Level 				Main
+Map	Meter 8		Input Peak Meter			Main
+// Dist
+Map	PageName		"Dist" 				Dist
+Map	Button 1-2		Dist On			Dist
+Map	UDVButton 3-2_4-2		Dist Type			Dist
+Map	Button 8-2		Dist Post Filter			Dist
+Map	Fader 4		Dist Amount 				Dist
+Map	Fader 5		Dist Character 				Dist
+// Filter
+Map	PageName		"Filter" 				Filter
+Map	Button 1-2		Filter On			Filter
+Map	UDVButton 3-2_4-2		Filter Type			Filter
+Map	Fader 4		Filter Freq 				Filter
+Map	Fader 5		Filter Reso 				Filter
+Map	Fader 7		Filter Lag 				Filter
+// Delay
+Map	PageName		"Delay" 				Delay
+Map	Sel1_0		TempoSync=Free			Delay
+Map	Sel1_1		TempoSync=Sync			Delay
+Map	Button 1-2		Delay On			Delay
+Map	Button 3-2		Delay Keep Pitch			Delay
+Map	Button 4-2		Delay Ping Pong			Delay
+Map	Fader 3		Delay  Amount 				Delay
+Map	Fader 4		Delay Time 				Delay	Free
+Map	UDVButton 7-4_8-4		Delay Synched Time			Delay	Sync
+Map	Button 1-5		Delay Tempo Sync		SEL1	Delay
+Map	Button 8-5		Delay SendReturn			Delay
+Map	Fader 6		Delay Feedback 				Delay
+Map	Button 8-7		Delay Roll 			Delay
+Map	Knob V8		Delay Pan 				Delay
+// Reverb
+Map	PageName		"Reverb" 				Reverb
+Map	Button 1-2		Reverb On			Reverb
+Map	Fader 3		Reverb Amount 				Reverb
+Map	Fader 4		Reverb Decay 				Reverb
+Map	Fader 6		Reverb Size 				Reverb
+Map	Fader 7		Reverb Damp 				Reverb
+Map	Button 8-8		Reverb SendReturn			Reverb
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	BV512 Digital Vocoder
+Define Group	Page	Main	Band1-8	Band9-16	Band17-24	Band25-32	Index	Internal
+Define Group	BandCount	4Band	8Band	16Band	32Band	FFT
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"BV512 Digital Vocoder"
+Map	DeviceName		Device Name
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	UDVButton 7-1_8-1		Band Count 		SEL1	Index
+//Map	Hidden		Band Count 		SEL1	Index
+Map	Sel1_0		BandCount=4Band 			Index
+Map	Sel1_32		BandCount=8Band 			Index
+Map	Sel1_64		BandCount=16Band 			Index
+Map	Sel1_95		BandCount=32Band 			Index
+Map	Sel1_127		BandCount=32Band 			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=Band1-8			Index	4Band
+Map	Button 2-8		Page=Band1-8			Index	8Band
+Map	Button 2-8		Page=Band1-8			Index	16Band
+Map	Button 2-8		Page=Band1-8			Index	32Band
+Map	Button 3-8		Page=Band9-16			Index	16Band
+Map	Button 3-8		Page=Band9-16			Index	32Band
+Map	Button 4-8		Page=Band17-24			Index	32Band
+Map	Button 5-8		Page=Band25-32			Index	32Band
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Button 4-1		Hold			Main
+Map	UDVButton 5-1_6-1		Band Count			Main
+Map	UDVButton 7-1_8-1		Vocoder/Equalizer			Main
+Map	Meter 2		Source Peak Meter 			Main
+Map	Meter 3		Modulator Peak Meter 			Main
+Map	Fader 4		Attack 			Main
+Map	Fader 5		Decay 			Main
+Map	Knob V6		Shift 			Main
+Map	Fader 7		HF Emphasis 			Main
+Map	Fader 8		Dry/Wet 			Main
+// Band1-8
+Map	PageName		"Band1-8" 			Band1-8
+Map	Hidden		Band Count 		SEL1	Band1-8
+Map	Sel1_0		BandCount=4Band 			Band1-8
+Map	Sel1_32		BandCount=8Band 			Band1-8
+Map	Sel1_64		BandCount=8Band 			Band1-8
+Map	Sel1_95		BandCount=8Band 			Band1-8
+Map	Sel1_127		BandCount=8Band 			Band1-8
+Map	Fader 1		Band Level 1 			Band1-8
+Map	Fader 2		Band Level 2 			Band1-8
+Map	Fader 3		Band Level 3 			Band1-8
+Map	Fader 4		Band Level 4 			Band1-8
+Map	Fader 5		Band Level 5 			Band1-8	8Band
+Map	Fader 6		Band Level 6 			Band1-8	8Band
+Map	Fader 7		Band Level 7 			Band1-8	8Band
+Map	Fader 8		Band Level 8 			Band1-8	8Band
+// Band9-16 
+Map	PageName		"Band9-16" 			Band9-16
+Map	Hidden		Band Count 		SEL1	Band9-16
+Map	Sel1_0		BandCount=4Band 			Band9-16
+Map	Sel1_32		BandCount=8Band 			Band9-16
+Map	Sel1_64		BandCount=16Band 			Band9-16
+Map	Sel1_95		BandCount=16Band 			Band9-16
+Map	Sel1_127		BandCount=16Band 			Band9-16
+Map	Fader 1		Band Level 9 			Band9-16	16Band
+Map	Fader 2		Band Level 10 			Band9-16	16Band
+Map	Fader 3		Band Level 11 			Band9-16	16Band
+Map	Fader 4		Band Level 12 			Band9-16	16Band
+Map	Fader 5		Band Level 13 			Band9-16	16Band
+Map	Fader 6		Band Level 14 			Band9-16	16Band
+Map	Fader 7		Band Level 15 			Band9-16	16Band
+Map	Fader 8		Band Level 16 			Band9-16	16Band
+// Band17-24
+Map	PageName		"Band17-24" 				Band17-24
+Map	Hidden		Band Count 		SEL1	Band17-24
+Map	Sel1_0		BandCount=4Band 			Band17-24
+Map	Sel1_32		BandCount=8Band 			Band17-24
+Map	Sel1_64		BandCount=16Band 			Band17-24
+Map	Sel1_95		BandCount=32Band 			Band17-24
+Map	Sel1_127		BandCount=32Band 			Band17-24
+Map	Fader 1		Band Level 17 			Band17-24	32Band
+Map	Fader 2		Band Level 18 			Band17-24	32Band
+Map	Fader 3		Band Level 19 			Band17-24	32Band
+Map	Fader 4		Band Level 20 			Band17-24	32Band
+Map	Fader 5		Band Level 21 			Band17-24	32Band
+Map	Fader 6		Band Level 22 			Band17-24	32Band
+Map	Fader 7		Band Level 23 			Band17-24	32Band
+Map	Fader 8		Band Level 24 			Band17-24	32Band
+// Band25-32
+Map	PageName		"Band25-32" 				Band25-32
+Map	Hidden		Band Count 		SEL1	Band25-32
+Map	Sel1_0		BandCount=4Band 			Band25-32
+Map	Sel1_32		BandCount=8Band 			Band25-32
+Map	Sel1_64		BandCount=16Band 			Band25-32
+Map	Sel1_95		BandCount=32Band 			Band25-32
+Map	Sel1_127		BandCount=32Band 			Band25-32
+Map	Fader 1		Band Level 25 			Band25-32	32Band
+Map	Fader 2		Band Level 26 			Band25-32	32Band
+Map	Fader 3		Band Level 27 			Band25-32	32Band
+Map	Fader 4		Band Level 28 			Band25-32	32Band
+Map	Fader 5		Band Level 29 			Band25-32	32Band
+Map	Fader 6		Band Level 30 			Band25-32	32Band
+Map	Fader 7		Band Level 31 			Band25-32	32Band
+Map	Fader 8		Band Level 32 			Band25-32	32Band
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	MClass Equalizer
+Define Group	Page	Main	Low	Param1	Param2	Hi	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"MClass Equalizer"
+Map	DeviceName		Device Name
+// Page
+Map	Button C7		Page=Index
+Map	Button 2-8		Page=Low			
+Map	Button 3-8		Page=Param1		
+Map	Button 4-8		Page=Param2	
+Map	Button 5-8		Page=Hi	
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=Low			Index
+Map	Button 3-8		Page=Param1			Index
+Map	Button 4-8		Page=Param2			Index
+Map	Button 5-8		Page=Hi			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Button 1-3		Low Cut Enable			Main
+Map	Button 1-4		Low Shelf Enable			Main
+Map	Button 1-5		Parametric 1 Enable			Main
+Map	Button 1-6		Parametric 2 Enable			Main
+Map	Button 1-7		Hi Shelf Enable			Main
+// Low
+Map	PageName		"Low" 				Low
+Map	Button 1-2		Low Cut Enable			Low
+Map	Button 1-3		Low Shelf Enable			Low
+Map	Fader 4		Low Shelf Frequency			Low
+Map	Knob V5		Low Shelf Gain			Low
+Map	Fader 6		Low Shelf Q			Low
+// Param1
+Map	PageName		"Param1" 				Param1
+Map	Button 1-3		Parametric 1 Enable			Param1
+Map	Fader 4		Parametric 1 Frequency			Param1
+Map	Knob V5		Parametric 1 Gain			Param1
+Map	Fader 6		Parametric 1 Q			Param1
+// Param2
+Map	PageName		"Param2" 				Param2
+Map	Button 1-3		Parametric 2 Enable			Param2
+Map	Fader 4		Parametric 2 Frequency			Param2
+Map	Knob V5		Parametric 2 Gain			Param2
+Map	Fader 6		Parametric 2 Q			Param2
+// Hi
+Map	PageName		"Hi" 				Hi
+Map	Button 1-3		Hi Shelf Enable			Hi
+Map	Fader 4		Hi Shelf Frequency			Hi
+Map	Knob V5		Hi Shelf Gain			Hi
+Map	Fader 6		Hi Shelf Q			Hi
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	MClass Compressor
+Define Group	Page	Main	Env	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"MClass Compressor"
+Map	DeviceName		Device Name
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=Env			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Button 7-1		Sidechain Active			Main
+Map	Button 8-1		Sidechain Solo			Main
+Map	Meter 2		Peak Meter			Main
+Map	Knob V3		Input Gain			Main
+Map	Fader 4		Threshold			Main
+Map	Button 1-5		Soft Knee			Main
+Map	Fader 6		Ratio			Main
+Map	Meter 7		Gain Meter			Main
+Map	Knob V8		Output Gain			Main
+// Env
+Map	PageName		"Env" 				Env
+Map	Fader 4		Attack			Env
+Map	Fader 5		Release			Env
+Map	Button 1-6		Adapt			Env
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	MClass Maximizer
+Define Group	Page	Main	Limiter	SoftCLip	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"MClass Maximizer"
+Map	DeviceName		Device Name
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=Limiter			Index
+Map	Button 3-8		Page=SoftCLip			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Meter 2		Peak Meter			Main
+Map	Knob V3		Input Gain			Main
+Map	Button 1-6		Output Level Meter Mode			Main
+Map	Meter 7		Output Level Left			Main
+Map	Meter 8		Output Level Right			Main
+// Limiter
+Map	PageName		"Limiter" 				Limiter
+Map	Button 1-2		Limiter Enable			Limiter
+Map	Button 4-2		Look Ahead Enable			Limiter
+Map	Meter 3		Gain Meter			Limiter
+Map	UDVButton 1-4_2-4		Attack Speed			Limiter
+Map	UDVButton 1-5_2-5		Release Speed			Limiter
+Map	Knob V6		Output Gain			Limiter
+// SoftCLip
+Map	PageName		"SoftCLip" 				SoftCLip
+Map	Button 1-2		Soft Clip Enable			SoftCLip
+Map	Fader 3		Soft Clip Amount			SoftCLip
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	MClass Stereo Imager
+Define Group	Page	Main	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"MClass Stereo Imager"
+Map	DeviceName		Device Name
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Meter 2		Peak Meter			Main
+Map	Knob V3		Low Width			Main
+Map	Meter 4		Low Width Meter			Main
+Map	Fader 5		X-Over Frequency			Main
+Map	Knob V6		High Width			Main
+Map	Meter 7		High Width Meter			Main
+Map	UDVButton 1-8_2-8		Solo Mode			Main
+Map	UDVButton 7-8_8-8		Separate Out Mode			Main
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	Neptune Pitch Adjuster
+Define Group	Page	Main	PitchAdjust	Transpose	Formant	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Neptune Pitch Adjuster"
+Map	DeviceName		Device Name
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=PitchAdjust			Index
+Map	Button 3-8		Page=Transpose			Index
+Map	Button 4-8		Page=Formant			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Meter 2		Input Peak Meter			Main
+Map	Fader 3		Vibrato Rate			Main
+Map	Button 1-4		Low Freq Input			Main
+Map	Button 3-4		Wide Vibrato			Main
+Map	Button 5-4		Live Mode			Main
+Map	UDVButton 7-4_8-4		MIDI Destination			Main
+Map	UDVButton 1-5_2-5		Scale Memory			Main
+Map	Fader 7		Pitched Signal Level			Main
+Map	Fader 8		Voice Synth Level			Main
+// PitchAdjust
+Map	PageName		"PitchAdjust" 				PitchAdjust
+Map	Button 1-2		Pitch Adjust On/Off			PitchAdjust
+Map	Fader 4		Correction Speed			PitchAdjust
+Map	Fader 5		Preserve Expression			PitchAdjust
+// Transpose
+Map	PageName		"Transpose" 				Transpose
+Map	Button 1-2		Transpose On/Off			Transpose
+Map	UDVButton 1-4_2-4		Semitones			Transpose
+Map	UDVButton 5-4_6-4		Cent			Transpose
+// Formant
+Map	PageName		"Formant" 				Formant
+Map	Button 1-2		Formant On/Off			Formant
+Map	Knob V5		Formant Shift			Formant
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	RV-7 Digital Reverb
+Define Group	Page	Main	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"RV-7 Digital Reverb"
+Map	DeviceName		Device Name
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Meter 2		Peak Meter			Main
+Map	UDVButton 1-3_2-3		Algorithm			Main
+Map	Knob V4		Size			Main
+Map	Knob V5		Decay			Main
+Map	Fader 7		Damping			Main
+Map	Fader 8		Dry/Wet			Main
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	DDL-1 Digital Delay Line
+Define Group	Page	Main	Index	Internal
+Define Group	DelayUnit	Steps	Ms
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"DDL-1 Digital Delay Line"
+Map	DeviceName		Device Name
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Sel1_0		DelayUnit=MS			Main
+Map	Sel1_127		DelayUnit=Steps			Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Meter 2		Peak Meter			Main
+Map	UDVButton 1-3_2-3		DelayTime (steps)			Main	Steps
+Map	UDVButton 1-3_2-3		DelayTime (ms)			Main	Ms
+Map	UDVButton 1-4_2-4		Unit		SEL1	Main
+Map	UDVButton 1-5_2-5		Step Length			Main
+Map	Fader 6		Feedback			Main
+Map	Knob V7		Pan			Main
+Map	Fader 8		Dry/Wet Balance			Main
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	D-11 Foldback Distortion
+Define Group	Page	Main	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"D-11 Foldback Distortion"
+Map	DeviceName		Device Name
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Meter 2		Peak Meter			Main
+Map	Fader 4		Amount			Main
+Map	Fader 8		Foldback			Main
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	ECF-42 Envelope Controlled Filter
+Define Group	Page	Main	FilterEnvelope	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"ECF-42 Filter"
+Map	DeviceName		Device Name
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-6		Page=FilterEnvelope			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Meter 2		Peak Meter			Main
+Map	Fader 3		Frequency			Main
+Map	Fader 4		Resonance			Main
+Map	Fader 5		Env Amount			Main
+Map	Fader 6		Velocity			Main
+Map	UDVButton 1-7_2-7		Mode			Main
+// Filter Envelope
+Map	PageName		"Filter Envelope" 				FilterEnvelope
+Map	Fader 3		Attack			FilterEnvelope
+Map	Fader 4		Decay			FilterEnvelope
+Map	Fader 5		Sustain			FilterEnvelope
+Map	Fader 6		Release			FilterEnvelope
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	CF-101 Chorus/Flanger
+Define Group	Page	Main	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"CF-101 Chorus/Flanger"
+Map	DeviceName		Device Name
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Meter 2		Peak Meter			Main
+Map	Fader 3		Delay			Main
+Map	Knob V4		Feedback			Main
+Map	Fader 5		Rate			Main
+Map	Button 1-6		LFO Sync Enable			Main
+Map	Fader 7		Modulation Amount			Main
+Map	Button 1-8		Send/Insert Mode			Main
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	PH-90 Phaser
+Define Group	Page	Main	LFO	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"PH-90 Phaser"
+Map	DeviceName		Device Name
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 5-5		Page=LFO			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Meter 2		Peak Meter			Main
+Map	Fader 3		Frequency			Main
+Map	Fader 4		Split			Main
+Map	Fader 5		Width			Main
+Map	Fader 6		Feedback			Main
+// LFO
+Map	PageName		"LFO" 				LFO
+Map	Fader 5		Rate			LFO
+Map	Button 1-6		LFO Sync Enable			LFO
+Map	Fader 7		Frequency Modulation			LFO
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	UN-16 Unison
+Define Group	Page	Main	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"UN-16 Unison"
+Map	DeviceName		Device Name
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Meter 2		Peak Meter			Main
+Map	UDVButton 1-3_2-3		Voice Count			Main
+Map	Fader 4		Detune			Main
+Map	Fader 8		Dry/Wet			Main
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	COMP-01 Compressor/Limiter
+Define Group	Page	Main	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"COMP-01 Compressor/Limiter"
+Map	DeviceName		Device Name
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Meter 2		Peak Meter			Main
+Map	Fader 3		Ratio			Main
+Map	Fader 4		Threshold			Main
+Map	Fader 5		Attack			Main
+Map	Fader 6		Release			Main
+Map	Meter 8		Gain			Main
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	PEQ-2 Two Band Parametric EQ
+Define Group	Page	Main	Index	Internal
+Define Group	FilterB	On	Off
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"PEQ-2 Two Band Parametric EQ"
+Map	DeviceName		Device Name
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	Sel1_0		FilterB=Off			Main
+Map	Sel1_1		FilterB=On			Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Meter 2		Peak Meter			Main
+Map	Button 8-1		Filter B On/Off		SEL1	Main
+Map	Fader 3		Filter A Freq			Main
+Map	Fader 4		Filter A Q			Main
+Map	Knob V5		Filter A Gain			Main
+Map	Fader 6		Filter B Freq			Main	On
+Map	Fader 7		Filter B Q			Main	On
+Map	Knob V8		Filter B Gain			Main	On
+
+// ------------------------------------------------------------------------------------------
+Scope	Softube	com.softube.re.SaturationKnob
+Define Group	Page	Main	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Saturation Knob"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Fader 3		Saturation			Main
+Map	UDVButton 1-4_2-4		Saturation Type			Main
+
+// ------------------------------------------------------------------------------------------
+Scope	Propellerhead Software	se.propellerheads.Polar
+Define Group	Page	Main	Dry	DelayBuffer	Shifter1	ShifterVol1	Shifter2	ShifterVol2	Filter	LFO	Env	Index	Internal
+Define Group	TempoSync	Free	Sync
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Polar Dual Pitch Shifter"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=Dry			Index
+Map	Button 2-5		Page=Filter			Index
+Map	Button 5-5		Page=LFO			Index
+Map	Button 5-6		Page=Env			Index
+Map	Button 2-8		Page=DelayBuffer			Index
+Map	Button 3-8		Page=Shifter1			Index
+Map	Button 4-8		Page=ShifterVol1			Index
+Map	Button 5-8		Page=Shifter2			Index
+Map	Button 6-8		Page=ShifterVol2			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Meter 2		Audio Input LED			Main
+Map	UDVButton 1-3_2-3		Analysis Type			Main
+Map	UDVButton 5-3_6-3		Algorithm Type			Main
+Map	Button 8-3		Keyboard Input Enable			Main
+Map	Fader 4		Loop Length			Main
+Map	Fader 6		Auto Pan Rate			Main
+// Dry
+Map	PageName		"Dry Signal" 				Dry
+Map	Button 1-2		Dry Enable			Dry
+Map	Fader 3		Dry Delay			Dry
+Map	Knob V4		Dry Pan			Dry
+Map	Knob V5		Dry Auto Pan Amount			Dry
+Map	Fader 8		Dry Level			Dry
+// DelayBuffer
+Map	PageName		"Delay Buffer" 				DelayBuffer
+Map	Button 2-8		Page=DelayBuffer			DelayBuffer
+Map	Button 3-8		Page=Shifter1			DelayBuffer
+Map	Button 4-8		Page=ShifterVol1			DelayBuffer
+Map	Button 5-8		Page=Shifter2			DelayBuffer
+Map	Button 6-8		Page=ShifterVol2			DelayBuffer
+Map	Button 1-2		Lock Buffer			DelayBuffer
+Map	Button 5-2		Delay/Buffer Delay Mode			DelayBuffer
+Map	Fader 3		Delay/Buffer Position			DelayBuffer
+Map	Button 1-4		Input Summing Left + Right			DelayBuffer
+Map	Knob V5		Buffer LFO Amount			DelayBuffer
+Map	Knob V6		Buffer Env Amount			DelayBuffer
+// Shifter1
+Map	PageName		"Shifter 1" 				Shifter1
+Map	Button 2-8		Page=DelayBuffer			Shifter1
+Map	Button 3-8		Page=Shifter1			Shifter1
+Map	Button 4-8		Page=ShifterVol1			Shifter1
+Map	Button 5-8		Page=Shifter2			Shifter1
+Map	Button 6-8		Page=ShifterVol2			Shifter1
+Map	Knob V2		Shifter 1 Semi			Shifter1
+Map	Knob V3		Shifter 1 Fine			Shifter1
+Map	Fader 4		Shifter 1 Feedback			Shifter1
+Map	Knob V6		Shifter 1 LFO Amount			Shifter1
+Map	Knob V7		Shifter 1 Env Amount			Shifter1
+// ShifterVol1
+Map	PageName		"Shifter Vol 1" 				ShifterVol1
+Map	Button 2-8		Page=DelayBuffer			ShifterVol1
+Map	Button 3-8		Page=Shifter1			ShifterVol1
+Map	Button 4-8		Page=ShifterVol1			ShifterVol1
+Map	Button 5-8		Page=Shifter2			ShifterVol1
+Map	Button 6-8		Page=ShifterVol2			ShifterVol1
+Map	Knob V2		Shifter 1 Pan			ShifterVol1
+Map	Knob V3		Shifter 1 Auto Pan			ShifterVol1
+Map	Fader 6		Shifter 1 Level			ShifterVol1
+// Shifter2
+Map	PageName		"Shifter 2" 				Shifter2
+Map	Button 2-8		Page=DelayBuffer			Shifter2
+Map	Button 3-8		Page=Shifter1			Shifter2
+Map	Button 4-8		Page=ShifterVol1			Shifter2
+Map	Button 5-8		Page=Shifter2			Shifter2
+Map	Button 6-8		Page=ShifterVol2			Shifter2
+Map	Button 1-1		Shifter 2 Enable			Shifter2
+Map	Knob V2		Shifter 2 Semi			Shifter2
+Map	Knob V3		Shifter 2 Fine			Shifter2
+Map	Fader 4		Shifter 2 Feedback			Shifter2
+Map	Fader 5		Shifter 2 Delay			Shifter2
+Map	Knob V6		Shifter 2 LFO Amount			Shifter2
+Map	Knob V7		Shifter 2 Env Amount			Shifter2
+// ShifterVol2
+Map	PageName		"Shifter Vol 2" 				ShifterVol2
+Map	Button 2-8		Page=DelayBuffer			ShifterVol2
+Map	Button 3-8		Page=Shifter1			ShifterVol2
+Map	Button 4-8		Page=ShifterVol1			ShifterVol2
+Map	Button 5-8		Page=Shifter2			ShifterVol2
+Map	Button 6-8		Page=ShifterVol2			ShifterVol2
+Map	Knob V2		Shifter 2 Pan			ShifterVol2
+Map	Knob V3		Shifter 2 Auto Pan			ShifterVol2
+Map	Fader 6		Shifter 2 Level			ShifterVol2
+// Env
+Map	PageName		"Envelope" 				Env
+Map	Button 1-2		Envelope Gate			Env
+Map	Fader 3		Envelope Attack			Env
+Map	Fader 4		Envelope Decay			Env
+Map	Fader 5		Envelope Sustain			Env
+Map	Fader 6		Envelope Release			Env
+Map	Button 1-7		Env To Amp			Env
+// LFO
+Map	PageName		"LFO" 				LFO
+Map	Sel1_0		TempoSync=Free			LFO
+Map	Sel1_1		TempoSync=Sync			LFO
+Map	Fader 2		LFO Rate Free			LFO	Free
+Map	UDVButton 7-2_8-2		LFO Rate Synced			LFO	Sync
+Map	Fader 3		LFO Phase			LFO
+Map	UDVButton 7-4_8-4		LFO Waveform			LFO
+Map	Button 1-5		LFO Tempo Sync		SEL1	LFO
+// Filter
+Map	PageName		"Filter" 				Filter
+Map	Button 1-2		Filter Enable			Filter
+Map	UDVButton 7-3_8-3		Filter Type			Filter
+Map	Fader 4		Filter Frequency			Filter
+Map	Fader 5		Filter Resonance			Filter
+Map	Fader 6		Filter Keyboard Tracking			Filter
+Map	Knob V7		Filter LFO Amount			Filter
+Map	Knob V8		Filter Env Amount			Filter
+
