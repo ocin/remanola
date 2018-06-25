@@ -1,50 +1,15 @@
-// ------------------------------------------------------------------------------------------
-Scope	Propellerhead Software	se.propellerheads.PX7 
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.PX7" -%}
+{% set devicename="PX7" -%}
+{% include "device-scope.j2" %}
 Define Group	Page	Main	OP1	OP2	OP3	OP4	OP5	OP6	LFO	Index	Keyboard	Internal
 Define Group	KeyMod	ModWheel	PitchBend
 Define Group	KbdVel	V100	V25	V50	V75	V127
 Define Group	BaseKey	C2	C0	C1	C3	C4
 Define Group	TempoSync	Free	Sync
-//	Control Surface Item	Key	Remotable Item	Scale	Mode
-Map	DeviceScope		"PX7"
-Map	DeviceName		Device Name
-Map	PatchName		Patch Name
-Map	Button C3		Select Previous Patch
-Map	Button C4		Select Next Patch
-// Page
-Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
-Map	Button C7		Page=Index
-// Keyboard
-Map	PageName		"Keyboard"			Keyboard	
-Map	Button 1-4		KbdVel=V25			Keyboard	
-Map	Button 1-5		KbdVel=V50			Keyboard	
-Map	Button 1-6		KbdVel=V75			Keyboard	
-Map	Button 1-7		KbdVel=V100			Keyboard	
-Map	Button 1-8		KbdVel=V127			Keyboard	
-Map	KbdVel		"25"			Keyboard	V25
-Map	KbdVel		"50"			Keyboard	V50
-Map	KbdVel		"75"			Keyboard	V75
-Map	KbdVel		"100"			Keyboard	V100
-Map	KbdVel		"127"			Keyboard	V127
-Map	Button 2-4		BaseKey=C0			Keyboard	
-Map	Button 2-5		BaseKey=C1			Keyboard	
-Map	Button 2-6		BaseKey=C2			Keyboard	
-Map	Button 2-7		BaseKey=C3			Keyboard	
-Map	Button 2-8		BaseKey=C4			Keyboard	
-Map	BaseKey		"0"			Keyboard	C0
-Map	BaseKey		"1"			Keyboard	C1
-Map	BaseKey		"2"			Keyboard	C2
-Map	BaseKey		"3"			Keyboard	C3
-Map	BaseKey		"4"			Keyboard	C4
-Map	Button 1-2		KeyMod=ModWheel			Keyboard
-Map	Button 2-2		KeyMod=PitchBend			Keyboard
-// Mod Wheel
-Map	SubPageName		"Mod Wheel"			Keyboard	ModWheel
-Map	Fader 1		Mod Wheel			Keyboard	ModWheel
-// Pitch Bend
-Map	SubPageName		"Pitch Bend"			Keyboard	PitchBend
-Map	Knob V1		Pitch Bend			Keyboard	PitchBend
+{% include "device-header.j2" %}
+{% include "keyboard.j2" %}
+{% include "internal.j2" %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -57,10 +22,6 @@ Map	Button 6-1		Page=OP2			Index
 Map	Button 7-1		Page=OP1			Index
 Map	Button 5-5		Page=LFO			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-2_2-2		Algorithm				Main
@@ -70,7 +31,7 @@ Map	Knob V5		Touch Senstivity				Main
 Map	Knob V6		Attack				Main
 Map	Knob V7		Decay				Main
 Map	Fader 8		Volume				Main
-{% for opnum in range(1,7) %}
+{% for opnum in range(1,7) -%}
 // Op {{ opnum }}
 Map	PageName		"Op{{ opnum }}" 				OP{{ opnum }}
 Map	Button 1-1		Page=Main			OP{{ opnum }}
@@ -86,7 +47,7 @@ Map	UDVButton 7-4_8-4		Operator {{ opnum }} Freq Fine				OP{{ opnum }}
 Map	UDVButton 7-5_8-5		Operator {{ opnum }} Freq Detune				OP{{ opnum }}
 Map	Knob V7		Operator {{ opnum }} Pan				OP{{ opnum }}
 Map	Fader 8		Operator {{ opnum }} Output Level				OP{{ opnum }}
-{% endfor %}
+{% endfor -%}
 // LFO
 Map	PageName		"LFO" 				LFO
 Map	Sel1_0		TempoSync=Free			LFO

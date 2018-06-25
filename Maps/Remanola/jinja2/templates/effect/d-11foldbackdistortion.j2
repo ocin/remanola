@@ -1,0 +1,23 @@
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	D-11 Foldback Distortion
+Define Group	Page	Main	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"D-11 Foldback Distortion"
+Map	DeviceName		Device Name
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Meter 2		Peak Meter			Main
+Map	Fader 4		Amount			Main
+Map	Fader 8		Foldback			Main

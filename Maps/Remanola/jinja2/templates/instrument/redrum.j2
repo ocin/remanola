@@ -1,18 +1,13 @@
-// ------------------------------------------------------------------------------------------
-Scope	Propellerheads	Redrum Drum Computer
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="Redrum Drum Computer" -%}
+{% set devicename="Redrum" -%}
+{% include "device-scope.j2" %}
 Define Group	Page	Main	Performance	Drum1	Drum1Edit	Drum2	Drum2Edit	Drum3	Drum3Edit	Drum4	Drum4Edit	Drum5	Drum5Edit	Drum6	Drum6Edit	Drum7	Drum7Edit	Drum8	Drum8Edit	Drum9	Drum9Edit	Drum10	Drum10Edit	Drum11	Drum11Edit	Drum12	Drum12Edit	Index	Internal
 Define Group	DrumMode	Play	Solo	Mute
 Define Group	EditMode	Rotate	Toggle	Flam
-//	Control Surface Item	Key	Remotable Item	Scale	Mode
-Map	DeviceScope		"Redrum"
-Map	DeviceName		Device Name
-Map	PatchName		Patch Name
-Map	Button C3		Select Previous Patch
-Map	Button C4		Select Next Patch
+{% include "device-header.j2" %}
 Map	PlayingStep		Playing Step
-// Page
-Map	Button C5		Page=Main
-Map	Button C7		Page=Index
+{% include "internal.j2" %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -28,10 +23,6 @@ Map	Button 8-2		Page=Drum2			Index
 Map	Button 8-3		Page=Drum3			Index
 Map	Button 8-4		Page=Drum4			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	Button 3-5		EditMode=Rotate			Main

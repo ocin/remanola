@@ -1,26 +1,21 @@
-{% set show_pitch_bend_range=true %}
-// ------------------------------------------------------------------------------------------
-Scope	Propellerhead Software	se.propellerheads.Europa
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.Europa" -%}
+{% set devicename="Europa" -%}
+{% include "device-scope.j2" %}
 Define Group	Page	Main	Eng1	Eng2	Eng3	Eng1Mod1	Eng2Mod1	Eng3Mod1	Eng1Mod2	Eng2Mod2	Eng3Mod2	Eng1Harm	Eng2Harm	Eng3Harm	Eng1Filter	Eng2Filter	Eng3Filter	Eng1Unison	Eng2Unison	Eng3Unison	Mixer	Filter	Amp	Effects	Phaser	Dist	Eq	Delay	Reverb	Comp	LFO1	LFO2	LFO3	Env1	Env2	Env3	Env4	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
 Define Group	KeyMod	ModWheel	PitchBend
 Define Group	KbdVel	V100	V25	V50	V75	V127
 Define Group	BaseKey	C2	C0	C1	C3	C4
 Define Group	TempoSync	Free	Sync
-//	Control Surface Item	Key	Remotable Item	Scale	Mode
-Map	DeviceScope		"Europa"
-Map	DeviceName		Device Name
-Map	PatchName		Patch Name
-Map	Button C3		Select Previous Patch
-Map	Button C4		Select Next Patch
+{% include "device-header.j2" %}
+{% set show_pitch_bend_range=true -%}
+{% include "keyboard.j2" %}
+{% include "internal.j2" %}
+// Select
 Map	EngineSelect		OscSel
 Map	EffectSelect		Effect Select
 Map	LFOSelect		LFO Select
 Map	EnvSelect		Env Select
-// Page
-Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
-Map	Button C7		Page=Index
-{% include "keyboard.j2" %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -69,10 +64,6 @@ Map	Button 5-8		Page=Delay			Index
 Map	Button 6-8		Page=Comp			Index
 Map	Button 7-8		Page=Reverb			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	Button 1-1		Page=Main			Main
@@ -126,7 +117,7 @@ Map	Fader 5		Amp Attack				Amp
 Map	Fader 6		Amp Decay				Amp
 Map	Fader 7		Amp Sustain				Amp
 Map	Fader 8		Amp Release				Amp
-{% for engnum in range(1,4) %}
+{% for engnum in range(1,4) -%}
 // Eng {{ engnum }}
 Map	PageName		"Eng {{ engnum }}" 				Eng{{ engnum }}
 Map	Button 1-1		Page=Main			Eng{{ engnum }}
@@ -144,7 +135,7 @@ Map	Button 1-6		Osc{{ engnum }} SyncPhase			Eng{{ engnum }}
 Map	UDVButton 7-6_8-6		Osc{{ engnum }} Shape Source				Eng{{ engnum }}
 Map	Fader 7		Osc{{ engnum }} Shape Amt				Eng{{ engnum }}
 Map	Fader 8		Osc{{ engnum }} Shape Vel				Eng{{ engnum }}
-{% for modnum in range(1,3) %}
+{% for modnum in range(1,3) -%}
 // Eng {{ engnum }} Modifier {{ modnum }}
 Map	PageName		"Eng {{ engnum }} Mod {{ modnum }}" 				Eng{{ engnum }}Mod{{ modnum }}
 Map	Button 1-1		Page=Main			Eng{{ engnum }}Mod{{ modnum }}
@@ -156,7 +147,7 @@ Map	UDVButton 1-3_2-3		Osc{{ engnum }} Mod{{ modnum }}				Eng{{ engnum }}Mod{{ m
 Map	Fader 4		Osc{{ engnum }} Mod{{ modnum }} Amt				Eng{{ engnum }}Mod{{ modnum }}
 Map	Fader 5		Osc{{ engnum }} Mod{{ modnum }} Mod				Eng{{ engnum }}Mod{{ modnum }}
 Map	UDVButton 7-6_8-6		Osc{{ engnum }} Mod{{ modnum }} Source				Eng{{ engnum }}Mod{{ modnum }}
-{% endfor %}
+{% endfor -%}
 // Eng {{ engnum }} Spectral Filter
 Map	PageName		"Eng {{ engnum }} Spectral Filter" 				Eng{{ engnum }}Filter
 Map	Button 1-1		Page=Main			Eng{{ engnum }}Filter
@@ -193,7 +184,7 @@ Map	UDVButton 1-4_2-4		Osc{{ engnum }} Count				Eng{{ engnum }}Unison
 Map	Fader 5		Osc{{ engnum }} Blend				Eng{{ engnum }}Unison
 Map	Fader 6		Osc{{ engnum }} Detune				Eng{{ engnum }}Unison
 Map	Fader 7		Osc{{ engnum }} Spread				Eng{{ engnum }}Unison
-{% endfor %}
+{% endfor -%}
 {% include "instrument/include/europa-grain_lfo.j2" %}
 {% include "instrument/include/europa-grain_env.j2" %}
 {% include "instrument/include/europa-grain_effects.j2" %}

@@ -1,0 +1,36 @@
+// ------------------------------------------------------------------------------------------
+Scope	Propellerhead Software	se.propellerheads.ReasonAmp
+Define Group	Page	Main	Eq	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"Softtube Amp"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=Eq			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	UDVButton 1-2_2-2		Amp Switch			Main
+Map	UDVButton 3-2_4-2		Cab Switch			Main
+Map	Button 8-2		Boost			Main
+Map	Fader 3		Gate 				Main
+Map	Fader 4		Gain 				Main
+Map	Fader 7		Poweramp Gain 				Main
+Map	Fader 8		Volume 				Main
+// Eq
+Map	PageName		"Eq" 				Eq
+Map	Fader 3		Bass 				Eq
+Map	Fader 4		Mid 				Eq
+Map	Fader 5		Treble 				Eq

@@ -1,0 +1,35 @@
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	MClass Compressor
+Define Group	Page	Main	Env	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"MClass Compressor"
+Map	DeviceName		Device Name
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=Env			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Button 7-1		Sidechain Active			Main
+Map	Button 8-1		Sidechain Solo			Main
+Map	Meter 2		Peak Meter			Main
+Map	Knob V3		Input Gain			Main
+Map	Fader 4		Threshold			Main
+Map	Button 1-5		Soft Knee			Main
+Map	Fader 6		Ratio			Main
+Map	Meter 7		Gain Meter			Main
+Map	Knob V8		Output Gain			Main
+// Env
+Map	PageName		"Env" 				Env
+Map	Fader 4		Attack			Env
+Map	Fader 5		Release			Env
+Map	Button 1-6		Adapt			Env

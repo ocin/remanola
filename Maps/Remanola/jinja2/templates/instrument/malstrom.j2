@@ -1,50 +1,15 @@
-// ------------------------------------------------------------------------------------------
-Scope	Propellerheads	Malstrom Graintable Synthesizer
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="Malstrom Graintable Synthesizer" -%}
+{% set devicename="Malstrom" -%}
+{% include "device-scope.j2" %}
 Define Group	Page	Main	OscA	OscAEnv	OscB	OscBEnv	FilterA	FilterB	FilterEnv	ModA	ModB	Shaper	Velocity	ModWheelContr	Index	Keyboard	Internal
 Define Group	KeyMod	ModWheel	PitchBend
 Define Group	KbdVel	V100	V25	V50	V75	V127
 Define Group	BaseKey	C2	C0	C1	C3	C4
-//	Control Surface Item	Key	Remotable Item	Scale	Mode
-Map	DeviceScope		"Malstrom"
-Map	DeviceName		Device Name
-Map	PatchName		Patch Name
-Map	Button C3		Select Previous Patch
-Map	Button C4		Select Next Patch
-// Page
-Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
-Map	Button C7		Page=Index
-// Keyboard
-Map	PageName		"Keyboard"			Keyboard	
-Map	Button 1-4		KbdVel=V25			Keyboard	
-Map	Button 1-5		KbdVel=V50			Keyboard	
-Map	Button 1-6		KbdVel=V75			Keyboard	
-Map	Button 1-7		KbdVel=V100			Keyboard	
-Map	Button 1-8		KbdVel=V127			Keyboard	
-Map	KbdVel		"25"			Keyboard	V25
-Map	KbdVel		"50"			Keyboard	V50
-Map	KbdVel		"75"			Keyboard	V75
-Map	KbdVel		"100"			Keyboard	V100
-Map	KbdVel		"127"			Keyboard	V127
-Map	Button 2-4		BaseKey=C0			Keyboard	
-Map	Button 2-5		BaseKey=C1			Keyboard	
-Map	Button 2-6		BaseKey=C2			Keyboard	
-Map	Button 2-7		BaseKey=C3			Keyboard	
-Map	Button 2-8		BaseKey=C4			Keyboard	
-Map	BaseKey		"0"			Keyboard	C0
-Map	BaseKey		"1"			Keyboard	C1
-Map	BaseKey		"2"			Keyboard	C2
-Map	BaseKey		"3"			Keyboard	C3
-Map	BaseKey		"4"			Keyboard	C4
-Map	Button 1-2		KeyMod=ModWheel			Keyboard
-Map	Button 2-2		KeyMod=PitchBend			Keyboard
-// Mod Wheel
-Map	SubPageName		"Mod Wheel"			Keyboard	ModWheel
-Map	Fader 1		Mod Wheel			Keyboard	ModWheel
-// Pitch Bend
-Map	SubPageName		"Pitch Bend"			Keyboard	PitchBend
-Map	Knob V1		Pitch Bend			Keyboard	PitchBend
-Map	UDVButton 1-3_2-3		Pitch Bend Range 			Keyboard	PitchBend
+{% include "device-header.j2" %}
+{% set show_pitch_bend_range=true -%}
+{% include "keyboard.j2" %}
+{% include "internal.j2" %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -62,10 +27,6 @@ Map	Button 5-5		Page=ModA			Index
 Map	Button 6-5		Page=ModB			Index
 Map	Button 2-8		Page=Shaper			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	Button 1-1		Page=Main			Main
@@ -75,67 +36,42 @@ Map	Fader 3		Portamento			Main
 Map	UDVButton 7-4_8-4		Pitch Bend Range			Main
 Map	Fader 7		Spread Amount			Main
 Map	Fader 8		Master Level			Main
-// OscA
-Map	PageName		"Osc A" 				OscA
-Map	Button 2-1		Page=OscA			OscA
-Map	Button 3-1		Page=OscB			OscA
-Map	Button 8-1		Oscillator A On/Off			OscA
-//Map	UDVButton 3-1_4-1		Oscillator A Mode			OscA
-Map	Fader 2		Oscillator A Motion			OscA
-Map	Fader 3		Oscillator A Index			OscA
-Map	Knob V4		Oscillator A Shift			OscA
-Map	UDVButton 7-5_8-5		Oscillator A Octave			OscA
-Map	UDVButton 7-6_8-6		Oscillator A Semi			OscA
-Map	UDVButton 7-7_8-7		Oscillator A Cent			OscA
+{% for oscnum in ['A', 'B'] -%}
+// Osc{{ oscnum }}
+Map	PageName		"Osc {{ oscnum }}" 				Osc{{ oscnum }}
+Map	Button 2-1		Page=OscA			Osc{{ oscnum }}
+Map	Button 3-1		Page=OscB			Osc{{ oscnum }}
+Map	Button 8-1		Oscillator {{ oscnum }} On/Off			Osc{{ oscnum }}
+//Map	UDVButton 3-1_4-1		Oscillator {{ oscnum }} Mode			Osc{{ oscnum }}
+Map	Fader 2		Oscillator {{ oscnum }} Motion			Osc{{ oscnum }}
+Map	Fader 3		Oscillator {{ oscnum }} Index			Osc{{ oscnum }}
+Map	Knob V4		Oscillator {{ oscnum }} Shift			Osc{{ oscnum }}
+Map	UDVButton 7-5_8-5		Oscillator {{ oscnum }} Octave			Osc{{ oscnum }}
+Map	UDVButton 7-6_8-6		Oscillator {{ oscnum }} Semi			Osc{{ oscnum }}
+Map	UDVButton 7-7_8-7		Oscillator {{ oscnum }} Cent			Osc{{ oscnum }}
+Map	Button 8-8		Route Oscillator {{ oscnum }} To Filter B			Osc{{ oscnum }}
+// Osc{{ oscnum }} Env
+Map	PageName		"Osc {{ oscnum }} Env" 				Osc{{ oscnum }}Env
+Map	Fader 3		Oscillator {{ oscnum }} Attack			Osc{{ oscnum }}Env
+Map	Fader 4		Oscillator {{ oscnum }} Decay			Osc{{ oscnum }}Env
+Map	Fader 5		Oscillator {{ oscnum }} Sustain			Osc{{ oscnum }}Env
+Map	Fader 6		Oscillator {{ oscnum }} Release			Osc{{ oscnum }}Env
+Map	Fader 8		Oscillator {{ oscnum }} Gain			Osc{{ oscnum }}Env
+{% endfor -%}
+// Extra Osc parameters
 Map	Button 7-8		Route Oscillator A To Shaper			OscA
-Map	Button 8-8		Route Oscillator A To Filter B			OscA
-// OscA Env
-Map	PageName		"Osc A Env" 				OscAEnv
-Map	Fader 3		Oscillator A Attack			OscAEnv
-Map	Fader 4		Oscillator A Decay			OscAEnv
-Map	Fader 5		Oscillator A Sustain			OscAEnv
-Map	Fader 6		Oscillator A Release			OscAEnv
-Map	Fader 8		Oscillator A Gain			OscAEnv
-// OscB
-Map	PageName		"Osc B" 				OscB
-Map	Button 2-1		Page=OscA			OscB
-Map	Button 3-1		Page=OscB			OscB
-Map	Button 8-1		Oscillator B On/Off			OscB
-//Map	UDVButton 3-1_4-1		Oscillator B Mode			OscB
-Map	Fader 2		Oscillator B Motion			OscB
-Map	Fader 3		Oscillator B Index			OscB
-Map	Knob V4		Oscillator B Shift			OscB
-Map	UDVButton 7-5_8-5		Oscillator B Octave			OscB
-Map	UDVButton 7-6_8-6		Oscillator B Semi			OscB
-Map	UDVButton 7-7_8-7		Oscillator B Cent			OscB
-Map	Button 8-8		Route Oscillator B To Filter B			OscB
-// OscB Env
-Map	PageName		"Osc B Env" 				OscBEnv
-Map	Fader 3		Oscillator B Attack			OscBEnv
-Map	Fader 4		Oscillator B Decay			OscBEnv
-Map	Fader 5		Oscillator B Sustain			OscBEnv
-Map	Fader 6		Oscillator B Release			OscBEnv
-Map	Fader 8		Oscillator B Gain			OscBEnv
-// FilterA
-Map	PageName		"Filter A" 				FilterA
-Map	Button 5-1		Page=FilterA			FilterA
-Map	Button 6-1		Page=FilterB			FilterA
-Map	Button 1-2		Filter A On/Off			FilterA
-Map	UDVButton 7-4_8-4		Filter A Mode			FilterA
-Map	Button 8-5		Filter A Env			FilterA
-Map	Button 8-6		Filter A Kbd Track			FilterA
-Map	Fader 7		Filter A Freq			FilterA
-Map	Fader 8		Filter A Resonance			FilterA
-// FilterB
-Map	PageName		"Filter B" 				FilterB
-Map	Button 5-1		Page=FilterA			FilterB
-Map	Button 6-1		Page=FilterB			FilterB
-Map	Button 1-2		Filter B On/Off			FilterB
-Map	UDVButton 7-4_8-4		Filter B Mode			FilterB
-Map	Button 8-5		Filter B Env			FilterB
-Map	Button 8-6		Filter B Kbd Track			FilterB
-Map	Fader 7		Filter B Freq			FilterB
-Map	Fader 8		Filter B Resonance			FilterB
+{% for filternum in ['A', 'B'] -%}
+// Filter{{ filternum }}
+Map	PageName		"Filter {{ filternum }}" 				Filter{{ filternum }}
+Map	Button 5-1		Page=FilterA			Filter{{ filternum }}
+Map	Button 6-1		Page=FilterB			Filter{{ filternum }}
+Map	Button 1-2		Filter {{ filternum }} On/Off			Filter{{ filternum }}
+Map	UDVButton 7-4_8-4		Filter {{ filternum }} Mode			Filter{{ filternum }}
+Map	Button 8-5		Filter {{ filternum }} Env			Filter{{ filternum }}
+Map	Button 8-6		Filter {{ filternum }} Kbd Track			Filter{{ filternum }}
+Map	Fader 7		Filter {{ filternum }} Freq			Filter{{ filternum }}
+Map	Fader 8		Filter {{ filternum }} Resonance			Filter{{ filternum }}
+{% endfor -%}
 // FilterEnv
 Map	PageName		"Filter Env" 				FilterEnv
 Map	Fader 3		Filter Env Attack			FilterEnv

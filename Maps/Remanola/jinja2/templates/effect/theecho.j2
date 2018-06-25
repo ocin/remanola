@@ -1,0 +1,65 @@
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	The Echo
+Define Group	Page	Main	Delay	Feedback	Color	Modulation	Index	Internal
+Define Group	TempoSync	Free	Sync
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"The Echo"
+Map	DeviceName		Device Name
+Map	PatchName		Patch Name
+Map	Button C3		Select Previous Patch
+Map	Button C4		Select Next Patch
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=Delay			Index
+Map	Button 3-8		Page=Feedback			Index
+Map	Button 4-8		Page=Color			Index
+Map	Button 5-5		Page=Modulation			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	UDVButton 1-2_2-2		Input Mode			Main
+Map	Button 1-3		Trig			Main
+Map	Fader 4		Roll Enabled			Main
+Map	Fader 6		Ducking			Main
+Map	Fader 7		Dry/Wet Balance			Main
+Map	Meter 8		Input Peak Meter			Main
+// Delay
+Map	PageName		"Delay" 				Delay
+Map	Sel1_0		TempoSync=Free			Delay
+Map	Sel1_1		TempoSync=Sync			Delay
+Map	Fader 2		Delay Time			Delay	Free
+Map	UDVButton 7-2_8-2		Delay Time	7		Delay	Sync
+Map	Fader 3		Right Ch Time Offset			Delay
+Map	Button 1-4		Keep Pitch			Delay
+Map	Button 1-5		Sync		SEL1	Delay
+Map	Button 8-5		Ping-Pong Mode			Delay
+Map	Knob V6		Ping-Pong Pan			Delay
+// Feedback
+Map	PageName		"Feedback" 				Feedback
+Map	Fader 2		Feedback			Feedback
+Map	Knob V3		Right Ch Feedback Offset			Feedback
+Map	Button 1-5		Diffuse On			Feedback
+Map	Fader 6		Diffuse Spread			Feedback
+Map	Fader 7		Diffuse Amount			Feedback
+// Color
+Map	PageName		"Color" 				Color
+Map	Fader 2		Drive Amount 				Color
+Map	UDVButton 1-3_2-3		Drive Type			Color
+Map	Button 1-5		Filter On			Color
+Map	Fader 6		Filter Frequency 				Color
+Map	Fader 7		Filter Resonance 				Color
+// Modulation
+Map	PageName		"Modulation" 				Modulation
+Map	Knob V2		Envelope 				Modulation
+Map	Fader 3		Wobble 				Modulation
+Map	Fader 5		LFO Rate 				Modulation
+Map	Fader 6		LFO Amount 				Modulation

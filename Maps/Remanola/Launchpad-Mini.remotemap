@@ -670,8 +670,8 @@ Map	UDVButton 1-4_2-4		Osc 1 Oct			Osc1	Noise
 Map	UDVButton 1-5_2-5		Osc 1 Semi			Osc1	Noise
 Map	UDVButton 1-6_2-6		Osc 1 Tune			Osc1	Noise
 Map	Fader 7		Osc 1 Mod				Osc1	Noise
-// Bypass
-Map	SubPageName		"Bypass" 				Osc1	Bypass
+// Off
+Map	SubPageName		"Off" 				Osc1	Off
 // Osc 2
 Map	PageName		"Osc 2" 				Osc2
 Map	Sel1_0		OscType=Analog			Osc2
@@ -739,8 +739,8 @@ Map	UDVButton 1-4_2-4		Osc 2 Oct			Osc2	Noise
 Map	UDVButton 1-5_2-5		Osc 2 Semi			Osc2	Noise
 Map	UDVButton 1-6_2-6		Osc 2 Tune			Osc2	Noise
 Map	Fader 7		Osc 2 Mod				Osc2	Noise
-// Bypass
-Map	SubPageName		"Bypass" 				Osc2	Bypass
+// Off
+Map	SubPageName		"Off" 				Osc2	Off
 // Osc 3
 Map	PageName		"Osc 3" 				Osc3
 Map	Sel1_0		OscType=Analog			Osc3
@@ -5277,7 +5277,7 @@ Map	Knob V3		MM Slot 5 Amount			ModMatrix5
 Map	UDVButton 1-4_2-4		MM Slot 5 Destination			 ModMatrix5
 
 // ------------------------------------------------------------------------------------------
-Scope	Propellerhead Software	se.propellerheads.PX7 
+Scope	Propellerhead Software	se.propellerheads.PX7
 Define Group	Page	Main	OP1	OP2	OP3	OP4	OP5	OP6	LFO	Index	Keyboard	Internal
 Define Group	KeyMod	ModWheel	PitchBend
 Define Group	KbdVel	V100	V25	V50	V75	V127

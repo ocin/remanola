@@ -1,0 +1,31 @@
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	PH-90 Phaser
+Define Group	Page	Main	LFO	Index	Internal
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"PH-90 Phaser"
+Map	DeviceName		Device Name
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 5-5		Page=LFO			Index
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Meter 2		Peak Meter			Main
+Map	Fader 3		Frequency			Main
+Map	Fader 4		Split			Main
+Map	Fader 5		Width			Main
+Map	Fader 6		Feedback			Main
+// LFO
+Map	PageName		"LFO" 				LFO
+Map	Fader 5		Rate			LFO
+Map	Button 1-6		LFO Sync Enable			LFO
+Map	Fader 7		Frequency Modulation			LFO

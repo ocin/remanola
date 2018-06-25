@@ -1,17 +1,16 @@
-{% set deviceman="Synapse Audio" %}
-{% set devicescope="com.synapseAudioSoftware.Antidote" %}
-{% set devicename="Antidote" %}
-// ------------------------------------------------------------------------------------------
-Scope	{{ deviceman }}	{{ devicescope }}
+{% set deviceman="Synapse Audio" -%}
+{% set devicescope="com.synapseAudioSoftware.Antidote" -%}
+{% set devicename="Antidote" -%}
+{% include "device-scope.j2" %}
 Define Group	Page	Main	Osc1	Osc2	Mixer	Filter	FilterEnv	Effects	EQBass	Dist	Phaser	Chorus	Delay	Reverb	Comp	LFO1	LFO2	AmpEnv	ModEnv	Arp	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	Index	Keyboard	Internal
 Define Group	KeyMod	ModWheel	PitchBend
 Define Group	KbdVel	V100	V25	V50	V75	V127
 Define Group	BaseKey	C2	C0	C1	C3	C4
 Define Group	TempoSync	Free	Sync
-//	Control Surface Item	Key	Remotable Item	Scale	Mode
 {% include "device-header.j2" %}
-{% set show_pitch_bend_range=true %}
+{% set show_pitch_bend_range=true -%}
 {% include "keyboard.j2" %}
+{% include "internal.j2" %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -40,13 +39,12 @@ Map	Button 5-5		Page=LFO1			Index
 Map	Button 6-5		Page=LFO2			Index
 Map	Button 5-6		Page=ModEnv			Index
 Map	Button C7		Page=Internal			Index
-{% include "internal.j2" %}
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 7-2_8-2		Polyphony				Main
 Map	Fader 3		Glide				Main
 Map	Fader 8		Master Volume				Main
-{% for oscnum in range(1,3) %}
+{% for oscnum in range(1,3) -%}
 // Osc {{ oscnum }}
 Map	PageName		"Osc {{ oscnum }}" 				Osc{{ oscnum }}
 Map	Button 2-1		Page=Osc1			Osc{{ oscnum }}
@@ -62,7 +60,7 @@ Map	Fader 5		Osc {{ oscnum }} Phase				Osc{{ oscnum }}
 Map	Fader 6		Osc {{ oscnum }} Modifier				Osc{{ oscnum }}
 Map	Fader 7		Osc {{ oscnum }} Key Track				Osc{{ oscnum }}
 Map	Knob V8		Osc {{ oscnum }} Pan				Osc{{ oscnum }}
-{% endfor %}
+{% endfor -%}
 // Mixer
 Map	PageName		"Mixer" 				Mixer
 Map	Fader 2		Osc 1 Volume				Mixer
@@ -228,7 +226,7 @@ Map	Button 5-8		Page=Chorus			Comp
 Map	Button 6-8		Page=Delay			Comp
 Map	Button 7-8		Page=Reverb			Comp
 Map	Button 8-8		Page=Comp			Comp
-{% for lfonum in range(1,3) %}
+{% for lfonum in range(1,3) -%}
 // LFO {{ lfonum }}
 Map	PageName		"LFO {{ lfonum }}" 				LFO{{ lfonum }}
 Map	Sel1_0		TempoSync=Free			LFO{{ lfonum }}
@@ -241,7 +239,7 @@ Map	Button 1-5		Lfo {{ lfonum }} Sync		SEL1	LFO{{ lfonum }}
 Map	Button 1-6		Lfo {{ lfonum }} Free Run			LFO{{ lfonum }}
 Map	UDHButton 3-5_3-6		Lfo {{ lfonum }} Shape				LFO{{ lfonum }}
 Map	UDHButton 5-5_5-6		Lfo {{ lfonum }} Target				LFO{{ lfonum }}
-{% endfor %}
+{% endfor -%}
 // Amp Env
 Map	PageName		"Amp Env" 				AmpEnv
 Map	Button 1-1		Page=Main			AmpEnv
@@ -267,7 +265,7 @@ Map	UDHButton 6-1_6-2		Arp Rate				Arp
 Map	UDHButton 7-1_7-2		Arp Octave				Arp
 Map	Button 8-1		Arp Hold				Arp
 Map	Knob V4		Arp Gate				Arp
-{% for mmnum in range(1,6) %}
+{% for mmnum in range(1,6) -%}
 // Mod Matrix {{ mmnum }}
 Map	PageName		"Mod Matrix {{ mmnum }}" 			ModMatrix{{ mmnum }}
 Map	Button 1-1		Page=ModMatrix1 			ModMatrix{{ mmnum }}
@@ -278,4 +276,4 @@ Map	Button 5-1		Page=ModMatrix5 			ModMatrix{{ mmnum }}
 Map	UDVButton 1-2_2-2		MM Slot {{ mmnum }} Source			 ModMatrix{{ mmnum }}
 Map	Knob V3		MM Slot {{ mmnum }} Amount			ModMatrix{{ mmnum }}
 Map	UDVButton 1-4_2-4		MM Slot {{ mmnum }} Destination			 ModMatrix{{ mmnum }}
-{% endfor %}
+{% endfor -%}

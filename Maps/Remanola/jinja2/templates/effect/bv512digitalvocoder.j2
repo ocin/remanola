@@ -1,0 +1,110 @@
+// ------------------------------------------------------------------------------------------
+Scope	Propellerheads	BV512 Digital Vocoder
+Define Group	Page	Main	Band1-8	Band9-16	Band17-24	Band25-32	Index	Internal
+Define Group	BandCount	4Band	8Band	16Band	32Band	FFT
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	DeviceScope		"BV512 Digital Vocoder"
+Map	DeviceName		Device Name
+// Page
+Map	Button C5		Page=Main
+Map	Button C7		Page=Index
+// Index
+Map	PageName		"Index" 				Index
+Map	UDVButton 7-1_8-1		Band Count 		SEL1	Index
+//Map	Hidden		Band Count 		SEL1	Index
+Map	Sel1_0		BandCount=4Band 			Index
+Map	Sel1_32		BandCount=8Band 			Index
+Map	Sel1_64		BandCount=16Band 			Index
+Map	Sel1_95		BandCount=32Band 			Index
+Map	Sel1_127		BandCount=32Band 			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=Band1-8			Index	4Band
+Map	Button 2-8		Page=Band1-8			Index	8Band
+Map	Button 2-8		Page=Band1-8			Index	16Band
+Map	Button 2-8		Page=Band1-8			Index	32Band
+Map	Button 3-8		Page=Band9-16			Index	16Band
+Map	Button 3-8		Page=Band9-16			Index	32Band
+Map	Button 4-8		Page=Band17-24			Index	32Band
+Map	Button 5-8		Page=Band25-32			Index	32Band
+Map	Button C7		Page=Internal			Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Button 4-1		Hold			Main
+Map	UDVButton 5-1_6-1		Band Count			Main
+Map	UDVButton 7-1_8-1		Vocoder/Equalizer			Main
+Map	Meter 2		Source Peak Meter 			Main
+Map	Meter 3		Modulator Peak Meter 			Main
+Map	Fader 4		Attack 			Main
+Map	Fader 5		Decay 			Main
+Map	Knob V6		Shift 			Main
+Map	Fader 7		HF Emphasis 			Main
+Map	Fader 8		Dry/Wet 			Main
+// Band1-8
+Map	PageName		"Band1-8" 			Band1-8
+Map	Hidden		Band Count 		SEL1	Band1-8
+Map	Sel1_0		BandCount=4Band 			Band1-8
+Map	Sel1_32		BandCount=8Band 			Band1-8
+Map	Sel1_64		BandCount=8Band 			Band1-8
+Map	Sel1_95		BandCount=8Band 			Band1-8
+Map	Sel1_127		BandCount=8Band 			Band1-8
+Map	Fader 1		Band Level 1 			Band1-8
+Map	Fader 2		Band Level 2 			Band1-8
+Map	Fader 3		Band Level 3 			Band1-8
+Map	Fader 4		Band Level 4 			Band1-8
+Map	Fader 5		Band Level 5 			Band1-8	8Band
+Map	Fader 6		Band Level 6 			Band1-8	8Band
+Map	Fader 7		Band Level 7 			Band1-8	8Band
+Map	Fader 8		Band Level 8 			Band1-8	8Band
+// Band9-16 
+Map	PageName		"Band9-16" 			Band9-16
+Map	Hidden		Band Count 		SEL1	Band9-16
+Map	Sel1_0		BandCount=4Band 			Band9-16
+Map	Sel1_32		BandCount=8Band 			Band9-16
+Map	Sel1_64		BandCount=16Band 			Band9-16
+Map	Sel1_95		BandCount=16Band 			Band9-16
+Map	Sel1_127		BandCount=16Band 			Band9-16
+Map	Fader 1		Band Level 9 			Band9-16	16Band
+Map	Fader 2		Band Level 10 			Band9-16	16Band
+Map	Fader 3		Band Level 11 			Band9-16	16Band
+Map	Fader 4		Band Level 12 			Band9-16	16Band
+Map	Fader 5		Band Level 13 			Band9-16	16Band
+Map	Fader 6		Band Level 14 			Band9-16	16Band
+Map	Fader 7		Band Level 15 			Band9-16	16Band
+Map	Fader 8		Band Level 16 			Band9-16	16Band
+// Band17-24
+Map	PageName		"Band17-24" 				Band17-24
+Map	Hidden		Band Count 		SEL1	Band17-24
+Map	Sel1_0		BandCount=4Band 			Band17-24
+Map	Sel1_32		BandCount=8Band 			Band17-24
+Map	Sel1_64		BandCount=16Band 			Band17-24
+Map	Sel1_95		BandCount=32Band 			Band17-24
+Map	Sel1_127		BandCount=32Band 			Band17-24
+Map	Fader 1		Band Level 17 			Band17-24	32Band
+Map	Fader 2		Band Level 18 			Band17-24	32Band
+Map	Fader 3		Band Level 19 			Band17-24	32Band
+Map	Fader 4		Band Level 20 			Band17-24	32Band
+Map	Fader 5		Band Level 21 			Band17-24	32Band
+Map	Fader 6		Band Level 22 			Band17-24	32Band
+Map	Fader 7		Band Level 23 			Band17-24	32Band
+Map	Fader 8		Band Level 24 			Band17-24	32Band
+// Band25-32
+Map	PageName		"Band25-32" 				Band25-32
+Map	Hidden		Band Count 		SEL1	Band25-32
+Map	Sel1_0		BandCount=4Band 			Band25-32
+Map	Sel1_32		BandCount=8Band 			Band25-32
+Map	Sel1_64		BandCount=16Band 			Band25-32
+Map	Sel1_95		BandCount=32Band 			Band25-32
+Map	Sel1_127		BandCount=32Band 			Band25-32
+Map	Fader 1		Band Level 25 			Band25-32	32Band
+Map	Fader 2		Band Level 26 			Band25-32	32Band
+Map	Fader 3		Band Level 27 			Band25-32	32Band
+Map	Fader 4		Band Level 28 			Band25-32	32Band
+Map	Fader 5		Band Level 29 			Band25-32	32Band
+Map	Fader 6		Band Level 30 			Band25-32	32Band
+Map	Fader 7		Band Level 31 			Band25-32	32Band
+Map	Fader 8		Band Level 32 			Band25-32	32Band
