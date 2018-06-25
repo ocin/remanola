@@ -2171,9 +2171,9 @@ Map	Button 8-2		Page=Drum2Edit			Drum6Edit
 Map	Button 8-3		Page=Drum3Edit			Drum6Edit
 Map	Button 8-4		Page=Drum4Edit			Drum6Edit
 Map	Button 5-2		Drum 6 Decay/Gate Mode			Drum6Edit
-Map	UDVButton 5-4_6-4		Drum 6 Pitch Bend Amount	5		Drum6Edit
 Map	Fader 5		Drum 6 Length				Drum6Edit
 Map	Knob V6		Drum 6 Pitch				Drum6Edit
+Map	UDVButton 5-4_6-4		Drum 6 Pitch Bend Amount	5		Drum6Edit
 Map	Knob V7		Drum 6 Pitch Bend Rate				Drum6Edit
 Map	Knob V8		Drum 6 Vel to Pitch Bend				Drum6Edit
 // Drum7
@@ -2216,9 +2216,9 @@ Map	Button 8-2		Page=Drum2Edit			Drum7Edit
 Map	Button 8-3		Page=Drum3Edit			Drum7Edit
 Map	Button 8-4		Page=Drum4Edit			Drum7Edit
 Map	Button 5-2		Drum 7 Decay/Gate Mode			Drum7Edit
-Map	UDVButton 5-4_6-4		Drum 7 Pitch Bend Amount	5		Drum7Edit
 Map	Fader 5		Drum 7 Length				Drum7Edit
 Map	Knob V6		Drum 7 Pitch				Drum7Edit
+Map	UDVButton 5-4_6-4		Drum 7 Pitch Bend Amount	5		Drum7Edit
 Map	Knob V7		Drum 7 Pitch Bend Rate				Drum7Edit
 Map	Knob V8		Drum 7 Vel to Pitch Bend				Drum7Edit
 // Drum8
@@ -2353,6 +2353,7 @@ Map	Fader 5		Drum 10 Length				Drum10Edit
 Map	Knob V6		Drum 10 Pitch				Drum10Edit
 Map	Knob V7		Drum 10 Tone				Drum10Edit
 Map	Knob V8		Drum 10 Vel to Tone				Drum10Edit
+
 // ------------------------------------------------------------------------------------------
 Scope	Propellerheads	Kong Drum Designer
 Define Group	Page	Main	MutesSolos	Drum1	Drum2	Drum3	Drum4	Drum5	Drum6	Drum7	Drum8	Drum9	Drum10	Drum11	Drum12	Drum13	Drum14	Drum15	Drum16	Pad1	Pad2	Pad3	Pad4	Pad5	Pad6	Pad7	Pad8	Pad9	Pad10	Pad11	Pad12	Pad13	Pad14	Pad15	Pad16	BusFX	MasterFX	Index	Keyboard	Internal
