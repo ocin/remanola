@@ -1,4 +1,4 @@
-#!/opt/local/bin/python2.7
+#!/usr/bin/python
 
 from jinja2 import Environment, FileSystemLoader
 env = Environment(
