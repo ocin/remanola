@@ -1,16 +1,10 @@
-// ------------------------------------------------------------------------------------------
-Scope	Propellerhead Software	se.propellerheads.Synchronous
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.Synchronous" -%}
+{% set devicename="Synchronous" -%}
+{% include "device-scope.j2" %}
 Define Group	Page	Main	Dist	Filter	Delay	Reverb	Index	Internal
 Define Group	TempoSync	Free	Sync
-//	Control Surface Item	Key	Remotable Item	Scale	Mode
-Map	DeviceScope		"Synchronous"
-Map	DeviceName		Device Name
-Map	PatchName		Patch Name
-Map	Button C3		Select Previous Patch
-Map	Button C4		Select Next Patch
-// Page
-Map	Button C5		Page=Main
-Map	Button C7		Page=Index
+{% include "device-effect.j2" %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -19,10 +13,6 @@ Map	Button 2-8		Page=Dist			Index
 Map	Button 3-8		Page=Delay			Index
 Map	Button 4-8		Page=Reverb			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main

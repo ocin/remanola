@@ -1,11 +1,9 @@
-// ------------------------------------------------------------------------------------------
-Scope	Propellerheads	MClass Equalizer
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="MClass Equalizer" -%}
+{% set devicename="MClass Equalizer" -%}
+{% include "device-scope.j2" %}
 Define Group	Page	Main	Low	Param1	Param2	Hi	Index	Internal
-//	Control Surface Item	Key	Remotable Item	Scale	Mode
-Map	DeviceScope		"MClass Equalizer"
-Map	DeviceName		Device Name
-// Page
-Map	Button C7		Page=Index
+{% include "device-effect-nopatch.j2" %}
 Map	Button 2-8		Page=Low			
 Map	Button 3-8		Page=Param1		
 Map	Button 4-8		Page=Param2	
@@ -18,10 +16,6 @@ Map	Button 3-8		Page=Param1			Index
 Map	Button 4-8		Page=Param2			Index
 Map	Button 5-8		Page=Hi			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main

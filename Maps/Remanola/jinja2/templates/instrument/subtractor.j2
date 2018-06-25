@@ -1,15 +1,12 @@
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="SubTractor Analog Synthesizer" -%}
 {% set devicename="Subtractor" -%}
+{# Variables -#}
+{% set show_pitch_bend_range=true -%}
+{# End Variables -#}
 {% include "device-scope.j2" %}
 Define Group	Page	Main	Osc1	Osc2	Noise	Filter	Filter2	FilterEnv	ModEnv	AmpEnv	LFO1	LFO2	Velocity1	Velocity2	ModWheelContr	ExtMod	Index	Keyboard	Internal
-Define Group	KeyMod	ModWheel	PitchBend
-Define Group	KbdVel	V100	V25	V50	V75	V127
-Define Group	BaseKey	C2	C0	C1	C3	C4
-{% include "device-header.j2" %}
-{% set show_pitch_bend_range=true -%}
-{% include "keyboard.j2" %}
-{% include "internal.j2" %}
+{% include "device-instrument.j2" %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index

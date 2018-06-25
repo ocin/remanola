@@ -464,10 +464,11 @@ Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
+Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -524,23 +525,23 @@ Map	Fader 8		Rotary 4			Main
 // ------------------------------------------------------------------------------------------
 Scope	Propellerheads	Thor Polysonic Synthesizer
 Define Group	Page	Main	Osc1	Osc2	Osc3	Mixer	Filter1	Filter2	Filter3	FilterEnv	Amp	AmpEnv	ModEnv	GlobalEnv	LFO1	LFO2	Seq	Shaper	Delay	Chorus	Index	Keyboard	Internal
-Define Group	KeyMod	ModWheel	PitchBend
-Define Group	KbdVel	V100	V25	V50	V75	V127
-Define Group	BaseKey	C2	C0	C1	C3	C4
 Define Group	OscType	Analog	Wavetable	Phase	FM	Multi	Noise	Off
 Define Group	FilterType	LP	State	Comb	Formant	Bypass
 Define Group	SeqEditMode	Note	Velocity	GateLen	StepDur	Curve1	Curve2
+Define Group	KeyMod	ModWheel	PitchBend
+Define Group	KbdVel	V100	V25	V50	V75	V127
+Define Group	BaseKey	C2	C0	C1	C3	C4
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Thor"
 Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
-Map	PlayingStep		Step Sequencer Step Index
+Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -577,6 +578,7 @@ Map	UDVButton 1-3_2-3		Pitch Bend Range 			Keyboard	PitchBend
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
 Map	Button C7		Page=Main			Internal
+Map	PlayingStep		Step Sequencer Step Index
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -1141,20 +1143,21 @@ Map	Button 4-8		Page=Chorus			Chorus
 // ------------------------------------------------------------------------------------------
 Scope	Propellerheads	Dr.REX Loop Player
 Define Group	Page	Main	Osc	Loop	Performance	Filter	FilterEnv	LFO	AmpEnv	Index	Keyboard	Internal
+Define Group	TempoSync	Free	Sync
 Define Group	KeyMod	ModWheel	PitchBend
 Define Group	KbdVel	V100	V25	V50	V75	V127
 Define Group	BaseKey	C2	C0	C1	C3	C4
-Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"DrOctoRex"
 Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
+Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -1281,10 +1284,11 @@ Map	DeviceName		Device Name
 Map	PatchName		Sound Name
 Map	Button C3		Select Previous Sound
 Map	Button C4		Select Next Sound
+
 // Page
 Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
+Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -1349,10 +1353,11 @@ Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
+Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -1536,20 +1541,21 @@ Map	UDVButton 7-8_8-8		Mod Wheel Target			ModWheelContr
 // ------------------------------------------------------------------------------------------
 Scope	Propellerheads	NN19 Digital Sampler
 Define Group	Page	Main	Osc	Filter	FilterEnv	Amp	LFO	Velocity	ModWheelContr	Controller	Index	Keyboard	Internal
+Define Group	TempoSync	Free	Sync
 Define Group	KeyMod	ModWheel	PitchBend
 Define Group	KbdVel	V100	V25	V50	V75	V127
 Define Group	BaseKey	C2	C0	C1	C3	C4
-Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"NN-19"
 Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
+Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -1682,10 +1688,11 @@ Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
+Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -1738,23 +1745,50 @@ Map	Knob V7		Mod Env Decay				Main
 Map	Fader 8		Master Volume				Main
 // ------------------------------------------------------------------------------------------
 Scope	Propellerheads	Redrum Drum Computer
-Define Group	Page	Main	Performance	Drum1	Drum1Edit	Drum2	Drum2Edit	Drum3	Drum3Edit	Drum4	Drum4Edit	Drum5	Drum5Edit	Drum6	Drum6Edit	Drum7	Drum7Edit	Drum8	Drum8Edit	Drum9	Drum9Edit	Drum10	Drum10Edit	Drum11	Drum11Edit	Drum12	Drum12Edit	Index	Internal
+Define Group	Page	Main	Performance	Drum1	Drum1Edit	Drum2	Drum2Edit	Drum3	Drum3Edit	Drum4	Drum4Edit	Drum5	Drum5Edit	Drum6	Drum6Edit	Drum7	Drum7Edit	Drum8	Drum8Edit	Drum9	Drum9Edit	Drum10	Drum10Edit	Drum11	Drum11Edit	Drum12	Drum12Edit	Index	Keyboard	Internal
 Define Group	DrumMode	Play	Solo	Mute
 Define Group	EditMode	Rotate	Toggle	Flam
+Define Group	KbdVel	V100	V25	V50	V75	V127
+Define Group	BaseKey	C2	C0	C1	C3	C4
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Redrum"
 Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
-Map	PlayingStep		Playing Step
+Map	Button C6		Page=Keyboard
+// Keyboard
+Map	PageName		"Keyboard"			Keyboard	
+Map	Button 1-4		KbdVel=V25			Keyboard	
+Map	Button 1-5		KbdVel=V50			Keyboard	
+Map	Button 1-6		KbdVel=V75			Keyboard	
+Map	Button 1-7		KbdVel=V100			Keyboard	
+Map	Button 1-8		KbdVel=V127			Keyboard	
+Map	KbdVel		"25"			Keyboard	V25
+Map	KbdVel		"50"			Keyboard	V50
+Map	KbdVel		"75"			Keyboard	V75
+Map	KbdVel		"100"			Keyboard	V100
+Map	KbdVel		"127"			Keyboard	V127
+Map	Button 2-4		BaseKey=C0			Keyboard	
+Map	Button 2-5		BaseKey=C1			Keyboard	
+Map	Button 2-6		BaseKey=C2			Keyboard	
+Map	Button 2-7		BaseKey=C3			Keyboard	
+Map	Button 2-8		BaseKey=C4			Keyboard	
+Map	BaseKey		"0"			Keyboard	C0
+Map	BaseKey		"1"			Keyboard	C1
+Map	BaseKey		"2"			Keyboard	C2
+Map	BaseKey		"3"			Keyboard	C3
+Map	BaseKey		"4"			Keyboard	C4
+
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
 Map	Button C7		Page=Main			Internal
+Map	PlayingStep		Playing Step
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -2332,10 +2366,11 @@ Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
+Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -3904,10 +3939,11 @@ Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
+Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -4144,20 +4180,21 @@ Map	Knob V6		FM Ext Mod				ExtMod
 // ------------------------------------------------------------------------------------------
 Scope	Sononics	com.sononics.Revival
 Define Group	Page	Main	Voicing1	Voicing2	PriSec	Solos	Attack	Primary	Secondary	Release	AttackL	AttackU	PrimaryL	PrimaryU	SecondaryL	SecondaryU	ReleaseL	ReleaseU	AttackModEnable	AttackMod1	AttackMod2	AttackMod3	PrimaryModEnable	PrimaryMod1	PrimaryMod2	PrimaryMod3	SecondaryModEnable	SecondaryMod1	SecondaryMod2	SecondaryMod3	ReleaseModEnable	ReleaseMod1	ReleaseMod2	ReleaseMod3	Effects	PreAmp	Phaser	ModFilter	Speaker	Reverb	Delay	Index	Keyboard	Internal
+Define Group	TempoSync	Free	Sync
 Define Group	KeyMod	ModWheel	PitchBend
 Define Group	KbdVel	V100	V25	V50	V75	V127
 Define Group	BaseKey	C2	C0	C1	C3	C4
-Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Revival"
 Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
+Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -4911,20 +4948,21 @@ Map	Fader 6		FX Delay Depth				Delay
 // ------------------------------------------------------------------------------------------
 Scope	Synapse Audio	com.synapseAudioSoftware.Antidote
 Define Group	Page	Main	Osc1	Osc2	Mixer	Filter	FilterEnv	Effects	EQBass	Dist	Phaser	Chorus	Delay	Reverb	Comp	LFO1	LFO2	AmpEnv	ModEnv	Arp	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	Index	Keyboard	Internal
+Define Group	TempoSync	Free	Sync
 Define Group	KeyMod	ModWheel	PitchBend
 Define Group	KbdVel	V100	V25	V50	V75	V127
 Define Group	BaseKey	C2	C0	C1	C3	C4
-Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Antidote"
 Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
+Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -5292,20 +5330,21 @@ Map	UDVButton 1-4_2-4		MM Slot 5 Destination			 ModMatrix5
 // ------------------------------------------------------------------------------------------
 Scope	Propellerhead Software	se.propellerheads.PX7
 Define Group	Page	Main	OP1	OP2	OP3	OP4	OP5	OP6	LFO	Index	Keyboard	Internal
+Define Group	TempoSync	Free	Sync
 Define Group	KeyMod	ModWheel	PitchBend
 Define Group	KbdVel	V100	V25	V50	V75	V127
 Define Group	BaseKey	C2	C0	C1	C3	C4
-Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"PX7"
 Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
+Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -5465,21 +5504,22 @@ Map	Button 8-2		LFO Tempo Sync		SEL1	LFO
 // ------------------------------------------------------------------------------------------
 Scope	Propellerhead Software	se.propellerheads.Parsec
 Define Group	Page	Main	GenereratorA	GenereratorB	SoundEngineA	SoundEngineB	AmpEnv	LFO1	LFO2	Env1	Env2	Reverb	Delay	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
+Define Group	Enabled	On	Off
+Define Group	TempoSync	Free	Sync
 Define Group	KeyMod	ModWheel	PitchBend
 Define Group	KbdVel	V100	V25	V50	V75	V127
 Define Group	BaseKey	C2	C0	C1	C3	C4
-Define Group	Enabled	On	Off
-Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Parsec"
 Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
+Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -5790,20 +5830,21 @@ Map	UDVButton 1-8_2-8		Mod8 Scale			 ModMatrix8
 // ------------------------------------------------------------------------------------------
 Scope	Propellerhead Software	se.propellerheads.Europa
 Define Group	Page	Main	Eng1	Eng2	Eng3	Eng1Mod1	Eng2Mod1	Eng3Mod1	Eng1Mod2	Eng2Mod2	Eng3Mod2	Eng1Harm	Eng2Harm	Eng3Harm	Eng1Filter	Eng2Filter	Eng3Filter	Eng1Unison	Eng2Unison	Eng3Unison	Mixer	Filter	Amp	Effects	Phaser	Dist	Eq	Delay	Reverb	Comp	LFO1	LFO2	LFO3	Env1	Env2	Env3	Env4	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
+Define Group	TempoSync	Free	Sync
 Define Group	KeyMod	ModWheel	PitchBend
 Define Group	KbdVel	V100	V25	V50	V75	V127
 Define Group	BaseKey	C2	C0	C1	C3	C4
-Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Europa"
 Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
+Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -6514,21 +6555,22 @@ Map	UDVButton 1-8_2-8		Mod8 Scale			 ModMatrix8
 // ------------------------------------------------------------------------------------------
 Scope	Propellerhead Software	se.propellerheads.Grain
 Define Group	Page	Main	Sample	Grains	Pitch	Osc	Mixer	Filter	Amp	Effects	Phaser	Dist	Eq	Delay	Reverb	Comp	LFO1	LFO2	LFO3	Env1	Env2	Env3	Env4	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
+Define Group	Grains	SpectralGrains	GrainOsc	LongGrains	Tape
+Define Group	TempoSync	Free	Sync
 Define Group	KeyMod	ModWheel	PitchBend
 Define Group	KbdVel	V100	V25	V50	V75	V127
 Define Group	BaseKey	C2	C0	C1	C3	C4
-Define Group	Grains	SpectralGrains	GrainOsc	LongGrains	Tape
-Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Grain"
 Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
+Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -7043,10 +7085,11 @@ Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
+Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -7179,20 +7222,21 @@ Map	Knob V4		Stereo Width			Output
 // ------------------------------------------------------------------------------------------
 Scope	Propellerhead Software	se.propellerheads.Klang
 Define Group	Page	Main	Instrument	Filter	FilterEnv	Amp	Delay	Reverb	ModWheelContr	Index	Keyboard	Internal
+Define Group	TempoSync	Free	Sync
 Define Group	KeyMod	ModWheel	PitchBend
 Define Group	KbdVel	V100	V25	V50	V75	V127
 Define Group	BaseKey	C2	C0	C1	C3	C4
-Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Klang"
 Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
+Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -7303,20 +7347,21 @@ Map	Fader 4		Mod Wheel to Amp Level			ModWheelContr
 // ------------------------------------------------------------------------------------------
 Scope	Propellerhead Software	se.propellerheads.Humana
 Define Group	Page	Main	Instrument	Filter	FilterEnv	Amp	Delay	Reverb	ModWheelContr	Index	Keyboard	Internal
+Define Group	TempoSync	Free	Sync
 Define Group	KeyMod	ModWheel	PitchBend
 Define Group	KbdVel	V100	V25	V50	V75	V127
 Define Group	BaseKey	C2	C0	C1	C3	C4
-Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Humana"
 Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
+Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -7427,20 +7472,21 @@ Map	Fader 4		Mod Wheel to Amp Level			ModWheelContr
 // ------------------------------------------------------------------------------------------
 Scope	Propellerhead Software	se.propellerheads.Pangea
 Define Group	Page	Main	Instrument	Filter	FilterEnv	Amp	Delay	Reverb	ModWheelContr	Index	Keyboard	Internal
+Define Group	TempoSync	Free	Sync
 Define Group	KeyMod	ModWheel	PitchBend
 Define Group	KbdVel	V100	V25	V50	V75	V127
 Define Group	BaseKey	C2	C0	C1	C3	C4
-Define Group	TempoSync	Free	Sync
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	DeviceScope		"Pangea"
 Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
-Map	Button C6		Page=Keyboard
 Map	Button C7		Page=Index
+Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
 Map	Button 1-4		KbdVel=V25			Keyboard	
@@ -7558,14 +7604,14 @@ Map	DeviceName		Device Name
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
-// Index
-Map	PageName		"Index" 				Index
-Map	Button 1-1		Page=Main			Index
-Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
 Map	Button C7		Page=Main			Internal
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -7585,9 +7631,14 @@ Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -7595,10 +7646,6 @@ Map	Button 2-5		Page=Filter			Index
 Map	Button 2-6		Page=Follower			Index
 Map	Button 2-8		Page=Tremor			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -7644,19 +7691,20 @@ Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-2		Page=Cut			Index
 Map	Button 2-8		Page=Body			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -7690,9 +7738,14 @@ Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -7701,10 +7754,6 @@ Map	Button 3-8		Page=Feedback			Index
 Map	Button 4-8		Page=Color			Index
 Map	Button 5-5		Page=Modulation			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -7757,10 +7806,15 @@ Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
-Map	EditSelect		Edit Mode
+
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
+Map	EditSelect		Edit Mode
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -7768,10 +7822,6 @@ Map	Button 2-8		Page=Reverb			Index
 Map	Button 3-8		Page=Eq			Index
 Map	Button 4-8		Page=Gate			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -7918,9 +7968,14 @@ Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -7937,10 +7992,6 @@ Map	Button 6-8		Page=Delay			Index
 Map	Button 7-8		Page=Phaser			Index
 Map	Button 5-5		Page=LFO			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8078,18 +8129,19 @@ Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 2-8		Page=Eq			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8114,18 +8166,19 @@ Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 2-8		Page=Eq			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8151,9 +8204,14 @@ Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -8162,10 +8220,6 @@ Map	Button 2-8		Page=Dist			Index
 Map	Button 3-8		Page=Delay			Index
 Map	Button 4-8		Page=Reverb			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8221,6 +8275,10 @@ Map	DeviceName		Device Name
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Index
 Map	PageName		"Index" 				Index
 Map	UDVButton 7-1_8-1		Band Count 		SEL1	Index
@@ -8240,10 +8298,6 @@ Map	Button 3-8		Page=Band9-16			Index	32Band
 Map	Button 4-8		Page=Band17-24			Index	32Band
 Map	Button 5-8		Page=Band25-32			Index	32Band
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8328,7 +8382,12 @@ Define Group	Page	Main	Low	Param1	Param2	Hi	Index	Internal
 Map	DeviceScope		"MClass Equalizer"
 Map	DeviceName		Device Name
 // Page
+Map	Button C5		Page=Main
 Map	Button C7		Page=Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 Map	Button 2-8		Page=Low			
 Map	Button 3-8		Page=Param1		
 Map	Button 4-8		Page=Param2	
@@ -8341,10 +8400,6 @@ Map	Button 3-8		Page=Param1			Index
 Map	Button 4-8		Page=Param2			Index
 Map	Button 5-8		Page=Hi			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8387,15 +8442,15 @@ Map	DeviceName		Device Name
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 2-8		Page=Env			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8422,16 +8477,16 @@ Map	DeviceName		Device Name
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 2-8		Page=Limiter			Index
 Map	Button 3-8		Page=SoftCLip			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8461,14 +8516,14 @@ Map	DeviceName		Device Name
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
-// Index
-Map	PageName		"Index" 				Index
-Map	Button 1-1		Page=Main			Index
-Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
 Map	Button C7		Page=Main			Internal
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8489,6 +8544,10 @@ Map	DeviceName		Device Name
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -8496,10 +8555,6 @@ Map	Button 2-8		Page=PitchAdjust			Index
 Map	Button 3-8		Page=Transpose			Index
 Map	Button 4-8		Page=Formant			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8535,14 +8590,14 @@ Map	DeviceName		Device Name
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
-// Index
-Map	PageName		"Index" 				Index
-Map	Button 1-1		Page=Main			Index
-Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
 Map	Button C7		Page=Main			Internal
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8562,14 +8617,14 @@ Map	DeviceName		Device Name
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
-// Index
-Map	PageName		"Index" 				Index
-Map	Button 1-1		Page=Main			Index
-Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
 Map	Button C7		Page=Main			Internal
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
 Map	Sel1_0		DelayUnit=MS			Main
@@ -8592,14 +8647,14 @@ Map	DeviceName		Device Name
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
-// Index
-Map	PageName		"Index" 				Index
-Map	Button 1-1		Page=Main			Index
-Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
 Map	Button C7		Page=Main			Internal
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8615,15 +8670,15 @@ Map	DeviceName		Device Name
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 2-6		Page=FilterEnvelope			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8648,14 +8703,14 @@ Map	DeviceName		Device Name
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
-// Index
-Map	PageName		"Index" 				Index
-Map	Button 1-1		Page=Main			Index
-Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
 Map	Button C7		Page=Main			Internal
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8675,15 +8730,15 @@ Map	DeviceName		Device Name
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 5-5		Page=LFO			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8706,14 +8761,14 @@ Map	DeviceName		Device Name
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
-// Index
-Map	PageName		"Index" 				Index
-Map	Button 1-1		Page=Main			Index
-Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
 Map	Button C7		Page=Main			Internal
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8730,14 +8785,14 @@ Map	DeviceName		Device Name
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
-// Index
-Map	PageName		"Index" 				Index
-Map	Button 1-1		Page=Main			Index
-Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
 Map	Button C7		Page=Main			Internal
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8757,14 +8812,14 @@ Map	DeviceName		Device Name
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
-// Index
-Map	PageName		"Index" 				Index
-Map	Button 1-1		Page=Main			Index
-Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
 Map	Button C7		Page=Main			Internal
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
 Map	Sel1_0		FilterB=Off			Main
@@ -8787,17 +8842,18 @@ Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
-// Index
-Map	PageName		"Index" 				Index
-Map	Button 1-1		Page=Main			Index
-Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
 Map	Button C7		Page=Main			Internal
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8813,9 +8869,14 @@ Map	DeviceName		Device Name
 Map	PatchName		Patch Name
 Map	Button C3		Select Previous Patch
 Map	Button C4		Select Next Patch
+
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -8829,10 +8890,6 @@ Map	Button 4-8		Page=ShifterVol1			Index
 Map	Button 5-8		Page=Shifter2			Index
 Map	Button 6-8		Page=ShifterVol2			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
@@ -8946,15 +9003,15 @@ Map	DeviceName		Device Name
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
+// Internal
+Map	PageName		"Internal" 				Internal
+Map	Button 1-1		Page=Main			Internal
+Map	Button C7		Page=Main			Internal
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-5		Page=Pattern			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	Button 5-1		Page=Main			Main
@@ -9005,14 +9062,14 @@ Map	DeviceName		Device Name
 // Page
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
-// Index
-Map	PageName		"Index" 				Index
-Map	Button 1-1		Page=Main			Index
-Map	Button C7		Page=Internal			Index
 // Internal
 Map	PageName		"Internal" 				Internal
 Map	Button 1-1		Page=Main			Internal
 Map	Button C7		Page=Main			Internal
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
 Map	Button 3-1		Pattern Enable			Main

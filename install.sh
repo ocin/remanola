@@ -28,7 +28,12 @@ if [ ! -d "$MAPSDIR" ]; then
 	mkdir -p "$MAPSDIR"
 fi
 
+oldpwd=$PWD
+cd Maps/Remanola/jinja2/
+./build_remotemap.py
+cd $oldpwd
+
 cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.lua "$CODECSDIR"
 cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.luacodec "$CODECSDIR"
 cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.png "$CODECSDIR"
-cp -r Maps/Remanola/Launchpad-Mini.remotemap "$MAPSDIR"
+cp -r Maps/Remanola/jinja2/out/Launchpad-Mini.remotemap "$MAPSDIR"

@@ -1,17 +1,13 @@
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Dr.REX Loop Player" -%}
 {% set devicename="DrOctoRex" -%}
-// ------------------------------------------------------------------------------------------
-Scope	{{ deviceman }}	{{ devicescope }}
-Define Group	Page	Main	Osc	Loop	Performance	Filter	FilterEnv	LFO	AmpEnv	Index	Keyboard	Internal
-Define Group	KeyMod	ModWheel	PitchBend
-Define Group	KbdVel	V100	V25	V50	V75	V127
-Define Group	BaseKey	C2	C0	C1	C3	C4
-Define Group	TempoSync	Free	Sync
-{% include "device-header.j2" %}
+{# Variables -#}
 {% set show_pitch_bend_range=true -%}
-{% include "keyboard.j2" %}
-{% include "internal.j2" %}
+{# End Variables -#}
+{% include "device-scope.j2" %}
+Define Group	Page	Main	Osc	Loop	Performance	Filter	FilterEnv	LFO	AmpEnv	Index	Keyboard	Internal
+Define Group	TempoSync	Free	Sync
+{% include "device-instrument.j2" %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index

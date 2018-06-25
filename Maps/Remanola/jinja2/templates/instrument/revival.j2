@@ -1,16 +1,13 @@
 {% set deviceman="Sononics" -%}
 {% set devicescope="com.sononics.Revival" -%}
 {% set devicename="Revival" -%}
+{# Variables -#}
+{% set show_pitch_bend_range=true -%}
+{# End Variables -#}
 {% include "device-scope.j2" %}
 Define Group	Page	Main	Voicing1	Voicing2	PriSec	Solos	Attack	Primary	Secondary	Release	AttackL	AttackU	PrimaryL	PrimaryU	SecondaryL	SecondaryU	ReleaseL	ReleaseU	AttackModEnable	AttackMod1	AttackMod2	AttackMod3	PrimaryModEnable	PrimaryMod1	PrimaryMod2	PrimaryMod3	SecondaryModEnable	SecondaryMod1	SecondaryMod2	SecondaryMod3	ReleaseModEnable	ReleaseMod1	ReleaseMod2	ReleaseMod3	Effects	PreAmp	Phaser	ModFilter	Speaker	Reverb	Delay	Index	Keyboard	Internal
-Define Group	KeyMod	ModWheel	PitchBend
-Define Group	KbdVel	V100	V25	V50	V75	V127
-Define Group	BaseKey	C2	C0	C1	C3	C4
 Define Group	TempoSync	Free	Sync
-{% include "device-header.j2" %}
-{% set show_pitch_bend_range=true -%}
-{% include "keyboard.j2" %}
-{% include "internal.j2" %}
+{% include "device-instrument.j2" %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index

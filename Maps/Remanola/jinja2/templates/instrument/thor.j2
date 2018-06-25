@@ -1,19 +1,16 @@
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Thor Polysonic Synthesizer" -%}
 {% set devicename="Thor" -%}
+{# Variables -#}
+{% set show_pitch_bend_range=true -%}
+{# End Variables -#}
 {% include "device-scope.j2" %}
 Define Group	Page	Main	Osc1	Osc2	Osc3	Mixer	Filter1	Filter2	Filter3	FilterEnv	Amp	AmpEnv	ModEnv	GlobalEnv	LFO1	LFO2	Seq	Shaper	Delay	Chorus	Index	Keyboard	Internal
-Define Group	KeyMod	ModWheel	PitchBend
-Define Group	KbdVel	V100	V25	V50	V75	V127
-Define Group	BaseKey	C2	C0	C1	C3	C4
 Define Group	OscType	Analog	Wavetable	Phase	FM	Multi	Noise	Off
 Define Group	FilterType	LP	State	Comb	Formant	Bypass
 Define Group	SeqEditMode	Note	Velocity	GateLen	StepDur	Curve1	Curve2
-{% include "device-header.j2" %}
+{% include "device-instrument.j2" %}
 Map	PlayingStep		Step Sequencer Step Index
-{% set show_pitch_bend_range=true -%}
-{% include "keyboard.j2" %}
-{% include "internal.j2" %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index

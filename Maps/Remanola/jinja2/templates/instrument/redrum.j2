@@ -1,13 +1,16 @@
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Redrum Drum Computer" -%}
 {% set devicename="Redrum" -%}
+{# Variables -#}
+{% set hide_pitch_bend=true -%}
+{% set hide_mod_wheel=true -%}
+{# End Variables -#}
 {% include "device-scope.j2" %}
-Define Group	Page	Main	Performance	Drum1	Drum1Edit	Drum2	Drum2Edit	Drum3	Drum3Edit	Drum4	Drum4Edit	Drum5	Drum5Edit	Drum6	Drum6Edit	Drum7	Drum7Edit	Drum8	Drum8Edit	Drum9	Drum9Edit	Drum10	Drum10Edit	Drum11	Drum11Edit	Drum12	Drum12Edit	Index	Internal
+Define Group	Page	Main	Performance	Drum1	Drum1Edit	Drum2	Drum2Edit	Drum3	Drum3Edit	Drum4	Drum4Edit	Drum5	Drum5Edit	Drum6	Drum6Edit	Drum7	Drum7Edit	Drum8	Drum8Edit	Drum9	Drum9Edit	Drum10	Drum10Edit	Drum11	Drum11Edit	Drum12	Drum12Edit	Index	Keyboard	Internal
 Define Group	DrumMode	Play	Solo	Mute
 Define Group	EditMode	Rotate	Toggle	Flam
-{% include "device-header.j2" %}
+{% include "device-instrument.j2" %}
 Map	PlayingStep		Playing Step
-{% include "internal.j2" %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index

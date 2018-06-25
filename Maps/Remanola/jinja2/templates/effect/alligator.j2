@@ -1,16 +1,10 @@
-// ------------------------------------------------------------------------------------------
-Scope	Propellerheads	Alligator
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="Alligator" -%}
+{% set devicename="Alligator" -%}
+{% include "device-scope.j2" %}
 Define Group	Page	Main	HPFilter	BPFilter	LPFilter	HPEffects	BPEffects	LPEffects	DryLevels	AmpEnv	LFO	FilterEnv	Delay	Phaser	Index	Internal
 Define Group	TempoSync	Free	Sync
-//	Control Surface Item	Key	Remotable Item	Scale	Mode
-Map	DeviceScope		"Alligator"
-Map	DeviceName		Device Name
-Map	PatchName		Patch Name
-Map	Button C3		Select Previous Patch
-Map	Button C4		Select Next Patch
-// Page
-Map	Button C5		Page=Main
-Map	Button C7		Page=Index
+{% include "device-effect.j2" %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -27,10 +21,6 @@ Map	Button 6-8		Page=Delay			Index
 Map	Button 7-8		Page=Phaser			Index
 Map	Button 5-5		Page=LFO			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main

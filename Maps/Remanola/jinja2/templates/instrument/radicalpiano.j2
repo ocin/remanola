@@ -1,15 +1,13 @@
 {% set deviceman="Propellerhead Software" -%}
 {% set devicescope="se.propellerheads.radicalpiano" -%}
 {% set devicename="Radical Piano" -%}
-{% include "device-scope.j2" %}
-Define Group	Page	Main	Velocity	Tune	Resonance	Envelope	Mechanics	Eq	Ambience	Output	Index	Keyboard	Internal
-Define Group	KbdVel	V100	V25	V50	V75	V127
-Define Group	BaseKey	C2	C0	C1	C3	C4
-{% include "device-header.j2" %}
+{# Variables -#}
 {% set hide_pitch_bend=true -%}
 {% set hide_mod_wheel=true -%}
-{% include "keyboard.j2" %}
-{% include "internal.j2" %}
+{# End Variables -#}
+{% include "device-scope.j2" %}
+Define Group	Page	Main	Velocity	Tune	Resonance	Envelope	Mechanics	Eq	Ambience	Output	Index	Keyboard	Internal
+{% include "device-instrument.j2" %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index

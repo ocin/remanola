@@ -1,12 +1,9 @@
-// ------------------------------------------------------------------------------------------
-Scope	Propellerheads	Neptune Pitch Adjuster
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="Neptune Pitch Adjuster" -%}
+{% set devicename="Neptune Pitch Adjuster" -%}
+{% include "device-scope.j2" %}
 Define Group	Page	Main	PitchAdjust	Transpose	Formant	Index	Internal
-//	Control Surface Item	Key	Remotable Item	Scale	Mode
-Map	DeviceScope		"Neptune Pitch Adjuster"
-Map	DeviceName		Device Name
-// Page
-Map	Button C5		Page=Main
-Map	Button C7		Page=Index
+{% include "device-effect-nopatch.j2" %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -14,10 +11,6 @@ Map	Button 2-8		Page=PitchAdjust			Index
 Map	Button 3-8		Page=Transpose			Index
 Map	Button 4-8		Page=Formant			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
