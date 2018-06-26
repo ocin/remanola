@@ -4254,7 +4254,7 @@ Map	Button 4-3		Page=SecondaryU			Index
 Map	Button 5-3		Page=ReleaseU			Index
 Map	Button 2-4		Page=AttackModEnable			Index
 Map	Button 3-4		Page=PrimaryModEnable			Index
-Map	Button 4-4		Page=PrimaryModEnable			Index
+Map	Button 4-4		Page=SecondaryModEnable			Index
 Map	Button 5-4		Page=ReleaseModEnable			Index
 Map	Button 2-5		Page=AttackMod1			Index
 Map	Button 3-5		Page=PrimaryMod1			Index
@@ -4386,92 +4386,14 @@ Map	Drawbar 8		Attack Drawbar 7				AttackL
 // Attack Drawbars Upper
 Map	PageName		"Attack Drawbars Upper" 				AttackU
 Map	Button 2-1		Page=AttackU			AttackU
-Map	Button 3-1		Page=PrimaryL			AttackU
-Map	Button 4-1		Page=SecondaryL			AttackU
-Map	Button 5-1		Page=ReleaseL			AttackU
+Map	Button 3-1		Page=PrimaryU			AttackU
+Map	Button 4-1		Page=SecondaryU			AttackU
+Map	Button 5-1		Page=ReleaseU			AttackU
 Map	Button 7-1		Page=AttackU			AttackU
 Map	Button 8-1		Page=AttackL			AttackU
 Map	Drawbar 2		Attack Drawbar 8				AttackU
 Map	Drawbar 3		Attack Drawbar 9				AttackU
 Map	Drawbar 4		Attack Drawbar 10				AttackU
-// Primary Drawbars Lower
-Map	PageName		"Primary Drawbars Lower" 				PrimaryL
-Map	Button 2-1		Page=AttackL			PrimaryL
-Map	Button 3-1		Page=PrimaryL			PrimaryL
-Map	Button 4-1		Page=SecondaryL			PrimaryL
-Map	Button 5-1		Page=ReleaseL			PrimaryL
-Map	Button 7-1		Page=PrimaryU			PrimaryL
-Map	Button 8-1		Page=PrimaryL			PrimaryL
-Map	Drawbar 2		Primary Drawbar 1				PrimaryL
-Map	Drawbar 3		Primary Drawbar 2				PrimaryL
-Map	Drawbar 4		Primary Drawbar 3				PrimaryL
-Map	Drawbar 5		Primary Drawbar 4				PrimaryL
-Map	Drawbar 6		Primary Drawbar 5				PrimaryL
-Map	Drawbar 7		Primary Drawbar 6				PrimaryL
-Map	Drawbar 8		Primary Drawbar 7				PrimaryL
-// Primary Drawbars Upper
-Map	PageName		"Primary Drawbars Upper" 				PrimaryU
-Map	Button 2-1		Page=AttackL			PrimaryU
-Map	Button 3-1		Page=PrimaryU			PrimaryU
-Map	Button 4-1		Page=SecondaryL			PrimaryU
-Map	Button 5-1		Page=ReleaseL			PrimaryU
-Map	Button 7-1		Page=PrimaryU			PrimaryU
-Map	Button 8-1		Page=PrimaryL			PrimaryU
-Map	Drawbar 2		Primary Drawbar 8				PrimaryU
-Map	Drawbar 3		Primary Drawbar 9				PrimaryU
-Map	Drawbar 4		Primary Drawbar 10				PrimaryU
-// Secondary Drawbar5 Lower
-Map	PageName		"Secondary Drawbars Lower" 				SecondaryL
-Map	Button 2-1		Page=AttackL			SecondaryL
-Map	Button 3-1		Page=PrimaryL			SecondaryL
-Map	Button 4-1		Page=SecondaryL			SecondaryL
-Map	Button 5-1		Page=ReleaseL			SecondaryL
-Map	Button 7-1		Page=SecondaryU			SecondaryL
-Map	Button 8-1		Page=SecondaryL			SecondaryL
-Map	Drawbar 2		Secondary Drawbar 1				SecondaryL
-Map	Drawbar 3		Secondary Drawbar 2				SecondaryL
-Map	Drawbar 4		Secondary Drawbar 3				SecondaryL
-Map	Drawbar 5		Secondary Drawbar 4				SecondaryL
-Map	Drawbar 6		Secondary Drawbar 5				SecondaryL
-Map	Drawbar 7		Secondary Drawbar 6				SecondaryL
-Map	Drawbar 8		Secondary Drawbar 7				SecondaryL
-// Secondary Drawbar5 Upper
-Map	PageName		"Secondary Drawbars Upper" 				SecondaryU
-Map	Button 2-1		Page=AttackL			SecondaryU
-Map	Button 3-1		Page=PrimaryL			SecondaryU
-Map	Button 4-1		Page=SecondaryU			SecondaryU
-Map	Button 5-1		Page=ReleaseL			SecondaryU
-Map	Button 7-1		Page=SecondaryU			SecondaryU
-Map	Button 8-1		Page=SecondaryL			SecondaryU
-Map	Drawbar 2		Secondary Drawbar 8				SecondaryU
-Map	Drawbar 3		Secondary Drawbar 9				SecondaryU
-Map	Drawbar 4		Secondary Drawbar 10				SecondaryU
-// Release Drawbars Lower
-Map	PageName		"Release Drawbars Lower" 				ReleaseL
-Map	Button 2-1		Page=AttackL			ReleaseL
-Map	Button 3-1		Page=PrimaryL			ReleaseL
-Map	Button 4-1		Page=SecondaryL			ReleaseL
-Map	Button 5-1		Page=ReleaseL			ReleaseL
-Map	Button 7-1		Page=ReleaseU			ReleaseL
-Map	Button 8-1		Page=ReleaseL			ReleaseL
-Map	Drawbar 2		Release Drawbar 1				ReleaseL
-Map	Drawbar 3		Release Drawbar 2				ReleaseL
-Map	Drawbar 4		Release Drawbar 3				ReleaseL
-Map	Drawbar 5		Release Drawbar 4				ReleaseL
-Map	Drawbar 6		Release Drawbar 5				ReleaseL
-Map	Drawbar 7		Release Drawbar 6				ReleaseL
-Map	Drawbar 8		Release Drawbar 7				ReleaseL
-// Release Drawbar5 Upper
-Map	PageName		"Release Drawbars Upper" 				ReleaseU
-Map	Button 2-1		Page=AttackL			ReleaseU
-Map	Button 3-1		Page=PrimaryL			ReleaseU
-Map	Button 4-1		Page=SecondaryL			ReleaseU
-Map	Button 5-1		Page=ReleaseU			ReleaseU
-Map	Button 7-1		Page=ReleaseU			ReleaseU
-Map	Button 8-1		Page=ReleaseL			ReleaseU
-Map	Drawbar 2		Release Drawbar 8				ReleaseU
-Map	Drawbar 3		Release Drawbar 9				ReleaseU
-Map	Drawbar 4		Release Drawbar 10				ReleaseU
 // Attack Mod Enable
 Map	PageName		"Attack Mod Enable" 				AttackModEnable
 Map	Button 2-1		Page=AttackModEnable			AttackModEnable
@@ -4511,6 +4433,86 @@ Map	Button 5-8		Attack Mod1 Enable 7			AttackModEnable
 Map	Button 6-2		Attack Mod1 Enable 8			AttackModEnable
 Map	Button 6-3		Attack Mod1 Enable 9			AttackModEnable
 Map	Button 6-4		Attack Mod1 Enable 10			AttackModEnable
+// Attack Mod 1
+Map	PageName		"Attack Mod 1" 				AttackMod1
+Map	Button 2-1		Page=AttackMod1			AttackMod1
+Map	Button 3-1		Page=PrimaryMod1			AttackMod1
+Map	Button 4-1		Page=SecondaryMod1			AttackMod1
+Map	Button 5-1		Page=ReleaseMod1			AttackMod1
+Map	Button 6-1		Page=AttackMod1			AttackMod1
+Map	Button 7-1		Page=AttackMod2			AttackMod1
+Map	Button 8-1		Page=AttackMod3			AttackMod1
+Map	Button 1-2		Page=AttackModEnable			AttackMod1
+Map	UDVButton 5-2_6-2		Attack Mod1 Type			AttackMod1
+Map	UDVButton 7-2_8-2		Attack Mod1 Animation Type			AttackMod1
+Map	Fader 3		Attack Mod1 Amount				AttackMod1
+Map	Fader 4		Attack Mod1 Tone				AttackMod1
+Map	Fader 5		Attack Mod1 Note Scale				AttackMod1
+Map	Fader 6		Attack Mod1 Velocity Scale				AttackMod1
+Map	Fader 7		Attack Mod1 Animation Amount				AttackMod1
+Map	Fader 8		Attack Mod1 Animation Rate				AttackMod1
+// Attack Mod 2
+Map	PageName		"Attack Mod 2" 				AttackMod2
+Map	Button 2-1		Page=AttackMod2			AttackMod2
+Map	Button 3-1		Page=PrimaryMod2			AttackMod2
+Map	Button 4-1		Page=SecondaryMod2			AttackMod2
+Map	Button 5-1		Page=ReleaseMod2			AttackMod2
+Map	Button 6-1		Page=AttackMod1			AttackMod2
+Map	Button 7-1		Page=AttackMod2			AttackMod2
+Map	Button 8-1		Page=AttackMod3			AttackMod2
+Map	Button 1-2		Page=AttackModEnable			AttackMod2
+Map	UDVButton 5-2_6-2		Attack Mod2 Type			AttackMod2
+Map	UDVButton 7-2_8-2		Attack Mod2 Animation Type			AttackMod2
+Map	Fader 3		Attack Mod2 Amount				AttackMod2
+Map	Fader 4		Attack Mod2 Tone				AttackMod2
+Map	Fader 5		Attack Mod2 Note Scale				AttackMod2
+Map	Fader 6		Attack Mod2 Velocity Scale				AttackMod2
+Map	Fader 7		Attack Mod2 Animation Amount				AttackMod2
+Map	Fader 8		Attack Mod2 Animation Rate				AttackMod2
+// Attack Mod 3
+Map	PageName		"Attack Mod 3" 				AttackMod3
+Map	Button 2-1		Page=AttackMod3			AttackMod3
+Map	Button 3-1		Page=PrimaryMod3			AttackMod3
+Map	Button 4-1		Page=SecondaryMod3			AttackMod3
+Map	Button 5-1		Page=ReleaseMod3			AttackMod3
+Map	Button 6-1		Page=AttackMod1			AttackMod3
+Map	Button 7-1		Page=AttackMod2			AttackMod3
+Map	Button 8-1		Page=AttackMod3			AttackMod3
+Map	Button 1-2		Page=AttackModEnable			AttackMod3
+Map	UDVButton 5-2_6-2		Attack Mod3 Type			AttackMod3
+Map	UDVButton 7-2_8-2		Attack Mod3 Animation Type			AttackMod3
+Map	Fader 3		Attack Mod3 Amount				AttackMod3
+Map	Fader 4		Attack Mod3 Tone				AttackMod3
+Map	Fader 5		Attack Mod3 Note Scale				AttackMod3
+Map	Fader 6		Attack Mod3 Velocity Scale				AttackMod3
+Map	Fader 7		Attack Mod3 Animation Amount				AttackMod3
+Map	Fader 8		Attack Mod3 Animation Rate				AttackMod3
+// Primary Drawbars Lower
+Map	PageName		"Primary Drawbars Lower" 				PrimaryL
+Map	Button 2-1		Page=AttackL			PrimaryL
+Map	Button 3-1		Page=PrimaryL			PrimaryL
+Map	Button 4-1		Page=SecondaryL			PrimaryL
+Map	Button 5-1		Page=ReleaseL			PrimaryL
+Map	Button 7-1		Page=PrimaryU			PrimaryL
+Map	Button 8-1		Page=PrimaryL			PrimaryL
+Map	Drawbar 2		Primary Drawbar 1				PrimaryL
+Map	Drawbar 3		Primary Drawbar 2				PrimaryL
+Map	Drawbar 4		Primary Drawbar 3				PrimaryL
+Map	Drawbar 5		Primary Drawbar 4				PrimaryL
+Map	Drawbar 6		Primary Drawbar 5				PrimaryL
+Map	Drawbar 7		Primary Drawbar 6				PrimaryL
+Map	Drawbar 8		Primary Drawbar 7				PrimaryL
+// Primary Drawbars Upper
+Map	PageName		"Primary Drawbars Upper" 				PrimaryU
+Map	Button 2-1		Page=AttackU			PrimaryU
+Map	Button 3-1		Page=PrimaryU			PrimaryU
+Map	Button 4-1		Page=SecondaryU			PrimaryU
+Map	Button 5-1		Page=ReleaseU			PrimaryU
+Map	Button 7-1		Page=PrimaryU			PrimaryU
+Map	Button 8-1		Page=PrimaryL			PrimaryU
+Map	Drawbar 2		Primary Drawbar 8				PrimaryU
+Map	Drawbar 3		Primary Drawbar 9				PrimaryU
+Map	Drawbar 4		Primary Drawbar 10				PrimaryU
 // Primary Mod Enable
 Map	PageName		"Primary Mod Enable" 				PrimaryModEnable
 Map	Button 2-1		Page=AttackModEnable			PrimaryModEnable
@@ -4550,6 +4552,86 @@ Map	Button 5-8		Primary Mod1 Enable 7			PrimaryModEnable
 Map	Button 6-2		Primary Mod1 Enable 8			PrimaryModEnable
 Map	Button 6-3		Primary Mod1 Enable 9			PrimaryModEnable
 Map	Button 6-4		Primary Mod1 Enable 10			PrimaryModEnable
+// Primary Mod 1
+Map	PageName		"Primary Mod 1" 				PrimaryMod1
+Map	Button 2-1		Page=AttackMod1			PrimaryMod1
+Map	Button 3-1		Page=PrimaryMod1			PrimaryMod1
+Map	Button 4-1		Page=SecondaryMod1			PrimaryMod1
+Map	Button 5-1		Page=ReleaseMod1			PrimaryMod1
+Map	Button 6-1		Page=PrimaryMod1			PrimaryMod1
+Map	Button 7-1		Page=PrimaryMod2			PrimaryMod1
+Map	Button 8-1		Page=PrimaryMod3			PrimaryMod1
+Map	Button 1-2		Page=PrimaryModEnable			PrimaryMod1
+Map	UDVButton 5-2_6-2		Primary Mod1 Type			PrimaryMod1
+Map	UDVButton 7-2_8-2		Primary Mod1 Animation Type			PrimaryMod1
+Map	Fader 3		Primary Mod1 Amount				PrimaryMod1
+Map	Fader 4		Primary Mod1 Tone				PrimaryMod1
+Map	Fader 5		Primary Mod1 Note Scale				PrimaryMod1
+Map	Fader 6		Primary Mod1 Velocity Scale				PrimaryMod1
+Map	Fader 7		Primary Mod1 Animation Amount				PrimaryMod1
+Map	Fader 8		Primary Mod1 Animation Rate				PrimaryMod1
+// Primary Mod 2
+Map	PageName		"Primary Mod 2" 				PrimaryMod2
+Map	Button 2-1		Page=AttackMod2			PrimaryMod2
+Map	Button 3-1		Page=PrimaryMod2			PrimaryMod2
+Map	Button 4-1		Page=SecondaryMod2			PrimaryMod2
+Map	Button 5-1		Page=ReleaseMod2			PrimaryMod2
+Map	Button 6-1		Page=PrimaryMod1			PrimaryMod2
+Map	Button 7-1		Page=PrimaryMod2			PrimaryMod2
+Map	Button 8-1		Page=PrimaryMod3			PrimaryMod2
+Map	Button 1-2		Page=PrimaryModEnable			PrimaryMod2
+Map	UDVButton 5-2_6-2		Primary Mod2 Type			PrimaryMod2
+Map	UDVButton 7-2_8-2		Primary Mod2 Animation Type			PrimaryMod2
+Map	Fader 3		Primary Mod2 Amount				PrimaryMod2
+Map	Fader 4		Primary Mod2 Tone				PrimaryMod2
+Map	Fader 5		Primary Mod2 Note Scale				PrimaryMod2
+Map	Fader 6		Primary Mod2 Velocity Scale				PrimaryMod2
+Map	Fader 7		Primary Mod2 Animation Amount				PrimaryMod2
+Map	Fader 8		Primary Mod2 Animation Rate				PrimaryMod2
+// Primary Mod 3
+Map	PageName		"Primary Mod 3" 				PrimaryMod3
+Map	Button 2-1		Page=AttackMod3			PrimaryMod3
+Map	Button 3-1		Page=PrimaryMod3			PrimaryMod3
+Map	Button 4-1		Page=SecondaryMod3			PrimaryMod3
+Map	Button 5-1		Page=ReleaseMod3			PrimaryMod3
+Map	Button 6-1		Page=PrimaryMod1			PrimaryMod3
+Map	Button 7-1		Page=PrimaryMod2			PrimaryMod3
+Map	Button 8-1		Page=PrimaryMod3			PrimaryMod3
+Map	Button 1-2		Page=PrimaryModEnable			PrimaryMod3
+Map	UDVButton 5-2_6-2		Primary Mod3 Type			PrimaryMod3
+Map	UDVButton 7-2_8-2		Primary Mod3 Animation Type			PrimaryMod3
+Map	Fader 3		Primary Mod3 Amount				PrimaryMod3
+Map	Fader 4		Primary Mod3 Tone				PrimaryMod3
+Map	Fader 5		Primary Mod3 Note Scale				PrimaryMod3
+Map	Fader 6		Primary Mod3 Velocity Scale				PrimaryMod3
+Map	Fader 7		Primary Mod3 Animation Amount				PrimaryMod3
+Map	Fader 8		Primary Mod3 Animation Rate				PrimaryMod3
+// Secondary Drawbars Lower
+Map	PageName		"Secondary Drawbars Lower" 				SecondaryL
+Map	Button 2-1		Page=AttackL			SecondaryL
+Map	Button 3-1		Page=PrimaryL			SecondaryL
+Map	Button 4-1		Page=SecondaryL			SecondaryL
+Map	Button 5-1		Page=ReleaseL			SecondaryL
+Map	Button 7-1		Page=SecondaryU			SecondaryL
+Map	Button 8-1		Page=SecondaryL			SecondaryL
+Map	Drawbar 2		Secondary Drawbar 1				SecondaryL
+Map	Drawbar 3		Secondary Drawbar 2				SecondaryL
+Map	Drawbar 4		Secondary Drawbar 3				SecondaryL
+Map	Drawbar 5		Secondary Drawbar 4				SecondaryL
+Map	Drawbar 6		Secondary Drawbar 5				SecondaryL
+Map	Drawbar 7		Secondary Drawbar 6				SecondaryL
+Map	Drawbar 8		Secondary Drawbar 7				SecondaryL
+// Secondary Drawbars Upper
+Map	PageName		"Secondary Drawbars Upper" 				SecondaryU
+Map	Button 2-1		Page=AttackU			SecondaryU
+Map	Button 3-1		Page=PrimaryU			SecondaryU
+Map	Button 4-1		Page=SecondaryU			SecondaryU
+Map	Button 5-1		Page=ReleaseU			SecondaryU
+Map	Button 7-1		Page=SecondaryU			SecondaryU
+Map	Button 8-1		Page=SecondaryL			SecondaryU
+Map	Drawbar 2		Secondary Drawbar 8				SecondaryU
+Map	Drawbar 3		Secondary Drawbar 9				SecondaryU
+Map	Drawbar 4		Secondary Drawbar 10				SecondaryU
 // Secondary Mod Enable
 Map	PageName		"Secondary Mod Enable" 				SecondaryModEnable
 Map	Button 2-1		Page=AttackModEnable			SecondaryModEnable
@@ -4589,6 +4671,86 @@ Map	Button 5-8		Secondary Mod1 Enable 7			SecondaryModEnable
 Map	Button 6-2		Secondary Mod1 Enable 8			SecondaryModEnable
 Map	Button 6-3		Secondary Mod1 Enable 9			SecondaryModEnable
 Map	Button 6-4		Secondary Mod1 Enable 10			SecondaryModEnable
+// Secondary Mod 1
+Map	PageName		"Secondary Mod 1" 				SecondaryMod1
+Map	Button 2-1		Page=AttackMod1			SecondaryMod1
+Map	Button 3-1		Page=PrimaryMod1			SecondaryMod1
+Map	Button 4-1		Page=SecondaryMod1			SecondaryMod1
+Map	Button 5-1		Page=ReleaseMod1			SecondaryMod1
+Map	Button 6-1		Page=SecondaryMod1			SecondaryMod1
+Map	Button 7-1		Page=SecondaryMod2			SecondaryMod1
+Map	Button 8-1		Page=SecondaryMod3			SecondaryMod1
+Map	Button 1-2		Page=SecondaryModEnable			SecondaryMod1
+Map	UDVButton 5-2_6-2		Secondary Mod1 Type			SecondaryMod1
+Map	UDVButton 7-2_8-2		Secondary Mod1 Animation Type			SecondaryMod1
+Map	Fader 3		Secondary Mod1 Amount				SecondaryMod1
+Map	Fader 4		Secondary Mod1 Tone				SecondaryMod1
+Map	Fader 5		Secondary Mod1 Note Scale				SecondaryMod1
+Map	Fader 6		Secondary Mod1 Velocity Scale				SecondaryMod1
+Map	Fader 7		Secondary Mod1 Animation Amount				SecondaryMod1
+Map	Fader 8		Secondary Mod1 Animation Rate				SecondaryMod1
+// Secondary Mod 2
+Map	PageName		"Secondary Mod 2" 				SecondaryMod2
+Map	Button 2-1		Page=AttackMod2			SecondaryMod2
+Map	Button 3-1		Page=PrimaryMod2			SecondaryMod2
+Map	Button 4-1		Page=SecondaryMod2			SecondaryMod2
+Map	Button 5-1		Page=ReleaseMod2			SecondaryMod2
+Map	Button 6-1		Page=SecondaryMod1			SecondaryMod2
+Map	Button 7-1		Page=SecondaryMod2			SecondaryMod2
+Map	Button 8-1		Page=SecondaryMod3			SecondaryMod2
+Map	Button 1-2		Page=SecondaryModEnable			SecondaryMod2
+Map	UDVButton 5-2_6-2		Secondary Mod2 Type			SecondaryMod2
+Map	UDVButton 7-2_8-2		Secondary Mod2 Animation Type			SecondaryMod2
+Map	Fader 3		Secondary Mod2 Amount				SecondaryMod2
+Map	Fader 4		Secondary Mod2 Tone				SecondaryMod2
+Map	Fader 5		Secondary Mod2 Note Scale				SecondaryMod2
+Map	Fader 6		Secondary Mod2 Velocity Scale				SecondaryMod2
+Map	Fader 7		Secondary Mod2 Animation Amount				SecondaryMod2
+Map	Fader 8		Secondary Mod2 Animation Rate				SecondaryMod2
+// Secondary Mod 3
+Map	PageName		"Secondary Mod 3" 				SecondaryMod3
+Map	Button 2-1		Page=AttackMod3			SecondaryMod3
+Map	Button 3-1		Page=PrimaryMod3			SecondaryMod3
+Map	Button 4-1		Page=SecondaryMod3			SecondaryMod3
+Map	Button 5-1		Page=ReleaseMod3			SecondaryMod3
+Map	Button 6-1		Page=SecondaryMod1			SecondaryMod3
+Map	Button 7-1		Page=SecondaryMod2			SecondaryMod3
+Map	Button 8-1		Page=SecondaryMod3			SecondaryMod3
+Map	Button 1-2		Page=SecondaryModEnable			SecondaryMod3
+Map	UDVButton 5-2_6-2		Secondary Mod3 Type			SecondaryMod3
+Map	UDVButton 7-2_8-2		Secondary Mod3 Animation Type			SecondaryMod3
+Map	Fader 3		Secondary Mod3 Amount				SecondaryMod3
+Map	Fader 4		Secondary Mod3 Tone				SecondaryMod3
+Map	Fader 5		Secondary Mod3 Note Scale				SecondaryMod3
+Map	Fader 6		Secondary Mod3 Velocity Scale				SecondaryMod3
+Map	Fader 7		Secondary Mod3 Animation Amount				SecondaryMod3
+Map	Fader 8		Secondary Mod3 Animation Rate				SecondaryMod3
+// Release Drawbars Lower
+Map	PageName		"Release Drawbars Lower" 				ReleaseL
+Map	Button 2-1		Page=AttackL			ReleaseL
+Map	Button 3-1		Page=PrimaryL			ReleaseL
+Map	Button 4-1		Page=SecondaryL			ReleaseL
+Map	Button 5-1		Page=ReleaseL			ReleaseL
+Map	Button 7-1		Page=ReleaseU			ReleaseL
+Map	Button 8-1		Page=ReleaseL			ReleaseL
+Map	Drawbar 2		Release Drawbar 1				ReleaseL
+Map	Drawbar 3		Release Drawbar 2				ReleaseL
+Map	Drawbar 4		Release Drawbar 3				ReleaseL
+Map	Drawbar 5		Release Drawbar 4				ReleaseL
+Map	Drawbar 6		Release Drawbar 5				ReleaseL
+Map	Drawbar 7		Release Drawbar 6				ReleaseL
+Map	Drawbar 8		Release Drawbar 7				ReleaseL
+// Release Drawbars Upper
+Map	PageName		"Release Drawbars Upper" 				ReleaseU
+Map	Button 2-1		Page=AttackU			ReleaseU
+Map	Button 3-1		Page=PrimaryU			ReleaseU
+Map	Button 4-1		Page=SecondaryU			ReleaseU
+Map	Button 5-1		Page=ReleaseU			ReleaseU
+Map	Button 7-1		Page=ReleaseU			ReleaseU
+Map	Button 8-1		Page=ReleaseL			ReleaseU
+Map	Drawbar 2		Release Drawbar 8				ReleaseU
+Map	Drawbar 3		Release Drawbar 9				ReleaseU
+Map	Drawbar 4		Release Drawbar 10				ReleaseU
 // Release Mod Enable
 Map	PageName		"Release Mod Enable" 				ReleaseModEnable
 Map	Button 2-1		Page=AttackModEnable			ReleaseModEnable
@@ -4628,160 +4790,6 @@ Map	Button 5-8		Release Mod1 Enable 7			ReleaseModEnable
 Map	Button 6-2		Release Mod1 Enable 8			ReleaseModEnable
 Map	Button 6-3		Release Mod1 Enable 9			ReleaseModEnable
 Map	Button 6-4		Release Mod1 Enable 10			ReleaseModEnable
-// Attack Mod 1
-Map	PageName		"Attack Mod 1" 				AttackMod1
-Map	Button 2-1		Page=AttackMod1			AttackMod1
-Map	Button 3-1		Page=PrimaryMod1			AttackMod1
-Map	Button 4-1		Page=SecondaryMod1			AttackMod1
-Map	Button 5-1		Page=ReleaseMod1			AttackMod1
-Map	Button 6-1		Page=AttackMod1			AttackMod1
-Map	Button 7-1		Page=AttackMod2			AttackMod1
-Map	Button 8-1		Page=AttackMod3			AttackMod1
-Map	Button 1-2		Page=AttackModEnable			AttackMod1
-Map	UDVButton 5-2_6-2		Attack Mod1 Type			AttackMod1
-Map	UDVButton 7-2_8-2		Attack Mod1 Animation Type			AttackMod1
-Map	Fader 3		Attack Mod1 Amount				AttackMod1
-Map	Fader 4		Attack Mod1 Tone				AttackMod1
-Map	Fader 5		Attack Mod1 Note Scale				AttackMod1
-Map	Fader 6		Attack Mod1 Velocity Scale				AttackMod1
-Map	Fader 7		Attack Mod1 Animation Amount				AttackMod1
-Map	Fader 8		Attack Mod1 Animation Rate				AttackMod1
-// Attack Mod 2
-Map	PageName		"Attack Mod 2" 				AttackMod2
-Map	Button 2-1		Page=AttackMod2			AttackMod2
-Map	Button 3-1		Page=PrimaryMod2			AttackMod2
-Map	Button 4-1		Page=SecondaryMod2			AttackMod2
-Map	Button 5-1		Page=ReleaseMod2			AttackMod2
-Map	Button 6-1		Page=AttackMod1			AttackMod2
-Map	Button 7-1		Page=AttackMod2			AttackMod2
-Map	Button 8-1		Page=AttackMod3			AttackMod2
-Map	UDVButton 5-2_6-2		Attack Mod2 Type			AttackMod2
-Map	UDVButton 7-2_8-2		Attack Mod2 Animation Type			AttackMod2
-Map	Fader 3		Attack Mod2 Amount				AttackMod2
-Map	Fader 4		Attack Mod2 Tone				AttackMod2
-Map	Fader 5		Attack Mod2 Note Scale				AttackMod2
-Map	Fader 6		Attack Mod2 Velocity Scale				AttackMod2
-Map	Fader 7		Attack Mod2 Animation Amount				AttackMod2
-Map	Fader 8		Attack Mod2 Animation Rate				AttackMod2
-// Attack Mod 3
-Map	PageName		"Attack Mod 3" 				AttackMod3
-Map	Button 2-1		Page=AttackMod3			AttackMod3
-Map	Button 3-1		Page=PrimaryMod3			AttackMod3
-Map	Button 4-1		Page=SecondaryMod3			AttackMod3
-Map	Button 5-1		Page=ReleaseMod3			AttackMod3
-Map	Button 6-1		Page=AttackMod1			AttackMod3
-Map	Button 7-1		Page=AttackMod2			AttackMod3
-Map	Button 8-1		Page=AttackMod3			AttackMod3
-Map	UDVButton 5-2_6-2		Attack Mod3 Type			AttackMod3
-Map	UDVButton 7-2_8-2		Attack Mod3 Animation Type			AttackMod3
-Map	Fader 3		Attack Mod3 Amount				AttackMod3
-Map	Fader 4		Attack Mod3 Tone				AttackMod3
-Map	Fader 5		Attack Mod3 Note Scale				AttackMod3
-Map	Fader 6		Attack Mod3 Velocity Scale				AttackMod3
-Map	Fader 7		Attack Mod3 Animation Amount				AttackMod3
-Map	Fader 8		Attack Mod3 Animation Rate				AttackMod3
-// Primary Mod 1
-Map	PageName		"Primary Mod 1" 				PrimaryMod1
-Map	Button 2-1		Page=AttackMod1			PrimaryMod1
-Map	Button 3-1		Page=PrimaryMod1			PrimaryMod1
-Map	Button 4-1		Page=SecondaryMod1			PrimaryMod1
-Map	Button 5-1		Page=ReleaseMod1			PrimaryMod1
-Map	Button 6-1		Page=PrimaryMod1			PrimaryMod1
-Map	Button 7-1		Page=PrimaryMod2			PrimaryMod1
-Map	Button 8-1		Page=PrimaryMod3			PrimaryMod1
-Map	UDVButton 5-2_6-2		Primary Mod1 Type			PrimaryMod1
-Map	UDVButton 7-2_8-2		Primary Mod1 Animation Type			PrimaryMod1
-Map	Fader 3		Primary Mod1 Amount				PrimaryMod1
-Map	Fader 4		Primary Mod1 Tone				PrimaryMod1
-Map	Fader 5		Primary Mod1 Note Scale				PrimaryMod1
-Map	Fader 6		Primary Mod1 Velocity Scale				PrimaryMod1
-Map	Fader 7		Primary Mod1 Animation Amount				PrimaryMod1
-Map	Fader 8		Primary Mod1 Animation Rate				PrimaryMod1
-// Primary Mod 2
-Map	PageName		"Primary Mod 2" 				PrimaryMod2
-Map	Button 2-1		Page=AttackMod2			PrimaryMod2
-Map	Button 3-1		Page=PrimaryMod2			PrimaryMod2
-Map	Button 4-1		Page=SecondaryMod2			PrimaryMod2
-Map	Button 5-1		Page=ReleaseMod2			PrimaryMod2
-Map	Button 6-1		Page=PrimaryMod1			PrimaryMod2
-Map	Button 7-1		Page=PrimaryMod2			PrimaryMod2
-Map	Button 8-1		Page=PrimaryMod3			PrimaryMod2
-Map	UDVButton 5-2_6-2		Primary Mod2 Type			PrimaryMod2
-Map	UDVButton 7-2_8-2		Primary Mod2 Animation Type			PrimaryMod2
-Map	Fader 3		Primary Mod2 Amount				PrimaryMod2
-Map	Fader 4		Primary Mod2 Tone				PrimaryMod2
-Map	Fader 5		Primary Mod2 Note Scale				PrimaryMod2
-Map	Fader 6		Primary Mod2 Velocity Scale				PrimaryMod2
-Map	Fader 7		Primary Mod2 Animation Amount				PrimaryMod2
-Map	Fader 8		Primary Mod2 Animation Rate				PrimaryMod2
-// Primary Mod 3
-Map	PageName		"Primary Mod 3" 				PrimaryMod3
-Map	Button 2-1		Page=AttackMod3			PrimaryMod3
-Map	Button 3-1		Page=PrimaryMod3			PrimaryMod3
-Map	Button 4-1		Page=SecondaryMod3			PrimaryMod3
-Map	Button 5-1		Page=ReleaseMod3			PrimaryMod3
-Map	Button 6-1		Page=PrimaryMod1			PrimaryMod3
-Map	Button 7-1		Page=PrimaryMod2			PrimaryMod3
-Map	Button 8-1		Page=PrimaryMod3			PrimaryMod3
-Map	UDVButton 5-2_6-2		Primary Mod3 Type			PrimaryMod3
-Map	UDVButton 7-2_8-2		Primary Mod3 Animation Type			PrimaryMod3
-Map	Fader 3		Primary Mod3 Amount				PrimaryMod3
-Map	Fader 4		Primary Mod3 Tone				PrimaryMod3
-Map	Fader 5		Primary Mod3 Note Scale				PrimaryMod3
-Map	Fader 6		Primary Mod3 Velocity Scale				PrimaryMod3
-Map	Fader 7		Primary Mod3 Animation Amount				PrimaryMod3
-Map	Fader 8		Primary Mod3 Animation Rate				PrimaryMod3
-// Secondary Mod 1
-Map	PageName		"Secondary Mod 1" 				SecondaryMod1
-Map	Button 2-1		Page=AttackMod1			SecondaryMod1
-Map	Button 3-1		Page=PrimaryMod1			SecondaryMod1
-Map	Button 4-1		Page=SecondaryMod1			SecondaryMod1
-Map	Button 5-1		Page=ReleaseMod1			SecondaryMod1
-Map	Button 6-1		Page=SecondaryMod1			SecondaryMod1
-Map	Button 7-1		Page=SecondaryMod2			SecondaryMod1
-Map	Button 8-1		Page=SecondaryMod3			SecondaryMod1
-Map	UDVButton 5-2_6-2		Secondary Mod1 Type			SecondaryMod1
-Map	UDVButton 7-2_8-2		Secondary Mod1 Animation Type			SecondaryMod1
-Map	Fader 3		Secondary Mod1 Amount				SecondaryMod1
-Map	Fader 4		Secondary Mod1 Tone				SecondaryMod1
-Map	Fader 5		Secondary Mod1 Note Scale				SecondaryMod1
-Map	Fader 6		Secondary Mod1 Velocity Scale				SecondaryMod1
-Map	Fader 7		Secondary Mod1 Animation Amount				SecondaryMod1
-Map	Fader 8		Secondary Mod1 Animation Rate				SecondaryMod1
-// Secondary Mod 2
-Map	PageName		"Secondary Mod 2" 				SecondaryMod2
-Map	Button 2-1		Page=AttackMod2			SecondaryMod2
-Map	Button 3-1		Page=PrimaryMod2			SecondaryMod2
-Map	Button 4-1		Page=SecondaryMod2			SecondaryMod2
-Map	Button 5-1		Page=ReleaseMod2			SecondaryMod2
-Map	Button 6-1		Page=SecondaryMod1			SecondaryMod2
-Map	Button 7-1		Page=SecondaryMod2			SecondaryMod2
-Map	Button 8-1		Page=SecondaryMod3			SecondaryMod2
-Map	UDVButton 5-2_6-2		Secondary Mod2 Type			SecondaryMod2
-Map	UDVButton 7-2_8-2		Secondary Mod2 Animation Type			SecondaryMod2
-Map	Fader 3		Secondary Mod2 Amount				SecondaryMod2
-Map	Fader 4		Secondary Mod2 Tone				SecondaryMod2
-Map	Fader 5		Secondary Mod2 Note Scale				SecondaryMod2
-Map	Fader 6		Secondary Mod2 Velocity Scale				SecondaryMod2
-Map	Fader 7		Secondary Mod2 Animation Amount				SecondaryMod2
-Map	Fader 8		Secondary Mod2 Animation Rate				SecondaryMod2
-// Secondary Mod 3
-Map	PageName		"Secondary Mod 3" 				SecondaryMod3
-Map	Button 2-1		Page=AttackMod3			SecondaryMod3
-Map	Button 3-1		Page=PrimaryMod3			SecondaryMod3
-Map	Button 4-1		Page=SecondaryMod3			SecondaryMod3
-Map	Button 5-1		Page=ReleaseMod3			SecondaryMod3
-Map	Button 6-1		Page=SecondaryMod1			SecondaryMod3
-Map	Button 7-1		Page=SecondaryMod2			SecondaryMod3
-Map	Button 8-1		Page=SecondaryMod3			SecondaryMod3
-Map	UDVButton 5-2_6-2		Secondary Mod3 Type			SecondaryMod3
-Map	UDVButton 7-2_8-2		Secondary Mod3 Animation Type			SecondaryMod3
-Map	Fader 3		Secondary Mod3 Amount				SecondaryMod3
-Map	Fader 4		Secondary Mod3 Tone				SecondaryMod3
-Map	Fader 5		Secondary Mod3 Note Scale				SecondaryMod3
-Map	Fader 6		Secondary Mod3 Velocity Scale				SecondaryMod3
-Map	Fader 7		Secondary Mod3 Animation Amount				SecondaryMod3
-Map	Fader 8		Secondary Mod3 Animation Rate				SecondaryMod3
 // Release Mod 1
 Map	PageName		"Release Mod 1" 				ReleaseMod1
 Map	Button 2-1		Page=AttackMod1			ReleaseMod1
@@ -4791,6 +4799,7 @@ Map	Button 5-1		Page=ReleaseMod1			ReleaseMod1
 Map	Button 6-1		Page=ReleaseMod1			ReleaseMod1
 Map	Button 7-1		Page=ReleaseMod2			ReleaseMod1
 Map	Button 8-1		Page=ReleaseMod3			ReleaseMod1
+Map	Button 1-2		Page=ReleaseModEnable			ReleaseMod1
 Map	UDVButton 5-2_6-2		Release Mod1 Type			ReleaseMod1
 Map	UDVButton 7-2_8-2		Release Mod1 Animation Type			ReleaseMod1
 Map	Fader 3		Release Mod1 Amount				ReleaseMod1
@@ -4808,6 +4817,7 @@ Map	Button 5-1		Page=ReleaseMod2			ReleaseMod2
 Map	Button 6-1		Page=ReleaseMod1			ReleaseMod2
 Map	Button 7-1		Page=ReleaseMod2			ReleaseMod2
 Map	Button 8-1		Page=ReleaseMod3			ReleaseMod2
+Map	Button 1-2		Page=ReleaseModEnable			ReleaseMod2
 Map	UDVButton 5-2_6-2		Release Mod2 Type			ReleaseMod2
 Map	UDVButton 7-2_8-2		Release Mod2 Animation Type			ReleaseMod2
 Map	Fader 3		Release Mod2 Amount				ReleaseMod2
@@ -4825,6 +4835,7 @@ Map	Button 5-1		Page=ReleaseMod3			ReleaseMod3
 Map	Button 6-1		Page=ReleaseMod1			ReleaseMod3
 Map	Button 7-1		Page=ReleaseMod2			ReleaseMod3
 Map	Button 8-1		Page=ReleaseMod3			ReleaseMod3
+Map	Button 1-2		Page=ReleaseModEnable			ReleaseMod3
 Map	UDVButton 5-2_6-2		Release Mod3 Type			ReleaseMod3
 Map	UDVButton 7-2_8-2		Release Mod3 Animation Type			ReleaseMod3
 Map	Fader 3		Release Mod3 Amount				ReleaseMod3
