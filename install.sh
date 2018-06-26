@@ -19,6 +19,7 @@
 
 CODECSDIR="/Library/Application Support/Propellerhead Software/Remote/Codecs/Lua Codecs/Remanola/"
 MAPSDIR="/Library/Application Support/Propellerhead Software/Remote/Maps/Remanola/"
+OUTDIR="/tmp/remanola-out"
 
 if [ ! -d "$CODECSDIR" ]; then
 	mkdir -p "$CODECSDIR"
@@ -28,12 +29,16 @@ if [ ! -d "$MAPSDIR" ]; then
 	mkdir -p "$MAPSDIR"
 fi
 
+if [ ! -d "$OUTDIR" ]; then
+	mkdir -p "$OUTDIR"
+fi
+
 oldpwd=$PWD
-cd Maps/Remanola/jinja2/
-./build_remotemap.py
+cd Maps/Remanola/
+$oldpwd/build_remotemap.py
 cd $oldpwd
 
 cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.lua "$CODECSDIR"
 cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.luacodec "$CODECSDIR"
 cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.png "$CODECSDIR"
-cp -r Maps/Remanola/jinja2/out/Launchpad-Mini.remotemap "$MAPSDIR"
+cp -r $OUTDIR/Launchpad-Mini.remotemap "$MAPSDIR"
