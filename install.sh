@@ -40,8 +40,9 @@ if [ ! -d "$OUTDIR" ]; then
 fi
 
 ./build_remotemap.py
+./build_lua.py
 
-cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.lua "$CODECSDIR"
+cp -r $OUTDIR/Launchpad-Mini.lua "$CODECSDIR"
 cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.luacodec "$CODECSDIR"
 cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.png "$CODECSDIR"
 cp COPYING "$CODECSDIR"
