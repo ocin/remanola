@@ -2,7 +2,7 @@
 
 from jinja2 import Environment, FileSystemLoader
 env = Environment(
-    loader=FileSystemLoader('templates')
+    loader=FileSystemLoader('Maps/Remanola/templates')
 )
 
 remotefilename = '/tmp/remanola-out/Launchpad-Mini.remotemap'

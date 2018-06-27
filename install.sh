@@ -17,8 +17,14 @@
 # You should have received a copy of the GNU General Public License
 # along with Remanola.  If not, see <http://www.gnu.org/licenses/>.
 
-CODECSDIR="/Library/Application Support/Propellerhead Software/Remote/Codecs/Lua Codecs/Remanola/"
-MAPSDIR="/Library/Application Support/Propellerhead Software/Remote/Maps/Remanola/"
+INSTALLBASE="/Library/Application Support/Propellerhead Software/Remote"
+
+if [ ! -z $1 ];then
+	INSTALLBASE=$1
+fi
+
+export CODECSDIR="$INSTALLBASE/Codecs/Lua Codecs/Remanola/"
+export MAPSDIR="$INSTALLBASE/Maps/Remanola/"
 OUTDIR="/tmp/remanola-out"
 
 if [ ! -d "$CODECSDIR" ]; then
@@ -33,12 +39,11 @@ if [ ! -d "$OUTDIR" ]; then
 	mkdir -p "$OUTDIR"
 fi
 
-oldpwd=$PWD
-cd Maps/Remanola/
-$oldpwd/build_remotemap.py
-cd $oldpwd
+./build_remotemap.py
 
 cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.lua "$CODECSDIR"
 cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.luacodec "$CODECSDIR"
 cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.png "$CODECSDIR"
+cp COPYING "$CODECSDIR"
+cp README.md "$CODECSDIR"
 cp -r $OUTDIR/Launchpad-Mini.remotemap "$MAPSDIR"
