@@ -1,0 +1,11 @@
+{% for envnum in range(1,5) %}
+// Env {{ envnum }}
+Map	PageName		"Env {{ envnum }}" 				Env{{ envnum }}
+Map	Button 1-1		Page=Main			Env{{ envnum }}
+Map	Button 5-1		Page=Env1			Env{{ envnum }}
+Map	Button 6-1		Page=Env2			Env{{ envnum }}
+Map	Button 7-1		Page=Env3			Env{{ envnum }}
+Map	Button 8-1		Page=Env4			Env{{ envnum }}
+Map	Fader 3		Env {{ envnum }} Rate				Env{{ envnum }}
+Map	UDVButton 7-4_8-4		Env {{ envnum }} SyncRate				Env{{ envnum }}
+{% endfor %}

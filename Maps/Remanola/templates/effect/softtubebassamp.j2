@@ -1,0 +1,26 @@
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.ReasonBassAmp" -%}
+{% set devicename="Softtube Bass Amp" -%}
+{% include "device-scope.j2" %}
+Define Group	Page	Main	Eq	Index	Internal
+{% include "device-effect.j2" %}
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=Eq			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	UDVButton 1-2_2-2		Amp Switch			Main
+Map	UDVButton 3-2_4-2		Cab Switch			Main
+Map	Fader 3		Drive 				Main
+Map	Fader 8		Volume 				Main
+// Eq
+Map	PageName		"Eq" 				Eq
+Map	Button 8-2		Ultra Lo			Eq
+Map	Fader 3		Bass 				Eq
+Map	Fader 4		Middle 				Eq
+Map	UDVButton 7-5_8-5		Mid Freq			Eq
+Map	Button 8-6		Ultra Hi			Eq
+Map	Fader 7		Treble 				Eq

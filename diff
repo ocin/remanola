@@ -1,0 +1,3 @@
+#!/bin/bash
+
+diff -B <(sort ../Launchpad-Mini.remotemap) <(sort /tmp/remanola-out/Launchpad-Mini.remotemap)

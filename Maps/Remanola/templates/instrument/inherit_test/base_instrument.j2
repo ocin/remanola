@@ -1,0 +1,33 @@
+{% set deviceman="Dummy Manufacturer" -%}
+{% set devicescope="com.dummy.scope" -%}
+{% set devicename="Dummy" -%}
+{% block scope -%}
+// ------------------------------------------------------------------------------------------
+Scope	{{ deviceman }}	{{ devicescope }}
+{% endblock -%}
+{% block groups -%}
+Define Group	Page	Main	Index	Keyboard	Internal
+{% endblock -%}
+{% block helpline -%}
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+{% endblock -%}
+{% block device_header -%}
+{% include "device-header.j2" %}
+{% endblock -%}
+{% block index -%}
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-7		Page=Keyboard			Index
+Map	Button C7		Page=Internal			Index
+{% endblock -%}
+{% block keyboard -%}
+{% include "keyboard.j2" %}
+{% endblock -%}
+{% block internal -%}
+{% include "internal.j2" %}
+{% endblock -%}
+{% block content -%}
+// Main
+Map	PageName		"Main" 				Main
+{% endblock -%}
