@@ -12,3 +12,11 @@ template = env.get_template('Launchpad-Mini.lua.j2')
 remotefile = open(remotefilename, 'w')
 
 remotefile.write(template.render(version='1.0.1'))
+
+remotefilename = '/tmp/remanola-out/Launchpad-Pro.lua'
+
+template = env.get_template('Launchpad-Pro.lua.j2')
+
+remotefile = open(remotefilename, 'w')
+
+remotefile.write(template.render(version='1.0.0'))

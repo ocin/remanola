@@ -42,9 +42,17 @@ fi
 ./build_remotemap.py
 ./build_lua.py
 
+# Mini
 cp -r $OUTDIR/Launchpad-Mini.lua "$CODECSDIR"
 cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.luacodec "$CODECSDIR"
 cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.png "$CODECSDIR"
+cp -r $OUTDIR/Launchpad-Mini.remotemap "$MAPSDIR"
+
+# Pro
+cp -r $OUTDIR/Launchpad-Pro.lua "$CODECSDIR"
+cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Pro.luacodec "$CODECSDIR"
+cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Pro.png "$CODECSDIR"
+cp -r $OUTDIR/Launchpad-Pro.remotemap "$MAPSDIR"
+
 cp COPYING "$CODECSDIR"
 cp README.md "$CODECSDIR"
-cp -r $OUTDIR/Launchpad-Mini.remotemap "$MAPSDIR"

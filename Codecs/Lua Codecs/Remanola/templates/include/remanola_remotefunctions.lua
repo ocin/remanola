@@ -173,7 +173,7 @@ function remote_deliver_midi(maxbytes, port)
 
 			if((g_updateditems[itemname] ~= nil) or g_updateall) then
 				color = get_button_color(g_colorscheme, itemname, buttonname)
-				table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttonmidi, color)))
+				table.insert(ret_events, remote.make_midi(gen_color_midi(buttonmidi, color)))
 				if(not swapbuffers) then
 					swapbuffers = true
 				end
@@ -461,10 +461,10 @@ function remote_process_midi(event)
 			for button,note in pairs(button_to_keynote) do
                 		key = remote.match_midi(buttons[button].." zz", event)
                 		if(key ~= nil) then
-					local velocity = g_kbdvel
-					if(key.z == 0) then
-						velocity = 0
-					end
+					local velocity = key.z
+					--if(key.z == 0) then
+						--velocity = 0
+					--end
                         		remote.handle_input({ time_stamp = event.time_stamp, item = 1, value = 1, note = (note+12*g_basekey), velocity = velocity })
 					return true
 				end
@@ -575,8 +575,8 @@ function remote_process_midi(event)
 				local button_up_name = "Button "..row.."-"..column
 				local button_down_name = "Button "..tostring(row+1).."-"..column
 				if(remote.is_item_enabled(itemsindex[udvbuttonname])) then
-					local button_down = remote.match_midi(buttons[button_down_name].." 7f", event)
-					if(button_down ~= nil) then
+					local button_down = remote.match_midi(buttons[button_down_name].." xx", event)
+					if(button_down ~= nil and button_down.x > 0) then
 						local value = -1
 						if(get_item_conf_map(udvbuttonname, g_colorscheme, get_current_page()).inverted) then
 							value = 1
@@ -585,8 +585,8 @@ function remote_process_midi(event)
 						remote.handle_input(msg)
 						return true
 					end
-					local button_up = remote.match_midi(buttons[button_up_name].." 7f", event)
-					if(button_up ~= nil) then
+					local button_up = remote.match_midi(buttons[button_up_name].." xx", event)
+					if(button_up ~= nil and button_up.x > 0) then
 						local value = 1
 						if(get_item_conf_map(udvbuttonname, g_colorscheme, get_current_page()).inverted) then
 							value = -1
@@ -728,7 +728,7 @@ end
 
 function remote_probe(manufacturer,model,prober)
 	local controlRequest="F0 7E 7F 06 01 F7"
-	local controlResponse="F0 7E 00 06 02 00 20 29 36 00 ?? ?? ?? ?? ?? ??  F7"
+	local controlResponse=string.format("F0 7E 00 06 02 00 20 29 %x 00 ?? ?? ?? ?? ?? ??  F7", DEVICE_ID)
 
 	return {
                 request=controlRequest,
