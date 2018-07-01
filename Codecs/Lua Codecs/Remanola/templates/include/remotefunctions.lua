@@ -326,7 +326,7 @@ function remote_process_midi(event)
         local pad_item = 0
 
 	for s=1,g_selcount do
-		sel_input(event,s)
+		handle_input_sel(event,s)
 	end
 
 	if(g_enginenumnew ~= nil and g_enginenumnew ~= g_enginenum) then
@@ -344,8 +344,8 @@ function remote_process_midi(event)
 	end
 
 	if(g_editnumnew ~= nil and g_editnumnew ~= remote.get_item_value(itemsindex["EditSelect"])) then
-		local msg = { time_stamp = event.time_stamp, item = itemsindex["EditSelect"], value = g_editnumnew }
 		g_editnumnew = nil
+		local msg = { time_stamp = event.time_stamp, item = itemsindex["EditSelect"], value = g_editnumnew }
 		remote.handle_input(msg)
 	end
 
@@ -371,7 +371,7 @@ function remote_process_midi(event)
 	end
 
 	if(g_lightshow > 0) then
-		if(handle_lightshow_input(event)) then
+		if(handle_input_lightshow(event)) then
 			return(true)
 		end
 	end
@@ -379,33 +379,33 @@ function remote_process_midi(event)
 	local button = remote.match_midi("xx yy zz", event)
 
 	if(not g_helpmode and not g_valuemode and button ~= nil and (button.x == 0x90 or button.x == 0xb0)) then
-		if(handle_kong_input(event, button)) then
+		if(handle_input_kong(event, button)) then
 			return(true)
 		end
 
-		if(handle_keyboard_input(event, button)) then
+		if(handle_input_keyboard(event, button)) then
 			return(true)
 		end
 
-		if(handle_item_input(event, button)) then
+		if(handle_input_item(event, button)) then
 			return(true)
 		end
 	end
 	
 	if(g_helpmode and (button.x == 0x90 or button.x == 0xb0)) then
-		if(handle_helpmode_input(event, button)) then
+		if(handle_input_helpmode(event, button)) then
 			return(true)
 		end
 	end
 
 	if(g_valuemode and (button.x == 0x90 or button.x == 0xb0)) then
-		if(handle_valuemode_input(event, button)) then
+		if(handle_input_valuemodet(event, button)) then
 			return(true)
 		end
 	end
 
 	if(string.match(get_current_page(), "Internal")) then
-		if(handle_internalpage_input(event, button)) then
+		if(handle_input_internalpage(event, button)) then
 			return(true)
 		end
 	end
@@ -422,6 +422,7 @@ function remote_process_midi(event)
 		return true
 	end
 
+	-- Change all remaining button input to velocity 127
 	button = remote.match_midi("90 xx zz", event)
 	if(button ~= nil and button.z > 0) then
 		local midi = string.format("90 %02x", button.x)

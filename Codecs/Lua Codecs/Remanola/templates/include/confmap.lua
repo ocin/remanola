@@ -1,5 +1,5 @@
 local item_conf_map = {
-{% include "include/remanola_confmap_default.lua" %}
+{% include "include/confmap_default.lua" %}
 {% include "reason/reason-master-section.lua" %}
 {% include "reason/reason-mix-channel.lua" %}
 {% include "instrument/kong.lua" %}
