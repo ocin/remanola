@@ -17,7 +17,7 @@
 			["Button 4-7"]={template="BBank"},
 			["Button 4-8"]={template="BBank"},
 			-- Resolution
-			["UDVButton 7-8_8-8"]={template="UDGreen"},
+			["UDVButton 7-8_8-8"]={template="UDFreq"},
 			-- Run
 			["Button 8-1"]={template="BRedOnOff"},
 		},

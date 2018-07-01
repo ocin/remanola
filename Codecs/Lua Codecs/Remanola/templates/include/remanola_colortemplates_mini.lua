@@ -5,8 +5,15 @@ local color_templates = {
 	["FGreen"]={enabledcolor=WGREEN, activecolor=GREEN},
 	["FYellow"]={enabledcolor=WGREEN, activecolor=YELLOW},
 	["FOrange"]={enabledcolor=WGREEN, activecolor=ORANGE},
+	-- Faders by type
+	["FAmount"]={enabledcolor=WGREEN, activecolor=AMBER},
+	["FGain"]={enabledcolor=WGREEN, activecolor=RED},
+	["FFreq"]={enabledcolor=WGREEN, activecolor=GREEN},
+	["FMisc"]={enabledcolor=WGREEN, activecolor=YELLOW},
+	["FEffect"]={enabledcolor=WGREEN, activecolor=ORANGE},
 	-- Special Vocoder Fader
 	["FVCGreen"]={enabledcolor=WGREEN, activecolor=GREEN, disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=89},
+	["FVCFreq"]={enabledcolor=WGREEN, activecolor=GREEN, disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=89},
 	-- Fader with default value
 	["FAmberDef100"]={enabledcolor=WGREEN, activecolor=AMBER, denabledcolor=WAMBER, dactivecolor=RED, defaultvalue=100},
 	["FRedDef100"]={enabledcolor=WGREEN, activecolor=RED, denabledcolor=WAMBER, dactivecolor=ORANGE, defaultvalue=100},
@@ -24,6 +31,13 @@ local color_templates = {
 	["UDYellow3"]={enabledcolor=YELLOW3, activecolor=YELLOW3},
 	["UDOrange"]={enabledcolor=ORANGE, activecolor=ORANGE},
 	["UDNocolor"]={enabledcolor=NOCOLOR, activecolor=NOCOLOR},
+	-- UD by type
+	["UDAmount"]={enabledcolor=AMBER, activecolor=AMBER},
+	["UDGain"]={enabledcolor=RED, activecolor=RED},
+	["UDFreq"]={enabledcolor=GREEN, activecolor=GREEN},
+	["UDMisc"]={enabledcolor=YELLOW, activecolor=YELLOW},
+	["UDMisc2"]={enabledcolor=YELLOW3, activecolor=YELLOW3},
+	["UDEffect"]={enabledcolor=ORANGE, activecolor=ORANGE},
 	-- Buttons
 	["BAmber"]={enabledcolor=AMBER, activecolor=AMBER,  disabledcolor=NOCOLOR},
 	["BRed"]={enabledcolor=RED, activecolor=RED,  disabledcolor=NOCOLOR},

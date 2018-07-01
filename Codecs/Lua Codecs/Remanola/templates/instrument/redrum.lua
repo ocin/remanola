@@ -49,9 +49,9 @@
 			-- Edit Accent, color is handled elsewhere
 			["Button 4-6"]={template="BRedOnOff"},
 			-- Edit Steps
-			["UDVButton 5-8_6-8"]={template="UDGreen"},
+			["UDVButton 5-8_6-8"]={template="UDFreq"},
 			-- Flam
-			["UDVButton 7-7_8-7"]={template="UDAmber"},
+			["UDVButton 7-7_8-7"]={template="UDAmount"},
 			["Button 8-8"]={template="BRedOnOff"},
 			-- Run
 			["Button 3-8"]={template="BRun"},
@@ -101,8 +101,8 @@
 			["Button 1-1"]={template="BRedOnOff"},
 			["Button 1-2"]={template="BRedOnOff"},
 			-- Resolution, Shuffle
-			["UDHButton 7-1_7-1"]={template="FYellow"},
-			["UDHButton 8-3_8-4"]={template="FGreen"},
+			["UDHButton 7-1_7-1"]={template="FMisc"},
+			["UDHButton 8-3_8-4"]={template="FFreq"},
 			["Button 8-5"]={template="BRedOnOff"},
 			-- Pattern 1-4
 			["Button 2-1"]={template="BPerformancePage"},
@@ -140,11 +140,11 @@
 			["Button 3-2"]={template="BMute"},
 			["Button 3-3"]={template="BSolo"},
 			-- 
-			["UDVButton 5-4_6-4"]={template="UDYellow"},
-			["Fader 5"]={template="FOrange"},
-			["Fader 6"]={template="FOrange"},
-			["Knob V7"]={template="FRed"},
-			["Fader 8"]={template="FRed"},
+			["UDVButton 5-4_6-4"]={template="UDMisc"},
+			["Fader 5"]={template="FEffect"},
+			["Fader 6"]={template="FEffect"},
+			["Knob V7"]={template="FGain"},
+			["Fader 8"]={template="FGain"},
 		},
 		["Drum * Edit"]={
 			-- Goto Drum edit/main
@@ -162,9 +162,9 @@
 			["Button 8-3"]={template="BOscPage"},
 			["Button 8-4"]={template="BOscPage"},
 			--
-			["Fader 5"]={template="FYellow"},
-			["Fader 6"]={template="FAmber"},
-			["Knob V7"]={template="FAmber"},
-			["Fader 8"]={template="FYellow"},
+			["Fader 5"]={template="FMisc"},
+			["Fader 6"]={template="FAmount"},
+			["Knob V7"]={template="FAmount"},
+			["Fader 8"]={template="FMisc"},
 		},
 	},

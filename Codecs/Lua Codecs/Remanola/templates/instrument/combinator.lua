@@ -3,7 +3,7 @@
 		},
 		["Main"]={
 			-- On/Off/Bypass
-			["UDVButton 1-1_2-1"]={template="UDRed"},
+			["UDVButton 1-1_2-1"]={template="UDGain"},
 			-- Run
 			["Button 5-1"]={template="BRedOnOff"},
 			-- Bypass All Effects
@@ -14,9 +14,9 @@
 			["Button 8-3"]={template="BRedOnOff"},
 			["Button 8-4"]={template="BRedOnOff"},
 			-- Rotaries
-			["Fader 5"]={template="FYellow"},
-			["Fader 6"]={template="FYellow"},
-			["Fader 7"]={template="FYellow"},
-			["Fader 8"]={template="FYellow"},
+			["Fader 5"]={template="FMisc"},
+			["Fader 6"]={template="FMisc"},
+			["Fader 7"]={template="FMisc"},
+			["Fader 8"]={template="FMisc"},
 		},
 	},

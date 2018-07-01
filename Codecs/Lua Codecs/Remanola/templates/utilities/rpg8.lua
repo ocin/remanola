@@ -5,20 +5,20 @@
 		},
 		["Main"]={
 			-- MIDI-CV Coverter
-			["Fader 2"]={template="FYellow"},
+			["Fader 2"]={template="FMisc"},
 			["Button 1-3"]={template="BRedOnOff"},
-			["UDVButton 3-3_4-3"]={template="UDGreen"},
+			["UDVButton 3-3_4-3"]={template="UDFreq"},
 			-- Arpeggiator
 			["Button 1-4"]={template="BRedOnOff"},
-			["UDVButton 3-4_4-4"]={template="UDOrange"},
-			["UDVButton 5-4_6-4"]={template="UDGreen"},
-			["UDVButton 7-4_8-4"]={template="UDOrange"},
+			["UDVButton 3-4_4-4"]={template="UDEffect"},
+			["UDVButton 5-4_6-4"]={template="UDFreq"},
+			["UDVButton 7-4_8-4"]={template="UDEffect"},
 			-- Sync and Time
 			["Button 1-6"]={template="BRedOnOff"},
 			["Button 8-6"]={template="BRedOnOff"},
-			["UDVButton 7-7_8-7"]={template="UDGreen"},
-			["Fader 7"]={template="FGreen"},
-			["Fader 8"]={template="FOrange"},
+			["UDVButton 7-7_8-7"]={template="UDFreq"},
+			["Fader 7"]={template="FFreq"},
+			["Fader 8"]={template="FEffect"},
 		},
 		["Pattern"]={
 			-- Pattern Step
@@ -41,7 +41,7 @@
 			-- Pattern Enable
 			["Button 3-1"]={template="BRedOnOff"},
 			-- Pattern Length Up
-			["UDVButton 3-8_4-8"]={template="UDYellow"},
+			["UDVButton 3-8_4-8"]={template="UDMisc"},
 			-- Shuffle
 			["Button 8-1"]={template="BRedOnOff"},
 		},

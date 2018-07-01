@@ -4,15 +4,15 @@
 		["Index"]={
 		},
 		["Main"]={
-			["UDVButton 1-1_2-1"]={template="UDOrange"},
-			["Fader 3"]={template="FGreen"},
-			["Fader 4"]={template="FOrange"},
-			["Fader 5"]={template="FOrange"},
-			["Fader 6"]={template="FOrange"},
+			["UDVButton 1-1_2-1"]={template="UDEffect"},
+			["Fader 3"]={template="FFreq"},
+			["Fader 4"]={template="FEffect"},
+			["Fader 5"]={template="FEffect"},
+			["Fader 6"]={template="FEffect"},
 		},
 		["LFO"]={
-			["Fader 5"]={template="FGreen"},
+			["Fader 5"]={template="FFreq"},
 			["Button 1-6"]={template="BRedOnOff"},
-			["Fader 7"]={template="FYellow"},
+			["Fader 7"]={template="FMisc"},
 		},
 	},

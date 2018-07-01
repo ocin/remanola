@@ -1,16 +1,30 @@
-RED=5
-WRED=6
+RED="ff0000"
+WRED="100000"
 
-GREEN=17
-WGREEN=63
+GREEN="00ff00"
+WGREEN="001000"
 
-AMBER=9
-WAMBER=53
+BLUE="0000ff"
+MBLUE="000044"
+WBLUE="000010"
 
-YELLOW=13
-ORANGE=4
+PURLPE="800080"
+WPURPLE="100010"
 
-NOCOLOR=1
+AMBER="ff5515"
+WAMBER="401300"
+
+YELLOW="ffff00"
+WYELLOW="222200"
+YELLOW3="888822"
+ORANGE="ff3300"
+
+WHITE="ffffff"
+LGREY="212121"
+GREY="444444"
+DGREY="888888"
+
+NOCOLOR="000000"
 
 GREEN1=GREEN
 GREEN2=GREEN
@@ -30,16 +44,9 @@ ORANGE3=ORANGE
 
 YELLOW1=YELLOW
 YELLOW2=YELLOW
-YELLOW3=YELLOW
 
-colorpre = {
-	[RED]={red=0x7f, green=0x0, blue=0x0},
-	[WRED]={red=0x4b, green=0x0, blue=0x0},
-	[GREEN]={red=0x0, green=0x7f, blue=0x0},
-	[WGREEN]={red=0x0, green=0x04, blue=0x0},
-	[AMBER]={red=0x7f, green=0x0b, blue=0x0b},
-	[WAMBER]={red=0x7f, green=0x2b, blue=0x2b},
-	[YELLOW]={red=0x7f, green=0x7f, blue=0x0},
-	[ORANGE]={red=0x7f, green=0x4b, blue=0x0},
-	[NOCOLOR]={red=0x0, green=0x0, blue=0x0},
-}
+S_RED=5
+S_WRED=7
+S_YELLOW=13
+S_WYELLOW=15
+S_NOCOLOR=0

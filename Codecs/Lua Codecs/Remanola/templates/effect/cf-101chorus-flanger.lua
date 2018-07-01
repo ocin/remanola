@@ -4,12 +4,12 @@
 		["Index"]={
 		},
 		["Main"]={
-			["UDVButton 1-1_2-1"]={template="UDOrange"},
-			["Fader 3"]={template="FGreen"},
-			["Knob V4"]={template="FOrange"},
-			["Fader 5"]={template="FGreen"},
+			["UDVButton 1-1_2-1"]={template="UDEffect"},
+			["Fader 3"]={template="FFreq"},
+			["Knob V4"]={template="FEffect"},
+			["Fader 5"]={template="FFreq"},
 			["Button 1-6"]={template="BRedOnOff"},
-			["Fader 7"]={template="FYellow"},
+			["Fader 7"]={template="FMisc"},
 			["Button 1-8"]={template="BRedOnOff"},
 		},
 	},

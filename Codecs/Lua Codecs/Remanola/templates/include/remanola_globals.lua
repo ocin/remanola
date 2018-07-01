@@ -7,10 +7,10 @@ g_brightness_new = 4
 g_helpmode = false
 g_valuemode = false
 g_scrolltext = nil
-g_scrollcolor_default = YELLOW
+g_scrollcolor_default = 13
 g_scrollcolor = g_scrollcolor_default
 g_scrolling = false
-g_scrollspeed_default = 7
+g_scrollspeed_default = 5
 g_scrollspeed = g_scrollspeed_default
 g_scrolltime = nil
 g_playingbutton = 1
@@ -34,10 +34,8 @@ g_lfonumnew = nil
 g_envnum = 0
 g_envnumnew = nil
 g_editnumnew = nil
-g_sel1 = -1
-g_sel2 = -1
-g_sel3 = -1
-g_sel4 = -1
+g_sel = {}
+g_selcount = 4
 g_cpage = nil
 g_cstep = nil
 g_updateall = true
@@ -58,4 +56,6 @@ local outputs = {}
 
 local itemsindex = {}
 local itemsmodeindex = {}
+
+midi_to_button = {}
 

@@ -71,33 +71,30 @@ local buttons = {
 	["Button 8-7"]="90 11",
 	["Button 8-8"]="90 12",
 	
-	["Button A"]="b0 59", 
-	["Button B"]="b0 4f", 
-	["Button C"]="b0 45", 
-	["Button D"]="b0 3b", 
-	["Button E"]="b0 31", 
-	["Button F"]="b0 27", 
-	["Button G"]="b0 1d", 
-	["Button H"]="b0 13",
+	-- Bottom
+	["Button A0"]="b0 00", -- Hidden
+	["Button A1"]="b0 01",
+	["Button A2"]="b0 02",
+	["Button A3"]="b0 03",
+	["Button A4"]="b0 04",
+	["Button A5"]="b0 05",
+	["Button A6"]="b0 06",
+	["Button A7"]="b0 07",
+	["Button A8"]="b0 08",
+	["Button A9"]="b0 09", -- Hidden
 
-	["Button A1"]="b0 50",
-	["Button A2"]="b0 46",
-	["Button A3"]="b0 3c",
-	["Button A4"]="b0 32",
-	["Button A5"]="b0 28",
-	["Button A6"]="b0 1e",
-	["Button A7"]="b0 14",
-	["Button A8"]="b0 0a",
+	-- Left
+	["Button B1"]="b0 50",
+	["Button B2"]="b0 46",
+	["Button B3"]="b0 3c",
+	["Button B4"]="b0 32",
+	["Button B5"]="b0 28",
+	["Button B6"]="b0 1e",
+	["Button B7"]="b0 14",
+	["Button B8"]="b0 0a",
 
-	["Button B1"]="b0 01",
-	["Button B2"]="b0 02",
-	["Button B3"]="b0 03",
-	["Button B4"]="b0 04",
-	["Button B5"]="b0 05",
-	["Button B6"]="b0 06",
-	["Button C7"]="b0 07",
-	["Button B8"]="b0 08",
-
+	-- Top
+	["Button C0"]="b0 5a", -- Hidden
 	["Button C1"]="b0 5b",
 	["Button C2"]="b0 5c",
 	["Button C3"]="b0 5d",
@@ -106,4 +103,15 @@ local buttons = {
 	["Button C6"]="b0 60",
 	["Button C7"]="b0 61",
 	["Button C8"]="b0 62",
+	["Button C9"]="b0 63", -- Hidden
+
+	-- Right
+	["Button D1"]="b0 59", 
+	["Button D2"]="b0 4f", 
+	["Button D3"]="b0 45", 
+	["Button D4"]="b0 3b", 
+	["Button D5"]="b0 31", 
+	["Button D6"]="b0 27", 
+	["Button D7"]="b0 1d", 
+	["Button D8"]="b0 13",
 }	

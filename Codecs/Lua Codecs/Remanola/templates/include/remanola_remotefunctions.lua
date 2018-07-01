@@ -1,6 +1,6 @@
 function remote_init()
 	for buttonname,buttonmidi in pairs(buttons) do
-		table.insert(items, {name = buttonname, input = "button", output="value", min = 0, max = 127, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}})
+		table.insert(items, {name = buttonname, input = "button", output="value", modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}})
 		table.insert(inputs, {pattern=buttonmidi .. " ?<???x>", name=buttonname})
 	end
 
@@ -32,6 +32,10 @@ function remote_init()
 		end
 	end
 
+	for button,midi in pairs(buttons) do
+		midi_to_button[midi] = button
+	end
+
 	remote.define_items(items)
 	remote.define_auto_inputs(inputs)
 end
@@ -44,8 +48,12 @@ end
 
 function remote_prepare_for_use()
 	local ret_events={}
-
-	table.insert(ret_events, remote.make_midi(string.format("%s %02x", MIDI_OUT_DOUBLEBUFF, bit.bor(DBDISP0,DBUPDATE1,DBCOPY))))
+	if(lptype == 'pro') then
+		table.insert(ret_events, remote.make_midi(MIDI_OUT_PRO_PROGLAYOUT))
+		table.insert(ret_events, remote.make_midi("f0 00 20 29 02 10 2b 00 00 05 46 f7"))
+	else
+		table.insert(ret_events, remote.make_midi(string.format("%s %02x", MIDI_OUT_DOUBLEBUFF, bit.bor(DBDISP0,DBUPDATE1,DBCOPY))))
+	end
 
 	return ret_events;
 end
@@ -54,17 +62,13 @@ function remote_set_state(changed_items)
 	for i,citemindex in ipairs(changed_items)do
 		local citemname = items[citemindex].name
 
-		g_updateditems[citemname] = true
+		g_updateall = true
 
 		if(citemname ~= nil) then
-			if(remote.get_item_mode(citemindex) == itemsmodeindex[citemname]["SEL1"]) then
-				g_sel1 = remote.get_item_value(citemindex)
-			elseif(remote.get_item_mode(citemindex) == itemsmodeindex[citemname]["SEL2"]) then
-				g_sel2 = remote.get_item_value(citemindex)
-			elseif(remote.get_item_mode(citemindex) == itemsmodeindex[citemname]["SEL3"]) then
-				g_sel3 = remote.get_item_value(citemindex)
-			elseif(remote.get_item_mode(citemindex) == itemsmodeindex[citemname]["SEL4"]) then
-				g_sel4 = remote.get_item_value(citemindex)
+			for s=1,g_selcount do
+				if(remote.get_item_mode(citemindex) == itemsmodeindex[citemname]["SEL"..s]) then
+					g_sel[s] = tonumber(remote.get_item_value(citemindex))
+				end
 			end
 			if(string.match(citemname, "DeviceScope")) then
 				-- g_scrolltext = remote.get_item_text_value(itemsindex["DeviceScope"])
@@ -93,11 +97,8 @@ function remote_set_state(changed_items)
 					local crow = math.floor((cstep)/8)+1
 
 					if(editsteps == cpage) then
-						-- Old playing button
-						g_updateditems[g_playingbutton] = true
 						g_playingbutton = "Button "..tostring(crow).."-"..tostring(crowstep)
-						-- New playing button
-						g_updateditems[g_playingbutton] = true
+						g_updateall = true
 					else
 						g_playingbutton = "Other page"	
 					end
@@ -106,11 +107,8 @@ function remote_set_state(changed_items)
 					local crowstep = (playingstep)%8+1
 					local crow = math.floor((playingstep)/8)+1
 
-					-- Old playing button
-					g_updateditems[g_playingbutton] = true
 					g_playingbutton = "Button "..tostring(crow).."-"..tostring(crowstep)
-					-- New playing button
-					g_updateditems[g_playingbutton] = true
+					g_updateall = true
 				end
 			elseif(string.match(citemname, "PageName")) then
 				g_updateall = true
@@ -161,91 +159,71 @@ function remote_deliver_midi(maxbytes, port)
 	local ret_events = {}
 	local send_event={}
 
+	if(g_stopflashing) then
+		g_stopflashing = false
+		g_flashing = false
+		g_updateall = true
+	end
+
 	if(g_lightshow == 0 and not g_flashing) then
-		local curdisp
-		local curupdate
-
-		local swapbuffers = false
-
-		for buttonname,buttonmidi in pairs(buttons) do
-			local color
-			local itemname = get_item_by_button(buttonname)
-
-			if((g_updateditems[itemname] ~= nil) or g_updateall) then
-				color = get_button_color(g_colorscheme, itemname, buttonname)
-				table.insert(ret_events, remote.make_midi(gen_color_midi(buttonmidi, color)))
-				if(not swapbuffers) then
-					swapbuffers = true
+		if(g_updateall) then
+			local gridmidimsg = "f0 00 20 29 02 10 0f 00"
+			for row=9,0,-1 do 
+				for column=0,9 do 
+					local buttonname
+					if(row == 0) then
+						buttonname = "Button C"..tostring(column)
+					elseif(row == 9) then
+						buttonname = "Button A"..tostring(column)
+					elseif(column == 0) then
+						buttonname = "Button B"..tostring(row)
+					elseif(column == 9) then
+						buttonname = "Button D"..tostring(row)
+					else 
+						buttonname = "Button "..tostring(row).."-"..tostring(column)
+					end
+					local itemname = get_item_by_button(buttonname)
+					local color = get_button_color(g_colorscheme, itemname, buttonname)
+					if(string.match(itemname, "Button C8") and g_helpmode) then
+						color = RED
+					elseif(string.match(itemname, "Button C8") and g_valuemode) then
+						color = YELLOW
+					end
+	
+					gridmidimsg = gridmidimsg.." "..get_rgb_midi(color)
 				end
 			end
-		end
-
-		if(swapbuffers) then
-			if(g_currentbuffer == 0) then
-				newdisp = DBDISP1
-				newupdate = DBUPDATE0
-				g_currentbuffer = 1
-				-- table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons['Button H'], bit.bor(GREEN, COPY))))
-			else
-				newdisp = DBDISP0
-				newupdate = DBUPDATE1
-				g_currentbuffer = 0
-				-- table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons['Button H'], bit.bor(RED, COPY))))
+			gridmidimsg = gridmidimsg.." f7"
+			table.insert(ret_events, remote.make_midi(gridmidimsg))
+			local sidecolor = get_rgb_midi(get_button_color(g_colorscheme, "Side LED", "Side LED"))
+			if(g_helpmode) then
+				sidecolor = get_rgb_midi(RED)
+			elseif(g_valuemode) then
+				sidecolor = get_rgb_midi(YELLOW)
 			end
-
-			table.insert(ret_events, remote.make_midi(string.format("%s %02x", MIDI_OUT_DOUBLEBUFF, bit.bor(newdisp,newupdate,DBCOPY))))
-			swapbuffers = false
-
-			g_updateditems = {}
+			table.insert(ret_events, remote.make_midi(string.format("f0 00 20 29 02 10 0b 63 %s f7", sidecolor)))
 			g_updateall = false
 		end
+	end
+
+	if(g_startflashing) then
+		local flashmidi = "f0 00 20 29 02 10 23"
+		local flashcolor = S_NOCOLOR
+		for buttonname,buttonmidi in pairs(buttons) do
+			local shortmidi = string.match(buttonmidi, ".. (..)")
+			if(not string.match(buttonname, "Button C8") and not string.match(buttonname, "Button [AC][09]")) then
+				flashmidi = string.format("%s %s %02x", flashmidi, shortmidi, flashcolor)
+			end
+		end
+		flashmidi = flashmidi.." f7"
+		table.insert(ret_events, remote.make_midi(flashmidi))
+		g_startflashing = false
+		g_flashing = true
 	end
 
 	if(g_brightness ~= g_brightness_new) then
 		g_brightness = g_brightness_new
 		table.insert(ret_events, remote.make_midi(MIDI_OUT_BRIGHTNESS.." "..brightness[g_brightness]))
-	end
-
-	if(g_flashing) then
-		if(g_flashtime + g_flashlength < remote.get_time_ms()) then
-			g_flashtime = remote.get_time_ms()
-
-			if(g_flashstate == 1) then
-				g_flashstate = 0
-				table.insert(ret_events, remote.make_midi(string.format("%s %02x", MIDI_OUT_DOUBLEBUFF, bit.bor(DBDISP0))))
-			else
-				g_flashstate = 1
-				table.insert(ret_events, remote.make_midi(string.format("%s %02x", MIDI_OUT_DOUBLEBUFF, bit.bor(DBDISP1))))
-			end
-		end
-	end
-
-	if(g_stopflashing) then
-		table.insert(ret_events, remote.make_midi(string.format("%s %02x", MIDI_OUT_DOUBLEBUFF, bit.bor(DBDISP0,DBUPDATE1,DBCOPY))))
-		g_currentbuffer = 0
-		table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button C8"], bit.bor(GREEN, COPY))))
-		g_flashing = false
-		g_stopflashing = false
-		g_flashstate = 0
-		g_updateall = true
-	end
-
-	if(g_startflashing) then
-		local helpcolor = RED
-		g_flashlength = 250
-		if(g_valuemode) then
-			helpcolor = AMBER
-			g_flashlength = 100
-		end
-		table.insert(ret_events, remote.make_midi(string.format("%s %02x", MIDI_OUT_DOUBLEBUFF, bit.bor(DBDISP0,DBUPDATE1,DBCOPY))))
-		for buttonname,buttonmidi in pairs(buttons) do
-			table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttonmidi, 0)))
-		end
-		table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button C8"], bit.bor(helpcolor, COPY))))
-		g_flashing = true
-		g_startflashing = false
-		g_flashstate = 0
-		g_flashtime = remote.get_time_ms()
 	end
 
 	if(g_scrolltext ~= nil) then
@@ -294,47 +272,49 @@ function remote_deliver_midi(maxbytes, port)
 		table.insert(ret_events, remote.make_midi(string.format("%s %02x", MIDI_OUT_DOUBLEBUFF, bit.bor(newdisp,newupdate,DBCOPY))))
 	end
 
-	if(get_current_docpage() == "Transport") then
-		if(remote.get_item_value(itemsindex["Button A"]) > 0) then
-			if(g_startbar) then
-				g_barupdatetime = remote.get_time_ms()
-				g_startbar = false	
-				g_barupdate = true
-				table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button A"], bit.bor(RED, COPY))))
-			elseif(g_startbeat) then
-				g_beatupdatetime = remote.get_time_ms()
-				g_startbeat = false	
-				g_beatupdate = true
-				table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button A"], bit.bor(WAMBER, COPY))))
-			end
-		
-			if(g_barupdate) then
-				if(g_barupdatetime + 200 < remote.get_time_ms()) then
-					g_barupdate = false
-					table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button A"], bit.bor(GREEN, COPY))))
-				end
-			elseif(g_beatupdate) then
-				if(g_beatupdatetime + 200 < remote.get_time_ms()) then
-					g_beatupdate = false
-					table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button A"], bit.bor(GREEN, COPY))))
-				end
-			end
-		else
-			g_startbar = false
-			g_startbeat = false
-			g_barupdate = false
-			g_beatupdate = false
-		end
-	else
-		g_startbar = false
-		g_startbeat = false
-		g_barupdate = false
-		g_beatupdate = false
-	end
+--	if(get_current_docpage() == "Transport") then
+--		if(remote.get_item_value(itemsindex["Button D1"]) > 0) then
+--			if(g_startbar) then
+--				g_barupdatetime = remote.get_time_ms()
+--				g_startbar = false	
+--				g_barupdate = true
+--				table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button D1"], bit.bor(RED, COPY))))
+--			elseif(g_startbeat) then
+--				g_beatupdatetime = remote.get_time_ms()
+--				g_startbeat = false	
+--				g_beatupdate = true
+--				table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button D1"], bit.bor(WAMBER, COPY))))
+--			end
+--		
+--			if(g_barupdate) then
+--				if(g_barupdatetime + 200 < remote.get_time_ms()) then
+--					g_barupdate = false
+--					table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button D1"], bit.bor(GREEN, COPY))))
+--				end
+--			elseif(g_beatupdate) then
+--				if(g_beatupdatetime + 200 < remote.get_time_ms()) then
+--					g_beatupdate = false
+--					table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button D1"], bit.bor(GREEN, COPY))))
+--				end
+--			end
+--		else
+--			g_startbar = false
+--			g_startbeat = false
+--			g_barupdate = false
+--			g_beatupdate = false
+--		end
+--	else
+--		g_startbar = false
+--		g_startbeat = false
+--		g_barupdate = false
+--		g_beatupdate = false
+--	end
 
 	-- If sel* is updated trigger midi event by sending get version sysex
-	if(g_sel1 ~= -1 or g_sel2 ~= -1 or g_sel3 ~= -1 or g_sel4 ~= -1) then
-		table.insert(ret_events, remote.make_midi(MIDI_OUT_GETVERSION))
+	for s=1,g_selcount do
+		if(g_sel[s] ~= nil) then
+			table.insert(ret_events, remote.make_midi(MIDI_OUT_GETVERSION))
+		end
 	end
 
 	return ret_events
@@ -345,32 +325,8 @@ function remote_process_midi(event)
         local pad_note = 0
         local pad_item = 0
 
-	if(g_sel1 ~= -1) then
-		local msg = { time_stamp = event.time_stamp, item = itemsindex["Sel1_"..g_sel1], value = 1 }
-		remote.handle_input(msg)
-		g_sel1 = -1
-		g_updateall = true
-	end
-
-	if(g_sel2 ~= -1) then
-		local msg = { time_stamp = event.time_stamp, item = itemsindex["Sel2_"..g_sel2], value = 1 }
-		remote.handle_input(msg)
-		g_sel2 = -1
-		g_updateall = true
-	end
-
-	if(g_sel3 ~= -1) then
-		local msg = { time_stamp = event.time_stamp, item = itemsindex["Sel3_"..g_sel3], value = 1 }
-		remote.handle_input(msg)
-		g_sel3 = -1
-		g_updateall = true
-	end
-
-	if(g_sel4 ~= -1) then
-		local msg = { time_stamp = event.time_stamp, item = itemsindex["Sel4_"..g_sel4], value = 1 }
-		remote.handle_input(msg)
-		g_sel4 = -1
-		g_updateall = true
+	for s=1,g_selcount do
+		sel_input(event,s)
 	end
 
 	if(g_enginenumnew ~= nil and g_enginenumnew ~= g_enginenum) then
@@ -414,312 +370,64 @@ function remote_process_midi(event)
 		return true
 	end
 
-	if(g_scrolling) then
-		for buttonname,buttonmidi in pairs(buttons) do
-			local button = remote.match_midi(buttonmidi.." 7f", event)
-			if(button ~= nil) then
-				return true
-			end
-			local button = remote.match_midi(buttonmidi.." 00", event)
-			if(button ~= nil) then
-				if(g_scrolltime + 1000 < remote.get_time_ms()) then
-					g_endscroll = true
-				end
-				return true
-			end
-		end
-	end
-
 	if(g_lightshow > 0) then
-		for buttonname,buttonmidi in pairs(buttons) do
-			local button = remote.match_midi(buttonmidi.." 7f", event)
-			if(button ~= nil) then
-				return true
-			end
-			local button = remote.match_midi(buttonmidi.." 00", event)
-			if(button ~= nil) then
-				if(g_lightshowtime + 500 < remote.get_time_ms()) then
-					g_lightshow = 0
-					g_updateall = true
-				end
-				return true
-			end
+		if(handle_lightshow_input(event)) then
+			return(true)
 		end
 	end
 
-	if(not g_helpmode and not g_valuemode) then
-        	if(g_scopetext == "Kong" and string.match(get_current_page(), "Main")) then
-			for button,padnote in pairs(button_to_padnote) do
-                		pad = remote.match_midi("<100x>? "..tostring(button).." zz", event)
-                		if(pad ~= nil) then
-                        		remote.handle_input({ time_stamp = event.time_stamp, item = 1, value = pad.x, note = padnote, velocity = pad.z })
-					return true
-				end
-			end
-		end
-        	if(string.match(get_current_page(), "Keyboard")) then
-			for button,note in pairs(button_to_keynote) do
-                		key = remote.match_midi(buttons[button].." zz", event)
-                		if(key ~= nil) then
-					local velocity = key.z
-					--if(key.z == 0) then
-						--velocity = 0
-					--end
-                        		remote.handle_input({ time_stamp = event.time_stamp, item = 1, value = 1, note = (note+12*g_basekey), velocity = velocity })
-					return true
-				end
-			end
-		end
-	
-        	for i=1,8 do
-			if(remote.is_item_enabled(itemsindex["Fader "..i])) then
-				button = remote.match_midi("90 x"..tostring(i-1).." 7f", event)
-				if(button ~= nil) then
-					local msg = { time_stamp = event.time_stamp, item = itemsindex["Fader "..i], value = get_item_bvmap("Fader "..i)[button.x+1] }
-					remote.handle_input(msg)
-					return true
-				end
-			end
-		end
-	
-        	for i=1,8 do
-			if(remote.is_item_enabled(itemsindex["BigFader "..i])) then
-				button = remote.match_midi("90 x"..tostring(i-1).." 7f", event)
-				if(button ~= nil) then
-					local msg = { time_stamp = event.time_stamp, item = itemsindex["BigFader "..i], value = get_item_bvmap("BigFader "..i)[button.x+1] }
-					remote.handle_input(msg)
-					return true
-				end
-			end
-		end
-	
-        	for i=1,8 do
-			if(remote.is_item_enabled(itemsindex["Drawbar "..i])) then
-				button = remote.match_midi("90 x"..tostring(i-1).." 7f", event)
-				if(button ~= nil) then
-					local msg = { time_stamp = event.time_stamp, item = itemsindex["Drawbar "..i], value = get_item_bvmap("Drawbar "..i)[button.x+1] }
-					remote.handle_input(msg)
-					return true
-				end
-			end
-		end
-	
-        	for i=1,8 do
-			if(remote.is_item_enabled(itemsindex["Knob H"..i])) then
-				button = remote.match_midi("90 "..tostring(i-1).."x 7f", event)
-				if(button ~= nil) then
-					local oldvalue = remote.get_item_value(itemsindex["Knob H"..i])
-					local value = get_item_bvmap("Knob H"..i)[button.x+1]
-					if((oldvalue < 64 and button.x+1 == 5) or (oldvalue > 64 and button.x+1 == 4)) then
-						value = 64
-					end
-					local msg = { time_stamp = event.time_stamp, item = itemsindex["Knob H"..i], value = value }
-					remote.handle_input(msg)
-					return true
-				end
-			end
+	local button = remote.match_midi("xx yy zz", event)
+
+	if(not g_helpmode and not g_valuemode and button ~= nil and (button.x == 0x90 or button.x == 0xb0)) then
+		if(handle_kong_input(event, button)) then
+			return(true)
 		end
 
-        	for i=1,8 do
-			if(remote.is_item_enabled(itemsindex["Knob V"..i])) then
-				button = remote.match_midi("90 x"..tostring(i-1).." 7f", event)
-				if(button ~= nil) then
-					local oldvalue = remote.get_item_value(itemsindex["Knob V"..i])
-					local value = get_item_bvmap("Knob V"..i)[button.x+1]
-					if((oldvalue > 64 and button.x+1 == 5) or (oldvalue < 64 and button.x+1 == 4)) then
-						value = 64
-					end
-					local msg = { time_stamp = event.time_stamp, item = itemsindex["Knob V"..i], value = value }
-					remote.handle_input(msg)
-					return true
-				end
-
-				if(get_item_conf_map("Knob V"..i,g_colorscheme, get_current_page()).resetonrel) then
-					button = remote.match_midi("90 x"..tostring(i-1).." 00", event)
-					if(button ~= nil) then
-						local msg = { time_stamp = event.time_stamp, item = itemsindex["Knob V"..i], value = 64 }
-						remote.handle_input(msg)
-						return true
-					end
-				end
-			end
+		if(handle_keyboard_input(event, button)) then
+			return(true)
 		end
 
-		for row=1,8 do
-			for column=1,8,2 do
-				local udhbuttonname = "UDHButton "..row.."-"..column.."_"..row.."-"..tostring(column+1)
-				local button_down_name = "Button "..row.."-"..column
-				local button_up_name = "Button "..row.."-"..column+1
-				if(remote.is_item_enabled(itemsindex[udhbuttonname])) then
-					local button_down = remote.match_midi(buttons[button_down_name].." 7f", event)
-					if(button_down ~= nil) then
-						local value = -1
-						local msg = { time_stamp = event.time_stamp, item = itemsindex[udhbuttonname], value = value }
-						remote.handle_input(msg)
-						return true
-					end
-					local button_up = remote.match_midi(buttons[button_up_name].." 7f", event)
-					if(button_up ~= nil) then
-						local value = 1
-						local msg = { time_stamp = event.time_stamp, item = itemsindex[udhbuttonname], value = value }
-						remote.handle_input(msg)
-						return true
-					end
-				end
-			end
-		end
-	
-		for row=1,8,2 do
-			for column=1,8 do
-				local udvbuttonname = "UDVButton "..row.."-"..column.."_"..tostring(row+1).."-"..column
-				local button_up_name = "Button "..row.."-"..column
-				local button_down_name = "Button "..tostring(row+1).."-"..column
-				if(remote.is_item_enabled(itemsindex[udvbuttonname])) then
-					local button_down = remote.match_midi(buttons[button_down_name].." xx", event)
-					if(button_down ~= nil and button_down.x > 0) then
-						local value = -1
-						if(get_item_conf_map(udvbuttonname, g_colorscheme, get_current_page()).inverted) then
-							value = 1
-						end
-						local msg = { time_stamp = event.time_stamp, item = itemsindex[udvbuttonname], value = value }
-						remote.handle_input(msg)
-						return true
-					end
-					local button_up = remote.match_midi(buttons[button_up_name].." xx", event)
-					if(button_up ~= nil and button_up.x > 0) then
-						local value = 1
-						if(get_item_conf_map(udvbuttonname, g_colorscheme, get_current_page()).inverted) then
-							value = -1
-						end
-						local msg = { time_stamp = event.time_stamp, item = itemsindex[udvbuttonname], value = value }
-						remote.handle_input(msg)
-						return true
-					end
-				end
-			end
+		if(handle_item_input(event, button)) then
+			return(true)
 		end
 	end
 	
-	if(g_helpmode) then
-		for buttonname,buttonmidi in pairs(buttons) do
-			local color
-			local button = remote.match_midi(buttonmidi.." 7f", event)
-
-			if(button ~= nil) then
-				g_helpmode = false
-				g_stopflashing = true
-				g_scrollcolor = RED
-				local itemname = get_item_by_button(buttonname)
-
-				if(itemname == "Button C1" or itemname == "Button C2") then
-					g_scrolltext = g_scopetext
-				elseif(itemname == "Button C3" or itemname == "Button C4") then
-					g_scrolltext = remote.get_item_text_value(itemsindex["PatchName"])
-				elseif(itemname == "Button C7") then
-					g_scrolltext = get_current_page()
-				elseif(itemname == "Button H") then
-					g_scrolltext = get_current_docpage()
-				elseif(itemname == "Button C8") then
-					g_valuemode = true
-					g_startflashing = true
-				else
-					g_scrolltext = remote.get_item_name(itemsindex[itemname])
-				end
-				if(g_scrolltext == "") then
-					g_scrolltext = get_item_conf_map(itemname, g_colorscheme, get_current_page()).helptext
-					if(g_scrolltext == nil) then
-						g_scrolltext = "Unknown"
-					end
-				end
-				return true
-			end
+	if(g_helpmode and (button.x == 0x90 or button.x == 0xb0)) then
+		if(handle_helpmode_input(event, button)) then
+			return(true)
 		end
 	end
 
-	if(g_valuemode) then
-		for buttonname,buttonmidi in pairs(buttons) do
-			local color
-			local button = remote.match_midi(buttonmidi.." 7f", event)
-
-			if(button ~= nil) then
-				g_valuemode = false
-				g_stopflashing = true
-				g_scrollcolor = YELLOW
-				local itemname = get_item_by_button(buttonname)
-
-				if(itemname == "Button C1" or itemname == "Button C2") then
-					g_scrolltext = remote.get_item_text_value(itemsindex["DeviceName"])
-				elseif(itemname == "Button C8") then
-					return true
-				else
-					g_scrolltext = tostring(remote.get_item_value(itemsindex[itemname]))
-				end
-
-				if(g_scrolltext == "") then
-					g_scrolltext = "Unknown"
-				end
-				return true
-			end
+	if(g_valuemode and (button.x == 0x90 or button.x == 0xb0)) then
+		if(handle_valuemode_input(event, button)) then
+			return(true)
 		end
 	end
 
 	if(string.match(get_current_page(), "Internal")) then
-		local button_brightnessup = remote.match_midi(buttons["Button 7-8"].." 7f", event)
-		local button_brightnessdown = remote.match_midi(buttons["Button 8-8"].." 7f", event)
-		if(button_brightnessup ~= nil) then
-			if(g_brightness_new < 5) then
-				g_brightness_new = g_brightness_new+1
-			end
-			return true
-		elseif(button_brightnessdown ~= nil) then
-			if(g_brightness_new > 1) then
-				g_brightness_new = g_brightness_new-1
-			end
-			return true
-		end
-		local button_lightshow1 = remote.match_midi(buttons["Button 1-6"].." 7f", event)
-		if(button_lightshow1 ~= nil) then
-			g_lightshow = 1
-			g_lightshowtime = remote.get_time_ms()
-			g_updatetime = remote.get_time_ms()
-			g_lightshowcycle = 1
-			return true
-		end
-		local button_lightshow2 = remote.match_midi(buttons["Button 1-7"].." 7f", event)
-		if(button_lightshow2 ~= nil) then
-			g_lightshow = 2
-			g_lightshowtime = remote.get_time_ms()
-			g_updatetime = remote.get_time_ms()
-			g_lightshowcycle = 1
-			return true
-		end
-		local button_lightshow3 = remote.match_midi(buttons["Button 1-8"].." 7f", event)
-		if(button_lightshow3 ~= nil) then
-			g_lightshow = 3
-			g_lightshowtime = remote.get_time_ms()
-			g_updatetime = remote.get_time_ms()
-			g_lightshowcycle = 1
-			return true
-		end
-		local button_lightshow4 = remote.match_midi(buttons["Button 2-8"].." 7f", event)
-		if(button_lightshow4 ~= nil) then
-			g_lightshow = 4
-			g_lightshowtime = remote.get_time_ms()
-			g_updatetime = remote.get_time_ms()
-			g_lightshowcycle = 1
-			g_lightshowloop = 1
-			return true
+		if(handle_internalpage_input(event, button)) then
+			return(true)
 		end
 	end
 
-	local button_helpmode = remote.match_midi(buttons["Button C8"].." 7f", event)
+	local button_helpmode = remote.match_midi(buttons["Button C8"].." 00", event)
 	if(button_helpmode ~= nil) then
 		g_helpmode = true
 		g_startflashing = true
+		g_updateall = true
 		return true
 	end
 
 	if(g_helpmode or g_valuemode) then
+		return true
+	end
+
+	button = remote.match_midi("90 xx zz", event)
+	if(button ~= nil and button.z > 0) then
+		local midi = string.format("90 %02x", button.x)
+		local item = itemsindex[midi_to_button[midi]]
+		local msg = { time_stamp = event.time_stamp, item = item, value = 1, velocity = 127 }
+		remote.handle_input(msg)
 		return true
 	end
 

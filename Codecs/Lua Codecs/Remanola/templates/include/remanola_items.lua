@@ -66,4 +66,5 @@ local items = {
 	{name = "Knob H6", input = "value", output = "value", min = 0, max = 127},
 	{name = "Knob H7", input = "value", output = "value", min = 0, max = 127},
 	{name = "Knob H8", input = "value", output = "value", min = 0, max = 127},
+	{name = "Side LED", input = "value", output = "value", min = 0, max = 127},
 }
