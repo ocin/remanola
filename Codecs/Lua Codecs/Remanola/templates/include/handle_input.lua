@@ -7,6 +7,51 @@ function handle_input_sel(event, selnum)
         end
 end
 
+function handle_input_select(event)
+	if(g_enginenumnew ~= nil and g_enginenumnew ~= g_enginenum) then
+		g_enginenum = g_enginenumnew
+		g_enginenumnew = nil
+		local msg = { time_stamp = event.time_stamp, item = itemsindex["EngineSelect"], value = g_enginenum-1 }
+		remote.handle_input(msg)
+	end
+
+	if(g_effectnumnew ~= nil and g_effectnumnew ~= g_effectnum) then
+		g_effectnum = g_effectnumnew
+		g_effectnumnew = nil
+		local msg = { time_stamp = event.time_stamp, item = itemsindex["EffectSelect"], value = g_effectnum-1 }
+		remote.handle_input(msg)
+	end
+
+	if(g_editnumnew ~= nil and g_editnumnew ~= remote.get_item_value(itemsindex["EditSelect"])) then
+		g_editnumnew = nil
+		local msg = { time_stamp = event.time_stamp, item = itemsindex["EditSelect"], value = g_editnumnew }
+		remote.handle_input(msg)
+	end
+
+	if(g_lfonumnew ~= nil and g_lfonumnew ~= g_lfonum) then
+		g_lfonum = g_lfonumnew
+		g_lfonumnew = nil
+		local msg = { time_stamp = event.time_stamp, item = itemsindex["LFOSelect"], value = g_lfonum-1 }
+		remote.handle_input(msg)
+	end
+
+	if(g_envnumnew ~= nil and g_envnumnew ~= g_envnum) then
+		g_envnum = g_envnumnew
+		g_envnumnew = nil
+		local msg = { time_stamp = event.time_stamp, item = itemsindex["EnvSelect"], value = g_envnum-1 }
+		remote.handle_input(msg)
+	end
+end
+
+function handle_input_scrollend(event)
+	local msg_scrollend = remote.match_midi(MIDI_IN_SCROLLEND, event)
+	if(msg_scrollend ~= nil) then
+		g_scrolling = false
+		g_updateall = true
+		return true
+	end
+end
+
 function handle_input_lightshow(event)
 	for buttonname,buttonmidi in pairs(buttons) do
 		local button = remote.match_midi(buttonmidi.." zz", event)
@@ -207,3 +252,4 @@ function handle_input_internalpage(event, button)
 		return true
 	end
 end
+
