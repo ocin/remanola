@@ -66,29 +66,41 @@ function handle_changed_pagename(citemindex, citemname)
 	if(string.match(citemname, "PageName")) then
 		g_updateall = true
 		if(g_scopetext == "Europa" or g_scopetext == "Grain") then
-			g_enginenumnew = tonumber(string.match(get_current_page(), "Eng (%d)"))
-			g_lfonumnew = tonumber(string.match(get_current_page(), "LFO (%d)"))
-			g_envnumnew = tonumber(string.match(get_current_page(), "Env (%d)"))
+			local ceng = tonumber(string.match(get_current_page(), "Eng (%d)"))
+			if(ceng ~= nil) then
+				g_select["EngineSelect"] = ceng-1
+			end
+
+			local clfo = tonumber(string.match(get_current_page(), "LFO (%d)"))
+			if(clfo ~= nil) then
+				g_select["LFOSelect"] = clfo-1
+			end
+
+			cenv = tonumber(string.match(get_current_page(), "Env (%d)"))
+			if(cenv ~= nil) then
+				g_select["EnvSelect"] = cenv-1
+			end
+
 			if(string.match(get_current_page(), "Phaser")) then
-				g_effectnumnew = 5
+				g_select["EffectSelect"] = 5
 			elseif(string.match(get_current_page(), "Dist")) then
-				g_effectnumnew = 3
+				g_select["EffectSelect"] = 3
 			elseif(string.match(get_current_page(), "Eq")) then
-				g_effectnumnew = 6
+				g_select["EffectSelect"] = 6
 			elseif(string.match(get_current_page(), "Delay")) then
-				g_effectnumnew = 2
+				g_select["EffectSelect"] = 2
 			elseif(string.match(get_current_page(), "Comp")) then
-				g_effectnumnew = 4
+				g_select["EffectSelect"] = 4
 			elseif(string.match(get_current_page(), "Reverb")) then
-				g_effectnumnew = 1
+				g_select["EffectSelect"] = 1
 			end
 		elseif(g_scopetext == "RV7000 Advanced Reverb") then
 			if(string.match(get_current_page(), "Reverb")) then
-				g_editnumnew = 0
+				g_select["EditSelect"] = 0
 			elseif(string.match(get_current_page(), "Eq")) then
-				g_editnumnew = 1
+				g_select["EditSelect"] = 1
 			elseif(string.match(get_current_page(), "Gate")) then
-				g_editnumnew = 2
+				g_select["EditSelect"] = 2
 			end
 		end
 	end

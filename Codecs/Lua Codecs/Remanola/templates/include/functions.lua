@@ -533,3 +533,7 @@ function mergetables(table1, table2)
 		table1[k] = v 
 	end
 end
+
+function isbutton(button)
+	return(button ~= nil and (button.x == 0x90 or button.x == 0xb0))
+end

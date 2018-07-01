@@ -1,45 +1,19 @@
 function handle_input_sel(event, selnum)
-        if(g_sel[selnum] ~= nil) then
-                local msg = { time_stamp = event.time_stamp, item = itemsindex["Sel"..selnum.."_"..g_sel[selnum]], value = 1 }
-                remote.handle_input(msg)
-                g_sel[selnum] = nil
-                g_updateall = true
+	for selnum=1,g_selcount do
+        	if(g_sel[selnum] ~= nil) then
+                	local msg = { time_stamp = event.time_stamp, item = itemsindex["Sel"..selnum.."_"..g_sel[selnum]], value = 1 }
+                	remote.handle_input(msg)
+                	g_sel[selnum] = nil
+                	g_updateall = true
+        	end
         end
 end
 
 function handle_input_select(event)
-	if(g_enginenumnew ~= nil and g_enginenumnew ~= g_enginenum) then
-		g_enginenum = g_enginenumnew
-		g_enginenumnew = nil
-		local msg = { time_stamp = event.time_stamp, item = itemsindex["EngineSelect"], value = g_enginenum-1 }
+	for itemname,value in pairs(g_select) do
+		local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
 		remote.handle_input(msg)
-	end
-
-	if(g_effectnumnew ~= nil and g_effectnumnew ~= g_effectnum) then
-		g_effectnum = g_effectnumnew
-		g_effectnumnew = nil
-		local msg = { time_stamp = event.time_stamp, item = itemsindex["EffectSelect"], value = g_effectnum-1 }
-		remote.handle_input(msg)
-	end
-
-	if(g_editnumnew ~= nil and g_editnumnew ~= remote.get_item_value(itemsindex["EditSelect"])) then
-		g_editnumnew = nil
-		local msg = { time_stamp = event.time_stamp, item = itemsindex["EditSelect"], value = g_editnumnew }
-		remote.handle_input(msg)
-	end
-
-	if(g_lfonumnew ~= nil and g_lfonumnew ~= g_lfonum) then
-		g_lfonum = g_lfonumnew
-		g_lfonumnew = nil
-		local msg = { time_stamp = event.time_stamp, item = itemsindex["LFOSelect"], value = g_lfonum-1 }
-		remote.handle_input(msg)
-	end
-
-	if(g_envnumnew ~= nil and g_envnumnew ~= g_envnum) then
-		g_envnum = g_envnumnew
-		g_envnumnew = nil
-		local msg = { time_stamp = event.time_stamp, item = itemsindex["EnvSelect"], value = g_envnum-1 }
-		remote.handle_input(msg)
+		g_select[itemname] = nil
 	end
 end
 
@@ -71,8 +45,8 @@ end
 
 function handle_input_kong(event, button)
 	if(g_scopetext == "Kong" and get_current_page() == "Main") then
-		buttonname = get_button_name(button)
-		padnote = button_to_padnote[buttonname]
+		local buttonname = get_button_name(button)
+		local padnote = button_to_padnote[buttonname]
 		if(padnote ~= nil) then
 			remote.handle_input({ time_stamp = event.time_stamp, item = 1, value = 1, note = padnote, velocity = button.z })
 			return true
@@ -138,118 +112,130 @@ function handle_input_item(event, button)
 end
 
 function handle_input_helpmode(event, button)
-	if(g_helpmode and (button.x == 0x90 or button.x == 0xb0)) then
-		for buttonname,buttonmidi in pairs(buttons) do
-			local color
-			local button = remote.match_midi(buttonmidi.." 00", event)
+	if(button.z == 0) then
+		g_helpmode = false
+		g_stopflashing = true
+		g_scrollcolor = S_RED
+		g_updateall = true
+		local buttonname = get_button_name(button)
+		local itemname = get_item_by_button(buttonname)
 
-			if(button ~= nil) then
-				g_helpmode = false
-				g_stopflashing = true
-				g_scrollcolor = S_RED
-				g_updateall = true
-				local itemname = get_item_by_button(buttonname)
-
-				if(itemname == "Button C1" or itemname == "Button C2") then
-					g_scrolltext = g_scopetext
-				elseif(itemname == "Button C3" or itemname == "Button C4") then
-					g_scrolltext = remote.get_item_text_value(itemsindex["PatchName"])
-				elseif(itemname == "Button C7") then
-					g_scrolltext = get_current_page()
-				elseif(itemname == "Button H") then
-					g_scrolltext = get_current_docpage()
-				elseif(itemname == "Button C8") then
-					g_valuemode = true
-					g_startflashing = true
-				else
-					g_scrolltext = remote.get_item_name(itemsindex[itemname])
-				end
-				if(g_scrolltext == "") then
-					g_scrolltext = get_item_conf_map(itemname, g_colorscheme, get_current_page()).helptext
-					if(g_scrolltext == nil) then
-						g_scrolltext = "Unknown"
-					end
-				end
-				return true
+		if(itemname == "Button C1" or itemname == "Button C2") then
+			g_scrolltext = g_scopetext
+		elseif(itemname == "Button C3" or itemname == "Button C4") then
+			g_scrolltext = remote.get_item_text_value(itemsindex["PatchName"])
+		elseif(itemname == "Button C7") then
+			g_scrolltext = get_current_page()
+		elseif(itemname == "Button H") then
+			g_scrolltext = get_current_docpage()
+		elseif(itemname == "Button C8") then
+			g_valuemode = true
+			g_startflashing = true
+		else
+			g_scrolltext = remote.get_item_name(itemsindex[itemname])
+		end
+		if(g_scrolltext == "") then
+			g_scrolltext = get_item_conf_map(itemname, g_colorscheme, get_current_page()).helptext
+			if(g_scrolltext == nil) then
+				g_scrolltext = "Unknown"
 			end
 		end
+		return true
 	end
 end
 
 function handle_input_valuemode(event, button)
-	for buttonname,buttonmidi in pairs(buttons) do
-		local color
-		local button = remote.match_midi(buttonmidi.." 00", event)
+	if(button.z == 0) then
+		g_valuemode = false
+		g_stopflashing = true
+		g_scrollcolor = S_YELLOW
+		g_updateall = true
+		local buttonname = get_button_name(button)
+		local itemname = get_item_by_button(buttonname)
 
-		if(button ~= nil) then
-			g_valuemode = false
-			g_stopflashing = true
-			g_scrollcolor = S_YELLOW
-			g_updateall = true
-			local itemname = get_item_by_button(buttonname)
+		if(itemname == "Button C1" or itemname == "Button C2") then
+			g_scrolltext = remote.get_item_text_value(itemsindex["DeviceName"])
+		elseif(itemname == "Button C8") then
+			return true
+		else
+			g_scrolltext = tostring(remote.get_item_value(itemsindex[itemname]))
+		end
 
-			if(itemname == "Button C1" or itemname == "Button C2") then
-				g_scrolltext = remote.get_item_text_value(itemsindex["DeviceName"])
-			elseif(itemname == "Button C8") then
-				return true
-			else
-				g_scrolltext = tostring(remote.get_item_value(itemsindex[itemname]))
+		if(g_scrolltext == "") then
+			g_scrolltext = "Unknown"
+		end
+		return true
+	end
+end
+
+function handle_input_internalpage(event, button)
+	if(string.match(get_current_page(), "Internal")) then
+		local button_brightnessup = remote.match_midi(buttons["Button 7-8"].." zz", event)
+		local button_brightnessdown = remote.match_midi(buttons["Button 8-8"].." zz", event)
+		if(button_brightnessup ~= nil and button_brightnessup.z > 0) then
+			if(g_brightness_new < 5) then
+				g_brightness_new = g_brightness_new+1
 			end
-
-			if(g_scrolltext == "") then
-				g_scrolltext = "Unknown"
+			return true
+		elseif(button_brightnessdown ~= nil and button_brightnessdown.z > 0) then
+			if(g_brightness_new > 1) then
+				g_brightness_new = g_brightness_new-1
 			end
+			return true
+		end
+		local button_lightshow1 = remote.match_midi(buttons["Button 1-6"].." zz", event)
+		if(button_lightshow1 ~= nil and button_lightshow1.z > 0) then
+			g_lightshow = 1
+			g_lightshowtime = remote.get_time_ms()
+			g_updatetime = remote.get_time_ms()
+			g_lightshowcycle = 1
+			return true
+		end
+		local button_lightshow2 = remote.match_midi(buttons["Button 1-7"].." zz", event)
+		if(button_lightshow2 ~= nil and button_lightshow2.z > 0) then
+			g_lightshow = 2
+			g_lightshowtime = remote.get_time_ms()
+			g_updatetime = remote.get_time_ms()
+			g_lightshowcycle = 1
+			return true
+		end
+		local button_lightshow3 = remote.match_midi(buttons["Button 1-8"].." zz", event)
+		if(button_lightshow3 ~= nil and button_lightshow3.z > 0) then
+			g_lightshow = 3
+			g_lightshowtime = remote.get_time_ms()
+			g_updatetime = remote.get_time_ms()
+			g_lightshowcycle = 1
+			return true
+		end
+		local button_lightshow4 = remote.match_midi(buttons["Button 2-8"].." zz", event)
+		if(button_lightshow4 ~= nil and button_lightshow4.z > 0) then
+			g_lightshow = 4
+			g_lightshowtime = remote.get_time_ms()
+			g_updatetime = remote.get_time_ms()
+			g_lightshowcycle = 1
+			g_lightshowloop = 1
 			return true
 		end
 	end
 end
 
-function handle_input_internalpage(event, button)
-	local button_brightnessup = remote.match_midi(buttons["Button 7-8"].." zz", event)
-	local button_brightnessdown = remote.match_midi(buttons["Button 8-8"].." zz", event)
-	if(button_brightnessup ~= nil and button_brightnessup.z > 0) then
-		if(g_brightness_new < 5) then
-			g_brightness_new = g_brightness_new+1
-		end
-		return true
-	elseif(button_brightnessdown ~= nil and button_brightnessdown.z > 0) then
-		if(g_brightness_new > 1) then
-			g_brightness_new = g_brightness_new-1
-		end
-		return true
-	end
-	local button_lightshow1 = remote.match_midi(buttons["Button 1-6"].." zz", event)
-	if(button_lightshow1 ~= nil and button_lightshow1.z > 0) then
-		g_lightshow = 1
-		g_lightshowtime = remote.get_time_ms()
-		g_updatetime = remote.get_time_ms()
-		g_lightshowcycle = 1
-		return true
-	end
-	local button_lightshow2 = remote.match_midi(buttons["Button 1-7"].." zz", event)
-	if(button_lightshow2 ~= nil and button_lightshow2.z > 0) then
-		g_lightshow = 2
-		g_lightshowtime = remote.get_time_ms()
-		g_updatetime = remote.get_time_ms()
-		g_lightshowcycle = 1
-		return true
-	end
-	local button_lightshow3 = remote.match_midi(buttons["Button 1-8"].." zz", event)
-	if(button_lightshow3 ~= nil and button_lightshow3.z > 0) then
-		g_lightshow = 3
-		g_lightshowtime = remote.get_time_ms()
-		g_updatetime = remote.get_time_ms()
-		g_lightshowcycle = 1
-		return true
-	end
-	local button_lightshow4 = remote.match_midi(buttons["Button 2-8"].." zz", event)
-	if(button_lightshow4 ~= nil and button_lightshow4.z > 0) then
-		g_lightshow = 4
-		g_lightshowtime = remote.get_time_ms()
-		g_updatetime = remote.get_time_ms()
-		g_lightshowcycle = 1
-		g_lightshowloop = 1
+function handle_input_starthelpmode(event, button)
+	buttonname = get_button_name(button)
+	if(buttonname == 'Button C8') then
+		g_helpmode = true
+		g_startflashing = true
+		g_updateall = true
 		return true
 	end
 end
 
+function handle_input_setveltomax(event, button)
+	-- Change all remaining button input to velocity 127
+	if(button.z > 0 ) then
+		local midi = string.format("%02x %02x", button.x, button.y)
+		local item = itemsindex[midi_to_button[midi]]
+       		local msg = { time_stamp = event.time_stamp, item = item, value = 1, velocity = 127 }
+		remote.handle_input(msg)
+		return true
+	end
+end

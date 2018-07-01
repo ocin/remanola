@@ -77,13 +77,7 @@ function remote_deliver_midi(maxbytes, port)
 end
 
 function remote_process_midi(event)
-        local pad = "none"
-        local pad_note = 0
-        local pad_item = 0
-
-	for s=1,g_selcount do
-		handle_input_sel(event,s)
-	end
+	handle_input_sel(event)
 
 	handle_input_select(event)
 	handle_input_scrollend(event)
@@ -96,56 +90,43 @@ function remote_process_midi(event)
 
 	local button = remote.match_midi("xx yy zz", event)
 
-	if(not g_helpmode and not g_valuemode and button ~= nil and (button.x == 0x90 or button.x == 0xb0)) then
-		if(handle_input_kong(event, button)) then
-			return(true)
-		end
-
-		if(handle_input_keyboard(event, button)) then
-			return(true)
-		end
-
-		if(handle_input_item(event, button)) then
-			return(true)
-		end
-	end
+	if(isbutton(button)) then
+		if(g_helpmode) then
+			if(handle_input_helpmode(event, button)) then
+				return(true)
+			end
+		elseif(g_valuemode) then
+			if(handle_input_valuemode(event, button)) then
+				return(true)
+			end
+		else
+			if(handle_input_kong(event, button)) then
+				return(true)
+			end
 	
-	if(g_helpmode and (button.x == 0x90 or button.x == 0xb0)) then
-		if(handle_input_helpmode(event, button)) then
-			return(true)
-		end
-	end
+			if(handle_input_keyboard(event, button)) then
+				return(true)
+			end
+	
+			if(handle_input_item(event, button)) then
+				return(true)
+			end
 
-	if(g_valuemode and (button.x == 0x90 or button.x == 0xb0)) then
-		if(handle_input_valuemode(event, button)) then
-			return(true)
-		end
-	end
+			if(handle_input_internalpage(event, button)) then
+				return(true)
+			end
 
-	if(string.match(get_current_page(), "Internal")) then
-		if(handle_input_internalpage(event, button)) then
-			return(true)
+			if(handle_input_setveltomax(event, button)) then
+				return(true)
+			end
+	
+			if(handle_input_starthelpmode(event, button)) then
+				return(true)
+			end
 		end
-	end
-
-	local button_helpmode = remote.match_midi(buttons["Button C8"].." 00", event)
-	if(button_helpmode ~= nil) then
-		g_helpmode = true
-		g_startflashing = true
-		g_updateall = true
-		return true
 	end
 
 	if(g_helpmode or g_valuemode) then
-		return true
-	end
-
-	-- Change all remaining button input to velocity 127
-	if(button ~= nil and (button.x == 0x90 or button.x == 0xb0) and button.z > 0 ) then
-		local midi = string.format("%02x %02x", button.x, button.y)
-		local item = itemsindex[midi_to_button[midi]]
-		local msg = { time_stamp = event.time_stamp, item = item, value = 1, velocity = 127 }
-		remote.handle_input(msg)
 		return true
 	end
 
