@@ -46,8 +46,15 @@ function handle_changed_playingstep(citemindex, citemname)
 			local crow = math.floor((cstep)/8)+1
 
 			if(editsteps == cpage) then
+{% if lptype == "mini" %}
+				g_updateditems[g_playingbutton] = true
+{% endif %}
 				g_playingbutton = "Button "..tostring(crow).."-"..tostring(crowstep)
+{% if lptype == "mini" %}
+				g_updateditems[g_playingbutton] = true
+{% else %}
 				g_updateall = true
+{% endif %}
 			else
 				g_playingbutton = "Other page"	
 			end
@@ -56,8 +63,15 @@ function handle_changed_playingstep(citemindex, citemname)
 			local crowstep = (playingstep)%8+1
 			local crow = math.floor((playingstep)/8)+1
 
+{% if lptype == "mini" %}
+			g_updateditems[g_playingbutton] = true
+{% endif %}
 			g_playingbutton = "Button "..tostring(crow).."-"..tostring(crowstep)
+{% if lptype == "mini" %}
+			g_updateditems[g_playingbutton] = true
+{% else %}
 			g_updateall = true
+{% endif %}
 		end
 	end
 end

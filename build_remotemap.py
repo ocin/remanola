@@ -5,6 +5,9 @@ env = Environment(
     loader=FileSystemLoader('Maps/Remanola/templates')
 )
 
+#env.lstrip_blocks = True
+#env.trim_blocks = True
+
 remotefilename = '/tmp/remanola-out/Launchpad-Mini.remotemap'
 
 template = env.get_template('Launchpad-Mini.remotemap.j2')

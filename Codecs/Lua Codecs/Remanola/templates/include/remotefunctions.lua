@@ -17,12 +17,12 @@ end
 
 function remote_prepare_for_use()
 	local ret_events={}
-	if(lptype == 'pro') then
-		table.insert(ret_events, remote.make_midi(MIDI_OUT_PRO_PROGLAYOUT))
-		table.insert(ret_events, remote.make_midi("f0 00 20 29 02 10 2b 00 00 05 46 f7"))
-	else
-		table.insert(ret_events, remote.make_midi(string.format("%s %02x", MIDI_OUT_DOUBLEBUFF, bit.bor(DBDISP0,DBUPDATE1,DBCOPY))))
-	end
+
+{% if lptype == "pro" %}
+	table.insert(ret_events, remote.make_midi(MIDI_OUT_PROGLAYOUT))
+{% else %}
+	table.insert(ret_events, remote.make_midi(string.format("%s %02x", MIDI_OUT_DOUBLEBUFF, bit.bor(DBDISP0,DBUPDATE1,DBCOPY))))
+{% endif %}
 
 	return ret_events;
 end
@@ -31,7 +31,11 @@ function remote_set_state(changed_items)
 	for i,citemindex in ipairs(changed_items)do
 		local citemname = items[citemindex].name
 
+{% if lptype == "pro" %}
 		g_updateall = true
+{% else %}
+		g_updateditems[citemname] = true
+{% endif %}
 
 		if(citemname ~= nil) then
 			handle_changed_sel(citemindex, citemname)
@@ -56,22 +60,19 @@ function remote_deliver_midi(maxbytes, port)
 		g_updateall = true
 	end
 
-	if(g_lightshow == 0 and not g_flashing) then
-		if(g_updateall) then
-			deliver_midi_buttons(ret_events)
-			deliver_midi_sideled(ret_events)
-
-			g_updateall = false
-		end
-	end
-
+	deliver_midi_buttons(ret_events)
 	deliver_midi_startflashing(ret_events)
-	deliver_midi_brightness(ret_events)
 	deliver_midi_scrolltext(ret_events)
 	deliver_midi_endscroll(ret_events)
+	deliver_midi_sel(ret_events)
+{% if lptype == "mini" %}
+	-- Mini specific
+	deliver_midi_flashing(ret_events)
+	deliver_midi_stopflashing(ret_events)
 	deliver_midi_lightshow(ret_events)
 	deliver_midi_transport(ret_events)
-	deliver_midi_sel(ret_events)
+	deliver_midi_brightness(ret_events)
+{% endif %}
 
 	return ret_events
 end
@@ -80,7 +81,10 @@ function remote_process_midi(event)
 	handle_input_sel(event)
 
 	handle_input_select(event)
-	handle_input_scrollend(event)
+
+	if(handle_input_scrollend(event)) then
+		return(true)
+	end
 
 	if(g_lightshow > 0) then
 		if(handle_input_lightshow(event)) then
@@ -134,8 +138,8 @@ function remote_process_midi(event)
 end
 
 function remote_probe(manufacturer,model,prober)
-	local controlRequest="F0 7E 7F 06 01 F7"
-	local controlResponse=string.format("F0 7E 00 06 02 00 20 29 %x 00 ?? ?? ?? ?? ?? ??  F7", DEVICE_ID)
+	local controlRequest=MIDI_OUT_DEVICEINQ
+	local controlResponse=string.format("%s %x 00 ?? ?? ?? ?? ?? ??  f7", MIDI_IN_DEVICEINQ_HEAD, DEVICE_ID)
 
 	return {
                 request=controlRequest,

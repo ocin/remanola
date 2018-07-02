@@ -5,6 +5,9 @@ env = Environment(
     loader=FileSystemLoader('Codecs/Lua Codecs/Remanola/templates')
 )
 
+#env.lstrip_blocks = True
+#env.trim_blocks = True
+
 remotefilename = '/tmp/remanola-out/Launchpad-Mini.lua'
 
 template = env.get_template('Launchpad-Mini.lua.j2')

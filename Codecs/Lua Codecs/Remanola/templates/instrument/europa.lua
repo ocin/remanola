@@ -6,7 +6,10 @@
 			["Button 4-1"]={template="BOscPage", helptext="Goto Engine 3"},
 		},
 		["Main"]={
-			["Fader 5"]={template="FMisc"},
+			["UDVButton 7-2_8-2"]={template="UDPerf2"},
+			["UDVButton 7-3_8-3"]={template="UDPerf"},
+			["Fader 4"]={template="FPerf"},
+			["UDVButton 7-7_8-7"]={template="UDAmount"},
 			["Fader 8"]={template="FGain"},
 		},
 		["Index"]={

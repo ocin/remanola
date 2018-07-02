@@ -71,14 +71,14 @@ local buttons = {
 	["Button 8-7"]="90 76",
 	["Button 8-8"]="90 77",
 	
-	["Button A"]="90 08", 
-	["Button B"]="90 18", 
-	["Button C"]="90 28", 
-	["Button D"]="90 38", 
-	["Button E"]="90 48", 
-	["Button F"]="90 58", 
-	["Button G"]="90 68", 
-	["Button H"]="90 78",
+	["Button D1"]="90 08", 
+	["Button D2"]="90 18", 
+	["Button D3"]="90 28", 
+	["Button D4"]="90 38", 
+	["Button D5"]="90 48", 
+	["Button D6"]="90 58", 
+	["Button D7"]="90 68", 
+	["Button D8"]="90 78",
 
 	["Button C1"]="b0 68",
 	["Button C2"]="b0 69",
@@ -89,3 +89,4 @@ local buttons = {
 	["Button C7"]="b0 6e",
 	["Button C8"]="b0 6f",
 }	
+

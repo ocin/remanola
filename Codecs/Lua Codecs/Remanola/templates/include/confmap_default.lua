@@ -106,37 +106,22 @@
 		["Internal"]={
 			["Button C7"]={enabledcolor=RED,      activecolor=RED,     disabledcolor=NOCOLOR},
 			["Button 1-1"]={template="BMainPage"},
+			["Button C1"]={enabledcolor=NOCOLOR,   activecolor=ORANGE,  disabledcolor=NOCOLOR},
+			["Button C2"]={enabledcolor=NOCOLOR,   activecolor=ORANGE,  disabledcolor=NOCOLOR},
+			["Button C3"]={enabledcolor=NOCOLOR,    activecolor=GREEN,   disabledcolor=NOCOLOR},
+			["Button C4"]={enabledcolor=NOCOLOR,    activecolor=GREEN,   disabledcolor=NOCOLOR},
+			["Button H"]={enabledcolor=YELLOW,      activecolor=GREEN,  disabledcolor=NOCOLOR},
+{% if lptype == "pro" %}
+{% include "include/confmap_default_colortest_pro.lua" %}
+{% else %}
 			["Button 1-6"]={enabledcolor=NOCOLOR,    activecolor=GREEN,  disabledcolor=GREEN},
 			["Button 1-7"]={enabledcolor=NOCOLOR,    activecolor=GREEN,  disabledcolor=GREEN},
 			["Button 1-8"]={enabledcolor=NOCOLOR,    activecolor=GREEN,  disabledcolor=GREEN},
 			["Button 2-8"]={enabledcolor=NOCOLOR,    activecolor=GREEN,  disabledcolor=GREEN},
 			["Button 7-8"]={enabledcolor=NOCOLOR,    activecolor=RED,  disabledcolor=ORANGE},
 			["Button 8-8"]={enabledcolor=NOCOLOR,    activecolor=RED,  disabledcolor=ORANGE},
-			["Button C1"]={enabledcolor=NOCOLOR,   activecolor=ORANGE,  disabledcolor=NOCOLOR},
-			["Button C2"]={enabledcolor=NOCOLOR,   activecolor=ORANGE,  disabledcolor=NOCOLOR},
-			["Button C3"]={enabledcolor=NOCOLOR,    activecolor=GREEN,   disabledcolor=NOCOLOR},
-			["Button C4"]={enabledcolor=NOCOLOR,    activecolor=GREEN,   disabledcolor=NOCOLOR},
-			["Button H"]={enabledcolor=YELLOW,      activecolor=GREEN,  disabledcolor=NOCOLOR},
-			-- Color test
-			["Button 5-1"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=RED3},
-			["Button 5-2"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=RED2},
-			["Button 5-3"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=RED1},
-			["Button 5-4"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=NOCOLOR},
-
-			["Button 6-1"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=ORANGE2},
-			["Button 6-2"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=ORANGE1},
-			["Button 6-3"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=AMBER1},
-			["Button 6-4"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=GREEN1},
-
-			["Button 7-1"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=ORANGE3},
-			["Button 7-2"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=AMBER2},
-			["Button 7-3"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=YELLOW1},
-			["Button 7-4"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=GREEN2},
-
-			["Button 8-1"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=AMBER3},
-			["Button 8-2"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=YELLOW3},
-			["Button 8-3"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=YELLOW2},
-			["Button 8-4"]={enabledcolor=YELLOW,    activecolor=GREEN,  disabledcolor=GREEN3},
+{% include "include/confmap_default_colortest_mini.lua" %}
+{% endif %}
 		},
 		["Keyboard"]={
 			["Button 1-2"]={template="BPerformancePage"},

@@ -11,6 +11,7 @@ local color_templates = {
 	["FFreq"]={enabledcolor=WGREEN, activecolor=GREEN},
 	["FMisc"]={enabledcolor=WGREEN, activecolor=YELLOW},
 	["FEffect"]={enabledcolor=WGREEN, activecolor=ORANGE},
+	["FPerf"]={enabledcolor=WGREEN, activecolor=YELLOW},
 	-- Special Vocoder Fader
 	["FVCGreen"]={enabledcolor=WGREEN, activecolor=GREEN, disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=89},
 	["FVCFreq"]={enabledcolor=WGREEN, activecolor=GREEN, disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=89},
@@ -87,3 +88,4 @@ local color_templates = {
 	["BWhitekey"]={enabledcolor=GREEN,   activecolor=GREEN,  disabledcolor=GREEN},
 	["BBlackkey"]={enabledcolor=WGREEN,   activecolor=WGREEN,  disabledcolor=WGREEN},
 }
+
