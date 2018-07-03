@@ -1,10 +1,10 @@
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="DDL-1 Digital Delay Line" -%}
 {% set devicename="DDL-1 Digital Delay Line" -%}
-{% include "remotemap/include/device-scope.j2" %}
+{% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	Index	Internal
 Define Group	DelayUnit	Steps	Ms
-{% include "remotemap/include/device-effect-nopatch.j2" %}
+{% include "remotemap/include/device/effect-nopatch.j2" %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index

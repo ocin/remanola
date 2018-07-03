@@ -88,7 +88,7 @@
 			["Button 8-6"]={template="BGreenOnOff"},
 			["Button 8-7"]={template="BGreenOnOff"},
 			["Fader 8"]={template="FAmount"},
-{% include "devices/instrument/antidote/antidote-bottommenu-effects.lua" %}
+{% include "devices/instrument/antidote/confmap_bottommenu_effects.lua" %}
 {% endif %}
 		},
 		["EQ/Bass"]={ --EQBass
@@ -111,7 +111,7 @@
 			["Button 7-8"]={template="BEffectPage"},
 			["Button 8-8"]={template="BEffectPage"},
 {% else %}
-{% include "devices/instrument/antidote/antidote-bottommenu-effects.lua" %}
+{% include "devices/instrument/antidote/confmap_bottommenu_effects.lua" %}
 {% endif %}
 		},
 		["Dist"]={
@@ -134,7 +134,7 @@
 			["Button 7-8"]={template="BEffectPage"},
 			["Button 8-8"]={template="BEffectPage"},
 {% else %}
-{% include "devices/instrument/antidote/antidote-bottommenu-effects.lua" %}
+{% include "devices/instrument/antidote/confmap_bottommenu_effects.lua" %}
 {% endif %}
 		},
 		["Phaser"]={
@@ -157,7 +157,7 @@
 			["Button 7-8"]={template="BEffectPage"},
 			["Button 8-8"]={template="BEffectPage"},
 {% else %}
-{% include "devices/instrument/antidote/antidote-bottommenu-effects.lua" %}
+{% include "devices/instrument/antidote/confmap_bottommenu_effects.lua" %}
 {% endif %}
 		},
 		["Chorus"]={
@@ -178,7 +178,7 @@
 			["Button 7-8"]={template="BEffectPage"},
 			["Button 8-8"]={template="BEffectPage"},
 {% else %}
-{% include "devices/instrument/antidote/antidote-bottommenu-effects.lua" %}
+{% include "devices/instrument/antidote/confmap_bottommenu_effects.lua" %}
 {% endif %}
 		},
 		["Delay"]={
@@ -201,7 +201,7 @@
 			["Button 7-8"]={template="BEffectPage"},
 			["Button 8-8"]={template="BEffectPage"},
 {% else %}
-{% include "devices/instrument/antidote/antidote-bottommenu-effects.lua" %}
+{% include "devices/instrument/antidote/confmap_bottommenu_effects.lua" %}
 {% endif %}
 		},
 		["Reverb"]={
@@ -223,7 +223,7 @@
 			["Button 7-8"]={template="BEffectPage"},
 			["Button 8-8"]={template="BEffectPage"},
 {% else %}
-{% include "devices/instrument/antidote/antidote-bottommenu-effects.lua" %}
+{% include "devices/instrument/antidote/confmap_bottommenu_effects.lua" %}
 {% endif %}
 		},
 		["Comp"]={
@@ -243,7 +243,7 @@
 			["Button 7-8"]={template="BEffectPage"},
 			["Button 8-8"]={template="BEffectPage"},
 {% else %}
-{% include "devices/instrument/antidote/antidote-bottommenu-effects.lua" %}
+{% include "devices/instrument/antidote/confmap_bottommenu_effects.lua" %}
 {% endif %}
 		},
 		["LFO *"]={

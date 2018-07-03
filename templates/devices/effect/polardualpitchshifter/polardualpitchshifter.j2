@@ -1,10 +1,10 @@
 {% set deviceman="Propellerhead Software" -%}
 {% set devicescope="se.propellerheads.Polar" -%}
 {% set devicename="Polar Dual Pitch Shifter" -%}
-{% include "remotemap/include/device-scope.j2" %}
+{% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	Dry	DelayBuffer	Shifter1	ShifterVol1	Shifter2	ShifterVol2	Filter	LFO	Env	Index	Internal
 Define Group	TempoSync	Free	Sync
-{% include "remotemap/include/device-effect.j2" %}
+{% include "remotemap/include/device/effect.j2" %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index

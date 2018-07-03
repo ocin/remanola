@@ -3,13 +3,13 @@
 {% set devicename="Europa" -%}
 {# Variables -#}
 {% set show_pitch_bend_range=true -%}
-{% set leftmenu_common="devices/instrument/europa/europa-leftmenu-common.j2" -%}
+{% set leftmenu_common="devices/instrument/europa/leftmenu.j2" -%}
 {# End Variables -#}
-{% include "remotemap/include/device-scope.j2" %}
+{% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	Eng1Osc	Eng2Osc	Eng3Osc	Eng1Mod1	Eng2Mod1	Eng3Mod1	Eng1Mod2	Eng2Mod2	Eng3Mod2	Eng1Harm	Eng2Harm	Eng3Harm	Eng1Filter	Eng2Filter	Eng3Filter	Eng1Unison	Eng2Unison	Eng3Unison	Mixer	Filter	Amp	Effects	Phaser	Dist	Eq	Delay	Reverb	Comp	LFO1	LFO2	LFO3	Env1	Env2	Env3	Env4	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
 Define Group	Enginenum	Eng1	Eng2	Eng3
 Define Group	TempoSync	Free	Sync
-{% include "remotemap/include/device-instrument.j2" %}
+{% include "remotemap/include/device/instrument.j2" %}
 // Select
 Map	EngineSelect		OscSel		SEL2
 Map	EffectSelect		Effect Select
@@ -75,7 +75,7 @@ Map	Button 2-1		Page=Eng1			Main
 Map	Button 3-1		Page=Eng2			Main
 Map	Button 4-1		Page=Eng3			Main
 {% else %}
-{% include "devices/instrument/europa/europa-leftmenu-common.j2" %}
+{% include "devices/instrument/europa/leftmenu.j2" %}
 {% endif %}
 Map	UDVButton 7-2_8-2		Key Mode			Main
 Map	UDVButton 7-3_8-3		Portamento Mode			Main
@@ -91,7 +91,7 @@ Map	Button 2-1		Page=Eng1			Mixer
 Map	Button 3-1		Page=Eng2			Mixer
 Map	Button 4-1		Page=Eng3			Mixer
 {% else %}
-{% include "devices/instrument/europa/europa-leftmenu-common.j2" %}
+{% include "devices/instrument/europa/leftmenu.j2" %}
 {% endif %}
 Map	Fader 2		Osc1 Level				Mixer
 Map	Knob V3		Osc1 Pan				Mixer
@@ -108,7 +108,7 @@ Map	Button 2-1		Page=Eng1			Filter
 Map	Button 3-1		Page=Eng2			Filter
 Map	Button 4-1		Page=Eng3			Filter
 {% else %}
-{% include "devices/instrument/europa/europa-leftmenu-common.j2" %}
+{% include "devices/instrument/europa/leftmenu.j2" %}
 {% endif %}
 Map	Button 5-1		Osc1 To Filter			Filter
 Map	Button 6-1		Osc2 To Filter			Filter
@@ -130,7 +130,7 @@ Map	Button 2-1		Page=Eng1			Amp
 Map	Button 3-1		Page=Eng2			Amp
 Map	Button 4-1		Page=Eng3			Amp
 {% else %}
-{% include "devices/instrument/europa/europa-leftmenu-common.j2" %}
+{% include "devices/instrument/europa/leftmenu.j2" %}
 {% endif %}
 Map	Knob V2		Pan				Amp
 Map	Fader 3		Amp Gain				Amp
@@ -150,8 +150,8 @@ Map	Button 2-1		Page=Eng1Osc			Eng{{ engnum }}Osc
 Map	Button 3-1		Page=Eng2Osc			Eng{{ engnum }}Osc
 Map	Button 4-1		Page=Eng3Osc			Eng{{ engnum }}Osc
 {% else %}
-{% include "devices/instrument/europa/europa-leftmenu-osc.j2" %}
-{% include "devices/instrument/europa/europa-bottommenu-osc.j2" %}
+{% include "devices/instrument/europa/leftmenu_osc.j2" %}
+{% include "devices/instrument/europa/bottommenu_osc.j2" %}
 {% endif %}
 Map	Button 1-2		Osc{{ engnum }} On			Eng{{ engnum }}Osc
 Map	UDVButton 1-3_2-3		Osc{{ engnum }} Oct				Eng{{ engnum }}Osc
@@ -175,8 +175,8 @@ Map	Button 2-1		Page=Eng1Mod{{ modnum }}			Eng{{ engnum }}Mod{{ modnum }}
 Map	Button 3-1		Page=Eng2Mod{{ modnum }}			Eng{{ engnum }}Mod{{ modnum }}
 Map	Button 4-1		Page=Eng3Mod{{ modnum }}			Eng{{ engnum }}Mod{{ modnum }}
 {% else %}
-{% include "devices/instrument/europa/europa-leftmenu-osc.j2" %}
-{% include "devices/instrument/europa/europa-bottommenu-osc.j2" %}
+{% include "devices/instrument/europa/leftmenu_osc.j2" %}
+{% include "devices/instrument/europa/bottommenu_osc.j2" %}
 {% endif %}
 Map	Button 1-2		Osc{{ engnum }} Mod{{ modnum }} On			Eng{{ engnum }}Mod{{ modnum }}
 Map	UDVButton 1-3_2-3		Osc{{ engnum }} Mod{{ modnum }}				Eng{{ engnum }}Mod{{ modnum }}
@@ -194,8 +194,8 @@ Map	Button 2-1		Page=Eng1Filter			Eng{{ engnum }}Filter
 Map	Button 3-1		Page=Eng2Filter			Eng{{ engnum }}Filter
 Map	Button 4-1		Page=Eng3Filter			Eng{{ engnum }}Filter
 {% else %}
-{% include "devices/instrument/europa/europa-leftmenu-osc.j2" %}
-{% include "devices/instrument/europa/europa-bottommenu-osc.j2" %}
+{% include "devices/instrument/europa/leftmenu_osc.j2" %}
+{% include "devices/instrument/europa/bottommenu_osc.j2" %}
 {% endif %}
 Map	Button 1-2		Osc{{ engnum }} Filter On			Eng{{ engnum }}Filter
 Map	UDVButton 3-2_4-2		Osc{{ engnum }} Filter				Eng{{ engnum }}Filter
@@ -215,8 +215,8 @@ Map	Button 2-1		Page=Eng1Harm			Eng{{ engnum }}Harm
 Map	Button 3-1		Page=Eng2Harm			Eng{{ engnum }}Harm
 Map	Button 4-1		Page=Eng3Harm			Eng{{ engnum }}Harm
 {% else %}
-{% include "devices/instrument/europa/europa-leftmenu-osc.j2" %}
-{% include "devices/instrument/europa/europa-bottommenu-osc.j2" %}
+{% include "devices/instrument/europa/leftmenu_osc.j2" %}
+{% include "devices/instrument/europa/bottommenu_osc.j2" %}
 {% endif %}
 Map	Button 1-2		Osc{{ engnum }} Harm On			Eng{{ engnum }}Harm
 Map	UDVButton 1-3_2-3		Osc{{ engnum }} Harm				Eng{{ engnum }}Harm
@@ -232,8 +232,8 @@ Map	Button 2-1		Page=Eng1Unison			Eng{{ engnum }}Unison
 Map	Button 3-1		Page=Eng2Unison			Eng{{ engnum }}Unison
 Map	Button 4-1		Page=Eng3Unison			Eng{{ engnum }}Unison
 {% else %}
-{% include "devices/instrument/europa/europa-leftmenu-osc.j2" %}
-{% include "devices/instrument/europa/europa-bottommenu-osc.j2" %}
+{% include "devices/instrument/europa/leftmenu_osc.j2" %}
+{% include "devices/instrument/europa/bottommenu_osc.j2" %}
 {% endif %}
 Map	Button 1-2		Osc{{ engnum }} Unison On			Eng{{ engnum }}Unison
 Map	UDVButton 1-3_2-3		Osc{{ engnum }} Unison Mode				Eng{{ engnum }}Unison
@@ -242,7 +242,7 @@ Map	Fader 5		Osc{{ engnum }} Blend				Eng{{ engnum }}Unison
 Map	Fader 6		Osc{{ engnum }} Detune				Eng{{ engnum }}Unison
 Map	Fader 7		Osc{{ engnum }} Spread				Eng{{ engnum }}Unison
 {% endfor -%}
-{% include "devices/instrument/europa/europa-grain_lfo.j2" %}
-{% include "devices/instrument/europa/europa-grain_env.j2" %}
-{% include "devices/instrument/europa/europa-grain_effects.j2" %}
-{% include "devices/instrument/europa/europa-grain_modmatrix.j2" %}
+{% include "devices/instrument/Shared/europa_grain/lfo.j2" %}
+{% include "devices/instrument/Shared/europa_grain/env.j2" %}
+{% include "devices/instrument/Shared/europa_grain/effects.j2" %}
+{% include "devices/instrument/Shared/europa_grain/modmatrix.j2" %}

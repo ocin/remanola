@@ -1,10 +1,10 @@
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="BV512 Digital Vocoder" -%}
 {% set devicename="BV512 Digital Vocoder" -%}
-{% include "remotemap/include/device-scope.j2" %}
+{% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	Band1-8	Band9-16	Band17-24	Band25-32	Index	Internal
 Define Group	BandCount	4Band	8Band	16Band	32Band	FFT
-{% include "remotemap/include/device-effect-nopatch.j2" %}
+{% include "remotemap/include/device/effect-nopatch.j2" %}
 // Index
 Map	PageName		"Index" 				Index
 Map	UDVButton 7-1_8-1		Band Count 		SEL1	Index

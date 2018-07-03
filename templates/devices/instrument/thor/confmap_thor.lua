@@ -318,7 +318,7 @@
 			["Button 8-1"]={template="BEffectPage"},
 			["Button 8-2"]={template="BEffectPage"},
 			["Button 8-3"]={template="BEffectPage"},
-{% include "devices/instrument/thor/thor-bottommenu-effects.lua" %}
+{% include "devices/instrument/thor/confmap_bottommenu_effects.lua" %}
 {% endif %}
 		},
 		["Shaper"]={
@@ -331,7 +331,7 @@
 			["Button 3-8"]={template="BEffectPage"},
 			["Button 4-8"]={template="BEffectPage"},
 {% else %}
-{% include "devices/instrument/thor/thor-bottommenu-effects.lua" %}
+{% include "devices/instrument/thor/confmap_bottommenu_effects.lua" %}
 {% endif %}
 		},
 		["Delay"]={
@@ -347,7 +347,7 @@
 			["Button 3-8"]={template="BEffectPage"},
 			["Button 4-8"]={template="BEffectPage"},
 {% else %}
-{% include "devices/instrument/thor/thor-bottommenu-effects.lua" %}
+{% include "devices/instrument/thor/confmap_bottommenu_effects.lua" %}
 {% endif %}
 		},
 		["Chorus"]={
@@ -362,7 +362,7 @@
 			["Button 3-8"]={template="BEffectPage"},
 			["Button 4-8"]={template="BEffectPage"},
 {% else %}
-{% include "devices/instrument/thor/thor-bottommenu-effects.lua" %}
+{% include "devices/instrument/thor/confmap_bottommenu_effects.lua" %}
 {% endif %}
 		},
 	},

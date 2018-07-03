@@ -5,11 +5,11 @@
 {% set hide_pitch_bend=true -%}
 {% set hide_mod_wheel=true -%}
 {# End Variables -#}
-{% include "remotemap/include/device-scope.j2" %}
+{% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	Performance	Drum1	Drum1Edit	Drum2	Drum2Edit	Drum3	Drum3Edit	Drum4	Drum4Edit	Drum5	Drum5Edit	Drum6	Drum6Edit	Drum7	Drum7Edit	Drum8	Drum8Edit	Drum9	Drum9Edit	Drum10	Drum10Edit	Drum11	Drum11Edit	Drum12	Drum12Edit	Index	Keyboard	Internal
 Define Group	DrumMode	Play	Solo	Mute
 Define Group	EditMode	Rotate	Toggle	Flam
-{% include "remotemap/include/device-instrument.j2" %}
+{% include "remotemap/include/device/instrument.j2" %}
 Map	PlayingStep		Playing Step
 // Index
 Map	PageName		"Index" 				Index

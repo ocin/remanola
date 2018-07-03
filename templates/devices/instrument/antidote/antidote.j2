@@ -4,10 +4,10 @@
 {# Variables -#}
 {% set show_pitch_bend_range=true -%}
 {# End Variables -#}
-{% include "remotemap/include/device-scope.j2" %}
+{% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	Osc1	Osc2	Mixer	Filter	FilterEnv	Effects	EQBass	Dist	Phaser	Chorus	Delay	Reverb	Comp	LFO1	LFO2	AmpEnv	ModEnv	Arp	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	Index	Keyboard	Internal
 Define Group	TempoSync	Free	Sync
-{% include "remotemap/include/device-instrument.j2" %}
+{% include "remotemap/include/device/instrument.j2" %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -41,7 +41,7 @@ Map	PageName		"Main" 				Main
 {% set curpage="Main" %}
 {% if lptype == "mini" %}
 {% else %}
-{% include "devices/instrument/antidote/antidote-leftmenu-common.j2" %}
+{% include "devices/instrument/antidote/leftmenu.j2" %}
 {% endif %}
 Map	UDVButton 7-2_8-2		Polyphony				Main
 Map	Fader 3		Glide				Main
@@ -54,7 +54,7 @@ Map	PageName		"Osc {{ oscnum }}" 				Osc{{ oscnum }}
 Map	Button 2-1		Page=Osc1			Osc{{ oscnum }}
 Map	Button 3-1		Page=Osc2			Osc{{ oscnum }}
 {% else %}
-{% include "devices/instrument/antidote/antidote-leftmenu-common.j2" %}
+{% include "devices/instrument/antidote/leftmenu.j2" %}
 {% endif %}
 Map	UDVButton 1-2_2-2		Osc {{ oscnum }} Waveform				Osc{{ oscnum }}
 Map	UDVButton 3-2_4-2		Osc {{ oscnum }} Voices				Osc{{ oscnum }}
@@ -73,7 +73,7 @@ Map	PageName		"Mixer" 				Mixer
 {% set curpage="Mixer" %}
 {% if lptype == "mini" %}
 {% else %}
-{% include "devices/instrument/antidote/antidote-leftmenu-common.j2" %}
+{% include "devices/instrument/antidote/leftmenu.j2" %}
 {% endif %}
 Map	Fader 2		Osc 1 Volume				Mixer
 Map	Fader 3		Osc 2 Volume				Mixer
@@ -85,7 +85,7 @@ Map	PageName		"Filter" 				Filter
 {% set curpage="Filter" %}
 {% if lptype == "mini" %}
 {% else %}
-{% include "devices/instrument/antidote/antidote-leftmenu-common.j2" %}
+{% include "devices/instrument/antidote/leftmenu.j2" %}
 {% endif %}
 Map	UDVButton 1-2_2-2		Filter Type				Filter
 Map	Fader 3		Filter Cutoff				Filter
@@ -96,7 +96,7 @@ Map	PageName		"Filter Envelope" 				FilterEnv
 {% set curpage="FilterEnv" %}
 {% if lptype == "mini" %}
 {% else %}
-{% include "devices/instrument/antidote/antidote-leftmenu-common.j2" %}
+{% include "devices/instrument/antidote/leftmenu.j2" %}
 {% endif %}
 Map	Fader 2		Filter Envelope Amount				FilterEnv
 Map	Fader 3		Filter Envelope Attack				FilterEnv
@@ -115,7 +115,7 @@ Map	Button 5-7		Chorus			Effects
 Map	Button 6-7		Delay			Effects
 Map	Button 7-7		Reverb			Effects
 Map	Button 8-7		Compressor			Effects
-{% include "devices/instrument/antidote/antidote-effectmenu-mini.j2" %}
+{% include "devices/instrument/antidote/mini/effectmenu.j2" %}
 {% else %}
 Map	Fader 8		External Input Amount				Effects
 Map	Button 8-1		EQ/Bass			Effects
@@ -125,17 +125,17 @@ Map	Button 8-4		Chorus			Effects
 Map	Button 8-5		Delay			Effects
 Map	Button 8-6		Reverb			Effects
 Map	Button 8-7		Compressor			Effects
-{% include "devices/instrument/antidote/antidote-leftmenu-common.j2" %}
-{% include "devices/instrument/antidote/antidote-bottommenu-effects.j2" %}
+{% include "devices/instrument/antidote/leftmenu.j2" %}
+{% include "devices/instrument/antidote/bottommenu_effects.j2" %}
 {% endif %}
 // EQ/Bass
 Map	PageName		"EQ/Bass" 				EQBass
 {% set curpage="EQBass" %}
 {% if lptype == "mini" %}
-{% include "devices/instrument/antidote/antidote-effectmenu-mini.j2" %}
+{% include "devices/instrument/antidote/mini/effectmenu.j2" %}
 {% else %}
-{% include "devices/instrument/antidote/antidote-leftmenu-common.j2" %}
-{% include "devices/instrument/antidote/antidote-bottommenu-effects.j2" %}
+{% include "devices/instrument/antidote/leftmenu.j2" %}
+{% include "devices/instrument/antidote/bottommenu_effects.j2" %}
 {% endif %}
 Map	Button 1-1		EQ/Bass			EQBass
 Map	UDVButton 3-1_4-1		Bass Freq				EQBass
@@ -150,10 +150,10 @@ Map	Fader 7		EQ Dry/Wet				EQBass
 Map	PageName		"Dist" 				Dist
 {% set curpage="Dist" %}
 {% if lptype == "mini" %}
-{% include "devices/instrument/antidote/antidote-effectmenu-mini.j2" %}
+{% include "devices/instrument/antidote/mini/effectmenu.j2" %}
 {% else %}
-{% include "devices/instrument/antidote/antidote-leftmenu-common.j2" %}
-{% include "devices/instrument/antidote/antidote-bottommenu-effects.j2" %}
+{% include "devices/instrument/antidote/leftmenu.j2" %}
+{% include "devices/instrument/antidote/bottommenu_effects.j2" %}
 {% endif %}
 Map	Button 1-1		Distortion			Dist
 Map	UDVButton 3-1_4-1		Distortion Type				Dist
@@ -168,10 +168,10 @@ Map	Fader 7		Distortion Dry/Wet				Dist
 Map	PageName		"Phaser" 				Phaser
 {% set curpage="Phaser" %}
 {% if lptype == "mini" %}
-{% include "devices/instrument/antidote/antidote-effectmenu-mini.j2" %}
+{% include "devices/instrument/antidote/mini/effectmenu.j2" %}
 {% else %}
-{% include "devices/instrument/antidote/antidote-leftmenu-common.j2" %}
-{% include "devices/instrument/antidote/antidote-bottommenu-effects.j2" %}
+{% include "devices/instrument/antidote/leftmenu.j2" %}
+{% include "devices/instrument/antidote/bottommenu_effects.j2" %}
 {% endif %}
 Map	Button 1-1		Phaser			Phaser
 Map	UDVButton 3-1_4-1		Phaser Stages				Phaser
@@ -186,10 +186,10 @@ Map	Fader 7		Phaser Dry/Wet				Phaser
 Map	PageName		"Chorus" 				Chorus
 {% set curpage="Chorus" %}
 {% if lptype == "mini" %}
-{% include "devices/instrument/antidote/antidote-effectmenu-mini.j2" %}
+{% include "devices/instrument/antidote/mini/effectmenu.j2" %}
 {% else %}
-{% include "devices/instrument/antidote/antidote-leftmenu-common.j2" %}
-{% include "devices/instrument/antidote/antidote-bottommenu-effects.j2" %}
+{% include "devices/instrument/antidote/leftmenu.j2" %}
+{% include "devices/instrument/antidote/bottommenu_effects.j2" %}
 {% endif %}
 Map	Button 1-1		Chorus			Chorus
 Map	Fader 2		Chorus Delay				Chorus
@@ -202,10 +202,10 @@ Map	Fader 7		Chorus Dry/Wet				Chorus
 Map	PageName		"Delay" 				Delay
 {% set curpage="Delay" %}
 {% if lptype == "mini" %}
-{% include "devices/instrument/antidote/antidote-effectmenu-mini.j2" %}
+{% include "devices/instrument/antidote/mini/effectmenu.j2" %}
 {% else %}
-{% include "devices/instrument/antidote/antidote-leftmenu-common.j2" %}
-{% include "devices/instrument/antidote/antidote-bottommenu-effects.j2" %}
+{% include "devices/instrument/antidote/leftmenu.j2" %}
+{% include "devices/instrument/antidote/bottommenu_effects.j2" %}
 {% endif %}
 Map	Button 1-1		Delay			Delay
 Map	UDVButton 3-1_4-1		Delay Type				Delay
@@ -220,10 +220,10 @@ Map	Fader 7		Delay Dry/Wet				Delay
 Map	PageName		"Reverb" 				Reverb
 {% set curpage="Reverb" %}
 {% if lptype == "mini" %}
-{% include "devices/instrument/antidote/antidote-effectmenu-mini.j2" %}
+{% include "devices/instrument/antidote/mini/effectmenu.j2" %}
 {% else %}
-{% include "devices/instrument/antidote/antidote-leftmenu-common.j2" %}
-{% include "devices/instrument/antidote/antidote-bottommenu-effects.j2" %}
+{% include "devices/instrument/antidote/leftmenu.j2" %}
+{% include "devices/instrument/antidote/bottommenu_effects.j2" %}
 {% endif %}
 Map	Button 1-1		Reverb			Reverb
 Map	UDVButton 3-1_4-1		Reverb Pre-Delay				Reverb
@@ -237,10 +237,10 @@ Map	Fader 7		Reverb Dry/Wet				Reverb
 Map	PageName		"Comp" 				Comp
 {% set curpage="Comp" %}
 {% if lptype == "mini" %}
-{% include "devices/instrument/antidote/antidote-effectmenu-mini.j2" %}
+{% include "devices/instrument/antidote/mini/effectmenu.j2" %}
 {% else %}
-{% include "devices/instrument/antidote/antidote-leftmenu-common.j2" %}
-{% include "devices/instrument/antidote/antidote-bottommenu-effects.j2" %}
+{% include "devices/instrument/antidote/leftmenu.j2" %}
+{% include "devices/instrument/antidote/bottommenu_effects.j2" %}
 {% endif %}
 Map	Button 1-1		Compressor			Comp
 Map	UDVButton 3-1_4-1		Compressor Ratio				Comp

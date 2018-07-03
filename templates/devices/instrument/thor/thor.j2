@@ -4,12 +4,12 @@
 {# Variables -#}
 {% set show_pitch_bend_range=true -%}
 {# End Variables -#}
-{% include "remotemap/include/device-scope.j2" %}
+{% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	Osc1	Osc2	Osc3	Mixer	Filter1	Filter2	Filter3	FilterEnv	Amp	AmpEnv	ModEnv	GlobalEnv	LFO1	LFO2	Seq	Effects	Shaper	Delay	Chorus	Index	Keyboard	Internal
 Define Group	OscType	Analog	Wavetable	Phase	FM	Multi	Noise	Off
 Define Group	FilterType	LP	State	Comb	Formant	Bypass
 Define Group	SeqEditMode	Note	Velocity	GateLen	StepDur	Curve1	Curve2
-{% include "remotemap/include/device-instrument.j2" %}
+{% include "remotemap/include/device/instrument.j2" %}
 Map	PlayingStep		Step Sequencer Step Index
 // Index
 Map	PageName		"Index" 				Index
@@ -38,7 +38,7 @@ Map	Button C7		Page=Internal			Index
 // Main page
 Map	PageName		"Main" 				Main
 {% set curpage="Main" %}
-{% include "devices/instrument/thor/thor-leftmenu-common.j2" %}
+{% include "devices/instrument/thor/leftmenu.j2" %}
 Map	UDVButton 1-2_2-2		Polyphony 			Main
 Map	UDVButton 3-2_4-2		Release Polyphony 			Main
 Map	UDVButton 5-2_6-2		Key Mode 			Main
@@ -55,7 +55,7 @@ Map	Fader 8		Master Level 			Main
 // Osc {{ oscnum }}
 Map	PageName		"Osc {{ oscnum }}" 				Osc{{ oscnum }}
 {% set curpage="Osc"+oscnum|string %}
-{% include "devices/instrument/thor/thor-leftmenu-common.j2" %}
+{% include "devices/instrument/thor/leftmenu.j2" %}
 Map	Sel1_0		OscType=Analog			Osc{{ oscnum }}
 Map	Sel1_21		OscType=Wavetable			Osc{{ oscnum }}
 Map	Sel1_42		OscType=Phase			Osc{{ oscnum }}
@@ -139,7 +139,7 @@ Map	Fader 5		Osc 3 Level				Mixer
 // Filter {{ filternum }}
 Map	PageName		"Filter {{ filternum }}" 				Filter{{ filternum }}
 {% set curpage="Filter"+filternum|string %}
-{% include "devices/instrument/thor/thor-leftmenu-common.j2" %}
+{% include "devices/instrument/thor/leftmenu.j2" %}
 Map	Sel1_0		FilterType=LP			Filter{{ filternum }}
 Map	Sel1_32		FilterType=State			Filter{{ filternum }}
 Map	Sel1_64		FilterType=Comb			Filter{{ filternum }}
@@ -206,7 +206,7 @@ Map	Button 8-1		Filter2ToAmplifier Enable			Filter2
 // FilterEnv
 Map	PageName		"Filter Env" 				FilterEnv
 {% set curpage="FilterEnv" %}
-{% include "devices/instrument/thor/thor-leftmenu-common.j2" %}
+{% include "devices/instrument/thor/leftmenu.j2" %}
 Map	Button 2-2		Filter Env Gate Trig On				FilterEnv
 Map	Fader 3		Filter Env Attack				FilterEnv
 Map	Fader 4		Filter Env Decay				FilterEnv
@@ -215,7 +215,7 @@ Map	Fader 6		Filter Env Release				FilterEnv
 // Amp
 Map	PageName		"Amp" 				Amp
 {% set curpage="Amp" %}
-{% include "devices/instrument/thor/thor-leftmenu-common.j2" %}
+{% include "devices/instrument/thor/leftmenu.j2" %}
 Map	UDVButton 3-2_4-2		Shaper Output Dest			Amp
 Map	Button 8-2		Filter2ToAmplifier Enable			Amp
 Map	Fader 3		Amplifier Velocity				Amp
@@ -224,7 +224,7 @@ Map	Knob V5		Amplifier Pan				Amp
 // AmpEnv
 Map	PageName		"Amp Env" 				AmpEnv
 {% set curpage="AmpEnv" %}
-{% include "devices/instrument/thor/thor-leftmenu-common.j2" %}
+{% include "devices/instrument/thor/leftmenu.j2" %}
 Map	Button 2-2		Amp Env Gate Trig On				AmpEnv
 Map	Fader 3		Amp Env Attack				AmpEnv
 Map	Fader 4		Amp Env Decay				AmpEnv
@@ -233,7 +233,7 @@ Map	Fader 6		Amp Env Release				AmpEnv
 // ModEnv
 Map	PageName		"Mod Env" 				ModEnv
 {% set curpage="ModEnv" %}
-{% include "devices/instrument/thor/thor-leftmenu-common.j2" %}
+{% include "devices/instrument/thor/leftmenu.j2" %}
 Map	Button 2-2		Mod Env Gate Trig On				ModEnv
 Map	Button 3-2		Mod Env Tempo Sync				ModEnv
 Map	Fader 3		Mod Env Delay				ModEnv
@@ -244,7 +244,7 @@ Map	Button 8-7		Mod Env Loop				ModEnv
 // GlobalEnv
 Map	PageName		"Global Env" 				GlobalEnv
 {% set curpage="GlobalEnv" %}
-{% include "devices/instrument/thor/thor-leftmenu-common.j2" %}
+{% include "devices/instrument/thor/leftmenu.j2" %}
 Map	Button 2-1		Global Env Gate Trig On				GlobalEnv
 Map	Button 3-1		Global Env Tempo Sync				GlobalEnv
 Map	Fader 2		Global Env Delay				GlobalEnv
@@ -257,7 +257,7 @@ Map	Button 8-8		Global Env Loop				GlobalEnv
 // LFO1
 Map	PageName		"LFO 1" 				LFO1
 {% set curpage="LFO1" %}
-{% include "devices/instrument/thor/thor-leftmenu-common.j2" %}
+{% include "devices/instrument/thor/leftmenu.j2" %}
 Map	UDVButton 3-1_4-1		LFO 1 Waveform				LFO1
 Map	Button 6-1		LFO 1 Key Sync				LFO1
 Map	Button 7-1		LFO 1 Tempo Sync				LFO1
@@ -267,7 +267,7 @@ Map	Fader 5		LFO 1 KbdFollow				LFO1
 // LFO2
 Map	PageName		"LFO 2" 				LFO2
 {% set curpage="LFO2" %}
-{% include "devices/instrument/thor/thor-leftmenu-common.j2" %}
+{% include "devices/instrument/thor/leftmenu.j2" %}
 Map	UDVButton 3-1_4-1		LFO 2 Waveform				LFO2
 Map	Button 6-1		LFO 2 Key Sync				LFO2
 Map	Button 7-1		LFO 2 Tempo Sync				LFO2
@@ -276,7 +276,7 @@ Map	Fader 4		LFO 2 Delay				LFO2
 // Step Sequencer 1
 Map	PageName		"Step Sequencer" 				Seq
 {% set curpage="Seq" %}
-{% include "devices/instrument/thor/thor-leftmenu-common.j2" %}
+{% include "devices/instrument/thor/leftmenu.j2" %}
 Map	Button 1-1		Pattern Step Gate 1				Seq
 Map	Button 1-2		Pattern Step Gate 2				Seq
 Map	Button 1-3		Pattern Step Gate 3				Seq
@@ -333,13 +333,13 @@ Map	SubPageName		"Curve2" 				Seq	Curve2
 Map	PageName		"Effects" 				Effects
 {% set curpage="Effects" %}
 {% if lptype == "mini" %}
-{% include "devices/instrument/thor/thor-effectmenu-mini.j2" %}
+{% include "devices/instrument/thor/mini/effectmenu.j2" %}
 Map	Button 2-7		Shaper On			Effects
 Map	Button 3-7		Delay On			Effects
 Map	Button 4-7		Chorus On			Effects
 {% else %}
-{% include "devices/instrument/thor/thor-leftmenu-common.j2" %}
-{% include "devices/instrument/thor/thor-bottommenu-effects.j2" %}
+{% include "devices/instrument/thor/leftmenu.j2" %}
+{% include "devices/instrument/thor/bottommenu_effects.j2" %}
 Map	Button 8-1		Shaper On			Effects
 Map	Button 8-2		Delay On			Effects
 Map	Button 8-3		Chorus On			Effects
@@ -348,10 +348,10 @@ Map	Button 8-3		Chorus On			Effects
 Map	PageName		"Shaper" 				Shaper
 {% set curpage="Shaper" %}
 {% if lptype == "mini" %}
-{% include "devices/instrument/thor/thor-effectmenu-mini.j2" %}
+{% include "devices/instrument/thor/mini/effectmenu.j2" %}
 {% else %}
-{% include "devices/instrument/thor/thor-leftmenu-common.j2" %}
-{% include "devices/instrument/thor/thor-bottommenu-effects.j2" %}
+{% include "devices/instrument/thor/leftmenu.j2" %}
+{% include "devices/instrument/thor/bottommenu_effects.j2" %}
 {% endif %}
 Map	Button 1-1		Shaper On				Shaper
 Map	UDVButton 5-2_6-2		Shaper Type				Shaper
@@ -361,10 +361,10 @@ Map	UDVButton 7-4_8-4		Shaper Output Dest			Shaper
 Map	PageName		"Delay" 				Delay
 {% set curpage="Delay" %}
 {% if lptype == "mini" %}
-{% include "devices/instrument/thor/thor-effectmenu-mini.j2" %}
+{% include "devices/instrument/thor/mini/effectmenu.j2" %}
 {% else %}
-{% include "devices/instrument/thor/thor-leftmenu-common.j2" %}
-{% include "devices/instrument/thor/thor-bottommenu-effects.j2" %}
+{% include "devices/instrument/thor/leftmenu.j2" %}
+{% include "devices/instrument/thor/bottommenu_effects.j2" %}
 {% endif %}
 Map	Button 1-1		Delay On				Delay
 Map	Button 4-1		Delay Sync				Delay
@@ -377,10 +377,10 @@ Map	Fader 7		Delay Dry Wet				Delay
 Map	PageName		"Chorus" 				Chorus
 {% set curpage="Chorus" %}
 {% if lptype == "mini" %}
-{% include "devices/instrument/thor/thor-effectmenu-mini.j2" %}
+{% include "devices/instrument/thor/mini/effectmenu.j2" %}
 {% else %}
-{% include "devices/instrument/thor/thor-leftmenu-common.j2" %}
-{% include "devices/instrument/thor/thor-bottommenu-effects.j2" %}
+{% include "devices/instrument/thor/leftmenu.j2" %}
+{% include "devices/instrument/thor/bottommenu_effects.j2" %}
 {% endif %}
 Map	Button 1-1		Chorus On				Chorus
 Map	Fader 3		Chorus Delay				Chorus

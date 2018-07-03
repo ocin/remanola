@@ -5,9 +5,9 @@
 {% set hide_pitch_bend=true -%}
 {% set hide_mod_wheel=true -%}
 {# End Variables -#}
-{% include "remotemap/include/device-scope.j2" %}
+{% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	Velocity	Tune	Resonance	Envelope	Mechanics	Eq	Ambience	Output	Index	Keyboard	Internal
-{% include "remotemap/include/device-instrument.j2" %}
+{% include "remotemap/include/device/instrument.j2" %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index

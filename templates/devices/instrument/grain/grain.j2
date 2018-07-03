@@ -3,13 +3,13 @@
 {% set devicename="Grain" -%}
 {# Variables -#}
 {% set show_pitch_bend_range=true -%}
-{% set leftmenu_common="devices/instrument/grain/grain-leftmenu-common.j2" -%}
+{% set leftmenu_common="devices/instrument/grain/leftmenu.j2" -%}
 {# End Variables -#}
-{% include "remotemap/include/device-scope.j2" %}
+{% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	Sample	Grains	Pitch	Osc	Mixer	Filter	Amp	Effects	Phaser	Dist	Eq	Delay	Reverb	Comp	LFO1	LFO2	LFO3	Env1	Env2	Env3	Env4	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
 Define Group	Grains	SpectralGrains	GrainOsc	LongGrains	Tape
 Define Group	TempoSync	Free	Sync
-{% include "remotemap/include/device-instrument.j2" %}
+{% include "remotemap/include/device/instrument.j2" %}
 // Select
 Map	EffectSelect		Effect Select
 Map	LFOSelect		LFO Select
@@ -52,7 +52,7 @@ Map	Button C7		Page=Internal			Index
 Map	PageName		"Main" 				Main
 {% set curpage="Main" %}
 {% if lptype == "pro" %}
-{% include "devices/instrument/grain/grain-leftmenu-common.j2" %}
+{% include "devices/instrument/grain/leftmenu.j2" %}
 {% endif %}
 Map	UDVButton 1-2_2-2		Key Mode			Main
 Map	UDVButton 7-2_8-2		Portamento Mode				Main
@@ -63,7 +63,7 @@ Map	Fader 8		Master Volume				Main
 // Sample
 {% set curpage="Sample" %}
 {% if lptype == "pro" %}
-{% include "devices/instrument/grain/grain-leftmenu-common.j2" %}
+{% include "devices/instrument/grain/leftmenu.j2" %}
 {% endif %}
 Map	PageName		"Sample" 				Sample
 Map	Fader 1		Zoom				Sample
@@ -77,7 +77,7 @@ Map	Button 1-8		Global Position			Sample
 // Grains
 {% set curpage="Grains" %}
 {% if lptype == "pro" %}
-{% include "devices/instrument/grain/grain-leftmenu-common.j2" %}
+{% include "devices/instrument/grain/leftmenu.j2" %}
 {% endif %}
 Map	PageName		"Grains" 				Grains
 Map	Sel1_0		Grains=SpectralGrains			Grains
@@ -118,7 +118,7 @@ Map	Fader 6		XFade				Grains	Tape
 Map	PageName		"Pitch" 				Pitch
 {% set curpage="Pitch" %}
 {% if lptype == "pro" %}
-{% include "devices/instrument/grain/grain-leftmenu-common.j2" %}
+{% include "devices/instrument/grain/leftmenu.j2" %}
 {% endif %}
 Map	UDVButton 1-2_2-2		Oct				Pitch
 Map	UDVButton 1-3_2-3		Semi				Pitch
@@ -128,7 +128,7 @@ Map	Fader 6		Pitch Kbd				Pitch
 Map	PageName		"Osc" 				Osc
 {% set curpage="Osc" %}
 {% if lptype == "pro" %}
-{% include "devices/instrument/grain/grain-leftmenu-common.j2" %}
+{% include "devices/instrument/grain/leftmenu.j2" %}
 {% endif %}
 Map	Button 1-2		Osc On 			Osc
 Map	UDVButton 1-3_2-3		Osc Oct				Osc
@@ -138,7 +138,7 @@ Map	Fader 6		Osc Mod				Osc
 Map	PageName		"Mixer" 				Mixer
 {% set curpage="Mixer" %}
 {% if lptype == "pro" %}
-{% include "devices/instrument/grain/grain-leftmenu-common.j2" %}
+{% include "devices/instrument/grain/leftmenu.j2" %}
 {% endif %}
 Map	Button 1-2		Sample To Filter			Mixer
 Map	Fader 3		Sample Level				Mixer
@@ -148,7 +148,7 @@ Map	Fader 5		Osc Level				Mixer
 Map	PageName		"Filter" 				Filter
 {% set curpage="Filter" %}
 {% if lptype == "pro" %}
-{% include "devices/instrument/grain/grain-leftmenu-common.j2" %}
+{% include "devices/instrument/grain/leftmenu.j2" %}
 {% endif %}
 Map	UDVButton 1-2_2-2		Filter Type				Filter
 Map	Fader 3		Filter Freq				Filter
@@ -160,7 +160,7 @@ Map	UDVButton 1-8_2-8		Filter Vel	5			Filter
 Map	PageName		"Amp" 				Amp
 {% set curpage="Amp" %}
 {% if lptype == "pro" %}
-{% include "devices/instrument/grain/grain-leftmenu-common.j2" %}
+{% include "devices/instrument/grain/leftmenu.j2" %}
 {% endif %}
 Map	Fader 2		Amp Attack				Amp
 Map	Fader 3		Amp Decay				Amp
@@ -169,7 +169,7 @@ Map	Fader 5		Amp Release				Amp
 Map	Fader 6		Amp Gain				Amp
 Map	Fader 7		Amp Velocity				Amp
 Map	Knob V8		Pan				Amp
-{% include "devices/instrument/europa/europa-grain_lfo.j2" %}
-{% include "devices/instrument/europa/europa-grain_env.j2" %}
-{% include "devices/instrument/europa/europa-grain_effects.j2" %}
-{% include "devices/instrument/europa/europa-grain_modmatrix.j2" %}
+{% include "devices/instrument/Shared/europa_grain/lfo.j2" %}
+{% include "devices/instrument/Shared/europa_grain/env.j2" %}
+{% include "devices/instrument/Shared/europa_grain/effects.j2" %}
+{% include "devices/instrument/Shared/europa_grain/modmatrix.j2" %}

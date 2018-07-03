@@ -126,7 +126,7 @@
 			["Fader 3"]={template="FFreq"},
 			["UDVButton 7-4_8-4"]={template="UDFreq"},
 		},
-{% include "devices/instrument/europa/europa-grain-effects.lua" %}
+{% include "devices/instrument/Shared/europa_grain/confmap_effects.lua" %}
 		["Mod Matrix *"]={
 			["Button 1-1"]={template="BPerformancePage"},
 			["Button 2-1"]={template="BPerformancePage"},

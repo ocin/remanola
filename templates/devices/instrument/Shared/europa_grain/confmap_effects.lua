@@ -21,7 +21,7 @@
 			["Button 8-4"]={template="BRedOnOff"},
 			["Button 8-5"]={template="BRedOnOff"},
 			["Button 8-6"]={template="BRedOnOff"},
-{% include "devices/instrument/europa/europa-grain-bottommenu-effects.lua" %}
+{% include "devices/instrument/Shared/europa_grain/confmap_bottommenu_effects.lua" %}
 		},
 		["Phaser"]={
 			["Button 1-2"]={template="BRedOnOff"},
@@ -34,7 +34,7 @@
 			["Button 7-8"]={template="BEffectPage"},
 			-- Pro
 			["Button 1-1"]={template="BRedOnOff"},
-{% include "devices/instrument/europa/europa-grain-bottommenu-effects.lua" %}
+{% include "devices/instrument/Shared/europa_grain/confmap_bottommenu_effects.lua" %}
 			-- Common
 			["UDVButton 5-1_6-1"]={template="UDEffect"},
 			["Fader 4"]={template="FEffect"},
@@ -53,7 +53,7 @@
 			["Button 7-8"]={template="BEffectPage"},
 			-- Pro
 			["Button 1-1"]={template="BRedOnOff"},
-{% include "devices/instrument/europa/europa-grain-bottommenu-effects.lua" %}
+{% include "devices/instrument/Shared/europa_grain/confmap_bottommenu_effects.lua" %}
 			-- Common
 			["UDVButton 5-1_6-1"]={template="UDEffect"},
 			["Fader 4"]={template="FEffect"},
@@ -71,7 +71,7 @@
 			["Button 7-8"]={template="BEffectPage"},
 			-- Pro
 			["Button 1-1"]={template="BRedOnOff"},
-{% include "devices/instrument/europa/europa-grain-bottommenu-effects.lua" %}
+{% include "devices/instrument/Shared/europa_grain/confmap_bottommenu_effects.lua" %}
 			-- Common
 			["Fader 4"]={template="FFreq"},
 			["Fader 5"]={template="FMisc"},
@@ -88,7 +88,7 @@
 			["Button 7-8"]={template="BEffectPage"},
 			-- Pro
 			["Button 1-1"]={template="BRedOnOff"},
-{% include "devices/instrument/europa/europa-grain-bottommenu-effects.lua" %}
+{% include "devices/instrument/Shared/europa_grain/confmap_bottommenu_effects.lua" %}
 			-- Common
 			["Button 4-1"]={template="BRedOnOff"},
 			["Button 6-1"]={template="BRedOnOff"},
@@ -108,7 +108,7 @@
 			["Button 7-8"]={template="BEffectPage"},
 			-- Pro
 			["Button 1-1"]={template="BRedOnOff"},
-{% include "devices/instrument/europa/europa-grain-bottommenu-effects.lua" %}
+{% include "devices/instrument/Shared/europa_grain/confmap_bottommenu_effects.lua" %}
 			-- Common
 			["Fader 3"]={template="FMisc"},
 			["Fader 4"]={template="FMisc"},
@@ -126,7 +126,7 @@
 			["Button 7-8"]={template="BEffectPage"},
 			-- Pro
 			["Button 1-1"]={template="BRedOnOff"},
-{% include "devices/instrument/europa/europa-grain-bottommenu-effects.lua" %}
+{% include "devices/instrument/Shared/europa_grain/confmap_bottommenu_effects.lua" %}
 			-- Common
 			["Fader 3"]={template="FFreq"},
 			["Fader 4"]={template="FEffect"},

@@ -77,7 +77,7 @@
 			["Fader 5"]={template="FAmount"},
 			["Fader 7"]={template="FMisc"},
 			["Fader 8"]={template="FMisc"},
-{% include "devices/instrument/europa/europa-bottommenu-osc.lua" %}
+{% include "devices/instrument/europa/confmap_bottommenu_osc.lua" %}
 		},
 		["Eng * Mod *"]={
 			["Button 1-2"]={template="BRedOnOff"},
@@ -85,7 +85,7 @@
 			["Fader 4"]={template="FAmount"},
 			["Fader 5"]={template="FMisc"},
 			["UDVButton 7-6_8-6"]={template="UDMisc", inverted=true},
-{% include "devices/instrument/europa/europa-bottommenu-osc.lua" %}
+{% include "devices/instrument/europa/confmap_bottommenu_osc.lua" %}
 		},
 		["Eng * Spectral Filter"]={
 			["Button 1-2"]={template="BRedOnOff"},
@@ -96,14 +96,14 @@
 			["Fader 6"]={template="FMisc"},
 			["UDVButton 7-7_8-7"]={template="UDMisc", inverted=true},
 			["Fader 8"]={template="FMisc"},
-{% include "devices/instrument/europa/europa-bottommenu-osc.lua" %}
+{% include "devices/instrument/europa/confmap_bottommenu_osc.lua" %}
 		},
 		["Eng * Harmonics"]={
 			["Button 1-2"]={template="BRedOnOff"},
 			["UDVButton 1-3_2-3"]={template="UDAmount", inverted=true},
 			["Fader 4"]={template="FMisc"},
 			["Fader 5"]={template="FAmount"},
-{% include "devices/instrument/europa/europa-bottommenu-osc.lua" %}
+{% include "devices/instrument/europa/confmap_bottommenu_osc.lua" %}
 		},
 		["Eng * Unison"]={
 			["Button 1-2"]={template="BRedOnOff"},
@@ -112,7 +112,7 @@
 			["Fader 5"]={template="FEffect"},
 			["Fader 6"]={template="FFreq"},
 			["Fader 7"]={template="FEffect"},
-{% include "devices/instrument/europa/europa-bottommenu-osc.lua" %}
+{% include "devices/instrument/europa/confmap_bottommenu_osc.lua" %}
 		},
 		["LFO *"]={
 			["Button 5-1"]={template="BLFOPage", helptext="Goto LFO 1"},
@@ -134,7 +134,7 @@
 			["Fader 3"]={template="FFreq"},
 			["UDVButton 7-4_8-4"]={template="UDFreq"},
 		},
-{% include "devices/instrument/europa/europa-grain-effects.lua" %}
+{% include "devices/instrument/Shared/europa_grain/confmap_effects.lua" %}
 		["Mod Matrix *"]={
 			["Button 1-1"]={template="BPerformancePage"},
 			["Button 2-1"]={template="BPerformancePage"},
