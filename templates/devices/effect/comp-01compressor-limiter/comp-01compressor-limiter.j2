@@ -1,0 +1,19 @@
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="COMP-01 Compressor/Limiter" -%}
+{% set devicename="COMP-01 Compressor/Limiter" -%}
+{% include "remotemap/include/device-scope.j2" %}
+Define Group	Page	Main	Index	Internal
+{% include "remotemap/include/device-effect-nopatch.j2" %}
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Meter 2		Peak Meter			Main
+Map	Fader 3		Ratio			Main
+Map	Fader 4		Threshold			Main
+Map	Fader 5		Attack			Main
+Map	Fader 6		Release			Main
+Map	Meter 8		Gain			Main

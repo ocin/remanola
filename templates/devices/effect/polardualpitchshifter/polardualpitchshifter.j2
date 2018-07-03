@@ -1,0 +1,122 @@
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.Polar" -%}
+{% set devicename="Polar Dual Pitch Shifter" -%}
+{% include "remotemap/include/device-scope.j2" %}
+Define Group	Page	Main	Dry	DelayBuffer	Shifter1	ShifterVol1	Shifter2	ShifterVol2	Filter	LFO	Env	Index	Internal
+Define Group	TempoSync	Free	Sync
+{% include "remotemap/include/device-effect.j2" %}
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=Dry			Index
+Map	Button 2-5		Page=Filter			Index
+Map	Button 5-5		Page=LFO			Index
+Map	Button 5-6		Page=Env			Index
+Map	Button 2-8		Page=DelayBuffer			Index
+Map	Button 3-8		Page=Shifter1			Index
+Map	Button 4-8		Page=ShifterVol1			Index
+Map	Button 5-8		Page=Shifter2			Index
+Map	Button 6-8		Page=ShifterVol2			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Meter 2		Audio Input LED			Main
+Map	UDVButton 1-3_2-3		Analysis Type			Main
+Map	UDVButton 5-3_6-3		Algorithm Type			Main
+Map	Button 8-3		Keyboard Input Enable			Main
+Map	Fader 4		Loop Length			Main
+Map	Fader 6		Auto Pan Rate			Main
+// Dry
+Map	PageName		"Dry Signal" 				Dry
+Map	Button 1-2		Dry Enable			Dry
+Map	Fader 3		Dry Delay			Dry
+Map	Knob V4		Dry Pan			Dry
+Map	Knob V5		Dry Auto Pan Amount			Dry
+Map	Fader 8		Dry Level			Dry
+// DelayBuffer
+Map	PageName		"Delay Buffer" 				DelayBuffer
+Map	Button 2-8		Page=DelayBuffer			DelayBuffer
+Map	Button 3-8		Page=Shifter1			DelayBuffer
+Map	Button 4-8		Page=ShifterVol1			DelayBuffer
+Map	Button 5-8		Page=Shifter2			DelayBuffer
+Map	Button 6-8		Page=ShifterVol2			DelayBuffer
+Map	Button 1-2		Lock Buffer			DelayBuffer
+Map	Button 5-2		Delay/Buffer Delay Mode			DelayBuffer
+Map	Fader 3		Delay/Buffer Position			DelayBuffer
+Map	Button 1-4		Input Summing Left + Right			DelayBuffer
+Map	Knob V5		Buffer LFO Amount			DelayBuffer
+Map	Knob V6		Buffer Env Amount			DelayBuffer
+// Shifter1
+Map	PageName		"Shifter 1" 				Shifter1
+Map	Button 2-8		Page=DelayBuffer			Shifter1
+Map	Button 3-8		Page=Shifter1			Shifter1
+Map	Button 4-8		Page=ShifterVol1			Shifter1
+Map	Button 5-8		Page=Shifter2			Shifter1
+Map	Button 6-8		Page=ShifterVol2			Shifter1
+Map	Knob V2		Shifter 1 Semi			Shifter1
+Map	Knob V3		Shifter 1 Fine			Shifter1
+Map	Fader 4		Shifter 1 Feedback			Shifter1
+Map	Knob V6		Shifter 1 LFO Amount			Shifter1
+Map	Knob V7		Shifter 1 Env Amount			Shifter1
+// ShifterVol1
+Map	PageName		"Shifter Vol 1" 				ShifterVol1
+Map	Button 2-8		Page=DelayBuffer			ShifterVol1
+Map	Button 3-8		Page=Shifter1			ShifterVol1
+Map	Button 4-8		Page=ShifterVol1			ShifterVol1
+Map	Button 5-8		Page=Shifter2			ShifterVol1
+Map	Button 6-8		Page=ShifterVol2			ShifterVol1
+Map	Knob V2		Shifter 1 Pan			ShifterVol1
+Map	Knob V3		Shifter 1 Auto Pan			ShifterVol1
+Map	Fader 6		Shifter 1 Level			ShifterVol1
+// Shifter2
+Map	PageName		"Shifter 2" 				Shifter2
+Map	Button 2-8		Page=DelayBuffer			Shifter2
+Map	Button 3-8		Page=Shifter1			Shifter2
+Map	Button 4-8		Page=ShifterVol1			Shifter2
+Map	Button 5-8		Page=Shifter2			Shifter2
+Map	Button 6-8		Page=ShifterVol2			Shifter2
+Map	Button 1-1		Shifter 2 Enable			Shifter2
+Map	Knob V2		Shifter 2 Semi			Shifter2
+Map	Knob V3		Shifter 2 Fine			Shifter2
+Map	Fader 4		Shifter 2 Feedback			Shifter2
+Map	Fader 5		Shifter 2 Delay			Shifter2
+Map	Knob V6		Shifter 2 LFO Amount			Shifter2
+Map	Knob V7		Shifter 2 Env Amount			Shifter2
+// ShifterVol2
+Map	PageName		"Shifter Vol 2" 				ShifterVol2
+Map	Button 2-8		Page=DelayBuffer			ShifterVol2
+Map	Button 3-8		Page=Shifter1			ShifterVol2
+Map	Button 4-8		Page=ShifterVol1			ShifterVol2
+Map	Button 5-8		Page=Shifter2			ShifterVol2
+Map	Button 6-8		Page=ShifterVol2			ShifterVol2
+Map	Knob V2		Shifter 2 Pan			ShifterVol2
+Map	Knob V3		Shifter 2 Auto Pan			ShifterVol2
+Map	Fader 6		Shifter 2 Level			ShifterVol2
+// Env
+Map	PageName		"Envelope" 				Env
+Map	Button 1-2		Envelope Gate			Env
+Map	Fader 3		Envelope Attack			Env
+Map	Fader 4		Envelope Decay			Env
+Map	Fader 5		Envelope Sustain			Env
+Map	Fader 6		Envelope Release			Env
+Map	Button 1-7		Env To Amp			Env
+// LFO
+Map	PageName		"LFO" 				LFO
+Map	Sel1_0		TempoSync=Free			LFO
+Map	Sel1_1		TempoSync=Sync			LFO
+Map	Fader 2		LFO Rate Free			LFO	Free
+Map	UDVButton 7-2_8-2		LFO Rate Synced			LFO	Sync
+Map	Fader 3		LFO Phase			LFO
+Map	UDVButton 7-4_8-4		LFO Waveform			LFO
+Map	Button 1-5		LFO Tempo Sync		SEL1	LFO
+// Filter
+Map	PageName		"Filter" 				Filter
+Map	Button 1-2		Filter Enable			Filter
+Map	UDVButton 7-3_8-3		Filter Type			Filter
+Map	Fader 4		Filter Frequency			Filter
+Map	Fader 5		Filter Resonance			Filter
+Map	Fader 6		Filter Keyboard Tracking			Filter
+Map	Knob V7		Filter LFO Amount			Filter
+Map	Knob V8		Filter Env Amount			Filter
+
