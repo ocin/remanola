@@ -1,9 +1,19 @@
 	["Thor"]={
 		["Default"]={
+{% if lptype == "mini" %}
 			["Button 1-1"]={template="BMainPage"},
 			["Button 2-1"]={template="BOscPage"},
 			["Button 3-1"]={template="BOscPage"},
 			["Button 4-1"]={template="BOscPage"},
+{% endif %}
+			["Button B1"]={template="BMainPage"},
+			["Button B2"]={template="BOscPage"},
+			["Button B3"]={template="BOscPage"},
+			["Button B4"]={template="BOscPage"},
+			["Button B5"]={template="BFilterPage"},
+			["Button B6"]={template="BFilterPage"},
+			["Button B7"]={template="BFilterPage"},
+			["Button B8"]={template="BEffectPage"},
 		},
 		["Main"]={
 			["UDVButton 1-2_1-2"]={template="UDMisc"},
@@ -298,36 +308,61 @@
 				["UDVButton 5-8_6-8"]={template="UDMisc"},
 			},
 		},
+		["Effects"]={
+{% if lptype == "mini" %}
+			["Button 1-8"]={template="BEffectPage"},
+			["Button 2-8"]={template="BEffectPage"},
+			["Button 3-8"]={template="BEffectPage"},
+			["Button 4-8"]={template="BEffectPage"},
+{% else %}
+			["Button 8-1"]={template="BEffectPage"},
+			["Button 8-2"]={template="BEffectPage"},
+			["Button 8-3"]={template="BEffectPage"},
+{% include "instrument/include/thor-bottommenu-effects.lua" %}
+{% endif %}
+		},
 		["Shaper"]={
-			["Button 2-2"]={template="BGreenOnOff"},
+			["Button 1-1"]={template="BGreenOnOff"},
                         ["UDVButton 5-2_6-2"]={template="UDEffect", inverted=true},
                         ["Fader 3"]={template="FEffect"},
 			["UDVButton 7-4_8-4"]={template="UDGain"},
+{% if lptype == "mini" %}
 			["Button 2-8"]={template="BEffectPage"},
 			["Button 3-8"]={template="BEffectPage"},
 			["Button 4-8"]={template="BEffectPage"},
+{% else %}
+{% include "instrument/include/thor-bottommenu-effects.lua" %}
+{% endif %}
 		},
 		["Delay"]={
-			["Button 2-2"]={template="BGreenOnOff"},
-			["Button 4-2"]={template="BGreenOnOff"},
+			["Button 1-1"]={template="BGreenOnOff"},
+			["Button 4-1"]={template="BGreenOnOff"},
                         ["Fader 3"]={template="FFreq"},
                         ["Fader 4"]={template="FEffect"},
                         ["Fader 5"]={template="FFreq"},
                         ["Fader 6"]={template="FAmount"},
                         ["Fader 7"]={template="FEffect"},
+{% if lptype == "mini" %}
 			["Button 2-8"]={template="BEffectPage"},
 			["Button 3-8"]={template="BEffectPage"},
 			["Button 4-8"]={template="BEffectPage"},
+{% else %}
+{% include "instrument/include/thor-bottommenu-effects.lua" %}
+{% endif %}
 		},
 		["Chorus"]={
-			["Button 2-2"]={template="BGreenOnOff"},
+			["Button 1-1"]={template="BGreenOnOff"},
                         ["Fader 3"]={template="FFreq"},
                         ["Fader 4"]={template="FEffect"},
                         ["Fader 5"]={template="FFreq"},
                         ["Fader 6"]={template="FAmount"},
                         ["Fader 7"]={template="FEffect"},
+{% if lptype == "mini" %}
 			["Button 2-8"]={template="BEffectPage"},
 			["Button 3-8"]={template="BEffectPage"},
 			["Button 4-8"]={template="BEffectPage"},
+{% else %}
+{% include "instrument/include/thor-bottommenu-effects.lua" %}
+{% endif %}
 		},
 	},

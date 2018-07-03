@@ -22,7 +22,9 @@
 			["Button C2"]={enabledcolor=ORANGE,   activecolor=ORANGE,  disabledcolor=NOCOLOR},
 			["Button C3"]={enabledcolor=GREEN,    activecolor=GREEN,   disabledcolor=NOCOLOR},
 			["Button C4"]={enabledcolor=GREEN,    activecolor=GREEN,   disabledcolor=NOCOLOR},
-			["Button C5"]={enabledcolor=WRED,     activecolor=RED,   disabledcolor=NOCOLOR},
+{% if lptype == "mini" %}
+			["Button C5"]={template="BMainPage", helptext="Goto Main"},
+{% endif %}
 			["Button C6"]={enabledcolor=WGREEN,     activecolor=GREEN,   disabledcolor=NOCOLOR},
 			["Button C7"]={enabledcolor=WAMBER,      activecolor=AMBER,     disabledcolor=NOCOLOR},
 			["Button C8"]={enabledcolor=YELLOW,      activecolor=RED,     disabledcolor=GREEN},

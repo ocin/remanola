@@ -108,6 +108,15 @@ function handle_input_item(event, button)
 				return(true)
 			end
 		end
+	else
+		local itemtype = get_item_type(itemname)
+		if(itemtype == "Knob") then
+			if(get_item_conf_map(itemname,g_colorscheme, get_current_page()).resetonrel) then
+				local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = 64 }
+				remote.handle_input(msg)
+				return true
+			end
+		end
 	end
 end
 

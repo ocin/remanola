@@ -1,6 +1,7 @@
 Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
+{% if lptype == "mini" %}
 Map	Button 1-4		KbdVel=V25			Keyboard	
 Map	Button 1-5		KbdVel=V50			Keyboard	
 Map	Button 1-6		KbdVel=V75			Keyboard	
@@ -11,6 +12,7 @@ Map	KbdVel		"50"			Keyboard	V50
 Map	KbdVel		"75"			Keyboard	V75
 Map	KbdVel		"100"			Keyboard	V100
 Map	KbdVel		"127"			Keyboard	V127
+{% endif -%}
 Map	Button 2-4		BaseKey=C0			Keyboard	
 Map	Button 2-5		BaseKey=C1			Keyboard	
 Map	Button 2-6		BaseKey=C2			Keyboard	

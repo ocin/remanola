@@ -89,6 +89,6 @@ local color_templates = {
 	-- Pad
 	["BPad"]={enabledcolor=DGREEN,   activecolor=GREEN,  disabledcolor=NOCOLOR},
 	-- Keyboard
-	["BWhitekey"]={enabledcolor=GREEN,   activecolor=GREEN,  disabledcolor=GREEN},
-	["BBlackkey"]={enabledcolor=DGREEN,   activecolor=DGREEN,  disabledcolor=DGREEN},
+	["BWhitekey"]={enabledcolor=WHITE,   activecolor=WHITE,  disabledcolor=WHITE},
+	["BBlackkey"]={enabledcolor=BLUE,   activecolor=BLUE,  disabledcolor=BLUE},
 }

@@ -3,25 +3,30 @@
 {% set devicename="Europa" -%}
 {# Variables -#}
 {% set show_pitch_bend_range=true -%}
+{% set leftmenu_common="instrument/include/europa-leftmenu-common.j2" -%}
 {# End Variables -#}
 {% include "device-scope.j2" %}
-Define Group	Page	Main	Eng1	Eng2	Eng3	Eng1Mod1	Eng2Mod1	Eng3Mod1	Eng1Mod2	Eng2Mod2	Eng3Mod2	Eng1Harm	Eng2Harm	Eng3Harm	Eng1Filter	Eng2Filter	Eng3Filter	Eng1Unison	Eng2Unison	Eng3Unison	Mixer	Filter	Amp	Effects	Phaser	Dist	Eq	Delay	Reverb	Comp	LFO1	LFO2	LFO3	Env1	Env2	Env3	Env4	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
+Define Group	Page	Main	Eng1Osc	Eng2Osc	Eng3Osc	Eng1Mod1	Eng2Mod1	Eng3Mod1	Eng1Mod2	Eng2Mod2	Eng3Mod2	Eng1Harm	Eng2Harm	Eng3Harm	Eng1Filter	Eng2Filter	Eng3Filter	Eng1Unison	Eng2Unison	Eng3Unison	Mixer	Filter	Amp	Effects	Phaser	Dist	Eq	Delay	Reverb	Comp	LFO1	LFO2	LFO3	Env1	Env2	Env3	Env4	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
+Define Group	Enginenum	Eng1	Eng2	Eng3
 Define Group	TempoSync	Free	Sync
 {% include "device-instrument.j2" %}
 // Select
-Map	EngineSelect		OscSel
+Map	EngineSelect		OscSel		SEL2
 Map	EffectSelect		Effect Select
 Map	LFOSelect		LFO Select
 Map	EnvSelect		Env Select
+Map	Sel2_0		Enginenum=Eng1
+Map	Sel2_1		Enginenum=Eng2
+Map	Sel2_2		Enginenum=Eng3
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-2		Page=Mixer			Index
 Map	Button 1-3		Page=Amp			Index
 Map	Button 1-7		Page=Keyboard			Index
-Map	Button 2-1		Page=Eng1			Index
-Map	Button 3-1		Page=Eng2			Index
-Map	Button 4-1		Page=Eng3			Index
+Map	Button 2-1		Page=Eng1Osc			Index
+Map	Button 3-1		Page=Eng2Osc			Index
+Map	Button 4-1		Page=Eng3Osc			Index
 Map	Button 2-2		Page=Eng1Mod1			Index
 Map	Button 3-2		Page=Eng2Mod1			Index
 Map	Button 4-2		Page=Eng3Mod1			Index
@@ -62,22 +67,32 @@ Map	Button 6-8		Page=Comp			Index
 Map	Button 7-8		Page=Reverb			Index
 Map	Button C7		Page=Internal			Index
 // Main
+{% set curpage="Main" %}
 Map	PageName		"Main" 				Main
+{% if lptype == "mini" %}
 Map	Button 1-1		Page=Main			Main
 Map	Button 2-1		Page=Eng1			Main
 Map	Button 3-1		Page=Eng2			Main
 Map	Button 4-1		Page=Eng3			Main
+{% else %}
+{% include "instrument/include/europa-leftmenu-common.j2" %}
+{% endif %}
 Map	UDVButton 7-2_8-2		Key Mode			Main
 Map	UDVButton 7-3_8-3		Portamento Mode			Main
 Map	Fader 4		Portamento				Main
 Map	UDVButton 7-7_8-7		Voices				Main
 Map	Fader 8		Master Volume				Main
 // Mixer 
+{% set curpage="Mixer" %}
 Map	PageName		"Mixer" 				Mixer
+{% if lptype == "mini" %}
 Map	Button 1-1		Page=Main			Mixer
 Map	Button 2-1		Page=Eng1			Mixer
 Map	Button 3-1		Page=Eng2			Mixer
 Map	Button 4-1		Page=Eng3			Mixer
+{% else %}
+{% include "instrument/include/europa-leftmenu-common.j2" %}
+{% endif %}
 Map	Fader 2		Osc1 Level				Mixer
 Map	Knob V3		Osc1 Pan				Mixer
 Map	Fader 4		Osc2 Level				Mixer
@@ -85,11 +100,16 @@ Map	Knob V5		Osc2 Pan				Mixer
 Map	Fader 6		Osc3 Level				Mixer
 Map	Knob V7		Osc3 Pan				Mixer
 // Filter 
+{% set curpage="Filter" %}
 Map	PageName		"Filter" 				Filter
+{% if lptype == "mini" %}
 Map	Button 1-1		Page=Main			Filter
 Map	Button 2-1		Page=Eng1			Filter
 Map	Button 3-1		Page=Eng2			Filter
 Map	Button 4-1		Page=Eng3			Filter
+{% else %}
+{% include "instrument/include/europa-leftmenu-common.j2" %}
+{% endif %}
 Map	Button 5-1		Osc1 To Filter			Filter
 Map	Button 6-1		Osc2 To Filter			Filter
 Map	Button 7-1		Osc3 To Filter			Filter
@@ -102,11 +122,16 @@ Map	UDVButton 3-6_4-6		Filter Mod	5			Filter
 Map	UDVButton 5-6_6-6		Filter Vel	5			Filter
 Map	UDVButton 3-7_4-7		Filter Mod Source				Filter
 // Amp 
+{% set curpage="Amp" %}
 Map	PageName		"Amp" 				Amp
+{% if lptype == "mini" %}
 Map	Button 1-1		Page=Main			Amp
 Map	Button 2-1		Page=Eng1			Amp
 Map	Button 3-1		Page=Eng2			Amp
 Map	Button 4-1		Page=Eng3			Amp
+{% else %}
+{% include "instrument/include/europa-leftmenu-common.j2" %}
+{% endif %}
 Map	Knob V2		Pan				Amp
 Map	Fader 3		Amp Gain				Amp
 Map	Fader 4		Amp Velocity				Amp
@@ -116,29 +141,43 @@ Map	Fader 7		Amp Sustain				Amp
 Map	Fader 8		Amp Release				Amp
 {% for engnum in range(1,4) -%}
 // Eng {{ engnum }}
-Map	PageName		"Eng {{ engnum }}" 				Eng{{ engnum }}
-Map	Button 1-1		Page=Main			Eng{{ engnum }}
-Map	Button 2-1		Page=Eng1			Eng{{ engnum }}
-Map	Button 3-1		Page=Eng2			Eng{{ engnum }}
-Map	Button 4-1		Page=Eng3			Eng{{ engnum }}
-Map	Button 1-2		Osc{{ engnum }} On			Eng{{ engnum }}
-Map	UDVButton 1-3_2-3		Osc{{ engnum }} Oct				Eng{{ engnum }}
-Map	UDVButton 3-3_4-3		Osc{{ engnum }} Semi				Eng{{ engnum }}
-Map	UDVButton 5-3_6-3		Osc{{ engnum }} Tune				Eng{{ engnum }}
-Map	UDVButton 7-3_8-3		Osc{{ engnum }} Pitch Kbd				Eng{{ engnum }}
-Map	UDVButton 1-4_2-4		Osc{{ engnum }} Wave				Eng{{ engnum }}
-Map	Fader 5		Osc{{ engnum }} Shape				Eng{{ engnum }}
-Map	Button 1-6		Osc{{ engnum }} SyncPhase			Eng{{ engnum }}
-Map	UDVButton 7-6_8-6		Osc{{ engnum }} Shape Source				Eng{{ engnum }}
-Map	Fader 7		Osc{{ engnum }} Shape Amt				Eng{{ engnum }}
-Map	Fader 8		Osc{{ engnum }} Shape Vel				Eng{{ engnum }}
+{% set curpage="Eng"+engnum|string+"Osc" %}
+{% set oscpage="Osc" %}
+Map	PageName		"Eng {{ engnum }}" 				Eng{{ engnum }}Osc
+{% if lptype == "mini" %}
+Map	Button 1-1		Page=Main			Eng{{ engnum }}Osc
+Map	Button 2-1		Page=Eng1Osc			Eng{{ engnum }}Osc
+Map	Button 3-1		Page=Eng2Osc			Eng{{ engnum }}Osc
+Map	Button 4-1		Page=Eng3Osc			Eng{{ engnum }}Osc
+{% else %}
+{% include "instrument/include/europa-leftmenu-osc.j2" %}
+{% include "instrument/include/europa-bottommenu-osc.j2" %}
+{% endif %}
+Map	Button 1-2		Osc{{ engnum }} On			Eng{{ engnum }}Osc
+Map	UDVButton 1-3_2-3		Osc{{ engnum }} Oct				Eng{{ engnum }}Osc
+Map	UDVButton 3-3_4-3		Osc{{ engnum }} Semi				Eng{{ engnum }}Osc
+Map	UDVButton 5-3_6-3		Osc{{ engnum }} Tune				Eng{{ engnum }}Osc
+Map	UDVButton 7-3_8-3		Osc{{ engnum }} Pitch Kbd				Eng{{ engnum }}Osc
+Map	UDVButton 1-4_2-4		Osc{{ engnum }} Wave				Eng{{ engnum }}Osc
+Map	Fader 5		Osc{{ engnum }} Shape				Eng{{ engnum }}Osc
+Map	Button 1-6		Osc{{ engnum }} SyncPhase			Eng{{ engnum }}Osc
+Map	UDVButton 7-6_8-6		Osc{{ engnum }} Shape Source				Eng{{ engnum }}Osc
+Map	Fader 7		Osc{{ engnum }} Shape Amt				Eng{{ engnum }}Osc
+Map	Fader 8		Osc{{ engnum }} Shape Vel				Eng{{ engnum }}Osc
 {% for modnum in range(1,3) -%}
 // Eng {{ engnum }} Modifier {{ modnum }}
+{% set curpage="Eng"+engnum|string+"Mod"+modnum|string %}
+{% set oscpage="Mod"+modnum|string %}
 Map	PageName		"Eng {{ engnum }} Mod {{ modnum }}" 				Eng{{ engnum }}Mod{{ modnum }}
+{% if lptype == "mini" %}
 Map	Button 1-1		Page=Main			Eng{{ engnum }}Mod{{ modnum }}
 Map	Button 2-1		Page=Eng1Mod{{ modnum }}			Eng{{ engnum }}Mod{{ modnum }}
 Map	Button 3-1		Page=Eng2Mod{{ modnum }}			Eng{{ engnum }}Mod{{ modnum }}
 Map	Button 4-1		Page=Eng3Mod{{ modnum }}			Eng{{ engnum }}Mod{{ modnum }}
+{% else %}
+{% include "instrument/include/europa-leftmenu-osc.j2" %}
+{% include "instrument/include/europa-bottommenu-osc.j2" %}
+{% endif %}
 Map	Button 1-2		Osc{{ engnum }} Mod{{ modnum }} On			Eng{{ engnum }}Mod{{ modnum }}
 Map	UDVButton 1-3_2-3		Osc{{ engnum }} Mod{{ modnum }}				Eng{{ engnum }}Mod{{ modnum }}
 Map	Fader 4		Osc{{ engnum }} Mod{{ modnum }} Amt				Eng{{ engnum }}Mod{{ modnum }}
@@ -146,11 +185,18 @@ Map	Fader 5		Osc{{ engnum }} Mod{{ modnum }} Mod				Eng{{ engnum }}Mod{{ modnum 
 Map	UDVButton 7-6_8-6		Osc{{ engnum }} Mod{{ modnum }} Source				Eng{{ engnum }}Mod{{ modnum }}
 {% endfor -%}
 // Eng {{ engnum }} Spectral Filter
+{% set curpage="Eng"+engnum|string+"Filter" %}
+{% set oscpage="Filter" %}
 Map	PageName		"Eng {{ engnum }} Spectral Filter" 				Eng{{ engnum }}Filter
+{% if lptype == "mini" %}
 Map	Button 1-1		Page=Main			Eng{{ engnum }}Filter
 Map	Button 2-1		Page=Eng1Filter			Eng{{ engnum }}Filter
 Map	Button 3-1		Page=Eng2Filter			Eng{{ engnum }}Filter
 Map	Button 4-1		Page=Eng3Filter			Eng{{ engnum }}Filter
+{% else %}
+{% include "instrument/include/europa-leftmenu-osc.j2" %}
+{% include "instrument/include/europa-bottommenu-osc.j2" %}
+{% endif %}
 Map	Button 1-2		Osc{{ engnum }} Filter On			Eng{{ engnum }}Filter
 Map	UDVButton 3-2_4-2		Osc{{ engnum }} Filter				Eng{{ engnum }}Filter
 Map	Fader 3		Osc{{ engnum }} Filter Freq				Eng{{ engnum }}Filter
@@ -160,21 +206,35 @@ Map	Fader 6		Osc{{ engnum }} Filter Mod				Eng{{ engnum }}Filter
 Map	UDVButton 7-7_8-7		Osc{{ engnum }} Filter Source				Eng{{ engnum }}Filter
 Map	Fader 8		Osc{{ engnum }} Filter Vel				Eng{{ engnum }}Filter
 // Eng {{ engnum }} Harmonics
+{% set curpage="Eng"+engnum|string+"Harm" %}
+{% set oscpage="Harm" %}
 Map	PageName		"Eng {{ engnum }} Harmonics" 				Eng{{ engnum }}Harm
+{% if lptype == "mini" %}
 Map	Button 1-1		Page=Main			Eng{{ engnum }}Harm
 Map	Button 2-1		Page=Eng1Harm			Eng{{ engnum }}Harm
 Map	Button 3-1		Page=Eng2Harm			Eng{{ engnum }}Harm
 Map	Button 4-1		Page=Eng3Harm			Eng{{ engnum }}Harm
+{% else %}
+{% include "instrument/include/europa-leftmenu-osc.j2" %}
+{% include "instrument/include/europa-bottommenu-osc.j2" %}
+{% endif %}
 Map	Button 1-2		Osc{{ engnum }} Harm On			Eng{{ engnum }}Harm
 Map	UDVButton 1-3_2-3		Osc{{ engnum }} Harm				Eng{{ engnum }}Harm
 Map	Fader 4		Osc{{ engnum }} Harm Pos				Eng{{ engnum }}Harm
 Map	Fader 5		Osc{{ engnum }} Harm Amt				Eng{{ engnum }}Harm
 // Eng {{ engnum }} Unison
+{% set curpage="Eng"+engnum|string+"Unison" %}
+{% set oscpage="Unison" %}
 Map	PageName		"Eng {{ engnum }} Unison" 				Eng{{ engnum }}Unison
+{% if lptype == "mini" %}
 Map	Button 1-1		Page=Main			Eng{{ engnum }}Unison
 Map	Button 2-1		Page=Eng1Unison			Eng{{ engnum }}Unison
 Map	Button 3-1		Page=Eng2Unison			Eng{{ engnum }}Unison
 Map	Button 4-1		Page=Eng3Unison			Eng{{ engnum }}Unison
+{% else %}
+{% include "instrument/include/europa-leftmenu-osc.j2" %}
+{% include "instrument/include/europa-bottommenu-osc.j2" %}
+{% endif %}
 Map	Button 1-2		Osc{{ engnum }} Unison On			Eng{{ engnum }}Unison
 Map	UDVButton 1-3_2-3		Osc{{ engnum }} Unison Mode				Eng{{ engnum }}Unison
 Map	UDVButton 1-4_2-4		Osc{{ engnum }} Count				Eng{{ engnum }}Unison

@@ -96,17 +96,17 @@ function handle_changed_pagename(citemindex, citemname)
 			end
 
 			if(string.match(get_current_page(), "Phaser")) then
-				g_select["EffectSelect"] = 5
+				g_select["EffectSelect"] = 4
 			elseif(string.match(get_current_page(), "Dist")) then
-				g_select["EffectSelect"] = 3
+				g_select["EffectSelect"] = 2
 			elseif(string.match(get_current_page(), "Eq")) then
 				g_select["EffectSelect"] = 6
 			elseif(string.match(get_current_page(), "Delay")) then
-				g_select["EffectSelect"] = 2
-			elseif(string.match(get_current_page(), "Comp")) then
-				g_select["EffectSelect"] = 4
-			elseif(string.match(get_current_page(), "Reverb")) then
 				g_select["EffectSelect"] = 1
+			elseif(string.match(get_current_page(), "Comp")) then
+				g_select["EffectSelect"] = 3
+			elseif(string.match(get_current_page(), "Reverb")) then
+				g_select["EffectSelect"] = 0
 			end
 		elseif(g_scopetext == "RV7000 Advanced Reverb") then
 			if(string.match(get_current_page(), "Reverb")) then
