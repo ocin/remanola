@@ -1,10 +1,14 @@
 	["Subtractor"]={
 		["Default"]={
+{% if lptype == "mini" %}
 			["Button 1-1"]={template="BMainPage"},
 			["Button 2-1"]={template="BOscPage"},
 			["Button 3-1"]={template="BOscPage"},
 			["Button 4-1"]={template="BOscModPage"},
 			["Button 5-1"]={template="BFilterPage"},
+{% else %}
+{% include "devices/instrument/subtractor/confmap_leftmenu.lua" %}
+{% endif %}
 		},
 		["Index"]={
 			["Button 1-3"]={template="BPerformancePage"},
@@ -69,6 +73,7 @@
 			["Fader 6"]={template="FAmount"},
 			["UDVButton 5-7_6-7"]={template="UDMisc", inverted=true},
 			["Button 8-7"]={template="BRedOnOff"},
+{% include "devices/instrument/subtractor/confmap_bottommenu_mod.lua" %}
 		},
 		["LFO 1"]={
 			["UDVButton 3-2_4-2"]={template="UDMisc", inverted=true},
@@ -76,6 +81,7 @@
 			["Fader 3"]={template="FFreq"},
 			["Fader 4"]={template="FAmount"},
 			["Button 8-5"]={template="BRedOnOff"},
+{% include "devices/instrument/subtractor/confmap_bottommenu_mod.lua" %}
 		},
 		["LFO 2"]={
 			["UDVButton 7-2_8-2"]={template="UDMisc", inverted=true},
@@ -83,12 +89,18 @@
 			["Fader 4"]={template="FAmount"},
 			["Fader 6"]={template="FEffect"},
 			["Fader 7"]={template="FMisc"},
-		},
-		["ExtMod"]={
-			["UDVButton 7-2_8-2"]={template="UDMisc", inverted=true},
+{% include "devices/instrument/subtractor/confmap_bottommenu_mod.lua" %}
 		},
 		["Velocity *"]={
 			["Button 2-1"]={template="BPerformancePage"},
 			["Button 3-1"]={template="BPerformancePage"},
+{% include "devices/instrument/subtractor/confmap_bottommenu_perf.lua" %}
+		},
+		["ModWheelContr"]={
+{% include "devices/instrument/subtractor/confmap_bottommenu_perf.lua" %}
+		},
+		["ExtMod"]={
+			["UDVButton 7-2_8-2"]={template="UDMisc", inverted=true},
+{% include "devices/instrument/subtractor/confmap_bottommenu_perf.lua" %}
 		},
 	},

@@ -7,6 +7,7 @@
 			["Button 5-1"]={template="BOscPage", helptext="Goto OP 3"},
 			["Button 6-1"]={template="BOscPage", helptext="Goto OP 2"},
 			["Button 7-1"]={template="BOscPage", helptext="Goto OP 1"},
+{% include "devices/instrument/px7/"+lptype+"/confmap_leftmenu.lua" %}
 		},
 		["Main"]={
 			["UDVButton 1-2_2-2"]={template="FAmount"},

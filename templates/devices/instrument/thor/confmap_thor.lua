@@ -5,15 +5,9 @@
 			["Button 2-1"]={template="BOscPage"},
 			["Button 3-1"]={template="BOscPage"},
 			["Button 4-1"]={template="BOscPage"},
+{% else %}
+{% include "devices/instrument/thor/confmap_leftmenu.lua" %}
 {% endif %}
-			["Button B1"]={template="BMainPage"},
-			["Button B2"]={template="BOscPage"},
-			["Button B3"]={template="BOscPage"},
-			["Button B4"]={template="BOscPage"},
-			["Button B5"]={template="BFilterPage"},
-			["Button B6"]={template="BFilterPage"},
-			["Button B7"]={template="BFilterPage"},
-			["Button B8"]={template="BEffectPage"},
 		},
 		["Main"]={
 			["UDVButton 1-2_1-2"]={template="UDMisc"},

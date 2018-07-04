@@ -1,0 +1,8 @@
+                        ["Button 1-8"]={template="BMainEffectPage"},
+                        ["Button 2-8"]={template="BEffectPage"},
+                        ["Button 3-8"]={template="BEffectPage"},
+                        ["Button 4-8"]={template="BEffectPage"},
+                        ["Button 5-8"]={template="BEffectPage"},
+                        ["Button 6-8"]={template="BEffectPage"},
+                        ["Button 7-8"]={template="BEffectPage"},
+                        ["Button 8-8"]={template="BEffectPage"},

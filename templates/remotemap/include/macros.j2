@@ -1,0 +1,12 @@
+{% macro include_menus(curpage, bottommenu='none', leftmenu_mini='none', oscpage='none', perfpage='none', modpage='none', voicingpage='none', sectionpage='none', section='none', engnum='none', amppage='none', filterpage='none') -%}
+{% if lptype == "pro" %}
+{% include "devices/instrument/"+shortname+"/pro/leftmenu.j2" %}
+{% if bottommenu != "none" %}
+{% include "devices/instrument/"+shortname+"/pro/bottommenu_"+bottommenu+".j2" %}
+{% endif %}
+{% else %}
+{% if leftmenu_mini != "none" %}
+{% include "devices/instrument/"+shortname+"/mini/leftmenu_"+leftmenu_mini+".j2" %}
+{% endif %}
+{% endif %}
+{% endmacro -%}

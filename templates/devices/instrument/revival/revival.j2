@@ -1,9 +1,13 @@
 {% set deviceman="Sononics" -%}
 {% set devicescope="com.sononics.Revival" -%}
 {% set devicename="Revival" -%}
+{% set shortname="revival" -%}
 {# Variables -#}
 {% set show_pitch_bend_range=true -%}
+{% set sectionpagedefault="" %}
+{% set voicingpagedefault="1" %}
 {# End Variables -#}
+{% import "remotemap/include/macros.j2" as rm with context %}
 {% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	Voicing1	Voicing2	PriSec	Solos	Attack	Primary	Secondary	Release	AttackL	AttackU	PrimaryL	PrimaryU	SecondaryL	SecondaryU	ReleaseL	ReleaseU	AttackModEnable	AttackMod1	AttackMod2	AttackMod3	PrimaryModEnable	PrimaryMod1	PrimaryMod2	PrimaryMod3	SecondaryModEnable	SecondaryMod1	SecondaryMod2	SecondaryMod3	ReleaseModEnable	ReleaseMod1	ReleaseMod2	ReleaseMod3	Effects	PreAmp	Phaser	ModFilter	Speaker	Reverb	Delay	Index	Keyboard	Internal
 Define Group	TempoSync	Free	Sync
@@ -54,6 +58,7 @@ Map	Button 7-8		Page=Delay			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
+{{ rm.include_menus(curpage="Main", voicingpage=voicingpagedefault, sectionpage=sectionpagedefault) }}
 Map	Button 1-1		Note On Indicator			Main
 Map	Button 6-2		S1 Switch			Main
 Map	Button 6-3		S2 Switch			Main
@@ -65,6 +70,7 @@ Map	Fader 4		R1 Knob				Main
 Map	Fader 5		R2 Knob				Main
 Map	BigFader 8		Volume				Main
 // Voicing 1
+{{ rm.include_menus(curpage="Voicing1", bottommenu="voicing", voicingpage="1", sectionpage=sectionpagedefault) }}
 Map	PageName		"Voicing 1" 				Voicing1
 Map	Button 2-1		Voicing Monophonic Mode			Voicing1
 Map	UDVButton 3-1_4-1		Voicing Transpose Amount			Voicing1
@@ -77,6 +83,7 @@ Map	Fader 4		Voicing Attack First/All				Voicing1
 Map	Fader 7		Voicing Portamento Rate				Voicing1
 Map	UDVButton 7-8_8-8		Voicing Portamento Mode			Voicing1
 // Voicing 2
+{{ rm.include_menus(curpage="Voicing2", bottommenu="voicing", voicingpage="2", sectionpage=sectionpagedefault) }}
 Map	PageName		"Voicing 2" 				Voicing2
 Map	Fader 1		Voicing Velocity Sensitivity				Voicing2
 Map	Fader 2		Voicing Chorus Depth				Voicing2
@@ -85,6 +92,7 @@ Map	Fader 6		Voicing Vibrato Depth				Voicing2
 Map	Fader 7		Voicing Tremolo Depth				Voicing2
 Map	Fader 8		Voicing Vibrato/Tremolo Rate				Voicing2
 // Pri/Sec
+{{ rm.include_menus(curpage="PriSec", voicingpage=voicingpagedefault, sectionpage=sectionpagedefault) }}
 Map	PageName		"Pri/Sec" 				PriSec
 Map	Button 1-2		Pri/Sec Fade Mode			PriSec
 Map	UDVButton 1-3_2-3		Pri/Sec AutoFade Type			PriSec
@@ -93,10 +101,7 @@ Map	Fader 6		Pri/Sec AutoFade Rate			PriSec
 Map	Button 1-7		Pri/Sec Keep Primary			PriSec
 // Solos
 Map	PageName		"Solos" 				Solos
-Map	Button 2-1		Page=Attack			Solos
-Map	Button 3-1		Page=Primary			Solos
-Map	Button 4-1		Page=Secondary			Solos
-Map	Button 5-1		Page=Release			Solos
+{{ rm.include_menus(curpage="Solos", leftmenu_mini="section", voicingpage=voicingpagedefault, sectionpage=sectionpagedefault) }}
 Map	UDVButton 1-2_2-2		Drawbar Solo			Solos
 Map	Button 8-2		Attack Section Solo			Solos
 Map	Button 8-4		Primary Section Solo			Solos
@@ -104,10 +109,7 @@ Map	Button 8-6		Secondary Section Solo			Solos
 Map	Button 8-8		Release Section Solo			Solos
 // Attack
 Map	PageName		"Attack" 				Attack
-Map	Button 2-1		Page=Attack			Attack
-Map	Button 3-1		Page=Primary			Attack
-Map	Button 4-1		Page=Secondary			Attack
-Map	Button 5-1		Page=Release			Attack
+{{ rm.include_menus(curpage="Attack", bottommenu="section", leftmenu_mini="section",section="Attack", voicingpage=voicingpagedefault, sectionpage=sectionpagedefault) }}
 Map	UDVButton 1-2_2-2		Attack Wave Set			Attack
 Map	Fader 3		Attack Section Gain Adjust				Attack
 Map	Fader 5		Attack Section Click				Attack
@@ -116,28 +118,19 @@ Map	Fader 7		Attack Section Decay Rate				Attack
 Map	Button 1-8		Attack Section FX Bypass			Attack
 // Primary
 Map	PageName		"Primary" 				Primary
-Map	Button 2-1		Page=Attack			Primary
-Map	Button 3-1		Page=Primary			Primary
-Map	Button 4-1		Page=Secondary			Primary
-Map	Button 5-1		Page=Release			Primary
+{{ rm.include_menus(curpage="Primary", bottommenu="section", leftmenu_mini="section",section="Primary", voicingpage=voicingpagedefault, sectionpage=sectionpagedefault) }}
 Map	UDVButton 1-2_2-2		Primary Wave Set			Primary
 Map	Fader 3		Primary Section Gain Adjust				Primary
 Map	Fader 7		Primary Section Decay Rate				Primary
 // Secondary
 Map	PageName		"Secondary" 				Secondary
-Map	Button 2-1		Page=Attack			Secondary
-Map	Button 3-1		Page=Primary			Secondary
-Map	Button 4-1		Page=Secondary			Secondary
-Map	Button 5-1		Page=Release			Secondary
+{{ rm.include_menus(curpage="Secondary", bottommenu="section", leftmenu_mini="section",section="Secondary", voicingpage=voicingpagedefault, sectionpage=sectionpagedefault) }}
 Map	UDVButton 1-2_2-2		Secondary Wave Set			Secondary
 Map	Fader 3		Secondary Section Gain Adjust				Secondary
 Map	Fader 7		Secondary Section Decay Rate				Secondary
 // Release
 Map	PageName		"Release" 				Release
-Map	Button 2-1		Page=Attack			Release
-Map	Button 3-1		Page=Primary			Release
-Map	Button 4-1		Page=Secondary			Release
-Map	Button 5-1		Page=Release			Release
+{{ rm.include_menus(curpage="Release", bottommenu="section", leftmenu_mini="section",section="Release", voicingpage=voicingpagedefault, sectionpage=sectionpagedefault) }}
 Map	UDVButton 1-2_2-2		Release Wave Set			Release
 Map	Fader 3		Release Section Gain Adjust				Release
 Map	Fader 5		Release Section Click				Release
@@ -147,12 +140,7 @@ Map	Button 1-8		Release Decay All Sections			Release
 {% for section in ['Attack', 'Primary', 'Secondary', 'Release'] -%}
 // {{ section }} Drawbars Lower
 Map	PageName		"{{ section }} Drawbars Lower" 				{{ section }}L
-Map	Button 2-1		Page=AttackL			{{ section }}L
-Map	Button 3-1		Page=PrimaryL			{{ section }}L
-Map	Button 4-1		Page=SecondaryL			{{ section }}L
-Map	Button 5-1		Page=ReleaseL			{{ section }}L
-Map	Button 7-1		Page={{ section }}U			{{ section }}L
-Map	Button 8-1		Page={{ section }}L			{{ section }}L
+{{ rm.include_menus(curpage=section+"L", bottommenu="section", leftmenu_mini="section", section=section, voicingpage=voicingpagedefault, sectionpage="L") }}
 Map	Drawbar 2		{{ section }} Drawbar 1				{{ section }}L
 Map	Drawbar 3		{{ section }} Drawbar 2				{{ section }}L
 Map	Drawbar 4		{{ section }} Drawbar 3				{{ section }}L
@@ -162,24 +150,13 @@ Map	Drawbar 7		{{ section }} Drawbar 6				{{ section }}L
 Map	Drawbar 8		{{ section }} Drawbar 7				{{ section }}L
 // {{ section }} Drawbars Upper
 Map	PageName		"{{ section }} Drawbars Upper" 				{{ section }}U
-Map	Button 2-1		Page=AttackU			{{ section }}U
-Map	Button 3-1		Page=PrimaryU			{{ section }}U
-Map	Button 4-1		Page=SecondaryU			{{ section }}U
-Map	Button 5-1		Page=ReleaseU			{{ section }}U
-Map	Button 7-1		Page={{ section }}U			{{ section }}U
-Map	Button 8-1		Page={{ section }}L			{{ section }}U
+{{ rm.include_menus(curpage=section+"U", bottommenu="section", leftmenu_mini="section", section=section, voicingpage=voicingpagedefault, sectionpage="U") }}
 Map	Drawbar 2		{{ section }} Drawbar 8				{{ section }}U
 Map	Drawbar 3		{{ section }} Drawbar 9				{{ section }}U
 Map	Drawbar 4		{{ section }} Drawbar 10				{{ section }}U
 // {{ section }} Mod Enable
 Map	PageName		"{{ section }} Mod Enable" 				{{ section }}ModEnable
-Map	Button 2-1		Page=AttackModEnable			{{ section }}ModEnable
-Map	Button 3-1		Page=PrimaryModEnable			{{ section }}ModEnable
-Map	Button 4-1		Page=SecondaryModEnable			{{ section }}ModEnable
-Map	Button 5-1		Page=ReleaseModEnable			{{ section }}ModEnable
-Map	Button 6-1		Page={{ section }}Mod1			{{ section }}ModEnable
-Map	Button 7-1		Page={{ section }}Mod2			{{ section }}ModEnable
-Map	Button 8-1		Page={{ section }}Mod3			{{ section }}ModEnable
+{{ rm.include_menus(curpage=section+"ModEnable", bottommenu="section", leftmenu_mini="section", section=section, voicingpage=voicingpagedefault, sectionpage="ModEnable") }}
 Map	Button 1-2		{{ section }} Mod3 Enable 1			{{ section }}ModEnable
 Map	Button 1-3		{{ section }} Mod3 Enable 2			{{ section }}ModEnable
 Map	Button 1-4		{{ section }} Mod3 Enable 3			{{ section }}ModEnable
@@ -213,14 +190,7 @@ Map	Button 6-4		{{ section }} Mod1 Enable 10			{{ section }}ModEnable
 {% for modnum in range(1,4) -%}
 // {{ section }} Mod {{ modnum }}
 Map	PageName		"{{ section }} Mod {{ modnum }}" 				{{ section }}Mod{{ modnum }}
-Map	Button 2-1		Page=AttackMod{{ modnum }}			{{ section }}Mod{{ modnum }}
-Map	Button 3-1		Page=PrimaryMod{{ modnum }}			{{ section }}Mod{{ modnum }}
-Map	Button 4-1		Page=SecondaryMod{{ modnum }}			{{ section }}Mod{{ modnum }}
-Map	Button 5-1		Page=ReleaseMod{{ modnum }}			{{ section }}Mod{{ modnum }}
-Map	Button 6-1		Page={{ section }}Mod1			{{ section }}Mod{{ modnum }}
-Map	Button 7-1		Page={{ section }}Mod2			{{ section }}Mod{{ modnum }}
-Map	Button 8-1		Page={{ section }}Mod3			{{ section }}Mod{{ modnum }}
-Map	Button 1-2		Page={{ section }}ModEnable			{{ section }}Mod{{ modnum }}
+{{ rm.include_menus(curpage=section+"Mod"+modnum|string, bottommenu="section", leftmenu_mini="section", section=section, voicingpage=voicingpagedefault, sectionpage="Mod"+modnum|string) }}
 Map	UDVButton 5-2_6-2		{{ section }} Mod{{ modnum }} Type			{{ section }}Mod{{ modnum }}
 Map	UDVButton 7-2_8-2		{{ section }} Mod{{ modnum }} Animation Type			{{ section }}Mod{{ modnum }}
 Map	Fader 3		{{ section }} Mod{{ modnum }} Amount				{{ section }}Mod{{ modnum }}
@@ -233,30 +203,29 @@ Map	Fader 8		{{ section }} Mod{{ modnum }} Animation Rate				{{ section }}Mod{{ 
 {% endfor -%}
 // Effects
 Map	PageName		"Effects" 				Effects
+{{ rm.include_menus(curpage="Effects", bottommenu="effects", leftmenu_mini="effects", voicingpage=voicingpagedefault, sectionpage=sectionpagedefault) }}
+{% if lptype == "pro" %}
+Map	Button 1-1		FX Limiter Enable			Effects
+Map	Button 8-1		FX PreAmp Enable			Effects
+Map	Button 8-2		FX Phaser Enable			Effects
+Map	Button 8-3		FX ModFilter Enable			Effects
+Map	Button 8-4		FX Speaker Enable			Effects
+Map	Button 8-5		FX Reverb Enable			Effects
+Map	Button 8-6		FX Delay Enable			Effects
+Map	Fader 8		FX Limiter Threshold				Effects
+{% else %}
+Map	Button 8-4		FX Limiter Enable			Effects
 Map	Button 2-7		FX PreAmp Enable			Effects
 Map	Button 3-7		FX Phaser Enable			Effects
 Map	Button 4-7		FX ModFilter Enable			Effects
 Map	Button 5-7		FX Speaker Enable			Effects
 Map	Button 6-7		FX Reverb Enable			Effects
 Map	Button 7-7		FX Delay Enable			Effects
-Map	Button 1-8		Page=Effects			Effects
-Map	Button 2-8		Page=PreAmp			Effects
-Map	Button 3-8		Page=Phaser			Effects
-Map	Button 4-8		Page=ModFilter			Effects
-Map	Button 5-8		Page=Speaker			Effects
-Map	Button 6-8		Page=Reverb			Effects
-Map	Button 7-8		Page=Delay			Effects
-Map	Button 8-4		FX Limiter Enable			Effects
 Map	Fader 5		FX Limiter Threshold				Effects
+{% endif %}
 // PreAmp
 Map	PageName		"PreAmp" 				PreAmp
-Map	Button 1-8		Page=Effects			PreAmp
-Map	Button 2-8		Page=PreAmp			PreAmp
-Map	Button 3-8		Page=Phaser			PreAmp
-Map	Button 4-8		Page=ModFilter			PreAmp
-Map	Button 5-8		Page=Speaker			PreAmp
-Map	Button 6-8		Page=Reverb			PreAmp
-Map	Button 7-8		Page=Delay			PreAmp
+{{ rm.include_menus(curpage="PreAmp", bottommenu="effects", leftmenu_mini="effects", voicingpage=voicingpagedefault, sectionpage=sectionpagedefault) }}
 Map	Button 1-1		FX Preamp Enable			PreAmp
 Map	UDVButton 1-2_2-2		FX Preamp Type			PreAmp
 Map	Button 8-2		FX Preamp Post-FX			PreAmp
@@ -265,13 +234,7 @@ Map	Fader 4		FX Preamp Tone				PreAmp
 Map	Fader 5		FX Preamp Swell				PreAmp
 // Phaser
 Map	PageName		"Phaser" 				Phaser
-Map	Button 1-8		Page=Effects			Phaser
-Map	Button 2-8		Page=PreAmp			Phaser
-Map	Button 3-8		Page=Phaser			Phaser
-Map	Button 4-8		Page=ModFilter			Phaser
-Map	Button 5-8		Page=Speaker			Phaser
-Map	Button 6-8		Page=Reverb			Phaser
-Map	Button 7-8		Page=Delay			Phaser
+{{ rm.include_menus(curpage="Phaser", bottommenu="effects", leftmenu_mini="effects", voicingpage=voicingpagedefault, sectionpage=sectionpagedefault) }}
 Map	Button 1-1		FX Phaser Enable			Phaser
 Map	UDVButton 1-2_2-2		FX Phaser Type			Phaser
 Map	Fader 3		FX Phaser Rate				Phaser
@@ -283,13 +246,7 @@ Map	Sel1_0		TempoSync=Free			ModFilter
 Map	Sel1_42		TempoSync=Free			ModFilter
 Map	Sel1_85		TempoSync=Sync			ModFilter
 Map	Sel1_127		TempoSync=Sync			ModFilter
-Map	Button 1-8		Page=Effects			ModFilter
-Map	Button 2-8		Page=PreAmp			ModFilter
-Map	Button 3-8		Page=Phaser			ModFilter
-Map	Button 4-8		Page=ModFilter			ModFilter
-Map	Button 5-8		Page=Speaker			ModFilter
-Map	Button 6-8		Page=Reverb			ModFilter
-Map	Button 7-8		Page=Delay			ModFilter
+{{ rm.include_menus(curpage="ModFilter", bottommenu="effects", leftmenu_mini="effects", voicingpage=voicingpagedefault, sectionpage=sectionpagedefault) }}
 Map	Button 1-1		FX ModFilter Enable			ModFilter
 Map	UDVButton 1-2_2-2		FX ModFilter Type			ModFilter
 Map	Fader 3		FX ModFilter Frequency				ModFilter
@@ -301,13 +258,7 @@ Map	Fader 7		FX ModFilter LFO Rate				ModFilter	Free
 Map	UDVButton 7-7_8-7		FX ModFilter LFO Synced-Rate			ModFilter	Sync
 // Speaker
 Map	PageName		"Speaker" 				Speaker
-Map	Button 1-8		Page=Effects			Speaker
-Map	Button 2-8		Page=PreAmp			Speaker
-Map	Button 3-8		Page=Phaser			Speaker
-Map	Button 4-8		Page=ModFilter			Speaker
-Map	Button 5-8		Page=Speaker			Speaker
-Map	Button 6-8		Page=Reverb			Speaker
-Map	Button 7-8		Page=Delay			Speaker
+{{ rm.include_menus(curpage="Speaker", bottommenu="effects", leftmenu_mini="effects", voicingpage=voicingpagedefault, sectionpage=sectionpagedefault) }}
 Map	Button 1-1		FX Speaker Enable			Speaker
 Map	UDVButton 1-2_2-2		FX Speaker Type			Speaker
 Map	Fader 3		FX Speaker Rotator Amount				Speaker
@@ -316,13 +267,7 @@ Map	Fader 5		FX Speaker Rotator Air				Speaker
 Map	Knob V7		FX Speaker Pan				Speaker
 // Reverb
 Map	PageName		"Reverb" 				Reverb
-Map	Button 1-8		Page=Effects			Reverb
-Map	Button 2-8		Page=PreAmp			Reverb
-Map	Button 3-8		Page=Phaser			Reverb
-Map	Button 4-8		Page=ModFilter			Reverb
-Map	Button 5-8		Page=Speaker			Reverb
-Map	Button 6-8		Page=Reverb			Reverb
-Map	Button 7-8		Page=Delay			Reverb
+{{ rm.include_menus(curpage="Reverb", bottommenu="effects", leftmenu_mini="effects", voicingpage=voicingpagedefault, sectionpage=sectionpagedefault) }}
 Map	Button 1-1		FX Reverb Enable			Reverb
 Map	UDVButton 1-2_2-2		FX Reverb Type			Reverb
 Map	Fader 3		FX Reverb Pre-Delay				Reverb
@@ -331,13 +276,7 @@ Map	Fader 5		FX Reverb Time				Reverb
 Map	Fader 6		FX Reverb Depth				Reverb
 // Delay
 Map	PageName		"Delay" 				Delay
-Map	Button 1-8		Page=Effects			Delay
-Map	Button 2-8		Page=PreAmp			Delay
-Map	Button 3-8		Page=Phaser			Delay
-Map	Button 4-8		Page=ModFilter			Delay
-Map	Button 5-8		Page=Speaker			Delay
-Map	Button 6-8		Page=Reverb			Delay
-Map	Button 7-8		Page=Delay			Delay
+{{ rm.include_menus(curpage="Delay", bottommenu="effects", leftmenu_mini="effects", voicingpage=voicingpagedefault, sectionpage=sectionpagedefault) }}
 Map	Button 1-1		FX Delay Enable			Delay
 Map	UDVButton 1-2_2-2		FX Delay Type			Delay
 Map	Fader 3		FX Delay Feedback				Delay

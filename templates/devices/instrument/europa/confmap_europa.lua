@@ -6,14 +6,7 @@
 			["Button 3-1"]={template="BOscPage", helptext="Goto Engine 2"},
 			["Button 4-1"]={template="BOscPage", helptext="Goto Engine 3"},
 {% else %}
-			["Button B1"]={template="BMainPage", helptext="Goto Main"},
-			["Button B2"]={template="BOscPage", helptext="Goto Engine 1"},
-			["Button B3"]={template="BOscPage", helptext="Goto Engine 2"},
-			["Button B4"]={template="BOscPage", helptext="Goto Engine 3"},
-			["Button B5"]={template="BAmpPage", helptext="Goto Mixer"},
-			["Button B6"]={template="BAmpPage", helptext="Goto Amp"},
-			["Button B7"]={template="BFilterPage", helptext="Goto Filter"},
-			["Button B8"]={template="BEffectPage", helptext="Goto Effects"},
+{% include "devices/instrument/europa/confmap_leftmenu.lua" %}
 {% endif %}
 		},
 		["Main"]={
