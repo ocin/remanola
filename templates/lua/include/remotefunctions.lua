@@ -55,6 +55,11 @@ function remote_deliver_midi(maxbytes, port)
 	local ret_events = {}
 
 	if(g_stopflashing) then
+{% if lptype == "mini" %}
+		table.insert(ret_events, remote.make_midi(string.format("%s %02x", MIDI_OUT_DOUBLEBUFF, bit.bor(DBDISP0,DBUPDATE1,DBCOPY))))
+		g_currentbuffer = 0
+		table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button C8"], bit.bor(GREEN, COPY))))
+{% endif %}
 		g_stopflashing = false
 		g_flashing = false
 		g_updateall = true
@@ -104,6 +109,11 @@ function remote_process_midi(event)
 				return(true)
 			end
 		else
+{% if lptype == "mini" %}
+			if(handle_input_buttonendscroll(event, button)) then
+				return(true)
+			end
+{% endif %}
 			if(handle_input_kong(event, button)) then
 				return(true)
 			end
@@ -127,6 +137,7 @@ function remote_process_midi(event)
 			if(handle_input_starthelpmode(event, button)) then
 				return(true)
 			end
+
 		end
 	end
 

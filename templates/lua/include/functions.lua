@@ -1,17 +1,3 @@
-local function hex_encode_text(text)
-	local hexstring = ""
-	
-	for i = 1, #text do
-		hexstring = hexstring..string.format("%02x ", string.byte(text:sub(i,i)))
-	end
-
-	return hexstring
-end
-
-function gen_scroll_string(string, color, speed)
-	return(string.format("%s %02x %02x %02x %s F7", MIDI_OUT_SCROLL, color, 0, speed, hex_encode_text(string)))
-end
-
 function get_item_bvmap(itemname)
 	local itemtype = string.match(itemname, "(.+%w)%s*%d")
 
@@ -539,15 +525,4 @@ function is_up_udupbutton(buttonname, itemname)
 	end
 
 	return(buttonname == "Button "..upbutton)
-end
-
--- Merge table2 into table1
-function mergetables(table1, table2)
-	for k,v in pairs(table2) do 
-		table1[k] = v 
-	end
-end
-
-function isbutton(button)
-	return(button ~= nil and (button.x == 0x90 or button.x == 0xb0))
 end
