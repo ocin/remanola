@@ -1,17 +1,7 @@
 	["Grain"]={
 		["Default"]={
-			["Button 1-1"]={template="BMainPage", helptext="Goto Main"},
 			["Button 1-2"]={template="BRedOnOff"},
-{% if lptype == "pro" %}
-                        ["Button B1"]={template="BMainPage", helptext="Goto Main"},
-                        ["Button B2"]={template="BOscPage", helptext="Goto Engine 1"},
-                        ["Button B3"]={template="BOscPage", helptext="Goto Engine 2"},
-                        ["Button B4"]={template="BOscPage", helptext="Goto Engine 3"},
-                        ["Button B5"]={template="BAmpPage", helptext="Goto Mixer"},
-                        ["Button B6"]={template="BAmpPage", helptext="Goto Amp"},
-                        ["Button B7"]={template="BFilterPage", helptext="Goto Filter"},
-                        ["Button B8"]={template="BEffectPage", helptext="Goto Effects"},
-{% endif %}
+{% include "devices/instrument/grain/"+lptype+"/confmap_leftmenu.lua" %}
 		},
 		["Main"]={
 			["Fader 3"]={template="FMisc"},
@@ -41,6 +31,9 @@
 		},
 		["Grains"]={
 			["UDVButton 1-1_2-1"]={template="UDAmount", inverted=true},
+{% if lptype == "pro" %}
+{% include "devices/instrument/grain/pro/confmap_bottommenu_osc.lua" %}
+{% endif %}
 			["Spectral Grains"]={
 				["Fader 2"]={template="FAmount"},
 				["Fader 3"]={template="FFreq"},
@@ -76,18 +69,27 @@
 			["UDVButton 1-3_2-3"]={template="UDFreq"},
 			["UDVButton 1-4_2-4"]={template="UDFreq"},
 			["Fader 6"]={template="FMisc"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/grain/pro/confmap_bottommenu_osc.lua" %}
+{% endif %}
 		},
 		["Osc"]={
 			["Button 1-2"]={template="BRedOnOff"},
 			["UDVButton 1-3_2-3"]={template="UDFreq"},
 			["UDVButton 1-4_2-4"]={template="UDAmount"},
 			["Fader 6"]={template="FMisc"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/grain/pro/confmap_bottommenu_osc.lua" %}
+{% endif %}
 		},
 		["Mixer"]={
 			["Button 1-2"]={template="BRedOnOff"},
 			["Fader 3"]={template="FGain"},
 			["Button 1-4"]={template="BRedOnOff"},
 			["Fader 5"]={template="FGain"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/grain/pro/confmap_bottommenu_amp.lua" %}
+{% endif %}
 		},
 		["Filter"]={
 			["UDVButton 1-2_2-2"]={template="UDFreq", inverted=true},
@@ -105,43 +107,12 @@
 			["Fader 6"]={template="FAmount"},
 			["Fader 7"]={template="FMisc"},
 			["Knob V8"]={template="FGain"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/grain/pro/confmap_bottommenu_amp.lua" %}
+{% endif %}
 		},
-		["LFO *"]={
-			["Button 5-1"]={template="BLFOPage", helptext="Goto LFO 1"},
-			["Button 6-1"]={template="BLFOPage", helptext="Goto LFO 2"},
-			["Button 7-1"]={template="BLFOPage", helptext="Goto LFO 3"},
-			["UDVButton 1-2_2-2"]={template="UDMisc"},
-			["Button 6-2"]={template="BRedOnOff"},
-			["Button 7-2"]={template="BRedOnOff"},
-			["Button 8-2"]={template="BRedOnOff"},
-			["Fader 3"]={template="FFreq"},
-			["UDVButton 7-3_8-3"]={template="UDFreq"},
-			["Fader 4"]={template="FEffect"},
-		},
-		["Env *"]={
-			["Button 5-1"]={template="BEnvPage", helptext="Goto Env 1"},
-			["Button 6-1"]={template="BEnvPage", helptext="Goto Env 2"},
-			["Button 7-1"]={template="BEnvPage", helptext="Goto Env 3"},
-			["Button 8-1"]={template="BEnvPage", helptext="Goto Env 4"},
-			["Fader 3"]={template="FFreq"},
-			["UDVButton 7-4_8-4"]={template="UDFreq"},
-		},
+{% include "devices/instrument/Shared/europa_grain/confmap_env.lua" %}
+{% include "devices/instrument/Shared/europa_grain/confmap_lfo.lua" %}
 {% include "devices/instrument/Shared/europa_grain/confmap_effects.lua" %}
-		["Mod Matrix *"]={
-			["Button 1-1"]={template="BPerformancePage"},
-			["Button 2-1"]={template="BPerformancePage"},
-			["Button 3-1"]={template="BPerformancePage"},
-			["Button 4-1"]={template="BPerformancePage"},
-			["Button 5-1"]={template="BPerformancePage"},
-			["Button 6-1"]={template="BPerformancePage"},
-			["Button 7-1"]={template="BPerformancePage"},
-			["Button 8-1"]={template="BPerformancePage"},
-			["UDVButton 1-2_2-2"]={template="UDAmount", inverted=true},
-			["Knob V3"]={template="FAmount"},
-			["UDVButton 1-4_2-4"]={template="UDEffect", inverted=true},
-			["Knob V5"]={template="FEffect"},
-			["UDVButton 1-6_2-6"]={template="UDEffect", inverted=true},
-			["Knob V7"]={template="FEffect"},
-			["UDVButton 1-8_2-8"]={template="UDMisc", inverted=true},
-		},
+{% include "devices/instrument/Shared/europa_grain/confmap_modmatrix.lua" %}
 	},

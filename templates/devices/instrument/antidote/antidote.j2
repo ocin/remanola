@@ -44,14 +44,14 @@ Map	Button 5-6		Page=ModEnv			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
-{{ rm.include_menus(curpage="Main", amppage=amppagedefault, modpage=modpagedefault, filterpage=filterpagedefault, perfpage=perfpagedefault) }}
+{{ rm.include_menus(curpage="Main") -}}
 Map	UDVButton 7-2_8-2		Polyphony				Main
 Map	Fader 3		Glide				Main
 Map	Fader 8		Master Volume				Main
 {% for oscnum in range(1,3) -%}
 // Osc {{ oscnum }}
 Map	PageName		"Osc {{ oscnum }}" 				Osc{{ oscnum }}
-{{ rm.include_menus(curpage="Osc"+oscnum|string, leftmenu_mini="osc", amppage=amppagedefault, modpage=modpagedefault, filterpage=filterpagedefault, perfpage=perfpagedefault) }}
+{{ rm.include_menus(curpage="Osc"+oscnum|string, leftmenu_mini="osc") -}}
 Map	UDVButton 1-2_2-2		Osc {{ oscnum }} Waveform				Osc{{ oscnum }}
 Map	UDVButton 3-2_4-2		Osc {{ oscnum }} Voices				Osc{{ oscnum }}
 Map	UDVButton 5-2_6-2		Osc {{ oscnum }} Dyad				Osc{{ oscnum }}
@@ -66,7 +66,7 @@ Map	Knob V8		Osc {{ oscnum }} Pan				Osc{{ oscnum }}
 {% endfor -%}
 // Mixer
 Map	PageName		"Mixer" 				Mixer
-{{ rm.include_menus(curpage="Mixer", bottommenu="amp", amppage="Mixer", modpage=modpagedefault, filterpage=filterpagedefault, perfpage=perfpagedefault) }}
+{{ rm.include_menus(curpage="Mixer", bottommenu="amp", amppage="Mixer") -}}
 Map	Fader 2		Osc 1 Volume				Mixer
 Map	Fader 3		Osc 2 Volume				Mixer
 Map	Fader 4		Sub 1 Volume				Mixer
@@ -74,14 +74,14 @@ Map	Fader 5		Sub 2 Volume				Mixer
 Map	Fader 6		Drift				Mixer
 // Filter
 Map	PageName		"Filter" 				Filter
-{{ rm.include_menus(curpage="Filter", bottommenu="filter", amppage=amppagedefault, modpage=modpagedefault, filterpage="Filter", perfpage=perfpagedefault) }}
+{{ rm.include_menus(curpage="Filter", bottommenu="filter", filterpage="Filter") -}}
 Map	UDVButton 1-2_2-2		Filter Type				Filter
 Map	Fader 3		Filter Cutoff				Filter
 Map	Fader 4		Filter Resonance				Filter
 Map	Fader 8		Filter Key Track				Filter
 // Filter Envelope
 Map	PageName		"Filter Envelope" 				FilterEnv
-{{ rm.include_menus(curpage="FilterEnv", bottommenu="filter", amppage=amppagedefault, modpage=modpagedefault, filterpage="FilterEnv", perfpage=perfpagedefault) }}
+{{ rm.include_menus(curpage="FilterEnv", bottommenu="filter", filterpage="FilterEnv") -}}
 Map	Fader 2		Filter Envelope Amount				FilterEnv
 Map	Fader 3		Filter Envelope Attack				FilterEnv
 Map	Fader 4		Filter Envelope Decay				FilterEnv
@@ -108,10 +108,10 @@ Map	Button 8-5		Delay			Effects
 Map	Button 8-6		Reverb			Effects
 Map	Button 8-7		Compressor			Effects
 {% endif %}
-{{ rm.include_menus(curpage="Effects", bottommenu="effects", amppage=amppagedefault, modpage=modpagedefault, filterpage=filterpagedefault, perfpage=perfpagedefault) }}
+{{ rm.include_menus(curpage="Effects", bottommenu="effects") -}}
 // EQ/Bass
 Map	PageName		"EQ/Bass" 				EQBass
-{{ rm.include_menus(curpage="EQBass", bottommenu="effects", leftmenu_mini="effect", amppage=amppagedefault, modpage=modpagedefault, filterpage=filterpagedefault, perfpage=perfpagedefault) }}
+{{ rm.include_menus(curpage="EQBass", bottommenu="effects", leftmenu_mini="effect") -}}
 Map	Button 1-1		EQ/Bass			EQBass
 Map	UDVButton 3-1_4-1		Bass Freq				EQBass
 Map	UDVButton 5-1_6-1		Bass Amount				EQBass
@@ -123,7 +123,7 @@ Map	Fader 6		EQ High Gain				EQBass
 Map	Fader 7		EQ Dry/Wet				EQBass
 // Dist
 Map	PageName		"Dist" 				Dist
-{{ rm.include_menus(curpage="Dist", bottommenu="effects", leftmenu_mini="effect", amppage=amppagedefault, modpage=modpagedefault, filterpage=filterpagedefault, perfpage=perfpagedefault) }}
+{{ rm.include_menus(curpage="Dist", bottommenu="effects", leftmenu_mini="effect") -}}
 Map	Button 1-1		Distortion			Dist
 Map	UDVButton 3-1_4-1		Distortion Type				Dist
 Map	UDVButton 5-1_6-1		Distortion Symmetry				Dist
@@ -135,7 +135,7 @@ Map	Fader 6		Distortion Out Gain				Dist
 Map	Fader 7		Distortion Dry/Wet				Dist
 // Phaser
 Map	PageName		"Phaser" 				Phaser
-{{ rm.include_menus(curpage="Phaser", bottommenu="effects", leftmenu_mini="effect", amppage=amppagedefault, modpage=modpagedefault, filterpage=filterpagedefault, perfpage=perfpagedefault) }}
+{{ rm.include_menus(curpage="Phaser", bottommenu="effects", leftmenu_mini="effect") -}}
 Map	Button 1-1		Phaser			Phaser
 Map	UDVButton 3-1_4-1		Phaser Stages				Phaser
 Map	UDVButton 5-1_6-1		Phaser Rate				Phaser
@@ -147,7 +147,7 @@ Map	Fader 6		Phaser LR Offset				Phaser
 Map	Fader 7		Phaser Dry/Wet				Phaser
 // Chorus
 Map	PageName		"Chorus" 				Chorus
-{{ rm.include_menus(curpage="Chorus", bottommenu="effects", leftmenu_mini="effect", amppage=amppagedefault, modpage=modpagedefault, filterpage=filterpagedefault, perfpage=perfpagedefault) }}
+{{ rm.include_menus(curpage="Chorus", bottommenu="effects", leftmenu_mini="effect") -}}
 Map	Button 1-1		Chorus			Chorus
 Map	Fader 2		Chorus Delay				Chorus
 Map	Fader 3		Chorus Rate				Chorus
@@ -157,7 +157,7 @@ Map	Fader 6		Chorus LR Offset				Chorus
 Map	Fader 7		Chorus Dry/Wet				Chorus
 // Delay
 Map	PageName		"Delay" 				Delay
-{{ rm.include_menus(curpage="Delay", bottommenu="effects", leftmenu_mini="effect", amppage=amppagedefault, modpage=modpagedefault, filterpage=filterpagedefault, perfpage=perfpagedefault) }}
+{{ rm.include_menus(curpage="Delay", bottommenu="effects", leftmenu_mini="effect") -}}
 Map	Button 1-1		Delay			Delay
 Map	UDVButton 3-1_4-1		Delay Type				Delay
 Map	UDVButton 5-1_6-1		Delay L-Rate				Delay
@@ -169,7 +169,7 @@ Map	Fader 6		Delay Mod Amount				Delay
 Map	Fader 7		Delay Dry/Wet				Delay
 // Reverb
 Map	PageName		"Reverb" 				Reverb
-{{ rm.include_menus(curpage="Reverb", bottommenu="effects", leftmenu_mini="effect", amppage=amppagedefault, modpage=modpagedefault, filterpage=filterpagedefault, perfpage=perfpagedefault) }}
+{{ rm.include_menus(curpage="Reverb", bottommenu="effects", leftmenu_mini="effect") -}}
 Map	Button 1-1		Reverb			Reverb
 Map	UDVButton 3-1_4-1		Reverb Pre-Delay				Reverb
 Map	Fader 2		Reverb Time				Reverb
@@ -180,17 +180,17 @@ Map	Fader 6		Reverb Mod				Reverb
 Map	Fader 7		Reverb Dry/Wet				Reverb
 // Comp
 Map	PageName		"Comp" 				Comp
-{{ rm.include_menus(curpage="Comp", bottommenu="effects", leftmenu_mini="effect", amppage=amppagedefault, modpage=modpagedefault, filterpage=filterpagedefault, perfpage=perfpagedefault) }}
+{{ rm.include_menus(curpage="Comp", bottommenu="effects", leftmenu_mini="effect") -}}
 Map	Button 1-1		Compressor			Comp
 Map	UDVButton 3-1_4-1		Compressor Ratio				Comp
 Map	Fader 2		Compressor Threshold				Comp
 Map	Fader 4		Compressor Attack				Comp
 Map	Fader 5		Compressor Release				Comp
 Map	Fader 7		Compressor Dry/Wet				Comp
-{% for lfonum in range(1,3) -%}
+{% for lfonum in range(1,3) %}
 // LFO {{ lfonum }}
 Map	PageName		"LFO {{ lfonum }}" 				LFO{{ lfonum }}
-{{ rm.include_menus(curpage="LFO"+lfonum|string, bottommenu="mod", amppage=amppagedefault, modpage="LFO"+lfonum|string, filterpage=filterpagedefault, perfpage=perfpagedefault) }}
+{{ rm.include_menus(curpage="LFO"+lfonum|string, bottommenu="mod", modpage="LFO"+lfonum|string) -}}
 Map	Sel1_0		TempoSync=Free			LFO{{ lfonum }}
 Map	Sel1_1		TempoSync=Sync			LFO{{ lfonum }}
 Map	Fader 3		Lfo {{ lfonum }} Rate				LFO{{ lfonum }}	Free
@@ -200,17 +200,17 @@ Map	Button 1-5		Lfo {{ lfonum }} Sync		SEL1	LFO{{ lfonum }}
 Map	Button 1-6		Lfo {{ lfonum }} Free Run			LFO{{ lfonum }}
 Map	UDHButton 3-5_3-6		Lfo {{ lfonum }} Shape				LFO{{ lfonum }}
 Map	UDHButton 5-5_5-6		Lfo {{ lfonum }} Target				LFO{{ lfonum }}
-{% endfor -%}
+{% endfor %}
 // Amp Env
 Map	PageName		"Amp Env" 				AmpEnv
-{{ rm.include_menus(curpage="AmpEnv", bottommenu="amp", amppage="AmpEnv", modpage=modpagedefault, filterpage=filterpagedefault, perfpage=perfpagedefault) }}
+{{ rm.include_menus(curpage="AmpEnv", bottommenu="amp", amppage="AmpEnv") -}}
 Map	Fader 3		Amp Envelope Attack				AmpEnv
 Map	Fader 4		Amp Envelope Decay				AmpEnv
 Map	Fader 5		Amp Envelope Sustain				AmpEnv
 Map	Fader 6		Amp Envelope Release				AmpEnv
 // Mod Env
 Map	PageName		"Mod Env" 				ModEnv
-{{ rm.include_menus(curpage="ModEnv", bottommenu="mod", amppage=amppagedefault, modpage="ModEnv", filterpage=filterpagedefault, perfpage=perfpagedefault) }}
+{{ rm.include_menus(curpage="ModEnv", bottommenu="mod", modpage="ModEnv") -}}
 Map	UDVButton 3-1_4-1		Mod Envelope Target				ModEnv
 Map	Fader 3		Mod Envelope Attack				ModEnv
 Map	Fader 4		Mod Envelope Decay				ModEnv
@@ -219,18 +219,18 @@ Map	Fader 6		Mod Envelope Release				ModEnv
 Map	Knob V8		Mod Envelope Target Amount				ModEnv
 // Arpeggiator
 Map	PageName		"Arpeggiator" 				Arp
-{{ rm.include_menus(curpage="Arp", bottommenu="perf", amppage=amppagedefault, modpage=modpagedefault, filterpage=filterpagedefault, perfpage="Arp") }}
+{{ rm.include_menus(curpage="Arp", bottommenu="perf", perfpage="Arp") -}}
 Map	UDHButton 3-1_3-2		Arp Mode				Arp
 Map	UDHButton 5-1_5-2		Arp Pattern				Arp
 Map	UDHButton 6-1_6-2		Arp Rate				Arp
 Map	UDHButton 7-1_7-2		Arp Octave				Arp
 Map	Button 8-1		Arp Hold				Arp
 Map	Knob V4		Arp Gate				Arp
-{% for mmnum in range(1,6) -%}
+{% for mmnum in range(1,6) %}
 // Mod Matrix {{ mmnum }}
 Map	PageName		"Mod Matrix {{ mmnum }}" 			ModMatrix{{ mmnum }}
-{{ rm.include_menus(curpage="ModMatrix"+mmnum|string, bottommenu="perf", leftmenu_mini="perf", amppage=amppagedefault, modpage=modpagedefault, filterpage=filterpagedefault, perfpage="ModMatrix"+mmnum|string) }}
+{{ rm.include_menus(curpage="ModMatrix"+mmnum|string, bottommenu="perf", leftmenu_mini="perf", perfpage="ModMatrix"+mmnum|string) -}}
 Map	UDVButton 1-2_2-2		MM Slot {{ mmnum }} Source			 ModMatrix{{ mmnum }}
 Map	Knob V3		MM Slot {{ mmnum }} Amount			ModMatrix{{ mmnum }}
 Map	UDVButton 1-4_2-4		MM Slot {{ mmnum }} Destination			 ModMatrix{{ mmnum }}
-{% endfor -%}
+{% endfor %}

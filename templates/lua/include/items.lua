@@ -5,6 +5,7 @@ local items = {
 	{name = "PatchName", output = "text" },
 	{name = "PageName", output = "text" },
 	{name = "SubPageName", output = "text" },
+	{name = "KbdPageName", output = "text" },
 	{name = "DocPageName", output = "text" },
 	{name = "PlayingStep", output = "text" },
 	{name = "KeyboardMode", output = "text" },

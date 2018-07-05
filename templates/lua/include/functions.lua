@@ -45,6 +45,10 @@ function get_item_conf_map(itemname, context, page)
 		context = "Default"
 	end
 
+	if(page == "Keyboard" and (get_current_kbdpage() == "Kbd" or get_current_kbdpage() == "Drum") and item_conf_map["Default"][page][get_current_kbdpage()][itemname] ~= nil) then
+		return(item_conf_map["Default"][page][get_current_kbdpage()][itemname])
+	end
+
 	if((item_conf_map[context][page] ~= nil) and (item_conf_map[context][page][get_current_subpage()] ~= nil) and (item_conf_map[context][page][get_current_subpage()][itemname] ~= nil)) then
 		return(item_conf_map[context][page][get_current_subpage()][itemname])
 	end
@@ -386,6 +390,16 @@ function get_current_page()
 	end
 
 	return pagename
+end
+
+function get_current_kbdpage()
+	local kbdpagename = "Unknown"
+
+	if(remote.is_item_enabled(itemsindex["KbdPageName"])) then
+		kbdpagename = remote.get_item_text_value(itemsindex["KbdPageName"])
+	end
+
+	return kbdpagename
 end
 
 function get_current_subpage()

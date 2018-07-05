@@ -1,12 +1,40 @@
-{% macro include_menus(curpage, bottommenu='none', leftmenu_mini='none', oscpage='none', perfpage='none', modpage='none', voicingpage='none', sectionpage='none', section='none', engnum='none', amppage='none', filterpage='none') -%}
-{% if lptype == "pro" %}
-{% include "devices/instrument/"+shortname+"/pro/leftmenu.j2" %}
-{% if bottommenu != "none" %}
-{% include "devices/instrument/"+shortname+"/pro/bottommenu_"+bottommenu+".j2" %}
-{% endif %}
-{% else %}
-{% if leftmenu_mini != "none" %}
-{% include "devices/instrument/"+shortname+"/mini/leftmenu_"+leftmenu_mini+".j2" %}
-{% endif %}
-{% endif %}
-{% endmacro -%}
+{% macro include_menus(curpage, bottommenu='none', leftmenu_mini='none', oscpage='none', perfpage='none', modpage='none', voicingpage='none', sectionpage='none', amppage='none', filterpage='none', section='none', engnum='none') %}
+	{% if oscpage == 'none' and oscpagedefault is defined -%}
+		{% set oscpage=oscpagedefault -%}
+	{% endif -%}
+	{% if perfpage == 'none' and perfpagedefault is defined -%}
+		{% set perfpage=perfpagedefault -%}
+	{% endif -%}
+	{% if modpage == 'none' and modpagedefault is defined -%}
+		{% set modpage=modpagedefault -%}
+	{% endif -%}
+	{% if voicingpage == 'none' and voicingpagedefault is defined -%}
+		{% set voicingpage=voicingpagedefault -%}
+	{% endif -%}
+	{% if sectionpage == 'none' and sectionpagedefault is defined -%}
+		{% set sectionpage=sectionpagedefault -%}
+	{% endif -%}
+	{% if amppage == 'none' and amppagedefault is defined -%}
+		{% set amppage=amppagedefault -%}
+	{% endif -%}
+	{% if filterpage == 'none' and filterpagedefault is defined -%}
+		{% set filterpage=filterpagedefault -%}
+	{% endif -%}
+	{% if baseshortname is defined %}
+		{% set lmshortname=baseshortname %}
+		{% set bmshortname="Shared/"+shortname %}
+	{% else %}
+		{% set lmshortname=shortname %}
+		{% set bmshortname=shortname %}
+	{% endif %}
+	{% if lptype == "pro" %}
+		{% include "devices/instrument/"+lmshortname+"/pro/leftmenu.j2" %}
+		{% if bottommenu != "none" %}
+			{% include "devices/instrument/"+bmshortname+"/pro/bottommenu_"+bottommenu+".j2" %}
+		{% endif %}
+	{% else %}
+		{% if leftmenu_mini != "none" %}
+			{% include "devices/instrument/"+bmshortname+"/mini/leftmenu_"+leftmenu_mini+".j2" %}
+		{% endif %}
+	{% endif %}
+{% endmacro %}

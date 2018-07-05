@@ -61,6 +61,7 @@ local color_templates = {
 	-- Button Page
 	["BMainPage"]={enabledcolor=WHITE,   activecolor=WHITE,  disabledcolor=NOCOLOR},
 	["BAmpPage"]={enabledcolor=MAGENTA,   activecolor=RED,  disabledcolor=NOCOLOR},
+	["BAmpModPage"]={enabledcolor=HMAGENTA,   activecolor=RED,  disabledcolor=NOCOLOR},
 	["BOscPage"]={enabledcolor=AMBER,   activecolor=RED,  disabledcolor=NOCOLOR},
 	["BOscModPage"]={enabledcolor=WAMBER,   activecolor=RED,  disabledcolor=NOCOLOR},
 	["BFilterPage"]={enabledcolor=GREEN,   activecolor=RED,  disabledcolor=NOCOLOR},
@@ -86,8 +87,13 @@ local color_templates = {
 	["BSelSound"]={enabledcolor=WAMBER,   activecolor=AMBER,  disabledcolor=NOCOLOR},
 	-- Step sequencer
 	["BStep"]={enabledcolor=DGREEN,   activecolor=RED,  disabledcolor=NOCOLOR},
-	-- Pad
+	-- Kong Pad
 	["BPad"]={enabledcolor=DGREEN,   activecolor=GREEN,  disabledcolor=NOCOLOR},
+	-- Keyboard page Pad
+	["BULPad"]={enabledcolor=MAGENTA,   activecolor=MAGENTA,  disabledcolor=MAGENTA},
+	["BURPad"]={enabledcolor=GREEN,   activecolor=GREEN,  disabledcolor=GREEN},
+	["BDLPad"]={enabledcolor=YELLOW,   activecolor=YELLOW,  disabledcolor=YELLOW},
+	["BDRPad"]={enabledcolor=CYAN,   activecolor=CYAN,  disabledcolor=CYAN},
 	-- Keyboard
 	["BWhitekey"]={enabledcolor=WHITE,   activecolor=WHITE,  disabledcolor=WHITE},
 	["BBlackkey"]={enabledcolor=BLUE,   activecolor=BLUE,  disabledcolor=BLUE},

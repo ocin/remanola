@@ -4,6 +4,10 @@
 {% set shortname="thor" -%}
 {# Variables -#}
 {% set show_pitch_bend_range=true -%}
+{% set oscpagedefault="Osc1" -%}
+{% set filterpagedefault="Filter1" -%}
+{% set amppagedefault="Amp" -%}
+{% set modpagedefault="LFO1" -%}
 {# End Variables -#}
 {% import "remotemap/include/macros.j2" as rm with context %}
 {% include "remotemap/include/device/scope.j2" %}
@@ -39,7 +43,7 @@ Map	Button 4-8		Page=Chorus			Index
 Map	Button C7		Page=Internal			Index
 // Main page
 Map	PageName		"Main" 				Main
-{{ rm.include_menus(curpage="Main") }}
+{{ rm.include_menus(curpage="Main") -}}
 Map	UDVButton 1-2_2-2		Polyphony 			Main
 Map	UDVButton 3-2_4-2		Release Polyphony 			Main
 Map	UDVButton 5-2_6-2		Key Mode 			Main
@@ -55,7 +59,7 @@ Map	Fader 8		Master Level 			Main
 {% for oscnum in range(1,4) -%}
 // Osc {{ oscnum }}
 Map	PageName		"Osc {{ oscnum }}" 				Osc{{ oscnum }}
-{{ rm.include_menus(curpage="Osc"+oscnum|string, leftmenu_mini="osc") }}
+{{ rm.include_menus(curpage="Osc"+oscnum|string, leftmenu_mini="osc", bottommenu="osc", oscpage="Osc"+oscnum|string) -}}
 Map	Sel1_0		OscType=Analog			Osc{{ oscnum }}
 Map	Sel1_21		OscType=Wavetable			Osc{{ oscnum }}
 Map	Sel1_42		OscType=Phase			Osc{{ oscnum }}
@@ -133,7 +137,7 @@ Map	Fader 5		Osc 3 Level				Mixer
 {% for filternum in range(1,4) -%}
 // Filter {{ filternum }}
 Map	PageName		"Filter {{ filternum }}" 				Filter{{ filternum }}
-{{ rm.include_menus(curpage="Filter"+filternum|string, leftmenu_mini="filter") }}
+{{ rm.include_menus(curpage="Filter"+filternum|string, leftmenu_mini="filter", bottommenu="filter", filterpage="Filter"+filternum|string) -}}
 Map	Sel1_0		FilterType=LP			Filter{{ filternum }}
 Map	Sel1_32		FilterType=State			Filter{{ filternum }}
 Map	Sel1_64		FilterType=Comb			Filter{{ filternum }}
@@ -194,7 +198,7 @@ Map	Button 7-1		Osc 3 To Filter 2 Enable			Filter2
 Map	Button 8-1		Filter2ToAmplifier Enable			Filter2
 // FilterEnv
 Map	PageName		"Filter Env" 				FilterEnv
-{{ rm.include_menus(curpage="FilterEnv") }}
+{{ rm.include_menus(curpage="FilterEnv", bottommenu="filter", filterpage="FilteriEnv") -}}
 Map	Button 2-2		Filter Env Gate Trig On				FilterEnv
 Map	Fader 3		Filter Env Attack				FilterEnv
 Map	Fader 4		Filter Env Decay				FilterEnv
@@ -202,7 +206,7 @@ Map	Fader 5		Filter Env Sustain				FilterEnv
 Map	Fader 6		Filter Env Release				FilterEnv
 // Amp
 Map	PageName		"Amp" 				Amp
-{{ rm.include_menus(curpage="Amp") }}
+{{ rm.include_menus(curpage="Amp", bottommenu="amp", amppage="Amp") -}}
 Map	UDVButton 3-2_4-2		Shaper Output Dest			Amp
 Map	Button 8-2		Filter2ToAmplifier Enable			Amp
 Map	Fader 3		Amplifier Velocity				Amp
@@ -210,7 +214,7 @@ Map	Fader 4		Amplifier Gain				Amp
 Map	Knob V5		Amplifier Pan				Amp
 // AmpEnv
 Map	PageName		"Amp Env" 				AmpEnv
-{{ rm.include_menus(curpage="AmpEnv") }}
+{{ rm.include_menus(curpage="AmpEnv", bottommenu="amp", amppage="AmpEnv") -}}
 Map	Button 2-2		Amp Env Gate Trig On				AmpEnv
 Map	Fader 3		Amp Env Attack				AmpEnv
 Map	Fader 4		Amp Env Decay				AmpEnv
@@ -218,7 +222,7 @@ Map	Fader 5		Amp Env Sustain				AmpEnv
 Map	Fader 6		Amp Env Release				AmpEnv
 // ModEnv
 Map	PageName		"Mod Env" 				ModEnv
-{{ rm.include_menus(curpage="ModEnv") }}
+{{ rm.include_menus(curpage="ModEnv", bottommenu="mod", modpage="ModEnv") -}}
 Map	Button 2-2		Mod Env Gate Trig On				ModEnv
 Map	Button 3-2		Mod Env Tempo Sync				ModEnv
 Map	Fader 3		Mod Env Delay				ModEnv
@@ -228,7 +232,7 @@ Map	Fader 6		Mod Env Release				ModEnv
 Map	Button 8-7		Mod Env Loop				ModEnv
 // GlobalEnv
 Map	PageName		"Global Env" 				GlobalEnv
-{{ rm.include_menus(curpage="GlobalEnv") }}
+{{ rm.include_menus(curpage="GlobalEnv", bottommenu="mod", modpage="GlobalEnv") -}}
 Map	Button 2-1		Global Env Gate Trig On				GlobalEnv
 Map	Button 3-1		Global Env Tempo Sync				GlobalEnv
 Map	Fader 2		Global Env Delay				GlobalEnv
@@ -240,7 +244,7 @@ Map	Fader 7		Global Env Release				GlobalEnv
 Map	Button 8-8		Global Env Loop				GlobalEnv
 // LFO1
 Map	PageName		"LFO 1" 				LFO1
-{{ rm.include_menus(curpage="LFO1") }}
+{{ rm.include_menus(curpage="LFO1", bottommenu="mod", modpage="LFO1") -}}
 Map	UDVButton 3-1_4-1		LFO 1 Waveform				LFO1
 Map	Button 6-1		LFO 1 Key Sync				LFO1
 Map	Button 7-1		LFO 1 Tempo Sync				LFO1
@@ -249,7 +253,7 @@ Map	Fader 4		LFO 1 Delay				LFO1
 Map	Fader 5		LFO 1 KbdFollow				LFO1
 // LFO2
 Map	PageName		"LFO 2" 				LFO2
-{{ rm.include_menus(curpage="LFO2") }}
+{{ rm.include_menus(curpage="LFO2", bottommenu="mod", modpage="LFO2") -}}
 Map	UDVButton 3-1_4-1		LFO 2 Waveform				LFO2
 Map	Button 6-1		LFO 2 Key Sync				LFO2
 Map	Button 7-1		LFO 2 Tempo Sync				LFO2
@@ -257,7 +261,7 @@ Map	Fader 3		LFO 2 Rate				LFO2
 Map	Fader 4		LFO 2 Delay				LFO2
 // Step Sequencer 1
 Map	PageName		"Step Sequencer" 				Seq
-{{ rm.include_menus(curpage="Seq") }}
+{{ rm.include_menus(curpage="Seq") -}}
 Map	Button 1-1		Pattern Step Gate 1				Seq
 Map	Button 1-2		Pattern Step Gate 2				Seq
 Map	Button 1-3		Pattern Step Gate 3				Seq
@@ -321,17 +325,17 @@ Map	Button 8-1		Shaper On			Effects
 Map	Button 8-2		Delay On			Effects
 Map	Button 8-3		Chorus On			Effects
 {% endif %}
-{{ rm.include_menus(curpage="Effects", bottommenu="effects", leftmenu_mini="effects") }}
+{{ rm.include_menus(curpage="Effects", bottommenu="effects", leftmenu_mini="effects") -}}
 // Shaper
 Map	PageName		"Shaper" 				Shaper
-{{ rm.include_menus(curpage="Shaper", bottommenu="effects", leftmenu_mini="effects") }}
+{{ rm.include_menus(curpage="Shaper", bottommenu="effects", leftmenu_mini="effects") -}}
 Map	Button 1-1		Shaper On				Shaper
 Map	UDVButton 5-2_6-2		Shaper Type				Shaper
 Map	Fader 3		Shaper Drive				Shaper
 Map	UDVButton 7-4_8-4		Shaper Output Dest			Shaper
 // Delay
 Map	PageName		"Delay" 				Delay
-{{ rm.include_menus(curpage="Delay", bottommenu="effects", leftmenu_mini="effects") }}
+{{ rm.include_menus(curpage="Delay", bottommenu="effects", leftmenu_mini="effects") -}}
 Map	Button 1-1		Delay On				Delay
 Map	Button 4-1		Delay Sync				Delay
 Map	Fader 3		Delay Time				Delay
@@ -341,7 +345,7 @@ Map	Fader 6		Delay Amt				Delay
 Map	Fader 7		Delay Dry Wet				Delay
 // Chorus
 Map	PageName		"Chorus" 				Chorus
-{{ rm.include_menus(curpage="Chorus", bottommenu="effects", leftmenu_mini="effects") }}
+{{ rm.include_menus(curpage="Chorus", bottommenu="effects", leftmenu_mini="effects") -}}
 Map	Button 1-1		Chorus On				Chorus
 Map	Fader 3		Chorus Delay				Chorus
 Map	Fader 4		Chorus Feedback				Chorus

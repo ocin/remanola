@@ -1,15 +1,10 @@
+{% set baseshortname=shortname -%}
+{% set shortname="europa_grain" -%}
+{% import "remotemap/include/macros.j2" as rm with context %}
 // Effects
-{% set curpage="Effects" %}
 Map	PageName		"Effects" 				Effects
 {% if lptype == "mini" %}
 Map	Button 1-2		Effect On			Effects
-Map	Button 1-8		Page=Effects			Effects
-Map	Button 2-8		Page=Phaser			Effects
-Map	Button 3-8		Page=Dist			Effects
-Map	Button 4-8		Page=Eq			Effects
-Map	Button 5-8		Page=Delay			Effects
-Map	Button 6-8		Page=Comp			Effects
-Map	Button 7-8		Page=Reverb			Effects
 Map	Button 2-7		Phaser On			Effects
 Map	Button 3-7		Dist On			Effects
 Map	Button 4-7		Eq On			Effects
@@ -24,91 +19,54 @@ Map	Button 8-3		Eq On			Effects
 Map	Button 8-4		Delay On			Effects
 Map	Button 8-5		Comp On			Effects
 Map	Button 8-6		Reverb On			Effects
-{% include leftmenu_common %}
-{% include "devices/instrument/Shared/europa_grain/bottommenu_effects.j2" %}
 {% endif %}
+{{ rm.include_menus(curpage="Effects", bottommenu="effects") -}}
 // Phaser
-{% set curpage="Phaser" %}
 Map	PageName		"Phaser" 				Phaser
 {% if lptype == "mini" %}
 Map	Button 1-2		Phaser On			Phaser
-Map	Button 1-8		Page=Effects			Phaser
-Map	Button 2-8		Page=Phaser			Phaser
-Map	Button 3-8		Page=Dist			Phaser
-Map	Button 4-8		Page=Eq			Phaser
-Map	Button 5-8		Page=Delay			Phaser
-Map	Button 6-8		Page=Comp			Phaser
-Map	Button 7-8		Page=Reverb			Phaser
 {% else %}
 Map	Button 1-1		Phaser On			Phaser
-{% include leftmenu_common %}
-{% include "devices/instrument/Shared/europa_grain/bottommenu_effects.j2" %}
 {% endif %}
+{{ rm.include_menus(curpage="Phaser",bottommenu="effects") -}}
 Map	UDVButton 5-1_6-1		Mod Effect Type				Phaser
 Map	Fader 4		Mod Effect Depth				Phaser
 Map	Fader 5		Mod Effect Rate				Phaser
 Map	Fader 6		Mod Effect Spread				Phaser
 Map	Fader 7		Mod Effect Amount				Phaser
 // Dist
-{% set curpage="Dist" %}
 Map	PageName		"Dist" 				Dist
 {% if lptype == "mini" %}
 Map	Button 1-2		Dist On			Dist
-Map	Button 1-8		Page=Effects			Dist
-Map	Button 2-8		Page=Phaser			Dist
-Map	Button 3-8		Page=Dist			Dist
-Map	Button 4-8		Page=Eq			Dist
-Map	Button 5-8		Page=Delay			Dist
-Map	Button 6-8		Page=Comp			Dist
-Map	Button 7-8		Page=Reverb			Dist
 {% else %}
 Map	Button 1-1		Dist On			Dist
-{% include leftmenu_common %}
-{% include "devices/instrument/Shared/europa_grain/bottommenu_effects.j2" %}
 {% endif %}
+{{ rm.include_menus(curpage="Dist",bottommenu="effects") -}}
 Map	UDVButton 5-1_6-1		Dist Type				Dist
 Map	Fader 4		Dist Drive				Dist
 Map	Fader 5		Dist Tone				Dist
 Map	Fader 7		Dist Amount				Dist
 // Eq
-{% set curpage="Eq" %}
 Map	PageName		"Eq" 				Eq
 {% if lptype == "mini" %}
 Map	Button 1-2		Eq On			Eq
-Map	Button 1-8		Page=Effects			Eq
-Map	Button 2-8		Page=Phaser			Eq
-Map	Button 3-8		Page=Dist			Eq
-Map	Button 4-8		Page=Eq			Eq
-Map	Button 5-8		Page=Delay			Eq
-Map	Button 6-8		Page=Comp			Eq
-Map	Button 7-8		Page=Reverb			Eq
 {% else %}
 Map	Button 1-1		Eq On			Eq
-{% include leftmenu_common %}
-{% include "devices/instrument/Shared/europa_grain/bottommenu_effects.j2" %}
 {% endif %}
+{{ rm.include_menus(curpage="Eq",bottommenu="effects") -}}
 Map	Fader 4		Eq Freq				Eq
 Map	Fader 5		Eq Q				Eq
 Map	Fader 7		Eq Gain				Eq
 // Delay
-{% set curpage="Delay" %}
 Map	PageName		"Delay" 				Delay
 Map	Sel1_0		TempoSync=Free			Delay
 Map	Sel1_1		TempoSync=Sync			Delay
 {% if lptype == "mini" %}
 Map	Button 1-2		Delay On			Delay
-Map	Button 1-8		Page=Effects			Delay
-Map	Button 2-8		Page=Phaser			Delay
-Map	Button 3-8		Page=Dist			Delay
-Map	Button 4-8		Page=Eq			Delay
-Map	Button 5-8		Page=Delay			Delay
-Map	Button 6-8		Page=Comp			Delay
-Map	Button 7-8		Page=Reverb			Delay
 {% else %}
 Map	Button 1-1		Delay On			Delay
-{% include leftmenu_common %}
-{% include "devices/instrument/Shared/europa_grain/bottommenu_effects.j2" %}
 {% endif %}
+{{ rm.include_menus(curpage="Delay",bottommenu="effects") -}}
 Map	Button 4-1		Delay Sync		SEL1	Delay
 Map	Button 6-1		Delay PingPong			Delay
 Map	UDVButton 3-2_4-2		Delay Time	5			Delay	Free
@@ -117,43 +75,25 @@ Map	Fader 4		Delay Pan				Delay
 Map	Fader 5		Delay FB				Delay
 Map	Fader 7		Delay Amount				Delay
 // Comp
-{% set curpage="Comp" %}
 Map	PageName		"Comp" 				Comp
 {% if lptype == "mini" %}
 Map	Button 1-2		Comp On			Comp
-Map	Button 1-8		Page=Effects			Comp
-Map	Button 2-8		Page=Phaser			Comp
-Map	Button 3-8		Page=Dist			Comp
-Map	Button 4-8		Page=Eq			Comp
-Map	Button 5-8		Page=Delay			Comp
-Map	Button 6-8		Page=Comp			Comp
-Map	Button 7-8		Page=Reverb			Comp
 {% else %}
 Map	Button 1-1		Comp On			Comp
-{% include leftmenu_common %}
-{% include "devices/instrument/Shared/europa_grain/bottommenu_effects.j2" %}
 {% endif %}
+{{ rm.include_menus(curpage="Comp",bottommenu="effects") -}}
 Map	Fader 3		Comp Attack				Comp
 Map	Fader 4		Comp Release				Comp
 Map	Fader 6		Comp Threshold				Comp
 Map	Fader 7		Comp Ratio				Comp
 // Reverb
-{% set curpage="Reverb" %}
 Map	PageName		"Reverb" 				Reverb
 {% if lptype == "mini" %}
 Map	Button 1-2		Reverb On			Reverb
-Map	Button 1-8		Page=Effects			Reverb
-Map	Button 2-8		Page=Phaser			Reverb
-Map	Button 3-8		Page=Dist			Reverb
-Map	Button 4-8		Page=Eq			Reverb
-Map	Button 5-8		Page=Delay			Reverb
-Map	Button 6-8		Page=Comp			Reverb
-Map	Button 7-8		Page=Reverb			Reverb
 {% else %}
 Map	Button 1-1		Reverb On			Reverb
-{% include leftmenu_common %}
-{% include "devices/instrument/Shared/europa_grain/bottommenu_effects.j2" %}
 {% endif %}
+{{ rm.include_menus(curpage="Reverb",bottommenu="effects") -}}
 Map	Fader 3		Reverb Decay				Reverb
 Map	Fader 4		Reverb Size				Reverb
 Map	Fader 5		Reverb Damp				Reverb

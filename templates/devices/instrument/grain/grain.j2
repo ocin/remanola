@@ -1,10 +1,15 @@
 {% set deviceman="Propellerhead Software" -%}
 {% set devicescope="se.propellerheads.Grain" -%}
 {% set devicename="Grain" -%}
+{% set shortname="grain" -%}
 {# Variables -#}
 {% set show_pitch_bend_range=true -%}
-{% set leftmenu_common="devices/instrument/grain/leftmenu.j2" -%}
+{% set oscpagedefault="Grains" -%}
+{% set amppagedefault="Mixer" -%}
+{% set perfpagedefault="ModMatrix1" -%}
+{% set modpagedefault="Env1" -%}
 {# End Variables -#}
+{% import "remotemap/include/macros.j2" as rm with context %}
 {% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	Sample	Grains	Pitch	Osc	Mixer	Filter	Amp	Effects	Phaser	Dist	Eq	Delay	Reverb	Comp	LFO1	LFO2	LFO3	Env1	Env2	Env3	Env4	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
 Define Group	Grains	SpectralGrains	GrainOsc	LongGrains	Tape
@@ -50,10 +55,7 @@ Map	Button 7-8		Page=Reverb			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
-{% set curpage="Main" %}
-{% if lptype == "pro" %}
-{% include "devices/instrument/grain/leftmenu.j2" %}
-{% endif %}
+{{ rm.include_menus(curpage="Main") -}}
 Map	UDVButton 1-2_2-2		Key Mode			Main
 Map	UDVButton 7-2_8-2		Portamento Mode				Main
 Map	Fader 3		Portamento				Main
@@ -61,10 +63,7 @@ Map	UDVButton 7-5_8-5		Pitch Bend Range				Main
 Map	UDVButton 7-7_8-7		Voices				Main
 Map	Fader 8		Master Volume				Main
 // Sample
-{% set curpage="Sample" %}
-{% if lptype == "pro" %}
-{% include "devices/instrument/grain/leftmenu.j2" %}
-{% endif %}
+{{ rm.include_menus(curpage="Sample") -}}
 Map	PageName		"Sample" 				Sample
 Map	Fader 1		Zoom				Sample
 Map	Fader 2		Scroll				Sample
@@ -75,10 +74,7 @@ Map	Fader 6		Speed				Sample
 Map	Fader 7		Jitter				Sample
 Map	Button 1-8		Global Position			Sample
 // Grains
-{% set curpage="Grains" %}
-{% if lptype == "pro" %}
-{% include "devices/instrument/grain/leftmenu.j2" %}
-{% endif %}
+{{ rm.include_menus(curpage="Grains",bottommenu="osc",oscpage="Grains") -}}
 Map	PageName		"Grains" 				Grains
 Map	Sel1_0		Grains=SpectralGrains			Grains
 Map	Sel1_42		Grains=GrainOsc			Grains
@@ -116,40 +112,28 @@ Map	SubPageName		"Tape" 				Grains	Tape
 Map	Fader 6		XFade				Grains	Tape
 // Pitch
 Map	PageName		"Pitch" 				Pitch
-{% set curpage="Pitch" %}
-{% if lptype == "pro" %}
-{% include "devices/instrument/grain/leftmenu.j2" %}
-{% endif %}
+{{ rm.include_menus(curpage="Pitch",bottommenu="osc",oscpage="Pitch") -}}
 Map	UDVButton 1-2_2-2		Oct				Pitch
 Map	UDVButton 1-3_2-3		Semi				Pitch
 Map	UDVButton 1-4_2-4		Tune				Pitch
 Map	Fader 6		Pitch Kbd				Pitch
 // Osc
 Map	PageName		"Osc" 				Osc
-{% set curpage="Osc" %}
-{% if lptype == "pro" %}
-{% include "devices/instrument/grain/leftmenu.j2" %}
-{% endif %}
+{{ rm.include_menus(curpage="Osc",bottommenu="osc",oscpage="Osc") -}}
 Map	Button 1-2		Osc On 			Osc
 Map	UDVButton 1-3_2-3		Osc Oct				Osc
 Map	UDVButton 1-4_2-4		Osc Wave				Osc
 Map	Fader 6		Osc Mod				Osc
 // Mixer 
 Map	PageName		"Mixer" 				Mixer
-{% set curpage="Mixer" %}
-{% if lptype == "pro" %}
-{% include "devices/instrument/grain/leftmenu.j2" %}
-{% endif %}
+{{ rm.include_menus(curpage="Mixer",bottommenu="amp", amppage="Mixer") -}}
 Map	Button 1-2		Sample To Filter			Mixer
 Map	Fader 3		Sample Level				Mixer
 Map	Button 1-4		Osc To Filter			Mixer
 Map	Fader 5		Osc Level				Mixer
 // Filter 
 Map	PageName		"Filter" 				Filter
-{% set curpage="Filter" %}
-{% if lptype == "pro" %}
-{% include "devices/instrument/grain/leftmenu.j2" %}
-{% endif %}
+{{ rm.include_menus(curpage="Filter") -}}
 Map	UDVButton 1-2_2-2		Filter Type				Filter
 Map	Fader 3		Filter Freq				Filter
 Map	Fader 4		Filter Reso				Filter
@@ -158,10 +142,7 @@ Map	UDVButton 1-7_2-7		Filter Env2	5			Filter
 Map	UDVButton 1-8_2-8		Filter Vel	5			Filter
 // Amp
 Map	PageName		"Amp" 				Amp
-{% set curpage="Amp" %}
-{% if lptype == "pro" %}
-{% include "devices/instrument/grain/leftmenu.j2" %}
-{% endif %}
+{{ rm.include_menus(curpage="Amp",bottommenu="amp", amppage="Amp") -}}
 Map	Fader 2		Amp Attack				Amp
 Map	Fader 3		Amp Decay				Amp
 Map	Fader 4		Amp Sustain				Amp

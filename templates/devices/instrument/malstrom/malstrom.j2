@@ -1,9 +1,15 @@
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Malstrom Graintable Synthesizer" -%}
 {% set devicename="Malstrom" -%}
+{% set shortname="malstrom" -%}
 {# Variables -#}
 {% set show_pitch_bend_range=true -%}
+{% set oscpagedefault="OscA" -%}
+{% set filterpagedefault="FilterA" -%}
+{% set modpagedefault="ModA" -%}
+{% set perfpagedefault="Velocity" -%}
 {# End Variables -#}
+{% import "remotemap/include/macros.j2" as rm with context %}
 {% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	OscA	OscAEnv	OscB	OscBEnv	FilterA	FilterB	FilterEnv	ModA	ModB	Shaper	Velocity	ModWheelContr	Index	Keyboard	Internal
 {% include "remotemap/include/device/instrument.j2" %}
@@ -26,7 +32,7 @@ Map	Button 2-8		Page=Shaper			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
-Map	Button 1-1		Page=Main			Main
+{{ rm.include_menus(curpage="Main") -}}
 Map	UDVButton 5-2_6-2		Polyphony			Main
 Map	Button 8-2		Legato On/Off			Main
 Map	Fader 3		Portamento			Main
@@ -36,8 +42,7 @@ Map	Fader 8		Master Level			Main
 {% for oscnum in ['A', 'B'] -%}
 // Osc{{ oscnum }}
 Map	PageName		"Osc {{ oscnum }}" 				Osc{{ oscnum }}
-Map	Button 2-1		Page=OscA			Osc{{ oscnum }}
-Map	Button 3-1		Page=OscB			Osc{{ oscnum }}
+{{ rm.include_menus(curpage="Osc"+oscnum|string, leftmenu_mini="osc", bottommenu="osc", oscpage="Osc"+oscnum|string) -}}
 Map	Button 8-1		Oscillator {{ oscnum }} On/Off			Osc{{ oscnum }}
 //Map	UDVButton 3-1_4-1		Oscillator {{ oscnum }} Mode			Osc{{ oscnum }}
 Map	Fader 2		Oscillator {{ oscnum }} Motion			Osc{{ oscnum }}
@@ -60,8 +65,7 @@ Map	Button 7-8		Route Oscillator A To Shaper			OscA
 {% for filternum in ['A', 'B'] -%}
 // Filter{{ filternum }}
 Map	PageName		"Filter {{ filternum }}" 				Filter{{ filternum }}
-Map	Button 5-1		Page=FilterA			Filter{{ filternum }}
-Map	Button 6-1		Page=FilterB			Filter{{ filternum }}
+{{ rm.include_menus(curpage="Filter"+filternum|string, leftmenu_mini="filter", bottommenu="filter", filterpage="Filter"+filternum|string) -}}
 Map	Button 1-2		Filter {{ filternum }} On/Off			Filter{{ filternum }}
 Map	UDVButton 7-4_8-4		Filter {{ filternum }} Mode			Filter{{ filternum }}
 Map	Button 8-5		Filter {{ filternum }} Env			Filter{{ filternum }}
@@ -71,6 +75,7 @@ Map	Fader 8		Filter {{ filternum }} Resonance			Filter{{ filternum }}
 {% endfor -%}
 // FilterEnv
 Map	PageName		"Filter Env" 				FilterEnv
+{{ rm.include_menus(curpage="FilterEnv", bottommenu="filter", filterpage="FilteriEnv") -}}
 Map	Fader 3		Filter Env Attack			FilterEnv
 Map	Fader 4		Filter Env Decay			FilterEnv
 Map	Fader 5		Filter Env Sustain			FilterEnv
@@ -79,13 +84,13 @@ Map	Button 8-7		Filter Env Invert			FilterEnv
 Map	Fader 8		Filter Env Amount			FilterEnv
 // Shaper
 Map	PageName		"Shaper" 			Shaper
+{{ rm.include_menus(curpage="Shaper") -}}
 Map	Button 1-2		Shaper On/Off			Shaper
 Map	UDVButton 5-2_6-2		Shaper Mode			Shaper
 Map	Fader 8		Shaper Amount			Shaper
 // ModA
 Map	PageName		"Mod A" 			ModA
-Map	Button 5-1		Page=ModA			ModA
-Map	Button 6-1		Page=ModB			ModA
+{{ rm.include_menus(curpage="ModA", bottommenu="mod", leftmenu_mini="mod", modpage="ModA") -}}
 Map	Button 1-2		Modulator A On/Off			ModA
 Map	UDVButton 3-2_4-2		Modulator A Curve			ModA
 Map	Fader 3		Modulator A Rate			ModA
@@ -97,8 +102,7 @@ Map	Button 2-8		Modulator A Sync			ModA
 Map	UDVButton 7-8_8-8		Modulator A Target			ModA
 // ModB
 Map	PageName		"Mod B" 			ModB
-Map	Button 5-1		Page=ModA			ModB
-Map	Button 6-1		Page=ModB			ModB
+{{ rm.include_menus(curpage="ModB", bottommenu="mod", leftmenu_mini="mod", modpage="ModB") -}}
 Map	Button 1-2		Modulator B On/Off			ModB
 Map	UDVButton 3-2_4-2		Modulator B Curve			ModB
 Map	Fader 3		Modulator B Rate			ModB
@@ -111,6 +115,7 @@ Map	Button 2-8		Modulator B Sync			ModB
 Map	UDVButton 7-8_8-8		Modulator B Target			ModB
 // Velocity
 Map	PageName		"Velocity" 			Velocity
+{{ rm.include_menus(curpage="Velocity", bottommenu="perf", perfpage="Velocity") -}}
 Map	Knob V2		Velocity To Level A			Velocity
 Map	Knob V3		Velocity To Level B			Velocity
 Map	Knob V4		Velocity To Filter Env			Velocity
@@ -120,6 +125,7 @@ Map	Knob V7		Velocity To Modulator			Velocity
 Map	UDVButton 7-8_8-8		Velocity Target			Velocity
 // ModWheel
 Map	PageName		"ModWheel" 			ModWheelContr
+{{ rm.include_menus(curpage="ModWheelContr", bottommenu="perf", perfpage="ModWheelContr") -}}
 Map	Knob V2		Mod Wheel To Index			ModWheelContr
 Map	Knob V3		Mod Wheel To Shift			ModWheelContr
 Map	Knob V4		Mod Wheel To Filter			ModWheelContr

@@ -1,25 +1,6 @@
 	["Revival"]={
 		["Default"]={
-{% if lptype == "pro" %}
-{% include "devices/instrument/revival/confmap_leftmenu.lua" %}
-{% else %}
-			["Button 1-1"]={template="BMainPage"},
-			["Button 2-1"]={template="BOscPage"},
-			["Button 3-1"]={template="BOscPage"},
-			["Button 4-1"]={template="BOscPage"},
-			["Button 5-1"]={template="BOscPage"},
-			["Button 6-1"]={template="BFilterPage"},
-			["Button 7-1"]={template="BFilterPage"},
-			["Button 8-1"]={template="BFilterPage"},
-			["Button 1-8"]={template="BMainEffectPage"},
-			["Button 2-8"]={template="BEffectPage"},
-			["Button 3-8"]={template="BEffectPage"},
-			["Button 4-8"]={template="BEffectPage"},
-			["Button 5-8"]={template="BEffectPage"},
-			["Button 6-8"]={template="BEffectPage"},
-			["Button 7-8"]={template="BEffectPage"},
-			["Button 8-8"]={template="BEffectPage"},
-{% endif %}
+{% include "devices/instrument/revival/"+lptype+"/confmap_leftmenu.lua" %}
 		},
 		["Index"]={
 			["Button 2-4"]={template="BFilterPage"},
@@ -63,7 +44,7 @@
 			["Fader 4"]={template="FMisc"},
 			["Fader 7"]={template="FMisc"},
 {% if lptype == "pro" %}
-{% include "devices/instrument/revival/confmap_bottommenu_voicing.lua" %}
+{% include "devices/instrument/revival/pro/confmap_bottommenu_voicing.lua" %}
 {% endif %}
 		},
 		["Voicing 2"]={
@@ -74,7 +55,7 @@
 			["Fader 7"]={template="FEffect"},
 			["Fader 8"]={template="FFreq"},
 {% if lptype == "pro" %}
-{% include "devices/instrument/revival/confmap_bottommenu_voicing.lua" %}
+{% include "devices/instrument/revival/pro/confmap_bottommenu_voicing.lua" %}
 {% endif %}
 		},
 		["Pri/Sec"]={
@@ -92,7 +73,7 @@
 		},
 		["Attack"]={
 {% if lptype == "pro" %}
-{% include "devices/instrument/revival/confmap_bottommenu_osc.lua" %}
+{% include "devices/instrument/revival/pro/confmap_bottommenu_osc.lua" %}
 {% endif %}
 			["UDVButton 1-2_2-2"]={template="UDAmount",inverted=true},
 			["Fader 3"]={template="FGain"},
@@ -103,7 +84,7 @@
 		},
 		["Primary"]={
 {% if lptype == "pro" %}
-{% include "devices/instrument/revival/confmap_bottommenu_osc.lua" %}
+{% include "devices/instrument/revival/pro/confmap_bottommenu_osc.lua" %}
 {% endif %}
 			["UDVButton 1-2_2-2"]={template="UDAmount",inverted=true},
 			["Fader 3"]={template="FGain"},
@@ -111,7 +92,7 @@
 		},
 		["Secondary"]={
 {% if lptype == "pro" %}
-{% include "devices/instrument/revival/confmap_bottommenu_osc.lua" %}
+{% include "devices/instrument/revival/pro/confmap_bottommenu_osc.lua" %}
 {% endif %}
 			["UDVButton 1-2_2-2"]={template="UDAmount",inverted=true},
 			["Fader 3"]={template="FGain"},
@@ -119,7 +100,7 @@
 		},
 		["Release"]={
 {% if lptype == "pro" %}
-{% include "devices/instrument/revival/confmap_bottommenu_osc.lua" %}
+{% include "devices/instrument/revival/pro/confmap_bottommenu_osc.lua" %}
 {% endif %}
 			["UDVButton 1-2_2-2"]={template="UDAmount",inverted=true},
 			["Fader 3"]={template="FGain"},
@@ -130,7 +111,7 @@
 		},
 		["* Drawbars Lower"]={
 {% if lptype == "pro" %}
-{% include "devices/instrument/revival/confmap_bottommenu_osc.lua" %}
+{% include "devices/instrument/revival/pro/confmap_bottommenu_osc.lua" %}
 {% endif %}
 			["Button 7-1"]={template="BOscPage"},
 			["Button 8-1"]={template="BOscPage"},
@@ -144,7 +125,7 @@
 		},
 		["* Drawbars Upper"]={
 {% if lptype == "pro" %}
-{% include "devices/instrument/revival/confmap_bottommenu_osc.lua" %}
+{% include "devices/instrument/revival/pro/confmap_bottommenu_osc.lua" %}
 {% endif %}
 			["Button 7-1"]={template="BOscPage"},
 			["Button 8-1"]={template="BOscPage"},
@@ -154,7 +135,7 @@
 		},
 		["* Mod Enable"]={
 {% if lptype == "pro" %}
-{% include "devices/instrument/revival/confmap_bottommenu_osc.lua" %}
+{% include "devices/instrument/revival/pro/confmap_bottommenu_osc.lua" %}
 {% endif %}
 			["Button 1-2"]={template="BRedOnOff"},
 			["Button 1-3"]={template="BRedOnOff"},
@@ -189,7 +170,7 @@
 		},
 		["* Mod *"]={
 {% if lptype == "pro" %}
-{% include "devices/instrument/revival/confmap_bottommenu_osc.lua" %}
+{% include "devices/instrument/revival/pro/confmap_bottommenu_osc.lua" %}
 {% endif %}
 			["UDVButton 5-2_6-2"]={template="UDFreq", inverted=true},
 			["UDVButton 7-2_8-2"]={template="UDEffect", inverted=true},
@@ -202,7 +183,7 @@
 		},
 		["Effects"]={
 {% if lptype == "pro" %}
-{% include "devices/instrument/revival/confmap_bottommenu_effects.lua" %}
+{% include "devices/instrument/revival/pro/confmap_bottommenu_effects.lua" %}
 			["Button 1-1"]={template="BRedOnOff"},
 			["Button 8-1"]={template="BRedOnOff"},
 			["Button 8-2"]={template="BRedOnOff"},
@@ -223,7 +204,7 @@
 		},
 		["PreAmp"]={
 {% if lptype == "pro" %}
-{% include "devices/instrument/revival/confmap_bottommenu_effects.lua" %}
+{% include "devices/instrument/revival/pro/confmap_bottommenu_effects.lua" %}
 {% endif %}
 			["Button 1-1"]={template="BRedOnOff"},
 			["UDVButton 1-2_2-2"]={template="UDEffect", inverted=true},
@@ -234,7 +215,7 @@
 		},
 		["Phaser"]={
 {% if lptype == "pro" %}
-{% include "devices/instrument/revival/confmap_bottommenu_effects.lua" %}
+{% include "devices/instrument/revival/pro/confmap_bottommenu_effects.lua" %}
 {% endif %}
 			["Button 1-1"]={template="BRedOnOff"},
 			["UDVButton 1-2_2-2"]={template="UDEffect", inverted=true},
@@ -244,7 +225,7 @@
 		},
 		["ModFilter"]={
 {% if lptype == "pro" %}
-{% include "devices/instrument/revival/confmap_bottommenu_effects.lua" %}
+{% include "devices/instrument/revival/pro/confmap_bottommenu_effects.lua" %}
 {% endif %}
 			["Button 1-1"]={template="BRedOnOff"},
 			["UDVButton 1-2_2-2"]={template="UDEffect", inverted=true},
@@ -258,7 +239,7 @@
 		},
 		["Speaker"]={
 {% if lptype == "pro" %}
-{% include "devices/instrument/revival/confmap_bottommenu_effects.lua" %}
+{% include "devices/instrument/revival/pro/confmap_bottommenu_effects.lua" %}
 {% endif %}
 			["Button 1-1"]={template="BRedOnOff"},
 			["UDVButton 1-2_2-2"]={template="UDEffect", inverted=true},
@@ -269,7 +250,7 @@
 		},
 		["Reverb"]={
 {% if lptype == "pro" %}
-{% include "devices/instrument/revival/confmap_bottommenu_effects.lua" %}
+{% include "devices/instrument/revival/pro/confmap_bottommenu_effects.lua" %}
 {% endif %}
 			["Button 1-1"]={template="BRedOnOff"},
 			["UDVButton 1-2_2-2"]={template="UDEffect", inverted=true},
@@ -280,7 +261,7 @@
 		},
 		["Delay"]={
 {% if lptype == "pro" %}
-{% include "devices/instrument/revival/confmap_bottommenu_effects.lua" %}
+{% include "devices/instrument/revival/pro/confmap_bottommenu_effects.lua" %}
 {% endif %}
 			["Button 1-1"]={template="BRedOnOff"},
 			["UDVButton 1-2_2-2"]={template="UDEffect", inverted=true},
