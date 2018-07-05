@@ -13,5 +13,5 @@ Map	Button 8-2		LFO {{ lfonum }} Global			LFO{{ lfonum }}
 Map	Fader 3		LFO {{ lfonum }} Rate				LFO{{ lfonum }}	Free
 Map	UDVButton 7-3_8-3		LFO {{ lfonum }} SyncRate				LFO{{ lfonum }}	Sync
 Map	Fader 4		LFO {{ lfonum }} Delay				LFO{{ lfonum }}
-{{ rm.include_menus(curpage="LFO"+lfonum|string, bottommenu="mod",leftmenu_mini="lfo", modpage="LFO"+lfonum|string) -}}
+{{ rm.include_menus(curpage="LFO"+lfonum|string, submenu="mod",mainmenu_mini="lfo", modpage="LFO"+lfonum|string) -}}
 {% endfor %}

@@ -42,7 +42,7 @@ Map	Fader 8		Master Level			Main
 {% for oscnum in ['A', 'B'] -%}
 // Osc{{ oscnum }}
 Map	PageName		"Osc {{ oscnum }}" 				Osc{{ oscnum }}
-{{ rm.include_menus(curpage="Osc"+oscnum|string, leftmenu_mini="osc", bottommenu="osc", oscpage="Osc"+oscnum|string) -}}
+{{ rm.include_menus(curpage="Osc"+oscnum|string, mainmenu_mini="osc", submenu="osc", oscpage="Osc"+oscnum|string) -}}
 Map	Button 8-1		Oscillator {{ oscnum }} On/Off			Osc{{ oscnum }}
 //Map	UDVButton 3-1_4-1		Oscillator {{ oscnum }} Mode			Osc{{ oscnum }}
 Map	Fader 2		Oscillator {{ oscnum }} Motion			Osc{{ oscnum }}
@@ -65,7 +65,7 @@ Map	Button 7-8		Route Oscillator A To Shaper			OscA
 {% for filternum in ['A', 'B'] -%}
 // Filter{{ filternum }}
 Map	PageName		"Filter {{ filternum }}" 				Filter{{ filternum }}
-{{ rm.include_menus(curpage="Filter"+filternum|string, leftmenu_mini="filter", bottommenu="filter", filterpage="Filter"+filternum|string) -}}
+{{ rm.include_menus(curpage="Filter"+filternum|string, mainmenu_mini="filter", submenu="filter", filterpage="Filter"+filternum|string) -}}
 Map	Button 1-2		Filter {{ filternum }} On/Off			Filter{{ filternum }}
 Map	UDVButton 7-4_8-4		Filter {{ filternum }} Mode			Filter{{ filternum }}
 Map	Button 8-5		Filter {{ filternum }} Env			Filter{{ filternum }}
@@ -75,7 +75,7 @@ Map	Fader 8		Filter {{ filternum }} Resonance			Filter{{ filternum }}
 {% endfor -%}
 // FilterEnv
 Map	PageName		"Filter Env" 				FilterEnv
-{{ rm.include_menus(curpage="FilterEnv", bottommenu="filter", filterpage="FilteriEnv") -}}
+{{ rm.include_menus(curpage="FilterEnv", submenu="filter", filterpage="FilteriEnv") -}}
 Map	Fader 3		Filter Env Attack			FilterEnv
 Map	Fader 4		Filter Env Decay			FilterEnv
 Map	Fader 5		Filter Env Sustain			FilterEnv
@@ -90,7 +90,7 @@ Map	UDVButton 5-2_6-2		Shaper Mode			Shaper
 Map	Fader 8		Shaper Amount			Shaper
 // ModA
 Map	PageName		"Mod A" 			ModA
-{{ rm.include_menus(curpage="ModA", bottommenu="mod", leftmenu_mini="mod", modpage="ModA") -}}
+{{ rm.include_menus(curpage="ModA", submenu="mod", mainmenu_mini="mod", modpage="ModA") -}}
 Map	Button 1-2		Modulator A On/Off			ModA
 Map	UDVButton 3-2_4-2		Modulator A Curve			ModA
 Map	Fader 3		Modulator A Rate			ModA
@@ -102,7 +102,7 @@ Map	Button 2-8		Modulator A Sync			ModA
 Map	UDVButton 7-8_8-8		Modulator A Target			ModA
 // ModB
 Map	PageName		"Mod B" 			ModB
-{{ rm.include_menus(curpage="ModB", bottommenu="mod", leftmenu_mini="mod", modpage="ModB") -}}
+{{ rm.include_menus(curpage="ModB", submenu="mod", mainmenu_mini="mod", modpage="ModB") -}}
 Map	Button 1-2		Modulator B On/Off			ModB
 Map	UDVButton 3-2_4-2		Modulator B Curve			ModB
 Map	Fader 3		Modulator B Rate			ModB
@@ -115,7 +115,7 @@ Map	Button 2-8		Modulator B Sync			ModB
 Map	UDVButton 7-8_8-8		Modulator B Target			ModB
 // Velocity
 Map	PageName		"Velocity" 			Velocity
-{{ rm.include_menus(curpage="Velocity", bottommenu="perf", perfpage="Velocity") -}}
+{{ rm.include_menus(curpage="Velocity", submenu="perf", perfpage="Velocity") -}}
 Map	Knob V2		Velocity To Level A			Velocity
 Map	Knob V3		Velocity To Level B			Velocity
 Map	Knob V4		Velocity To Filter Env			Velocity
@@ -125,7 +125,7 @@ Map	Knob V7		Velocity To Modulator			Velocity
 Map	UDVButton 7-8_8-8		Velocity Target			Velocity
 // ModWheel
 Map	PageName		"ModWheel" 			ModWheelContr
-{{ rm.include_menus(curpage="ModWheelContr", bottommenu="perf", perfpage="ModWheelContr") -}}
+{{ rm.include_menus(curpage="ModWheelContr", submenu="perf", perfpage="ModWheelContr") -}}
 Map	Knob V2		Mod Wheel To Index			ModWheelContr
 Map	Knob V3		Mod Wheel To Shift			ModWheelContr
 Map	Knob V4		Mod Wheel To Filter			ModWheelContr

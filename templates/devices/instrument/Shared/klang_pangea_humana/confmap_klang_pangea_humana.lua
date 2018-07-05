@@ -1,6 +1,6 @@
 		["Default"]={
 {% if lptype == "pro" %}
-{% include "devices/instrument/Shared/klang_pangea_humana/pro/confmap_leftmenu.lua" %}
+{% include "devices/instrument/Shared/klang_pangea_humana/pro/confmap_mainmenu.lua" %}
 {% endif %}
 		},
 		["Main"]={

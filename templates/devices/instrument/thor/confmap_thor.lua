@@ -1,6 +1,6 @@
 	["Thor"]={
 		["Default"]={
-{% include "devices/instrument/thor/"+lptype+"/confmap_leftmenu.lua" %}
+{% include "devices/instrument/thor/"+lptype+"/confmap_mainmenu.lua" %}
 		},
 		["Main"]={
 			["UDVButton 1-2_1-2"]={template="UDMisc"},
@@ -24,7 +24,7 @@
 			["UDVButton 1-6_2-6"]={template="UDFreq"},
 			["Fader 8"]={template="FEffect"},
 {% if lptype == "pro" %}
-{% include "devices/instrument/thor/pro/confmap_bottommenu_osc.lua" %}
+{% include "devices/instrument/thor/pro/confmap_submenu_osc.lua" %}
 {% endif %}
 			["Analog"]={
 				["UDVButton 7-3_8-3"]={template="UDMisc", inverted=true},
@@ -57,9 +57,9 @@
 		},
 		["Filter *"]={
 {% if lptype == "mini" %}
-{% include "devices/instrument/thor/mini/confmap_leftmenu_filter.lua" %}
+{% include "devices/instrument/thor/mini/confmap_mainmenu_filter.lua" %}
 {% else %}
-{% include "devices/instrument/thor/pro/confmap_bottommenu_filter.lua" %}
+{% include "devices/instrument/thor/pro/confmap_submenu_filter.lua" %}
 {% endif %}
 			["Button 5-1"]={template="BRedOnOff"},
 			["Button 6-1"]={template="BRedOnOff"},
@@ -125,7 +125,7 @@
 		},
 		["Amp"]={
 {% if lptype == "pro" %}
-{% include "devices/instrument/thor/pro/confmap_bottommenu_amp.lua" %}
+{% include "devices/instrument/thor/pro/confmap_submenu_amp.lua" %}
 {% endif %}
 			["UDVButton 3-2_4-2"]={template="UDGain"},
 			["Button 8-2"]={template="BRedOnOff"},
@@ -135,7 +135,7 @@
 		},
 		["Amp Env"]={
 {% if lptype == "pro" %}
-{% include "devices/instrument/thor/pro/confmap_bottommenu_amp.lua" %}
+{% include "devices/instrument/thor/pro/confmap_submenu_amp.lua" %}
 {% endif %}
 			["Button 2-2"]={template="BGreenOnOff"},
 			["Fader 3"]={template="FGain"},
@@ -145,7 +145,7 @@
 		},
 		["Mod Env"]={
 {% if lptype == "pro" %}
-{% include "devices/instrument/thor/pro/confmap_bottommenu_mod.lua" %}
+{% include "devices/instrument/thor/pro/confmap_submenu_mod.lua" %}
 {% endif %}
 			["Fader 3"]={template="FEffect"},
 			["Fader 4"]={template="FMisc"},
@@ -154,7 +154,7 @@
 		},
 		["Global Env"]={ -- Global Env
 {% if lptype == "pro" %}
-{% include "devices/instrument/thor/pro/confmap_bottommenu_mod.lua" %}
+{% include "devices/instrument/thor/pro/confmap_submenu_mod.lua" %}
 {% endif %}
 			["Button 2-1"]={template="BGreenOnOff"},
 			["Button 3-1"]={template="BGreenOnOff"},
@@ -167,7 +167,7 @@
 		},
 		["LFO *"]={
 {% if lptype == "pro" %}
-{% include "devices/instrument/thor/pro/confmap_bottommenu_mod.lua" %}
+{% include "devices/instrument/thor/pro/confmap_submenu_mod.lua" %}
 {% endif %}
                         ["UDVButton 3-1_4-1"]={template="UDMisc"},
 			["Button 6-1"]={template="BGreenOnOff"},
@@ -325,7 +325,7 @@
 			["Button 8-1"]={template="BEffectPage"},
 			["Button 8-2"]={template="BEffectPage"},
 			["Button 8-3"]={template="BEffectPage"},
-{% include "devices/instrument/thor/pro/confmap_bottommenu_effects.lua" %}
+{% include "devices/instrument/thor/pro/confmap_submenu_effects.lua" %}
 {% endif %}
 		},
 		["Shaper"]={
@@ -334,9 +334,9 @@
                         ["Fader 3"]={template="FEffect"},
 			["UDVButton 7-4_8-4"]={template="UDGain"},
 {% if lptype == "mini" %}
-{% include "devices/instrument/thor/mini/confmap_leftmenu_effects.lua" %}
+{% include "devices/instrument/thor/mini/confmap_mainmenu_effects.lua" %}
 {% else %}
-{% include "devices/instrument/thor/pro/confmap_bottommenu_effects.lua" %}
+{% include "devices/instrument/thor/pro/confmap_submenu_effects.lua" %}
 {% endif %}
 		},
 		["Delay"]={
@@ -348,9 +348,9 @@
                         ["Fader 6"]={template="FAmount"},
                         ["Fader 7"]={template="FEffect"},
 {% if lptype == "mini" %}
-{% include "devices/instrument/thor/mini/confmap_leftmenu_effects.lua" %}
+{% include "devices/instrument/thor/mini/confmap_mainmenu_effects.lua" %}
 {% else %}
-{% include "devices/instrument/thor/pro/confmap_bottommenu_effects.lua" %}
+{% include "devices/instrument/thor/pro/confmap_submenu_effects.lua" %}
 {% endif %}
 		},
 		["Chorus"]={
@@ -361,9 +361,9 @@
                         ["Fader 6"]={template="FAmount"},
                         ["Fader 7"]={template="FEffect"},
 {% if lptype == "mini" %}
-{% include "devices/instrument/thor/mini/confmap_leftmenu_effects.lua" %}
+{% include "devices/instrument/thor/mini/confmap_mainmenu_effects.lua" %}
 {% else %}
-{% include "devices/instrument/thor/pro/confmap_bottommenu_effects.lua" %}
+{% include "devices/instrument/thor/pro/confmap_submenu_effects.lua" %}
 {% endif %}
 		},
 	},

@@ -1,7 +1,7 @@
 	["Grain"]={
 		["Default"]={
 			["Button 1-2"]={template="BRedOnOff"},
-{% include "devices/instrument/grain/"+lptype+"/confmap_leftmenu.lua" %}
+{% include "devices/instrument/grain/"+lptype+"/confmap_mainmenu.lua" %}
 		},
 		["Main"]={
 			["Fader 3"]={template="FMisc"},
@@ -32,7 +32,7 @@
 		["Grains"]={
 			["UDVButton 1-1_2-1"]={template="UDAmount", inverted=true},
 {% if lptype == "pro" %}
-{% include "devices/instrument/grain/pro/confmap_bottommenu_osc.lua" %}
+{% include "devices/instrument/grain/pro/confmap_submenu_osc.lua" %}
 {% endif %}
 			["Spectral Grains"]={
 				["Fader 2"]={template="FAmount"},
@@ -70,7 +70,7 @@
 			["UDVButton 1-4_2-4"]={template="UDFreq"},
 			["Fader 6"]={template="FMisc"},
 {% if lptype == "pro" %}
-{% include "devices/instrument/grain/pro/confmap_bottommenu_osc.lua" %}
+{% include "devices/instrument/grain/pro/confmap_submenu_osc.lua" %}
 {% endif %}
 		},
 		["Osc"]={
@@ -79,7 +79,7 @@
 			["UDVButton 1-4_2-4"]={template="UDAmount"},
 			["Fader 6"]={template="FMisc"},
 {% if lptype == "pro" %}
-{% include "devices/instrument/grain/pro/confmap_bottommenu_osc.lua" %}
+{% include "devices/instrument/grain/pro/confmap_submenu_osc.lua" %}
 {% endif %}
 		},
 		["Mixer"]={
@@ -88,7 +88,7 @@
 			["Button 1-4"]={template="BRedOnOff"},
 			["Fader 5"]={template="FGain"},
 {% if lptype == "pro" %}
-{% include "devices/instrument/grain/pro/confmap_bottommenu_amp.lua" %}
+{% include "devices/instrument/grain/pro/confmap_submenu_amp.lua" %}
 {% endif %}
 		},
 		["Filter"]={
@@ -108,7 +108,7 @@
 			["Fader 7"]={template="FMisc"},
 			["Knob V8"]={template="FGain"},
 {% if lptype == "pro" %}
-{% include "devices/instrument/grain/pro/confmap_bottommenu_amp.lua" %}
+{% include "devices/instrument/grain/pro/confmap_submenu_amp.lua" %}
 {% endif %}
 		},
 {% include "devices/instrument/Shared/europa_grain/confmap_env.lua" %}

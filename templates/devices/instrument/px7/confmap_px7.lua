@@ -1,6 +1,6 @@
 	["PX7"]={
 		["Default"]={
-{% include "devices/instrument/px7/"+lptype+"/confmap_leftmenu.lua" %}
+{% include "devices/instrument/px7/"+lptype+"/confmap_mainmenu.lua" %}
 		},
 		["Main"]={
 			["UDVButton 1-2_2-2"]={template="FAmount"},

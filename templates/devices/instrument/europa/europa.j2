@@ -72,7 +72,7 @@ Map	Button 7-8		Page=Reverb			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
-{{ rm.include_menus(curpage="Main",leftmenu_mini="common") -}}
+{{ rm.include_menus(curpage="Main",mainmenu_mini="common") -}}
 Map	UDVButton 7-2_8-2		Key Mode			Main
 Map	UDVButton 7-3_8-3		Portamento Mode			Main
 Map	Fader 4		Portamento				Main
@@ -80,7 +80,7 @@ Map	UDVButton 7-7_8-7		Voices				Main
 Map	Fader 8		Master Volume				Main
 // Mixer 
 Map	PageName		"Mixer" 				Mixer
-{{ rm.include_menus(curpage="Mixer", bottommenu="amp",leftmenu_mini="common", amppage="Amp") -}}
+{{ rm.include_menus(curpage="Mixer", submenu="amp",mainmenu_mini="common", amppage="Amp") -}}
 Map	Fader 2		Osc1 Level				Mixer
 Map	Knob V3		Osc1 Pan				Mixer
 Map	Fader 4		Osc2 Level				Mixer
@@ -89,7 +89,7 @@ Map	Fader 6		Osc3 Level				Mixer
 Map	Knob V7		Osc3 Pan				Mixer
 // Filter 
 Map	PageName		"Filter" 				Filter
-{{ rm.include_menus(curpage="Filter",leftmenu_mini="common") -}}
+{{ rm.include_menus(curpage="Filter",mainmenu_mini="common") -}}
 Map	Button 5-1		Osc1 To Filter			Filter
 Map	Button 6-1		Osc2 To Filter			Filter
 Map	Button 7-1		Osc3 To Filter			Filter
@@ -103,7 +103,7 @@ Map	UDVButton 5-6_6-6		Filter Vel	5			Filter
 Map	UDVButton 3-7_4-7		Filter Mod Source				Filter
 // Amp 
 Map	PageName		"Amp" 				Amp
-{{ rm.include_menus(curpage="Amp", bottommenu="amp",leftmenu_mini="common", amppage="Amp") -}}
+{{ rm.include_menus(curpage="Amp", submenu="amp",mainmenu_mini="common", amppage="Amp") -}}
 Map	Knob V2		Pan				Amp
 Map	Fader 3		Amp Gain				Amp
 Map	Fader 4		Amp Velocity				Amp
@@ -115,7 +115,7 @@ Map	Fader 8		Amp Release				Amp
 // Eng {{ engnum }}
 Map	PageName		"Eng {{ engnum }}" 				Eng{{ engnum }}Osc
 {% set oscpage="Osc" %}
-{{ rm.include_menus(curpage="Eng"+engnum|string+"Osc",leftmenu_mini="common", bottommenu="osc", oscpage="Osc", engnum=engnum) -}}
+{{ rm.include_menus(curpage="Eng"+engnum|string+"Osc",mainmenu_mini="common", submenu="osc", oscpage="Osc", engnum=engnum) -}}
 Map	Button 1-2		Osc{{ engnum }} On			Eng{{ engnum }}Osc
 Map	UDVButton 1-3_2-3		Osc{{ engnum }} Oct				Eng{{ engnum }}Osc
 Map	UDVButton 3-3_4-3		Osc{{ engnum }} Semi				Eng{{ engnum }}Osc
@@ -130,7 +130,7 @@ Map	Fader 8		Osc{{ engnum }} Shape Vel				Eng{{ engnum }}Osc
 {% for modnum in range(1,3) %}
 // Eng {{ engnum }} Modifier {{ modnum }}
 Map	PageName		"Eng {{ engnum }} Mod {{ modnum }}" 				Eng{{ engnum }}Mod{{ modnum }}
-{{ rm.include_menus(curpage="Eng"+engnum|string+"Mod"+modnum|string,leftmenu_mini="common", bottommenu="osc", oscpage="Mod"+modnum|string, engnum=engnum) -}}
+{{ rm.include_menus(curpage="Eng"+engnum|string+"Mod"+modnum|string,mainmenu_mini="common", submenu="osc", oscpage="Mod"+modnum|string, engnum=engnum) -}}
 Map	Button 1-2		Osc{{ engnum }} Mod{{ modnum }} On			Eng{{ engnum }}Mod{{ modnum }}
 Map	UDVButton 1-3_2-3		Osc{{ engnum }} Mod{{ modnum }}				Eng{{ engnum }}Mod{{ modnum }}
 Map	Fader 4		Osc{{ engnum }} Mod{{ modnum }} Amt				Eng{{ engnum }}Mod{{ modnum }}
@@ -139,7 +139,7 @@ Map	UDVButton 7-6_8-6		Osc{{ engnum }} Mod{{ modnum }} Source				Eng{{ engnum }}
 {% endfor -%}
 // Eng {{ engnum }} Spectral Filter
 Map	PageName		"Eng {{ engnum }} Spectral Filter" 				Eng{{ engnum }}Filter
-{{ rm.include_menus(curpage="Eng"+engnum|string+"Filter",leftmenu_mini="common", bottommenu="osc", oscpage="Filter", engnum=engnum) -}}
+{{ rm.include_menus(curpage="Eng"+engnum|string+"Filter",mainmenu_mini="common", submenu="osc", oscpage="Filter", engnum=engnum) -}}
 Map	Button 1-2		Osc{{ engnum }} Filter On			Eng{{ engnum }}Filter
 Map	UDVButton 3-2_4-2		Osc{{ engnum }} Filter				Eng{{ engnum }}Filter
 Map	Fader 3		Osc{{ engnum }} Filter Freq				Eng{{ engnum }}Filter
@@ -150,14 +150,14 @@ Map	UDVButton 7-7_8-7		Osc{{ engnum }} Filter Source				Eng{{ engnum }}Filter
 Map	Fader 8		Osc{{ engnum }} Filter Vel				Eng{{ engnum }}Filter
 // Eng {{ engnum }} Harmonics
 Map	PageName		"Eng {{ engnum }} Harmonics" 				Eng{{ engnum }}Harm
-{{ rm.include_menus(curpage="Eng"+engnum|string+"Harm",leftmenu_mini="common", bottommenu="osc", oscpage="Harm", engnum=engnum) -}}
+{{ rm.include_menus(curpage="Eng"+engnum|string+"Harm",mainmenu_mini="common", submenu="osc", oscpage="Harm", engnum=engnum) -}}
 Map	Button 1-2		Osc{{ engnum }} Harm On			Eng{{ engnum }}Harm
 Map	UDVButton 1-3_2-3		Osc{{ engnum }} Harm				Eng{{ engnum }}Harm
 Map	Fader 4		Osc{{ engnum }} Harm Pos				Eng{{ engnum }}Harm
 Map	Fader 5		Osc{{ engnum }} Harm Amt				Eng{{ engnum }}Harm
 // Eng {{ engnum }} Unison
 Map	PageName		"Eng {{ engnum }} Unison" 				Eng{{ engnum }}Unison
-{{ rm.include_menus(curpage="Eng"+engnum|string+"Unison",leftmenu_mini="common", bottommenu="osc", oscpage="Unison", engnum=engnum) -}}
+{{ rm.include_menus(curpage="Eng"+engnum|string+"Unison",mainmenu_mini="common", submenu="osc", oscpage="Unison", engnum=engnum) -}}
 Map	Button 1-2		Osc{{ engnum }} Unison On			Eng{{ engnum }}Unison
 Map	UDVButton 1-3_2-3		Osc{{ engnum }} Unison Mode				Eng{{ engnum }}Unison
 Map	UDVButton 1-4_2-4		Osc{{ engnum }} Count				Eng{{ engnum }}Unison

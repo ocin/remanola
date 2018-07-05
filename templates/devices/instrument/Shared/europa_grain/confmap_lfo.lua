@@ -10,6 +10,6 @@
                         ["UDVButton 7-3_8-3"]={template="UDFreq"},
                         ["Fader 4"]={template="FEffect"},
 {% if lptype == "pro" %}
-{% include "devices/instrument/Shared/europa_grain/pro/confmap_bottommenu_mod.lua" %}
+{% include "devices/instrument/Shared/europa_grain/pro/confmap_submenu_mod.lua" %}
 {% endif %}
                 },

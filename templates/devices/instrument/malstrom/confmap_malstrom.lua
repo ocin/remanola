@@ -1,6 +1,6 @@
 	["Malstrom"]={
 		["Default"]={
-{% include "devices/instrument/malstrom/"+lptype+"/confmap_leftmenu.lua" %}
+{% include "devices/instrument/malstrom/"+lptype+"/confmap_mainmenu.lua" %}
 		},
 		["Main"]={
 			["Fader 3"]={template="FMisc"},
@@ -18,9 +18,9 @@
 			["UDVButton 7-7_8-7"]={template="UDFreq"},
 			["Button 8-8"]={template="BYellowOnOff"},
 {% if lptype == "mini" %}
-{% include "devices/instrument/malstrom/mini/confmap_leftmenu_osc.lua" %}
+{% include "devices/instrument/malstrom/mini/confmap_mainmenu_osc.lua" %}
 {% else %}
-{% include "devices/instrument/malstrom/pro/confmap_bottommenu_osc.lua" %}
+{% include "devices/instrument/malstrom/pro/confmap_submenu_osc.lua" %}
 {% endif %}
 		},
 		["Osc A"]={
@@ -35,9 +35,9 @@
 		},
 		["Filter *"]={
 {% if lptype == "mini" %}
-{% include "devices/instrument/malstrom/mini/confmap_leftmenu_filter.lua" %}
+{% include "devices/instrument/malstrom/mini/confmap_mainmenu_filter.lua" %}
 {% else %}
-{% include "devices/instrument/malstrom/pro/confmap_bottommenu_filter.lua" %}
+{% include "devices/instrument/malstrom/pro/confmap_submenu_filter.lua" %}
 {% endif %}
 			["Button 1-2"]={template="BYellowOnOff"},
 			["UDVButton 7-4_8-4"]={template="UDFreq", inverted=true},
@@ -56,9 +56,9 @@
 		},
 		["Mod *"]={
 {% if lptype == "mini" %}
-{% include "devices/instrument/malstrom/mini/confmap_leftmenu_mod.lua" %}
+{% include "devices/instrument/malstrom/mini/confmap_mainmenu_mod.lua" %}
 {% else %}
-{% include "devices/instrument/malstrom/pro/confmap_bottommenu_mod.lua" %}
+{% include "devices/instrument/malstrom/pro/confmap_submenu_mod.lua" %}
 {% endif %}
 			["Button 5-1"]={template="BLFOPage"},
 			["Button 6-1"]={template="BLFOPage"},

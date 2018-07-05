@@ -7,7 +7,7 @@
                         ["Knob V7"]={template="FEffect"},
                         ["UDVButton 1-8_2-8"]={template="UDMisc", inverted=true},
 {% if lptype == "pro" %}
-{% include "devices/instrument/Shared/europa_grain/pro/confmap_bottommenu_perf.lua" %}
+{% include "devices/instrument/Shared/europa_grain/pro/confmap_submenu_perf.lua" %}
 {% else %}
                         ["Button 1-1"]={template="BPerformancePage"},
                         ["Button 2-1"]={template="BPerformancePage"},

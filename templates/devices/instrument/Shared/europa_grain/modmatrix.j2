@@ -11,5 +11,5 @@ Map	Knob V5		Mod{{ mmnum }} Dest2 Amt			ModMatrix{{ mmnum }}
 Map	UDVButton 1-6_2-6		Mod{{ mmnum }} Dest2			 ModMatrix{{ mmnum }}
 Map	Knob V7		Mod{{ mmnum }} Scale Amt			ModMatrix{{ mmnum }}
 Map	UDVButton 1-8_2-8		Mod{{ mmnum }} Scale			 ModMatrix{{ mmnum }}
-{{ rm.include_menus(curpage="ModMatrix"+mmnum|string, bottommenu="perf",leftmenu_mini="modmatrix", perfpage="ModMatrix"+mmnum|string) -}}
+{{ rm.include_menus(curpage="ModMatrix"+mmnum|string, submenu="perf",mainmenu_mini="modmatrix", perfpage="ModMatrix"+mmnum|string) -}}
 {% endfor %}

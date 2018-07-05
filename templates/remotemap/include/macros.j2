@@ -1,4 +1,4 @@
-{% macro include_menus(curpage, bottommenu='UNDEFINED', leftmenu_mini='UNDEFINED', oscpage='UNDEFINED', perfpage='UNDEFINED', modpage='UNDEFINED', voicingpage='UNDEFINED', sectionpage='UNDEFINED', amppage='UNDEFINED', filterpage='UNDEFINED', section='UNDEFINED', engnum='UNDEFINED') %}
+{% macro include_menus(curpage, submenu='UNDEFINED', mainmenu_mini='UNDEFINED', oscpage='UNDEFINED', perfpage='UNDEFINED', modpage='UNDEFINED', voicingpage='UNDEFINED', sectionpage='UNDEFINED', amppage='UNDEFINED', filterpage='UNDEFINED', section='UNDEFINED', engnum='UNDEFINED') %}
 	{% if oscpage == 'UNDEFINED' and oscpagedefault is defined -%}
 		{% set oscpage=oscpagedefault -%}
 	{% endif -%}
@@ -28,13 +28,13 @@
 		{% set bmshortname=shortname %}
 	{% endif %}
 	{% if lptype == "pro" %}
-		{% include "devices/instrument/"+lmshortname+"/pro/leftmenu.j2" %}
-		{% if bottommenu != "UNDEFINED" %}
-			{% include "devices/instrument/"+bmshortname+"/pro/bottommenu_"+bottommenu+".j2" %}
+		{% include "devices/instrument/"+lmshortname+"/pro/mainmenu.j2" %}
+		{% if submenu != "UNDEFINED" %}
+			{% include "devices/instrument/"+bmshortname+"/pro/submenu_"+submenu+".j2" %}
 		{% endif %}
 	{% else %}
-		{% if leftmenu_mini != "UNDEFINED" %}
-			{% include "devices/instrument/"+bmshortname+"/mini/leftmenu_"+leftmenu_mini+".j2" %}
+		{% if mainmenu_mini != "UNDEFINED" %}
+			{% include "devices/instrument/"+bmshortname+"/mini/mainmenu_"+mainmenu_mini+".j2" %}
 		{% endif %}
 	{% endif %}
 {% endmacro %}

@@ -74,7 +74,7 @@ Map	Fader 6		Speed				Sample
 Map	Fader 7		Jitter				Sample
 Map	Button 1-8		Global Position			Sample
 // Grains
-{{ rm.include_menus(curpage="Grains",bottommenu="osc",oscpage="Grains") -}}
+{{ rm.include_menus(curpage="Grains",submenu="osc",oscpage="Grains") -}}
 Map	PageName		"Grains" 				Grains
 Map	Sel1_0		Grains=SpectralGrains			Grains
 Map	Sel1_42		Grains=GrainOsc			Grains
@@ -112,21 +112,21 @@ Map	SubPageName		"Tape" 				Grains	Tape
 Map	Fader 6		XFade				Grains	Tape
 // Pitch
 Map	PageName		"Pitch" 				Pitch
-{{ rm.include_menus(curpage="Pitch",bottommenu="osc",oscpage="Pitch") -}}
+{{ rm.include_menus(curpage="Pitch",submenu="osc",oscpage="Pitch") -}}
 Map	UDVButton 1-2_2-2		Oct				Pitch
 Map	UDVButton 1-3_2-3		Semi				Pitch
 Map	UDVButton 1-4_2-4		Tune				Pitch
 Map	Fader 6		Pitch Kbd				Pitch
 // Osc
 Map	PageName		"Osc" 				Osc
-{{ rm.include_menus(curpage="Osc",bottommenu="osc",oscpage="Osc") -}}
+{{ rm.include_menus(curpage="Osc",submenu="osc",oscpage="Osc") -}}
 Map	Button 1-2		Osc On 			Osc
 Map	UDVButton 1-3_2-3		Osc Oct				Osc
 Map	UDVButton 1-4_2-4		Osc Wave				Osc
 Map	Fader 6		Osc Mod				Osc
 // Mixer 
 Map	PageName		"Mixer" 				Mixer
-{{ rm.include_menus(curpage="Mixer",bottommenu="amp", amppage="Mixer") -}}
+{{ rm.include_menus(curpage="Mixer",submenu="amp", amppage="Mixer") -}}
 Map	Button 1-2		Sample To Filter			Mixer
 Map	Fader 3		Sample Level				Mixer
 Map	Button 1-4		Osc To Filter			Mixer
@@ -142,7 +142,7 @@ Map	UDVButton 1-7_2-7		Filter Env2	5			Filter
 Map	UDVButton 1-8_2-8		Filter Vel	5			Filter
 // Amp
 Map	PageName		"Amp" 				Amp
-{{ rm.include_menus(curpage="Amp",bottommenu="amp", amppage="Amp") -}}
+{{ rm.include_menus(curpage="Amp",submenu="amp", amppage="Amp") -}}
 Map	Fader 2		Amp Attack				Amp
 Map	Fader 3		Amp Decay				Amp
 Map	Fader 4		Amp Sustain				Amp

@@ -20,7 +20,7 @@ Map	Button 8-4		Delay On			Effects
 Map	Button 8-5		Comp On			Effects
 Map	Button 8-6		Reverb On			Effects
 {% endif %}
-{{ rm.include_menus(curpage="Effects", bottommenu="effects") -}}
+{{ rm.include_menus(curpage="Effects", submenu="effects") -}}
 // Phaser
 Map	PageName		"Phaser" 				Phaser
 {% if lptype == "mini" %}
@@ -28,7 +28,7 @@ Map	Button 1-2		Phaser On			Phaser
 {% else %}
 Map	Button 1-1		Phaser On			Phaser
 {% endif %}
-{{ rm.include_menus(curpage="Phaser",bottommenu="effects") -}}
+{{ rm.include_menus(curpage="Phaser",submenu="effects") -}}
 Map	UDVButton 5-1_6-1		Mod Effect Type				Phaser
 Map	Fader 4		Mod Effect Depth				Phaser
 Map	Fader 5		Mod Effect Rate				Phaser
@@ -41,7 +41,7 @@ Map	Button 1-2		Dist On			Dist
 {% else %}
 Map	Button 1-1		Dist On			Dist
 {% endif %}
-{{ rm.include_menus(curpage="Dist",bottommenu="effects") -}}
+{{ rm.include_menus(curpage="Dist",submenu="effects") -}}
 Map	UDVButton 5-1_6-1		Dist Type				Dist
 Map	Fader 4		Dist Drive				Dist
 Map	Fader 5		Dist Tone				Dist
@@ -53,7 +53,7 @@ Map	Button 1-2		Eq On			Eq
 {% else %}
 Map	Button 1-1		Eq On			Eq
 {% endif %}
-{{ rm.include_menus(curpage="Eq",bottommenu="effects") -}}
+{{ rm.include_menus(curpage="Eq",submenu="effects") -}}
 Map	Fader 4		Eq Freq				Eq
 Map	Fader 5		Eq Q				Eq
 Map	Fader 7		Eq Gain				Eq
@@ -66,7 +66,7 @@ Map	Button 1-2		Delay On			Delay
 {% else %}
 Map	Button 1-1		Delay On			Delay
 {% endif %}
-{{ rm.include_menus(curpage="Delay",bottommenu="effects") -}}
+{{ rm.include_menus(curpage="Delay",submenu="effects") -}}
 Map	Button 4-1		Delay Sync		SEL1	Delay
 Map	Button 6-1		Delay PingPong			Delay
 Map	UDVButton 3-2_4-2		Delay Time	5			Delay	Free
@@ -81,7 +81,7 @@ Map	Button 1-2		Comp On			Comp
 {% else %}
 Map	Button 1-1		Comp On			Comp
 {% endif %}
-{{ rm.include_menus(curpage="Comp",bottommenu="effects") -}}
+{{ rm.include_menus(curpage="Comp",submenu="effects") -}}
 Map	Fader 3		Comp Attack				Comp
 Map	Fader 4		Comp Release				Comp
 Map	Fader 6		Comp Threshold				Comp
@@ -93,7 +93,7 @@ Map	Button 1-2		Reverb On			Reverb
 {% else %}
 Map	Button 1-1		Reverb On			Reverb
 {% endif %}
-{{ rm.include_menus(curpage="Reverb",bottommenu="effects") -}}
+{{ rm.include_menus(curpage="Reverb",submenu="effects") -}}
 Map	Fader 3		Reverb Decay				Reverb
 Map	Fader 4		Reverb Size				Reverb
 Map	Fader 5		Reverb Damp				Reverb
