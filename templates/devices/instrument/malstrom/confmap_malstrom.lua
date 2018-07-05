@@ -32,6 +32,11 @@
 			["Fader 5"]={template="FAmount"},
 			["Fader 6"]={template="FAmount"},
 			["Fader 8"]={template="FGain"},
+{% if lptype == "mini" %}
+{% include "devices/instrument/malstrom/mini/confmap_mainmenu_osc.lua" %}
+{% else %}
+{% include "devices/instrument/malstrom/pro/confmap_submenu_osc.lua" %}
+{% endif %}
 		},
 		["Filter *"]={
 {% if lptype == "mini" %}

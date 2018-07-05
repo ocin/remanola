@@ -3,6 +3,5 @@
                         ["Button B3"]={template="BOscPage"},
                         ["Button B4"]={template="BOscModPage"},
                         ["Button B5"]={template="BFilterPage"},
-                        ["Button B6"]={template="BFilterPage"},
                         ["Button B7"]={template="BLFOPage"},
                         ["Button B8"]={template="BPerformancePage"},

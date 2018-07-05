@@ -131,6 +131,7 @@ Map	Button 8-1		Osc 3 Sync To Osc 1				Osc3
 Map	Fader 8		Osc 3 Sync BW				Osc3
 // Mixer
 Map	PageName		"Mixer" 				Mixer
+{{ rm.include_menus(curpage="Mixer") -}}
 Map	Knob V3		Osc 1 And 2 Balance				Mixer
 Map	Fader 4		Osc 1 And 2 Level				Mixer
 Map	Fader 5		Osc 3 Level				Mixer
@@ -198,7 +199,7 @@ Map	Button 7-1		Osc 3 To Filter 2 Enable			Filter2
 Map	Button 8-1		Filter2ToAmplifier Enable			Filter2
 // FilterEnv
 Map	PageName		"Filter Env" 				FilterEnv
-{{ rm.include_menus(curpage="FilterEnv", submenu="filter", filterpage="FilteriEnv") -}}
+{{ rm.include_menus(curpage="FilterEnv", submenu="filter", filterpage="FilterEnv") -}}
 Map	Button 2-2		Filter Env Gate Trig On				FilterEnv
 Map	Fader 3		Filter Env Attack				FilterEnv
 Map	Fader 4		Filter Env Decay				FilterEnv

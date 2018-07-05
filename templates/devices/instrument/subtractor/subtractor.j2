@@ -6,6 +6,7 @@
 {% set show_pitch_bend_range=true -%}
 {% set modpagedefault="LFO1" -%}
 {% set perfpagedefault="Velocity1" -%}
+{% set filterpagedefault="Filter" -%}
 {# End Variables -#}
 {% import "remotemap/include/macros.j2" as rm with context %}
 {% include "remotemap/include/device/scope.j2" %}
@@ -73,7 +74,7 @@ Map	Fader 3		Noise Color			Noise
 Map	Fader 4		Noise Level			Noise
 // Filter
 Map	PageName		"Filter" 				Filter
-{{ rm.include_menus(curpage="Filter",mainmenu_mini="common") -}}
+{{ rm.include_menus(curpage="Filter",submenu="filter",mainmenu_mini="common", filterpage="Filter") -}}
 Map	Fader 2		Filter Freq				Filter
 Map	Fader 3		Filter Res				Filter
 Map	UDVButton 5-4_6-4		Filter Type				Filter
@@ -81,13 +82,13 @@ Map	Fader 5		Filter Kbd Track				Filter
 Map	Button 8-6		Filter Link Freq On/Off				Filter
 // Filter 2
 Map	PageName		"Filter 2" 				Filter2
-{{ rm.include_menus(curpage="Filter2",mainmenu_mini="common") -}}
+{{ rm.include_menus(curpage="Filter2",submenu="filter",mainmenu_mini="common", filterpage="Filter2") -}}
 Map	Button 8-1		Filter2 On/Off			Filter2
 Map	Fader 2		Filter2 Freq				Filter2
 Map	Fader 3		Filter2 Res				Filter2
 // Filter Env
 Map	PageName		"Filter Env" 				FilterEnv
-{{ rm.include_menus(curpage="FilterEnv",mainmenu_mini="common") -}}
+{{ rm.include_menus(curpage="FilterEnv",submenu="filter",mainmenu_mini="common", filterpage="FilterEnv") -}}
 Map	Fader 3		Filter Env Attack				FilterEnv
 Map	Fader 4		Filter Env Decay				FilterEnv
 Map	Fader 5		Filter Env Sustain				FilterEnv
@@ -143,13 +144,13 @@ Map	Knob V5		Filter Decay Vel Amount				Velocity2
 Map	Knob V6		Mix Vel Amount				Velocity2
 Map	Knob V7		Amp Attack Vel Amount				Velocity2
 // Modwheel
-Map	PageName		"Modwheel" 				Modwheel
+Map	PageName		"ModWheel Control" 			ModwheelContr
 {{ rm.include_menus(curpage="ModwheelContr",submenu="perf",mainmenu_mini="common", perfpage="ModwheelContr") -}}
-Map	Knob V3		Filter Freq Mod Wheel Amount				ModwheelContr
-Map	Knob V4		Filter Res Mod Wheel Amount				ModwheelContr
-Map	Knob V5		LFO1 Mod Wheel Amount				ModwheelContr
-Map	Knob V6		Phase Diff Mod Wheel Amount				ModwheelContr
-Map	Knob V7		FM Mod Wheel Amount				ModwheelContr
+Map	Knob V3		Filter Freq Mod Wheel Amount			ModwheelContr
+Map	Knob V4		Filter Res Mod Wheel Amount			ModwheelContr
+Map	Knob V5		LFO1 Mod Wheel Amount			ModwheelContr
+Map	Knob V6		Phase Diff Mod Wheel Amount			ModwheelContr
+Map	Knob V7		FM Mod Wheel Amount			ModwheelContr
 // ExtMod
 Map	PageName		"ExtMod" 				ExtMod
 {{ rm.include_menus(curpage="ExtMod",submenu="perf",mainmenu_mini="common", perfpage="ExtMod") -}}

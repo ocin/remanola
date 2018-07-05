@@ -54,6 +54,7 @@ Map	UDVButton 7-7_8-7		Oscillator {{ oscnum }} Cent			Osc{{ oscnum }}
 Map	Button 8-8		Route Oscillator {{ oscnum }} To Filter B			Osc{{ oscnum }}
 // Osc{{ oscnum }} Env
 Map	PageName		"Osc {{ oscnum }} Env" 				Osc{{ oscnum }}Env
+{{ rm.include_menus(curpage="Osc"+oscnum+"Env", mainmenu_mini="osc", submenu="osc", oscpage="Osc"+oscnum+"Env") -}}
 Map	Fader 3		Oscillator {{ oscnum }} Attack			Osc{{ oscnum }}Env
 Map	Fader 4		Oscillator {{ oscnum }} Decay			Osc{{ oscnum }}Env
 Map	Fader 5		Oscillator {{ oscnum }} Sustain			Osc{{ oscnum }}Env
@@ -75,7 +76,7 @@ Map	Fader 8		Filter {{ filternum }} Resonance			Filter{{ filternum }}
 {% endfor -%}
 // FilterEnv
 Map	PageName		"Filter Env" 				FilterEnv
-{{ rm.include_menus(curpage="FilterEnv", submenu="filter", filterpage="FilteriEnv") -}}
+{{ rm.include_menus(curpage="FilterEnv", submenu="filter", filterpage="FilterEnv") -}}
 Map	Fader 3		Filter Env Attack			FilterEnv
 Map	Fader 4		Filter Env Decay			FilterEnv
 Map	Fader 5		Filter Env Sustain			FilterEnv
