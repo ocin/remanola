@@ -17,6 +17,12 @@
 # You should have received a copy of the GNU General Public License
 # along with Remanola.  If not, see <http://www.gnu.org/licenses/>.
 
+check_for_undef() {
+	if grep -q UNDEFINED $1; then 
+		echo "Found UNDEFINED tag in $1"
+	fi
+}
+
 INSTALLBASE="/Library/Application Support/Propellerhead Software/Remote"
 
 if [ ! -z $1 ];then
@@ -40,6 +46,8 @@ if [ ! -d "$OUTDIR" ]; then
 fi
 
 ./build_remotemap.py
+check_for_undef "$OUTDIR/Launchpad-Mini.remotemap"
+check_for_undef "$OUTDIR/Launchpad-Pro.remotemap"
 ./build_lua.py
 
 # Mini
