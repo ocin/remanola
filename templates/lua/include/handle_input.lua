@@ -55,18 +55,19 @@ function handle_input_kong(event, button)
 end
 
 function handle_input_keyboard(event, button)
+	local velocity = get_veloctity(button.z)
 	if(get_current_page() == "Keyboard" and get_current_kbdpage() == "Kbd") then
 		buttonname = get_button_name(button)
 		keynote = button_to_keynote[buttonname]
 		if(keynote ~= nil) then
-			remote.handle_input({ time_stamp = event.time_stamp, item = 1, value = 1, note = (keynote+12*g_basekey), velocity = button.z })
+			remote.handle_input({ time_stamp = event.time_stamp, item = 1, value = 1, note = (keynote+12*g_basekey), velocity = velocity })
 			return true
 		end
 	elseif(get_current_page() == "Keyboard" and get_current_kbdpage() == "Drum") then
 		local buttonname = get_button_name(button)
 		local padnote = button_to_fullpadnote[buttonname]
 		if(padnote ~= nil) then
-			remote.handle_input({ time_stamp = event.time_stamp, item = 1, value = 1, note = padnote, velocity = button.z })
+			remote.handle_input({ time_stamp = event.time_stamp, item = 1, value = 1, note = padnote, velocity = velocity })
 			return true
 		end
 	end

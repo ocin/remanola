@@ -128,9 +128,9 @@ end
 
 function handle_changed_kbdvel(citemindex, citemname)
 	if(string.match(citemname, "KbdVel")) then
-             			local newkbdvel = tonumber(remote.get_item_text_value(itemsindex["KbdVel"]))
+		local newkbdvel = tonumber(remote.get_item_text_value(itemsindex["KbdVel"]))
 		if(newkbdvel ~= nil) then
-             				g_kbdvel = newkbdvel
+			g_kbdvel = newkbdvel
 		end
 	end
 end
