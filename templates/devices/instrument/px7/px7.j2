@@ -1,0 +1,54 @@
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.PX7" -%}
+{% set devicename="PX7" -%}
+{% set shortname="px7" -%}
+{# Variables -#}
+{# End Variables -#}
+{% import "remotemap/include/macros.j2" as rm with context %}
+{% include "remotemap/include/device/scope.j2" %}
+Define Group	Page	Main	OP1	OP2	OP3	OP4	OP5	OP6	LFO	Index	Keyboard	Internal
+Define Group	TempoSync	Free	Sync
+{% include "remotemap/include/device/instrument.j2" %}
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-7		Page=Keyboard			Index
+Map	Button 2-1		Page=OP6			Index
+Map	Button 3-1		Page=OP5			Index
+Map	Button 4-1		Page=OP4			Index
+Map	Button 5-1		Page=OP3			Index
+Map	Button 6-1		Page=OP2			Index
+Map	Button 7-1		Page=OP1			Index
+Map	Button 5-5		Page=LFO			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main" 				Main
+{{ rm.include_menus(curpage="Main",mainmenu_mini="common") -}}
+Map	UDVButton 1-2_2-2		Algorithm				Main
+Map	Fader 3		Portamento Time				Main
+Map	Knob V4		Brightness				Main
+Map	Knob V5		Touch Senstivity				Main
+Map	Knob V6		Attack				Main
+Map	Knob V7		Decay				Main
+Map	Fader 8		Volume				Main
+{% for opnum in range(1,7) -%}
+// Op {{ opnum }}
+Map	PageName		"Op{{ opnum }}" 				OP{{ opnum }}
+{{ rm.include_menus(curpage="OP"+opnum|string,mainmenu_mini="common") -}}
+Map	Button 8-2		Operator {{ opnum }} Freq Mode				OP{{ opnum }}
+Map	UDVButton 7-3_8-3		Operator {{ opnum }} Freq Coarse				OP{{ opnum }}
+Map	UDVButton 7-4_8-4		Operator {{ opnum }} Freq Fine				OP{{ opnum }}
+Map	UDVButton 7-5_8-5		Operator {{ opnum }} Freq Detune				OP{{ opnum }}
+Map	Knob V7		Operator {{ opnum }} Pan				OP{{ opnum }}
+Map	Fader 8		Operator {{ opnum }} Output Level				OP{{ opnum }}
+{% endfor -%}
+// LFO
+Map	PageName		"LFO" 				LFO
+{{ rm.include_menus(curpage="LFO"|string,mainmenu_mini="common") -}}
+Map	Sel1_0		TempoSync=Free			LFO
+Map	Sel1_1		TempoSync=Sync			LFO
+Map	Fader 3		LFO Speed				LFO	Free
+Map	UDVButton 7-3_8-3		LFO Speed Tempo Synced				LFO	Sync
+Map	Fader 4		LFO Delay				LFO
+Map	UDVButton 1-5_2-5		LFO Waveform				LFO
+Map	Button 8-2		LFO Tempo Sync		SEL1	LFO

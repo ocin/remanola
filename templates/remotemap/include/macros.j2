@@ -1,0 +1,40 @@
+{% macro include_menus(curpage, submenu='UNDEFINED', mainmenu_mini='UNDEFINED', oscpage='UNDEFINED', perfpage='UNDEFINED', modpage='UNDEFINED', voicingpage='UNDEFINED', sectionpage='UNDEFINED', amppage='UNDEFINED', filterpage='UNDEFINED', section='UNDEFINED', engnum='UNDEFINED') %}
+	{% if oscpage == 'UNDEFINED' and oscpagedefault is defined -%}
+		{% set oscpage=oscpagedefault -%}
+	{% endif -%}
+	{% if perfpage == 'UNDEFINED' and perfpagedefault is defined -%}
+		{% set perfpage=perfpagedefault -%}
+	{% endif -%}
+	{% if modpage == 'UNDEFINED' and modpagedefault is defined -%}
+		{% set modpage=modpagedefault -%}
+	{% endif -%}
+	{% if voicingpage == 'UNDEFINED' and voicingpagedefault is defined -%}
+		{% set voicingpage=voicingpagedefault -%}
+	{% endif -%}
+	{% if sectionpage == 'UNDEFINED' and sectionpagedefault is defined -%}
+		{% set sectionpage=sectionpagedefault -%}
+	{% endif -%}
+	{% if amppage == 'UNDEFINED' and amppagedefault is defined -%}
+		{% set amppage=amppagedefault -%}
+	{% endif -%}
+	{% if filterpage == 'UNDEFINED' and filterpagedefault is defined -%}
+		{% set filterpage=filterpagedefault -%}
+	{% endif -%}
+	{% if baseshortname is defined %}
+		{% set lmshortname=baseshortname %}
+		{% set bmshortname="Shared/"+shortname %}
+	{% else %}
+		{% set lmshortname=shortname %}
+		{% set bmshortname=shortname %}
+	{% endif %}
+	{% if lptype == "pro" %}
+		{% include "devices/instrument/"+lmshortname+"/pro/mainmenu.j2" %}
+		{% if submenu != "UNDEFINED" %}
+			{% include "devices/instrument/"+bmshortname+"/pro/submenu_"+submenu+".j2" %}
+		{% endif %}
+	{% else %}
+		{% if mainmenu_mini != "UNDEFINED" %}
+			{% include "devices/instrument/"+bmshortname+"/mini/mainmenu_"+mainmenu_mini+".j2" %}
+		{% endif %}
+	{% endif %}
+{% endmacro %}

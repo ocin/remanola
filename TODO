@@ -25,8 +25,42 @@
 	* Metronome
 	* Additional controls
 * Keyboard
+* Update image for both mini and pro
+* Detect correct port for pro
+- Documentation
+	- Update color documentation for pro
+	- Write user guide
+	- Write layout guide
 - 7 Step Fader?
 - Reset default UD*Button
+
+- Update devices with new menu setup
+	- Instruments
+		- DrOctoRex
+		- Kong
+		- NN19
+		- Parsec
+		- Radical Piano
+		- Redrum
+	- Effects
+		- Alligator
+		- BV512 Digital Vocoder
+		- ECF-42 Filter
+		- MClass compressor
+		- MClass Equalizer
+		- MClass Maximizer
+		- Neptune
+		- PH-90 Phaser
+		- Polar
+		- Pulveriser
+		- RV-7000
+		- Scream 4
+		- Softtube Amp
+		- Softtube Bass Amp
+		- Synchronous
+		- The Echo
+	- Utilities
+		- RPG-8
 
 Map:
 * Master section

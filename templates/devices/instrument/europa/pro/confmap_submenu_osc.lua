@@ -1,0 +1,6 @@
+                        ["Button A1"]={template="BOscPage"},
+                        ["Button A2"]={template="BOscModPage"},
+                        ["Button A3"]={template="BOscModPage"},
+                        ["Button A5"]={template="BFilterPage"},
+                        ["Button A6"]={template="BFilterModPage"},
+                        ["Button A7"]={template="BEffectPage"},

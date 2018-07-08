@@ -17,6 +17,12 @@
 # You should have received a copy of the GNU General Public License
 # along with Remanola.  If not, see <http://www.gnu.org/licenses/>.
 
+check_for_undef() {
+	if grep -q UNDEFINED $1; then 
+		echo "Found UNDEFINED tag in $1"
+	fi
+}
+
 INSTALLBASE="/Library/Application Support/Propellerhead Software/Remote"
 
 if [ ! -z $1 ];then
@@ -40,11 +46,21 @@ if [ ! -d "$OUTDIR" ]; then
 fi
 
 ./build_remotemap.py
+check_for_undef "$OUTDIR/Launchpad-Mini.remotemap"
+check_for_undef "$OUTDIR/Launchpad-Pro.remotemap"
 ./build_lua.py
 
+# Mini
 cp -r $OUTDIR/Launchpad-Mini.lua "$CODECSDIR"
 cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.luacodec "$CODECSDIR"
 cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.png "$CODECSDIR"
+cp -r $OUTDIR/Launchpad-Mini.remotemap "$MAPSDIR"
+
+# Pro
+cp -r $OUTDIR/Launchpad-Pro.lua "$CODECSDIR"
+cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Pro.luacodec "$CODECSDIR"
+cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Pro.png "$CODECSDIR"
+cp -r $OUTDIR/Launchpad-Pro.remotemap "$MAPSDIR"
+
 cp COPYING "$CODECSDIR"
 cp README.md "$CODECSDIR"
-cp -r $OUTDIR/Launchpad-Mini.remotemap "$MAPSDIR"

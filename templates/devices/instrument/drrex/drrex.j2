@@ -1,0 +1,88 @@
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="Dr.REX Loop Player" -%}
+{% set devicename="DrOctoRex" -%}
+{# Variables -#}
+{% set show_pitch_bend_range=true -%}
+{# End Variables -#}
+{% include "remotemap/include/device/scope.j2" %}
+Define Group	Page	Main	Osc	Loop	Performance	Filter	FilterEnv	LFO	AmpEnv	Index	Keyboard	Internal
+Define Group	TempoSync	Free	Sync
+{% include "remotemap/include/device/instrument.j2" %}
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=AmpEnv			Index
+Map	Button 2-1		Page=Osc			Index
+Map	Button 1-5		Page=Loop			Index
+Map	Button 1-6		Page=Performance			Index
+Map	Button 1-7		Page=Keyboard			Index
+Map	Button 2-5		Page=Filter			Index
+Map	Button 2-6		Page=FilterEnv			Index
+Map	Button 5-5		Page=LFO			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-2_2-2		Trigger Next Setting			Main
+Map	UDVButton 1-3_2-3		Notes to Slot			Main
+Map	Button 4-3		Select Loop 1			Main
+Map	Button 4-4		Select Loop 2			Main
+Map	Button 4-5		Select Loop 3			Main
+Map	Button 4-6		Select Loop 4			Main
+Map	Button 5-3		Select Loop 5			Main
+Map	Button 5-4		Select Loop 6			Main
+Map	Button 5-5		Select Loop 7			Main
+Map	Button 5-6		Select Loop 8			Main
+Map	Button 1-7		Enable Loop Playback			Main
+Map	Button 5-7		Run			Main
+Map	UDVButton 7-7_8-7		Transpose			Main
+Map	Fader 8		Master Level			Main
+// AmpEnv
+Map	PageName		"AmpEnv" 				AmpEnv
+Map	Fader 4		Amp Env Attack			AmpEnv
+Map	Fader 5		Amp Env Decay			AmpEnv
+Map	Fader 6		Amp Env Sustain			AmpEnv
+Map	Fader 7		Amp Env Release			AmpEnv
+// Osc
+Map	PageName		"Osc" 				Osc
+Map	Knob V2		Osc Env Amount			Osc
+Map	UDVButton 1-3_2-3		Osc Octave			Osc
+Map	UDVButton 1-4_2-4		Osc Fine Tune			Osc
+// Loop
+Map	PageName		"Loop" 				Loop
+Map	Button 1-2		Follow Loop Playback			Loop
+Map	UDVButton 1-3_2-3		Selected Loop in Editor			Loop
+Map	UDVButton 1-4_2-4		Loop Transpose			Loop
+Map	Fader 8		Loop Level			Loop
+// Performance
+Map	PageName		"Performance" 				Performance
+Map	UDVButton 3-1_4-1		Pitch Bend Range			Performance
+Map	UDVButton 7-1_8-1		Polyphony			Performance
+Map	Knob V2		Filter Freq Mod Wheel Amount			Performance
+Map	Knob V3		Filter Res Mod Wheel Amount			Performance
+Map	Knob V4		Filter Decay Mod Wheel Amount			Performance
+Map	Knob V6		Filter Env Vel Amount			Performance
+Map	Knob V7		Filter Decay Vel Amount			Performance
+Map	Knob V8		Amp Vel Amount			Performance
+// Filter
+Map	PageName		"Filter" 				Filter
+Map	Button 1-2		Filter On/Off			Filter
+Map	UDVButton 1-3_2-3		Filter Mode			Filter
+Map	Fader 4		Filter Freq			Filter
+Map	Fader 5		Filter Res			Filter
+// FilterEnv
+Map	PageName		"FilterEnv" 				FilterEnv
+Map	Fader 2		Filter Env Amount			FilterEnv
+Map	Fader 4		Filter Env Attack			FilterEnv
+Map	Fader 5		Filter Env Decay			FilterEnv
+Map	Fader 6		Filter Env Sustain			FilterEnv
+Map	Fader 7		Filter Env Release			FilterEnv
+// LFO
+Map	PageName		"LFO" 				LFO
+Map	Sel1_0		TempoSync=Free			LFO
+Map	Sel1_1		TempoSync=Sync			LFO
+Map	UDVButton 1-2_2-2		LFO1 Wave			LFO
+Map	UDVButton 5-2_6-2		LFO1 Dest			LFO
+Map	Button 1-4		LFO Sync Enable		SEL1	LFO
+Map	Fader 5		LFO1 Rate			LFO	Free
+Map	UDVButton 7-5_8-5		LFO1 Rate	9		LFO	Sync
+Map	Fader 8		LFO1 Amount			LFO

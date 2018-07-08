@@ -1,0 +1,94 @@
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="NN19 Digital Sampler" -%}
+{% set devicename="NN-19" -%}
+{# Variables -#}
+{% set show_pitch_bend_range=true -%}
+{# End Variables -#}
+{% include "remotemap/include/device/scope.j2" %}
+Define Group	Page	Main	Osc	Filter	FilterEnv	Amp	LFO	Velocity	ModWheelContr	Controller	Index	Keyboard	Internal
+Define Group	TempoSync	Free	Sync
+{% include "remotemap/include/device/instrument.j2" %}
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=Amp			Index
+Map	Button 1-4		Page=Controller			Index
+Map	Button 1-5		Page=ModWheelContr			Index
+Map	Button 1-6		Page=Velocity			Index
+Map	Button 1-7		Page=Keyboard			Index
+Map	Button 2-1		Page=Osc			Index
+Map	Button 2-5		Page=Filter			Index
+Map	Button 2-6		Page=FilterEnv			Index
+Map	Button 5-5		Page=LFO			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main" 				Main
+Map	Fader 1		Portamento 				Main
+Map	UDVButton 1-2_2-2		Polyphony			Main
+Map	Fader 3		Stereo Spread 				Main
+Map	UDVButton 1-4_2-4		Spread Mode			Main
+Map	Button 1-5		Low Bandwidth On/Off			Main
+Map	UDVButton 1-6_2-6		Key Mode			Main
+Map	UDVButton 1-7_2-7		Pitch Bend Range			Main
+Map	Fader 8		Master Level 				Main
+// Amp
+Map	PageName		"Amp" 				Amp
+Map	Fader 1		Master Level 				Amp
+Map	Fader 3		Amp Env Attack 				Amp
+Map	Fader 4		Amp Env Decay 				Amp
+Map	Fader 5		Amp Env Sustain 				Amp
+Map	Fader 6		Amp Env Release 				Amp
+// Controller
+Map	PageName		"Controller" 				Controller
+Map	Knob V2		Filter Freq Ext Mod 				Controller
+Map	Knob V3		LFO Ext Mod 				Controller
+Map	Knob V4		Amp Ext Mod 				Controller
+Map	UDVButton 1-5_2-5		Ext Mod Select			Controller
+// ModWheelContr
+Map	PageName		"Mod Wheel" 				ModWheelContr
+Map	Knob V2		Filter Freq Mod Wheel Amount 				ModWheelContr
+Map	Knob V3		Filter Res Mod Wheel Amount 				ModWheelContr
+Map	Knob V4		Filter Decay Mod Wheel Amount 				ModWheelContr
+Map	Knob V5		Amp Mod Wheel Amount 				ModWheelContr
+Map	Knob V6		LFO Mod Wheel Amount 				ModWheelContr
+// Velocity
+Map	PageName		"Velocity" 				Velocity
+Map	Knob V2		Filter Env Vel Amount 				Velocity
+Map	Knob V3		Filter Decay Vel Amount 				Velocity
+Map	Knob V4		Amp Vel Amount 				Velocity
+Map	Knob V5		Amp Attack Vel Amount 				Velocity
+Map	Knob V6		Sample Start Vel Amount 				Velocity
+// Osc
+Map	PageName		"Osc" 				Osc
+Map	Fader 1		Sample Start 				Osc
+Map	Button 1-2		High Quality Interpolation			Osc
+Map	Knob V3		Osc Env Amount 				Osc
+Map	UDVButton 1-5_2-5		Osc Octave			Osc
+Map	UDVButton 1-6_2-6		Osc Semitone			Osc
+Map	UDVButton 1-7_2-7		Osc Fine Tune			Osc
+Map	Button 1-8		Osc Kbd Track			Osc
+// Filter
+Map	PageName		"Filter" 				Filter
+Map	Button 1-2		Filter On/Off			Filter
+Map	Fader 3		Filter Freq 				Filter
+Map	Fader 4		Filter Res 				Filter
+Map	UDVButton 1-5_2-5		Filter Mode			Filter
+Map	Fader 6		Filter Kbd Track 				Filter
+// FilterEnv
+Map	PageName		"Filter Envelope" 				FilterEnv
+Map	Fader 2		Filter Env Attack 				FilterEnv
+Map	Fader 3		Filter Env Decay 				FilterEnv
+Map	Fader 4		Filter Env Sustain 				FilterEnv
+Map	Fader 5		Filter Env Release 				FilterEnv
+Map	Button 1-6		Filter Env Invert			FilterEnv
+Map	Fader 7		Filter Env Amount 				FilterEnv
+// LFO
+Map	PageName		"LFO" 				LFO
+Map	Sel1_0		TempoSync=Free			LFO
+Map	Sel1_1		TempoSync=Sync			LFO
+Map	UDVButton 1-2_2-2		LFO Wave			LFO
+Map	Button 1-3		LFO Sync Enable		SEL1	LFO
+Map	Fader 4		LFO Rate 				LFO	Free
+Map	UDVButton 7-4_8-4		LFO Rate	8		LFO	Sync
+Map	Fader 5		LFO Amount 				LFO
+Map	UDVButton 1-6_2-6		LFO Dest			LFO

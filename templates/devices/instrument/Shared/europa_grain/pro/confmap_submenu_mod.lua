@@ -1,0 +1,7 @@
+                        ["Button A1"]={template="BEnvPage"},
+                        ["Button A2"]={template="BEnvPage"},
+                        ["Button A3"]={template="BEnvPage"},
+                        ["Button A4"]={template="BEnvPage"},
+                        ["Button A6"]={template="BLFOPage"},
+                        ["Button A7"]={template="BLFOPage"},
+                        ["Button A8"]={template="BLFOPage"},

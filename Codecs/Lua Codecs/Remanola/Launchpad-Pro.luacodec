@@ -1,0 +1,32 @@
+-- Remanola Novation Launchpad Pro Codec
+-- Copyright 2018 Niklas Jakobsson <nico@niconet.se>
+
+-- This file is part of Remanola.
+
+-- Remanola is free software: you can redistribute it and/or modify
+-- it under the terms of the GNU General Public License as published by
+-- the Free Software Foundation, either version 3 of the License, or
+-- (at your option) any later version.
+
+-- Remanola is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-- GNU General Public License for more details.
+
+-- You should have received a copy of the GNU General Public License
+-- along with Remanola.  If not, see <http://www.gnu.org/licenses/>.
+
+version={1,1,0}
+function remote_supported_control_surfaces()
+	local surfaces ={
+		{
+			manufacturer="Remanola", model="Launchpad Pro",
+			source="Launchpad-Pro.lua",
+			picture="Launchpad-Pro.png",
+			in_ports = { {description="In Port"} },
+			out_ports = { {description="Out Port"} },
+			has_keyboard=true
+		},
+	}
+	return surfaces
+end

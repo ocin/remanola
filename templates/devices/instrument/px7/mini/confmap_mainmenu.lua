@@ -1,0 +1,7 @@
+			["Button 1-1"]={template="BMainPage", helptext="Goto Main"},
+			["Button 2-1"]={template="BOscPage", helptext="Goto OP 6"},
+			["Button 3-1"]={template="BOscPage", helptext="Goto OP 5"},
+			["Button 4-1"]={template="BOscPage", helptext="Goto OP 4"},
+			["Button 5-1"]={template="BOscPage", helptext="Goto OP 3"},
+			["Button 6-1"]={template="BOscPage", helptext="Goto OP 2"},
+			["Button 7-1"]={template="BOscPage", helptext="Goto OP 1"},
