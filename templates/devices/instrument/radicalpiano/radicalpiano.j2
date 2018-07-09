@@ -1,10 +1,13 @@
 {% set deviceman="Propellerhead Software" -%}
 {% set devicescope="se.propellerheads.radicalpiano" -%}
 {% set devicename="Radical Piano" -%}
+{% set shortname="radicalpiano" -%}
 {# Variables -#}
 {% set hide_pitch_bend=true -%}
 {% set hide_mod_wheel=true -%}
+{% set effectpagedefault="Eq" -%}
 {# End Variables -#}
+{% import "remotemap/include/macros.j2" as rm with context %}
 {% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	Velocity	Tune	Resonance	Envelope	Mechanics	Eq	Ambience	Output	Index	Keyboard	Internal
 {% include "remotemap/include/device/instrument.j2" %}
@@ -23,6 +26,7 @@ Map	Button 4-8		Page=Output			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
+{{ rm.include_menus(curpage="Main") -}}
 Map	Fader 2		Sustain Pedal			Main
 Map	Fader 4		Character			Main
 Map	UDVButton 7-5_8-5		Microphone 1 Type				Main
@@ -31,16 +35,19 @@ Map	UDVButton 7-7_8-7		Microphone 2 Type				Main
 Map	Fader 8		Master Volume			Main
 // Envelope
 Map	PageName		"Envelope" 				Envelope
+{{ rm.include_menus(curpage="Envelope") -}}
 Map	Fader 4		Env Attack			Envelope
 Map	Knob V5		Env Decay Curve			Envelope
 Map	Knob V6		Env Release			Envelope
 // Velocity
 Map	PageName		"Velocity" 				Velocity
+{{ rm.include_menus(curpage="Velocity") -}}
 Map	Fader 4		Vel Response Low			Velocity
 Map	Fader 5		Vel Response High			Velocity
 Map	Knob V6		Vel Response Curve			Velocity
 // Tune
 Map	PageName		"Tune" 				Tune
+{{ rm.include_menus(curpage="Tune") -}}
 Map	Button 2-1		Page=Tune			Tune
 Map	Button 3-1		Page=Resonance			Tune
 Map	Button 4-1		Page=Mechanics			Tune
@@ -51,6 +58,7 @@ Map	Knob V4		Tune			Tune
 Map	Fader 5		Tune Drift			Tune
 // Resonance
 Map	PageName		"Resonance" 				Resonance
+{{ rm.include_menus(curpage="Resonance") -}}
 Map	Button 2-1		Page=Tune			Resonance
 Map	Button 3-1		Page=Resonance			Resonance
 Map	Button 4-1		Page=Mechanics			Resonance
@@ -61,6 +69,7 @@ Map	Knob V4		Symp Res Release Time			Resonance
 Map	Knob V5		Symp Res Level			Resonance
 // Mechanics
 Map	PageName		"Mechanics" 				Mechanics
+{{ rm.include_menus(curpage="Mechanics") -}}
 Map	Button 2-1		Page=Tune			Mechanics
 Map	Button 3-1		Page=Resonance			Mechanics
 Map	Button 4-1		Page=Mechanics			Mechanics
@@ -72,6 +81,7 @@ Map	Knob V5		Key Up Level			Mechanics
 Map	Knob V6		Pedal Level			Mechanics
 // Eq
 Map	PageName		"Eq" 				Eq
+{{ rm.include_menus(curpage="Eq", submenu="effect", effectpage="Eq") -}}
 Map	Button 2-1		Page=Tune			Eq
 Map	Button 3-1		Page=Resonance			Eq
 Map	Button 4-1		Page=Mechanics			Eq
@@ -84,6 +94,7 @@ Map	Knob V5		EQ Mid Gain			Eq
 Map	Knob V6		EQ Hi Gain			Eq
 // Ambience
 Map	PageName		"Ambience" 				Ambience
+{{ rm.include_menus(curpage="Ambience", submenu="effect", effectpage="Ambience") -}}
 Map	Button 2-1		Page=Tune			Ambience
 Map	Button 3-1		Page=Resonance			Ambience
 Map	Button 4-1		Page=Mechanics			Ambience
@@ -94,6 +105,7 @@ Map	UDVButton 7-3_8-3		Ambience Type				Ambience
 Map	Fader 4		Ambience Level			Ambience
 // Output
 Map	PageName		"Output" 				Output
+{{ rm.include_menus(curpage="Output", submenu="effect", effectpage="Output") -}}
 Map	Button 2-1		Page=Tune			Output
 Map	Button 3-1		Page=Resonance			Output
 Map	Button 4-1		Page=Mechanics			Output

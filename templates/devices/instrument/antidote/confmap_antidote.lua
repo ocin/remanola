@@ -150,13 +150,18 @@
 {% include "devices/instrument/antidote/"+lptype+"/confmap_submenu_effects.lua" %}
 		},
 		["LFO *"]={
-                        ["Fader 3"]={template="FFreq"},
-                        ["UDVButton 7-3_8-3"]={template="UDFreq"},
-                        ["Knob V4"]={template="FAmount"},
-			["Button 1-5"]={template="BGreenOnOff"},
-			["Button 1-6"]={template="BGreenOnOff"},
-                        ["UDHButton 3-5_3-6"]={template="UDMisc"},
-                        ["UDHButton 5-5_5-6"]={template="UDMisc"},
+{% if lptype == "mini" %}
+			["Button 1-1"]={template="BGreenOnOff"},
+			["Button 1-3"]={template="BGreenOnOff"},
+{% else %}
+			["Button 1-1"]={template="BBRedOnOff"},
+			["Button 1-3"]={template="BBBlueOnOff"},
+{% endif %}
+                        ["Fader 4"]={template="FFreq"},
+                        ["UDVButton 7-4_8-4"]={template="UDFreq"},
+                        ["Knob V5"]={template="FAmount"},
+                        ["UDVButton 3-1_4-1"]={template="UDMisc", inverted=true},
+                        ["UDVButton 7-1_8-1"]={template="UDMisc", inverted=true},
 {% include "devices/instrument/antidote/pro/confmap_submenu_mod.lua" %}
 		},
 		["Amp Env"]={

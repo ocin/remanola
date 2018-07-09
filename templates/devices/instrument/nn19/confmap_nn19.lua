@@ -1,5 +1,8 @@
 	["NN-19"]={
 		["Default"]={
+{% if lptype == "pro" %}
+{% include "devices/instrument/nn19/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Index"]={
 			["Button 1-4"]={template="BPerformancePage"},
@@ -26,6 +29,9 @@
 			["Knob V3"]={template="FMisc"},
 			["Knob V4"]={template="FGain"},
 			["UDVButton 1-5_2-5"]={template="UDMisc", inverted=true},
+{% if lptype == "pro" %}
+{% include "devices/instrument/nn19/pro/confmap_submenu_perf.lua" %}
+{% endif %}
 		},
 		["Mod Wheel"]={
 			["Knob V2"]={template="FFreq"},
@@ -33,6 +39,9 @@
 			["Knob V4"]={template="FFreq"},
 			["Knob V5"]={template="FGain"},
 			["Knob V6"]={template="FMisc"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/nn19/pro/confmap_submenu_perf.lua" %}
+{% endif %}
 		},
 		["Velocity"]={
 			["Knob V2"]={template="FFreq"},
@@ -40,6 +49,9 @@
 			["Knob V4"]={template="FGain"},
 			["Knob V5"]={template="FGain"},
 			["Knob V6"]={template="FAmount"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/nn19/pro/confmap_submenu_perf.lua" %}
+{% endif %}
 		},
 		["Osc"]={
 			["Fader 1"]={template="FAmount"},
@@ -56,6 +68,9 @@
 			["Fader 4"]={template="FEffect"},
 			["UDVButton 1-5_2-5"]={template="UDFreq", inverted=true},
 			["Fader 6"]={template="FMisc"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/nn19/pro/confmap_submenu_filter.lua" %}
+{% endif %}
 		},
 		["Filter Envelope"]={
 			["Fader 2"]={template="FFreq"},
@@ -64,6 +79,9 @@
 			["Fader 5"]={template="FFreq"},
 			["Button 1-6"]={template="BRedOnOff"},
 			["Fader 7"]={template="FAmount"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/nn19/pro/confmap_submenu_filter.lua" %}
+{% endif %}
 		},
 		["LFO"]={
 			["UDVButton 1-2_2-2"]={template="UDMisc", inverted=true},

@@ -1,9 +1,16 @@
 {% set deviceman="Propellerhead Software" -%}
 {% set devicescope="se.propellerheads.Parsec" -%}
 {% set devicename="Parsec" -%}
+{% set shortname="parsec" -%}
 {# Variables -#}
 {% set show_pitch_bend_range=true -%}
+{% set oscpagedefault="GenereratorA" -%}
+{% set filterpagedefault="SoundEngineA" -%}
+{% set modpagedefault="LFO1" -%}
+{% set perfpagedefault="ModMatrix1" -%}
+{% set effectpagedefault="Reverb" -%}
 {# End Variables -#}
+{% import "remotemap/include/macros.j2" as rm with context %}
 {% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	GenereratorA	GenereratorB	SoundEngineA	SoundEngineB	AmpEnv	LFO1	LFO2	Env1	Env2	Reverb	Delay	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
 Define Group	Enabled	On	Off
@@ -35,6 +42,7 @@ Map	Button 8-8		Page=ModMatrix8			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
+{{ rm.include_menus(curpage="Main") -}}
 Map	UDVButton 7-1_8-1		Pitch Bend Range				Main
 Map	UDVButton 7-3_8-3		Key Mode				Main
 Map	UDVButton 7-4_8-4		Portamento Mode				Main
@@ -44,6 +52,7 @@ Map	Fader 7		Spread				Main
 Map	Fader 8		Master Level				Main
 // AmpEnv
 Map	PageName		"Amp Envelope" 			AmpEnv
+{{ rm.include_menus(curpage="AmpEnv") -}}
 Map	Fader 2		Gain			AmpEnv
 Map	Fader 4		Amp Attack			AmpEnv
 Map	Fader 5		Amp Decay			AmpEnv
@@ -51,6 +60,7 @@ Map	Fader 6		Amp Sustain			AmpEnv
 Map	Fader 7		Amp Release			AmpEnv
 // Generator A
 Map	PageName		"Generator A" 			GenereratorA
+{{ rm.include_menus(curpage="GenereratorA", submenu="osc", oscpage="GenereratorA") -}}
 Map	UDVButton 1-2_2-2		A Gen Select			GenereratorA
 Map	Button 8-2		A Phase Sync			GenereratorA
 Map	Fader 3		A Gen X			GenereratorA
@@ -63,6 +73,7 @@ Map	Fader 7		A Cutoff Freq			GenereratorA
 Map	Fader 8		A Cutoff Kbd			GenereratorA
 // Generator B
 Map	PageName		"Generator B" 			GenereratorB
+{{ rm.include_menus(curpage="GenereratorB", submenu="osc", oscpage="GenereratorB") -}}
 Map	Button 1-1		B Enable		SEL1	GenereratorB
 Map	Sel1_0		Enabled=Off			GenereratorB
 Map	Sel1_1		Enabled=On			GenereratorB
@@ -78,6 +89,7 @@ Map	Fader 7		B Cutoff Freq			GenereratorB	On
 Map	Fader 8		B Cutoff Kbd			GenereratorB	On
 // Sound Engine A
 Map	PageName		"Sound Engine A" 			SoundEngineA
+{{ rm.include_menus(curpage="SoundEngineA", submenu="filter", filterpage="SoundEngineA") -}}
 Map	UDVButton 1-2_2-2		A Mod1 Select			SoundEngineA
 Map	Fader 3		A Mod1 X			SoundEngineA
 Map	Fader 4		A Mod1 Y			SoundEngineA
@@ -86,6 +98,7 @@ Map	Fader 6		A Mod2 X			SoundEngineA
 Map	Fader 7		A Mod2 Y			SoundEngineA
 // Sound Engine B
 Map	PageName		"Sound Engine B" 			SoundEngineB
+{{ rm.include_menus(curpage="SoundEngineB", submenu="filter", filterpage="SoundEngineB") -}}
 Map	Button 1-1		B Enable		SEL1	SoundEngineB
 Map	Sel1_0		Enabled=Off			SoundEngineB
 Map	Sel1_1		Enabled=On			SoundEngineB
@@ -97,6 +110,7 @@ Map	Fader 6		B Mod2 X			SoundEngineB	On
 Map	Fader 7		B Mod2 Y			SoundEngineB	On
 // Reverb
 Map	PageName		"Reverb" 			Reverb
+{{ rm.include_menus(curpage="Reverb") -}}
 Map	Sel1_0		Enabled=Off			Reverb
 Map	Sel1_1		Enabled=On			Reverb
 Map	Button 1-2		Reverb On		SEL1	Reverb
@@ -106,6 +120,7 @@ Map	Fader 5		Reverb Damp			Reverb	On
 Map	Fader 8		Reverb Level			Reverb	On
 // Delay
 Map	PageName		"Delay" 			Delay
+{{ rm.include_menus(curpage="Delay") -}}
 Map	Sel1_0		Enabled=Off			Delay
 Map	Sel1_1		Enabled=On			Delay
 Map	Sel2_0		TempoSync=Free			Delay
@@ -118,11 +133,13 @@ Map	Fader 5		Delay Feedback			Delay	On
 Map	Fader 8		Delay DryWet			Delay	On
 // LFO1
 Map	PageName		"LFO 1" 			LFO1
+{{ rm.include_menus(curpage="LFO1", submenu="mod", modpage="LFO1") -}}
 Map	UDVButton 1-2_2-2		LFO1 Wave			LFO1
 Map	Fader 3		LFO1 Delay			LFO1
 Map	Fader 4		LFO1 Rate			LFO1
 // LFO2
 Map	PageName		"LFO 2" 			LFO2
+{{ rm.include_menus(curpage="LFO2", submenu="mod", modpage="LFO2") -}}
 Map	Sel1_0		TempoSync=Free			LFO2
 Map	Sel1_1		TempoSync=Sync			LFO2
 Map	UDVButton 1-2_2-2		LFO2 Wave			LFO2
@@ -131,12 +148,14 @@ Map	Fader 4		LFO2 Rate			LFO2	Free
 Map	UDVButton 7-4_8-4		LFO2 Synced Rate			LFO2	Sync
 // Env 1
 Map	PageName		"Env 1" 			Env1
+{{ rm.include_menus(curpage="Env1", submenu="mod", modpage="Env1") -}}
 Map	Fader 3		Env1 Attack			Env1
 Map	Fader 4		Env1 Decay			Env1
 Map	Fader 5		Env1 Sustain			Env1
 Map	Fader 6		Env1 Release			Env1
 // Env 2
 Map	PageName		"Env 2" 			Env2
+{{ rm.include_menus(curpage="Env2", submenu="mod", modpage="Env2") -}}
 Map	Button 1-2		Env2 Loop			Env2
 Map	Fader 3		Env2 Delay			Env2
 Map	Fader 4		Env2 Attack			Env2
@@ -144,139 +163,15 @@ Map	Fader 5		Env2 Hold			Env2
 Map	Fader 6		Env2 Decay			Env2
 Map	Fader 7		Env2 Sustain			Env2
 Map	Fader 8		Env2 Release			Env2
+{% for mmnum in range(1,9) -%}
 // Mod Matrix 1
-Map	PageName		"Mod Matrix 1" 			ModMatrix1
-Map	Button 1-1		Page=ModMatrix1 			ModMatrix1
-Map	Button 2-1		Page=ModMatrix2 			ModMatrix1
-Map	Button 3-1		Page=ModMatrix3 			ModMatrix1
-Map	Button 4-1		Page=ModMatrix4 			ModMatrix1
-Map	Button 5-1		Page=ModMatrix5 			ModMatrix1
-Map	Button 6-1		Page=ModMatrix6 			ModMatrix1
-Map	Button 7-1		Page=ModMatrix7 			ModMatrix1
-Map	Button 8-1		Page=ModMatrix8 			ModMatrix1
-Map	UDVButton 1-2_2-2		Source 1			 ModMatrix1
-Map	Knob V3		Mod1 Dest1 Amt			ModMatrix1
-Map	UDVButton 1-4_2-4		Mod1 Dest1			 ModMatrix1
-Map	Knob V5		Mod1 Dest2 Amt			ModMatrix1
-Map	UDVButton 1-6_2-6		Mod1 Dest2			 ModMatrix1
-Map	Knob V7		Mod1 Scale Amt			ModMatrix1
-Map	UDVButton 1-8_2-8		Mod1 Scale			 ModMatrix1
-// Mod Matrix 2
-Map	PageName		"Mod Matrix 2" 			ModMatrix2
-Map	Button 1-1		Page=ModMatrix1 			ModMatrix2
-Map	Button 2-1		Page=ModMatrix2 			ModMatrix2
-Map	Button 3-1		Page=ModMatrix3 			ModMatrix2
-Map	Button 4-1		Page=ModMatrix4 			ModMatrix2
-Map	Button 5-1		Page=ModMatrix5 			ModMatrix2
-Map	Button 6-1		Page=ModMatrix6 			ModMatrix2
-Map	Button 7-1		Page=ModMatrix7 			ModMatrix2
-Map	Button 8-1		Page=ModMatrix8 			ModMatrix2
-Map	UDVButton 1-2_2-2		Source 2			 ModMatrix2
-Map	Knob V3		Mod2 Dest1 Amt			ModMatrix2
-Map	UDVButton 1-4_2-4		Mod2 Dest1			 ModMatrix2
-Map	Knob V5		Mod2 Dest2 Amt			ModMatrix2
-Map	UDVButton 1-6_2-6		Mod2 Dest2			 ModMatrix2
-Map	Knob V7		Mod2 Scale Amt			ModMatrix2
-Map	UDVButton 1-8_2-8		Mod2 Scale			 ModMatrix2
-// Mod Matrix 3
-Map	PageName		"Mod Matrix 3" 			ModMatrix3
-Map	Button 1-1		Page=ModMatrix1 			ModMatrix3
-Map	Button 2-1		Page=ModMatrix2 			ModMatrix3
-Map	Button 3-1		Page=ModMatrix3 			ModMatrix3
-Map	Button 4-1		Page=ModMatrix4 			ModMatrix3
-Map	Button 5-1		Page=ModMatrix5 			ModMatrix3
-Map	Button 6-1		Page=ModMatrix6 			ModMatrix3
-Map	Button 7-1		Page=ModMatrix7 			ModMatrix3
-Map	Button 8-1		Page=ModMatrix8 			ModMatrix3
-Map	UDVButton 1-2_2-2		Source 3			 ModMatrix3
-Map	Knob V3		Mod3 Dest1 Amt			ModMatrix3
-Map	UDVButton 1-4_2-4		Mod3 Dest1			 ModMatrix3
-Map	Knob V5		Mod3 Dest2 Amt			ModMatrix3
-Map	UDVButton 1-6_2-6		Mod3 Dest2			 ModMatrix3
-Map	Knob V7		Mod3 Scale Amt			ModMatrix3
-Map	UDVButton 1-8_2-8		Mod3 Scale			 ModMatrix3
-// Mod Matrix 4
-Map	PageName		"Mod Matrix 4" 			ModMatrix4
-Map	Button 1-1		Page=ModMatrix1 			ModMatrix4
-Map	Button 2-1		Page=ModMatrix2 			ModMatrix4
-Map	Button 3-1		Page=ModMatrix3 			ModMatrix4
-Map	Button 4-1		Page=ModMatrix4 			ModMatrix4
-Map	Button 5-1		Page=ModMatrix5 			ModMatrix4
-Map	Button 6-1		Page=ModMatrix6 			ModMatrix4
-Map	Button 7-1		Page=ModMatrix7 			ModMatrix4
-Map	Button 8-1		Page=ModMatrix8 			ModMatrix4
-Map	UDVButton 1-2_2-2		Source 4			 ModMatrix4
-Map	Knob V3		Mod4 Dest1 Amt			ModMatrix4
-Map	UDVButton 1-4_2-4		Mod4 Dest1			 ModMatrix4
-Map	Knob V5		Mod4 Dest2 Amt			ModMatrix4
-Map	UDVButton 1-6_2-6		Mod4 Dest2			 ModMatrix4
-Map	Knob V7		Mod4 Scale Amt			ModMatrix4
-Map	UDVButton 1-8_2-8		Mod4 Scale			 ModMatrix4
-// Mod Matrix 5
-Map	PageName		"Mod Matrix 5" 			ModMatrix5
-Map	Button 1-1		Page=ModMatrix1 			ModMatrix5
-Map	Button 2-1		Page=ModMatrix2 			ModMatrix5
-Map	Button 3-1		Page=ModMatrix3 			ModMatrix5
-Map	Button 4-1		Page=ModMatrix4 			ModMatrix5
-Map	Button 5-1		Page=ModMatrix5 			ModMatrix5
-Map	Button 6-1		Page=ModMatrix6 			ModMatrix5
-Map	Button 7-1		Page=ModMatrix7 			ModMatrix5
-Map	Button 8-1		Page=ModMatrix8 			ModMatrix5
-Map	UDVButton 1-2_2-2		Source 5			 ModMatrix5
-Map	Knob V3		Mod5 Dest1 Amt			ModMatrix5
-Map	UDVButton 1-4_2-4		Mod5 Dest1			 ModMatrix5
-Map	Knob V5		Mod5 Dest2 Amt			ModMatrix5
-Map	UDVButton 1-6_2-6		Mod5 Dest2			 ModMatrix5
-Map	Knob V7		Mod5 Scale Amt			ModMatrix5
-Map	UDVButton 1-8_2-8		Mod5 Scale			 ModMatrix5
-// Mod Matrix 6
-Map	PageName		"Mod Matrix 6" 			ModMatrix6
-Map	Button 1-1		Page=ModMatrix1 			ModMatrix6
-Map	Button 2-1		Page=ModMatrix2 			ModMatrix6
-Map	Button 3-1		Page=ModMatrix3 			ModMatrix6
-Map	Button 4-1		Page=ModMatrix4 			ModMatrix6
-Map	Button 5-1		Page=ModMatrix5 			ModMatrix6
-Map	Button 6-1		Page=ModMatrix6 			ModMatrix6
-Map	Button 7-1		Page=ModMatrix7 			ModMatrix6
-Map	Button 8-1		Page=ModMatrix8 			ModMatrix6
-Map	UDVButton 1-2_2-2		Source 6			 ModMatrix6
-Map	Knob V3		Mod6 Dest1 Amt			ModMatrix6
-Map	UDVButton 1-4_2-4		Mod6 Dest1			 ModMatrix6
-Map	Knob V5		Mod6 Dest2 Amt			ModMatrix6
-Map	UDVButton 1-6_2-6		Mod6 Dest2			 ModMatrix6
-Map	Knob V7		Mod6 Scale Amt			ModMatrix6
-Map	UDVButton 1-8_2-8		Mod6 Scale			 ModMatrix6
-// Mod Matrix 7
-Map	PageName		"Mod Matrix 7" 			ModMatrix7
-Map	Button 1-1		Page=ModMatrix1 			ModMatrix7
-Map	Button 2-1		Page=ModMatrix2 			ModMatrix7
-Map	Button 3-1		Page=ModMatrix3 			ModMatrix7
-Map	Button 4-1		Page=ModMatrix4 			ModMatrix7
-Map	Button 5-1		Page=ModMatrix5 			ModMatrix7
-Map	Button 6-1		Page=ModMatrix6 			ModMatrix7
-Map	Button 7-1		Page=ModMatrix7 			ModMatrix7
-Map	Button 8-1		Page=ModMatrix8 			ModMatrix7
-Map	UDVButton 1-2_2-2		Source 7			 ModMatrix7
-Map	Knob V3		Mod7 Dest1 Amt			ModMatrix7
-Map	UDVButton 1-4_2-4		Mod7 Dest1			 ModMatrix7
-Map	Knob V5		Mod7 Dest2 Amt			ModMatrix7
-Map	UDVButton 1-6_2-6		Mod7 Dest2			 ModMatrix7
-Map	Knob V7		Mod7 Scale Amt			ModMatrix7
-Map	UDVButton 1-8_2-8		Mod7 Scale			 ModMatrix7
-// Mod Matrix 8
-Map	PageName		"Mod Matrix 8" 			ModMatrix8
-Map	Button 1-1		Page=ModMatrix1 			ModMatrix8
-Map	Button 2-1		Page=ModMatrix2 			ModMatrix8
-Map	Button 3-1		Page=ModMatrix3 			ModMatrix8
-Map	Button 4-1		Page=ModMatrix4 			ModMatrix8
-Map	Button 5-1		Page=ModMatrix5 			ModMatrix8
-Map	Button 6-1		Page=ModMatrix6 			ModMatrix8
-Map	Button 7-1		Page=ModMatrix7 			ModMatrix8
-Map	Button 8-1		Page=ModMatrix8 			ModMatrix8
-Map	UDVButton 1-2_2-2		Source 8			 ModMatrix8
-Map	Knob V3		Mod8 Dest1 Amt			ModMatrix8
-Map	UDVButton 1-4_2-4		Mod8 Dest1			 ModMatrix8
-Map	Knob V5		Mod8 Dest2 Amt			ModMatrix8
-Map	UDVButton 1-6_2-6		Mod8 Dest2			 ModMatrix8
-Map	Knob V7		Mod8 Scale Amt			ModMatrix8
-Map	UDVButton 1-8_2-8		Mod8 Scale			 ModMatrix8
+Map	PageName		"Mod Matrix {{ mmnum }}" 			ModMatrix{{ mmnum }}
+{{ rm.include_menus(curpage="ModMatrix"+mmnum|string, submenu="perf", mainmenu_mini="perf", perfpage="ModMatrix"+mmnum|string) -}}
+Map	UDVButton 1-2_2-2		Source {{ mmnum }}			 ModMatrix{{ mmnum }}
+Map	Knob V3		Mod{{ mmnum }} Dest1 Amt			ModMatrix{{ mmnum }}
+Map	UDVButton 1-4_2-4		Mod{{ mmnum }} Dest1			 ModMatrix{{ mmnum }}
+Map	Knob V5		Mod{{ mmnum }} Dest2 Amt			ModMatrix{{ mmnum }}
+Map	UDVButton 1-6_2-6		Mod{{ mmnum }} Dest2			 ModMatrix{{ mmnum }}
+Map	Knob V7		Mod{{ mmnum }} Scale Amt			ModMatrix{{ mmnum }}
+Map	UDVButton 1-8_2-8		Mod{{ mmnum }} Scale			 ModMatrix{{ mmnum }}
+{% endfor -%}

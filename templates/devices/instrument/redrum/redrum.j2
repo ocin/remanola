@@ -1,10 +1,14 @@
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Redrum Drum Computer" -%}
 {% set devicename="Redrum" -%}
+{% set shortname="redrum" -%}
 {# Variables -#}
 {% set hide_pitch_bend=true -%}
 {% set hide_mod_wheel=true -%}
+{% set drumpage1default="Drum1" -%}
+{% set drumpage2default="Drum9" -%}
 {# End Variables -#}
+{% import "remotemap/include/macros.j2" as rm with context %}
 {% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	Performance	Drum1	Drum1Edit	Drum2	Drum2Edit	Drum3	Drum3Edit	Drum4	Drum4Edit	Drum5	Drum5Edit	Drum6	Drum6Edit	Drum7	Drum7Edit	Drum8	Drum8Edit	Drum9	Drum9Edit	Drum10	Drum10Edit	Drum11	Drum11Edit	Drum12	Drum12Edit	Index	Keyboard	Internal
 Define Group	DrumMode	Play	Solo	Mute
@@ -28,6 +32,7 @@ Map	Button 8-4		Page=Drum4			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
+{{ rm.include_menus(curpage="Main") -}}
 Map	Button 3-5		EditMode=Rotate			Main
 Map	Button 3-6		EditMode=Toggle			Main
 Map	Button 4-6		Edit Accent			Main	Toggle
@@ -115,6 +120,7 @@ Map	Button 8-3		Drum 3 Mute			Main	Mute
 Map	Button 8-4		Drum 4 Mute			Main	Mute
 // Performance
 Map	PageName		"Performance" 				Performance
+{{ rm.include_menus(curpage="Performance") -}}
 Map	Button 1-1		Enable Pattern Section Playback			Performance
 Map	Button 1-2		Pattern Enable			Performance
 Map	Button 2-1		Pattern 1			Performance
@@ -136,21 +142,18 @@ Map	Fader 8		Master Level				Performance
 {% for drumnum in range(1,11) -%}
 // Drum{{ drumnum }}
 Map	PageName		"Drum {{ drumnum }}" 				Drum{{ drumnum }}
+{% if drumnum <= 8 %}
+{{ rm.include_menus(curpage="Drum"+drumnum|string, mainmenu_mini="drum", submenu="drum1", drumpage1="Drum"+drumnum|string, drumsubpage="Drum"+drumnum|string, drumedit="") -}}
+{% else %}
+{{ rm.include_menus(curpage="Drum"+drumnum|string, mainmenu_mini="drum", submenu="drum2", drumpage2="Drum"+drumnum|string, drumsubpage="Drum"+drumnum|string, drumedit="") -}}
+{% endif %}
+{% if lptype == 'mini' %}
 Map	Button 2-1		Page=Drum{{ drumnum }}			Drum{{ drumnum }}
 Map	Button 3-1		Page=Drum{{ drumnum }}Edit			Drum{{ drumnum }}
+{% endif %}
 Map	Button 5-1		Channel {{ drumnum }} Play			Drum{{ drumnum }}
 Map	Button 3-2		Drum {{ drumnum }} Mute			Drum{{ drumnum }}
 Map	Button 3-3		Drum {{ drumnum }} Solo			Drum{{ drumnum }}
-Map	Button 6-1		Page=Drum9			Drum{{ drumnum }}
-Map	Button 6-2		Page=Drum10			Drum{{ drumnum }}
-Map	Button 7-1		Page=Drum5			Drum{{ drumnum }}
-Map	Button 7-2		Page=Drum6			Drum{{ drumnum }}
-Map	Button 7-3		Page=Drum7			Drum{{ drumnum }}
-Map	Button 7-4		Page=Drum8			Drum{{ drumnum }}
-Map	Button 8-1		Page=Drum1			Drum{{ drumnum }}
-Map	Button 8-2		Page=Drum2			Drum{{ drumnum }}
-Map	Button 8-3		Page=Drum3			Drum{{ drumnum }}
-Map	Button 8-4		Page=Drum4			Drum{{ drumnum }}
 Map	UDVButton 5-4_6-4		Drum {{ drumnum }} Vel to Level	5		Drum{{ drumnum }}
 Map	Fader 5		Drum {{ drumnum }} Send 1 Amount				Drum{{ drumnum }}
 Map	Fader 6		Drum {{ drumnum }} Send 2 Amount				Drum{{ drumnum }}
@@ -158,21 +161,18 @@ Map	Knob V7		Drum {{ drumnum }} Pan				Drum{{ drumnum }}
 Map	Fader 8		Drum {{ drumnum }} Level				Drum{{ drumnum }}
 // Drum{{ drumnum }}Edit
 Map	PageName		"Drum {{ drumnum }} Edit" 				Drum{{ drumnum }}Edit
+{% if drumnum <= 8 %}
+{{ rm.include_menus(curpage="Drum"+drumnum|string+"Edit", mainmenu_mini="drum", submenu="drum1", drumpage1="Drum"+drumnum|string+"Edit", drumsubpage="Drum"+drumnum|string, drumedit="Edit") -}}
+{% else %}
+{{ rm.include_menus(curpage="Drum"+drumnum|string+"Edit", mainmenu_mini="drum", submenu="drum2", drumpage2="Drum"+drumnum|string+"Edit", drumsubpage="Drum"+drumnum|string, drumedit="Edit") -}}
+{% endif %}
+{% if lptype == 'mini' %}
 Map	Button 2-1		Page=Drum{{ drumnum }}			Drum{{ drumnum }}Edit
 Map	Button 3-1		Page=Drum{{ drumnum }}Edit			Drum{{ drumnum }}Edit
+{% endif %}
 Map	Button 5-1		Channel {{ drumnum }} Play			Drum{{ drumnum }}Edit
 Map	Button 3-2		Drum {{ drumnum }} Mute			Drum{{ drumnum }}Edit
 Map	Button 3-3		Drum {{ drumnum }} Solo			Drum{{ drumnum }}Edit
-Map	Button 6-1		Page=Drum9Edit			Drum{{ drumnum }}Edit
-Map	Button 6-2		Page=Drum10Edit			Drum{{ drumnum }}Edit
-Map	Button 7-1		Page=Drum5Edit			Drum{{ drumnum }}Edit
-Map	Button 7-2		Page=Drum6Edit			Drum{{ drumnum }}Edit
-Map	Button 7-3		Page=Drum7Edit			Drum{{ drumnum }}Edit
-Map	Button 7-4		Page=Drum8Edit			Drum{{ drumnum }}Edit
-Map	Button 8-1		Page=Drum1Edit			Drum{{ drumnum }}Edit
-Map	Button 8-2		Page=Drum2Edit			Drum{{ drumnum }}Edit
-Map	Button 8-3		Page=Drum3Edit			Drum{{ drumnum }}Edit
-Map	Button 8-4		Page=Drum4Edit			Drum{{ drumnum }}Edit
 Map	Button 5-2		Drum {{ drumnum }} Decay/Gate Mode			Drum{{ drumnum }}Edit
 Map	Fader 5		Drum {{ drumnum }} Length				Drum{{ drumnum }}Edit
 Map	Knob V6		Drum {{ drumnum }} Pitch				Drum{{ drumnum }}Edit

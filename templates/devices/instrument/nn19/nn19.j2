@@ -1,9 +1,13 @@
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="NN19 Digital Sampler" -%}
 {% set devicename="NN-19" -%}
+{% set shortname="nn19" -%}
 {# Variables -#}
 {% set show_pitch_bend_range=true -%}
+{% set filterpagedefault="Filter" -%}
+{% set perfpagedefault="Controller" -%}
 {# End Variables -#}
+{% import "remotemap/include/macros.j2" as rm with context %}
 {% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	Osc	Filter	FilterEnv	Amp	LFO	Velocity	ModWheelContr	Controller	Index	Keyboard	Internal
 Define Group	TempoSync	Free	Sync
@@ -23,6 +27,7 @@ Map	Button 5-5		Page=LFO			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
+{{ rm.include_menus(curpage="Main") -}}
 Map	Fader 1		Portamento 				Main
 Map	UDVButton 1-2_2-2		Polyphony			Main
 Map	Fader 3		Stereo Spread 				Main
@@ -33,6 +38,7 @@ Map	UDVButton 1-7_2-7		Pitch Bend Range			Main
 Map	Fader 8		Master Level 				Main
 // Amp
 Map	PageName		"Amp" 				Amp
+{{ rm.include_menus(curpage="Amp") -}}
 Map	Fader 1		Master Level 				Amp
 Map	Fader 3		Amp Env Attack 				Amp
 Map	Fader 4		Amp Env Decay 				Amp
@@ -40,12 +46,14 @@ Map	Fader 5		Amp Env Sustain 				Amp
 Map	Fader 6		Amp Env Release 				Amp
 // Controller
 Map	PageName		"Controller" 				Controller
+{{ rm.include_menus(curpage="Controller", submenu="perf", perfpage="Controller") -}}
 Map	Knob V2		Filter Freq Ext Mod 				Controller
 Map	Knob V3		LFO Ext Mod 				Controller
 Map	Knob V4		Amp Ext Mod 				Controller
 Map	UDVButton 1-5_2-5		Ext Mod Select			Controller
 // ModWheelContr
 Map	PageName		"Mod Wheel" 				ModWheelContr
+{{ rm.include_menus(curpage="ModWheelContr", submenu="perf", perfpage="ModWheelContr") -}}
 Map	Knob V2		Filter Freq Mod Wheel Amount 				ModWheelContr
 Map	Knob V3		Filter Res Mod Wheel Amount 				ModWheelContr
 Map	Knob V4		Filter Decay Mod Wheel Amount 				ModWheelContr
@@ -53,6 +61,7 @@ Map	Knob V5		Amp Mod Wheel Amount 				ModWheelContr
 Map	Knob V6		LFO Mod Wheel Amount 				ModWheelContr
 // Velocity
 Map	PageName		"Velocity" 				Velocity
+{{ rm.include_menus(curpage="Velocity", submenu="perf", perfpage="Velocity") -}}
 Map	Knob V2		Filter Env Vel Amount 				Velocity
 Map	Knob V3		Filter Decay Vel Amount 				Velocity
 Map	Knob V4		Amp Vel Amount 				Velocity
@@ -60,6 +69,7 @@ Map	Knob V5		Amp Attack Vel Amount 				Velocity
 Map	Knob V6		Sample Start Vel Amount 				Velocity
 // Osc
 Map	PageName		"Osc" 				Osc
+{{ rm.include_menus(curpage="Osc") -}}
 Map	Fader 1		Sample Start 				Osc
 Map	Button 1-2		High Quality Interpolation			Osc
 Map	Knob V3		Osc Env Amount 				Osc
@@ -69,6 +79,7 @@ Map	UDVButton 1-7_2-7		Osc Fine Tune			Osc
 Map	Button 1-8		Osc Kbd Track			Osc
 // Filter
 Map	PageName		"Filter" 				Filter
+{{ rm.include_menus(curpage="Filter", submenu="filter", perfpage="Filter") -}}
 Map	Button 1-2		Filter On/Off			Filter
 Map	Fader 3		Filter Freq 				Filter
 Map	Fader 4		Filter Res 				Filter
@@ -76,6 +87,7 @@ Map	UDVButton 1-5_2-5		Filter Mode			Filter
 Map	Fader 6		Filter Kbd Track 				Filter
 // FilterEnv
 Map	PageName		"Filter Envelope" 				FilterEnv
+{{ rm.include_menus(curpage="FilterEnv", submenu="filter", perfpage="FilterEnv") -}}
 Map	Fader 2		Filter Env Attack 				FilterEnv
 Map	Fader 3		Filter Env Decay 				FilterEnv
 Map	Fader 4		Filter Env Sustain 				FilterEnv
@@ -84,6 +96,7 @@ Map	Button 1-6		Filter Env Invert			FilterEnv
 Map	Fader 7		Filter Env Amount 				FilterEnv
 // LFO
 Map	PageName		"LFO" 				LFO
+{{ rm.include_menus(curpage="LFO") -}}
 Map	Sel1_0		TempoSync=Free			LFO
 Map	Sel1_1		TempoSync=Sync			LFO
 Map	UDVButton 1-2_2-2		LFO Wave			LFO

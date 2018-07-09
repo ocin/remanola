@@ -193,13 +193,13 @@ Map	PageName		"LFO {{ lfonum }}" 				LFO{{ lfonum }}
 {{ rm.include_menus(curpage="LFO"+lfonum|string, submenu="mod", modpage="LFO"+lfonum|string) -}}
 Map	Sel1_0		TempoSync=Free			LFO{{ lfonum }}
 Map	Sel1_1		TempoSync=Sync			LFO{{ lfonum }}
-Map	Fader 3		Lfo {{ lfonum }} Rate				LFO{{ lfonum }}	Free
-Map	UDVButton 7-3_8-3		Lfo {{ lfonum }} Rate Sync				LFO{{ lfonum }}	Sync
-Map	Knob V4		Lfo {{ lfonum }} Target Amount				LFO{{ lfonum }}
-Map	Button 1-5		Lfo {{ lfonum }} Sync		SEL1	LFO{{ lfonum }}
-Map	Button 1-6		Lfo {{ lfonum }} Free Run			LFO{{ lfonum }}
-Map	UDHButton 3-5_3-6		Lfo {{ lfonum }} Shape				LFO{{ lfonum }}
-Map	UDHButton 5-5_5-6		Lfo {{ lfonum }} Target				LFO{{ lfonum }}
+Map	Fader 4		Lfo {{ lfonum }} Rate				LFO{{ lfonum }}	Free
+Map	UDVButton 7-4_8-4		Lfo {{ lfonum }} Rate Sync				LFO{{ lfonum }}	Sync
+Map	Knob V5		Lfo {{ lfonum }} Target Amount				LFO{{ lfonum }}
+Map	Button 1-1		Lfo {{ lfonum }} Sync		SEL1	LFO{{ lfonum }}
+Map	Button 1-3		Lfo {{ lfonum }} Free Run			LFO{{ lfonum }}
+Map	UDVButton 3-1_4-1		Lfo {{ lfonum }} Shape				LFO{{ lfonum }}
+Map	UDVButton 7-1_8-1		Lfo {{ lfonum }} Target				LFO{{ lfonum }}
 {% endfor %}
 // Amp Env
 Map	PageName		"Amp Env" 				AmpEnv

@@ -1,5 +1,8 @@
 	["Redrum"]={
 		["Default"]={
+{% if lptype == "pro" %}
+{% include "devices/instrument/redrum/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Index"]={
 			-- Select Drum
@@ -121,21 +124,6 @@
 			["Button 4-4"]={template="BOscPage"},
 		},
 		["Drum *"]={
-			-- Goto Drum edit/main
-			["Button 2-1"]={template="BOscPage"},
-			["Button 3-1"]={template="BOscPage"},
-			-- Select Drum
-			["Button 6-1"]={template="BOscPage"},
-			["Button 6-2"]={template="BOscPage"},
-			["Button 7-1"]={template="BOscPage"},
-			["Button 7-2"]={template="BOscPage"},
-			["Button 7-3"]={template="BOscPage"},
-			["Button 7-4"]={template="BOscPage"},
-			["Button 8-1"]={template="BOscPage"},
-			["Button 8-2"]={template="BOscPage"},
-			["Button 8-3"]={template="BOscPage"},
-			["Button 8-4"]={template="BOscPage"},
-			-- Play, Mute, Solo
 			["Button 5-1"]={template="BPad"},
 			["Button 3-2"]={template="BMute"},
 			["Button 3-3"]={template="BSolo"},
@@ -145,26 +133,21 @@
 			["Fader 6"]={template="FEffect"},
 			["Knob V7"]={template="FGain"},
 			["Fader 8"]={template="FGain"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/redrum/pro/confmap_submenu_drum.lua" %}
+{% else %}
+{% include "devices/instrument/redrum/mini/confmap_mainmenu_drum.lua" %}
+{% endif %}
 		},
 		["Drum * Edit"]={
-			-- Goto Drum edit/main
-			["Button 2-1"]={template="BOscPage"},
-			["Button 3-1"]={template="BOscPage"},
-			-- Select Drum
-			["Button 6-1"]={template="BOscPage"},
-			["Button 6-2"]={template="BOscPage"},
-			["Button 7-1"]={template="BOscPage"},
-			["Button 7-2"]={template="BOscPage"},
-			["Button 7-3"]={template="BOscPage"},
-			["Button 7-4"]={template="BOscPage"},
-			["Button 8-1"]={template="BOscPage"},
-			["Button 8-2"]={template="BOscPage"},
-			["Button 8-3"]={template="BOscPage"},
-			["Button 8-4"]={template="BOscPage"},
-			--
 			["Fader 5"]={template="FMisc"},
 			["Fader 6"]={template="FAmount"},
 			["Knob V7"]={template="FAmount"},
 			["Fader 8"]={template="FMisc"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/redrum/pro/confmap_submenu_drum.lua" %}
+{% else %}
+{% include "devices/instrument/redrum/mini/confmap_mainmenu_drum.lua" %}
+{% endif %}
 		},
 	},

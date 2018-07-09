@@ -3,6 +3,9 @@
 			["Knob V6"]={template="FGain"},
 			["Fader 7"]={template="FMisc"},
 			["Fader 8"]={template="FGain"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/parsec/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Index"]={
 			["Button 8-1"]={template="BPerformancePage"},
@@ -33,6 +36,9 @@
 			["Fader 6"]={template="FEffect"},
 			["Fader 7"]={template="FFreq"},
 			["Fader 8"]={template="FMisc"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/parsec/pro/confmap_submenu_osc.lua" %}
+{% endif %}
 		},
 		["Sound Engine *"]={
 			["UDVButton 1-2_2-2"]={template="UDAmount", inverted=true},
@@ -41,6 +47,9 @@
 			["UDVButton 1-5_2-5"]={template="UDAmount", inverted=true},
 			["Fader 6"]={template="FAmount"},
 			["Fader 7"]={template="FAmount"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/parsec/pro/confmap_submenu_filter.lua" %}
+{% endif %}
 		},
 		["Reverb"]={
 			["Button 1-2"]={template="BRedOnOff"},
@@ -63,12 +72,18 @@
 			["Button 1-3"]={template="BRedOnOff"},
 			["Fader 4"]={template="FFreq"},
 			["UDVButton 7-4_8-4"]={template="UDFreq"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/parsec/pro/confmap_submenu_mod.lua" %}
+{% endif %}
 		},
 		["Env 1"]={
 			["Fader 3"]={template="FMisc"},
 			["Fader 4"]={template="FMisc"},
 			["Fader 5"]={template="FMisc"},
 			["Fader 6"]={template="FMisc"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/parsec/pro/confmap_submenu_mod.lua" %}
+{% endif %}
 		},
 		["Env 2"]={
 			["Button 1-2"]={template="BRedOnOff"},
@@ -78,6 +93,9 @@
 			["Fader 6"]={template="FMisc"},
 			["Fader 6"]={template="FMisc"},
 			["Fader 6"]={template="FMisc"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/parsec/pro/confmap_submenu_mod.lua" %}
+{% endif %}
 		},
 		["Mod Matrix *"]={
 			["Button 1-1"]={template="BPerformancePage"},
@@ -95,5 +113,8 @@
 			["UDVButton 1-6_2-6"]={template="UDEffect", inverted=true},
 			["Knob V7"]={template="FEffect"},
 			["UDVButton 1-8_2-8"]={template="UDMisc", inverted=true},
+{% if lptype == "pro" %}
+{% include "devices/instrument/parsec/pro/confmap_submenu_perf.lua" %}
+{% endif %}
 		},
 	},
