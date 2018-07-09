@@ -1,4 +1,4 @@
-{% macro include_menus(curpage, submenu='UNDEFINED', mainmenu_mini='UNDEFINED', oscpage='UNDEFINED', perfpage='UNDEFINED', modpage='UNDEFINED', voicingpage='UNDEFINED', sectionpage='UNDEFINED', amppage='UNDEFINED', filterpage='UNDEFINED', section='UNDEFINED', engnum='UNDEFINED') %}
+{% macro include_menus(curpage, submenu='UNDEFINED', mainmenu_mini='UNDEFINED', oscpage='UNDEFINED', perfpage='UNDEFINED', modpage='UNDEFINED', voicingpage='UNDEFINED', sectionpage='UNDEFINED', amppage='UNDEFINED', filterpage='UNDEFINED', drumpage1='UNDEFINED', drumpage2='UNDEFINED', padpage1='UNDEFINED', padpage2='UNDEFINED', section='UNDEFINED', engnum='UNDEFINED') %}
 	{% if oscpage == 'UNDEFINED' and oscpagedefault is defined -%}
 		{% set oscpage=oscpagedefault -%}
 	{% endif -%}
@@ -19,6 +19,18 @@
 	{% endif -%}
 	{% if filterpage == 'UNDEFINED' and filterpagedefault is defined -%}
 		{% set filterpage=filterpagedefault -%}
+	{% endif -%}
+	{% if drumpage1 == 'UNDEFINED' and drumpage1default is defined -%}
+		{% set drumpage1=drumpage1default -%}
+	{% endif -%}
+	{% if drumpage2 == 'UNDEFINED' and drumpage2default is defined -%}
+		{% set drumpage2=drumpage2default -%}
+	{% endif -%}
+	{% if padpage1 == 'UNDEFINED' and padpage1default is defined -%}
+		{% set padpage1=padpage1default -%}
+	{% endif -%}
+	{% if padpage2 == 'UNDEFINED' and padpage2default is defined -%}
+		{% set padpage2=padpage2default -%}
 	{% endif -%}
 	{% if baseshortname is defined %}
 		{% set lmshortname=baseshortname %}

@@ -1,5 +1,8 @@
 	["Kong"]={
 		["Default"]={
+{% if lptype == "pro" %}
+{% include "devices/instrument/kong/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Index"]={
 			-- Pads
@@ -94,28 +97,16 @@
 			["Button 4-8"]={template="BSolo"},
 		},
 		["Drum *"]={
-			-- Pages
+{% if lptype == "pro" %}
+{% include "devices/instrument/kong/pro/confmap_submenu_drum.lua" %}
+{% else %}
+{% include "devices/instrument/kong/mini/confmap_mainmenu_drum.lua" %}
+{% endif %}
+			-- SubPages
 			["Button 1-1"]={template="BOscPage"},
 			["Button 2-1"]={template="BOscPage"},
 			["Button 3-1"]={template="BEffectPage"},
 			["Button 4-1"]={template="BEffectPage"},
-			-- Drums
-			["Button 5-1"]={template="BOscPage"},
-			["Button 5-2"]={template="BOscPage"},
-			["Button 5-3"]={template="BOscPage"},
-			["Button 5-4"]={template="BOscPage"},
-			["Button 6-1"]={template="BOscPage"},
-			["Button 6-2"]={template="BOscPage"},
-			["Button 6-3"]={template="BOscPage"},
-			["Button 6-4"]={template="BOscPage"},
-			["Button 7-1"]={template="BOscPage"},
-			["Button 7-2"]={template="BOscPage"},
-			["Button 7-3"]={template="BOscPage"},
-			["Button 7-4"]={template="BOscPage"},
-			["Button 8-1"]={template="BOscPage"},
-			["Button 8-2"]={template="BOscPage"},
-			["Button 8-3"]={template="BOscPage"},
-			["Button 8-4"]={template="BOscPage"},
 			["DrumMain"]={
 				-- Offset
 				["UDVButton 1-2_2-2"]={template="UDAmount"},
@@ -171,37 +162,27 @@
 			["Button 3-6"]={template="BYellowOnOff"},
 			["Button 3-7"]={template="BYellowOnOff"},
 			["Button 3-8"]={template="BYellowOnOff"},
-			-- Pads
-			["Button 5-5"]={template="BPerformancePage"},
-			["Button 5-6"]={template="BPerformancePage"},
-			["Button 5-7"]={template="BPerformancePage"},
-			["Button 5-8"]={template="BPerformancePage"},
-			["Button 6-5"]={template="BPerformancePage"},
-			["Button 6-6"]={template="BPerformancePage"},
-			["Button 6-7"]={template="BPerformancePage"},
-			["Button 6-8"]={template="BPerformancePage"},
-			["Button 7-5"]={template="BPerformancePage"},
-			["Button 7-6"]={template="BPerformancePage"},
-			["Button 7-7"]={template="BPerformancePage"},
-			["Button 7-8"]={template="BPerformancePage"},
-			["Button 8-5"]={template="BPerformancePage"},
-			["Button 8-6"]={template="BPerformancePage"},
-			["Button 8-7"]={template="BPerformancePage"},
-			["Button 8-8"]={template="BPerformancePage"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/kong/pro/confmap_submenu_pad.lua" %}
+{% else %}
+{% include "devices/instrument/kong/mini/confmap_mainmenu_pad.lua" %}
+{% endif %}
 		},
 		["Bus FX"]={
 			["Button 1-2"]={template="BYellowOnOff"},
 			["Fader 3"]={template="FEffect"},
 			["Fader 4"]={template="FEffect"},
 			["Fader 6"]={template="FGain"},
-			["Button 2-8"]={template="BEffectPage"},
-			["Button 3-8"]={template="BEffectPage"},
+{% if lptype == "mini" %}
+{% include "devices/instrument/kong/mini/confmap_mainmenu_effects.lua" %}
+{% endif %}
 		},
 		["Master FX"]={
 			["Button 1-2"]={template="BYellowOnOff"},
 			["Fader 3"]={template="FEffect"},
 			["Fader 4"]={template="FEffect"},
-			["Button 2-8"]={template="BEffectPage"},
-			["Button 3-8"]={template="BEffectPage"},
+{% if lptype == "mini" %}
+{% include "devices/instrument/kong/mini/confmap_mainmenu_effects.lua" %}
+{% endif %}
 		},
 	},

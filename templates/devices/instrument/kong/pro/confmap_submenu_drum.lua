@@ -1,0 +1,8 @@
+                        ["Button A1"]={template="BOscPage"},
+                        ["Button A2"]={template="BOscPage"},
+                        ["Button A3"]={template="BOscPage"},
+                        ["Button A4"]={template="BOscPage"},
+                        ["Button A5"]={template="BOscPage"},
+                        ["Button A6"]={template="BOscPage"},
+                        ["Button A7"]={template="BOscPage"},
+                        ["Button A8"]={template="BOscPage"},

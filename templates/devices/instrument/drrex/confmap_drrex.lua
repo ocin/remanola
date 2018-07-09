@@ -1,5 +1,8 @@
 	["DrOctoRex"]={
 		["Default"]={
+{% if lptype == "pro" %}
+{% include "devices/instrument/drrex/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Main"]={
 			["UDVButton 1-2_2-2"]={template="UDFreq"},

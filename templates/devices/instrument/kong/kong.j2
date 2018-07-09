@@ -1,8 +1,14 @@
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Kong Drum Designer" -%}
 {% set devicename="Kong" -%}
+{% set shortname="kong" -%}
 {# Variables -#}
+{% set drumpage1default="Drum1" -%}
+{% set drumpage2default="Drum9" -%}
+{% set padpage1default="Pad1" -%}
+{% set padpage2default="Pad9" -%}
 {# End Variables -#}
+{% import "remotemap/include/macros.j2" as rm with context %}
 {% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	MutesSolos	Drum1	Drum2	Drum3	Drum4	Drum5	Drum6	Drum7	Drum8	Drum9	Drum10	Drum11	Drum12	Drum13	Drum14	Drum15	Drum16	Pad1	Pad2	Pad3	Pad4	Pad5	Pad6	Pad7	Pad8	Pad9	Pad10	Pad11	Pad12	Pad13	Pad14	Pad15	Pad16	BusFX	MasterFX	Index	Keyboard	Internal
 Define Group	DrumPage	DrumMain	DrumModule	DrumFX1	DrumFX2
@@ -49,6 +55,7 @@ Map	Button 8-8		Page=Pad4			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
+{{ rm.include_menus(curpage="Main") -}}
 Map	Button 5-1		Pad 13 Hit Indication			Main
 Map	Button 5-2		Pad 14 Hit Indication			Main
 Map	Button 5-3		Pad 15 Hit Indication			Main
@@ -70,6 +77,7 @@ Map	Meter 7		Master Level Output Left				Main
 Map	Meter 8		Master Level Output Right				Main
 // Mutes & Solos
 Map	PageName		"Mutes & Solos" 				MutesSolos
+{{ rm.include_menus(curpage="MutesSolos") -}}
 Map	Button 1-1		Pad 13 Mute				MutesSolos
 Map	Button 1-2		Pad 14 Mute				MutesSolos
 Map	Button 1-3		Pad 15 Mute				MutesSolos
@@ -106,22 +114,11 @@ Map	Button 5-8		Set all Mutes and Solos to Off				MutesSolos
 {% for drumnum in range(1,17) -%}
 // Drum {{ drumnum }}
 Map	PageName		"Drum {{ drumnum }}" 				Drum{{ drumnum }}
-Map	Button 5-1		Page=Drum13			Drum{{ drumnum }}
-Map	Button 5-2		Page=Drum14			Drum{{ drumnum }}
-Map	Button 5-3		Page=Drum15			Drum{{ drumnum }}
-Map	Button 5-4		Page=Drum16			Drum{{ drumnum }}
-Map	Button 6-1		Page=Drum9			Drum{{ drumnum }}
-Map	Button 6-2		Page=Drum10			Drum{{ drumnum }}
-Map	Button 6-3		Page=Drum11			Drum{{ drumnum }}
-Map	Button 6-4		Page=Drum12			Drum{{ drumnum }}
-Map	Button 7-1		Page=Drum5			Drum{{ drumnum }}
-Map	Button 7-2		Page=Drum6			Drum{{ drumnum }}
-Map	Button 7-3		Page=Drum7			Drum{{ drumnum }}
-Map	Button 7-4		Page=Drum8			Drum{{ drumnum }}
-Map	Button 8-1		Page=Drum1			Drum{{ drumnum }}
-Map	Button 8-2		Page=Drum2			Drum{{ drumnum }}
-Map	Button 8-3		Page=Drum3			Drum{{ drumnum }}
-Map	Button 8-4		Page=Drum4			Drum{{ drumnum }}
+{% if drumnum <= 8 %}
+{{ rm.include_menus(curpage="Drum"+drumnum|string, mainmenu_mini="drum", submenu="drum1", drumpage1="Drum"+drumnum|string) -}}
+{% else %}
+{{ rm.include_menus(curpage="Drum"+drumnum|string, mainmenu_mini="drum", submenu="drum2", drumpage2="Drum"+drumnum|string) -}}
+{% endif %}
 Map	Button 1-1		DrumPage=DrumMain			Drum{{ drumnum }}
 Map	Button 2-1		DrumPage=DrumModule			Drum{{ drumnum }}
 Map	Button 3-1		DrumPage=DrumFX1			Drum{{ drumnum }}
@@ -167,6 +164,11 @@ Map	Fader 7		Drum {{ drumnum }} FX2 P2				Drum{{ drumnum }}	DrumFX2
 {% for padnum in range(1,17) -%}
 // Pad {{ padnum }}
 Map	PageName		"Pad {{ padnum }}" 				Pad{{ padnum }}
+{% if padnum <= 8 %}
+{{ rm.include_menus(curpage="Pad"+padnum|string, mainmenu_mini="pad", submenu="pad1", padpage1="Pad"+padnum|string) -}}
+{% else %}
+{{ rm.include_menus(curpage="Pad"+padnum|string, mainmenu_mini="pad", submenu="pad2", padpage2="Pad"+padnum|string) -}}
+{% endif %}
 Map	UDVButton 1-2_2-2		Pad {{ padnum }} Drum Assignment			Pad{{ padnum }}
 Map	UDVButton 3-2_4-2		Pad {{ padnum }} Hit Type			Pad{{ padnum }}
 Map	Button 1-6		Pad {{ padnum }} Group A			Pad{{ padnum }}
@@ -178,37 +180,19 @@ Map	Button 2-8		Pad {{ padnum }} Group F			Pad{{ padnum }}
 Map	Button 3-6		Pad {{ padnum }} Group G			Pad{{ padnum }}
 Map	Button 3-7		Pad {{ padnum }} Group H			Pad{{ padnum }}
 Map	Button 3-8		Pad {{ padnum }} Group I			Pad{{ padnum }}
-Map	Button 5-5		Page=Pad13			Pad{{ padnum }}
-Map	Button 5-6		Page=Pad14			Pad{{ padnum }}
-Map	Button 5-7		Page=Pad15			Pad{{ padnum }}
-Map	Button 5-8		Page=Pad16			Pad{{ padnum }}
-Map	Button 6-5		Page=Pad9			Pad{{ padnum }}
-Map	Button 6-6		Page=Pad10			Pad{{ padnum }}
-Map	Button 6-7		Page=Pad11			Pad{{ padnum }}
-Map	Button 6-8		Page=Pad12			Pad{{ padnum }}
-Map	Button 7-5		Page=Pad5			Pad{{ padnum }}
-Map	Button 7-6		Page=Pad6			Pad{{ padnum }}
-Map	Button 7-7		Page=Pad7			Pad{{ padnum }}
-Map	Button 7-8		Page=Pad8			Pad{{ padnum }}
-Map	Button 8-5		Page=Pad1			Pad{{ padnum }}
-Map	Button 8-6		Page=Pad2			Pad{{ padnum }}
-Map	Button 8-7		Page=Pad3			Pad{{ padnum }}
-Map	Button 8-8		Page=Pad4			Pad{{ padnum }}
 {% endfor -%}
 // Bus FX
 Map	PageName		"Bus FX" 				BusFX
+{{ rm.include_menus(curpage="BusFX", mainmenu_mini="effects") -}}
 Map	Button 1-2		Bus FX On			BusFX
-Map	Button 2-8		Page=BusFX			BusFX
-Map	Button 3-8		Page=MasterFX			BusFX
 Map	Fader 3		Bus FX P1			BusFX
 Map	Fader 4		Bus FX P2			BusFX
 Map	Fader 6		Level Bus FX to Master FX			BusFX
 Map	Meter 7		Bus FX Peak Meter			BusFX
 // Master FX
 Map	PageName		"Master FX" 				MasterFX
+{{ rm.include_menus(curpage="MasterFX", mainmenu_mini="effects") -}}
 Map	Button 1-2		Master FX On			MasterFX
-Map	Button 2-8		Page=BusFX			MasterFX
-Map	Button 3-8		Page=MasterFX			MasterFX
 Map	Fader 3		Master FX P1			MasterFX
 Map	Fader 4		Master FX P2			MasterFX
 Map	Meter 7		Master FX Peak Meter			MasterFX
