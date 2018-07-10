@@ -1,5 +1,8 @@
 	["Neptune Pitch Adjuster"]={
 		["Default"]={
+{% if lptype == "pro" %}
+{% include "devices/effect/neptunepitchadjuster/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Index"]={
 		},

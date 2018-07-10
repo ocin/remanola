@@ -1,5 +1,8 @@
 	["MClass Compressor"]={
 		["Default"]={
+{% if lptype == "pro" %}
+{% include "devices/effect/mclasscompressor/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Index"]={
 		},

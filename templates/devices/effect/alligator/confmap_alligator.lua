@@ -1,5 +1,8 @@
 	["Alligator"]={
 		["Default"]={
+{% if lptype == "pro" %}
+{% include "devices/effect/alligator/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Index"]={
 		},
@@ -19,38 +22,44 @@
 			["Fader 7"]={template="FGain"},
 		},
 		["HPFilter"]={
-			["Button 2-1"]={template="BFilterPage"},
-			["Button 3-1"]={template="BFilterPage"},
-			["Button 4-1"]={template="BFilterPage"},
+{% if lptype == "pro" %}
+{% include "devices/effect/alligator/pro/confmap_submenu_filter.lua" %}
+{% else %}
+{% include "devices/effect/alligator/mini/confmap_mainmenu_filter.lua" %}
+{% endif %}
 			["Knob V3"]={template="FMisc"},
 			["Fader 4"]={template="FFreq"},
 			["Fader 5"]={template="FEffect"},
 			["Knob V6"]={template="FMisc"},
 		},
 		["BPFilter"]={
-			["Button 2-1"]={template="BFilterPage"},
-			["Button 3-1"]={template="BFilterPage"},
-			["Button 4-1"]={template="BFilterPage"},
+{% if lptype == "pro" %}
+{% include "devices/effect/alligator/pro/confmap_submenu_filter.lua" %}
+{% else %}
+{% include "devices/effect/alligator/mini/confmap_mainmenu_filter.lua" %}
+{% endif %}
 			["Knob V3"]={template="FMisc"},
 			["Fader 4"]={template="FFreq"},
 			["Fader 5"]={template="FEffect"},
 			["Knob V6"]={template="FMisc"},
 		},
 		["LPFilter"]={
-			["Button 2-1"]={template="BFilterPage"},
-			["Button 3-1"]={template="BFilterPage"},
-			["Button 4-1"]={template="BFilterPage"},
+{% if lptype == "pro" %}
+{% include "devices/effect/alligator/pro/confmap_submenu_filter.lua" %}
+{% else %}
+{% include "devices/effect/alligator/mini/confmap_mainmenu_filter.lua" %}
+{% endif %}
 			["Knob V3"]={template="FMisc"},
 			["Fader 4"]={template="FFreq"},
 			["Fader 5"]={template="FEffect"},
 			["Knob V6"]={template="FMisc"},
 		},
 		["HPEffects"]={
-			["Button 2-8"]={template="BEffectPage"},
-			["Button 3-8"]={template="BEffectPage"},
-			["Button 4-8"]={template="BEffectPage"},
-			["Button 6-8"]={template="BEffectPage"},
-			["Button 7-8"]={template="BEffectPage"},
+{% if lptype == "pro" %}
+{% include "devices/effect/alligator/pro/confmap_submenu_effect.lua" %}
+{% else %}
+{% include "devices/effect/alligator/mini/confmap_mainmenu_effect.lua" %}
+{% endif %}
 			["Fader 2"]={template="FAmount"},
 			["Fader 3"]={template="FEffect"},
 			["Fader 4"]={template="FEffect"},
@@ -58,11 +67,11 @@
 			["Fader 7"]={template="FGain"},
 		},
 		["BPEffects"]={
-			["Button 2-8"]={template="BEffectPage"},
-			["Button 3-8"]={template="BEffectPage"},
-			["Button 4-8"]={template="BEffectPage"},
-			["Button 6-8"]={template="BEffectPage"},
-			["Button 7-8"]={template="BEffectPage"},
+{% if lptype == "pro" %}
+{% include "devices/effect/alligator/pro/confmap_submenu_effect.lua" %}
+{% else %}
+{% include "devices/effect/alligator/mini/confmap_mainmenu_effect.lua" %}
+{% endif %}
 			["Fader 2"]={template="FAmount"},
 			["Fader 3"]={template="FEffect"},
 			["Fader 4"]={template="FEffect"},
@@ -70,11 +79,11 @@
 			["Fader 7"]={template="FGain"},
 		},
 		["LPEffects"]={
-			["Button 2-8"]={template="BEffectPage"},
-			["Button 3-8"]={template="BEffectPage"},
-			["Button 4-8"]={template="BEffectPage"},
-			["Button 6-8"]={template="BEffectPage"},
-			["Button 7-8"]={template="BEffectPage"},
+{% if lptype == "pro" %}
+{% include "devices/effect/alligator/pro/confmap_submenu_effect.lua" %}
+{% else %}
+{% include "devices/effect/alligator/mini/confmap_mainmenu_effect.lua" %}
+{% endif %}
 			["Fader 2"]={template="FAmount"},
 			["Fader 3"]={template="FEffect"},
 			["Fader 4"]={template="FEffect"},
@@ -82,11 +91,9 @@
 			["Fader 7"]={template="FGain"},
 		},
 		["Delay"]={
-			["Button 2-8"]={template="BEffectPage"},
-			["Button 3-8"]={template="BEffectPage"},
-			["Button 4-8"]={template="BEffectPage"},
-			["Button 6-8"]={template="BEffectPage"},
-			["Button 7-8"]={template="BEffectPage"},
+{% if lptype == "mini" %}
+{% include "devices/effect/alligator/mini/confmap_mainmenu_effect.lua" %}
+{% endif %}
 			["Fader 2"]={template="FFreq"},
 			["UDVButton 7-2_8-2"]={template="UDFreq"},
 			["Button 1-3"]={template="BGreenOnOff"},
@@ -94,11 +101,9 @@
 			["Knob V5"]={template="FEffect"},
 		},
 		["Phaser"]={
-			["Button 2-8"]={template="BEffectPage"},
-			["Button 3-8"]={template="BEffectPage"},
-			["Button 4-8"]={template="BEffectPage"},
-			["Button 6-8"]={template="BEffectPage"},
-			["Button 7-8"]={template="BEffectPage"},
+{% if lptype == "mini" %}
+{% include "devices/effect/alligator/mini/confmap_mainmenu_effect.lua" %}
+{% endif %}
 			["Fader 2"]={template="FFreq"},
 			["Fader 4"]={template="FEffect"},
 		},
@@ -108,11 +113,21 @@
 			["Fader 5"]={template="FGain"},
 		},
 		["DryLevels"]={
+{% if lptype == "pro" %}
+{% include "devices/effect/alligator/pro/confmap_submenu_effect.lua" %}
+{% else %}
+{% include "devices/effect/alligator/mini/confmap_mainmenu_effect.lua" %}
+{% endif %}
 			["Fader 2"]={template="FEffect"},
 			["Knob V4"]={template="FGain"},
 			["Fader 5"]={template="FGain"},
 		},
 		["FilterEnv"]={
+{% if lptype == "pro" %}
+{% include "devices/effect/alligator/pro/confmap_submenu_filter.lua" %}
+{% else %}
+{% include "devices/effect/alligator/mini/confmap_mainmenu_filter.lua" %}
+{% endif %}
 			["Fader 3"]={template="FFreq"},
 			["Fader 4"]={template="FFreq"},
 			["Fader 5"]={template="FFreq"},

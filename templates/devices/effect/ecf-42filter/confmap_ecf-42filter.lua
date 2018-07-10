@@ -1,5 +1,8 @@
 	["ECF-42 Filter"]={
 		["Default"]={
+{% if lptype == "pro" %}
+{% include "devices/effect/ecf-42filter/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Index"]={
 		},

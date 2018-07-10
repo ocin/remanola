@@ -1,5 +1,8 @@
 	["PH-90 Phaser"]={
 		["Default"]={
+{% if lptype == "pro" %}
+{% include "devices/effect/ph-90phaser/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Index"]={
 		},

@@ -1,6 +1,12 @@
-{% macro include_menus(curpage, submenu='UNDEFINED', mainmenu_mini='UNDEFINED', oscpage='UNDEFINED', perfpage='UNDEFINED', modpage='UNDEFINED', voicingpage='UNDEFINED', sectionpage='UNDEFINED', amppage='UNDEFINED', filterpage='UNDEFINED', effectpage='UNDEFINED', drumpage1='UNDEFINED', drumpage2='UNDEFINED', padpage1='UNDEFINED', padpage2='UNDEFINED', section='UNDEFINED', engnum='UNDEFINED', drumsubpage='UNDEFINED', drumedit='UNDEFINED') %}
+{% macro include_menus(curpage, submenu='UNDEFINED', mainmenu_mini='UNDEFINED', oscpage='UNDEFINED', osc1page='UNDEFINED', osc2page='UNDEFINED', perfpage='UNDEFINED', modpage='UNDEFINED', voicingpage='UNDEFINED', sectionpage='UNDEFINED', amppage='UNDEFINED', filterpage='UNDEFINED', effectpage='UNDEFINED', drumpage1='UNDEFINED', drumpage2='UNDEFINED', padpage1='UNDEFINED', padpage2='UNDEFINED', section='UNDEFINED', engnum='UNDEFINED', drumsubpage='UNDEFINED', drumedit='UNDEFINED') %}
 	{% if oscpage == 'UNDEFINED' and oscpagedefault is defined -%}
 		{% set oscpage=oscpagedefault -%}
+	{% endif -%}
+	{% if osc1page == 'UNDEFINED' and osc1pagedefault is defined -%}
+		{% set osc1page=osc1pagedefault -%}
+	{% endif -%}
+	{% if osc2page == 'UNDEFINED' and osc2pagedefault is defined -%}
+		{% set osc2page=osc2pagedefault -%}
 	{% endif -%}
 	{% if perfpage == 'UNDEFINED' and perfpagedefault is defined -%}
 		{% set perfpage=perfpagedefault -%}
@@ -43,13 +49,13 @@
 		{% set bmshortname=shortname %}
 	{% endif %}
 	{% if lptype == "pro" %}
-		{% include "devices/instrument/"+lmshortname+"/pro/mainmenu.j2" %}
+		{% include "devices/"+devicetype+"/"+lmshortname+"/pro/mainmenu.j2" %}
 		{% if submenu != "UNDEFINED" %}
-			{% include "devices/instrument/"+bmshortname+"/pro/submenu_"+submenu+".j2" %}
+			{% include "devices/"+devicetype+"/"+bmshortname+"/pro/submenu_"+submenu+".j2" %}
 		{% endif %}
 	{% else %}
 		{% if mainmenu_mini != "UNDEFINED" %}
-			{% include "devices/instrument/"+bmshortname+"/mini/mainmenu_"+mainmenu_mini+".j2" %}
+			{% include "devices/"+devicetype+"/"+bmshortname+"/mini/mainmenu_"+mainmenu_mini+".j2" %}
 		{% endif %}
 	{% endif %}
 {% endmacro %}

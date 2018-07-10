@@ -9,10 +9,10 @@
 {% set modpagedefault="ModA" -%}
 {% set perfpagedefault="Velocity" -%}
 {# End Variables -#}
-{% import "remotemap/include/macros.j2" as rm with context %}
 {% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	OscA	OscAEnv	OscB	OscBEnv	FilterA	FilterB	FilterEnv	ModA	ModB	Shaper	Velocity	ModWheelContr	Index	Keyboard	Internal
-{% include "remotemap/include/device/instrument.j2" %}
+{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
+{% import "remotemap/include/macros.j2" as rm with context %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index

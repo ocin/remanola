@@ -1,5 +1,8 @@
 	["MClass Maximizer"]={
 		["Default"]={
+{% if lptype == "pro" %}
+{% include "devices/effect/mclassmaximizer/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Index"]={
 		},

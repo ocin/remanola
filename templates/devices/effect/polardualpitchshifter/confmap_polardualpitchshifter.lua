@@ -1,10 +1,10 @@
 	["Polar Dual Pitch Shifter"]={
 		["Default"]={
-			["Button 2-8"]={template="BEffectPage"},
-			["Button 3-8"]={template="BEffectPage"},
-			["Button 4-8"]={template="BEffectSupPage"},
-			["Button 5-8"]={template="BEffectPage"},
-			["Button 6-8"]={template="BEffectSupPage"},
+{% if lptype == "pro" %}
+{% include "devices/effect/polardualpitchshifter/pro/confmap_mainmenu.lua" %}
+{% else %}
+{% include "devices/effect/polardualpitchshifter/mini/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Index"]={
 		},
@@ -32,6 +32,9 @@
 			["Knob V5"]={template="FMisc"},
 		},
 		["Shifter *"]={
+{% if lptype == "pro" %}
+{% include "devices/effect/polardualpitchshifter/pro/confmap_submenu_shifter.lua" %}
+{% endif %}
 			["Button 1-1"]={template="BRedOnOff"},
 			["Knob V2"]={template="FFreq"},
 			["Knob V3"]={template="FFreq"},
@@ -40,7 +43,10 @@
 			["Knob V6"]={template="FMisc"},
 			["Knob V7"]={template="FMisc"},
 		},
-		["Shifter Vol *"]={
+		["Shifter * Vol"]={
+{% if lptype == "pro" %}
+{% include "devices/effect/polardualpitchshifter/pro/confmap_submenu_shifter.lua" %}
+{% endif %}
 			["Knob V2"]={template="FGain"},
 			["Knob V3"]={template="FMisc"},
 			["Fader 6"]={template="FGain"},

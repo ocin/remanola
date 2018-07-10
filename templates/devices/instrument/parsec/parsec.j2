@@ -10,12 +10,12 @@
 {% set perfpagedefault="ModMatrix1" -%}
 {% set effectpagedefault="Reverb" -%}
 {# End Variables -#}
-{% import "remotemap/include/macros.j2" as rm with context %}
 {% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	GenereratorA	GenereratorB	SoundEngineA	SoundEngineB	AmpEnv	LFO1	LFO2	Env1	Env2	Reverb	Delay	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
 Define Group	Enabled	On	Off
 Define Group	TempoSync	Free	Sync
-{% include "remotemap/include/device/instrument.j2" %}
+{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
+{% import "remotemap/include/macros.j2" as rm with context %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index

@@ -1,9 +1,11 @@
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Neptune Pitch Adjuster" -%}
 {% set devicename="Neptune Pitch Adjuster" -%}
+{% set shortname="neptunepitchadjuster" -%}
 {% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	PitchAdjust	Transpose	Formant	Index	Internal
-{% include "remotemap/include/device/effect-nopatch.j2" %}
+{% from "remotemap/include/device/effect-nopatch.j2" import devicetype with context %}
+{% import "remotemap/include/macros.j2" as rm with context %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -13,6 +15,7 @@ Map	Button 4-8		Page=Formant			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
+{{ rm.include_menus(curpage="Main") -}}
 Map	UDVButton 1-1_2-1		Enabled			Main
 Map	Meter 2		Input Peak Meter			Main
 Map	Fader 3		Vibrato Rate			Main
@@ -25,15 +28,18 @@ Map	Fader 7		Pitched Signal Level			Main
 Map	Fader 8		Voice Synth Level			Main
 // PitchAdjust
 Map	PageName		"PitchAdjust" 				PitchAdjust
+{{ rm.include_menus(curpage="PitchAdjust") -}}
 Map	Button 1-2		Pitch Adjust On/Off			PitchAdjust
 Map	Fader 4		Correction Speed			PitchAdjust
 Map	Fader 5		Preserve Expression			PitchAdjust
 // Transpose
 Map	PageName		"Transpose" 				Transpose
+{{ rm.include_menus(curpage="Transpose") -}}
 Map	Button 1-2		Transpose On/Off			Transpose
 Map	UDVButton 1-4_2-4		Semitones			Transpose
 Map	UDVButton 5-4_6-4		Cent			Transpose
 // Formant
 Map	PageName		"Formant" 				Formant
+{{ rm.include_menus(curpage="Formant") -}}
 Map	Button 1-2		Formant On/Off			Formant
 Map	Knob V5		Formant Shift			Formant

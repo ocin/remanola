@@ -1,0 +1,5 @@
+                        ["Button B1"]={template="BMainPage"},
+                        ["Button B2"]={template="BFilterPage"},
+                        ["Button B3"]={template="BFilterPage"},
+                        ["Button B4"]={template="BFilterPage"},
+                        ["Button B5"]={template="BFilterPage"},

@@ -1,5 +1,8 @@
 	["MClass Equalizer"]={
 		["Default"]={
+{% if lptype == "pro" %}
+{% include "devices/effect/mclassequalizer/pro/confmap_mainmenu.lua" %}
+{% endif %}
 			["Button 1-2"]={template="BRedOnOff"},
 			["Button 1-3"]={template="BRedOnOff"},
 			["Fader 4"]={template="FFreq"},

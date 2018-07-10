@@ -9,13 +9,13 @@
 {% set amppagedefault="Amp" -%}
 {% set modpagedefault="LFO1" -%}
 {# End Variables -#}
-{% import "remotemap/include/macros.j2" as rm with context %}
 {% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	Osc1	Osc2	Osc3	Mixer	Filter1	Filter2	Filter3	FilterEnv	Amp	AmpEnv	ModEnv	GlobalEnv	LFO1	LFO2	Seq	Effects	Shaper	Delay	Chorus	Index	Keyboard	Internal
 Define Group	OscType	Analog	Wavetable	Phase	FM	Multi	Noise	Off
 Define Group	FilterType	LP	State	Comb	Formant	Bypass
 Define Group	SeqEditMode	Note	Velocity	GateLen	StepDur	Curve1	Curve2
-{% include "remotemap/include/device/instrument.j2" %}
+{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
+{% import "remotemap/include/macros.j2" as rm with context %}
 Map	PlayingStep		Step Sequencer Step Index
 // Index
 Map	PageName		"Index" 				Index

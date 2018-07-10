@@ -1,10 +1,16 @@
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Alligator" -%}
 {% set devicename="Alligator" -%}
+{% set shortname="alligator" -%}
+{# Variables -#}
+{% set filterpagedefault="HPFilter" -%}
+{% set effectpagedefault="HPEffects" -%}
+{# End Variables -#}
 {% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	HPFilter	BPFilter	LPFilter	HPEffects	BPEffects	LPEffects	DryLevels	AmpEnv	LFO	FilterEnv	Delay	Phaser	Index	Internal
 Define Group	TempoSync	Free	Sync
-{% include "remotemap/include/device/effect.j2" %}
+{% from "remotemap/include/device/effect.j2" import devicetype with context %}
+{% import "remotemap/include/macros.j2" as rm with context %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -23,6 +29,7 @@ Map	Button 5-5		Page=LFO			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
+{{ rm.include_menus(curpage="Main") -}}
 Map	UDVButton 1-1_2-1		Enabled			Main
 Map	Button 1-2		Pattern Enable			Main
 Map	Button 3-2		Shuffle			Main
@@ -39,9 +46,7 @@ Map	Fader 7		Master Volume 				Main
 Map	Meter 8		Input Peak Meter			Main
 // HPFilter
 Map	PageName		"HPFilter" 				HPFilter
-Map	Button 2-1		Page=HPFilter			HPFilter
-Map	Button 3-1		Page=BPFilter			HPFilter
-Map	Button 4-1		Page=LPFilter			HPFilter
+{{ rm.include_menus(curpage="HPFilter", mainmenu_mini="filter", submenu="filter", oscpage="HPFilter") -}}
 Map	Button 1-2		High Pass Filter On			HPFilter
 Map	Knob V3		High Pass LFO Amount 				HPFilter
 Map	Fader 4		High Pass Frequency 				HPFilter
@@ -49,9 +54,7 @@ Map	Fader 5		High Pass Resonance 				HPFilter
 Map	Knob V6		High Pass Env Amount 				HPFilter
 // BPFilter
 Map	PageName		"BPFilter" 				BPFilter
-Map	Button 2-1		Page=HPFilter			BPFilter
-Map	Button 3-1		Page=BPFilter			BPFilter
-Map	Button 4-1		Page=LPFilter			BPFilter
+{{ rm.include_menus(curpage="BPFilter", mainmenu_mini="filter", submenu="filter", oscpage="BPFilter") -}}
 Map	Button 1-2		Band Pass Filter On			BPFilter
 Map	Knob V3		Band Pass LFO Amount 				BPFilter
 Map	Fader 4		Band Pass Frequency 				BPFilter
@@ -59,9 +62,7 @@ Map	Fader 5		Band Pass Resonance 				BPFilter
 Map	Knob V6		Band Pass Env Amount 				BPFilter
 // LPFilter
 Map	PageName		"LPFilter" 				LPFilter
-Map	Button 2-1		Page=HPFilter			LPFilter
-Map	Button 3-1		Page=BPFilter			LPFilter
-Map	Button 4-1		Page=LPFilter			LPFilter
+{{ rm.include_menus(curpage="LPFilter", mainmenu_mini="filter", submenu="filter", oscpage="LPFilter") -}}
 Map	Button 1-2		Low Pass Filter On			LPFilter
 Map	Knob V3		Low Pass LFO Amount 				LPFilter
 Map	Fader 4		Low Pass Frequency 				LPFilter
@@ -69,11 +70,7 @@ Map	Fader 5		Low Pass Resonance 				LPFilter
 Map	Knob V6		Low Pass Env Amount 				LPFilter
 // HPEffects
 Map	PageName		"HPEffects" 				HPEffects
-Map	Button 2-8		Page=HPEffects			HPEffects
-Map	Button 3-8		Page=BPEffects			HPEffects
-Map	Button 4-8		Page=LPEffects			HPEffects
-Map	Button 6-8		Page=Delay			HPEffects
-Map	Button 7-8		Page=Phaser			HPEffects
+{{ rm.include_menus(curpage="HPEffects", mainmenu_mini="effect", submenu="effect", oscpage="HPEffects") -}}
 Map	Fader 2		High Pass Drive Amount 				HPEffects
 Map	Fader 3		High Pass Phaser Amount 				HPEffects
 Map	Fader 4		High Pass Delay Amount 				HPEffects
@@ -81,11 +78,7 @@ Map	Knob V6		High Pass Pan 				HPEffects
 Map	Fader 7		High Pass Volume 				HPEffects
 // BPEffects
 Map	PageName		"BPEffects" 				BPEffects
-Map	Button 2-8		Page=HPEffects			BPEffects
-Map	Button 3-8		Page=BPEffects			BPEffects
-Map	Button 4-8		Page=LPEffects			BPEffects
-Map	Button 6-8		Page=Delay			BPEffects
-Map	Button 7-8		Page=Phaser			BPEffects
+{{ rm.include_menus(curpage="HPEffects", mainmenu_mini="effect", submenu="effect", oscpage="HPEffects") -}}
 Map	Fader 2		Band Pass Drive Amount 				BPEffects
 Map	Fader 3		Band Pass Phaser Amount 				BPEffects
 Map	Fader 4		Band Pass Delay Amount 				BPEffects
@@ -93,11 +86,7 @@ Map	Knob V6		Band Pass Pan 				BPEffects
 Map	Fader 7		Band Pass Volume 				BPEffects
 // LPEffects
 Map	PageName		"LPEffects" 				LPEffects
-Map	Button 2-8		Page=HPEffects			LPEffects
-Map	Button 3-8		Page=BPEffects			LPEffects
-Map	Button 4-8		Page=LPEffects			LPEffects
-Map	Button 6-8		Page=Delay			LPEffects
-Map	Button 7-8		Page=Phaser			LPEffects
+{{ rm.include_menus(curpage="HPEffects", mainmenu_mini="effect", submenu="effect", oscpage="HPEffects") -}}
 Map	Fader 2		Low Pass Drive Amount 				LPEffects
 Map	Fader 3		Low Pass Phaser Amount 				LPEffects
 Map	Fader 4		Low Pass Delay Amount 				LPEffects
@@ -105,13 +94,9 @@ Map	Knob V6		Low Pass Pan 				LPEffects
 Map	Fader 7		Low Pass Volume 				LPEffects
 // Delay
 Map	PageName		"Delay" 				Delay
+{{ rm.include_menus(curpage="Delay", mainmenu_mini="effect") -}}
 Map	Sel1_0		TempoSync=Free			Delay
 Map	Sel1_1		TempoSync=Sync			Delay
-Map	Button 2-8		Page=HPEffects			Delay
-Map	Button 3-8		Page=BPEffects			Delay
-Map	Button 4-8		Page=LPEffects			Delay
-Map	Button 6-8		Page=Delay			Delay
-Map	Button 7-8		Page=Phaser			Delay
 Map	Fader 2		Delay Time 			Delay	Free
 Map	UDVButton 7-2_8-2		Delay Time	10		Delay	Sync
 Map	Button 1-3		DelaySync		SEL1	Delay
@@ -119,30 +104,30 @@ Map	Fader 4		Delay Feedback 				Delay
 Map	Knob V5		Delay Pan 				Delay
 // Phaser
 Map	PageName		"Phaser" 				Phaser
-Map	Button 2-8		Page=HPEffects			Phaser
-Map	Button 3-8		Page=BPEffects			Phaser
-Map	Button 4-8		Page=LPEffects			Phaser
-Map	Button 6-8		Page=Delay			Phaser
-Map	Button 7-8		Page=Phaser			Phaser
+{{ rm.include_menus(curpage="Phaser", mainmenu_mini="effect") -}}
 Map	Fader 2		Phaser Rate 			Phaser
 Map	Fader 4		Phaser Feedback 			Phaser
 // AmpEnv
 Map	PageName		"AmpEnv" 				AmpEnv
+{{ rm.include_menus(curpage="AmpEnv") -}}
 Map	Fader 3		Amp Env Attack 			AmpEnv
 Map	Fader 4		Amp Env Decay 			AmpEnv
 Map	Fader 5		Amp Env Release 			AmpEnv
 // DryLevels
 Map	PageName		"DryLevels" 				DryLevels
+{{ rm.include_menus(curpage="DryLevels", mainmenu_mini="effect", submenu="effect", oscpage="DryLevels") -}}
 Map	Fader 2		Ducking 			DryLevels
 Map	Knob V4		Dry Pan 			DryLevels
 Map	Fader 5		Dry Volume 			DryLevels
 // FilterEnv
 Map	PageName		"FilterEnv" 				FilterEnv
+{{ rm.include_menus(curpage="FilterEnv", mainmenu_mini="filter", submenu="filter", oscpage="FilterEnv") -}}
 Map	Fader 3		Filter Env Attack 			FilterEnv
 Map	Fader 4		Filter Env Decay 			FilterEnv
 Map	Fader 5		Filter Env Release 			FilterEnv
 // LFO
 Map	PageName		"LFO" 				LFO
+{{ rm.include_menus(curpage="LFO") -}}
 Map	Sel1_0		TempoSync=Free			LFO
 Map	Sel1_1		TempoSync=Sync			LFO
 Map	UDVButton 1-2_2-2		LFO Waveform			LFO
