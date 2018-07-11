@@ -1,7 +1,10 @@
 	["RPG-8"]={
 		["Default"]={
-			["Button 5-1"]={template="BPerformancePage"},
-			["Button 6-1"]={template="BPerformancePage"},
+{% if lptype == "mini" %}
+{% include "devices/utility/rpg8/mini/confmap_mainmenu_common.lua" %}
+{% else %}
+{% include "devices/utility/rpg8/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Main"]={
 			-- MIDI-CV Coverter

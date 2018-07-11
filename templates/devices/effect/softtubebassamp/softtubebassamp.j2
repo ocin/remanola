@@ -2,6 +2,7 @@
 {% set deviceman="Propellerhead Software" -%}
 {% set devicescope="se.propellerheads.ReasonBassAmp" -%}
 {% set devicename="Softtube Bass Amp" -%}
+{% set shortname="softtubebassamp" -%}
 {% block groups %}
 Define Group	Page	Main	Eq	Index	Internal
 {% endblock groups %}
@@ -13,13 +14,15 @@ Map	Button 2-8		Page=Eq			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
+{{ rm.include_menus(curpage="Main") -}}
 Map	UDVButton 1-1_2-1		Enabled			Main
 Map	UDVButton 1-2_2-2		Amp Switch			Main
-Map	UDVButton 3-2_4-2		Cab Switch			Main
+Map	UDVButton 5-2_6-2		Cab Switch			Main
 Map	Fader 3		Drive 				Main
 Map	Fader 8		Volume 				Main
 // Eq
 Map	PageName		"Eq" 				Eq
+{{ rm.include_menus(curpage="Eq") -}}
 Map	Button 8-2		Ultra Lo			Eq
 Map	Fader 3		Bass 				Eq
 Map	Fader 4		Middle 				Eq

@@ -1,5 +1,8 @@
 	["Pulveriser"]={
 		["Default"]={
+{% if lptype == "pro" %}
+{% include "devices/effect/pulveriser/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Index"]={
 		},

@@ -1,5 +1,8 @@
 	["RV7000 Advanced Reverb"]={
 		["Default"]={
+{% if lptype == "pro" %}
+{% include "devices/effect/rv7000advancedreverb/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Index"]={
 		},

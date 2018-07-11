@@ -1,5 +1,8 @@
 	["The Echo"]={
 		["Default"]={
+{% if lptype == "pro" %}
+{% include "devices/effect/theecho/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Index"]={
 		},
@@ -28,7 +31,7 @@
 			["Fader 7"]={template="FAmount"},
 		},
 		["Color"]={
-			["Fader 2"]={template="FAMber"},
+			["Fader 2"]={template="FAmount"},
 			["UDVButton 1-3_2-3"]={template="UDAmount"},
 			["Button 1-5"]={template="BYellowOnOff"},
 			["Fader 5"]={template="FFreq"},

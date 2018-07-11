@@ -2,6 +2,7 @@
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="RPG-8 Monophonic Arpeggiator" -%}
 {% set devicename="RPG-8" -%}
+{% set shortname="rpg8" -%}
 {% block groups %}
 Define Group	Page	Main	Pattern	Index	Internal
 Define Group	TempoSync	Free	Sync
@@ -14,8 +15,7 @@ Map	Button 1-5		Page=Pattern			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
-Map	Button 5-1		Page=Main			Main
-Map	Button 6-1		Page=Pattern			Main
+{{ rm.include_menus(curpage="Main", mainmenu_mini="common") -}}
 Map	Sel1_0		TempoSync=Free			Main
 Map	Sel1_1		TempoSync=Sync			Main
 Map	Fader 2		Velocity/Manual			Main
@@ -32,8 +32,7 @@ Map	Fader 7		Rate			Main	Free
 Map	Fader 8		Gate Length			Main
 // Pattern
 Map	PageName		"Pattern" 				Pattern
-Map	Button 5-1		Page=Main			Pattern
-Map	Button 6-1		Page=Pattern			Pattern
+{{ rm.include_menus(curpage="Pattern", mainmenu_mini="common") -}}
 Map	Button 1-1		Pattern Step 1			Pattern
 Map	Button 1-2		Pattern Step 2			Pattern
 Map	Button 1-3		Pattern Step 3			Pattern

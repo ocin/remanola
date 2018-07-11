@@ -1,5 +1,8 @@
 	["Synchronous"]={
 		["Default"]={
+{% if lptype == "pro" %}
+{% include "devices/effect/synchronous/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Index"]={
 		},

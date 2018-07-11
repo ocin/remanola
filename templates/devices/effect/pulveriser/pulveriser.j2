@@ -2,6 +2,7 @@
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Pulveriser" -%}
 {% set devicename="Pulveriser" -%}
+{% set shortname="pulveriser" -%}
 {% block groups %}
 Define Group	Page	Main	Filter	Follower	Tremor	Index	Internal
 Define Group	TempoSync	Free	Sync
@@ -16,6 +17,7 @@ Map	Button 2-8		Page=Tremor			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
+{{ rm.include_menus(curpage="Main") -}}
 Map	UDVButton 1-1_2-1		Enabled			Main
 Map	UDVButton 7-1_8-1		Routing			Main
 Map	Fader 2		Squash			Main
@@ -27,6 +29,7 @@ Map	Fader 7		Volume			Main
 Map	Meter 8		Input Peak Meter			Main
 // Filter
 Map	PageName		"Filter" 				Filter
+{{ rm.include_menus(curpage="Filter") -}}
 Map	UDVButton 1-2_2-2		Filter Mode			Filter
 Map	Fader 3		Filter Frequency			Filter
 Map	Fader 4		Peak			Filter
@@ -34,6 +37,7 @@ Map	Knob V7		Tremor to Frequency			Filter
 Map	Knob V8		Follower to Frequency			Filter
 // Follower
 Map	PageName		"Follower" 				Follower
+{{ rm.include_menus(curpage="Follower") -}}
 Map	Button 8-1		Follower Trig			Follower
 Map	Fader 2		Follower Threshold			Follower
 Map	Fader 4		Follower Attack			Follower
@@ -41,6 +45,7 @@ Map	Fader 5		Follower Release			Follower
 Map	Meter 8		Follow			Follower
 // Tremor
 Map	PageName		"Tremor" 				Tremor
+{{ rm.include_menus(curpage="Tremor") -}}
 Map	Sel1_0		TempoSync=Free			Tremor
 Map	Sel1_1		TempoSync=Sync			Tremor
 Map	Fader 2		Tremor Rate			Tremor	Free
