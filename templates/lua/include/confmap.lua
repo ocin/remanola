@@ -54,4 +54,5 @@ local item_conf_map = {
 
 {% include "devices/utility/matrix/confmap_matrix.lua" %}
 {% include "devices/utility/rpg8/confmap_rpg8.lua" %}
+{% include "devices/utility/pulsar/confmap_pulsar.lua" %}
 }

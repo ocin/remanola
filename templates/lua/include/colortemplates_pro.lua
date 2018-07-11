@@ -61,7 +61,7 @@ local color_templates = {
 	-- Red LED
 	["BRedLed"]={enabledcolor=DGREEN,   activecolor=RED,  disabledcolor=NOCOLOR},
 	-- Button Page
-	["BMainPage"]={enabledcolor=WHITE,   activecolor=WHITE,  disabledcolor=NOCOLOR},
+	["BMainPage"]={enabledcolor=WHITE,   activecolor=RED,  disabledcolor=NOCOLOR},
 	["BAmpPage"]={enabledcolor=MAGENTA,   activecolor=RED,  disabledcolor=NOCOLOR},
 	["BAmpModPage"]={enabledcolor=HMAGENTA,   activecolor=RED,  disabledcolor=NOCOLOR},
 	["BOscPage"]={enabledcolor=AMBER,   activecolor=RED,  disabledcolor=NOCOLOR},
