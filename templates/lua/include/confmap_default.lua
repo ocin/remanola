@@ -28,6 +28,7 @@
 			["Button C6"]={enabledcolor=WGREEN,     activecolor=GREEN,   disabledcolor=NOCOLOR},
 			["Button C7"]={enabledcolor=WAMBER,      activecolor=AMBER,     disabledcolor=NOCOLOR},
 			["Button C8"]={enabledcolor=YELLOW,      activecolor=RED,     disabledcolor=GREEN},
+			["Button B1"]={template="BMainPage"}, 
 
 			["Side LED"]={enabledcolor=GREEN,      activecolor=GREEN,     disabledcolor=GREEN},
 		},

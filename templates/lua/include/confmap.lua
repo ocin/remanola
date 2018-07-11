@@ -4,8 +4,8 @@ local item_conf_map = {
 {% include "devices/reason/reason-master-section/confmap_reason-master-section.lua" %}
 {% include "devices/reason/reason-mix-channel/confmap_reason-mix-channel.lua" %}
 
-{% include "devices/instrument/antidote/confmap_antidote.lua" %}
 {% include "devices/instrument/combinator/confmap_combinator.lua" %}
+{% include "devices/instrument/antidote/confmap_antidote.lua" %}
 {% include "devices/instrument/drrex/confmap_drrex.lua" %}
 {% include "devices/instrument/europa/confmap_europa.lua" %}
 {% include "devices/instrument/grain/confmap_grain.lua" %}
