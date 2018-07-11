@@ -2,11 +2,12 @@
 {% set show_pitch_bend_range=true -%}
 {% set baseshortname="Shared/klang_pangea_humana" -%}
 {% set shortname="klang_pangea_humana" -%}
+{% set devicetype="instrument" -%}
 {# End Variables -#}
 {% include "remotemap/include/device/scope.j2" %}
 Define Group	Page	Main	Instrument	Filter	FilterEnv	Amp	Delay	Reverb	ModWheelContr	Index	Keyboard	Internal
 Define Group	TempoSync	Free	Sync
-{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
+{% include "remotemap/include/device/instrument.j2" %}
 {% import "remotemap/include/macros.j2" as rm with context %}
 // Index
 Map	PageName		"Index" 				Index

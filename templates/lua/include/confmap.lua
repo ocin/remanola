@@ -52,6 +52,6 @@ local item_conf_map = {
 {% include "devices/effect/theecho/confmap_theecho.lua" %}
 {% include "devices/effect/un-16unison/confmap_un-16unison.lua" %}
 
-{% include "devices/utilities/matrix/confmap_matrix.lua" %}
-{% include "devices/utilities/rpg8/confmap_rpg8.lua" %}
+{% include "devices/utility/matrix/confmap_matrix.lua" %}
+{% include "devices/utility/rpg8/confmap_rpg8.lua" %}
 }

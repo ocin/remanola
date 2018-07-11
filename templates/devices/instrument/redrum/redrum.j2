@@ -1,3 +1,4 @@
+{% extends "devices/instrument/instrument.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Redrum Drum Computer" -%}
 {% set devicename="Redrum" -%}
@@ -8,12 +9,12 @@
 {% set drumpage1default="Drum1" -%}
 {% set drumpage2default="Drum9" -%}
 {# End Variables -#}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	Performance	Drum1	Drum1Edit	Drum2	Drum2Edit	Drum3	Drum3Edit	Drum4	Drum4Edit	Drum5	Drum5Edit	Drum6	Drum6Edit	Drum7	Drum7Edit	Drum8	Drum8Edit	Drum9	Drum9Edit	Drum10	Drum10Edit	Drum11	Drum11Edit	Drum12	Drum12Edit	Index	Keyboard	Internal
 Define Group	DrumMode	Play	Solo	Mute
 Define Group	EditMode	Rotate	Toggle	Flam
-{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% endblock groups %}
+{% block main %}
 Map	PlayingStep		Playing Step
 // Index
 Map	PageName		"Index" 				Index
@@ -188,3 +189,4 @@ Map	Knob V7		Drum {{ drumnum }} Pitch Bend Rate				Drum{{ drumnum }}Edit
 Map	Knob V8		Drum {{ drumnum }} Vel to Pitch Bend				Drum{{ drumnum }}Edit
 {% endif -%}
 {% endfor -%}
+{% endblock main %}

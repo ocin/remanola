@@ -1,10 +1,12 @@
+{% extends "devices/effect/effect-nopatch.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="DDL-1 Digital Delay Line" -%}
 {% set devicename="DDL-1 Digital Delay Line" -%}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	Index	Internal
 Define Group	DelayUnit	Steps	Ms
-{% include "remotemap/include/device/effect-nopatch.j2" %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -22,3 +24,4 @@ Map	UDVButton 1-5_2-5		Step Length			Main
 Map	Fader 6		Feedback			Main
 Map	Knob V7		Pan			Main
 Map	Fader 8		Dry/Wet Balance			Main
+{% endblock main %}

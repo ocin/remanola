@@ -1,3 +1,4 @@
+{% extends "devices/effect/effect.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Alligator" -%}
 {% set devicename="Alligator" -%}
@@ -6,11 +7,11 @@
 {% set filterpagedefault="HPFilter" -%}
 {% set effectpagedefault="HPEffects" -%}
 {# End Variables -#}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	HPFilter	BPFilter	LPFilter	HPEffects	BPEffects	LPEffects	DryLevels	AmpEnv	LFO	FilterEnv	Delay	Phaser	Index	Internal
 Define Group	TempoSync	Free	Sync
-{% from "remotemap/include/device/effect.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -78,7 +79,7 @@ Map	Knob V6		High Pass Pan 				HPEffects
 Map	Fader 7		High Pass Volume 				HPEffects
 // BPEffects
 Map	PageName		"BPEffects" 				BPEffects
-{{ rm.include_menus(curpage="HPEffects", mainmenu_mini="effect", submenu="effect", oscpage="HPEffects") -}}
+{{ rm.include_menus(curpage="BPEffects", mainmenu_mini="effect", submenu="effect", oscpage="BPEffects") -}}
 Map	Fader 2		Band Pass Drive Amount 				BPEffects
 Map	Fader 3		Band Pass Phaser Amount 				BPEffects
 Map	Fader 4		Band Pass Delay Amount 				BPEffects
@@ -86,7 +87,7 @@ Map	Knob V6		Band Pass Pan 				BPEffects
 Map	Fader 7		Band Pass Volume 				BPEffects
 // LPEffects
 Map	PageName		"LPEffects" 				LPEffects
-{{ rm.include_menus(curpage="HPEffects", mainmenu_mini="effect", submenu="effect", oscpage="HPEffects") -}}
+{{ rm.include_menus(curpage="LPEffects", mainmenu_mini="effect", submenu="effect", oscpage="LPEffects") -}}
 Map	Fader 2		Low Pass Drive Amount 				LPEffects
 Map	Fader 3		Low Pass Phaser Amount 				LPEffects
 Map	Fader 4		Low Pass Delay Amount 				LPEffects
@@ -134,3 +135,4 @@ Map	UDVButton 1-2_2-2		LFO Waveform			LFO
 Map	Fader 4		LFO Freq 			LFO	Free
 Map	UDVButton 7-4_8-4		LFO Freq	8		LFO	Sync
 Map	Button 1-5		LFOSync		SEL1	LFO
+{% endblock main %}

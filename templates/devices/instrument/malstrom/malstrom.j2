@@ -1,3 +1,4 @@
+{% extends "devices/instrument/instrument.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Malstrom Graintable Synthesizer" -%}
 {% set devicename="Malstrom" -%}
@@ -9,10 +10,10 @@
 {% set modpagedefault="ModA" -%}
 {% set perfpagedefault="Velocity" -%}
 {# End Variables -#}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	OscA	OscAEnv	OscB	OscBEnv	FilterA	FilterB	FilterEnv	ModA	ModB	Shaper	Velocity	ModWheelContr	Index	Keyboard	Internal
-{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -132,3 +133,4 @@ Map	Knob V3		Mod Wheel To Shift			ModWheelContr
 Map	Knob V4		Mod Wheel To Filter			ModWheelContr
 Map	Knob V5		Mod Wheel To Modulator			ModWheelContr
 Map	UDVButton 7-8_8-8		Mod Wheel Target			ModWheelContr
+{% endblock main %}

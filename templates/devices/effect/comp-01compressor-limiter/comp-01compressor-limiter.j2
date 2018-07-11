@@ -1,9 +1,8 @@
+{% extends "devices/effect/effect-nopatch.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="COMP-01 Compressor/Limiter" -%}
 {% set devicename="COMP-01 Compressor/Limiter" -%}
-{% include "remotemap/include/device/scope.j2" %}
-Define Group	Page	Main	Index	Internal
-{% include "remotemap/include/device/effect-nopatch.j2" %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -17,3 +16,4 @@ Map	Fader 4		Threshold			Main
 Map	Fader 5		Attack			Main
 Map	Fader 6		Release			Main
 Map	Meter 8		Gain			Main
+{% endblock main %}

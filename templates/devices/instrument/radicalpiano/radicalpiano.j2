@@ -1,3 +1,4 @@
+{% extends "devices/instrument/instrument.j2" %}
 {% set deviceman="Propellerhead Software" -%}
 {% set devicescope="se.propellerheads.radicalpiano" -%}
 {% set devicename="Radical Piano" -%}
@@ -7,10 +8,10 @@
 {% set hide_mod_wheel=true -%}
 {% set effectpagedefault="Eq" -%}
 {# End Variables -#}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	Velocity	Tune	Resonance	Envelope	Mechanics	Eq	Ambience	Output	Index	Keyboard	Internal
-{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -114,3 +115,4 @@ Map	Button 3-8		Page=Ambience			Output
 Map	Button 4-8		Page=Output			Output
 Map	Fader 3		Compression Amount			Output
 Map	Knob V4		Stereo Width			Output
+{% endblock main %}

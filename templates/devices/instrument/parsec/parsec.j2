@@ -1,3 +1,4 @@
+{% extends "devices/instrument/instrument.j2" %}
 {% set deviceman="Propellerhead Software" -%}
 {% set devicescope="se.propellerheads.Parsec" -%}
 {% set devicename="Parsec" -%}
@@ -10,12 +11,12 @@
 {% set perfpagedefault="ModMatrix1" -%}
 {% set effectpagedefault="Reverb" -%}
 {# End Variables -#}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	GenereratorA	GenereratorB	SoundEngineA	SoundEngineB	AmpEnv	LFO1	LFO2	Env1	Env2	Reverb	Delay	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
 Define Group	Enabled	On	Off
 Define Group	TempoSync	Free	Sync
-{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -175,3 +176,4 @@ Map	UDVButton 1-6_2-6		Mod{{ mmnum }} Dest2			 ModMatrix{{ mmnum }}
 Map	Knob V7		Mod{{ mmnum }} Scale Amt			ModMatrix{{ mmnum }}
 Map	UDVButton 1-8_2-8		Mod{{ mmnum }} Scale			 ModMatrix{{ mmnum }}
 {% endfor -%}
+{% endblock main %}

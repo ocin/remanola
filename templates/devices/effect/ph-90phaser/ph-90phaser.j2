@@ -1,11 +1,12 @@
+{% extends "devices/effect/effect-nopatch.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="PH-90 Phaser" -%}
 {% set devicename="PH-90 Phaser" -%}
 {% set shortname="ph-90phaser" -%}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	LFO	Index	Internal
-{% from "remotemap/include/device/effect-nopatch.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -26,3 +27,4 @@ Map	PageName		"LFO" 				LFO
 Map	Fader 5		Rate			LFO
 Map	Button 1-6		LFO Sync Enable			LFO
 Map	Fader 7		Frequency Modulation			LFO
+{% endblock main %}

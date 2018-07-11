@@ -1,11 +1,10 @@
+{% extends "devices/instrument/instrument.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="ID8 Instrument Device" -%}
 {% set devicename="ID8" -%}
 {# Variables -#}
 {# End Variables -#}
-{% include "remotemap/include/device/scope.j2" %}
-Define Group	Page	Main	Index	Keyboard	Internal
-{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -22,4 +21,4 @@ Map	Button 8-4		Sound D				Main
 Map	Fader 6		Parameter 1			Main
 Map	Fader 7		Parameter 2			Main
 Map	Fader 8		Volume			Main
-
+{% endblock main %}

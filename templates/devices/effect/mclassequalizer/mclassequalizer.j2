@@ -1,11 +1,12 @@
+{% extends "devices/effect/effect-nopatch.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="MClass Equalizer" -%}
 {% set devicename="MClass Equalizer" -%}
 {% set shortname="mclassequalizer" -%}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	Low	Param1	Param2	Hi	Index	Internal
-{% from "remotemap/include/device/effect-nopatch.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% endblock groups %}
+{% block main %}
 Map	Button 2-8		Page=Low			
 Map	Button 3-8		Page=Param1		
 Map	Button 4-8		Page=Param2	
@@ -56,3 +57,4 @@ Map	Button 1-3		Hi Shelf Enable			Hi
 Map	Fader 4		Hi Shelf Frequency			Hi
 Map	Knob V5		Hi Shelf Gain			Hi
 Map	Fader 6		Hi Shelf Q			Hi
+{% endblock main %}

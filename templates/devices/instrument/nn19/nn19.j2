@@ -1,3 +1,4 @@
+{% extends "devices/instrument/instrument.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="NN19 Digital Sampler" -%}
 {% set devicename="NN-19" -%}
@@ -7,11 +8,11 @@
 {% set filterpagedefault="Filter" -%}
 {% set perfpagedefault="Controller" -%}
 {# End Variables -#}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	Osc	Filter	FilterEnv	Amp	LFO	Velocity	ModWheelContr	Controller	Index	Keyboard	Internal
 Define Group	TempoSync	Free	Sync
-{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -105,3 +106,4 @@ Map	Fader 4		LFO Rate 				LFO	Free
 Map	UDVButton 7-4_8-4		LFO Rate	8		LFO	Sync
 Map	Fader 5		LFO Amount 				LFO
 Map	UDVButton 1-6_2-6		LFO Dest			LFO
+{% endblock main %}

@@ -1,10 +1,12 @@
+{% extends "devices/effect/effect-nopatch.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="PEQ-2 Two Band Parametric EQ" -%}
 {% set devicename="PEQ-2 Two Band Parametric EQ" -%}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	Index	Internal
 Define Group	FilterB	On	Off
-{% include "remotemap/include/device/effect-nopatch.j2" %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -22,3 +24,4 @@ Map	Knob V5		Filter A Gain			Main
 Map	Fader 6		Filter B Freq			Main	On
 Map	Fader 7		Filter B Q			Main	On
 Map	Knob V8		Filter B Gain			Main	On
+{% endblock main %}

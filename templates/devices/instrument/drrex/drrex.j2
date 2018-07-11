@@ -1,3 +1,4 @@
+{% extends "devices/instrument/instrument.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Dr.REX Loop Player" -%}
 {% set devicename="DrOctoRex" -%}
@@ -5,11 +6,11 @@
 {# Variables -#}
 {% set show_pitch_bend_range=true -%}
 {# End Variables -#}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	Osc	Loop	Performance	Filter	FilterEnv	LFO	AmpEnv	Index	Keyboard	Internal
 Define Group	TempoSync	Free	Sync
-{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -96,3 +97,4 @@ Map	Button 1-4		LFO Sync Enable		SEL1	LFO
 Map	Fader 5		LFO1 Rate			LFO	Free
 Map	UDVButton 7-5_8-5		LFO1 Rate	9		LFO	Sync
 Map	Fader 8		LFO1 Amount			LFO
+{% endblock main %}

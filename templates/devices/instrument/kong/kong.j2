@@ -1,3 +1,4 @@
+{% extends "devices/instrument/instrument.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Kong Drum Designer" -%}
 {% set devicename="Kong" -%}
@@ -8,11 +9,11 @@
 {% set padpage1default="Pad1" -%}
 {% set padpage2default="Pad9" -%}
 {# End Variables -#}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	MutesSolos	Drum1	Drum2	Drum3	Drum4	Drum5	Drum6	Drum7	Drum8	Drum9	Drum10	Drum11	Drum12	Drum13	Drum14	Drum15	Drum16	Pad1	Pad2	Pad3	Pad4	Pad5	Pad6	Pad7	Pad8	Pad9	Pad10	Pad11	Pad12	Pad13	Pad14	Pad15	Pad16	BusFX	MasterFX	Index	Keyboard	Internal
 Define Group	DrumPage	DrumMain	DrumModule	DrumFX1	DrumFX2
-{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -196,3 +197,4 @@ Map	Button 1-2		Master FX On			MasterFX
 Map	Fader 3		Master FX P1			MasterFX
 Map	Fader 4		Master FX P2			MasterFX
 Map	Meter 7		Master FX Peak Meter			MasterFX
+{% endblock main %}

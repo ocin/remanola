@@ -1,11 +1,12 @@
+{% extends "devices/effect/effect-nopatch.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="MClass Maximizer" -%}
 {% set devicename="MClass Maximizer" -%}
 {% set shortname="mclassmaximizer" -%}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	Limiter	SoftClip	Index	Internal
-{% from "remotemap/include/device/effect-nopatch.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -35,3 +36,4 @@ Map	PageName		"SoftClip" 				SoftClip
 {{ rm.include_menus(curpage="SoftClip") -}}
 Map	Button 1-2		Soft Clip Enable			SoftClip
 Map	Fader 3		Soft Clip Amount			SoftClip
+{% endblock main %}

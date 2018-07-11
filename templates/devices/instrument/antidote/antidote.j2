@@ -1,3 +1,4 @@
+{% extends "devices/instrument/instrument.j2" %}
 {% set deviceman="Synapse Audio" -%}
 {% set devicescope="com.synapseAudioSoftware.Antidote" -%}
 {% set devicename="Antidote" -%}
@@ -9,11 +10,11 @@
 {% set filterpagedefault="Filter" -%}
 {% set perfpagedefault="Arp" -%}
 {# End Variables -#}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	Osc1	Osc2	Mixer	Filter	FilterEnv	Effects	EQBass	Dist	Phaser	Chorus	Delay	Reverb	Comp	LFO1	LFO2	AmpEnv	ModEnv	Arp	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	Index	Keyboard	Internal
 Define Group	TempoSync	Free	Sync
-{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -234,3 +235,4 @@ Map	UDVButton 1-2_2-2		MM Slot {{ mmnum }} Source			 ModMatrix{{ mmnum }}
 Map	Knob V3		MM Slot {{ mmnum }} Amount			ModMatrix{{ mmnum }}
 Map	UDVButton 1-4_2-4		MM Slot {{ mmnum }} Destination			 ModMatrix{{ mmnum }}
 {% endfor %}
+{% endblock main %}

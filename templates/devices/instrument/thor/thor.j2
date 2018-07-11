@@ -1,3 +1,4 @@
+{% extends "devices/instrument/instrument.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Thor Polysonic Synthesizer" -%}
 {% set devicename="Thor" -%}
@@ -9,13 +10,13 @@
 {% set amppagedefault="Amp" -%}
 {% set modpagedefault="LFO1" -%}
 {# End Variables -#}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	Osc1	Osc2	Osc3	Mixer	Filter1	Filter2	Filter3	FilterEnv	Amp	AmpEnv	ModEnv	GlobalEnv	LFO1	LFO2	Seq	Effects	Shaper	Delay	Chorus	Index	Keyboard	Internal
 Define Group	OscType	Analog	Wavetable	Phase	FM	Multi	Noise	Off
 Define Group	FilterType	LP	State	Comb	Formant	Bypass
 Define Group	SeqEditMode	Note	Velocity	GateLen	StepDur	Curve1	Curve2
-{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% endblock groups %}
+{% block main %}
 Map	PlayingStep		Step Sequencer Step Index
 // Index
 Map	PageName		"Index" 				Index
@@ -353,3 +354,4 @@ Map	Fader 4		Chorus Feedback				Chorus
 Map	Fader 5		Chorus Rate				Chorus
 Map	Fader 6		Chorus Amt				Chorus
 Map	Fader 7		Chorus Dry Wet				Chorus
+{% endblock main %}

@@ -1,14 +1,15 @@
+{% extends "devices/effect/effect-nopatch.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="BV512 Digital Vocoder" -%}
 {% set devicename="BV512 Digital Vocoder" -%}
 {% set shortname="bv512digitalvocoder" -%}
 {# Variables -#}
 {# End Variables -#}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	Band1-8	Band9-16	Band17-24	Band25-32	Index	Internal
 Define Group	BandCount	4Band	8Band	16Band	32Band	FFT
-{% from "remotemap/include/device/effect-nopatch.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	UDVButton 7-1_8-1		Band Count 		SEL1	Index
@@ -105,3 +106,4 @@ Map	Fader 5		Band Level 29 			Band25-32	32Band
 Map	Fader 6		Band Level 30 			Band25-32	32Band
 Map	Fader 7		Band Level 31 			Band25-32	32Band
 Map	Fader 8		Band Level 32 			Band25-32	32Band
+{% endblock main %}

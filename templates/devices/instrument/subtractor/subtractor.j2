@@ -1,3 +1,4 @@
+{% extends "devices/instrument/instrument.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="SubTractor Analog Synthesizer" -%}
 {% set devicename="Subtractor" -%}
@@ -8,10 +9,10 @@
 {% set perfpagedefault="Velocity1" -%}
 {% set filterpagedefault="Filter" -%}
 {# End Variables -#}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	Osc1	Osc2	Noise	Filter	Filter2	FilterEnv	ModEnv	AmpEnv	LFO1	LFO2	Velocity1	Velocity2	ModWheelContr	ExtMod	Index	Keyboard	Internal
-{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -159,3 +160,4 @@ Map	Knob V3		Filter Freq Ext Mod				ExtMod
 Map	Knob V4		LFO1 Ext Mod				ExtMod
 Map	Knob V5		Amp Ext Mod				ExtMod
 Map	Knob V6		FM Ext Mod				ExtMod
+{% endblock main %}
