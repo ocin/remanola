@@ -1,9 +1,8 @@
+{% extends "devices/effect/effect-nopatch.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="UN-16 Unison" -%}
 {% set devicename="UN-16 Unison" -%}
-{% include "remotemap/include/device/scope.j2" %}
-Define Group	Page	Main	Index	Internal
-{% include "remotemap/include/device/effect-nopatch.j2" %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -15,3 +14,4 @@ Map	Meter 2		Peak Meter			Main
 Map	UDVButton 1-3_2-3		Voice Count			Main
 Map	Fader 4		Detune			Main
 Map	Fader 8		Dry/Wet			Main
+{% endblock main %}

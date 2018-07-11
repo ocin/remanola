@@ -1,10 +1,12 @@
+{% extends "devices/utility/utility-nopatch.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="RPG-8 Monophonic Arpeggiator" -%}
 {% set devicename="RPG-8" -%}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	Pattern	Index	Internal
 Define Group	TempoSync	Free	Sync
-{% include "remotemap/include/device/utility-nopatch.j2" %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -51,3 +53,4 @@ Map	Button 2-8		Pattern Step 16			Pattern
 Map	Button 3-1		Pattern Enable			Pattern
 Map	UDVButton 3-8_4-8		Pattern Step Count			Pattern
 Map	Button 8-1		Shuffle			Pattern
+{% endblock main %}

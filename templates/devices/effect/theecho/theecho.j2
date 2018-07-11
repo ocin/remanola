@@ -1,10 +1,12 @@
+{% extends "devices/effect/effect.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="The Echo" -%}
 {% set devicename="The Echo" -%}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	Delay	Feedback	Color	Modulation	Index	Internal
 Define Group	TempoSync	Free	Sync
-{% include "remotemap/include/device/effect.j2" %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -53,3 +55,4 @@ Map	Knob V2		Envelope 				Modulation
 Map	Fader 3		Wobble 				Modulation
 Map	Fader 5		LFO Rate 				Modulation
 Map	Fader 6		LFO Amount 				Modulation
+{% endblock main %}

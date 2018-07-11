@@ -1,10 +1,12 @@
+{% extends "devices/effect/effect.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Pulveriser" -%}
 {% set devicename="Pulveriser" -%}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	Filter	Follower	Tremor	Index	Internal
 Define Group	TempoSync	Free	Sync
-{% include "remotemap/include/device/effect.j2" %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -48,3 +50,4 @@ Map	UDVButton 1-4_2-4		Tremor Waveform			Tremor
 Map	Button 1-5		Tremor Spread			Tremor
 Map	Fader 6		Tremor Lag			Tremor
 Map	Knob V8		Tremor to Volume			Tremor
+{% endblock main %}

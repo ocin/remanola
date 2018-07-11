@@ -1,9 +1,11 @@
+{% extends "devices/effect/effect-nopatch.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="RV-7 Digital Reverb" -%}
 {% set devicename="RV-7 Digital Reverb" -%}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	Index	Internal
-{% include "remotemap/include/device/effect-nopatch.j2" %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -17,3 +19,4 @@ Map	Knob V4		Size			Main
 Map	Knob V5		Decay			Main
 Map	Fader 7		Damping			Main
 Map	Fader 8		Dry/Wet			Main
+{% endblock main %}

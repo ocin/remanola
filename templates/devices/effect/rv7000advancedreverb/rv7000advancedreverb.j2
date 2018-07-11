@@ -1,12 +1,14 @@
+{% extends "devices/effect/effect.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="RV7000 Advanced Reverb" -%}
 {% set devicename="RV7000 Advanced Reverb" -%}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	Reverb	Eq	Gate	Index	Internal
 Define Group	Algorithm	SmallSpace	Room	Hall	Arena	Plate	Spring	Echo	MultiTap	Reverse	Convolution
 Define Group	Tap	TapNum	RepeatTap
 Define Group	TempoSync	Free	Sync
-{% include "remotemap/include/device/effect.j2" %}
+{% endblock groups %}
+{% block main %}
 Map	EditSelect		Edit Mode
 // Index
 Map	PageName		"Index" 				Index
@@ -151,3 +153,4 @@ Map	Fader 4		Soft Knob 4 			Gate
 Map	Fader 5		Soft Knob 5 			Gate
 Map	Fader 6		Soft Knob 6 			Gate
 Map	Fader 7		Soft Knob 7 			Gate
+{% endblock main %}

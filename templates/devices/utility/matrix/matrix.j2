@@ -1,9 +1,8 @@
+{% extends "devices/utility/utility-nopatch.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Matrix Pattern Sequencer" -%}
 {% set devicename="Matrix" -%}
-{% include "remotemap/include/device/scope.j2" %}
-Define Group	Page	Main	Index	Internal
-{% include "remotemap/include/device/utility-nopatch.j2" %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -25,3 +24,4 @@ Map	Button 4-7		Pattern 7			Main
 Map	Button 4-8		Pattern 8			Main
 Map	UDVButton 7-8_8-8		Resolution			Main
 Map	Button 8-1		Run			Main
+{% endblock main %}

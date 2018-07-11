@@ -1,10 +1,12 @@
+{% extends "devices/effect/effect.j2" %}
 {% set deviceman="Propellerhead Software" -%}
 {% set devicescope="se.propellerheads.Synchronous" -%}
 {% set devicename="Synchronous" -%}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	Dist	Filter	Delay	Reverb	Index	Internal
 Define Group	TempoSync	Free	Sync
-{% include "remotemap/include/device/effect.j2" %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -58,3 +60,4 @@ Map	Fader 4		Reverb Decay 				Reverb
 Map	Fader 6		Reverb Size 				Reverb
 Map	Fader 7		Reverb Damp 				Reverb
 Map	Button 8-8		Reverb SendReturn			Reverb
+{% endblock main %}
