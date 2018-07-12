@@ -55,4 +55,6 @@ local item_conf_map = {
 {% include "devices/utility/matrix/confmap_matrix.lua" %}
 {% include "devices/utility/rpg8/confmap_rpg8.lua" %}
 {% include "devices/utility/pulsar/confmap_pulsar.lua" %}
+{% include "devices/utility/linemixer62/confmap_linemixer62.lua" %}
+{% include "devices/utility/mixer142/confmap_mixer142.lua" %}
 }

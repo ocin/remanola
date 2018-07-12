@@ -1,0 +1,7 @@
+                       	["Button A1"]={template="BAmpPage"},
+                       	["Button A2"]={template="BAmpPage"},
+                       	["Button A3"]={template="BAmpPage"},
+                       	["Button A4"]={template="BAmpPage"},
+                       	["Button A5"]={template="BAmpPage"},
+                       	["Button A6"]={template="BAmpPage"},
+                       	["Button A7"]={template="BAmpPage"},
