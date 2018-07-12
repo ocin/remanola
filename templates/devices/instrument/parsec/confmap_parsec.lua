@@ -30,7 +30,7 @@
 			["Button 8-2"]={template="BRedOnOff"},
 			["Fader 3"]={template="FAmount"},
 			["UDVButton 1-4_2-4"]={template="UDFreq"},
-			["UDVButton 3-4_4-4"]={template="UDFreq"},
+			["UDVButton 3-4_4-4"]={template="UDFreq2"},
 			["UDVButton 5-4_6-4"]={template="UDFreq"},
 			["Fader 5"]={template="FMisc"},
 			["Fader 6"]={template="FEffect"},
@@ -41,12 +41,12 @@
 {% endif %}
 		},
 		["Sound Engine *"]={
-			["UDVButton 1-2_2-2"]={template="UDAmount", inverted=true},
-			["Fader 3"]={template="FAmount"},
-			["Fader 4"]={template="FAmount"},
-			["UDVButton 1-5_2-5"]={template="UDAmount", inverted=true},
-			["Fader 6"]={template="FAmount"},
-			["Fader 7"]={template="FAmount"},
+			["UDVButton 1-2_2-2"]={template="UDFreq", inverted=true},
+			["Fader 3"]={template="FFreq"},
+			["Fader 4"]={template="FEffect"},
+			["UDVButton 1-5_2-5"]={template="UDFreq", inverted=true},
+			["Fader 6"]={template="FFreq"},
+			["Fader 7"]={template="FEffect"},
 {% if lptype == "pro" %}
 {% include "devices/instrument/parsec/pro/confmap_submenu_filter.lua" %}
 {% endif %}

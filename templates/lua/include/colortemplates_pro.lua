@@ -34,6 +34,7 @@ local color_templates = {
 	["UDNocolor"]={enabledcolor=NOCOLOR, activecolor=NOCOLOR},
 	-- UD by type
 	["UDAmount"]={enabledcolor=AMBER, activecolor=AMBER},
+	["UDAmount2"]={enabledcolor=HAMBER, activecolor=HAMBER},
 	["UDGain"]={enabledcolor=RED, activecolor=RED},
 	["UDFreq"]={enabledcolor=GREEN, activecolor=GREEN},
 	["UDFreq2"]={enabledcolor=HGREEN, activecolor=HGREEN},
@@ -80,6 +81,9 @@ local color_templates = {
 	["BSolo"]={enabledcolor=WAMBER,   activecolor=GREEN,  disabledcolor=NOCOLOR},
 	["BSolo"]={enabledcolor=WAMBER,   activecolor=GREEN,  disabledcolor=NOCOLOR},
 	["BSoloRevival"]={enabledcolor=WAMBER,   activecolor=YELLOW,  disabledcolor=NOCOLOR},
+	-- Select
+	["BPlaySel"]={enabledcolor=DGREEN, activecolor=GREEN,  disabledcolor=NOCOLOR},
+	["BOscSel"]={enabledcolor=DAMBER, activecolor=AMBER,  disabledcolor=NOCOLOR},
 	-- Run
 	["BRun"]={enabledcolor=RED,   activecolor=GREEN,  disabledcolor=NOCOLOR},
 	-- Bank / Pattern Select

@@ -17,6 +17,7 @@
 			["Fader 8"]={template="FGain"},
 		},
 		["Osc *"]={
+			["Button 8-1"]={template="BRedOnOff"},
 			["UDVButton 1-2_2-2"]={template="UDAmount", inverted=true},
 			["UDVButton 1-3_2-3"]={template="UDMisc"},
 			["UDVButton 1-4_2-4"]={template="UDFreq"},
@@ -27,7 +28,7 @@
 {% include "devices/instrument/thor/pro/confmap_submenu_osc.lua" %}
 {% endif %}
 			["Analog"]={
-				["UDVButton 7-3_8-3"]={template="UDMisc", inverted=true},
+				["UDVButton 7-3_8-3"]={template="UDAmount", inverted=true},
 				["Fader 7"]={template="FAmount"},
 			},
 			["Wavetable"]={
@@ -65,16 +66,16 @@
 			["Button 6-1"]={template="BRedOnOff"},
 			["Button 7-1"]={template="BRedOnOff"},
 			["UDVButton 1-2_2-2"]={template="UDFreq", inverted=true},
+			["Button 1-8"]={template="BGreenOnOff"},
+			["UDVButton 3-8_4-8"]={template="UDMisc"},
+			["UDVButton 5-8_6-8"]={template="UDMisc2"},
+			["UDVButton 7-8_8-8"]={template="UDMisc"},
 			["Low Pass"]={
 				["Fader 3"]={template="FGain"},
 				["Fader 4"]={template="FFreq"},
 				["Fader 5"]={template="FEffect"},
 				["Button 1-6"]={template="BGreenOnOff"},
 				["UDVButton 3-6_4-6"]={template="UDFreq", inverted=true},
-				["Button 1-8"]={template="BGreenOnOff"},
-				["UDVButton 3-8_4-8"]={template="FMisc"},
-				["UDVButton 5-8_6-8"]={template="FMisc"},
-				["UDVButton 7-8_8-8"]={template="FMisc"},
 			},
 			["State Variable"]={
 				["Fader 3"]={template="FGain"},
@@ -83,10 +84,6 @@
 				["Button 1-6"]={template="BGreenOnOff"},
 				["UDVButton 3-6_4-6"]={template="UDFreq", inverted=true},
 				["Fader 7"]={template="FEffect"},
-				["Button 1-8"]={template="BGreenOnOff"},
-				["UDVButton 3-8_4-8"]={template="FMisc"},
-				["UDVButton 5-8_6-8"]={template="FMisc"},
-				["UDVButton 7-8_8-8"]={template="FMisc"},
 			},
 			["Comb"]={
 				["Fader 3"]={template="FGain"},
@@ -94,18 +91,12 @@
 				["Fader 5"]={template="FEffect"},
 				["Button 1-6"]={template="BGreenOnOff"},
 				["UDVButton 3-6_4-6"]={template="UDFreq", inverted=true},
-				["UDVButton 3-8_4-8"]={template="FMisc"},
-				["UDVButton 5-8_6-8"]={template="FMisc"},
-				["UDVButton 7-8_8-8"]={template="FMisc"},
 			},
 			["Formant"]={
 				["Fader 3"]={template="FGain"},
 				["Fader 4"]={template="FEffect"},
 				["Fader 6"]={template="FEffect"},
 				["Fader 7"]={template="FEffect"},
-				["UDVButton 3-8_4-8"]={template="FMisc"},
-				["UDVButton 5-8_6-8"]={template="FMisc"},
-				["UDVButton 7-8_8-8"]={template="FMisc"},
 			},
 		},
 		["Filter 2"]={
@@ -147,6 +138,8 @@
 {% if lptype == "pro" %}
 {% include "devices/instrument/thor/pro/confmap_submenu_mod.lua" %}
 {% endif %}
+			["Button 1-1"]={template="BGreenOnOff"},
+			["Button 2-1"]={template="BGreenOnOff"},
 			["Fader 3"]={template="FEffect"},
 			["Fader 4"]={template="FMisc"},
 			["Fader 5"]={template="FMisc"},
@@ -156,8 +149,9 @@
 {% if lptype == "pro" %}
 {% include "devices/instrument/thor/pro/confmap_submenu_mod.lua" %}
 {% endif %}
+			["Button 1-1"]={template="BGreenOnOff"},
 			["Button 2-1"]={template="BGreenOnOff"},
-			["Button 3-1"]={template="BGreenOnOff"},
+			["Button 4-1"]={template="BGreenOnOff"},
 			["Fader 2"]={template="FEffect"},
 			["Fader 3"]={template="FMisc"},
 			["Fader 4"]={template="FEffect"},
@@ -169,9 +163,9 @@
 {% if lptype == "pro" %}
 {% include "devices/instrument/thor/pro/confmap_submenu_mod.lua" %}
 {% endif %}
-                        ["UDVButton 3-1_4-1"]={template="UDMisc"},
-			["Button 6-1"]={template="BGreenOnOff"},
-			["Button 7-1"]={template="BGreenOnOff"},
+                        ["UDVButton 1-2_2-2"]={template="UDMisc"},
+			["Button 1-1"]={template="BGreenOnOff"},
+			["Button 2-1"]={template="BGreenOnOff"},
                         ["Fader 3"]={template="FFreq"},
                         ["Fader 4"]={template="FEffect"},
 		},

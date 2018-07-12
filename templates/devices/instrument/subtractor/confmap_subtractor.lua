@@ -13,7 +13,7 @@
 		},
 		["Osc *"]={
 			["Knob V2"]={template="FAmount"},
-			["UDVButton 1-3_2-3"]={template="UDAmount", inverted=true},
+			["UDVButton 1-3_2-3"]={template="UDAmount2", inverted=true},
 			["UDVButton 3-3_4-3"]={template="UDAmount"},
 			["UDVButton 3-4_4-4"]={template="UDFreq"},
 			["UDVButton 3-5_4-5"]={template="UDFreq"},
@@ -66,6 +66,7 @@
 			["Fader 4"]={template="FGain"},
 			["Fader 5"]={template="FGain"},
 			["Fader 6"]={template="FGain"},
+			["Fader 8"]={template="FGain"},
 		},
 		["Mod Env"]={
 			["Fader 2"]={template="FMisc"},

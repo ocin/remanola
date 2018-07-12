@@ -6,7 +6,7 @@
 			["Fader 3"]={template="FMisc"},
 			["Button 8-2"]={template="BYellowOnOff"},
 			["Fader 7"]={template="FMisc"},
-			["Fader 8"]={template="FAmount"},
+			["Fader 8"]={template="FGain"},
 		},
 		["Osc *"]={
 			["Button 8-1"]={template="BYellowOnOff"},
@@ -48,6 +48,7 @@
 			["UDVButton 7-4_8-4"]={template="UDFreq", inverted=true},
 			["Button 8-5"]={template="BYellowOnOff"},
 			["Button 8-6"]={template="BYellowOnOff"},
+			["Button 1-6"]={template="BYellowOnOff"},
 			["Fader 7"]={template="FFreq"},
 			["Fader 8"]={template="FEffect"},
 		},

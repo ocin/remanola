@@ -75,6 +75,7 @@ Map	Button 8-6		Filter {{ filternum }} Kbd Track			Filter{{ filternum }}
 Map	Fader 7		Filter {{ filternum }} Freq			Filter{{ filternum }}
 Map	Fader 8		Filter {{ filternum }} Resonance			Filter{{ filternum }}
 {% endfor -%}
+Map	Button 1-6		Route Filter B To Shaper			FilterB
 // FilterEnv
 Map	PageName		"Filter Env" 				FilterEnv
 {{ rm.include_menus(curpage="FilterEnv", submenu="filter", filterpage="FilterEnv") -}}

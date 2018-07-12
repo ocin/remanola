@@ -150,25 +150,25 @@ function get_button_color(context, itemname, buttonname, value)
 	elseif(string.find(itemname, "Button %d%-%d") or string.find(itemname, "Button C%d") or string.find(itemname, "Button %a")) then
 		if(g_scopetext == "Redrum" and string.match(get_current_page(), "Main") and (string.match(itemname, "Button [12]%-%d"))) then
 			if(g_playingbutton == itemname and (tonumber(remote.get_item_text_value(itemsindex["Button 3-8"])) == 1)) then
-                       		color = RED
+                       		color = HIT
 			else 
 				if(textvalue == 1) then
-                       			color = YELLOW
+                       			color = SOFT
 				elseif(textvalue == 2) then
-                       			color = AMBER
+                       			color = MEDIUM
 				elseif(textvalue == 3) then
-                       			color = ORANGE
+                       			color = HARD
 				else
-                       			color = WGREEN
+                       			color = NOHIT
 				end
 			end
 		elseif(g_scopetext == "Redrum" and string.match(get_current_page(), "Main") and (string.match(itemname, "Button 4%-6"))) then
 			if(textvalue == 1) then
-                       		color = YELLOW
+                       		color = SOFT
 			elseif(textvalue == 2) then
-                       		color = AMBER
+                       		color = MEDIUM
 			elseif(textvalue == 3) then
-                       		color = ORANGE
+                       		color = HARD
 			else
                        		color = NOCOLOR
 			end

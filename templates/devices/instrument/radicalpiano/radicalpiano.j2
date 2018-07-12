@@ -48,71 +48,35 @@ Map	Fader 5		Vel Response High			Velocity
 Map	Knob V6		Vel Response Curve			Velocity
 // Tune
 Map	PageName		"Tune" 				Tune
-{{ rm.include_menus(curpage="Tune") -}}
-Map	Button 2-1		Page=Tune			Tune
-Map	Button 3-1		Page=Resonance			Tune
-Map	Button 4-1		Page=Mechanics			Tune
-Map	Button 2-8		Page=Eq			Tune
-Map	Button 3-8		Page=Ambience			Tune
-Map	Button 4-8		Page=Output			Tune
+{{ rm.include_menus(curpage="Tune", mainmenu_mini="common") -}}
 Map	Knob V4		Tune			Tune
 Map	Fader 5		Tune Drift			Tune
 // Resonance
 Map	PageName		"Resonance" 				Resonance
-{{ rm.include_menus(curpage="Resonance") -}}
-Map	Button 2-1		Page=Tune			Resonance
-Map	Button 3-1		Page=Resonance			Resonance
-Map	Button 4-1		Page=Mechanics			Resonance
-Map	Button 2-8		Page=Eq			Resonance
-Map	Button 3-8		Page=Ambience			Resonance
-Map	Button 4-8		Page=Output			Resonance
+{{ rm.include_menus(curpage="Resonance", mainmenu_mini="common") -}}
 Map	Knob V4		Symp Res Release Time			Resonance
 Map	Knob V5		Symp Res Level			Resonance
 // Mechanics
 Map	PageName		"Mechanics" 				Mechanics
-{{ rm.include_menus(curpage="Mechanics") -}}
-Map	Button 2-1		Page=Tune			Mechanics
-Map	Button 3-1		Page=Resonance			Mechanics
-Map	Button 4-1		Page=Mechanics			Mechanics
-Map	Button 2-8		Page=Eq			Mechanics
-Map	Button 3-8		Page=Ambience			Mechanics
-Map	Button 4-8		Page=Output			Mechanics
+{{ rm.include_menus(curpage="Mechanics", mainmenu_mini="common") -}}
 Map	Knob V4		Key Down Level			Mechanics
 Map	Knob V5		Key Up Level			Mechanics
 Map	Knob V6		Pedal Level			Mechanics
 // Eq
 Map	PageName		"Eq" 				Eq
-{{ rm.include_menus(curpage="Eq", submenu="effect", effectpage="Eq") -}}
-Map	Button 2-1		Page=Tune			Eq
-Map	Button 3-1		Page=Resonance			Eq
-Map	Button 4-1		Page=Mechanics			Eq
-Map	Button 2-8		Page=Eq			Eq
-Map	Button 3-8		Page=Ambience			Eq
-Map	Button 4-8		Page=Output			Eq
+{{ rm.include_menus(curpage="Eq", submenu="effect", mainmenu_mini="common", effectpage="Eq") -}}
 Map	Button 1-2		EQ On/Off			Eq
 Map	Knob V4		EQ Lo Gain			Eq
 Map	Knob V5		EQ Mid Gain			Eq
 Map	Knob V6		EQ Hi Gain			Eq
 // Ambience
 Map	PageName		"Ambience" 				Ambience
-{{ rm.include_menus(curpage="Ambience", submenu="effect", effectpage="Ambience") -}}
-Map	Button 2-1		Page=Tune			Ambience
-Map	Button 3-1		Page=Resonance			Ambience
-Map	Button 4-1		Page=Mechanics			Ambience
-Map	Button 2-8		Page=Eq			Ambience
-Map	Button 3-8		Page=Ambience			Ambience
-Map	Button 4-8		Page=Output			Ambience
+{{ rm.include_menus(curpage="Ambience", submenu="effect", mainmenu_mini="common", effectpage="Ambience") -}}
 Map	UDVButton 7-3_8-3		Ambience Type				Ambience
 Map	Fader 4		Ambience Level			Ambience
 // Output
 Map	PageName		"Output" 				Output
-{{ rm.include_menus(curpage="Output", submenu="effect", effectpage="Output") -}}
-Map	Button 2-1		Page=Tune			Output
-Map	Button 3-1		Page=Resonance			Output
-Map	Button 4-1		Page=Mechanics			Output
-Map	Button 2-8		Page=Eq			Output
-Map	Button 3-8		Page=Ambience			Output
-Map	Button 4-8		Page=Output			Output
+{{ rm.include_menus(curpage="Output", submenu="effect", mainmenu_mini="common", effectpage="Output") -}}
 Map	Fader 3		Compression Amount			Output
 Map	Knob V4		Stereo Width			Output
 {% endblock main %}

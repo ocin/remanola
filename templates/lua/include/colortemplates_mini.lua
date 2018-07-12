@@ -26,6 +26,7 @@ local color_templates = {
 	["MRed"]={enabledcolor=WAMBER, activecolor=RED, disabledcolor=NOCOLOR, maxcolor=RED},
 	-- Up/Down Buttons
 	["UDAmber"]={enabledcolor=AMBER, activecolor=AMBER},
+	["UDAmber2"]={enabledcolor=AMBER, activecolor=AMBER},
 	["UDRed"]={enabledcolor=RED, activecolor=RED},
 	["UDGreen"]={enabledcolor=GREEN, activecolor=GREEN},
 	["UDYellow"]={enabledcolor=YELLOW, activecolor=YELLOW},
@@ -73,6 +74,9 @@ local color_templates = {
 	["BSolo"]={enabledcolor=WAMBER,   activecolor=GREEN,  disabledcolor=NOCOLOR},
 	["BSolo"]={enabledcolor=WAMBER,   activecolor=GREEN,  disabledcolor=NOCOLOR},
 	["BSoloRevival"]={enabledcolor=WAMBER,   activecolor=YELLOW,  disabledcolor=NOCOLOR},
+	-- Select
+	["BPlaySel"]={enabledcolor=WGREEN,   activecolor=GREEN,  disabledcolor=NOCOLOR},
+	["BOscSel"]={enabledcolor=WAMBER,   activecolor=AMBER,  disabledcolor=NOCOLOR},
 	-- Run
 	["BRun"]={enabledcolor=RED,   activecolor=GREEN,  disabledcolor=NOCOLOR},
 	-- Bank / Pattern Select

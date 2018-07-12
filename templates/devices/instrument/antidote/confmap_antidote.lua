@@ -15,10 +15,10 @@
 		},
 		["Osc *"]={
 			["UDVButton 1-2_2-2"]={template="UDAmount", inverted=true},
-			["UDVButton 3-2_4-2"]={template="UDAmount", inverted=true},
+			["UDVButton 3-2_4-2"]={template="UDAmount2", inverted=true},
 			["UDVButton 5-2_6-2"]={template="UDAmount", inverted=true},
 			["UDVButton 1-3_2-3"]={template="UDFreq"},
-			["UDVButton 3-3_4-3"]={template="UDFreq"},
+			["UDVButton 3-3_4-3"]={template="UDFreq2"},
 			["UDVButton 5-3_6-3"]={template="UDFreq"},
 			["Fader 4"]={template="FAmount"},
 			["Fader 5"]={template="FAmount"},
@@ -27,10 +27,10 @@
 			["Knob V8"]={template="FGain"},
 		},
 		["Mixer"]={
-			["Fader 2"]={template="FGain"},
-			["Fader 3"]={template="FGain"},
-			["Fader 4"]={template="FAmount"},
-			["Fader 5"]={template="FAmount"},
+			["Fader 2"]={template="FEffect"},
+			["Fader 3"]={template="FEffect"},
+			["Fader 4"]={template="FGain"},
+			["Fader 5"]={template="FGain"},
 			["Fader 6"]={template="FMisc"},
 {% include "devices/instrument/antidote/pro/confmap_submenu_amp.lua" %}
 		},
@@ -38,11 +38,12 @@
 			["UDVButton 1-2_2-2"]={template="UDFreq", inverted=true},
 			["Fader 3"]={template="FFreq"},
 			["Fader 4"]={template="FEffect"},
-			["Fader 4"]={template="FMisc"},
+			["Fader 6"]={template="FMisc"},
+			["Fader 8"]={template="FMisc"},
 {% include "devices/instrument/antidote/pro/confmap_submenu_filter.lua" %}
 		},
 		["Filter Envelope"]={
-			["Fader 2"]={template="FAmount"},
+			["Fader 2"]={template="FMisc"},
 			["Fader 3"]={template="FFreq"},
 			["Fader 4"]={template="FFreq"},
 			["Fader 5"]={template="FFreq"},
@@ -172,11 +173,11 @@
 {% include "devices/instrument/antidote/pro/confmap_submenu_amp.lua" %}
 		},
 		["Mod Env"]={
-                        ["UDVButton 3-1_4-1"]={template="UDMisc"},
+                        ["UDVButton 3-1_4-1"]={template="UDMisc", inverted=true},
                         ["Fader 3"]={template="FMisc"},
                         ["Fader 4"]={template="FMisc"},
                         ["Fader 5"]={template="FMisc"},
-                        ["Fader 5"]={template="FMisc"},
+                        ["Fader 6"]={template="FMisc"},
                         ["Knob V8"]={template="FAmount"},
 {% include "devices/instrument/antidote/pro/confmap_submenu_mod.lua" %}
 		},
