@@ -9,7 +9,7 @@
 		["Main"]={
 			["UDVButton 1-1_2-1"]={template="UDEffect"},
 			["Button 1-2"]={template="BRedOnOff"},
-			["Button 3-2"]={template="BGreenOnOff"},
+			["Button 3-2"]={template="BPerfOnOff"},
 			["UDVButton 5-2_6-2"]={template="UDEffect"},
 			["UDVButton 7-2_8-2"]={template="UDFreq"},
 			["UDVButton 7-3_8-3"]={template="UDEffect"},
@@ -27,6 +27,7 @@
 {% else %}
 {% include "devices/effect/alligator/mini/confmap_mainmenu_filter.lua" %}
 {% endif %}
+			["Button 1-2"]={template="BGreenOnOff"},
 			["Knob V3"]={template="FMisc"},
 			["Fader 4"]={template="FFreq"},
 			["Fader 5"]={template="FEffect"},

@@ -53,6 +53,8 @@ local color_templates = {
 	["BGreenOnOff"]={enabledcolor=WAMBER,   activecolor=GREEN,  disabledcolor=NOCOLOR},
 	["BAmberOnOff"]={enabledcolor=WAMBER,   activecolor=AMBER,  disabledcolor=NOCOLOR},
 	["BBGreenOnOff"]={enabledcolor=WGREEN,   activecolor=GREEN,  disabledcolor=NOCOLOR},
+	["BPerfOnOff"]={enabledcolor=WGREEN,   activecolor=YELLOW,  disabledcolor=NOCOLOR},
+	["BBBlueOnOff"]={enabledcolor=WGREEN,   activecolor=GREEN,  disabledcolor=NOCOLOR},
 	-- Red LED
 	["BRedLed"]={enabledcolor=WGREEN,   activecolor=RED,  disabledcolor=NOCOLOR},
 	-- Button Page

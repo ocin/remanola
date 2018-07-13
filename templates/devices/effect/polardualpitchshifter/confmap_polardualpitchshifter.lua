@@ -36,7 +36,7 @@
 {% include "devices/effect/polardualpitchshifter/pro/confmap_submenu_shifter.lua" %}
 {% endif %}
 			["Button 1-1"]={template="BRedOnOff"},
-			["Knob V2"]={template="FFreq"},
+			["UDVButton 7-2_8-2"]={template="UDFreq"},
 			["Knob V3"]={template="FFreq"},
 			["Fader 4"]={template="FEffect"},
 			["Fader 5"]={template="FEffect"},

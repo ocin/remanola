@@ -1,24 +1,24 @@
 	["Matrix"]={
 		["Default"]={
 			-- Pattern Enable
-			["Button 3-1"]={template="BRedOnOff"},
-			-- Bank
-			["Button 3-5"]={template="BBank"},
-			["Button 3-6"]={template="BBank"},
-			["Button 3-7"]={template="BBank"},
-			["Button 3-8"]={template="BBank"},
+			["Button 1-1"]={template="BRedOnOff"},
 			-- Pattern
-			["Button 4-1"]={template="BBank"},
-			["Button 4-2"]={template="BBank"},
-			["Button 4-3"]={template="BBank"},
-			["Button 4-4"]={template="BBank"},
-			["Button 4-5"]={template="BBank"},
-			["Button 4-6"]={template="BBank"},
-			["Button 4-7"]={template="BBank"},
-			["Button 4-8"]={template="BBank"},
+			["Button 2-1"]={template="BPerfOnOff"},
+			["Button 2-2"]={template="BPerfOnOff"},
+			["Button 2-3"]={template="BPerfOnOff"},
+			["Button 2-4"]={template="BPerfOnOff"},
+			["Button 3-1"]={template="BPerfOnOff"},
+			["Button 3-2"]={template="BPerfOnOff"},
+			["Button 3-3"]={template="BPerfOnOff"},
+			["Button 3-4"]={template="BPerfOnOff"},
+			-- Bank
+			["Button 5-1"]={template="BPerfOnOff"},
+			["Button 5-2"]={template="BPerfOnOff"},
+			["Button 5-3"]={template="BPerfOnOff"},
+			["Button 5-4"]={template="BPerfOnOff"},
 			-- Resolution
 			["UDVButton 7-8_8-8"]={template="UDFreq"},
 			-- Run
-			["Button 8-1"]={template="BRedOnOff"},
+			["Button 8-1"]={template="BRun"},
 		},
 	},
