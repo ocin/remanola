@@ -25,8 +25,8 @@
 {% if lptype == "mini" %}
 			["Button C5"]={template="BMainPage", helptext="Goto Main"},
 {% endif %}
-			["Button C6"]={enabledcolor=WGREEN,     activecolor=GREEN,   disabledcolor=NOCOLOR},
-			["Button C7"]={enabledcolor=WAMBER,      activecolor=AMBER,     disabledcolor=NOCOLOR},
+			["Button C6"]={template="BPerfPage"},
+			["Button C7"]={template="BIndexPage"},
 			["Button C8"]={enabledcolor=YELLOW,      activecolor=RED,     disabledcolor=GREEN},
 			["Button B1"]={template="BMainPage"}, 
 

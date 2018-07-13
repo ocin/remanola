@@ -3,23 +3,25 @@
 {% include "devices/instrument/thor/"+lptype+"/confmap_mainmenu.lua" %}
 		},
 		["Main"]={
-			["UDVButton 1-2_1-2"]={template="UDMisc"},
-			["UDVButton 3-2_4-2"]={template="UDMisc2"},
-			["UDVButton 5-2_6-2"]={template="UDMisc", inverted=true},
-			["UDVButton 7-2_8-2"]={template="UDMisc2"},
-			["Fader 3"]={template="FMisc"},
+			["Button 8-2"]={template="BRedOnOff"},
+			["Button 8-3"]={template="BRedOnOff"},
+			["Fader 4"]={template="FMisc"},
+			["Fader 5"]={template="FMisc"},
+			["Fader 8"]={template="FGain"},
+		},
+		["Perf"]={
+			["UDVButton 1-2_1-2"]={template="UDPerf"},
+			["UDVButton 3-2_4-2"]={template="UDPerf2"},
+			["UDVButton 5-2_6-2"]={template="UDPerf", inverted=true},
+			["UDVButton 7-2_8-2"]={template="UDPerf2"},
+			["Fader 3"]={template="FPerf"},
 			["Button 1-4"]={template="BGreenOnOff"},
 			["Button 2-4"]={template="BGreenOnOff"},
-			["Button 8-4"]={template="BRedOnOff"},
-			["Button 8-5"]={template="BRedOnOff"},
-			["Fader 6"]={template="FMisc"},
-			["Fader 7"]={template="FMisc"},
-			["Fader 8"]={template="FGain"},
 		},
 		["Osc *"]={
 			["Button 8-1"]={template="BRedOnOff"},
-			["UDVButton 1-2_2-2"]={template="UDAmount", inverted=true},
-			["UDVButton 1-3_2-3"]={template="UDMisc"},
+			["UDVButton 1-2_2-2"]={template="UDOsc", inverted=true},
+			["UDVButton 1-3_2-3"]={template="UDPerf"},
 			["UDVButton 1-4_2-4"]={template="UDFreq"},
 			["UDVButton 1-5_2-5"]={template="UDFreq"},
 			["UDVButton 1-6_2-6"]={template="UDFreq"},
@@ -28,32 +30,32 @@
 {% include "devices/instrument/thor/pro/confmap_submenu_osc.lua" %}
 {% endif %}
 			["Analog"]={
-				["UDVButton 7-3_8-3"]={template="UDAmount", inverted=true},
-				["Fader 7"]={template="FAmount"},
+				["UDVButton 7-3_8-3"]={template="UDOsc", inverted=true},
+				["Fader 7"]={template="FOsc"},
 			},
 			["Wavetable"]={
-				["UDVButton 7-3_8-3"]={template="UDAmount", inverted=true},
+				["UDVButton 7-3_8-3"]={template="UDOsc", inverted=true},
 				["Button 8-5"]={template="BRedOnOff"},
-				["Fader 7"]={template="FAmount"},
+				["Fader 7"]={template="FOsc"},
 			},
 			["Phase Modulation"]={
-				["UDVButton 7-3_8-3"]={template="UDAmount"},
-				["UDVButton 7-4_8-4"]={template="UDAmount"},
-				["Fader 7"]={template="FAmount"},
+				["UDVButton 7-3_8-3"]={template="UDOsc"},
+				["UDVButton 7-4_8-4"]={template="UDOsc"},
+				["Fader 7"]={template="FOsc"},
 			},
 			["FM Pair"]={
-				["UDVButton 7-3_8-3"]={template="UDAmount"},
-				["UDVButton 7-4_8-4"]={template="UDAmount"},
-				["Fader 7"]={template="FAmount"},
+				["UDVButton 7-3_8-3"]={template="UDOsc"},
+				["UDVButton 7-4_8-4"]={template="UDOsc"},
+				["Fader 7"]={template="FOsc"},
 			},
 			["Multi Oscillator"]={
-				["UDVButton 7-3_8-3"]={template="UDAmount", inverted=true},
-				["UDVButton 7-5_8-5"]={template="UDAmount", inverted=true},
-				["Fader 7"]={template="FAmount"},
+				["UDVButton 7-3_8-3"]={template="UDOsc", inverted=true},
+				["UDVButton 7-5_8-5"]={template="UDOsc", inverted=true},
+				["Fader 7"]={template="FOsc"},
 			},
 			["Noise"]={
-				["UDVButton 7-3_8-3"]={template="UDAmount", inverted=true},
-				["Fader 7"]={template="FAmount"},
+				["UDVButton 7-3_8-3"]={template="UDOsc", inverted=true},
+				["Fader 7"]={template="FOsc"},
 			},
 		},
 		["Filter *"]={
@@ -67,9 +69,9 @@
 			["Button 7-1"]={template="BRedOnOff"},
 			["UDVButton 1-2_2-2"]={template="UDFreq", inverted=true},
 			["Button 1-8"]={template="BGreenOnOff"},
-			["UDVButton 3-8_4-8"]={template="UDMisc"},
-			["UDVButton 5-8_6-8"]={template="UDMisc2"},
-			["UDVButton 7-8_8-8"]={template="UDMisc"},
+			["UDVButton 3-8_4-8"]={template="UDEnv"},
+			["UDVButton 5-8_6-8"]={template="UDPerf"},
+			["UDVButton 7-8_8-8"]={template="UDPerf2"},
 			["Low Pass"]={
 				["Fader 3"]={template="FGain"},
 				["Fader 4"]={template="FFreq"},
@@ -103,6 +105,11 @@
 			["Button 8-1"]={template="BRedOnOff"},
 		},
 		["Filter Env"]={
+{% if lptype == "mini" %}
+{% include "devices/instrument/thor/mini/confmap_mainmenu_filter.lua" %}
+{% else %}
+{% include "devices/instrument/thor/pro/confmap_submenu_filter.lua" %}
+{% endif %}
 			["Button 2-2"]={template="BGreenOnOff"},
 			["Fader 3"]={template="FFreq"},
 			["Fader 4"]={template="FFreq"},
@@ -110,9 +117,9 @@
 			["Fader 6"]={template="FFreq"},
 		},
 		["Mixer"]={
-			["Knob V3"]={template="FGain"},
-			["Fader 4"]={template="FGain"},
-			["Fader 5"]={template="FGain"},
+			["Knob V3"]={template="FVol"},
+			["Fader 4"]={template="FVol"},
+			["Fader 5"]={template="FVol"},
 		},
 		["Amp"]={
 {% if lptype == "pro" %}
@@ -120,9 +127,9 @@
 {% endif %}
 			["UDVButton 3-2_4-2"]={template="UDGain"},
 			["Button 8-2"]={template="BRedOnOff"},
-			["Fader 3"]={template="FMisc"},
-			["Fader 4"]={template="FGain"},
-			["Knob V5"]={template="FGain"},
+			["Fader 3"]={template="FPerf"},
+			["Fader 4"]={template="FVol"},
+			["Knob V5"]={template="FPan"},
 		},
 		["Amp Env"]={
 {% if lptype == "pro" %}
@@ -141,9 +148,9 @@
 			["Button 1-1"]={template="BGreenOnOff"},
 			["Button 2-1"]={template="BGreenOnOff"},
 			["Fader 3"]={template="FEffect"},
-			["Fader 4"]={template="FMisc"},
-			["Fader 5"]={template="FMisc"},
-			["Fader 6"]={template="FMisc"},
+			["Fader 4"]={template="FEnv"},
+			["Fader 5"]={template="FEnv"},
+			["Fader 6"]={template="FEnv"},
 		},
 		["Global Env"]={ -- Global Env
 {% if lptype == "pro" %}
@@ -153,24 +160,24 @@
 			["Button 2-1"]={template="BGreenOnOff"},
 			["Button 4-1"]={template="BGreenOnOff"},
 			["Fader 2"]={template="FEffect"},
-			["Fader 3"]={template="FMisc"},
+			["Fader 3"]={template="FEnv"},
 			["Fader 4"]={template="FEffect"},
-			["Fader 5"]={template="FMisc"},
-			["Fader 6"]={template="FMisc"},
-			["Fader 7"]={template="FMisc"},
+			["Fader 5"]={template="FEnv"},
+			["Fader 6"]={template="FEnv"},
+			["Fader 7"]={template="FEnv"},
 		},
 		["LFO *"]={
 {% if lptype == "pro" %}
 {% include "devices/instrument/thor/pro/confmap_submenu_mod.lua" %}
 {% endif %}
-                        ["UDVButton 1-2_2-2"]={template="UDMisc"},
+                        ["UDVButton 1-2_2-2"]={template="UDLFO"},
 			["Button 1-1"]={template="BGreenOnOff"},
 			["Button 2-1"]={template="BGreenOnOff"},
                         ["Fader 3"]={template="FFreq"},
                         ["Fader 4"]={template="FEffect"},
 		},
 		["LFO 1"]={
-                        ["Fader 5"]={template="FMisc"},
+                        ["Fader 5"]={template="FPerf"},
 		},
 		["Step Sequencer"]={
 			-- Sequence select
@@ -326,7 +333,7 @@
 			["Button 1-1"]={template="BGreenOnOff"},
                         ["UDVButton 5-2_6-2"]={template="UDEffect", inverted=true},
                         ["Fader 3"]={template="FEffect"},
-			["UDVButton 7-4_8-4"]={template="UDGain"},
+			["UDVButton 7-4_8-4"]={template="UDAmount"},
 {% if lptype == "mini" %}
 {% include "devices/instrument/thor/mini/confmap_mainmenu_effects.lua" %}
 {% else %}

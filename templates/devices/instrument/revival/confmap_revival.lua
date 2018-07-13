@@ -33,7 +33,7 @@
 			-- R1/R2 knobs
 			["Fader 4"]={template="FMisc"},
 			["Fader 5"]={template="FMisc"},
-			["BigFader 8"]={template="FGain"},
+			["BigFader 8"]={template="FVol"},
 		},
 		["Voicing 1"]={
 			["Button 2-1"]={template="BRedOnOff"},

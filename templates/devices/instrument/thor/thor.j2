@@ -11,7 +11,7 @@
 {% set modpagedefault="LFO1" -%}
 {# End Variables -#}
 {% block groups %}
-Define Group	Page	Main	Osc1	Osc2	Osc3	Mixer	Filter1	Filter2	Filter3	FilterEnv	Amp	AmpEnv	ModEnv	GlobalEnv	LFO1	LFO2	Seq	Effects	Shaper	Delay	Chorus	Index	Keyboard	Internal
+Define Group	Page	Main	Perf	Osc1	Osc2	Osc3	Mixer	Filter1	Filter2	Filter3	FilterEnv	Amp	AmpEnv	ModEnv	GlobalEnv	LFO1	LFO2	Seq	Effects	Shaper	Delay	Chorus	Index	Keyboard	Internal
 Define Group	OscType	Analog	Wavetable	Phase	FM	Multi	Noise	Off
 Define Group	FilterType	LP	State	Comb	Formant	Bypass
 Define Group	SeqEditMode	Note	Velocity	GateLen	StepDur	Curve1	Curve2
@@ -24,7 +24,8 @@ Map	Button 1-1		Page=Main			Index
 Map	Button 1-2		Page=Mixer			Index
 Map	Button 1-3		Page=Amp			Index
 Map	Button 1-4		Page=AmpEnv			Index
-Map	Button 1-5		Page=Seq			Index
+Map	Button 1-5		Page=Perf			Index
+Map	Button 1-6		Page=Seq			Index
 Map	Button 1-7		Page=Keyboard			Index
 Map	Button 2-1		Page=Osc1			Index
 Map	Button 3-1		Page=Osc2			Index
@@ -45,18 +46,21 @@ Map	Button C7		Page=Internal			Index
 // Main page
 Map	PageName		"Main" 				Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	UDVButton 1-2_2-2		Polyphony 			Main
-Map	UDVButton 3-2_4-2		Release Polyphony 			Main
-Map	UDVButton 5-2_6-2		Key Mode 			Main
-Map	UDVButton 7-2_8-2		Portamento Mode 			Main
-Map	Fader 3		Portamento			Main
-Map	Button 1-4		Note Trigger MIDI 			Main
-Map	Button 2-4		Note Trigger Step Seq 			Main
-Map	Button 8-4		Button 1 			Main
-Map	Button 8-5		Button 2 			Main
-Map	Fader 6		Rotary 1 			Main
-Map	Fader 7		Rotary 2 			Main
+Map	Button 8-2		Button 1 			Main
+Map	Button 8-3		Button 2 			Main
+Map	Fader 4		Rotary 1 			Main
+Map	Fader 5		Rotary 2 			Main
 Map	Fader 8		Master Level 			Main
+// Perf page
+Map	PageName		"Perf" 				Perf
+{{ rm.include_menus(curpage="Perf") -}}
+Map	UDVButton 1-2_2-2		Polyphony 			Perf
+Map	UDVButton 3-2_4-2		Release Polyphony 			Perf
+Map	UDVButton 5-2_6-2		Key Mode 			Perf
+Map	UDVButton 7-2_8-2		Portamento Mode 			Perf
+Map	Fader 3		Portamento			Perf
+Map	Button 1-4		Note Trigger MIDI 			Perf
+Map	Button 2-4		Note Trigger Step Seq 			Perf
 {% for oscnum in range(1,4) -%}
 // Osc {{ oscnum }}
 Map	PageName		"Osc {{ oscnum }}" 				Osc{{ oscnum }}
