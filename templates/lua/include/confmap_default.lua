@@ -134,8 +134,9 @@
 			["Kbd"]={
 				["Button 1-2"]={template="BPerformancePage"},
 				["Button 2-2"]={template="BPerformancePage"},
-				["Fader 1"]={template="FOrange"},
-				["Knob V1"]={template="FGreen", resetonrel=true},
+				["Fader 1"]={template="FPerf"},
+				["Knob V1"]={template="FFreq", resetonrel=true},
+				["UDVButton 1-3_2-3"]={template="UDPerf"},
 				["Button 1-4"]={template="BPerformancePage"},
 				["Button 1-5"]={template="BPerformancePage"},
 				["Button 1-6"]={template="BPerformancePage"},
