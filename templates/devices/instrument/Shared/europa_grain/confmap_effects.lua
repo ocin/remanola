@@ -37,10 +37,10 @@
 {% include "devices/instrument/Shared/europa_grain/pro/confmap_submenu_effects.lua" %}
 			-- Common
 			["UDVButton 5-1_6-1"]={template="UDEffect"},
-			["Fader 4"]={template="FEffect"},
-			["Fader 5"]={template="FFreq"},
-			["Fader 6"]={template="FEffect"},
-			["Fader 7"]={template="FAmount"},
+			["Fader 3"]={template="FEffect"},
+			["Fader 4"]={template="FFreq"},
+			["Fader 5"]={template="FEffect"},
+			["Fader 7"]={template="FEffect"},
 		},
 		["Dist"]={
 			["Button 1-2"]={template="BRedOnOff"},
@@ -58,7 +58,7 @@
 			["UDVButton 5-1_6-1"]={template="UDEffect"},
 			["Fader 4"]={template="FEffect"},
 			["Fader 5"]={template="FFreq"},
-			["Fader 7"]={template="FAmount"},
+			["Fader 7"]={template="FEffect"},
 		},
 		["Eq"]={
 			["Button 1-2"]={template="BRedOnOff"},
@@ -74,7 +74,7 @@
 {% include "devices/instrument/Shared/europa_grain/pro/confmap_submenu_effects.lua" %}
 			-- Common
 			["Fader 4"]={template="FFreq"},
-			["Fader 5"]={template="FMisc"},
+			["Fader 5"]={template="FEffect"},
 			["Fader 7"]={template="FAmount"},
 		},
 		["Delay"]={
@@ -92,10 +92,11 @@
 			-- Common
 			["Button 4-1"]={template="BRedOnOff"},
 			["Button 6-1"]={template="BRedOnOff"},
-			["UDVButton 3-2_4-2"]={template="UDFreq"},
+			["Fader 2"]={template="FFreq"},
+			["UDVButton 7-2_8-2"]={template="UDFreq"},
 			["Fader 4"]={template="FEffect"},
 			["Fader 5"]={template="FEffect"},
-			["Fader 7"]={template="FAmount"},
+			["Fader 7"]={template="FEffect"},
 		},
 		["Comp"]={
 			["Button 1-2"]={template="BRedOnOff"},
@@ -110,8 +111,8 @@
 			["Button 1-1"]={template="BRedOnOff"},
 {% include "devices/instrument/Shared/europa_grain/pro/confmap_submenu_effects.lua" %}
 			-- Common
-			["Fader 3"]={template="FMisc"},
-			["Fader 4"]={template="FMisc"},
+			["Fader 3"]={template="FEffect"},
+			["Fader 4"]={template="FEffect"},
 			["Fader 6"]={template="FEffect"},
 			["Fader 7"]={template="FEffect"},
 		},
@@ -128,8 +129,8 @@
 			["Button 1-1"]={template="BRedOnOff"},
 {% include "devices/instrument/Shared/europa_grain/pro/confmap_submenu_effects.lua" %}
 			-- Common
-			["Fader 3"]={template="FFreq"},
+			["Fader 2"]={template="FFreq"},
 			["Fader 4"]={template="FEffect"},
-			["Fader 5"]={template="FMisc"},
-			["Fader 7"]={template="FAmount"},
+			["Fader 5"]={template="FEffect"},
+			["Fader 7"]={template="FEffect"},
 		},

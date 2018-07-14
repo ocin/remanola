@@ -6,10 +6,10 @@
 {# Variables -#}
 {% set show_pitch_bend_range=true -%}
 {% set filterpagedefault="Filter" -%}
-{% set perfpagedefault="Controller" -%}
+{% set perfpagedefault="Perf" -%}
 {# End Variables -#}
 {% block groups %}
-Define Group	Page	Main	Osc	Filter	FilterEnv	Amp	LFO	Velocity	ModWheelContr	Controller	Index	Keyboard	Internal
+Define Group	Page	Main	Perf	Osc	Filter	FilterEnv	Amp	LFO	Velocity	ModWheelContr	Controller	Index	Keyboard	Internal
 Define Group	TempoSync	Free	Sync
 {% endblock groups %}
 {% block main %}
@@ -17,10 +17,10 @@ Define Group	TempoSync	Free	Sync
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-2		Page=Amp			Index
-Map	Button 1-4		Page=Controller			Index
-Map	Button 1-5		Page=ModWheelContr			Index
-Map	Button 1-6		Page=Velocity			Index
-Map	Button 1-7		Page=Keyboard			Index
+Map	Button 1-4		Page=Perf			Index
+Map	Button 1-5		Page=Controller			Index
+Map	Button 1-6		Page=ModWheelContr			Index
+Map	Button 1-7		Page=Velocity			Index
 Map	Button 2-1		Page=Osc			Index
 Map	Button 2-5		Page=Filter			Index
 Map	Button 2-6		Page=FilterEnv			Index
@@ -29,14 +29,17 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	Fader 1		Portamento 				Main
-Map	UDVButton 1-2_2-2		Polyphony			Main
-Map	Fader 3		Stereo Spread 				Main
-Map	UDVButton 1-4_2-4		Spread Mode			Main
-Map	Button 1-5		Low Bandwidth On/Off			Main
-Map	UDVButton 1-6_2-6		Key Mode			Main
-Map	UDVButton 1-7_2-7		Pitch Bend Range			Main
 Map	Fader 8		Master Level 				Main
+// Perf
+Map	PageName		"Perf" 				Perf
+{{ rm.include_menus(curpage="Perf", submenu="perf", perfpage="Perf") -}}
+Map	Fader 1		Portamento 				Perf
+Map	UDVButton 1-2_2-2		Polyphony			Perf
+Map	Fader 3		Stereo Spread 				Perf
+Map	UDVButton 1-4_2-4		Spread Mode			Perf
+Map	Button 1-5		Low Bandwidth On/Off			Perf
+Map	UDVButton 1-6_2-6		Key Mode			Perf
+Map	UDVButton 1-7_2-7		Pitch Bend Range			Perf
 // Amp
 Map	PageName		"Amp" 				Amp
 {{ rm.include_menus(curpage="Amp") -}}

@@ -2,3 +2,4 @@
                         ["Button A2"]={template="BPerformancePage"},
                         ["Button A3"]={template="BPerformancePage"},
                         ["Button A4"]={template="BPerformancePage"},
+                        ["Button A5"]={template="BPerformancePage"},

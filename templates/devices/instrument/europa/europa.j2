@@ -29,7 +29,6 @@ Map	Button 1-1		Page=Main			Index
 Map	Button 1-2		Page=Mixer			Index
 Map	Button 1-3		Page=Amp			Index
 Map	Button 1-5		Page=Perf			Index
-Map	Button 1-7		Page=Keyboard			Index
 Map	Button 2-1		Page=Eng1Osc			Index
 Map	Button 3-1		Page=Eng2Osc			Index
 Map	Button 4-1		Page=Eng3Osc			Index
@@ -88,11 +87,11 @@ Map	UDVButton 7-8_8-8		Voices				Perf
 Map	PageName		"Mixer" 				Mixer
 {{ rm.include_menus(curpage="Mixer", submenu="amp",mainmenu_mini="common", amppage="Amp") -}}
 Map	Fader 2		Osc1 Level				Mixer
-Map	Knob V3		Osc1 Pan				Mixer
-Map	Fader 4		Osc2 Level				Mixer
-Map	Knob V5		Osc2 Pan				Mixer
-Map	Fader 6		Osc3 Level				Mixer
-Map	Knob V7		Osc3 Pan				Mixer
+Map	Fader 3		Osc2 Level				Mixer
+Map	Fader 4		Osc3 Level				Mixer
+Map	Knob V6		Osc1 Pan				Mixer
+Map	Knob V7		Osc2 Pan				Mixer
+Map	Knob V8		Osc3 Pan				Mixer
 // Filter 
 Map	PageName		"Filter" 				Filter
 {{ rm.include_menus(curpage="Filter",mainmenu_mini="common") -}}
@@ -129,7 +128,7 @@ Map	UDVButton 5-3_6-3		Osc{{ engnum }} Tune				Eng{{ engnum }}Osc
 Map	UDVButton 7-3_8-3		Osc{{ engnum }} Pitch Kbd				Eng{{ engnum }}Osc
 Map	UDVButton 1-4_2-4		Osc{{ engnum }} Wave				Eng{{ engnum }}Osc
 Map	Fader 5		Osc{{ engnum }} Shape				Eng{{ engnum }}Osc
-Map	Button 1-6		Osc{{ engnum }} SyncPhase			Eng{{ engnum }}Osc
+Map	Button 8-4		Osc{{ engnum }} SyncPhase			Eng{{ engnum }}Osc
 Map	UDVButton 7-6_8-6		Osc{{ engnum }} Shape Source				Eng{{ engnum }}Osc
 Map	Fader 7		Osc{{ engnum }} Shape Amt				Eng{{ engnum }}Osc
 Map	Fader 8		Osc{{ engnum }} Shape Vel				Eng{{ engnum }}Osc

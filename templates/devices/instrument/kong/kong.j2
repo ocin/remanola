@@ -18,7 +18,6 @@ Define Group	DrumPage	DrumMain	DrumModule	DrumFX1	DrumFX2
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-5		Page=MutesSolos			Index
-Map	Button 1-7		Page=Keyboard			Index
 Map	Button 2-8		Page=BusFX			Index
 Map	Button 3-8		Page=MasterFX			Index
 Map	Button 5-1		Page=Drum13			Index
@@ -131,11 +130,11 @@ Map	UDVButton 3-2_4-2		Drum {{ drumnum }} Decay Offset	5			Drum{{ drumnum }}	Dru
 Map	UDVButton 1-3_2-3		Drum {{ drumnum }} Bus FX Send	5			Drum{{ drumnum }}	DrumMain
 Map	UDVButton 3-3_4-3		Drum {{ drumnum }} Aux 1 Send	5			Drum{{ drumnum }}	DrumMain
 Map	UDVButton 3-4_4-4		Drum {{ drumnum }} Aux 2 Send	5			Drum{{ drumnum }}	DrumMain
-Map	UDVButton 5-5_6-5		Drum {{ drumnum }} Output				Drum{{ drumnum }}	DrumMain
-Map	UDVButton 7-5_8-5		Drum {{ drumnum }} Pitch Bend Range				Drum{{ drumnum }}	DrumMain
-Map	Knob V6		Drum {{ drumnum }} Tone				Drum{{ drumnum }}	DrumMain
-Map	Knob V7		Drum {{ drumnum }} Pan				Drum{{ drumnum }}	DrumMain
-Map	Fader 8		Drum {{ drumnum }} Level				Drum{{ drumnum }}	DrumMain
+Map	Knob V5		Drum {{ drumnum }} Tone				Drum{{ drumnum }}	DrumMain
+Map	Knob V6		Drum {{ drumnum }} Pan				Drum{{ drumnum }}	DrumMain
+Map	Fader 7		Drum {{ drumnum }} Level				Drum{{ drumnum }}	DrumMain
+Map	UDVButton 5-8_6-8		Drum {{ drumnum }} Output				Drum{{ drumnum }}	DrumMain
+Map	UDVButton 7-8_8-8		Drum {{ drumnum }} Pitch Bend Range				Drum{{ drumnum }}	DrumMain
 // Drum {{ drumnum }} DrumModule
 Map	SubPageName		"DrumModule" 				Drum{{ drumnum }}	DrumModule
 Map	Button 1-2		Drum {{ drumnum }} DM On			Drum{{ drumnum }}	DrumModule
@@ -185,16 +184,16 @@ Map	Button 3-8		Pad {{ padnum }} Group I			Pad{{ padnum }}
 // Bus FX
 Map	PageName		"Bus FX" 				BusFX
 {{ rm.include_menus(curpage="BusFX", mainmenu_mini="effects") -}}
+Map	Meter 1		Bus FX Peak Meter			BusFX
 Map	Button 1-2		Bus FX On			BusFX
 Map	Fader 3		Bus FX P1			BusFX
 Map	Fader 4		Bus FX P2			BusFX
 Map	Fader 6		Level Bus FX to Master FX			BusFX
-Map	Meter 7		Bus FX Peak Meter			BusFX
 // Master FX
 Map	PageName		"Master FX" 				MasterFX
 {{ rm.include_menus(curpage="MasterFX", mainmenu_mini="effects") -}}
+Map	Meter 1		Master FX Peak Meter			MasterFX
 Map	Button 1-2		Master FX On			MasterFX
 Map	Fader 3		Master FX P1			MasterFX
 Map	Fader 4		Master FX P2			MasterFX
-Map	Meter 7		Master FX Peak Meter			MasterFX
 {% endblock main %}

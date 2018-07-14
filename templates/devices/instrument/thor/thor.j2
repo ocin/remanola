@@ -26,7 +26,6 @@ Map	Button 1-3		Page=Amp			Index
 Map	Button 1-4		Page=AmpEnv			Index
 Map	Button 1-5		Page=Perf			Index
 Map	Button 1-6		Page=Seq			Index
-Map	Button 1-7		Page=Keyboard			Index
 Map	Button 2-1		Page=Osc1			Index
 Map	Button 3-1		Page=Osc2			Index
 Map	Button 4-1		Page=Osc3			Index
@@ -341,26 +340,26 @@ Map	Button 8-3		Chorus On			Effects
 Map	PageName		"Shaper" 				Shaper
 {{ rm.include_menus(curpage="Shaper", submenu="effect", mainmenu_mini="effects") -}}
 Map	Button 1-1		Shaper On				Shaper
-Map	UDVButton 5-2_6-2		Shaper Type				Shaper
+Map	UDVButton 1-2_2-2		Shaper Type				Shaper
 Map	Fader 3		Shaper Drive				Shaper
 Map	UDVButton 7-4_8-4		Shaper Output Dest			Shaper
 // Delay
 Map	PageName		"Delay" 				Delay
 {{ rm.include_menus(curpage="Delay", submenu="effect", mainmenu_mini="effects") -}}
 Map	Button 1-1		Delay On				Delay
-Map	Button 4-1		Delay Sync				Delay
-Map	Fader 3		Delay Time				Delay
-Map	Fader 4		Delay Feedback				Delay
+Map	Button 8-1		Delay Sync				Delay
+Map	Fader 2		Delay Time				Delay
+Map	Fader 3		Delay Feedback				Delay
 Map	Fader 5		Delay Rate				Delay
 Map	Fader 6		Delay Amt				Delay
-Map	Fader 7		Delay Dry Wet				Delay
+Map	Fader 8		Delay Dry Wet				Delay
 // Chorus
 Map	PageName		"Chorus" 				Chorus
 {{ rm.include_menus(curpage="Chorus", submenu="effect", mainmenu_mini="effects") -}}
 Map	Button 1-1		Chorus On				Chorus
-Map	Fader 3		Chorus Delay				Chorus
-Map	Fader 4		Chorus Feedback				Chorus
+Map	Fader 2		Chorus Delay				Chorus
+Map	Fader 3		Chorus Feedback				Chorus
 Map	Fader 5		Chorus Rate				Chorus
 Map	Fader 6		Chorus Amt				Chorus
-Map	Fader 7		Chorus Dry Wet				Chorus
+Map	Fader 8		Chorus Dry Wet				Chorus
 {% endblock main %}

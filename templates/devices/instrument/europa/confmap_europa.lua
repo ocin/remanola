@@ -28,11 +28,11 @@
 		},
 		["Mixer"]={
 			["Fader 2"]={template="FVol"},
-			["Knob V3"]={template="FPan"},
-			["Fader 4"]={template="FPan"},
-			["Knob V5"]={template="FPan"},
-			["Fader 6"]={template="FVol"},
+			["Fader 3"]={template="FVol"},
+			["Fader 4"]={template="FVol"},
+			["Knob V6"]={template="FPan"},
 			["Knob V7"]={template="FPan"},
+			["Knob V8"]={template="FPan"},
 {% include "devices/instrument/europa/pro/confmap_submenu_amp.lua" %}
 		},
 		["Filter"]={
@@ -65,8 +65,9 @@
 			["UDVButton 5-3_6-3"]={template="UDFreq"},
 			["UDVButton 7-3_8-3"]={template="UDPerf"},
 			["UDVButton 1-4_2-4"]={template="UDOsc", inverted=true},
-			["UDVButton 7-6_8-6"]={template="UDLFO", inverted=true},
+			["Button 8-4"]={template="BRedOnOff"},
 			["Fader 5"]={template="FOsc"},
+			["UDVButton 7-6_8-6"]={template="UDLFO", inverted=true},
 			["Fader 7"]={template="FLFO"},
 			["Fader 8"]={template="FPerf"},
 {% include "devices/instrument/europa/pro/confmap_submenu_osc.lua" %}

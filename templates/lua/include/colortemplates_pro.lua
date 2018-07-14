@@ -17,6 +17,11 @@ local color_templates = {
 	["FEnv"]={enabledcolor=DYELLOW, activecolor=YELLOW},
 	["FPerf"]={enabledcolor=DCYAN, activecolor=CYAN},
 	["FEffect"]={enabledcolor=DBLUE, activecolor=BLUE},
+	-- Drawbars
+	["DSub"]={enabledcolor=DRED, activecolor=RED},
+	["DFund"]={enabledcolor=DGREY, activecolor=WHITE},
+	["DHarm"]={enabledcolor=DBLUE, activecolor=BLUE},
+	["DHarm7"]={enabledcolor=DCYAN, activecolor=CYAN},
 	-- Special Vocoder Fader
 	["FVCGreen"]={enabledcolor=DGREEN, activecolor=GREEN, disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=89},
 	["FVCFreq"]={enabledcolor=DGREEN, activecolor=GREEN, disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=89},
@@ -42,6 +47,8 @@ local color_templates = {
 	["UDOsc2"]={enabledcolor=HAMBER, activecolor=HAMBER},
 	["UDAmount"]={enabledcolor=RED, activecolor=RED},
 	["UDAmount2"]={enabledcolor=HRED, activecolor=HRED},
+	["UDVol"]={enabledcolor=MAGENTA, activecolor=MAGENTA},
+	["UDVol2"]={enabledcolor=HMAGENTA, activecolor=HMAGENTA},
 	["UDGain"]={enabledcolor=RED, activecolor=RED},
 	["UDGain2"]={enabledcolor=HRED, activecolor=HRED},
 	["UDFreq"]={enabledcolor=GREEN, activecolor=GREEN},

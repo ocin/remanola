@@ -10,6 +10,6 @@
 			["Button 4-4"]={template="BSelSound"},
 			["Fader 6"]={template="FEffect"},
 			["Fader 7"]={template="FEffect"},
-			["Fader 8"]={template="FGain"},
+			["Fader 8"]={template="FVol"},
 		},
 	},

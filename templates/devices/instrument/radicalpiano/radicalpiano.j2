@@ -17,7 +17,6 @@ Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-2		Page=Envelope			Index
 Map	Button 1-5		Page=Velocity			Index
-Map	Button 1-7		Page=Keyboard			Index
 Map	Button 2-1		Page=Tune			Index
 Map	Button 2-2		Page=Resonance			Index
 Map	Button 2-3		Page=Mechanics			Index
@@ -54,8 +53,8 @@ Map	Fader 5		Tune Drift			Tune
 // Resonance
 Map	PageName		"Resonance" 				Resonance
 {{ rm.include_menus(curpage="Resonance", mainmenu_mini="common") -}}
-Map	Knob V4		Symp Res Release Time			Resonance
-Map	Knob V5		Symp Res Level			Resonance
+Map	Knob V4		Symp Res Level			Resonance
+Map	Knob V5		Symp Res Release Time			Resonance
 // Mechanics
 Map	PageName		"Mechanics" 				Mechanics
 {{ rm.include_menus(curpage="Mechanics", mainmenu_mini="common") -}}
@@ -65,14 +64,14 @@ Map	Knob V6		Pedal Level			Mechanics
 // Eq
 Map	PageName		"Eq" 				Eq
 {{ rm.include_menus(curpage="Eq", submenu="effect", mainmenu_mini="common", effectpage="Eq") -}}
-Map	Button 1-2		EQ On/Off			Eq
+Map	Button 1-1		EQ On/Off			Eq
 Map	Knob V4		EQ Lo Gain			Eq
 Map	Knob V5		EQ Mid Gain			Eq
 Map	Knob V6		EQ Hi Gain			Eq
 // Ambience
 Map	PageName		"Ambience" 				Ambience
 {{ rm.include_menus(curpage="Ambience", submenu="effect", mainmenu_mini="common", effectpage="Ambience") -}}
-Map	UDVButton 7-3_8-3		Ambience Type				Ambience
+Map	UDVButton 1-2_2-2		Ambience Type				Ambience
 Map	Fader 4		Ambience Level			Ambience
 // Output
 Map	PageName		"Output" 				Output
