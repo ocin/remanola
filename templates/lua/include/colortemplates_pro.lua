@@ -44,6 +44,7 @@ local color_templates = {
 	["MRed"]={enabledcolor=WAMBER, activecolor=RED, disabledcolor=NOCOLOR, maxcolor=RED},
 	-- Up/Down Buttons
 	["UDAmber"]={enabledcolor=AMBER, activecolor=AMBER},
+	["UDAmber2"]={enabledcolor=HAMBER, activecolor=HAMBER},
 	["UDRed"]={enabledcolor=RED, activecolor=RED},
 	["UDGreen"]={enabledcolor=GREEN, activecolor=GREEN},
 	["UDYellow"]={enabledcolor=YELLOW, activecolor=YELLOW},
