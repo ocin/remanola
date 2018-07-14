@@ -9,7 +9,7 @@
 		["Main"]={
 			["UDVButton 1-1_2-1"]={template="UDEffect"},
 			["Button 1-2"]={template="BRedOnOff"},
-			["Button 3-2"]={template="BPerfOnOff"},
+			["Button 3-2"]={template="BGreenOnOff"},
 			["UDVButton 5-2_6-2"]={template="UDEffect"},
 			["UDVButton 7-2_8-2"]={template="UDFreq"},
 			["UDVButton 7-3_8-3"]={template="UDEffect"},
@@ -28,10 +28,10 @@
 {% include "devices/effect/alligator/mini/confmap_mainmenu_filter.lua" %}
 {% endif %}
 			["Button 1-2"]={template="BGreenOnOff"},
-			["Knob V3"]={template="FMisc"},
+			["Knob V3"]={template="FLFO"},
 			["Fader 4"]={template="FFreq"},
 			["Fader 5"]={template="FEffect"},
-			["Knob V6"]={template="FMisc"},
+			["Knob V6"]={template="FEnv"},
 		},
 		["BPFilter"]={
 {% if lptype == "pro" %}
@@ -39,10 +39,10 @@
 {% else %}
 {% include "devices/effect/alligator/mini/confmap_mainmenu_filter.lua" %}
 {% endif %}
-			["Knob V3"]={template="FMisc"},
+			["Knob V3"]={template="FLFO"},
 			["Fader 4"]={template="FFreq"},
 			["Fader 5"]={template="FEffect"},
-			["Knob V6"]={template="FMisc"},
+			["Knob V6"]={template="FEnv"},
 		},
 		["LPFilter"]={
 {% if lptype == "pro" %}
@@ -50,10 +50,10 @@
 {% else %}
 {% include "devices/effect/alligator/mini/confmap_mainmenu_filter.lua" %}
 {% endif %}
-			["Knob V3"]={template="FMisc"},
+			["Knob V3"]={template="FLFO"},
 			["Fader 4"]={template="FFreq"},
 			["Fader 5"]={template="FEffect"},
-			["Knob V6"]={template="FMisc"},
+			["Knob V6"]={template="FEnv"},
 		},
 		["HPEffects"]={
 {% if lptype == "pro" %}
@@ -64,8 +64,8 @@
 			["Fader 2"]={template="FAmount"},
 			["Fader 3"]={template="FEffect"},
 			["Fader 4"]={template="FEffect"},
-			["Knob V6"]={template="FGain"},
-			["Fader 7"]={template="FGain"},
+			["Knob V6"]={template="FPan"},
+			["Fader 7"]={template="FVol"},
 		},
 		["BPEffects"]={
 {% if lptype == "pro" %}
@@ -76,8 +76,8 @@
 			["Fader 2"]={template="FAmount"},
 			["Fader 3"]={template="FEffect"},
 			["Fader 4"]={template="FEffect"},
-			["Knob V6"]={template="FGain"},
-			["Fader 7"]={template="FGain"},
+			["Knob V6"]={template="FPan"},
+			["Fader 7"]={template="FVol"},
 		},
 		["LPEffects"]={
 {% if lptype == "pro" %}
@@ -88,8 +88,8 @@
 			["Fader 2"]={template="FAmount"},
 			["Fader 3"]={template="FEffect"},
 			["Fader 4"]={template="FEffect"},
-			["Knob V6"]={template="FGain"},
-			["Fader 7"]={template="FGain"},
+			["Knob V6"]={template="FPan"},
+			["Fader 7"]={template="FVol"},
 		},
 		["Delay"]={
 {% if lptype == "mini" %}
@@ -109,9 +109,9 @@
 			["Fader 4"]={template="FEffect"},
 		},
 		["AmpEnv"]={
-			["Fader 3"]={template="FGain"},
-			["Fader 4"]={template="FGain"},
-			["Fader 5"]={template="FGain"},
+			["Fader 3"]={template="FVol"},
+			["Fader 4"]={template="FVol"},
+			["Fader 5"]={template="FVol"},
 		},
 		["DryLevels"]={
 {% if lptype == "pro" %}
@@ -120,8 +120,8 @@
 {% include "devices/effect/alligator/mini/confmap_mainmenu_effect.lua" %}
 {% endif %}
 			["Fader 2"]={template="FEffect"},
-			["Knob V4"]={template="FGain"},
-			["Fader 5"]={template="FGain"},
+			["Knob V4"]={template="FPan"},
+			["Fader 5"]={template="FVol"},
 		},
 		["FilterEnv"]={
 {% if lptype == "pro" %}
@@ -134,7 +134,7 @@
 			["Fader 5"]={template="FFreq"},
 		},
 		["LFO"]={
-			["UDVButton 1-2_2-2"]={template="UDMisc"},
+			["UDVButton 1-2_2-2"]={template="UDLFO"},
 			["Fader 4"]={template="FFreq"},
 			["UDVButton 7-4_8-4"]={template="UDFreq"},
 			["Button 1-5"]={template="BGreenOnOff"},

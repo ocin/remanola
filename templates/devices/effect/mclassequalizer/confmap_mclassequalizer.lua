@@ -9,7 +9,7 @@
 			["Button 1-3"]={template="BRedOnOff"},
 			["Fader 4"]={template="FFreq"},
 			["Knob V5"]={template="FGain"},
-			["Fader 6"]={template="FMisc"},
+			["Fader 6"]={template="FEffect"},
 		},
 		["Index"]={
 		},

@@ -9,7 +9,7 @@
 			["Fader 3"]={template="FEffect"},
 			["Fader 4"]={template="FEffect"},
 			["Fader 5"]={template="FEffect"},
-			["Fader 6"]={template="FGain"},
+			["Fader 6"]={template="FVol"},
 		},
 		["Index"]={
 			["Button 2-2"]={template="BAmpPage"},
@@ -49,8 +49,8 @@
 			["ChannelMain"]={
 				["Button 1-2"]={template="BMute"},
 				["Button 2-2"]={template="BSolo"},
-				["Knob V6"]={template="FGain"},
-				["Fader 7"]={template="FGain"},
+				["Knob V6"]={template="FPan"},
+				["Fader 7"]={template="FVol"},
 			},
 			["ChannelEq"]={
 				["Button 1-2"]={template="BYellowOnOff"},
@@ -69,48 +69,48 @@
 {% if lptype == "pro" %}
 {% include "devices/utility/mixer142/pro/confmap_submenu_mutesolo.lua" %}
 {% endif %}
-			["Fader 1"]={template="FGain"},
-			["Fader 2"]={template="FGain"},
-			["Fader 3"]={template="FGain"},
-			["Fader 4"]={template="FGain"},
-			["Fader 5"]={template="FGain"},
-			["Fader 6"]={template="FGain"},
-			["Fader 7"]={template="FGain"},
+			["Fader 1"]={template="FVol"},
+			["Fader 2"]={template="FVol"},
+			["Fader 3"]={template="FVol"},
+			["Fader 4"]={template="FVol"},
+			["Fader 5"]={template="FVol"},
+			["Fader 6"]={template="FVol"},
+			["Fader 7"]={template="FVol"},
 		},
 		["Level 8-14"]={
 {% if lptype == "pro" %}
 {% include "devices/utility/mixer142/pro/confmap_submenu_mutesolo.lua" %}
 {% endif %}
-			["Fader 1"]={template="FGain"},
-			["Fader 2"]={template="FGain"},
-			["Fader 3"]={template="FGain"},
-			["Fader 4"]={template="FGain"},
-			["Fader 5"]={template="FGain"},
-			["Fader 6"]={template="FGain"},
-			["Fader 7"]={template="FGain"},
+			["Fader 1"]={template="FVol"},
+			["Fader 2"]={template="FVol"},
+			["Fader 3"]={template="FVol"},
+			["Fader 4"]={template="FVol"},
+			["Fader 5"]={template="FVol"},
+			["Fader 6"]={template="FVol"},
+			["Fader 7"]={template="FVol"},
 		},
 		["Pan 1-7"]={
 {% if lptype == "pro" %}
 {% include "devices/utility/mixer142/pro/confmap_submenu_mutesolo.lua" %}
 {% endif %}
-			["Knob V1"]={template="FMisc"},
-			["Knob V2"]={template="FMisc"},
-			["Knob V3"]={template="FMisc"},
-			["Knob V4"]={template="FMisc"},
-			["Knob V5"]={template="FMisc"},
-			["Knob V6"]={template="FMisc"},
-			["Knob V7"]={template="FMisc"},
+			["Knob V1"]={template="FPan"},
+			["Knob V2"]={template="FPan"},
+			["Knob V3"]={template="FPan"},
+			["Knob V4"]={template="FPan"},
+			["Knob V5"]={template="FPan"},
+			["Knob V6"]={template="FPan"},
+			["Knob V7"]={template="FPan"},
 		},
 		["Pan 8-14"]={
 {% if lptype == "pro" %}
 {% include "devices/utility/mixer142/pro/confmap_submenu_mutesolo.lua" %}
 {% endif %}
-			["Knob V1"]={template="FMisc"},
-			["Knob V2"]={template="FMisc"},
-			["Knob V3"]={template="FMisc"},
-			["Knob V4"]={template="FMisc"},
-			["Knob V5"]={template="FMisc"},
-			["Knob V6"]={template="FMisc"},
-			["Knob V7"]={template="FMisc"},
+			["Knob V1"]={template="FPan"},
+			["Knob V2"]={template="FPan"},
+			["Knob V3"]={template="FPan"},
+			["Knob V4"]={template="FPan"},
+			["Knob V5"]={template="FPan"},
+			["Knob V6"]={template="FPan"},
+			["Knob V7"]={template="FPan"},
 		},
 	},

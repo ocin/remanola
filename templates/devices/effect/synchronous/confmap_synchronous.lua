@@ -25,7 +25,7 @@
 			["UDVButton 3-2_4-2"]={template="UDEffect"},
 			["Fader 4"]={template="FFreq"},
 			["Fader 5"]={template="FEffect"},
-			["Fader 7"]={template="FMisc"},
+			["Fader 7"]={template="FEffect"},
 		},
 		["Delay"]={
 			["Button 1-2"]={template="BRedOnOff"},

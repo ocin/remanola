@@ -14,7 +14,7 @@
 			["Fader 3"]={template="FEffect"},
 			["Fader 4"]={template="FGain"},
 			["Fader 7"]={template="FGain"},
-			["Fader 8"]={template="FGain"},
+			["Fader 8"]={template="FVol"},
 		},
 		["Eq"]={
 			["Fader 3"]={template="FGain"},

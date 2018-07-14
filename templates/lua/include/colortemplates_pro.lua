@@ -17,6 +17,14 @@ local color_templates = {
 	["FEnv"]={enabledcolor=DYELLOW, activecolor=YELLOW},
 	["FPerf"]={enabledcolor=DCYAN, activecolor=CYAN},
 	["FEffect"]={enabledcolor=DBLUE, activecolor=BLUE},
+	-- Mix Channel
+	["FMixComp"]={enabledcolor=DGREEN, activecolor=GREEN},
+	["FMixGate"]={enabledcolor=DRED, activecolor=RED},
+	["FMixFilter"]={enabledcolor=DORANGE, activecolor=ORANGE},
+	["FMixEqHF"]={enabledcolor=DRED, activecolor=RED},
+	["FMixEqHMF"]={enabledcolor=DGREEN, activecolor=GREEN},
+	["FMixEqLMF"]={enabledcolor=DBLUE, activecolor=BLUE},
+	["FMixEqLF"]={enabledcolor=DPINK, activecolor=PINK},
 	-- Drawbars
 	["DSub"]={enabledcolor=DRED, activecolor=RED},
 	["DFund"]={enabledcolor=DGREY, activecolor=WHITE},
@@ -75,10 +83,13 @@ local color_templates = {
 	["BYellowOnOff"]={enabledcolor=HGREY,   activecolor=YELLOW,  disabledcolor=NOCOLOR},
 	["BGreenOnOff"]={enabledcolor=HGREY,   activecolor=GREEN,  disabledcolor=NOCOLOR},
 	["BAmberOnOff"]={enabledcolor=HGREY,   activecolor=AMBER,  disabledcolor=NOCOLOR},
+	["BBlueOnOff"]={enabledcolor=HGREY,   activecolor=BLUE,  disabledcolor=NOCOLOR},
 	["BBGreenOnOff"]={enabledcolor=DGREEN,   activecolor=GREEN,  disabledcolor=NOCOLOR},
 	["BBRedOnOff"]={enabledcolor=DRED,   activecolor=RED,  disabledcolor=NOCOLOR},
 	["BBBlueOnOff"]={enabledcolor=DBLUE,   activecolor=BLUE,  disabledcolor=NOCOLOR},
 	["BPerfOnOff"]={enabledcolor=DCYAN,   activecolor=CYAN,  disabledcolor=NOCOLOR},
+	-- Button On/OFf Mix channel
+	["BMixOnOff"]={enabledcolor=HGREY,   activecolor=BLUE,  disabledcolor=NOCOLOR},
 	-- Red LED
 	["BRedLed"]={enabledcolor=DGREEN,   activecolor=RED,  disabledcolor=NOCOLOR},
 	-- Button Page
@@ -93,6 +104,7 @@ local color_templates = {
 	["BMainEffectPage"]={enabledcolor=HBLUE,   activecolor=RED,  disabledcolor=NOCOLOR},
 	["BEffectPage"]={enabledcolor=BLUE,   activecolor=RED,  disabledcolor=NOCOLOR},
 	["BEffect2Page"]={enabledcolor=HBLUE,   activecolor=RED,  disabledcolor=NOCOLOR},
+	["BEqPage"]={enabledcolor=HGREEN,   activecolor=RED,  disabledcolor=NOCOLOR},
 	["BEffectSupPage"]={enabledcolor=DBLUE,   activecolor=RED,  disabledcolor=NOCOLOR},
 	["BPerformancePage"]={enabledcolor=CYAN,   activecolor=RED,  disabledcolor=NOCOLOR},
 	["BPerfPage"]={enabledcolor=CYAN,   activecolor=RED,  disabledcolor=NOCOLOR},

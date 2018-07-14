@@ -11,7 +11,7 @@
 			["UDVButton 1-2_2-2"]={template="UDEffect"},
 			["UDVButton 5-2_6-2"]={template="UDEffect"},
 			["Fader 3"]={template="FEffect"},
-			["Fader 8"]={template="FGain"},
+			["Fader 8"]={template="FVol"},
 		},
 		["Eq"]={
 			["Button 8-2"]={template="BRedOnOff"},
