@@ -1,9 +1,8 @@
+{% extends "devices/effect/effect-nopatch.j2" %}
 {% set deviceman="Propellerhead Software" -%}
 {% set devicescope="se.propellerheads.Audiomatic" -%}
 {% set devicename="Audiomatic" -%}
-{% include "remotemap/include/device/scope.j2" %}
-Define Group	Page	Main	Index	Internal
-{% include "remotemap/include/device/effect-nopatch.j2" %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -17,3 +16,4 @@ Map	Fader 5		Transform			Main
 Map	Fader 6		Dry Wet			Main
 Map	Fader 7		Volume			Main
 Map	Meter 8		Input Peak Meter			Main
+{% endblock main %}

@@ -19,7 +19,7 @@
 			["UDVButton 1-5_2-5"]={template="UDEffect", inverted=true},
 			["Knob V6"]={template="FGain"},
 		},
-		["SoftCLip"]={
+		["SoftClip"]={
 			["Button 1-2"]={template="BRedOnOff"},
 			["Fader 3"]={template="FEffect"},
 		},

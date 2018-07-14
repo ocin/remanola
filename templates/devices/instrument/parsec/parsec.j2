@@ -1,3 +1,4 @@
+{% extends "devices/instrument/instrument.j2" %}
 {% set deviceman="Propellerhead Software" -%}
 {% set devicescope="se.propellerheads.Parsec" -%}
 {% set devicename="Parsec" -%}
@@ -10,17 +11,17 @@
 {% set perfpagedefault="ModMatrix1" -%}
 {% set effectpagedefault="Reverb" -%}
 {# End Variables -#}
-{% include "remotemap/include/device/scope.j2" %}
-Define Group	Page	Main	GenereratorA	GenereratorB	SoundEngineA	SoundEngineB	AmpEnv	LFO1	LFO2	Env1	Env2	Reverb	Delay	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
+{% block groups %}
+Define Group	Page	Main	Perf	GenereratorA	GenereratorB	SoundEngineA	SoundEngineB	AmpEnv	LFO1	LFO2	Env1	Env2	Reverb	Delay	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
 Define Group	Enabled	On	Off
 Define Group	TempoSync	Free	Sync
-{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-2		Page=AmpEnv			Index
-Map	Button 1-7		Page=Keyboard			Index
+Map	Button 1-5		Page=Perf			Index
 Map	Button 2-1		Page=GenereratorA			Index
 Map	Button 3-1		Page=GenereratorB			Index
 Map	Button 2-5		Page=SoundEngineA			Index
@@ -43,13 +44,16 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	UDVButton 7-1_8-1		Pitch Bend Range				Main
-Map	UDVButton 7-3_8-3		Key Mode				Main
-Map	UDVButton 7-4_8-4		Portamento Mode				Main
-Map	Fader 5		Portamento				Main
 Map	Knob V6		Balance				Main
 Map	Fader 7		Spread				Main
 Map	Fader 8		Master Level				Main
+// Perf
+Map	PageName		"Perf" 				Perf
+{{ rm.include_menus(curpage="Perf") -}}
+Map	UDVButton 7-1_8-1		Pitch Bend Range				Perf
+Map	UDVButton 7-3_8-3		Key Mode				Perf
+Map	UDVButton 7-5_8-5		Portamento Mode				Perf
+Map	Fader 6		Portamento				Perf
 // AmpEnv
 Map	PageName		"Amp Envelope" 			AmpEnv
 {{ rm.include_menus(curpage="AmpEnv") -}}
@@ -175,3 +179,4 @@ Map	UDVButton 1-6_2-6		Mod{{ mmnum }} Dest2			 ModMatrix{{ mmnum }}
 Map	Knob V7		Mod{{ mmnum }} Scale Amt			ModMatrix{{ mmnum }}
 Map	UDVButton 1-8_2-8		Mod{{ mmnum }} Scale			 ModMatrix{{ mmnum }}
 {% endfor -%}
+{% endblock main %}

@@ -1,9 +1,12 @@
+{% extends "devices/effect/effect.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Scream 4 Distortion" -%}
 {% set devicename="Scream 4 Distortion" -%}
-{% include "remotemap/include/device/scope.j2" %}
+{% set shortname="scream4distortion" -%}
+{% block groups %}
 Define Group	Page	Main	Cut	Body	Index	Internal
-{% include "remotemap/include/device/effect.j2" %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -12,6 +15,7 @@ Map	Button 2-8		Page=Body			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
+{{ rm.include_menus(curpage="Main") -}}
 Map	UDVButton 1-1_2-1		Enabled			Main
 Map	Button 1-2		Damage On/Off			Main
 Map	Fader 3		Damage Control			Main
@@ -22,14 +26,17 @@ Map	Fader 7		Master Level			Main
 Map	Meter 8		Input Peak Meter			Main
 // Cut
 Map	PageName		"Cut" 				Cut
+{{ rm.include_menus(curpage="Cut") -}}
 Map	Button 1-2		Cut On/Off			Cut
 Map	Knob V4		Cut Lo			Cut
 Map	Knob V5		Cut Mid			Cut
 Map	Knob V6		Cut Hi			Cut
 // Body
 Map	PageName		"Body" 				Body
+{{ rm.include_menus(curpage="Body") -}}
 Map	Button 1-2		Body On/Off			Body
 Map	Fader 4		Body Resonance			Body
 Map	Fader 5		Body Scale			Body
 Map	Fader 6		Body Auto			Body
 Map	UDVButton 1-7_2-7		Body Type			Body
+{% endblock main %}

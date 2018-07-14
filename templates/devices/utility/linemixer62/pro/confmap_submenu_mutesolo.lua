@@ -1,0 +1,18 @@
+                        ["Button A7"]={template="BMute"},
+                        ["Button A8"]={template="BSolo"},
+			["Mute"]={
+                        	["Button A1"]={template="BMute"},
+                        	["Button A2"]={template="BMute"},
+                        	["Button A3"]={template="BMute"},
+                        	["Button A4"]={template="BMute"},
+                        	["Button A5"]={template="BMute"},
+                        	["Button A6"]={template="BMute"},
+			},
+			["Solo"]={
+                        	["Button A1"]={template="BSolo"},
+                        	["Button A2"]={template="BSolo"},
+                        	["Button A3"]={template="BSolo"},
+                        	["Button A4"]={template="BSolo"},
+                        	["Button A5"]={template="BSolo"},
+                        	["Button A6"]={template="BSolo"},
+			},

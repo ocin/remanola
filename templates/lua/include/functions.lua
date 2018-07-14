@@ -150,36 +150,36 @@ function get_button_color(context, itemname, buttonname, value)
 	elseif(string.find(itemname, "Button %d%-%d") or string.find(itemname, "Button C%d") or string.find(itemname, "Button %a")) then
 		if(g_scopetext == "Redrum" and string.match(get_current_page(), "Main") and (string.match(itemname, "Button [12]%-%d"))) then
 			if(g_playingbutton == itemname and (tonumber(remote.get_item_text_value(itemsindex["Button 3-8"])) == 1)) then
-                       		color = RED
+                       		color = REDRUM_HIT
 			else 
 				if(textvalue == 1) then
-                       			color = YELLOW
+                       			color = REDRUM_SOFT
 				elseif(textvalue == 2) then
-                       			color = AMBER
+                       			color = REDRUM_MEDIUM
 				elseif(textvalue == 3) then
-                       			color = ORANGE
+                       			color = REDRUM_HARD
 				else
-                       			color = WGREEN
+                       			color = REDRUM_NOHIT
 				end
 			end
 		elseif(g_scopetext == "Redrum" and string.match(get_current_page(), "Main") and (string.match(itemname, "Button 4%-6"))) then
 			if(textvalue == 1) then
-                       		color = YELLOW
+                       		color = REDRUM_SOFT
 			elseif(textvalue == 2) then
-                       		color = AMBER
+                       		color = REDRUM_MEDIUM
 			elseif(textvalue == 3) then
-                       		color = ORANGE
+                       		color = REDRUM_HARD
 			else
-                       		color = NOCOLOR
+                       		color = REDRUM_NOHIT
 			end
 		elseif(g_scopetext == "Thor" and string.match(get_current_page(), "Step Sequencer") and (string.match(itemname, "Button [12]%-%d"))) then
 			if(g_playingbutton == itemname and (tonumber(remote.get_item_value(itemsindex["Button 8-1"])) == 1)) then
-                       		color = YELLOW
+                       		color = THOR_SEQ_ACTIVE
 			else 
 				if(value == 1) then
-                       			color = RED
+                       			color = THOR_SEQ_STEPON
 				else
-                       			color = WGREEN
+                       			color = THOR_SEQ_STEPOFF
 				end
 			end
 		else

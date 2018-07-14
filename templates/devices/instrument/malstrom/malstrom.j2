@@ -1,3 +1,4 @@
+{% extends "devices/instrument/instrument.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Malstrom Graintable Synthesizer" -%}
 {% set devicename="Malstrom" -%}
@@ -7,18 +8,18 @@
 {% set oscpagedefault="OscA" -%}
 {% set filterpagedefault="FilterA" -%}
 {% set modpagedefault="ModA" -%}
-{% set perfpagedefault="Velocity" -%}
+{% set perfpagedefault="Perf" -%}
 {# End Variables -#}
-{% include "remotemap/include/device/scope.j2" %}
-Define Group	Page	Main	OscA	OscAEnv	OscB	OscBEnv	FilterA	FilterB	FilterEnv	ModA	ModB	Shaper	Velocity	ModWheelContr	Index	Keyboard	Internal
-{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% block groups %}
+Define Group	Page	Main	Perf	OscA	OscAEnv	OscB	OscBEnv	FilterA	FilterB	FilterEnv	ModA	ModB	Shaper	Velocity	ModWheelContr	Index	Keyboard	Internal
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
-Map	Button 1-5		Page=Velocity			Index
-Map	Button 1-6		Page=ModWheelContr			Index
-Map	Button 1-7		Page=Keyboard			Index
+Map	Button 1-5		Page=Perf			Index
+Map	Button 1-6		Page=Velocity			Index
+Map	Button 1-7		Page=ModWheelContr			Index
 Map	Button 2-1		Page=OscA			Index
 Map	Button 3-1		Page=OscB			Index
 Map	Button 2-2		Page=OscAEnv			Index
@@ -33,17 +34,20 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	UDVButton 5-2_6-2		Polyphony			Main
-Map	Button 8-2		Legato On/Off			Main
-Map	Fader 3		Portamento			Main
-Map	UDVButton 7-4_8-4		Pitch Bend Range			Main
 Map	Fader 7		Spread Amount			Main
 Map	Fader 8		Master Level			Main
+// Perf
+Map	PageName		"Perf" 				Perf
+{{ rm.include_menus(curpage="Perf", submenu="perf", perfpage="Perf") -}}
+Map	UDVButton 7-2_8-2		Polyphony			Perf
+Map	Button 8-3		Legato On/Off			Perf
+Map	Fader 4		Portamento			Perf
+Map	UDVButton 7-5_8-5		Pitch Bend Range			Perf
 {% for oscnum in ['A', 'B'] -%}
 // Osc{{ oscnum }}
 Map	PageName		"Osc {{ oscnum }}" 				Osc{{ oscnum }}
 {{ rm.include_menus(curpage="Osc"+oscnum|string, mainmenu_mini="osc", submenu="osc", oscpage="Osc"+oscnum|string) -}}
-Map	Button 8-1		Oscillator {{ oscnum }} On/Off			Osc{{ oscnum }}
+Map	Button 1-1		Oscillator {{ oscnum }} On/Off			Osc{{ oscnum }}
 //Map	UDVButton 3-1_4-1		Oscillator {{ oscnum }} Mode			Osc{{ oscnum }}
 Map	Fader 2		Oscillator {{ oscnum }} Motion			Osc{{ oscnum }}
 Map	Fader 3		Oscillator {{ oscnum }} Index			Osc{{ oscnum }}
@@ -67,13 +71,14 @@ Map	Button 7-8		Route Oscillator A To Shaper			OscA
 // Filter{{ filternum }}
 Map	PageName		"Filter {{ filternum }}" 				Filter{{ filternum }}
 {{ rm.include_menus(curpage="Filter"+filternum|string, mainmenu_mini="filter", submenu="filter", filterpage="Filter"+filternum|string) -}}
-Map	Button 1-2		Filter {{ filternum }} On/Off			Filter{{ filternum }}
-Map	UDVButton 7-4_8-4		Filter {{ filternum }} Mode			Filter{{ filternum }}
+Map	Button 1-1		Filter {{ filternum }} On/Off			Filter{{ filternum }}
+Map	UDVButton 1-2_2-2		Filter {{ filternum }} Mode			Filter{{ filternum }}
+Map	Fader 3		Filter {{ filternum }} Resonance			Filter{{ filternum }}
+Map	Fader 4		Filter {{ filternum }} Freq			Filter{{ filternum }}
 Map	Button 8-5		Filter {{ filternum }} Env			Filter{{ filternum }}
 Map	Button 8-6		Filter {{ filternum }} Kbd Track			Filter{{ filternum }}
-Map	Fader 7		Filter {{ filternum }} Freq			Filter{{ filternum }}
-Map	Fader 8		Filter {{ filternum }} Resonance			Filter{{ filternum }}
 {% endfor -%}
+Map	Button 1-6		Route Filter B To Shaper			FilterB
 // FilterEnv
 Map	PageName		"Filter Env" 				FilterEnv
 {{ rm.include_menus(curpage="FilterEnv", submenu="filter", filterpage="FilterEnv") -}}
@@ -87,13 +92,13 @@ Map	Fader 8		Filter Env Amount			FilterEnv
 Map	PageName		"Shaper" 			Shaper
 {{ rm.include_menus(curpage="Shaper") -}}
 Map	Button 1-2		Shaper On/Off			Shaper
-Map	UDVButton 5-2_6-2		Shaper Mode			Shaper
+Map	UDVButton 1-3_2-3		Shaper Mode			Shaper
 Map	Fader 8		Shaper Amount			Shaper
 // ModA
 Map	PageName		"Mod A" 			ModA
 {{ rm.include_menus(curpage="ModA", submenu="mod", mainmenu_mini="mod", modpage="ModA") -}}
-Map	Button 1-2		Modulator A On/Off			ModA
-Map	UDVButton 3-2_4-2		Modulator A Curve			ModA
+Map	Button 1-1		Modulator A On/Off			ModA
+Map	UDVButton 1-2_2-2		Modulator A Curve			ModA
 Map	Fader 3		Modulator A Rate			ModA
 Map	Knob V4		Modulator A To Pitch			ModA
 Map	Knob V5		Modulator A To Index			ModA
@@ -104,8 +109,8 @@ Map	UDVButton 7-8_8-8		Modulator A Target			ModA
 // ModB
 Map	PageName		"Mod B" 			ModB
 {{ rm.include_menus(curpage="ModB", submenu="mod", mainmenu_mini="mod", modpage="ModB") -}}
-Map	Button 1-2		Modulator B On/Off			ModB
-Map	UDVButton 3-2_4-2		Modulator B Curve			ModB
+Map	Button 1-1		Modulator B On/Off			ModB
+Map	UDVButton 1-2_2-2		Modulator B Curve			ModB
 Map	Fader 3		Modulator B Rate			ModB
 Map	Knob V4		Modulator B To Motion			ModB
 Map	Knob V5		Modulator B To Level			ModB
@@ -132,3 +137,4 @@ Map	Knob V3		Mod Wheel To Shift			ModWheelContr
 Map	Knob V4		Mod Wheel To Filter			ModWheelContr
 Map	Knob V5		Mod Wheel To Modulator			ModWheelContr
 Map	UDVButton 7-8_8-8		Mod Wheel Target			ModWheelContr
+{% endblock main %}

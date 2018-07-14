@@ -1,5 +1,8 @@
 	["Synchronous"]={
 		["Default"]={
+{% if lptype == "pro" %}
+{% include "devices/effect/synchronous/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Index"]={
 		},
@@ -22,7 +25,7 @@
 			["UDVButton 3-2_4-2"]={template="UDEffect"},
 			["Fader 4"]={template="FFreq"},
 			["Fader 5"]={template="FEffect"},
-			["Fader 7"]={template="FMisc"},
+			["Fader 7"]={template="FEffect"},
 		},
 		["Delay"]={
 			["Button 1-2"]={template="BRedOnOff"},
@@ -41,8 +44,8 @@
 			["Button 1-2"]={template="BRedOnOff"},
 			["Fader 3"]={template="FEffect"},
 			["Fader 4"]={template="FFreq"},
-			["Fader 5"]={template="FEffect"},
-			["Fader 7"]={template="FMisc"},
+			["Fader 6"]={template="FEffect"},
+			["Fader 7"]={template="FEffect"},
 			["Button 8-8"]={template="BRedOnOff"},
 		},
 	},

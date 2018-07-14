@@ -2,6 +2,6 @@
                         ["Button B2"]={template="BOscPage"},
                         ["Button B3"]={template="BOscPage"},
                         ["Button B4"]={template="BOscPage"},
-                        ["Button B6"]={template="BPerformancePage"},
+                        ["Button B6"]={template="BAmpPage"},
                         ["Button B7"]={template="BPerformancePage"},
                         ["Button B8"]={template="BEffectPage"},

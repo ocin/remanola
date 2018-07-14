@@ -9,6 +9,6 @@
 			["UDVButton 1-3_2-3"]={template="UDEffect"},
 			["Fader 5"]={template="FEffect"},
 			["Fader 6"]={template="FEffect"},
-			["Fader 7"]={template="FGain"},
+			["Fader 7"]={template="FVol"},
 		},
 	},

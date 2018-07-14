@@ -25,9 +25,10 @@
 {% if lptype == "mini" %}
 			["Button C5"]={template="BMainPage", helptext="Goto Main"},
 {% endif %}
-			["Button C6"]={enabledcolor=WGREEN,     activecolor=GREEN,   disabledcolor=NOCOLOR},
-			["Button C7"]={enabledcolor=WAMBER,      activecolor=AMBER,     disabledcolor=NOCOLOR},
+			["Button C6"]={template="BPerfPage"},
+			["Button C7"]={template="BIndexPage"},
 			["Button C8"]={enabledcolor=YELLOW,      activecolor=RED,     disabledcolor=GREEN},
+			["Button B1"]={template="BMainPage"}, 
 
 			["Side LED"]={enabledcolor=GREEN,      activecolor=GREEN,     disabledcolor=GREEN},
 		},
@@ -133,8 +134,9 @@
 			["Kbd"]={
 				["Button 1-2"]={template="BPerformancePage"},
 				["Button 2-2"]={template="BPerformancePage"},
-				["Fader 1"]={template="FOrange"},
-				["Knob V1"]={template="FGreen", resetonrel=true},
+				["Fader 1"]={template="FPerf"},
+				["Knob V1"]={template="FFreq", resetonrel=true},
+				["UDVButton 1-3_2-3"]={template="UDPerf"},
 				["Button 1-4"]={template="BPerformancePage"},
 				["Button 1-5"]={template="BPerformancePage"},
 				["Button 1-6"]={template="BPerformancePage"},

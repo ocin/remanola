@@ -2,7 +2,7 @@
                         ["Button 5-1"]={template="BLFOPage", helptext="Goto LFO 1"},
                         ["Button 6-1"]={template="BLFOPage", helptext="Goto LFO 2"},
                         ["Button 7-1"]={template="BLFOPage", helptext="Goto LFO 3"},
-                        ["UDVButton 1-2_2-2"]={template="UDMisc"},
+                        ["UDVButton 1-2_2-2"]={template="UDLFO"},
                         ["Button 6-2"]={template="BRedOnOff"},
                         ["Button 7-2"]={template="BRedOnOff"},
                         ["Button 8-2"]={template="BRedOnOff"},

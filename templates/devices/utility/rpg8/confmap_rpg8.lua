@@ -1,11 +1,14 @@
 	["RPG-8"]={
 		["Default"]={
-			["Button 5-1"]={template="BPerformancePage"},
-			["Button 6-1"]={template="BPerformancePage"},
+{% if lptype == "mini" %}
+{% include "devices/utility/rpg8/mini/confmap_mainmenu_common.lua" %}
+{% else %}
+{% include "devices/utility/rpg8/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Main"]={
 			-- MIDI-CV Coverter
-			["Fader 2"]={template="FMisc"},
+			["Fader 2"]={template="FPerf"},
 			["Button 1-3"]={template="BRedOnOff"},
 			["UDVButton 3-3_4-3"]={template="UDFreq"},
 			-- Arpeggiator
@@ -14,10 +17,10 @@
 			["UDVButton 5-4_6-4"]={template="UDFreq"},
 			["UDVButton 7-4_8-4"]={template="UDEffect"},
 			-- Sync and Time
-			["Button 1-6"]={template="BRedOnOff"},
-			["Button 8-6"]={template="BRedOnOff"},
-			["UDVButton 7-7_8-7"]={template="UDFreq"},
-			["Fader 7"]={template="FFreq"},
+			["Button 8-5"]={template="BRedOnOff"},
+			["UDVButton 7-6_8-6"]={template="UDFreq"},
+			["Fader 6"]={template="FFreq"},
+			["Button 8-7"]={template="BRedOnOff"},
 			["Fader 8"]={template="FEffect"},
 		},
 		["Pattern"]={
@@ -41,7 +44,7 @@
 			-- Pattern Enable
 			["Button 3-1"]={template="BRedOnOff"},
 			-- Pattern Length Up
-			["UDVButton 3-8_4-8"]={template="UDMisc"},
+			["UDVButton 3-8_4-8"]={template="UDPerf"},
 			-- Shuffle
 			["Button 8-1"]={template="BRedOnOff"},
 		},

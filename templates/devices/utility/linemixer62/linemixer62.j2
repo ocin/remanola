@@ -1,0 +1,79 @@
+{% extends "devices/utility/utility-nopatch.j2" %}
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="Line Mixer 6:2" -%}
+{% set devicename="Line Mixer 6:2" -%}
+{% set shortname="linemixer62" -%}
+{% block groups %}
+Define Group	Page	Main	Level	Pan	AuxSend	Meter	MutesAndSolos	Index	Internal
+Define Group	Submenu	Mute	Solo
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=Level			Index
+Map	Button 1-3		Page=Pan			Index
+Map	Button 1-4		Page=Meter			Index
+Map	Button 1-5		Page=MutesAndSolos			Index
+Map	Button 2-8		Page=AuxSend			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main" 				Main
+{{ rm.include_menus(curpage="Main") -}}
+Map	UDVButton 7-3_8-3		Aux Pre/Post			Main
+Map	Fader 4		Aux Return Level			Main
+Map	Fader 6		Master Level			Main
+Map	Meter 7		Master Left Peak Meter			Main
+Map	Meter 8		Master Right Peak Meter			Main
+// Level
+Map	PageName		"Level" 				Level
+{{ rm.include_menus(curpage="Level", submenu="mutesolo") -}}
+Map	Fader 1		Channel 1 Level			Level
+Map	Fader 2		Channel 2 Level			Level
+Map	Fader 3		Channel 3 Level			Level
+Map	Fader 4		Channel 4 Level			Level
+Map	Fader 5		Channel 5 Level			Level
+Map	Fader 6		Channel 6 Level			Level
+// Pan
+Map	PageName		"Pan" 				Pan
+{{ rm.include_menus(curpage="Pan", submenu="mutesolo") -}}
+Map	Knob V1		Channel 1 Pan			Pan
+Map	Knob V2		Channel 2 Pan			Pan
+Map	Knob V3		Channel 3 Pan			Pan
+Map	Knob V4		Channel 4 Pan			Pan
+Map	Knob V5		Channel 5 Pan			Pan
+Map	Knob V6		Channel 6 Pan			Pan
+// Aux Send
+Map	PageName		"Aux Send" 				AuxSend
+{{ rm.include_menus(curpage="AuxSend", submenu="mutesolo") -}}
+Map	Fader 1		Channel 1 Aux Send			AuxSend
+Map	Fader 2		Channel 2 Aux Send			AuxSend
+Map	Fader 3		Channel 3 Aux Send			AuxSend
+Map	Fader 4		Channel 4 Aux Send			AuxSend
+Map	Fader 5		Channel 5 Aux Send			AuxSend
+Map	Fader 6		Channel 6 Aux Send			AuxSend
+// Meter
+Map	PageName		"Meter" 				Meter
+{{ rm.include_menus(curpage="Meter", submenu="mutesolo") -}}
+Map	Fader 1		Channel 1 Peak Meter			Meter
+Map	Fader 2		Channel 2 Peak Meter			Meter
+Map	Fader 3		Channel 3 Peak Meter			Meter
+Map	Fader 4		Channel 4 Peak Meter			Meter
+Map	Fader 5		Channel 5 Peak Meter			Meter
+Map	Fader 6		Channel 6 Peak Meter			Meter
+// MutesAndSolos
+Map	PageName		"MutesAndSolos" 				MutesAndSolos
+{{ rm.include_menus(curpage="MutesAndSolos") -}}
+Map	Button 1-1		Channel 1 Mute			MutesAndSolos
+Map	Button 1-2		Channel 2 Mute			MutesAndSolos
+Map	Button 1-3		Channel 3 Mute			MutesAndSolos
+Map	Button 1-4		Channel 4 Mute			MutesAndSolos
+Map	Button 1-5		Channel 5 Mute			MutesAndSolos
+Map	Button 1-6		Channel 6 Mute			MutesAndSolos
+Map	Button 2-1		Channel 1 Solo			MutesAndSolos
+Map	Button 2-2		Channel 2 Solo			MutesAndSolos
+Map	Button 2-3		Channel 3 Solo			MutesAndSolos
+Map	Button 2-4		Channel 4 Solo			MutesAndSolos
+Map	Button 2-5		Channel 5 Solo			MutesAndSolos
+Map	Button 2-6		Channel 6 Solo			MutesAndSolos
+{% endblock main %}

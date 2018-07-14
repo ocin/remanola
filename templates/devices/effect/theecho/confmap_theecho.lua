@@ -1,5 +1,8 @@
 	["The Echo"]={
 		["Default"]={
+{% if lptype == "pro" %}
+{% include "devices/effect/theecho/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Index"]={
 		},
@@ -28,16 +31,16 @@
 			["Fader 7"]={template="FAmount"},
 		},
 		["Color"]={
-			["Fader 2"]={template="FAMber"},
-			["UDVButton 1-3_2-3"]={template="UDAmount"},
+			["Fader 2"]={template="FAmount"},
+			["UDVButton 1-3_2-3"]={template="UDEffect"},
 			["Button 1-5"]={template="BYellowOnOff"},
-			["Fader 5"]={template="FFreq"},
-			["Fader 6"]={template="FEffect"},
+			["Fader 6"]={template="FFreq"},
+			["Fader 7"]={template="FEffect"},
 		},
 		["Modulation"]={
-			["Knob V2"]={template="FMisc"},
+			["Knob V2"]={template="FEnv"},
 			["Fader 3"]={template="FEffect"},
 			["Fader 5"]={template="FFreq"},
-			["Fader 6"]={template="FMisc"},
+			["Fader 6"]={template="FLFO"},
 		},
 	},

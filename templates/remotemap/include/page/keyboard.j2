@@ -1,6 +1,8 @@
+{% import "remotemap/include/macros.j2" as rm with context %}
 Map	Button C6		Page=Keyboard
 // Keyboard
 Map	PageName		"Keyboard"			Keyboard	
+{{ rm.include_menus(curpage="Keyboard") -}}
 {% if lptype == "pro" %}
 Map	Button A1		Layout=Kbd			Keyboard
 Map	Button A2		Layout=Drum			Keyboard

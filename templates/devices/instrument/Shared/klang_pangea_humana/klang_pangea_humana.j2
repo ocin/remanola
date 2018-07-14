@@ -2,18 +2,18 @@
 {% set show_pitch_bend_range=true -%}
 {% set baseshortname="Shared/klang_pangea_humana" -%}
 {% set shortname="klang_pangea_humana" -%}
+{% set devicetype="instrument" -%}
 {# End Variables -#}
 {% include "remotemap/include/device/scope.j2" %}
-Define Group	Page	Main	Instrument	Filter	FilterEnv	Amp	Delay	Reverb	ModWheelContr	Index	Keyboard	Internal
+Define Group	Page	Main	Perf	Instrument	Filter	FilterEnv	Amp	Delay	Reverb	Index	Keyboard	Internal
 Define Group	TempoSync	Free	Sync
-{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
+{% include "remotemap/include/device/instrument.j2" %}
 {% import "remotemap/include/macros.j2" as rm with context %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-2		Page=Amp			Index
-Map	Button 1-5		Page=ModWheelContr			Index
-Map	Button 1-7		Page=Keyboard			Index
+Map	Button 1-5		Page=Perf			Index
 Map	Button 2-1		Page=Instrument			Index
 Map	Button 2-5		Page=Filter			Index
 Map	Button 2-6		Page=FilterEnv			Index
@@ -23,8 +23,20 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 			Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	UDVButton 7-1_8-1		Pitch_Bend_Range			Main
 Map	Fader 8		Master_Volume			Main
+// Perf
+Map	PageName		"Perf" 			Perf
+{{ rm.include_menus(curpage="Perf") -}}
+Map	UDVButton 7-1_8-1		Pitch_Bend_Range			Perf
+{% if devicename == "Klang" %}
+Map	Fader 2		Mod Wheel to Sample Start			Perf
+Map	Fader 3		Mod Wheel to Filter Cutoff			Perf
+Map	Fader 4		Mod Wheel to Amp Level			Perf
+{% else %}
+Map	Fader 2		ModWheel_to_SampleStart			Perf
+Map	Fader 3		ModWheel_to_Filter_Cutoff			Perf
+Map	Fader 4		ModWheel_to_Amp_Level			Perf
+{% endif %}
 // Instrument
 Map	PageName		"Instrument" 			Instrument
 {{ rm.include_menus(curpage="Instrument") -}}
@@ -40,7 +52,7 @@ Map	Button 1-1		Filter_On			Filter
 Map	UDVButton 1-2_2-2		Filter_Type			Filter
 Map	Fader 3		Filter_Cutoff			Filter
 Map	Fader 4		Filter_Reso			Filter
-Map	Fader 6		Filter_Env			Filter
+Map	Fader 5		Filter_Env			Filter
 Map	Fader 7		Filter_Velocity			Filter
 Map	Fader 8		Filter_KeyFollow			Filter
 // FilterEnv
@@ -81,9 +93,3 @@ Map	Fader 3		Reverb_PreDelay			Reverb
 Map	Fader 5		Reverb_HighDamp			Reverb
 Map	Fader 6		Reverb_LowDamp			Reverb
 Map	Fader 8		Reverb{{ soundiron_wtf_reverb }}Amount			Reverb
-// ModWheelContr
-Map	PageName		"Mod Wheel" 			ModWheelContr
-{{ rm.include_menus(curpage="ModWheelContr") -}}
-Map	Fader 2		Mod Wheel to Sample Start			ModWheelContr
-Map	Fader 3		Mod Wheel to Filter Cutoff			ModWheelContr
-Map	Fader 4		Mod Wheel to Amp Level			ModWheelContr

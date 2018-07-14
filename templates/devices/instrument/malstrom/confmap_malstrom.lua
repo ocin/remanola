@@ -3,16 +3,23 @@
 {% include "devices/instrument/malstrom/"+lptype+"/confmap_mainmenu.lua" %}
 		},
 		["Main"]={
-			["Fader 3"]={template="FMisc"},
-			["Button 8-2"]={template="BYellowOnOff"},
-			["Fader 7"]={template="FMisc"},
-			["Fader 8"]={template="FAmount"},
+			["Fader 7"]={template="FEffect"},
+			["Fader 8"]={template="FGain"},
+		},
+		["Perf"]={
+			["UDVButton 7-2_8-2"]={template="FPerf"},
+			["Button 8-3"]={template="BYellowOnOff"},
+			["Fader 4"]={template="FPerf"},
+			["UDVButton 7-5_8-5"]={template="FPerf"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/malstrom/pro/confmap_submenu_perf.lua" %}
+{% endif %}
 		},
 		["Osc *"]={
-			["Button 8-1"]={template="BYellowOnOff"},
-			["Fader 2"]={template="FAmount"},
-			["Fader 3"]={template="FAmount"},
-			["Knob V4"]={template="FAmount"},
+			["Button 1-1"]={template="BYellowOnOff"},
+			["Fader 2"]={template="FOsc"},
+			["Fader 3"]={template="FOsc"},
+			["Knob V4"]={template="FOsc"},
 			["UDVButton 7-5_8-5"]={template="UDFreq"},
 			["UDVButton 7-6_8-6"]={template="UDFreq"},
 			["UDVButton 7-7_8-7"]={template="UDFreq"},
@@ -27,11 +34,11 @@
 			["Button 7-8"]={template="BYellowOnOff"},
 		},
 		["Osc * Env"]={
-			["Fader 3"]={template="FAmount"},
-			["Fader 4"]={template="FAmount"},
-			["Fader 5"]={template="FAmount"},
-			["Fader 6"]={template="FAmount"},
-			["Fader 8"]={template="FGain"},
+			["Fader 3"]={template="FOsc"},
+			["Fader 4"]={template="FOsc"},
+			["Fader 5"]={template="FOsc"},
+			["Fader 6"]={template="FOsc"},
+			["Fader 8"]={template="FVol"},
 {% if lptype == "mini" %}
 {% include "devices/instrument/malstrom/mini/confmap_mainmenu_osc.lua" %}
 {% else %}
@@ -39,17 +46,18 @@
 {% endif %}
 		},
 		["Filter *"]={
+			["Button 1-1"]={template="BYellowOnOff"},
+			["UDVButton 1-2_2-2"]={template="UDFreq", inverted=true},
+			["Fader 3"]={template="FEffect"},
+			["Fader 4"]={template="FFreq"},
+			["Button 8-5"]={template="BYellowOnOff"},
+			["Button 8-6"]={template="BYellowOnOff"},
+			["Button 1-6"]={template="BYellowOnOff"},
 {% if lptype == "mini" %}
 {% include "devices/instrument/malstrom/mini/confmap_mainmenu_filter.lua" %}
 {% else %}
 {% include "devices/instrument/malstrom/pro/confmap_submenu_filter.lua" %}
 {% endif %}
-			["Button 1-2"]={template="BYellowOnOff"},
-			["UDVButton 7-4_8-4"]={template="UDFreq", inverted=true},
-			["Button 8-5"]={template="BYellowOnOff"},
-			["Button 8-6"]={template="BYellowOnOff"},
-			["Fader 7"]={template="FFreq"},
-			["Fader 8"]={template="FEffect"},
 		},
 		["Filter Env"]={
 			["Fader 3"]={template="FFreq"},
@@ -57,36 +65,62 @@
 			["Fader 5"]={template="FFreq"},
 			["Fader 6"]={template="FFreq"},
 			["Button 8-7"]={template="BYellowOnOff"},
-			["Fader 8"]={template="FAmount"},
+			["Fader 8"]={template="FEnv"},
+{% if lptype == "mini" %}
+{% include "devices/instrument/malstrom/mini/confmap_mainmenu_filter.lua" %}
+{% else %}
+{% include "devices/instrument/malstrom/pro/confmap_submenu_filter.lua" %}
+{% endif %}
 		},
 		["Mod *"]={
+			["Button 1-1"]={template="BYellowOnOff"},
+			["UDVButton 1-2_2-2"]={template="UDLFO"},
+			["Fader 3"]={template="FFreq"},
+			["Button 1-8"]={template="BYellowOnOff"},
+			["Button 2-8"]={template="BYellowOnOff"},
+			["UDVButton 7-8_8-8"]={template="UDLFO"},
 {% if lptype == "mini" %}
 {% include "devices/instrument/malstrom/mini/confmap_mainmenu_mod.lua" %}
 {% else %}
 {% include "devices/instrument/malstrom/pro/confmap_submenu_mod.lua" %}
 {% endif %}
-			["Button 5-1"]={template="BLFOPage"},
-			["Button 6-1"]={template="BLFOPage"},
-			["Button 1-2"]={template="BYellowOnOff"},
-			["UDVButton 3-2_4-2"]={template="UDMisc"},
-			["Fader 3"]={template="FFreq"},
-			["Knob V4"]={template="FMisc"},
-			["Knob V5"]={template="FMisc"},
-			["Knob V6"]={template="FMisc"},
-			["Knob V7"]={template="FMisc"},
-			["Button 1-8"]={template="BYellowOnOff"},
-			["Button 2-8"]={template="BYellowOnOff"},
-			["UDVButton 7-8_8-8"]={template="UDMisc"},
+		},
+		["Mod A"]={
+			["Knob V4"]={template="FOsc"},
+			["Knob V5"]={template="FOsc"},
+			["Knob V6"]={template="FOsc"},
+		},
+		["Mod B"]={
+			["Knob V4"]={template="FOsc"},
+			["Knob V5"]={template="FVol"},
+			["Knob V6"]={template="FFreq"},
+			["Knob V7"]={template="FLFO"},
 		},
 		["Shaper"]={
 			["Button 1-2"]={template="BYellowOnOff"},
-			["UDVButton 5-2_6-2"]={template="FEffect", inverted=true},
+			["UDVButton 1-3_2-3"]={template="FEffect", inverted=true},
 			["Fader 8"]={template="FEffect"},
 		},
 		["Velocity"]={
-			["UDVButton 7-8_8-8"]={template="UDMisc"},
+			["Knob V2"]={template="FOsc"},
+			["Knob V3"]={template="FOsc"},
+			["Knob V4"]={template="FFreq"},
+			["Knob V5"]={template="FVol"},
+			["Knob V6"]={template="FOsc"},
+			["Knob V7"]={template="FLFO"},
+			["UDVButton 7-8_8-8"]={template="UDPerf"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/malstrom/pro/confmap_submenu_perf.lua" %}
+{% endif %}
 		},
 		["ModWheel"]={
-			["UDVButton 7-8_8-8"]={template="UDMisc"},
+			["Knob V2"]={template="FOsc"},
+			["Knob V3"]={template="FOsc"},
+			["Knob V4"]={template="FFreq"},
+			["Knob V5"]={template="FLFO"},
+			["UDVButton 7-8_8-8"]={template="UDPerf"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/malstrom/pro/confmap_submenu_perf.lua" %}
+{% endif %}
 		},
 	},

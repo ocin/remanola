@@ -1,3 +1,4 @@
+{% extends "devices/instrument/instrument.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Thor Polysonic Synthesizer" -%}
 {% set devicename="Thor" -%}
@@ -9,13 +10,13 @@
 {% set amppagedefault="Amp" -%}
 {% set modpagedefault="LFO1" -%}
 {# End Variables -#}
-{% include "remotemap/include/device/scope.j2" %}
-Define Group	Page	Main	Osc1	Osc2	Osc3	Mixer	Filter1	Filter2	Filter3	FilterEnv	Amp	AmpEnv	ModEnv	GlobalEnv	LFO1	LFO2	Seq	Effects	Shaper	Delay	Chorus	Index	Keyboard	Internal
+{% block groups %}
+Define Group	Page	Main	Perf	Osc1	Osc2	Osc3	Mixer	Filter1	Filter2	Filter3	FilterEnv	Amp	AmpEnv	ModEnv	GlobalEnv	LFO1	LFO2	Seq	Effects	Shaper	Delay	Chorus	Index	Keyboard	Internal
 Define Group	OscType	Analog	Wavetable	Phase	FM	Multi	Noise	Off
 Define Group	FilterType	LP	State	Comb	Formant	Bypass
 Define Group	SeqEditMode	Note	Velocity	GateLen	StepDur	Curve1	Curve2
-{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% endblock groups %}
+{% block main %}
 Map	PlayingStep		Step Sequencer Step Index
 // Index
 Map	PageName		"Index" 				Index
@@ -23,8 +24,8 @@ Map	Button 1-1		Page=Main			Index
 Map	Button 1-2		Page=Mixer			Index
 Map	Button 1-3		Page=Amp			Index
 Map	Button 1-4		Page=AmpEnv			Index
-Map	Button 1-5		Page=Seq			Index
-Map	Button 1-7		Page=Keyboard			Index
+Map	Button 1-5		Page=Perf			Index
+Map	Button 1-6		Page=Seq			Index
 Map	Button 2-1		Page=Osc1			Index
 Map	Button 3-1		Page=Osc2			Index
 Map	Button 4-1		Page=Osc3			Index
@@ -44,18 +45,21 @@ Map	Button C7		Page=Internal			Index
 // Main page
 Map	PageName		"Main" 				Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	UDVButton 1-2_2-2		Polyphony 			Main
-Map	UDVButton 3-2_4-2		Release Polyphony 			Main
-Map	UDVButton 5-2_6-2		Key Mode 			Main
-Map	UDVButton 7-2_8-2		Portamento Mode 			Main
-Map	Fader 3		Portamento			Main
-Map	Button 1-4		Note Trigger MIDI 			Main
-Map	Button 2-4		Note Trigger Step Seq 			Main
-Map	Button 8-4		Button 1 			Main
-Map	Button 8-5		Button 2 			Main
-Map	Fader 6		Rotary 1 			Main
-Map	Fader 7		Rotary 2 			Main
+Map	Button 8-2		Button 1 			Main
+Map	Button 8-3		Button 2 			Main
+Map	Fader 4		Rotary 1 			Main
+Map	Fader 5		Rotary 2 			Main
 Map	Fader 8		Master Level 			Main
+// Perf page
+Map	PageName		"Perf" 				Perf
+{{ rm.include_menus(curpage="Perf") -}}
+Map	UDVButton 1-2_2-2		Polyphony 			Perf
+Map	UDVButton 3-2_4-2		Release Polyphony 			Perf
+Map	UDVButton 5-2_6-2		Key Mode 			Perf
+Map	UDVButton 7-2_8-2		Portamento Mode 			Perf
+Map	Fader 3		Portamento			Perf
+Map	Button 1-4		Note Trigger MIDI 			Perf
+Map	Button 2-4		Note Trigger Step Seq 			Perf
 {% for oscnum in range(1,4) -%}
 // Osc {{ oscnum }}
 Map	PageName		"Osc {{ oscnum }}" 				Osc{{ oscnum }}
@@ -136,6 +140,11 @@ Map	Knob V3		Osc 1 And 2 Balance				Mixer
 Map	Fader 4		Osc 1 And 2 Level				Mixer
 Map	Fader 5		Osc 3 Level				Mixer
 {% for filternum in range(1,4) -%}
+{% if filternum == 3 %}
+{% set globalenv="Global " %}
+{% else %}
+{% set globalenv="" %}
+{% endif %}
 // Filter {{ filternum }}
 Map	PageName		"Filter {{ filternum }}" 				Filter{{ filternum }}
 {{ rm.include_menus(curpage="Filter"+filternum|string, mainmenu_mini="filter", submenu="filter", filterpage="Filter"+filternum|string) -}}
@@ -152,8 +161,8 @@ Map	Fader 4		Filter {{ filternum }} Freq			Filter{{ filternum }}	LP
 Map	Fader 5		Filter {{ filternum }} Res			Filter{{ filternum }}	LP
 Map	Button 1-6		Filter {{ filternum }} Self Osc			Filter{{ filternum }}	LP
 Map	UDVButton 3-6_4-6		Filter {{ filternum }} Param X			Filter{{ filternum }}	LP
-Map	Button 1-8		Filter {{ filternum }} Env Invert			Filter{{ filternum }}	LP
-Map	UDVButton 3-8_4-8		Filter {{ filternum }} Env Amount	5		Filter{{ filternum }}	LP
+Map	Button 1-8		Filter {{ filternum }} {{ globalenv }}Env Invert			Filter{{ filternum }}	LP
+Map	UDVButton 3-8_4-8		Filter {{ filternum }} {{ globalenv }}Env Amount	5		Filter{{ filternum }}	LP
 Map	UDVButton 5-8_6-8		Filter {{ filternum }} Velocity	5		Filter{{ filternum }}	LP
 Map	UDVButton 7-8_8-8		Filter {{ filternum }} Kbd	5		Filter{{ filternum }}	LP
 // State Variable
@@ -164,8 +173,8 @@ Map	Fader 5		Filter {{ filternum }} Res			Filter{{ filternum }}	State
 Map	Button 1-6		Filter {{ filternum }} Self Osc			Filter{{ filternum }}	State
 Map	UDVButton 3-6_4-6		Filter {{ filternum }} Param X			Filter{{ filternum }}	State
 Map	Fader 7		Filter {{ filternum }} Param Y			Filter{{ filternum }}	State
-Map	Button 1-8		Filter {{ filternum }} Env Invert			Filter{{ filternum }}	State
-Map	UDVButton 3-8_4-8		Filter {{ filternum }} Env Amount	5		Filter{{ filternum }}	State
+Map	Button 1-8		Filter {{ filternum }} {{ globalenv }}Env Invert			Filter{{ filternum }}	State
+Map	UDVButton 3-8_4-8		Filter {{ filternum }} {{ globalenv }}Env Amount	5		Filter{{ filternum }}	State
 Map	UDVButton 5-8_6-8		Filter {{ filternum }} Velocity	5		Filter{{ filternum }}	State
 Map	UDVButton 7-8_8-8		Filter {{ filternum }} Kbd	5		Filter{{ filternum }}	State
 // Comb
@@ -174,8 +183,8 @@ Map	Fader 3		Filter {{ filternum }} Drive			Filter{{ filternum }}	Comb
 Map	Fader 4		Filter {{ filternum }} Freq			Filter{{ filternum }}	Comb
 Map	Fader 5		Filter {{ filternum }} Res			Filter{{ filternum }}	Comb
 Map	UDVButton 3-6_4-6		Filter {{ filternum }} Param X			Filter{{ filternum }}	Comb
-Map	Button 1-8		Filter {{ filternum }} Env Invert			Filter{{ filternum }}	Comb
-Map	UDVButton 3-8_4-8		Filter {{ filternum }} Env Amount	5		Filter{{ filternum }}	Comb
+Map	Button 1-8		Filter {{ filternum }} {{ globalenv }}Env Invert			Filter{{ filternum }}	Comb
+Map	UDVButton 3-8_4-8		Filter {{ filternum }} {{ globalenv }}Env Amount	5		Filter{{ filternum }}	Comb
 Map	UDVButton 5-8_6-8		Filter {{ filternum }} Velocity	5		Filter{{ filternum }}	Comb
 Map	UDVButton 7-8_8-8		Filter {{ filternum }} Kbd	5		Filter{{ filternum }}	Comb
 // Formant
@@ -184,8 +193,8 @@ Map	Fader 3		Filter {{ filternum }} Drive			Filter{{ filternum }}	Formant
 Map	Fader 4		Filter {{ filternum }} Param X			Filter{{ filternum }}	Formant
 Map	Fader 6		Filter {{ filternum }} Freq			Filter{{ filternum }}	Formant
 Map	Fader 7		Filter {{ filternum }} Res			Filter{{ filternum }}	Formant
-Map	Button 1-8		Filter {{ filternum }} Env Invert			Filter{{ filternum }}	Formant
-Map	UDVButton 3-8_4-8		Filter {{ filternum }} Env Amount	5		Filter{{ filternum }}	Formant
+Map	Button 1-8		Filter {{ filternum }} {{ globalenv }}Env Invert			Filter{{ filternum }}	Formant
+Map	UDVButton 3-8_4-8		Filter {{ filternum }} {{ globalenv }}Env Amount	5		Filter{{ filternum }}	Formant
 Map	UDVButton 5-8_6-8		Filter {{ filternum }} Velocity	5		Filter{{ filternum }}	Formant
 Map	UDVButton 7-8_8-8		Filter {{ filternum }} Kbd	5		Filter{{ filternum }}	Formant
 {% endfor -%}
@@ -224,8 +233,8 @@ Map	Fader 6		Amp Env Release				AmpEnv
 // ModEnv
 Map	PageName		"Mod Env" 				ModEnv
 {{ rm.include_menus(curpage="ModEnv", submenu="mod", modpage="ModEnv") -}}
-Map	Button 2-2		Mod Env Gate Trig On				ModEnv
-Map	Button 3-2		Mod Env Tempo Sync				ModEnv
+Map	Button 1-1		Mod Env Gate Trig On				ModEnv
+Map	Button 2-1		Mod Env Tempo Sync				ModEnv
 Map	Fader 3		Mod Env Delay				ModEnv
 Map	Fader 4		Mod Env Attack				ModEnv
 Map	Fader 5		Mod Env Decay				ModEnv
@@ -234,30 +243,30 @@ Map	Button 8-7		Mod Env Loop				ModEnv
 // GlobalEnv
 Map	PageName		"Global Env" 				GlobalEnv
 {{ rm.include_menus(curpage="GlobalEnv", submenu="mod", modpage="GlobalEnv") -}}
-Map	Button 2-1		Global Env Gate Trig On				GlobalEnv
-Map	Button 3-1		Global Env Tempo Sync				GlobalEnv
+Map	Button 1-1		Global Env Gate Trig On				GlobalEnv
+Map	Button 2-1		Global Env Tempo Sync				GlobalEnv
+Map	Button 4-1		Global Env Loop				GlobalEnv
 Map	Fader 2		Global Env Delay				GlobalEnv
 Map	Fader 3		Global Env Attack				GlobalEnv
 Map	Fader 4		Global Env Hold				GlobalEnv
 Map	Fader 5		Global Env Decay				GlobalEnv
 Map	Fader 6		Global Env Sustain				GlobalEnv
 Map	Fader 7		Global Env Release				GlobalEnv
-Map	Button 8-8		Global Env Loop				GlobalEnv
 // LFO1
 Map	PageName		"LFO 1" 				LFO1
 {{ rm.include_menus(curpage="LFO1", submenu="mod", modpage="LFO1") -}}
-Map	UDVButton 3-1_4-1		LFO 1 Waveform				LFO1
-Map	Button 6-1		LFO 1 Key Sync				LFO1
-Map	Button 7-1		LFO 1 Tempo Sync				LFO1
+Map	UDVButton 1-2_2-2		LFO 1 Waveform				LFO1
+Map	Button 1-1		LFO 1 Key Sync				LFO1
+Map	Button 2-1		LFO 1 Tempo Sync				LFO1
 Map	Fader 3		LFO 1 Rate				LFO1
 Map	Fader 4		LFO 1 Delay				LFO1
 Map	Fader 5		LFO 1 KbdFollow				LFO1
 // LFO2
 Map	PageName		"LFO 2" 				LFO2
 {{ rm.include_menus(curpage="LFO2", submenu="mod", modpage="LFO2") -}}
-Map	UDVButton 3-1_4-1		LFO 2 Waveform				LFO2
-Map	Button 6-1		LFO 2 Key Sync				LFO2
-Map	Button 7-1		LFO 2 Tempo Sync				LFO2
+Map	UDVButton 1-2_2-2		LFO 2 Waveform				LFO2
+Map	Button 1-1		LFO 2 Key Sync				LFO2
+Map	Button 2-1		LFO 2 Tempo Sync				LFO2
 Map	Fader 3		LFO 2 Rate				LFO2
 Map	Fader 4		LFO 2 Delay				LFO2
 // Step Sequencer 1
@@ -331,25 +340,26 @@ Map	Button 8-3		Chorus On			Effects
 Map	PageName		"Shaper" 				Shaper
 {{ rm.include_menus(curpage="Shaper", submenu="effect", mainmenu_mini="effects") -}}
 Map	Button 1-1		Shaper On				Shaper
-Map	UDVButton 5-2_6-2		Shaper Type				Shaper
+Map	UDVButton 1-2_2-2		Shaper Type				Shaper
 Map	Fader 3		Shaper Drive				Shaper
 Map	UDVButton 7-4_8-4		Shaper Output Dest			Shaper
 // Delay
 Map	PageName		"Delay" 				Delay
 {{ rm.include_menus(curpage="Delay", submenu="effect", mainmenu_mini="effects") -}}
 Map	Button 1-1		Delay On				Delay
-Map	Button 4-1		Delay Sync				Delay
-Map	Fader 3		Delay Time				Delay
-Map	Fader 4		Delay Feedback				Delay
+Map	Button 8-1		Delay Sync				Delay
+Map	Fader 2		Delay Time				Delay
+Map	Fader 3		Delay Feedback				Delay
 Map	Fader 5		Delay Rate				Delay
 Map	Fader 6		Delay Amt				Delay
-Map	Fader 7		Delay Dry Wet				Delay
+Map	Fader 8		Delay Dry Wet				Delay
 // Chorus
 Map	PageName		"Chorus" 				Chorus
 {{ rm.include_menus(curpage="Chorus", submenu="effect", mainmenu_mini="effects") -}}
 Map	Button 1-1		Chorus On				Chorus
-Map	Fader 3		Chorus Delay				Chorus
-Map	Fader 4		Chorus Feedback				Chorus
+Map	Fader 2		Chorus Delay				Chorus
+Map	Fader 3		Chorus Feedback				Chorus
 Map	Fader 5		Chorus Rate				Chorus
 Map	Fader 6		Chorus Amt				Chorus
-Map	Fader 7		Chorus Dry Wet				Chorus
+Map	Fader 8		Chorus Dry Wet				Chorus
+{% endblock main %}

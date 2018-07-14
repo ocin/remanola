@@ -1,9 +1,8 @@
+{% extends "devices/effect/effect.j2" %}
 {% set deviceman="Softube" -%}
 {% set devicescope="com.softube.re.SaturationKnob" -%}
 {% set devicename="Saturation Knob" -%}
-{% include "remotemap/include/device/scope.j2" %}
-Define Group	Page	Main	Index	Internal
-{% include "remotemap/include/device/effect.j2" %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -13,3 +12,4 @@ Map	PageName		"Main" 				Main
 Map	UDVButton 1-1_2-1		Enabled			Main
 Map	Fader 3		Saturation			Main
 Map	UDVButton 1-4_2-4		Saturation Type			Main
+{% endblock main %}

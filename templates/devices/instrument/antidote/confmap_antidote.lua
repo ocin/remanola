@@ -10,27 +10,38 @@
 			["Button 8-5"]={template="BPerformancePage"},
 		},
 		["Main"]={
-			["Fader 3"]={template="FMisc"},
-			["Fader 8"]={template="FGain"},
+			["Fader 8"]={template="FVol"},
+		},
+		["Perf"]={
+			["UDVButton 7-2_8-2"]={template="UDOsc"},
+			["Fader 3"]={template="FPerf"},
 		},
 		["Osc *"]={
-			["UDVButton 1-2_2-2"]={template="UDAmount", inverted=true},
-			["UDVButton 3-2_4-2"]={template="UDAmount", inverted=true},
-			["UDVButton 5-2_6-2"]={template="UDAmount", inverted=true},
+			["UDVButton 1-2_2-2"]={template="UDOsc", inverted=true},
+			["UDVButton 1-3_2-3"]={template="UDOsc"},
+			["UDVButton 1-4_2-4"]={template="UDOsc"},
+			["Fader 5"]={template="FOsc"},
+			["Fader 6"]={template="FOsc"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/antidote/pro/confmap_submenu_osc.lua" %}
+{% endif %}
+		},
+		["OscMod *"]={
+			["UDVButton 1-2_2-2"]={template="UDFreq"},
 			["UDVButton 1-3_2-3"]={template="UDFreq"},
-			["UDVButton 3-3_4-3"]={template="UDFreq"},
-			["UDVButton 5-3_6-3"]={template="UDFreq"},
-			["Fader 4"]={template="FAmount"},
-			["Fader 5"]={template="FAmount"},
-			["Fader 6"]={template="FAmount"},
-			["Fader 7"]={template="FMisc"},
-			["Knob V8"]={template="FGain"},
+			["UDVButton 1-4_2-4"]={template="UDFreq"},
+			["Fader 5"]={template="FEffect"},
+			["Fader 7"]={template="FPerf"},
+			["Knob V8"]={template="FVol"},
+{% if lptype == "pro" %}
+{% include "devices/instrument/antidote/pro/confmap_submenu_osc.lua" %}
+{% endif %}
 		},
 		["Mixer"]={
-			["Fader 2"]={template="FGain"},
-			["Fader 3"]={template="FGain"},
-			["Fader 4"]={template="FAmount"},
-			["Fader 5"]={template="FAmount"},
+			["Fader 2"]={template="FEffect"},
+			["Fader 3"]={template="FEffect"},
+			["Fader 4"]={template="FGain"},
+			["Fader 5"]={template="FGain"},
 			["Fader 6"]={template="FMisc"},
 {% include "devices/instrument/antidote/pro/confmap_submenu_amp.lua" %}
 		},
@@ -38,20 +49,25 @@
 			["UDVButton 1-2_2-2"]={template="UDFreq", inverted=true},
 			["Fader 3"]={template="FFreq"},
 			["Fader 4"]={template="FEffect"},
-			["Fader 4"]={template="FMisc"},
+			["Fader 6"]={template="FEnv"},
+			["Fader 8"]={template="FPerf"},
+{% if lptype == "pro" %}
 {% include "devices/instrument/antidote/pro/confmap_submenu_filter.lua" %}
+{% endif %}
 		},
 		["Filter Envelope"]={
-			["Fader 2"]={template="FAmount"},
-			["Fader 3"]={template="FFreq"},
+			["Fader 2"]={template="FEnv"},
 			["Fader 4"]={template="FFreq"},
 			["Fader 5"]={template="FFreq"},
 			["Fader 6"]={template="FFreq"},
+			["Fader 7"]={template="FFreq"},
+{% if lptype == "pro" %}
 {% include "devices/instrument/antidote/pro/confmap_submenu_filter.lua" %}
+{% endif %}
 		},
 		["Effects"]={
 {% if lptype == "mini" %}
-			["Fader 2"]={template="FAmount"},
+			["Fader 2"]={template="FEffect"},
 			["Button 2-7"]={template="BGreenOnOff"},
 			["Button 3-7"]={template="BGreenOnOff"},
 			["Button 4-7"]={template="BGreenOnOff"},
@@ -67,7 +83,7 @@
 			["Button 8-5"]={template="BGreenOnOff"},
 			["Button 8-6"]={template="BGreenOnOff"},
 			["Button 8-7"]={template="BGreenOnOff"},
-			["Fader 8"]={template="FAmount"},
+			["Fader 8"]={template="FEffect"},
 {% endif %}
 {% include "devices/instrument/antidote/"+lptype+"/confmap_submenu_effects.lua" %}
 		},
@@ -102,7 +118,7 @@
 			["Fader 2"]={template="FFreq"},
 			["Fader 3"]={template="FEffect"},
 			["Fader 4"]={template="FEffect"},
-			["Fader 5"]={template="FMisc"},
+			["Fader 5"]={template="FLFO"},
 			["Fader 6"]={template="FEffect"},
 			["Fader 7"]={template="FEffect"},
 {% include "devices/instrument/antidote/"+lptype+"/confmap_submenu_effects.lua" %}
@@ -112,7 +128,7 @@
 			["Fader 2"]={template="FFreq"},
 			["Fader 3"]={template="FFreq"},
 			["Fader 4"]={template="FEffect"},
-			["Fader 5"]={template="FMisc"},
+			["Fader 5"]={template="FEffect"},
 			["Fader 6"]={template="FEffect"},
 			["Fader 7"]={template="FEffect"},
 {% include "devices/instrument/antidote/"+lptype+"/confmap_submenu_effects.lua" %}
@@ -125,7 +141,7 @@
 			["Fader 2"]={template="FEffect"},
 			["Fader 3"]={template="FEffect"},
 			["Fader 5"]={template="FFreq"},
-			["Fader 6"]={template="FAmount"},
+			["Fader 6"]={template="FLFO"},
 			["Fader 7"]={template="FEffect"},
 {% include "devices/instrument/antidote/"+lptype+"/confmap_submenu_effects.lua" %}
 		},
@@ -136,7 +152,7 @@
 			["Fader 3"]={template="FFreq"},
 			["Fader 4"]={template="FFreq"},
 			["Fader 5"]={template="FFreq"},
-			["Fader 6"]={template="FMisc"},
+			["Fader 6"]={template="FLFO"},
 			["Fader 7"]={template="FEffect"},
 {% include "devices/instrument/antidote/"+lptype+"/confmap_submenu_effects.lua" %}
 		},
@@ -144,8 +160,8 @@
 			["Button 1-1"]={template="BGreenOnOff"},
 			["UDVButton 3-1_4-1"]={template="UDEffect"},
 			["Fader 2"]={template="FEffect"},
-			["Fader 4"]={template="FAmount"},
-			["Fader 5"]={template="FAmount"},
+			["Fader 4"]={template="FEffect"},
+			["Fader 5"]={template="FEffect"},
 			["Fader 7"]={template="FEffect"},
 {% include "devices/instrument/antidote/"+lptype+"/confmap_submenu_effects.lua" %}
 		},
@@ -157,34 +173,35 @@
 			["Button 1-1"]={template="BBRedOnOff"},
 			["Button 1-3"]={template="BBBlueOnOff"},
 {% endif %}
+                        ["UDVButton 3-1_4-1"]={template="UDLFO", inverted=true},
+                        ["UDVButton 7-1_8-1"]={template="UDLFO", inverted=true},
                         ["Fader 4"]={template="FFreq"},
                         ["UDVButton 7-4_8-4"]={template="UDFreq"},
-                        ["Knob V5"]={template="FAmount"},
-                        ["UDVButton 3-1_4-1"]={template="UDMisc", inverted=true},
-                        ["UDVButton 7-1_8-1"]={template="UDMisc", inverted=true},
+                        ["Knob V5"]={template="FLFO"},
 {% include "devices/instrument/antidote/pro/confmap_submenu_mod.lua" %}
 		},
 		["Amp Env"]={
-                        ["Fader 3"]={template="FGain"},
-                        ["Fader 4"]={template="FGain"},
-                        ["Fader 5"]={template="FGain"},
-                        ["Fader 6"]={template="FGain"},
+                        ["Fader 3"]={template="FVol"},
+                        ["Fader 4"]={template="FVol"},
+                        ["Fader 5"]={template="FVol"},
+                        ["Fader 6"]={template="FVol"},
 {% include "devices/instrument/antidote/pro/confmap_submenu_amp.lua" %}
 		},
 		["Mod Env"]={
-                        ["UDVButton 3-1_4-1"]={template="UDMisc"},
-                        ["Fader 3"]={template="FMisc"},
-                        ["Fader 4"]={template="FMisc"},
-                        ["Fader 5"]={template="FMisc"},
-                        ["Fader 5"]={template="FMisc"},
-                        ["Knob V8"]={template="FAmount"},
+                        ["UDVButton 3-1_4-1"]={template="UDEnv", inverted=true},
+                        ["Fader 3"]={template="FEnv"},
+                        ["Fader 4"]={template="FEnv"},
+                        ["Fader 5"]={template="FEnv"},
+                        ["Fader 6"]={template="FEnv"},
+                        ["Knob V8"]={template="FEnv"},
 {% include "devices/instrument/antidote/pro/confmap_submenu_mod.lua" %}
 		},
 		["Arpeggiator"]={
-                        ["UDHButton 3-1_3-2"]={template="UDMisc"},
-                        ["UDHButton 5-1_5-2"]={template="UDMisc"},
+                        ["UDHButton 3-1_3-2"]={template="UDPerf"},
+                        ["UDHButton 5-1_5-2"]={template="UDPerf"},
                         ["UDHButton 6-1_6-2"]={template="UDFreq"},
-                        ["UDHButton 7-1_7-2"]={template="UDMisc"},
+                        ["UDHButton 7-1_7-2"]={template="UDFreq"},
+                        ["Knob V4"]={template="FPerf"},
                         ["Button 8-1"]={template="BGreenOnOff"},
 {% include "devices/instrument/antidote/pro/confmap_submenu_perf.lua" %}
 		},

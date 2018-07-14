@@ -1,4 +1,4 @@
-{% macro include_menus(curpage, submenu='UNDEFINED', mainmenu_mini='UNDEFINED', oscpage='UNDEFINED', osc1page='UNDEFINED', osc2page='UNDEFINED', perfpage='UNDEFINED', modpage='UNDEFINED', voicingpage='UNDEFINED', sectionpage='UNDEFINED', amppage='UNDEFINED', filterpage='UNDEFINED', effectpage='UNDEFINED', drumpage1='UNDEFINED', drumpage2='UNDEFINED', padpage1='UNDEFINED', padpage2='UNDEFINED', section='UNDEFINED', engnum='UNDEFINED', drumsubpage='UNDEFINED', drumedit='UNDEFINED') %}
+{% macro include_menus(curpage, submenu='UNDEFINED', mainmenu_mini='UNDEFINED', oscpage='UNDEFINED', osc1page='UNDEFINED', osc2page='UNDEFINED', perfpage='UNDEFINED', modpage='UNDEFINED', voicingpage='UNDEFINED', sectionpage='UNDEFINED', amppage='UNDEFINED', filterpage='UNDEFINED', effectpage='UNDEFINED', chanpage='UNDEFINED', levelpage='UNDEFINED', panpage='UNDEFINED', drumpage1='UNDEFINED', drumpage2='UNDEFINED', padpage1='UNDEFINED', padpage2='UNDEFINED', chanpage1='UNDEFINED', chanpage2='UNDEFINED', eqpage='UNDEFINED', sendpage='UNDEFINED', section='UNDEFINED', engnum='UNDEFINED', oscnum='UNDEFINED', drumsubpage='UNDEFINED', drumedit='UNDEFINED') %}
 	{% if oscpage == 'UNDEFINED' and oscpagedefault is defined -%}
 		{% set oscpage=oscpagedefault -%}
 	{% endif -%}
@@ -29,6 +29,15 @@
 	{% if effectpage == 'UNDEFINED' and effectpagedefault is defined -%}
 		{% set effectpage=effectpagedefault -%}
 	{% endif -%}
+	{% if chanpage == 'UNDEFINED' and chanpagedefault is defined -%}
+		{% set chanpage=chanpagedefault -%}
+	{% endif -%}
+	{% if levelpage == 'UNDEFINED' and levelpagedefault is defined -%}
+		{% set levelpage=levelpagedefault -%}
+	{% endif -%}
+	{% if panpage == 'UNDEFINED' and panpagedefault is defined -%}
+		{% set panpage=panpagedefault -%}
+	{% endif -%}
 	{% if drumpage1 == 'UNDEFINED' and drumpage1default is defined -%}
 		{% set drumpage1=drumpage1default -%}
 	{% endif -%}
@@ -40,6 +49,18 @@
 	{% endif -%}
 	{% if padpage2 == 'UNDEFINED' and padpage2default is defined -%}
 		{% set padpage2=padpage2default -%}
+	{% endif -%}
+	{% if chanpage1 == 'UNDEFINED' and chanpage1default is defined -%}
+		{% set chanpage1=chanpage1default -%}
+	{% endif -%}
+	{% if chanpage2 == 'UNDEFINED' and chanpage2default is defined -%}
+		{% set chanpage2=chanpage2default -%}
+	{% endif -%}
+	{% if eqpage == 'UNDEFINED' and eqpagedefault is defined -%}
+		{% set eqpage=eqpagedefault -%}
+	{% endif -%}
+	{% if sendpage == 'UNDEFINED' and sendpagedefault is defined -%}
+		{% set sendpage=sendpagedefault -%}
 	{% endif -%}
 	{% if baseshortname is defined %}
 		{% set lmshortname=baseshortname %}

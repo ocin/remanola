@@ -1,0 +1,126 @@
+{% extends "devices/utility/utility-nopatch.j2" %}
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="Mixer 14:2" -%}
+{% set devicename="Mixer 14:2" -%}
+{% set shortname="mixer142" -%}
+{# Variables -#}
+{% set chanpagedefault="Channel1-7" -%}
+{% set levelpagedefault="Level1-7" -%}
+{% set panpagedefault="Pan1-7" -%}
+{% set chanpage1default="Chan1" -%}
+{% set chanpage2default="Chan8" -%}
+{# End Variables -#}
+{% block groups %}
+Define Group	Page	Main	Channel1-7	Channel8-14	Level1-7	Level8-14	Pan1-7	Pan8-14	Chan1	Chan2	Chan3	Chan4	Chan5	Chan6	Chan7	Chan8	Chan9	Chan10	Chan11	Chan12	Chan13	Chan14	Index	Internal
+Define Group	ChannelPage	ChannelMain	ChannelEq	ChannelAuxSend
+Define Group	Submenu	Channel	Mute	Solo
+Define Group	Channel	Chan1-7	Chan8-14
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=Level1-7			Index
+Map	Button 1-3		Page=Level8-14			Index
+Map	Button 2-2		Page=Pan1-7			Index
+Map	Button 2-3		Page=Pan8-14			Index
+Map	Button 7-1		Page=Chan1			Index
+Map	Button 7-2		Page=Chan2			Index
+Map	Button 7-3		Page=Chan3			Index
+Map	Button 7-4		Page=Chan4			Index
+Map	Button 7-5		Page=Chan5			Index
+Map	Button 7-6		Page=Chan6			Index
+Map	Button 7-7		Page=Chan7			Index
+Map	Button 8-1		Page=Chan8			Index
+Map	Button 8-2		Page=Chan9			Index
+Map	Button 8-3		Page=Chan10			Index
+Map	Button 8-4		Page=Chan11			Index
+Map	Button 8-5		Page=Chan12			Index
+Map	Button 8-6		Page=Chan13			Index
+Map	Button 8-7		Page=Chan14			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main" 				Main
+{{ rm.include_menus(curpage="Main") -}}
+Map	Fader 2		Aux 1 Return Level			Main
+Map	Fader 3		Aux 2 Return Level			Main
+Map	Fader 4		Aux 3 Return Level			Main
+Map	Fader 5		Aux 4 Return Level			Main
+Map	Fader 6		Master Level			Main
+Map	Meter 7		Master Left Peak Meter			Main
+Map	Meter 8		Master Right Peak Meter			Main
+// Channel1-7
+Map	PageName		"Channel 1-7" 				Channel1-7
+{{ rm.include_menus(curpage="Channel1-7", submenu="channel1-7", chanpage="Channel1-7", chanpage1="Channel1-7", chanpage2="Channel8-14") -}}
+// Channel8-14
+Map	PageName		"Channel 8-14" 				Channel8-14
+{{ rm.include_menus(curpage="Channel8-14", submenu="channel8-14", chanpage="Channel8-14", chanpage1="Channel1-7", chanpage2="Channel8-14") -}}
+// Level1-7
+Map	PageName		"Level 1-7" 				Level1-7
+{{ rm.include_menus(curpage="Level1-7", submenu="mutesolo1-7", levelpage="Level1-7", chanpage1="Level1-7", chanpage2="Level8-14") -}}
+Map	Fader 1		Channel 1 Level			Level1-7
+Map	Fader 2		Channel 2 Level			Level1-7
+Map	Fader 3		Channel 3 Level			Level1-7
+Map	Fader 4		Channel 4 Level			Level1-7
+Map	Fader 5		Channel 5 Level			Level1-7
+Map	Fader 6		Channel 6 Level			Level1-7
+Map	Fader 7		Channel 7 Level			Level1-7
+// Level8-14
+Map	PageName		"Level 8-14" 				Level8-14
+{{ rm.include_menus(curpage="Level8-14", submenu="mutesolo8-14", levelpage="Level8-14", chanpage1="Level1-7", chanpage2="Level8-14") -}}
+Map	Fader 1		Channel 8 Level			Level8-14
+Map	Fader 2		Channel 9 Level			Level8-14
+Map	Fader 3		Channel 10 Level			Level8-14
+Map	Fader 4		Channel 11 Level			Level8-14
+Map	Fader 5		Channel 12 Level			Level8-14
+Map	Fader 6		Channel 13 Level			Level8-14
+Map	Fader 7		Channel 14 Level			Level8-14
+// Pan1-7
+Map	PageName		"Pan 1-7" 				Pan1-7
+{{ rm.include_menus(curpage="Pan1-7", submenu="mutesolo1-7", panpage="Pan1-7", chanpage1="Pan1-7", chanpage2="Pan8-14") -}}
+Map	Knob V1		Channel 1 Pan			Pan1-7
+Map	Knob V2		Channel 2 Pan			Pan1-7
+Map	Knob V3		Channel 3 Pan			Pan1-7
+Map	Knob V4		Channel 4 Pan			Pan1-7
+Map	Knob V5		Channel 5 Pan			Pan1-7
+Map	Knob V6		Channel 6 Pan			Pan1-7
+Map	Knob V7		Channel 7 Pan			Pan1-7
+// Pan8-14
+Map	PageName		"Pan 8-14" 				Pan8-14
+{{ rm.include_menus(curpage="Pan8-14", submenu="mutesolo8-14", panpage="Pan8-14", chanpage1="Pan1-7", chanpage2="Pan8-14") -}}
+Map	Knob V1		Channel 8 Pan			Pan8-14
+Map	Knob V2		Channel 9 Pan			Pan8-14
+Map	Knob V3		Channel 10 Pan			Pan8-14
+Map	Knob V4		Channel 11 Pan			Pan8-14
+Map	Knob V5		Channel 12 Pan			Pan8-14
+Map	Knob V6		Channel 13 Pan			Pan8-14
+Map	Knob V7		Channel 14 Pan			Pan8-14
+{% for channum in range(1,15) -%}
+// Channel {{ channum }}
+Map	PageName		"Channel {{ channum }}" 				Chan{{ channum }}
+Map	Button 1-1		ChannelPage=ChannelMain			Chan{{ channum }}
+Map	Button 2-1		ChannelPage=ChannelEq			Chan{{ channum }}
+Map	Button 3-1		ChannelPage=ChannelAuxSend			Chan{{ channum }}
+{% if channum <= 7 %}
+{{ rm.include_menus(curpage="Chan"+channum|string, submenu="channel1-7", chanpage1="Chan"+channum|string) -}}
+{% else %}
+{{ rm.include_menus(curpage="Chan"+channum|string, submenu="channel8-14", chanpage2="Chan"+channum|string) -}}
+{% endif %}
+Map	SubPageName		"ChannelMain" 				Chan{{ channum }}	ChannelMain
+Map	Button 1-2		Channel {{ channum }} Mute			Chan{{ channum }}	ChannelMain
+Map	Button 2-2		Channel {{ channum }} Solo			Chan{{ channum }}	ChannelMain
+Map	Knob V6		Channel {{ channum }} Pan			Chan{{ channum }}	ChannelMain
+Map	Fader 7		Channel {{ channum }} Level			Chan{{ channum }}	ChannelMain
+Map	Meter 8		Channel {{ channum }} Peak Meter			Chan{{ channum }}	ChannelMain
+Map	SubPageName		"ChannelEq" 				Chan{{ channum }}	ChannelEq
+Map	Button 1-2		Channel {{ channum }} EQ On/Off			Chan{{ channum }}	ChannelEq
+Map	Knob V4		Channel {{ channum }} Bass Amount			Chan{{ channum }}	ChannelEq
+Map	Knob V5		Channel {{ channum }} Treble Amount			Chan{{ channum }}	ChannelEq
+Map	SubPageName		"ChannelAuxSend" 				Chan{{ channum }}	ChannelAuxSend
+Map	Fader 2		Channel {{ channum }} Aux 1 Send			Chan{{ channum }}	ChannelAuxSend
+Map	Fader 3		Channel {{ channum }} Aux 2 Send			Chan{{ channum }}	ChannelAuxSend
+Map	Fader 4		Channel {{ channum }} Aux 3 Send			Chan{{ channum }}	ChannelAuxSend
+Map	Fader 5		Channel {{ channum }} Aux 4 Send			Chan{{ channum }}	ChannelAuxSend
+Map	Button 8-6		Channel {{ channum }} Aux 4 Pre Fader On/Off			Chan{{ channum }}	ChannelAuxSend
+{% endfor %}
+{% endblock main %}

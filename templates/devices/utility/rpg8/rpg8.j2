@@ -1,10 +1,13 @@
+{% extends "devices/utility/utility-nopatch.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="RPG-8 Monophonic Arpeggiator" -%}
 {% set devicename="RPG-8" -%}
-{% include "remotemap/include/device/scope.j2" %}
+{% set shortname="rpg8" -%}
+{% block groups %}
 Define Group	Page	Main	Pattern	Index	Internal
 Define Group	TempoSync	Free	Sync
-{% include "remotemap/include/device/utility-nopatch.j2" %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -12,8 +15,7 @@ Map	Button 1-5		Page=Pattern			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
-Map	Button 5-1		Page=Main			Main
-Map	Button 6-1		Page=Pattern			Main
+{{ rm.include_menus(curpage="Main", mainmenu_mini="common") -}}
 Map	Sel1_0		TempoSync=Free			Main
 Map	Sel1_1		TempoSync=Sync			Main
 Map	Fader 2		Velocity/Manual			Main
@@ -23,15 +25,14 @@ Map	Button 1-4		Arpeggiator Enable			Main
 Map	UDVButton 3-4_4-4		Mode			Main
 Map	UDVButton 5-4_6-4		Octave			Main
 Map	UDVButton 7-4_8-4		Insert			Main
-Map	Button 1-6		Sync		SEL1	Main
-Map	Button 8-6		Single Note Repeat			Main
-Map	UDVButton 7-7_8-7		Rate	5		Main	Sync
-Map	Fader 7		Rate			Main	Free
+Map	Button 8-5		Sync		SEL1	Main
+Map	UDVButton 7-6_8-6		Rate	5		Main	Sync
+Map	Fader 6		Rate			Main	Free
+Map	Button 8-7		Single Note Repeat			Main
 Map	Fader 8		Gate Length			Main
 // Pattern
 Map	PageName		"Pattern" 				Pattern
-Map	Button 5-1		Page=Main			Pattern
-Map	Button 6-1		Page=Pattern			Pattern
+{{ rm.include_menus(curpage="Pattern", mainmenu_mini="common") -}}
 Map	Button 1-1		Pattern Step 1			Pattern
 Map	Button 1-2		Pattern Step 2			Pattern
 Map	Button 1-3		Pattern Step 3			Pattern
@@ -51,3 +52,4 @@ Map	Button 2-8		Pattern Step 16			Pattern
 Map	Button 3-1		Pattern Enable			Pattern
 Map	UDVButton 3-8_4-8		Pattern Step Count			Pattern
 Map	Button 8-1		Shuffle			Pattern
+{% endblock main %}

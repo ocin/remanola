@@ -16,6 +16,6 @@
 		["LFO"]={
 			["Fader 5"]={template="FFreq"},
 			["Button 1-6"]={template="BRedOnOff"},
-			["Fader 7"]={template="FMisc"},
+			["Fader 7"]={template="FLFO"},
 		},
 	},

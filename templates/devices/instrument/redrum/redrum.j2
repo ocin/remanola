@@ -1,3 +1,4 @@
+{% extends "devices/instrument/instrument.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Redrum Drum Computer" -%}
 {% set devicename="Redrum" -%}
@@ -8,12 +9,12 @@
 {% set drumpage1default="Drum1" -%}
 {% set drumpage2default="Drum9" -%}
 {# End Variables -#}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	Performance	Drum1	Drum1Edit	Drum2	Drum2Edit	Drum3	Drum3Edit	Drum4	Drum4Edit	Drum5	Drum5Edit	Drum6	Drum6Edit	Drum7	Drum7Edit	Drum8	Drum8Edit	Drum9	Drum9Edit	Drum10	Drum10Edit	Drum11	Drum11Edit	Drum12	Drum12Edit	Index	Keyboard	Internal
 Define Group	DrumMode	Play	Solo	Mute
 Define Group	EditMode	Rotate	Toggle	Flam
-{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% endblock groups %}
+{% block main %}
 Map	PlayingStep		Playing Step
 // Index
 Map	PageName		"Index" 				Index
@@ -122,7 +123,7 @@ Map	Button 8-4		Drum 4 Mute			Main	Mute
 Map	PageName		"Performance" 				Performance
 {{ rm.include_menus(curpage="Performance") -}}
 Map	Button 1-1		Enable Pattern Section Playback			Performance
-Map	Button 1-2		Pattern Enable			Performance
+Map	Button 1-3		Pattern Enable			Performance
 Map	Button 2-1		Pattern 1			Performance
 Map	Button 2-2		Pattern 2			Performance
 Map	Button 2-3		Pattern 3			Performance
@@ -131,12 +132,12 @@ Map	Button 3-1		Pattern 5			Performance
 Map	Button 3-2		Pattern 6			Performance
 Map	Button 3-3		Pattern 7			Performance
 Map	Button 3-4		Pattern 8			Performance
-Map	Button 4-1		Bank A			Performance
-Map	Button 4-2		Bank B			Performance
-Map	Button 4-3		Bank C			Performance
-Map	Button 4-4		Bank D			Performance
+Map	Button 5-1		Bank A			Performance
+Map	Button 5-2		Bank B			Performance
+Map	Button 5-3		Bank C			Performance
+Map	Button 5-4		Bank D			Performance
 Map	UDVButton 7-1_8-1		Steps			Performance
-Map	UDHButton 8-3_8-4		Resolution			Performance
+Map	UDVButton 7-4_8-4		Resolution			Performance
 Map	Button 8-5		Shuffle			Performance
 Map	Fader 8		Master Level				Performance
 {% for drumnum in range(1,11) -%}
@@ -147,13 +148,11 @@ Map	PageName		"Drum {{ drumnum }}" 				Drum{{ drumnum }}
 {% else %}
 {{ rm.include_menus(curpage="Drum"+drumnum|string, mainmenu_mini="drum", submenu="drum2", drumpage2="Drum"+drumnum|string, drumsubpage="Drum"+drumnum|string, drumedit="") -}}
 {% endif %}
-{% if lptype == 'mini' %}
 Map	Button 2-1		Page=Drum{{ drumnum }}			Drum{{ drumnum }}
 Map	Button 3-1		Page=Drum{{ drumnum }}Edit			Drum{{ drumnum }}
-{% endif %}
-Map	Button 5-1		Channel {{ drumnum }} Play			Drum{{ drumnum }}
-Map	Button 3-2		Drum {{ drumnum }} Mute			Drum{{ drumnum }}
-Map	Button 3-3		Drum {{ drumnum }} Solo			Drum{{ drumnum }}
+Map	Button 1-1		Channel {{ drumnum }} Play			Drum{{ drumnum }}
+Map	Button 1-2		Drum {{ drumnum }} Mute			Drum{{ drumnum }}
+Map	Button 1-3		Drum {{ drumnum }} Solo			Drum{{ drumnum }}
 Map	UDVButton 5-4_6-4		Drum {{ drumnum }} Vel to Level	5		Drum{{ drumnum }}
 Map	Fader 5		Drum {{ drumnum }} Send 1 Amount				Drum{{ drumnum }}
 Map	Fader 6		Drum {{ drumnum }} Send 2 Amount				Drum{{ drumnum }}
@@ -166,14 +165,12 @@ Map	PageName		"Drum {{ drumnum }} Edit" 				Drum{{ drumnum }}Edit
 {% else %}
 {{ rm.include_menus(curpage="Drum"+drumnum|string+"Edit", mainmenu_mini="drum", submenu="drum2", drumpage2="Drum"+drumnum|string+"Edit", drumsubpage="Drum"+drumnum|string, drumedit="Edit") -}}
 {% endif %}
-{% if lptype == 'mini' %}
 Map	Button 2-1		Page=Drum{{ drumnum }}			Drum{{ drumnum }}Edit
 Map	Button 3-1		Page=Drum{{ drumnum }}Edit			Drum{{ drumnum }}Edit
-{% endif %}
-Map	Button 5-1		Channel {{ drumnum }} Play			Drum{{ drumnum }}Edit
-Map	Button 3-2		Drum {{ drumnum }} Mute			Drum{{ drumnum }}Edit
-Map	Button 3-3		Drum {{ drumnum }} Solo			Drum{{ drumnum }}Edit
-Map	Button 5-2		Drum {{ drumnum }} Decay/Gate Mode			Drum{{ drumnum }}Edit
+Map	Button 1-1		Channel {{ drumnum }} Play			Drum{{ drumnum }}Edit
+Map	Button 1-2		Drum {{ drumnum }} Mute			Drum{{ drumnum }}Edit
+Map	Button 1-3		Drum {{ drumnum }} Solo			Drum{{ drumnum }}Edit
+Map	UDVButton 5-2_6-2		Drum {{ drumnum }} Decay/Gate Mode			Drum{{ drumnum }}Edit
 Map	Fader 5		Drum {{ drumnum }} Length				Drum{{ drumnum }}Edit
 Map	Knob V6		Drum {{ drumnum }} Pitch				Drum{{ drumnum }}Edit
 {% if drumnum == 1 or drumnum == 2 or drumnum == 10 -%}
@@ -188,3 +185,4 @@ Map	Knob V7		Drum {{ drumnum }} Pitch Bend Rate				Drum{{ drumnum }}Edit
 Map	Knob V8		Drum {{ drumnum }} Vel to Pitch Bend				Drum{{ drumnum }}Edit
 {% endif -%}
 {% endfor -%}
+{% endblock main %}

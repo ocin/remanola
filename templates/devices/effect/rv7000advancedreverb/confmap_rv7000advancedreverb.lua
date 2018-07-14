@@ -1,5 +1,8 @@
 	["RV7000 Advanced Reverb"]={
 		["Default"]={
+{% if lptype == "pro" %}
+{% include "devices/effect/rv7000advancedreverb/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Index"]={
 		},
@@ -16,12 +19,12 @@
 			["UDVButton 1-1_2-1"]={template="UDEffect"},
 			["SmallSpace"]={
 				["Fader 2"]={template="FEffect"},
-				["Fader 3"]={template="FMisc"},
+				["Fader 3"]={template="FFreq"},
 				["UDVButton 7-4_8-4"]={template="UDEffect"},
 				["Fader 5"]={template="FFreq"},
 				["Fader 6"]={template="FEffect"},
 				["Fader 7"]={template="FFreq"},
-				["Fader 8"]={template="FMisc"},
+				["Fader 8"]={template="FLFO"},
 			},
 			["Room"]={
 				["Fader 2"]={template="FEffect"},
@@ -30,7 +33,7 @@
 				["Fader 5"]={template="FEffect"},
 				["Fader 6"]={template="FEffect"},
 				["Fader 7"]={template="FFreq"},
-				["Fader 8"]={template="FMisc"},
+				["Fader 8"]={template="FLFO"},
 			},
 			["Hall"]={
 				["Fader 2"]={template="FEffect"},
@@ -39,7 +42,7 @@
 				["Fader 5"]={template="FEffect"},
 				["Fader 6"]={template="FEffect"},
 				["Fader 7"]={template="FFreq"},
-				["Fader 8"]={template="FMisc"},
+				["Fader 8"]={template="FLFO"},
 			},
 			["Arena"]={
 				["Fader 2"]={template="FEffect"},
@@ -79,8 +82,8 @@
 				["UDVButton 7-5_8-5"]={template="UDEffect"},
 				["Fader 6"]={template="FFreq"},
 				["UDVButton 7-6_8-6"]={template="UDFreq"},
-				["Fader 7"]={template="FAmount"},
-				["Knob V8"]={template="FAmount"},
+				["Fader 7"]={template="FVol"},
+				["Knob V8"]={template="FPan"},
 			},
 			["Reverse"]={
 				["Fader 2"]={template="FEffect"},
@@ -94,12 +97,13 @@
 				["Fader 3"]={template="FEffect"},
 				["Knob V4"]={template="FEffect"},
 				["Fader 5"]={template="FFreq"},
-				["UDVButton 7-6_8-6"]={template="UDAmount"},
+				["UDVButton 7-6_8-6"]={template="UDEffect"},
 				["Knob V7"]={template="FFreq"},
 				["Fader 8"]={template="FGain"},
 			},
 		},
 		["Eq"]={
+			["Button 1-1"]={template="BRedOnOff"},
 			["Knob V2"]={template="FGain"},
 			["Fader 3"]={template="FFreq"},
 			["Knob V5"]={template="FGain"},
@@ -107,12 +111,13 @@
 			["Fader 7"]={template="FEffect"},
 		},
 		["Gate"]={
-			["Fader 1"]={template="FEffect"},
+			["Button 1-1"]={template="BRedOnOff"},
 			["Fader 2"]={template="FEffect"},
-			["Button 8-3"]={template="BRedOnOff"},
-			["Fader 4"]={template="FFreq"},
-			["Fader 5"]={template="FEffect"},
+			["Fader 3"]={template="FEffect"},
+			["Button 8-4"]={template="BRedOnOff"},
+			["Fader 5"]={template="FFreq"},
 			["Fader 6"]={template="FEffect"},
 			["Fader 7"]={template="FEffect"},
+			["Fader 8"]={template="FEffect"},
 		},
 	},

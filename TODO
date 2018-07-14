@@ -52,15 +52,15 @@
 		* Neptune
 		* PH-90 Phaser
 		* Polar
-		- Pulveriser
-		- RV-7000
-		- Scream 4
-		- Softtube Amp
-		- Softtube Bass Amp
-		- Synchronous
-		- The Echo
-	- Utilities
-		- RPG-8
+		* Pulveriser
+		* RV-7000
+		* Scream 4
+		* Softtube Amp
+		* Softtube Bass Amp
+		* Synchronous
+		* The Echo
+	* Utilities
+		* RPG-8
 
 Map:
 * Master section
@@ -104,10 +104,9 @@ Instruments:
 * Klang
 * Humana
 * Pangea
+* Radical Piano
 + Thor
 	- Mod Matrix
-+ Radical Piano
-	- Color mapping
 - Ammo1200
 - Ammo400
 - Ammo100LA
@@ -143,7 +142,7 @@ Utilities:
 * Combinator
 * RPG-8
 * Matrix
-- Pulsar
+* Pulsar
 - Mixer 14-2
 - Line Mixer 6-2
 - Jiggery Pokery Utilities

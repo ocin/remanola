@@ -1,12 +1,15 @@
+{% extends "devices/effect/effect.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="RV7000 Advanced Reverb" -%}
 {% set devicename="RV7000 Advanced Reverb" -%}
-{% include "remotemap/include/device/scope.j2" %}
+{% set shortname="rv7000advancedreverb" -%}
+{% block groups %}
 Define Group	Page	Main	Reverb	Eq	Gate	Index	Internal
 Define Group	Algorithm	SmallSpace	Room	Hall	Arena	Plate	Spring	Echo	MultiTap	Reverse	Convolution
 Define Group	Tap	TapNum	RepeatTap
 Define Group	TempoSync	Free	Sync
-{% include "remotemap/include/device/effect.j2" %}
+{% endblock groups %}
+{% block main %}
 Map	EditSelect		Edit Mode
 // Index
 Map	PageName		"Index" 				Index
@@ -17,6 +20,7 @@ Map	Button 4-8		Page=Gate			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
+{{ rm.include_menus(curpage="Main") -}}
 Map	UDVButton 1-1_2-1		Enabled			Main
 Map	Button 1-2		EQ On/Off			Main
 Map	Button 2-2		Gate On/Off			Main
@@ -27,6 +31,7 @@ Map	Fader 7		Dry/Wet 				Main
 Map	Meter 8		Input Peak Meter			Main
 // Reverb
 Map	PageName		"Reverb" 				Reverb
+{{ rm.include_menus(curpage="Reverb") -}}
 Map	Sel1_0		Algorithm=SmallSpace			Reverb
 Map	Sel1_14		Algorithm=Room			Reverb
 Map	Sel1_28		Algorithm=Hall			Reverb
@@ -137,17 +142,22 @@ Map	Knob V7		Soft Knob 7 			Reverb	Convolution
 Map	Fader 8		Soft Knob 8 			Reverb	Convolution
 // Eq
 Map	PageName		"Eq" 				Eq
-Map	Knob V1		Soft Knob 1 			Eq
-Map	Fader 2		Soft Knob 2 			Eq
+{{ rm.include_menus(curpage="Eq") -}}
+Map	Button 1-1		EQ On/Off			Eq
+Map	Knob V2		Soft Knob 1 			Eq
+Map	Fader 3		Soft Knob 2 			Eq
 Map	Knob V5		Soft Knob 5 			Eq
 Map	Fader 6		Soft Knob 6 			Eq
 Map	Fader 7		Soft Knob 7 			Eq
 // Gate
 Map	PageName		"Gate" 				Gate
-Map	Fader 1		Soft Knob 1 			Gate	
-Map	Fader 2		Soft Knob 2 			Gate	
-Map	Button 8-3		Soft Knob 3 			Gate
-Map	Fader 4		Soft Knob 4 			Gate
-Map	Fader 5		Soft Knob 5 			Gate
-Map	Fader 6		Soft Knob 6 			Gate
-Map	Fader 7		Soft Knob 7 			Gate
+{{ rm.include_menus(curpage="Gate") -}}
+Map	Button 1-1		Gate On/Off			Gate
+Map	Fader 2		Soft Knob 1 			Gate	
+Map	Fader 3		Soft Knob 2 			Gate	
+Map	Button 8-4		Soft Knob 3 			Gate
+Map	Fader 5		Soft Knob 4 			Gate
+Map	Fader 6		Soft Knob 5 			Gate
+Map	Fader 7		Soft Knob 6 			Gate
+Map	Fader 8		Soft Knob 7 			Gate
+{% endblock main %}

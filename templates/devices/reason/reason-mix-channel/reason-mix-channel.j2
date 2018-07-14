@@ -1,12 +1,15 @@
-// ------------------------------------------------------------------------------------------
-Scope	Propellerheads	Reason Main Mixer Channel
+{% extends "devices/reason/reason.j2" %}
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="Reason Main Mixer Channel" -%}
+{% set devicename="Mix Channel" -%}
+{% set shortname="reason-mix-channel" -%}
+{# Variables -#}
+{% set eqpagedefault="EqHi" -%}
+{# End Variables -#}
+{% block groups %}
 Define Group	Page	Main	Input	Send1	Send2	Insert	EqLow	EqHi	Filter	Comp	Gate	Index	Internal
-//	Control Surface Item	Key	Remotable Item	Scale	Mode
-Map	DeviceScope		"Mix Channel"
-Map	DeviceName		Channel Name
-// Page
-Map	Button C5		Page=Main
-Map	Button C7		Page=Index
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -20,12 +23,9 @@ Map	Button 7-7		Page=Send1			Index
 Map	Button 7-8		Page=Send2			Index
 Map	Button 8-8		Page=Insert			Index
 Map	Button C7		Page=Internal			Index
-// Internal
-Map	PageName		"Internal" 				Internal
-Map	Button 1-1		Page=Main			Internal
-Map	Button C7		Page=Main			Internal
 // Main
 Map	PageName		"Main" 				Main
+{{ rm.include_menus(curpage="Main") -}}
 Map	Button 1-1		Mute			Main
 Map	Button 1-2		Solo			Main
 Map	Fader 4		Width			Main
@@ -35,6 +35,7 @@ Map	Meter 7		VU Meter L				Main
 Map	Meter 8		VU Meter R				Main
 // Input
 Map	PageName		"Input" 				Input
+{{ rm.include_menus(curpage="Input") -}}
 Map	Knob V2		Input Gain			Input
 Map	Button 1-3		Invert Phase			Input
 Map	Button 1-4		Insert Pre			Input
@@ -42,6 +43,7 @@ Map	Button 1-5		Dyn Post EQ			Input
 Map	Button 1-7		Filters Dyn S/C			Input
 // Compressor
 Map	PageName		"Compressor" 				Comp
+{{ rm.include_menus(curpage="Comp") -}}
 Map	Button 1-2		Comp On			Comp
 Map	Button 4-2		C Peak			Comp
 Map	Fader 3		C Ratio			Comp
@@ -51,6 +53,7 @@ Map	Button 1-6		C Fast Atk			Comp
 Map	Meter 8		Comp Gain Reduction			Comp
 // Gate
 Map	PageName		"Gate" 				Gate
+{{ rm.include_menus(curpage="Gate") -}}
 Map	Button 1-2		Gate On			Gate
 Map	Button 4-2		Expander			Gate
 Map	Fader 3		G Range			Gate
@@ -61,6 +64,7 @@ Map	Button 1-7		G Fast Atk			Gate
 Map	Meter 8		Gate Gain Reduction			Gate
 // Filter
 Map	PageName		"Filter" 				Filter
+{{ rm.include_menus(curpage="Filter") -}}
 Map	Button 1-2		LPF On			Filter
 Map	Fader 3		LPF Frequency			Filter
 Map	Button 1-4		HPF On			Filter
@@ -68,6 +72,7 @@ Map	Fader 5		HPF Frequency			Filter
 Map	Button 1-7		Filters Dyn S/C			Filter
 // EqHi
 Map	PageName		"Equalizer High" 				EqHi
+{{ rm.include_menus(curpage="EqHi", submenu="eq", eqpage="EqHi") -}}
 Map	Button 1-1		Eq On			EqHi
 Map	Button 4-1		EQ E Mode			EqHi
 Map	Knob V3		HMF Gain			EqHi
@@ -78,6 +83,7 @@ Map	Knob V7		HF Gain			EqHi
 Map	Fader 8		HF Frequency			EqHi
 // EqLow
 Map	PageName		"Equalizer Low" 				EqLow
+{{ rm.include_menus(curpage="EqLow", submenu="eq", eqpage="EqLow") -}}
 Map	Button 1-1		Eq On			EqLow
 Map	Button 4-1		EQ E Mode			EqLow
 Map	Button 1-2		LF Bell			EqLow
@@ -88,15 +94,18 @@ Map	Fader 7		LMF Frequency			EqLow
 Map	Fader 8		LMF Q			EqLow
 // Insert
 Map	PageName		"Insert" 				Insert
+{{ rm.include_menus(curpage="Insert", submenu="insert") -}}
 Map	Button C3		Select Prev Insert FX Patch			Insert
 Map	Button C4		Select Next Insert FX Patch			Insert
 Map	PatchName		Insert FX Patch Name			Insert
 Map	Meter 1		To Insert FX Peak Meter			Insert
 Map	Button 1-2		Bypass Insert FX			Insert
+{% if lptype == "mini" %}
 Map	Button 5-2		Button 1			Insert
 Map	Button 6-2		Button 2			Insert
 Map	Button 7-2		Button 3			Insert
 Map	Button 8-2		Button 4			Insert
+{% endif %}
 Map	Fader 3		Rotary 1			Insert
 Map	Fader 4		Rotary 2			Insert
 Map	Fader 5		Rotary 3			Insert
@@ -104,34 +113,34 @@ Map	Fader 6		Rotary 4			Insert
 Map	Meter 8		From Insert FX Peak Meter			Insert
 // Send 1
 Map	PageName		"Send 1" 				Send1
-Map	Button 7-1		Page=Send1			Send1
-Map	Button 8-1		Page=Send2			Send1
-Map	Button 1-1		FX1 Send On			Send1
-Map	Button 2-1		FX1 Pre Fader			Send1
-Map	Fader 2		FX1 Send Level			Send1
-Map	Button 1-3		FX2 Send On			Send1
-Map	Button 2-3		FX2 Pre Fader			Send1
-Map	Fader 4		FX2 Send Level			Send1
-Map	Button 1-5		FX3 Send On			Send1
-Map	Button 2-5		FX3 Pre Fader			Send1
-Map	Fader 6		FX3 Send Level			Send1
-Map	Button 1-7		FX4 Send On			Send1
-Map	Button 2-7		FX4 Pre Fader			Send1
-Map	Fader 8		FX4 Send Level			Send1
+{{ rm.include_menus(curpage="Send1", submenu="send") -}}
+Map	Fader 1		FX1 Send Level			Send1
+Map	Fader 2		FX2 Send Level			Send1
+Map	Fader 3		FX6 Send Level			Send1
+Map	Fader 4		FX7 Send Level			Send1
+Map	Fader 5		FX3 Send Level			Send1
+Map	Fader 6		FX4 Send Level			Send1
+Map	Fader 7		FX5 Send Level			Send1
+Map	Fader 8		FX8 Send Level			Send1
 // Send 2
 Map	PageName		"Send 2" 				Send2
-Map	Button 7-1		Page=Send1			Send2
-Map	Button 8-1		Page=Send2			Send2
-Map	Button 1-1		FX5 Send On			Send2
-Map	Button 2-1		FX5 Pre Fader			Send2
-Map	Fader 2		FX5 Send Level			Send2
-Map	Button 1-3		FX6 Send On			Send2
-Map	Button 2-3		FX6 Pre Fader			Send2
-Map	Fader 4		FX6 Send Level			Send2
-Map	Button 1-5		FX7 Send On			Send2
-Map	Button 2-5		FX7 Pre Fader			Send2
-Map	Fader 6		FX7 Send Level			Send2
-Map	Button 1-7		FX8 Send On			Send2
-Map	Button 2-7		FX8 Pre Fader			Send2
-Map	Fader 8		FX8 Send Level			Send2
-
+{{ rm.include_menus(curpage="Send2") -}}
+{% if lptype == "mini" %}
+Map	Button 1-1		FX1 Send On			Send1
+Map	Button 1-2		FX2 Send On			Send2
+Map	Button 1-3		FX3 Send On			Send2
+Map	Button 1-4		FX4 Send On			Send2
+Map	Button 1-5		FX5 Send On			Send2
+Map	Button 1-6		FX6 Send On			Send2
+Map	Button 1-7		FX7 Send On			Send2
+Map	Button 1-8		FX8 Send On			Send2
+{% endif %}
+Map	Button 2-1		FX1 Pre Fader			Send2
+Map	Button 2-2		FX2 Pre Fader			Send2
+Map	Button 2-3		FX3 Pre Fader			Send2
+Map	Button 2-4		FX4 Pre Fader			Send2
+Map	Button 2-5		FX5 Pre Fader			Send2
+Map	Button 2-6		FX6 Pre Fader			Send2
+Map	Button 2-7		FX7 Pre Fader			Send2
+Map	Button 2-8		FX8 Pre Fader			Send2
+{% endblock main %}

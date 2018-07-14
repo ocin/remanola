@@ -3,9 +3,15 @@
 {% include "devices/instrument/px7/"+lptype+"/confmap_mainmenu.lua" %}
 		},
 		["Main"]={
-			["UDVButton 1-2_2-2"]={template="FAmount"},
-			["Fader 3"]={template="FMisc"},
-			["Fader 8"]={template="FGain"},
+			["UDVButton 1-2_2-2"]={template="FOsc"},
+			["Knob V4"]={template="FOsc"},
+			["Knob V5"]={template="FOsc"},
+			["Knob V6"]={template="FVol"},
+			["Knob V7"]={template="FVol"},
+			["Fader 8"]={template="FVol"},
+		},
+		["Perf"]={
+			["Fader 3"]={template="FPerf"},
 		},
 		["Op*"]={
 			["Button 8-2"]={template="BGreenOnOff"},

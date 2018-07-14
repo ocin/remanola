@@ -1,5 +1,8 @@
 	["Scream 4 Distortion"]={
 		["Default"]={
+{% if lptype == "pro" %}
+{% include "devices/effect/scream4distortion/pro/confmap_mainmenu.lua" %}
+{% endif %}
 		},
 		["Index"]={
 		},

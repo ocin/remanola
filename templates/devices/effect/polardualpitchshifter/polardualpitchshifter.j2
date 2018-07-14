@@ -1,3 +1,4 @@
+{% extends "devices/effect/effect.j2" %}
 {% set deviceman="Propellerhead Software" -%}
 {% set devicescope="se.propellerheads.Polar" -%}
 {% set devicename="Polar Dual Pitch Shifter" -%}
@@ -6,11 +7,11 @@
 {% set osc1pagedefault="Shifter1" -%}
 {% set osc2pagedefault="Shifter2" -%}
 {# End Variables -#}
-{% include "remotemap/include/device/scope.j2" %}
+{% block groups %}
 Define Group	Page	Main	Dry	DelayBuffer	Shifter1	Shifter1Vol	Shifter2	Shifter2Vol	Filter	LFO	Env	Index	Internal
 Define Group	TempoSync	Free	Sync
-{% from "remotemap/include/device/effect.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% endblock groups %}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -45,11 +46,6 @@ Map	Fader 8		Dry Level			Dry
 // DelayBuffer
 Map	PageName		"Delay Buffer" 				DelayBuffer
 {{ rm.include_menus(curpage="DelayBuffer", mainmenu_mini="common") -}}
-Map	Button 2-8		Page=DelayBuffer			DelayBuffer
-Map	Button 3-8		Page=Shifter1			DelayBuffer
-Map	Button 4-8		Page=Shifter1Vol			DelayBuffer
-Map	Button 5-8		Page=Shifter2			DelayBuffer
-Map	Button 6-8		Page=Shifter2Vol			DelayBuffer
 Map	Button 1-2		Lock Buffer			DelayBuffer
 Map	Button 5-2		Delay/Buffer Delay Mode			DelayBuffer
 Map	Fader 3		Delay/Buffer Position			DelayBuffer
@@ -59,12 +55,7 @@ Map	Knob V6		Buffer Env Amount			DelayBuffer
 // Shifter1
 Map	PageName		"Shifter 1" 				Shifter1
 {{ rm.include_menus(curpage="Shifter1", mainmenu_mini="common", submenu="shifter1", osc1page="Shifter1") -}}
-Map	Button 2-8		Page=DelayBuffer			Shifter1
-Map	Button 3-8		Page=Shifter1			Shifter1
-Map	Button 4-8		Page=Shifter1Vol			Shifter1
-Map	Button 5-8		Page=Shifter2			Shifter1
-Map	Button 6-8		Page=Shifter2Vol			Shifter1
-Map	Knob V2		Shifter 1 Semi			Shifter1
+Map	UDVButton 7-2_8-2		Shifter 1 Semi			Shifter1
 Map	Knob V3		Shifter 1 Fine			Shifter1
 Map	Fader 4		Shifter 1 Feedback			Shifter1
 Map	Knob V6		Shifter 1 LFO Amount			Shifter1
@@ -72,24 +63,14 @@ Map	Knob V7		Shifter 1 Env Amount			Shifter1
 // Shifter1Vol
 Map	PageName		"Shifter 1 Vol" 				Shifter1Vol
 {{ rm.include_menus(curpage="Shifter1Vol", mainmenu_mini="common", submenu="shifter1", osc1page="Shifter1Vol") -}}
-Map	Button 2-8		Page=DelayBuffer			Shifter1Vol
-Map	Button 3-8		Page=Shifter1			Shifter1Vol
-Map	Button 4-8		Page=Shifter1Vol			Shifter1Vol
-Map	Button 5-8		Page=Shifter2			Shifter1Vol
-Map	Button 6-8		Page=Shifter2Vol			Shifter1Vol
 Map	Knob V2		Shifter 1 Pan			Shifter1Vol
 Map	Knob V3		Shifter 1 Auto Pan			Shifter1Vol
 Map	Fader 6		Shifter 1 Level			Shifter1Vol
 // Shifter2
 Map	PageName		"Shifter 2" 				Shifter2
 {{ rm.include_menus(curpage="Shifter2", mainmenu_mini="common", submenu="shifter2", osc2page="Shifter2") -}}
-Map	Button 2-8		Page=DelayBuffer			Shifter2
-Map	Button 3-8		Page=Shifter1			Shifter2
-Map	Button 4-8		Page=Shifter1Vol			Shifter2
-Map	Button 5-8		Page=Shifter2			Shifter2
-Map	Button 6-8		Page=Shifter2Vol			Shifter2
 Map	Button 1-1		Shifter 2 Enable			Shifter2
-Map	Knob V2		Shifter 2 Semi			Shifter2
+Map	UDVButton 7-2_8-2		Shifter 2 Semi			Shifter2
 Map	Knob V3		Shifter 2 Fine			Shifter2
 Map	Fader 4		Shifter 2 Feedback			Shifter2
 Map	Fader 5		Shifter 2 Delay			Shifter2
@@ -98,11 +79,6 @@ Map	Knob V7		Shifter 2 Env Amount			Shifter2
 // Shifter2Vol
 Map	PageName		"Shifter Vol 2" 				Shifter2Vol
 {{ rm.include_menus(curpage="Shifter2Vol", mainmenu_mini="common", submenu="shifter2", osc2page="Shifter2Vol") -}}
-Map	Button 2-8		Page=DelayBuffer			Shifter2Vol
-Map	Button 3-8		Page=Shifter1			Shifter2Vol
-Map	Button 4-8		Page=Shifter1Vol			Shifter2Vol
-Map	Button 5-8		Page=Shifter2			Shifter2Vol
-Map	Button 6-8		Page=Shifter2Vol			Shifter2Vol
 Map	Knob V2		Shifter 2 Pan			Shifter2Vol
 Map	Knob V3		Shifter 2 Auto Pan			Shifter2Vol
 Map	Fader 6		Shifter 2 Level			Shifter2Vol
@@ -122,9 +98,9 @@ Map	Sel1_0		TempoSync=Free			LFO
 Map	Sel1_1		TempoSync=Sync			LFO
 Map	Fader 2		LFO Rate Free			LFO	Free
 Map	UDVButton 7-2_8-2		LFO Rate Synced			LFO	Sync
-Map	Fader 3		LFO Phase			LFO
-Map	UDVButton 7-4_8-4		LFO Waveform			LFO
-Map	Button 1-5		LFO Tempo Sync		SEL1	LFO
+Map	Button 8-3		LFO Tempo Sync		SEL1	LFO
+Map	Fader 5		LFO Phase			LFO
+Map	UDVButton 7-6_8-6		LFO Waveform			LFO
 // Filter
 Map	PageName		"Filter" 				Filter
 {{ rm.include_menus(curpage="Filter") -}}
@@ -135,4 +111,4 @@ Map	Fader 5		Filter Resonance			Filter
 Map	Fader 6		Filter Keyboard Tracking			Filter
 Map	Knob V7		Filter LFO Amount			Filter
 Map	Knob V8		Filter Env Amount			Filter
-
+{% endblock main %}

@@ -1,3 +1,4 @@
+{% extends "devices/instrument/instrument.j2" %}
 {% set deviceman="Propellerhead Software" -%}
 {% set devicescope="se.propellerheads.Europa" -%}
 {% set devicename="Europa" -%}
@@ -8,12 +9,12 @@
 {% set amppagedefault="Mixer" %}
 {% set modpagedefault="Env1" %}
 {# End Variables -#}
-{% include "remotemap/include/device/scope.j2" %}
-Define Group	Page	Main	Eng1Osc	Eng2Osc	Eng3Osc	Eng1Mod1	Eng2Mod1	Eng3Mod1	Eng1Mod2	Eng2Mod2	Eng3Mod2	Eng1Harm	Eng2Harm	Eng3Harm	Eng1Filter	Eng2Filter	Eng3Filter	Eng1Unison	Eng2Unison	Eng3Unison	Mixer	Filter	Amp	Effects	Phaser	Dist	Eq	Delay	Reverb	Comp	LFO1	LFO2	LFO3	Env1	Env2	Env3	Env4	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
+{% block groups %}
+Define Group	Page	Main	Perf	Eng1Osc	Eng2Osc	Eng3Osc	Eng1Mod1	Eng2Mod1	Eng3Mod1	Eng1Mod2	Eng2Mod2	Eng3Mod2	Eng1Harm	Eng2Harm	Eng3Harm	Eng1Filter	Eng2Filter	Eng3Filter	Eng1Unison	Eng2Unison	Eng3Unison	Mixer	Filter	Amp	Effects	Phaser	Dist	Eq	Delay	Reverb	Comp	LFO1	LFO2	LFO3	Env1	Env2	Env3	Env4	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
 Define Group	Enginenum	Eng1	Eng2	Eng3
 Define Group	TempoSync	Free	Sync
-{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
-{% import "remotemap/include/macros.j2" as rm with context %}
+{% endblock groups %}
+{% block main %}
 // Select
 Map	EngineSelect		OscSel		SEL2
 Map	EffectSelect		Effect Select
@@ -27,7 +28,7 @@ Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-2		Page=Mixer			Index
 Map	Button 1-3		Page=Amp			Index
-Map	Button 1-7		Page=Keyboard			Index
+Map	Button 1-5		Page=Perf			Index
 Map	Button 2-1		Page=Eng1Osc			Index
 Map	Button 3-1		Page=Eng2Osc			Index
 Map	Button 4-1		Page=Eng3Osc			Index
@@ -73,20 +74,24 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
 {{ rm.include_menus(curpage="Main",mainmenu_mini="common") -}}
-Map	UDVButton 7-2_8-2		Key Mode			Main
-Map	UDVButton 7-3_8-3		Portamento Mode			Main
-Map	Fader 4		Portamento				Main
-Map	UDVButton 7-7_8-7		Voices				Main
 Map	Fader 8		Master Volume				Main
+// Perf
+Map	PageName		"Perf" 				Perf
+{{ rm.include_menus(curpage="Perf",mainmenu_mini="common") -}}
+Map	UDVButton 7-1_8-1		Key Mode			Perf
+Map	UDVButton 7-3_8-3		Portamento Mode			Perf
+Map	Fader 4		Portamento				Perf
+Map	UDVButton 7-6_8-6		Pitch Bend Range				Perf
+Map	UDVButton 7-8_8-8		Voices				Perf
 // Mixer 
 Map	PageName		"Mixer" 				Mixer
 {{ rm.include_menus(curpage="Mixer", submenu="amp",mainmenu_mini="common", amppage="Amp") -}}
 Map	Fader 2		Osc1 Level				Mixer
-Map	Knob V3		Osc1 Pan				Mixer
-Map	Fader 4		Osc2 Level				Mixer
-Map	Knob V5		Osc2 Pan				Mixer
-Map	Fader 6		Osc3 Level				Mixer
-Map	Knob V7		Osc3 Pan				Mixer
+Map	Fader 3		Osc2 Level				Mixer
+Map	Fader 4		Osc3 Level				Mixer
+Map	Knob V6		Osc1 Pan				Mixer
+Map	Knob V7		Osc2 Pan				Mixer
+Map	Knob V8		Osc3 Pan				Mixer
 // Filter 
 Map	PageName		"Filter" 				Filter
 {{ rm.include_menus(curpage="Filter",mainmenu_mini="common") -}}
@@ -123,7 +128,7 @@ Map	UDVButton 5-3_6-3		Osc{{ engnum }} Tune				Eng{{ engnum }}Osc
 Map	UDVButton 7-3_8-3		Osc{{ engnum }} Pitch Kbd				Eng{{ engnum }}Osc
 Map	UDVButton 1-4_2-4		Osc{{ engnum }} Wave				Eng{{ engnum }}Osc
 Map	Fader 5		Osc{{ engnum }} Shape				Eng{{ engnum }}Osc
-Map	Button 1-6		Osc{{ engnum }} SyncPhase			Eng{{ engnum }}Osc
+Map	Button 8-4		Osc{{ engnum }} SyncPhase			Eng{{ engnum }}Osc
 Map	UDVButton 7-6_8-6		Osc{{ engnum }} Shape Source				Eng{{ engnum }}Osc
 Map	Fader 7		Osc{{ engnum }} Shape Amt				Eng{{ engnum }}Osc
 Map	Fader 8		Osc{{ engnum }} Shape Vel				Eng{{ engnum }}Osc
@@ -170,3 +175,4 @@ Map	Fader 7		Osc{{ engnum }} Spread				Eng{{ engnum }}Unison
 {% include "devices/instrument/Shared/europa_grain/env.j2" %}
 {% include "devices/instrument/Shared/europa_grain/effects.j2" %}
 {% include "devices/instrument/Shared/europa_grain/modmatrix.j2" %}
+{% endblock main %}

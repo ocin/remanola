@@ -58,7 +58,7 @@
 			["Button 8-2"]={template="BPad"},
 			["Button 8-3"]={template="BPad"},
 			["Button 8-4"]={template="BPad"},
-			["Fader 6"]={template="FGain"},
+			["Fader 6"]={template="FVol"},
 		},
 		["Mutes & Solos"]={
 			-- Mute
@@ -109,26 +109,26 @@
 			["Button 4-1"]={template="BEffectPage"},
 			["DrumMain"]={
 				-- Offset
-				["UDVButton 1-2_2-2"]={template="UDAmount"},
+				["UDVButton 1-2_2-2"]={template="UDOsc"},
 				["UDVButton 3-2_4-2"]={template="UDFreq"},
 				-- Sends
 				["UDVButton 1-3_2-3"]={template="UDEffect"},
 				["UDVButton 3-3_4-3"]={template="UDEffect"},
 				["UDVButton 3-4_4-4"]={template="UDEffect"},
+				["Knob V5"]={template="FOsc"},
+				["Knob V6"]={template="FPan"},
+				["Fader 7"]={template="FVol"},
 				-- Outputs
-				["UDVButton 5-5_6-5"]={template="UDGain"},
+				["UDVButton 5-8_6-8"]={template="UDVol"},
 				-- Pitch Bend Range
-				["UDVButton 7-5_8-5"]={template="UDMisc"},
-				["Knob V6"]={template="FAmount"},
-				["Knob V7"]={template="FGain"},
-				["Fader 8"]={template="FGain"},
+				["UDVButton 7-8_8-8"]={template="UDPerf"},
 			},
 			["DrumModule"]={
 				["Button 1-2"]={template="BYellowOnOff"},
 				["Fader 5"]={template="FFreq"},
-				["Knob V6"]={template="FAmount"},
-				["Fader 7"]={template="FAmount"},
-				["Fader 8"]={template="FGain"},
+				["Knob V6"]={template="FOsc"},
+				["Fader 7"]={template="FOsc"},
+				["Fader 8"]={template="FVol"},
 			},
 			["DrumFX1"]={
 				["Button 1-2"]={template="BYellowOnOff"},
@@ -136,8 +136,8 @@
 				["Button 2-4"]={template="BYellowOnOff"},
 				["Button 3-4"]={template="BYellowOnOff"},
 				["Button 4-4"]={template="BYellowOnOff"},
-				["Fader 5"]={template="FEffect"},
 				["Fader 6"]={template="FEffect"},
+				["Fader 7"]={template="FEffect"},
 			},
 			["DrumFX2"]={
 				["Button 1-2"]={template="BYellowOnOff"},
@@ -145,13 +145,13 @@
 				["Button 2-4"]={template="BYellowOnOff"},
 				["Button 3-4"]={template="BYellowOnOff"},
 				["Button 4-4"]={template="BYellowOnOff"},
-				["Fader 5"]={template="FEffect"},
 				["Fader 6"]={template="FEffect"},
+				["Fader 7"]={template="FEffect"},
 			},
 		},
 		["Pad *"]={
-			["UDVButton 1-2_2-2"]={template="UDAmount"},
-			["UDVButton 3-2_4-2"]={template="UDAmount", inverted=true},
+			["UDVButton 1-2_2-2"]={template="UDOsc"},
+			["UDVButton 3-2_4-2"]={template="UDPerf", inverted=true},
 			-- Pad Groups
 			["Button 1-6"]={template="BYellowOnOff"},
 			["Button 1-7"]={template="BYellowOnOff"},
@@ -172,7 +172,7 @@
 			["Button 1-2"]={template="BYellowOnOff"},
 			["Fader 3"]={template="FEffect"},
 			["Fader 4"]={template="FEffect"},
-			["Fader 6"]={template="FGain"},
+			["Fader 6"]={template="FVol"},
 {% if lptype == "mini" %}
 {% include "devices/instrument/kong/mini/confmap_mainmenu_effects.lua" %}
 {% endif %}

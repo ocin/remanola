@@ -4,8 +4,8 @@ local item_conf_map = {
 {% include "devices/reason/reason-master-section/confmap_reason-master-section.lua" %}
 {% include "devices/reason/reason-mix-channel/confmap_reason-mix-channel.lua" %}
 
-{% include "devices/instrument/antidote/confmap_antidote.lua" %}
 {% include "devices/instrument/combinator/confmap_combinator.lua" %}
+{% include "devices/instrument/antidote/confmap_antidote.lua" %}
 {% include "devices/instrument/drrex/confmap_drrex.lua" %}
 {% include "devices/instrument/europa/confmap_europa.lua" %}
 {% include "devices/instrument/grain/confmap_grain.lua" %}
@@ -52,6 +52,9 @@ local item_conf_map = {
 {% include "devices/effect/theecho/confmap_theecho.lua" %}
 {% include "devices/effect/un-16unison/confmap_un-16unison.lua" %}
 
-{% include "devices/utilities/matrix/confmap_matrix.lua" %}
-{% include "devices/utilities/rpg8/confmap_rpg8.lua" %}
+{% include "devices/utility/matrix/confmap_matrix.lua" %}
+{% include "devices/utility/rpg8/confmap_rpg8.lua" %}
+{% include "devices/utility/pulsar/confmap_pulsar.lua" %}
+{% include "devices/utility/linemixer62/confmap_linemixer62.lua" %}
+{% include "devices/utility/mixer142/confmap_mixer142.lua" %}
 }

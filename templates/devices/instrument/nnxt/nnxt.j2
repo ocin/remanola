@@ -1,13 +1,12 @@
+{% extends "devices/instrument/instrument.j2" %}
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="NN-XT Advanced Sampler" -%}
 {% set devicename="NN-XT" -%}
-{% include "remotemap/include/device/scope.j2" %}
-Define Group	Page	Main	Index	Keyboard	Internal
-{% from "remotemap/include/device/instrument.j2" import devicetype with context %}
+{% set shortname="nnxt" -%}
+{% block main %}
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
-Map	Button 1-7		Page=Keyboard			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
@@ -19,3 +18,4 @@ Map	Knob V5		Amp Env Decay				Main
 Map	Knob V6		Amp Env Release				Main
 Map	Knob V7		Mod Env Decay				Main
 Map	Fader 8		Master Volume				Main
+{% endblock main %}

@@ -1,5 +1,5 @@
 function deliver_midi_buttons(ret_events)
-        if(g_lightshow == 0 and not g_flashing) then
+        if(g_lightshow == 0 and not g_flashing and not g_scrolling) then
                 if(g_updateall) then
 			local gridmidimsg = "f0 00 20 29 02 10 0f 00"
 			for row=9,0,-1 do
