@@ -11,6 +11,6 @@ Zip file:
 https://www.niconet.se/nico/Remanola/Remanola-0.11.1.zip
 
 User Manual:
-https://www.niconet.se/nico/Remanola/Remanola%20User%20Manual%200.11.1.pdf
+https://www.niconet.se/nico/Remanola/RemanolaUserManual-0.11.1.pdf
 
 Copyright 2018 Niklas Jakobsson <nico@niconet.se>
