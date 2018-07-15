@@ -18,10 +18,11 @@
 		},
 		["Osc *"]={
 			["UDVButton 1-2_2-2"]={template="UDOsc", inverted=true},
-			["UDVButton 1-3_2-3"]={template="UDOsc"},
-			["UDVButton 1-4_2-4"]={template="UDOsc"},
+			["UDVButton 1-3_2-3"]={template="UDOsc2"},
+			["UDVButton 1-4_2-4"]={template="UDOsc2"},
 			["Fader 5"]={template="FOsc"},
 			["Fader 6"]={template="FOsc"},
+			["Fader 8"]={template="FEffect"},
 {% if lptype == "pro" %}
 {% include "devices/instrument/antidote/pro/confmap_submenu_osc.lua" %}
 {% endif %}

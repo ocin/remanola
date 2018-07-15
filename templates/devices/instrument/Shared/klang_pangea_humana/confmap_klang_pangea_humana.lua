@@ -4,6 +4,7 @@
 {% endif %}
 		},
 		["Main"]={
+			["UDVButton 1-2_2-2"]={template="UDOsc", inverted=true},
 			["Fader 8"]={template="FVol"},
 		},
 		["Perf"]={
