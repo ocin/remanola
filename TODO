@@ -27,6 +27,9 @@
 * Keyboard
 * Update image for both mini and pro
 * Detect correct port for pro
+* Try out low/high color on menus instead of using red
+- Check if we can do something about the flickering of colors
+- Try out test installing in ~/Libnrary 
 - Documentation
 	- Update color documentation for pro
 	- Write user guide
@@ -99,6 +102,7 @@ Instruments:
 * NN-19
 * Parsec
 * Europa
+  - Fix subpaging of effects in Europa and Grain
 * Grain
 * Antidote
 * Klang
