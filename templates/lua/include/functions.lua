@@ -162,7 +162,7 @@ function get_button_color(context, itemname, buttonname, value)
                        			color = REDRUM_NOHIT
 				end
 			end
-		elseif(g_scopetext == "Redrum" and string.match(get_current_page(), "Main") and (string.match(itemname, "Button 4%-6"))) then
+		elseif(g_scopetext == "Redrum" and string.match(get_current_page(), "Main") and (string.match(itemname, "Button 6%-6"))) then
 			if(textvalue == 1) then
                        		color = REDRUM_SOFT
 			elseif(textvalue == 2) then
