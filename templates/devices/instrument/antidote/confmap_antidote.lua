@@ -3,11 +3,11 @@
 {% include "devices/instrument/antidote/"+lptype+"/confmap_mainmenu.lua" %}
 		},
 		["Index"]={
-			["Button 8-1"]={template="BPerformancePage"},
-			["Button 8-2"]={template="BPerformancePage"},
-			["Button 8-3"]={template="BPerformancePage"},
-			["Button 8-4"]={template="BPerformancePage"},
-			["Button 8-5"]={template="BPerformancePage"},
+			["Button 8-1"]={template="BPerformancePageHigh"},
+			["Button 8-2"]={template="BPerformancePageHigh"},
+			["Button 8-3"]={template="BPerformancePageHigh"},
+			["Button 8-4"]={template="BPerformancePageHigh"},
+			["Button 8-5"]={template="BPerformancePageHigh"},
 		},
 		["Main"]={
 			["Fader 8"]={template="FVol"},

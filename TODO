@@ -30,9 +30,9 @@
 * Try out low/high color on menus instead of using red
 * Show page selected on index page
 * Try out test installing in ~/Library instead of /Library
-+ Fix high intensity colors on index page
+* Fix high intensity colors on index page
 	* Default fixed
-	- Needs to adapt individual instruments
+	* Needs to adapt individual instruments
 - Check if we can do something about the flickering of colors
 - Documentation
 	- Update color documentation for pro
@@ -95,6 +95,7 @@ Map:
 
 Instruments:
 * PX-7
+	- Poor implementation?
 * ID8
 * Malstrom
 * Subtractor
@@ -103,6 +104,7 @@ Instruments:
 * Dr.OctoRex
 * Kong
 * NN-XT
+	- Poor implementation?
 * NN-19
 * Parsec
 * Europa
@@ -118,6 +120,9 @@ Instruments:
 - Ammo400
 - Ammo100LA
 - MIDI Instrument
+- Monotone
+- Rytmik
+- Nautilus Bass Synthesizer
 
 Effects:
 * ECF-42
@@ -138,6 +143,9 @@ Effects:
 * MClass Stereo Imager
 * Polar
 * Mini Effects
+- Itsy Audio Phase inverte
+- Distort Chain
+- T2 Phaser
 
 Players:
 - Scales & Chords

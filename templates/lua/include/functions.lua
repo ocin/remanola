@@ -148,8 +148,8 @@ function get_button_color(context, itemname, buttonname, value)
                 	color = disabledcolor
         	end
 	elseif(string.find(itemname, "Button %d%-%d") or string.find(itemname, "Button C%d") or string.find(itemname, "Button %a")) then
-		if(g_scopetext == "Redrum" and string.match(get_current_page(), "Main") and (string.match(itemname, "Button [12]%-%d"))) then
-			if(g_playingbutton == itemname and (tonumber(remote.get_item_text_value(itemsindex["Button 3-8"])) == 1)) then
+		if(g_scopetext == "Redrum" and string.match(get_current_page(), "Main") and (string.match(itemname, "Button [78]%-%d"))) then
+			if(g_playingbutton == itemname and (tonumber(remote.get_item_text_value(itemsindex["Button 6-1"])) == 1)) then
                        		color = REDRUM_HIT
 			else 
 				if(textvalue == 1) then
