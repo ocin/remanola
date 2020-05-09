@@ -154,7 +154,7 @@ function handle_input_helpmode(event, button)
 		if(g_scrolltext == "") then
 			g_scrolltext = get_item_conf_map(itemname, g_colorscheme, get_current_page()).helptext
 			if(g_scrolltext == nil) then
-				g_scrolltext = "Unknown"
+				g_scrolltext = "Unknown: "..itemname
 			end
 		end
 		return true

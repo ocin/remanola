@@ -1,4 +1,4 @@
-                        ["Button B1"]={template="BMainPage"},
+                        ["Button B1"]={template="BMainPage", helptext="Main"},
                         ["Button B2"]={template="BOscPage"},
                         ["Button B3"]={template="BOscPage"},
                         ["Button B4"]={template="BAmpPage"},
