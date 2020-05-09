@@ -1,0 +1,13 @@
+{% set devicetype="player" -%}
+{% import "remotemap/include/macros.j2" as rm with context %}
+{% block scope %}
+{% include "remotemap/include/device/scope.j2" %}
+{% endblock scope %}
+{% block groups %}
+Define Group	Page	Main	Index	Internal
+{% endblock groups %}
+{% block includes %}
+{% include "remotemap/include/device/player.j2" %}
+{% endblock includes %}
+{% block main %}
+{% endblock main %}

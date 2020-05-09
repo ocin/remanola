@@ -57,4 +57,6 @@ local item_conf_map = {
 {% include "devices/utility/pulsar/confmap_pulsar.lua" %}
 {% include "devices/utility/linemixer62/confmap_linemixer62.lua" %}
 {% include "devices/utility/mixer142/confmap_mixer142.lua" %}
+
+{% include "devices/player/dualarpeggio/confmap_dualarpeggio.lua" %}
 }
