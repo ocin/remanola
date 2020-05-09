@@ -33,6 +33,7 @@
 * Fix high intensity colors on index page
 	* Default fixed
 	* Needs to adapt individual instruments
+- Make help text work more generic on Page buttons
 - Check if we can do something about the flickering of colors
 - Documentation
 	- Update color documentation for pro
