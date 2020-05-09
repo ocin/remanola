@@ -15,12 +15,12 @@
 			["Button 7-8"]={template="BEffectPage"},
 			-- Pro
 			["Button 1-1"]={template="BRedOnOff"},
-			["Button 8-1"]={template="BRedOnOff"},
 			["Button 8-2"]={template="BRedOnOff"},
 			["Button 8-3"]={template="BRedOnOff"},
 			["Button 8-4"]={template="BRedOnOff"},
 			["Button 8-5"]={template="BRedOnOff"},
 			["Button 8-6"]={template="BRedOnOff"},
+			["Button 8-7"]={template="BRedOnOff"},
 {% include "devices/instrument/Shared/europa_grain/pro/confmap_submenu_effects.lua" %}
 		},
 		["Phaser"]={

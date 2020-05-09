@@ -23,7 +23,8 @@ check_for_undef() {
 	fi
 }
 
-INSTALLBASE="/Library/Application Support/Propellerhead Software/Remote"
+INSTALLBASE="$HOME/Library/Application Support/Propellerhead Software/Remote"
+#INSTALLBASE="/Library/Application Support/Propellerhead Software/Remote"
 
 if [ ! -z $1 ];then
 	INSTALLBASE=$1

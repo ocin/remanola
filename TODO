@@ -28,8 +28,12 @@
 * Update image for both mini and pro
 * Detect correct port for pro
 * Try out low/high color on menus instead of using red
+* Show page selected on index page
+* Try out test installing in ~/Library instead of /Library
++ Fix high intensity colors on index page
+	* Default fixed
+	- Needs to adapt individual instruments
 - Check if we can do something about the flickering of colors
-- Try out test installing in ~/Libnrary 
 - Documentation
 	- Update color documentation for pro
 	- Write user guide
@@ -102,7 +106,7 @@ Instruments:
 * NN-19
 * Parsec
 * Europa
-  - Fix subpaging of effects in Europa and Grain
+  * Fix subpaging of effects in Europa and Grain
 * Grain
 * Antidote
 * Klang
