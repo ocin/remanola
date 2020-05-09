@@ -4,4 +4,3 @@
                         ["Button A4"]={template="BEffectPage"},
                         ["Button A5"]={template="BEffectPage"},
                         ["Button A6"]={template="BEffectPage"},
-                        ["Button A7"]={template="BEffectPage"},
