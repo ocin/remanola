@@ -59,4 +59,6 @@ local item_conf_map = {
 {% include "devices/utility/mixer142/confmap_mixer142.lua" %}
 
 {% include "devices/player/dualarpeggio/confmap_dualarpeggio.lua" %}
+{% include "devices/player/scalesandchords/confmap_scalesandchords.lua" %}
+{% include "devices/player/noteecho/confmap_noteecho.lua" %}
 }

@@ -149,9 +149,11 @@ Effects:
 - T2 Phaser
 
 Players:
-- Scales & Chords
-- Dual Arpegggio
-- Note Echo
+* Scales & Chords
+* Dual Arpegggio
++ Note Echo
+	- Fix tempo sync mode
+	- Fix repeats mode
 - Drum Sequencer
 
 Utilities:

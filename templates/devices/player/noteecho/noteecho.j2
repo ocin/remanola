@@ -1,0 +1,42 @@
+{% extends "devices/player/player.j2" %}
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.NoteEcho" -%}
+{% set devicename="Note Echo" -%}
+{% set shortname="noteecho" -%}
+{% block groups %}
+Define Group	Page	Main	Index	Internal
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index" 				Index
+{{ rm.include_menus(curpage="Index",mainmenu_mini="common") -}}
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main" 				Main
+{{ rm.include_menus(curpage="Main",mainmenu_mini="common") -}}
+Map	Button 1-1		On/Off			Main
+Map	UDVButton 1-3_2-3		Step Length Free			Main
+Map	Button 1-4		Tempo Sync			Main
+Map	UDVButton 1-5_2-5		Repeats			Main
+Map	Knob H3		Velocity			Main
+Map	Knob H4		Pitch			Main
+Map	Button 5-1		Original Note Enable			Main
+Map	Button 6-1		Step 1 Enable			Main
+Map	Button 6-2		Step 2 Enable			Main
+Map	Button 6-3		Step 3 Enable			Main
+Map	Button 6-4		Step 4 Enable			Main
+Map	Button 6-5		Step 5 Enable			Main
+Map	Button 6-6		Step 6 Enable			Main
+Map	Button 6-7		Step 7 Enable			Main
+Map	Button 6-8		Step 8 Enable			Main
+Map	Button 7-1		Step 9 Enable			Main
+Map	Button 7-2		Step 10 Enable			Main
+Map	Button 7-3		Step 11 Enable			Main
+Map	Button 7-4		Step 12 Enable			Main
+Map	Button 7-5		Step 13 Enable			Main
+Map	Button 7-6		Step 14 Enable			Main
+Map	Button 7-7		Step 15 Enable			Main
+Map	Button 7-8		Step 16 Enable			Main
+Map	Button 8-1		Step 17 Enable			Main
+{% endblock main %}
