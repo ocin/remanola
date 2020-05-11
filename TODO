@@ -154,7 +154,8 @@ Players:
 + Note Echo
 	- Fix tempo sync mode
 	- Fix repeats mode
-- Drum Sequencer
++ Drum Sequencer
+	- Found a major bug with remoting the play button, has been reported to REason Studios.
 
 Utilities:
 * Combinator

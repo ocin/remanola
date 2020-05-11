@@ -1,6 +1,6 @@
 	["Thor"]={
 		["Default"]={
-{% include "devices/instrument/thor/"+lptype+"/confmap_mainmenu.lua" %}
+{% include "devices/" + device.type + "/" + device.name + "/"+lptype+"/confmap_mainmenu.lua" %}
 		},
 		["Main"]={
 			["Button 8-2"]={template="BRedOnOff"},
