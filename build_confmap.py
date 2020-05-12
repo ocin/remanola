@@ -49,18 +49,18 @@ def buildconfmap(infile, confmapfile):
 			genhelptext = True
 			continue
 
-#		m = re.search('Map\t([^\t]+)\t\tPage=([^\t]+).*\n', line)
-#		if m and genhelptext:
-#			item = m.group(1)
-#			gotopage = m.group(2)
-#			if not deviceprinted:
-#				c.write('\t["' + device + '"]={\n')
-#				deviceprinted = True
-#			if not pageprinted:
-#				c.write('\t\t["' + page + '"]={\n')
-#				pageprinted = True
-#			c.write('\t\t\t["' + item + '"]={helptext="' + gotopage + '"},\n')
-#			continue
+		m = re.search('Map\t([^\t]+)\t\tPage=([^\t]+).*\n', line)
+		if m and genhelptext:
+			item = m.group(1)
+			gotopage = m.group(2)
+			if not deviceprinted:
+				c.write('\t["' + device + '"]={\n')
+				deviceprinted = True
+			if not pageprinted:
+				c.write('\t\t["' + page + '"]={\n')
+				pageprinted = True
+			c.write('\t\t\t["' + item + '"]={helptext="Goto page ' + gotopage + '"},\n')
+			continue
 
 		m = re.search('Map\t([^\t]+)\t.*// (.*)', line)
 		if not m:
