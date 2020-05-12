@@ -35,9 +35,11 @@ def buildconfmap(infile, confmapfile):
 			if page is not 'Unknown' and pageprinted:
 				c.write('\t\t},\n')
 			page = m.group(1)
-			print page + device
 			pageprinted = False
-			if page is 'Default':
+			if page == 'Default':
+				if not deviceprinted:
+					c.write('\t["' + device + '"]={\n')
+					deviceprinted = True
 				c.write('\t\t["' + page + '"]={\n')
 				pageprinted = True
 			continue
