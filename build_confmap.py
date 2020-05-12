@@ -59,7 +59,7 @@ def buildconfmap(infile, confmapfile):
 			if not pageprinted:
 				c.write('\t\t["' + page + '"]={\n')
 				pageprinted = True
-			c.write('\t\t\t["' + item + '"]={helptext="Goto page ' + gotopage + '"},\n')
+			c.write('\t\t\t["' + item + '"]={helptext="Goto ' + gotopage + '"},\n')
 			continue
 
 		m = re.search('Map\t([^\t]+)\t.*// (.*)', line)

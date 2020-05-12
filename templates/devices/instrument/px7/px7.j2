@@ -10,10 +10,11 @@ Define Group	Page	Main	Perf	OP1	OP2	OP3	OP4	OP5	OP6	LFO	Index	Keyboard	Internal
 Define Group	TempoSync	Free	Sync
 {% endblock groups %}
 {% block main %}
-// confmap: genhelptext
+// confmap: NOgenhelptext
 // confmap: Map	PageName	"Default"
 // Index
 Map	PageName		"Index" 				Index
+{{ rm.include_menus(curpage="Index",mainmenu_mini="common") -}}
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-5		Page=Perf			Index
 Map	Button 2-1		Page=OP6			Index
@@ -51,11 +52,11 @@ Map	Fader 8		Operator {{ opnum }} Output Level				OP{{ opnum }}	// template="FGa
 // LFO
 Map	PageName		"LFO" 				LFO
 {{ rm.include_menus(curpage="LFO"|string,mainmenu_mini="common") -}}
+Map	Button 8-2		LFO Tempo Sync		SEL1	LFO	// template="BRedOnOff"
 Map	Sel1_0		TempoSync=Free			LFO
 Map	Sel1_1		TempoSync=Sync			LFO
 Map	Fader 3		LFO Speed				LFO	Free	// template="FFreq"
 Map	UDVButton 7-3_8-3		LFO Speed Tempo Synced				LFO	Sync	// template="UDFreq"
-Map	Fader 4		LFO Delay				LFO	// template="FMisc"
-Map	UDVButton 1-5_2-5		LFO Waveform				LFO	// template="UDMisc", inverted=true
-Map	Button 8-2		LFO Tempo Sync		SEL1	LFO	// template="BRedOnOff"
+Map	Fader 4		LFO Delay				LFO	// template="FLFO"
+Map	UDVButton 1-5_2-5		LFO Waveform				LFO	// template="UDLFO", inverted=true
 {% endblock main %}
