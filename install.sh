@@ -33,6 +33,7 @@ fi
 export CODECSDIR="$INSTALLBASE/Codecs/Lua Codecs/Remanola/"
 export MAPSDIR="$INSTALLBASE/Maps/Remanola/"
 OUTDIR="/tmp/remanola-out"
+TMPTEMPLATEDIR="templates/tmp/"
 
 if [ ! -d "$CODECSDIR" ]; then
 	mkdir -p "$CODECSDIR"
@@ -46,9 +47,15 @@ if [ ! -d "$OUTDIR" ]; then
 	mkdir -p "$OUTDIR"
 fi
 
+if [ ! -d "$TMPTEMPLATEDIR" ]; then
+	mkdir -p "$TMPTEMPLATEDIR"
+fi
+
 ./build_remotemap.py
 check_for_undef "$OUTDIR/Launchpad-Mini.remotemap"
 check_for_undef "$OUTDIR/Launchpad-Pro.remotemap"
+./build_confmap.py
+./stripconfmap_remotemap.py
 ./build_lua.py
 
 # Mini
