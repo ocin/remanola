@@ -26,6 +26,8 @@ check_for_undef() {
 INSTALLBASE="$HOME/Library/Application Support/Propellerhead Software/Remote"
 #INSTALLBASE="/Library/Application Support/Propellerhead Software/Remote"
 
+echo "Installing Remanola in $INSTALLBASE"
+
 if [ ! -z $1 ];then
 	INSTALLBASE=$1
 fi
