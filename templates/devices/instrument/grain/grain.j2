@@ -12,7 +12,7 @@
 {# End Variables -#}
 {% block groups %}
 Define Group	Page	Main	Perf	Sample	Grains	Pitch	Osc	Mixer	Filter	Amp	Effects	Phaser	Dist	Eq	Delay	Reverb	Comp	LFO1	LFO2	LFO3	Env1	Env2	Env3	Env4	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	ModMatrix6	ModMatrix7	ModMatrix8	Index	Keyboard	Internal
-Define Group	Grains	SpectralGrains	GrainOsc	LongGrains	Tape
+Define Group	Algorithm	SpectralGrains	GrainOsc	LongGrains	Tape
 Define Group	TempoSync	Free	Sync
 {% endblock groups %}
 {% block main %}
@@ -69,8 +69,8 @@ Map	Fader 4		Portamento				Perf	// template="FPerf"
 Map	UDVButton 7-6_8-6		Pitch Bend Range				Perf	// template="UDPerf"
 Map	UDVButton 7-8_8-8		Voices				Perf	// template="UDOsc"
 // Sample
+Map	PageName		"Sample"				Sample
 {{ rm.include_menus(curpage="Sample") -}}
-Map	PageName		"Sample" 				Sample
 Map	Fader 1		Zoom				Sample	// template="FMisc"
 Map	Fader 2		Scroll				Sample	// template="FMisc"
 Map	Fader 3		Position				Sample	// template="UDOsc"
@@ -80,12 +80,12 @@ Map	Fader 6		Speed				Sample	// template="FFreq"
 Map	Fader 7		Jitter				Sample	// template="FOsc"
 Map	Button 1-8		Global Position			Sample	// template="BRedOnOff"
 // Grains
-{{ rm.include_menus(curpage="Grains",submenu="osc",oscpage="Grains") -}}
 Map	PageName		"Grains" 				Grains
-Map	Sel1_0		Grains=SpectralGrains			Grains
-Map	Sel1_42		Grains=GrainOsc			Grains
-Map	Sel1_85		Grains=LongGrains			Grains
-Map	Sel1_127		Grains=Tape			Grains
+{{ rm.include_menus(curpage="Grains",submenu="osc",oscpage="Grains") -}}
+Map	Sel1_0		Algorithm=SpectralGrains			Grains
+Map	Sel1_42		Algorithm=GrainOsc			Grains
+Map	Sel1_85		Algorithm=LongGrains			Grains
+Map	Sel1_127		Algorithm=Tape			Grains
 Map	UDVButton 1-1_2-1		Algorithm		SEL1	Grains	// template="UDOsc", inverted=true
 // Spectral Grains
 Map	SubPageName		"Spectral Grains" 				Grains	SpectralGrains
@@ -107,55 +107,55 @@ Map	Fader 6		Formant				Grains	GrainOsc	// template="FEffect"
 Map	Fader 7		Formant Tune				Grains	GrainOsc	// template="FOsc"
 Map	Fader 8		Formant Kbd				Grains	GrainOsc	// template="FPerf"
 // Long Grains
-Map	SubPageName		"Long Grains" 				Grains	LongGrains
-Map	Fader 2		Pan Spread				Grains	LongGrains
-Map	Fader 3		Pitch Jitter				Grains	LongGrains
-Map	Fader 5		Grain Length				Grains	LongGrains
-Map	Fader 6		Rate-Spacing				Grains	LongGrains
-Map	Fader 7		XFade				Grains	LongGrains
+Map	SubPageName		"Long Grains" 				Grains	LongGrains	// template="FOsc"
+Map	Fader 2		Pan Spread				Grains	LongGrains	// template="FOsc"
+Map	Fader 3		Pitch Jitter				Grains	LongGrains	// template="FOsc"
+Map	Fader 5		Grain Length				Grains	LongGrains	// template="FOsc"
+Map	Fader 6		Rate-Spacing				Grains	LongGrains	// template="FFreq"
+Map	Fader 7		XFade				Grains	LongGrains	// template="FOsc"
 // Tape
 Map	SubPageName		"Tape" 				Grains	Tape
-Map	Fader 6		XFade				Grains	Tape
+Map	Fader 6		XFade				Grains	Tape	// template="FOsc"
 // Pitch
 Map	PageName		"Pitch" 				Pitch
 {{ rm.include_menus(curpage="Pitch",submenu="osc",oscpage="Pitch") -}}
-Map	UDVButton 1-2_2-2		Oct				Pitch
-Map	UDVButton 1-3_2-3		Semi				Pitch
-Map	UDVButton 1-4_2-4		Tune				Pitch
-Map	Fader 6		Pitch Kbd				Pitch
+Map	UDVButton 1-2_2-2		Oct				Pitch	// template="UDFreq"
+Map	UDVButton 1-3_2-3		Semi				Pitch	// template="UDFreq"
+Map	UDVButton 1-4_2-4		Tune				Pitch	// template="UDFreq"
+Map	Fader 6		Pitch Kbd				Pitch	// template="FPerf"
 // Osc
 Map	PageName		"Osc" 				Osc
 {{ rm.include_menus(curpage="Osc",submenu="osc",oscpage="Osc") -}}
-Map	Button 1-2		Osc On 			Osc
-Map	UDVButton 1-3_2-3		Osc Oct				Osc
-Map	UDVButton 1-4_2-4		Osc Wave				Osc
-Map	Fader 6		Osc Mod				Osc
+Map	Button 1-2		Osc On 			Osc	// template="BRedOnOff"
+Map	UDVButton 1-3_2-3		Osc Oct				Osc	// template="UDFreq"
+Map	UDVButton 1-4_2-4		Osc Wave				Osc	// template="UDOsc"
+Map	Fader 6		Osc Mod				Osc	// template="FOsc"
 // Mixer 
 Map	PageName		"Mixer" 				Mixer
 {{ rm.include_menus(curpage="Mixer",submenu="amp", amppage="Mixer") -}}
-Map	UDVButton 1-2_2-2		Sample To Filter			Mixer
-Map	Fader 3		Sample Level				Mixer
-Map	UDVButton 1-5_2-5		Osc To Filter			Mixer
-Map	Fader 6		Osc Level				Mixer
+Map	UDVButton 1-2_2-2		Sample To Filter			Mixer	// template="UDAmount", inverted=true
+Map	Fader 3		Sample Level				Mixer	// template="FVol"
+Map	UDVButton 1-5_2-5		Osc To Filter			Mixer	// template="UDAmount"
+Map	Fader 6		Osc Level				Mixer	// template="FVol"
 // Filter 
 Map	PageName		"Filter" 				Filter
 {{ rm.include_menus(curpage="Filter") -}}
-Map	UDVButton 1-2_2-2		Filter Type				Filter
-Map	Fader 3		Filter Freq				Filter
-Map	Fader 4		Filter Reso				Filter
-Map	Fader 6		Filter Env2				Filter
-Map	Fader 7		Filter Vel				Filter
-Map	Fader 8		Filter Kbd				Filter
+Map	UDVButton 1-2_2-2		Filter Type				Filter	// template="UDFreq", inverted=true
+Map	Fader 3		Filter Freq				Filter	// template="FFreq"
+Map	Fader 4		Filter Reso				Filter	// template="FEffect"
+Map	Fader 6		Filter Env2				Filter	// template="FEnv"
+Map	Fader 7		Filter Vel				Filter	// template="FPerf"
+Map	Fader 8		Filter Kbd				Filter	// template="FPerf"
 // Amp
 Map	PageName		"Amp" 				Amp
 {{ rm.include_menus(curpage="Amp",submenu="amp", amppage="Amp") -}}
-Map	Fader 2		Amp Attack				Amp
-Map	Fader 3		Amp Decay				Amp
-Map	Fader 4		Amp Sustain				Amp
-Map	Fader 5		Amp Release				Amp
-Map	Fader 6		Amp Gain				Amp
-Map	Fader 7		Amp Velocity				Amp
-Map	Knob V8		Pan				Amp
+Map	Fader 2		Amp Attack				Amp	// template="FGain"
+Map	Fader 3		Amp Decay				Amp	// template="FGain"
+Map	Fader 4		Amp Sustain				Amp	// template="FGain"
+Map	Fader 5		Amp Release				Amp	// template="FGain"
+Map	Fader 6		Amp Gain				Amp	// template="FAmount"
+Map	Fader 7		Amp Velocity				Amp	// template="FMisc"
+Map	Knob V8		Pan				Amp	// template="FGain"
 {% include "devices/instrument/Shared/europa_grain/lfo.j2" %}
 {% include "devices/instrument/Shared/europa_grain/env.j2" %}
 {% include "devices/instrument/Shared/europa_grain/effects.j2" %}

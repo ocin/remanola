@@ -46,6 +46,7 @@ if [ ! -d "$MAPSDIR" ]; then
 fi
 
 if [ ! -d "$OUTDIR" ]; then
+	echo "creating $OUTDIR"
 	mkdir -p "$OUTDIR"
 fi
 
@@ -54,10 +55,10 @@ if [ ! -d "$TMPTEMPLATEDIR" ]; then
 fi
 
 ./build_remotemap.py
-check_for_undef "$OUTDIR/Launchpad-Mini.remotemap"
-check_for_undef "$OUTDIR/Launchpad-Pro.remotemap"
 ./build_confmap.py
 ./stripconfmap_remotemap.py
+check_for_undef "$OUTDIR/Launchpad-Mini.remotemap"
+check_for_undef "$OUTDIR/Launchpad-Pro.remotemap"
 ./build_lua.py
 
 # Mini
