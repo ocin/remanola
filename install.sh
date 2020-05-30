@@ -46,7 +46,6 @@ if [ ! -d "$MAPSDIR" ]; then
 fi
 
 if [ ! -d "$OUTDIR" ]; then
-	echo "creating $OUTDIR"
 	mkdir -p "$OUTDIR"
 fi
 

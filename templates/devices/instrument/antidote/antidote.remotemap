@@ -52,7 +52,7 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	Fader 8		Master Volume				Main
+Map	Fader 8		Master Volume				Main	// template="FVol"
 // Perf
 Map	PageName		"Perf" 				Perf
 {{ rm.include_menus(curpage="Perf") -}}
@@ -62,7 +62,7 @@ Map	Fader 3		Glide				Perf	// template="FPerf"
 // Osc {{ oscnum }}
 Map	PageName		"Osc {{ oscnum }}" 				Osc{{ oscnum }}
 {{ rm.include_menus(curpage="Osc"+oscnum|string, mainmenu_mini="osc", submenu="osc", osc1page="Osc1", osc2page="Osc2", oscnum=oscnum) -}}
-Map	UDVButton 1-2_2-2		Osc {{ oscnum }} Waveform				Osc{{ oscnum }}
+Map	UDVButton 1-2_2-2		Osc {{ oscnum }} Waveform				Osc{{ oscnum }}	// template="UDOsc", inverted=true
 Map	UDVButton 1-3_2-3		Osc {{ oscnum }} Voices				Osc{{ oscnum }}
 Map	UDVButton 1-4_2-4		Osc {{ oscnum }} Dyad				Osc{{ oscnum }}
 Map	Fader 5		Osc {{ oscnum }} Phase				Osc{{ oscnum }}
