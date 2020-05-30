@@ -25,7 +25,7 @@ Map	EnvSelect		Env Select
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
-Map	Button 1-2		Page=Mixer			Index
+Map	Button 1-2		Page=Mixer			Index	// template="BAmpPage"
 Map	Button 1-3		Page=Amp			Index
 Map	Button 1-5		Page=Perf			Index
 Map	Button 2-1		Page=Sample			Index
@@ -33,14 +33,14 @@ Map	Button 2-2		Page=Grains			Index
 Map	Button 2-3		Page=Pitch			Index
 Map	Button 2-4		Page=Osc			Index
 Map	Button 2-5		Page=Filter			Index
-Map	Button 7-1		Page=ModMatrix1			Index
-Map	Button 7-2		Page=ModMatrix2			Index
-Map	Button 7-3		Page=ModMatrix3			Index
-Map	Button 7-4		Page=ModMatrix4			Index
-Map	Button 8-1		Page=ModMatrix5			Index
-Map	Button 8-2		Page=ModMatrix6			Index
-Map	Button 8-3		Page=ModMatrix7			Index
-Map	Button 8-4		Page=ModMatrix8			Index
+Map	Button 7-1		Page=ModMatrix1			Index	// template="BPerformancePage"
+Map	Button 7-2		Page=ModMatrix2			Index	// template="BPerformancePage"
+Map	Button 7-3		Page=ModMatrix3			Index	// template="BPerformancePage"
+Map	Button 7-4		Page=ModMatrix4			Index	// template="BPerformancePage"
+Map	Button 8-1		Page=ModMatrix5			Index	// template="BPerformancePage"
+Map	Button 8-2		Page=ModMatrix6			Index	// template="BPerformancePage"
+Map	Button 8-3		Page=ModMatrix7			Index	// template="BPerformancePage"
+Map	Button 8-4		Page=ModMatrix8			Index	// template="BPerformancePage"
 Map	Button 6-5		Page=LFO1			Index
 Map	Button 7-5		Page=LFO2			Index
 Map	Button 8-5		Page=LFO3			Index
@@ -59,26 +59,26 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	Fader 8		Master Volume				Main
+Map	Fader 8		Master Volume				Main	// template="FGain"
 // Perf
 Map	PageName		"Perf" 				Perf
 {{ rm.include_menus(curpage="Perf") -}}
-Map	UDVButton 7-1_8-1		Key Mode			Perf
-Map	UDVButton 7-3_8-3		Portamento Mode				Perf
-Map	Fader 4		Portamento				Perf
-Map	UDVButton 7-6_8-6		Pitch Bend Range				Perf
-Map	UDVButton 7-8_8-8		Voices				Perf
+Map	UDVButton 7-1_8-1		Key Mode			Perf	// template="UDPerf2"
+Map	UDVButton 7-3_8-3		Portamento Mode				Perf	// template="UDPerf"
+Map	Fader 4		Portamento				Perf	// template="FPerf"
+Map	UDVButton 7-6_8-6		Pitch Bend Range				Perf	// template="UDPerf"
+Map	UDVButton 7-8_8-8		Voices				Perf	// template="UDOsc"
 // Sample
 {{ rm.include_menus(curpage="Sample") -}}
 Map	PageName		"Sample" 				Sample
-Map	Fader 1		Zoom				Sample
-Map	Fader 2		Scroll				Sample
-Map	Fader 3		Position				Sample
-Map	Fader 4		End Pos				Sample
-Map	UDVButton 1-5_2-5		Motion				Sample
-Map	Fader 6		Speed				Sample
-Map	Fader 7		Jitter				Sample
-Map	Button 1-8		Global Position			Sample
+Map	Fader 1		Zoom				Sample	// template="FMisc"
+Map	Fader 2		Scroll				Sample	// template="FMisc"
+Map	Fader 3		Position				Sample	// template="UDOsc"
+Map	Fader 4		End Pos				Sample	// template="FFreq"
+Map	UDVButton 1-5_2-5		Motion				Sample	// template="UDOsc", inverted=true
+Map	Fader 6		Speed				Sample	// template="FFreq"
+Map	Fader 7		Jitter				Sample	// template="FOsc"
+Map	Button 1-8		Global Position			Sample	// template="BRedOnOff"
 // Grains
 {{ rm.include_menus(curpage="Grains",submenu="osc",oscpage="Grains") -}}
 Map	PageName		"Grains" 				Grains
@@ -86,26 +86,26 @@ Map	Sel1_0		Grains=SpectralGrains			Grains
 Map	Sel1_42		Grains=GrainOsc			Grains
 Map	Sel1_85		Grains=LongGrains			Grains
 Map	Sel1_127		Grains=Tape			Grains
-Map	UDVButton 1-1_2-1		Algorithm		SEL1	Grains
+Map	UDVButton 1-1_2-1		Algorithm		SEL1	Grains	// template="UDOsc", inverted=true}
 // Spectral Grains
 Map	SubPageName		"Spectral Grains" 				Grains	SpectralGrains
-Map	Fader 2		Harm Snap				Grains	SpectralGrains
-Map	Fader 3		Harm Filter				Grains	SpectralGrains
-Map	Button 1-4		Curve On 			Grains	SpectralGrains
-Map	UDVButton 7-4_8-4		FFT Size				Grains	SpectralGrains
-Map	Fader 5		Curve Amt				Grains	SpectralGrains
-Map	Fader 6		Formant				Grains	SpectralGrains
-Map	Fader 7		Formant Tune				Grains	SpectralGrains
-Map	Fader 8		Formant Kbd				Grains	SpectralGrains
+Map	Fader 2		Harm Snap				Grains	SpectralGrains	// template="FOsc"
+Map	Fader 3		Harm Filter				Grains	SpectralGrains	// template="FFreq"
+Map	Button 1-4		Curve On 			Grains	SpectralGrains	// template="BRedOnOff"
+Map	UDVButton 7-4_8-4		FFT Size				Grains	SpectralGrains	// template="UDOsc"
+Map	Fader 5		Curve Amt				Grains	SpectralGrains	// template="FOsc"
+Map	Fader 6		Formant				Grains	SpectralGrains	// template="FEffect"
+Map	Fader 7		Formant Tune				Grains	SpectralGrains	// template="FOsc"
+Map	Fader 8		Formant Kbd				Grains	SpectralGrains	// template="FPerf"
 // Grain Oscillator
 Map	SubPageName		"Grain Oscillator" 				Grains	GrainOsc
-Map	Fader 2		Pan Spread				Grains	GrainOsc
-Map	Fader 3		Pitch Jitter				Grains	GrainOsc
-Map	Fader 4		Grain Length				Grains	GrainOsc
-Map	Fader 5		Rate-Spacing				Grains	GrainOsc
-Map	Fader 6		Formant				Grains	GrainOsc
-Map	Fader 7		Formant Tune				Grains	GrainOsc
-Map	Fader 8		Formant Kbd				Grains	GrainOsc
+Map	Fader 2		Pan Spread				Grains	GrainOsc	// template="FOsc"
+Map	Fader 3		Pitch Jitter				Grains	GrainOsc	// template="FOsc"
+Map	Fader 4		Grain Length				Grains	GrainOsc	// template="FFreq"
+Map	Fader 5		Rate-Spacing				Grains	GrainOsc	// template="FOsc"
+Map	Fader 6		Formant				Grains	GrainOsc	// template="FEffect"
+Map	Fader 7		Formant Tune				Grains	GrainOsc	// template="FOsc"
+Map	Fader 8		Formant Kbd				Grains	GrainOsc	// template="FPerf"
 // Long Grains
 Map	SubPageName		"Long Grains" 				Grains	LongGrains
 Map	Fader 2		Pan Spread				Grains	LongGrains
