@@ -1,0 +1,5 @@
+{% include "remotemap/include/device/name.remotemap" %}
+{% include "remotemap/include/device/patch.remotemap" %}
+{% include "remotemap/include/device/shortcuts.remotemap" %}
+{% include "remotemap/include/page/internal.remotemap" %}
+{% set devicetype="utilities" -%}

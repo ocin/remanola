@@ -1,0 +1,23 @@
+{% extends "devices/instrument/instrument.remotemap" %}
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="NN-XT Advanced Sampler" -%}
+{% set devicename="NN-XT" -%}
+{% set shortname="nnxt" -%}
+{% block main %}
+// confmap: NOgenhelptext
+// confmap: Map	PageName	"Default"
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main" 				Main
+Map	Fader 1		External Controller				Main	// template="FPerf"
+Map	Knob V2		Filter Freq				Main	// template="FFreq"
+Map	Knob V3		Filter Res				Main	// template="FEffect"
+Map	Knob V4		Amp Env Attack				Main	// template="FVol"
+Map	Knob V5		Amp Env Decay				Main	// template="FVol"
+Map	Knob V6		Amp Env Release				Main	// template="FVol"
+Map	Knob V7		Mod Env Decay				Main	// template="FEnv"
+Map	Fader 8		Master Volume				Main	// template="FVol"
+{% endblock main %}

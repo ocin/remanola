@@ -1,0 +1,33 @@
+{% extends "devices/effect/effect-nopatch.remotemap" %}
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="ECF-42 Envelope Controlled Filter" -%}
+{% set devicename="ECF-42 Filter" -%}
+{% set shortname="ecf-42filter" -%}
+{% block groups %}
+Define Group	Page	Main	FilterEnvelope	Index	Internal
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-6		Page=FilterEnvelope			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main" 				Main
+{{ rm.include_menus(curpage="Main") -}}
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Meter 2		Peak Meter			Main
+Map	Fader 3		Frequency			Main
+Map	Fader 4		Resonance			Main
+Map	Fader 5		Env Amount			Main
+Map	Fader 6		Velocity			Main
+Map	UDVButton 1-7_2-7		Mode			Main
+// Filter Envelope
+Map	PageName		"Filter Envelope" 				FilterEnvelope
+{{ rm.include_menus(curpage="FilterEnvelope") -}}
+Map	Fader 1		Env Amount			FilterEnvelope
+Map	Fader 3		Attack			FilterEnvelope
+Map	Fader 4		Decay			FilterEnvelope
+Map	Fader 5		Sustain			FilterEnvelope
+Map	Fader 6		Release			FilterEnvelope
+{% endblock main %}

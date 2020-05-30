@@ -1,0 +1,17 @@
+{% set baseshortname=shortname -%}
+{% set shortname="europa_grain" -%}
+{% import "remotemap/include/macros.remotemap" as rm with context %}
+{% for lfonum in range(1,4) %}
+// LFO {{ lfonum }}
+Map	PageName		"LFO {{ lfonum }}" 				LFO{{ lfonum }}
+Map	Sel1_0		TempoSync=Free			LFO{{ lfonum }}
+Map	Sel1_1		TempoSync=Sync			LFO{{ lfonum }}
+Map	UDVButton 1-2_2-2		LFO {{ lfonum }} Wave				LFO{{ lfonum }}	// template="UDLFO"
+Map	Button 6-2		LFO {{ lfonum }} TempoSync		SEL1	LFO{{ lfonum }}	// template="BRedOnOff"
+Map	Button 7-2		LFO {{ lfonum }} KeySync			LFO{{ lfonum }}	// template="BRedOnOff"
+Map	Button 8-2		LFO {{ lfonum }} Global			LFO{{ lfonum }}	// template="BRedOnOff"
+Map	Fader 3		LFO {{ lfonum }} Rate				LFO{{ lfonum }}	Free	// template="FFreq"
+Map	UDVButton 7-3_8-3		LFO {{ lfonum }} SyncRate				LFO{{ lfonum }}	Sync	// template="FEffect"
+Map	Fader 4		LFO {{ lfonum }} Delay				LFO{{ lfonum }}	// template="FOsc"
+{{ rm.include_menus(curpage="LFO"+lfonum|string, submenu="mod",mainmenu_mini="lfo", modpage="LFO"+lfonum|string) -}}
+{% endfor %}

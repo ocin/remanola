@@ -1,0 +1,24 @@
+{% extends "devices/instrument/instrument.remotemap" %}
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="Combinator" -%}
+{% set devicename="Combinator" -%}
+{% set shortname="combinator" -%}
+{% block main %}
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main" 				Main
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Button 5-1		Run Pattern Devices			Main
+Map	Button 6-1		Bypass All FX			Main
+Map	Button 8-1		Button 1			Main
+Map	Button 8-2		Button 2			Main
+Map	Button 8-3		Button 3			Main
+Map	Button 8-4		Button 4			Main
+Map	Fader 5		Rotary 1			Main
+Map	Fader 6		Rotary 2			Main
+Map	Fader 7		Rotary 3			Main
+Map	Fader 8		Rotary 4			Main
+{% endblock main %}

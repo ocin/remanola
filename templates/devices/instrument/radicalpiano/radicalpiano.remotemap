@@ -1,0 +1,81 @@
+{% extends "devices/instrument/instrument.remotemap" %}
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.radicalpiano" -%}
+{% set devicename="Radical Piano" -%}
+{% set shortname="radicalpiano" -%}
+{# Variables -#}
+{% set hide_pitch_bend=true -%}
+{% set hide_mod_wheel=true -%}
+{% set effectpagedefault="Eq" -%}
+{# End Variables -#}
+{% block groups %}
+Define Group	Page	Main	Velocity	Tune	Resonance	Envelope	Mechanics	Eq	Ambience	Output	Index	Keyboard	Internal
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=Envelope			Index
+Map	Button 1-5		Page=Velocity			Index
+Map	Button 2-1		Page=Tune			Index
+Map	Button 2-2		Page=Resonance			Index
+Map	Button 2-3		Page=Mechanics			Index
+Map	Button 2-8		Page=Eq			Index
+Map	Button 3-8		Page=Ambience			Index
+Map	Button 4-8		Page=Output			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main" 				Main
+{{ rm.include_menus(curpage="Main") -}}
+Map	Fader 2		Sustain Pedal			Main
+Map	Fader 4		Character			Main
+Map	UDVButton 7-5_8-5		Microphone 1 Type				Main
+Map	Knob V6		Microphone and Instrument Blend			Main
+Map	UDVButton 7-7_8-7		Microphone 2 Type				Main
+Map	Fader 8		Master Volume			Main
+// Envelope
+Map	PageName		"Envelope" 				Envelope
+{{ rm.include_menus(curpage="Envelope") -}}
+Map	Fader 4		Env Attack			Envelope
+Map	Knob V5		Env Decay Curve			Envelope
+Map	Knob V6		Env Release			Envelope
+// Velocity
+Map	PageName		"Velocity" 				Velocity
+{{ rm.include_menus(curpage="Velocity") -}}
+Map	Fader 4		Vel Response Low			Velocity
+Map	Fader 5		Vel Response High			Velocity
+Map	Knob V6		Vel Response Curve			Velocity
+// Tune
+Map	PageName		"Tune" 				Tune
+{{ rm.include_menus(curpage="Tune", mainmenu_mini="common") -}}
+Map	Knob V4		Tune			Tune
+Map	Fader 5		Tune Drift			Tune
+// Resonance
+Map	PageName		"Resonance" 				Resonance
+{{ rm.include_menus(curpage="Resonance", mainmenu_mini="common") -}}
+Map	Knob V4		Symp Res Level			Resonance
+Map	Knob V5		Symp Res Release Time			Resonance
+// Mechanics
+Map	PageName		"Mechanics" 				Mechanics
+{{ rm.include_menus(curpage="Mechanics", mainmenu_mini="common") -}}
+Map	Knob V4		Key Down Level			Mechanics
+Map	Knob V5		Key Up Level			Mechanics
+Map	Knob V6		Pedal Level			Mechanics
+// Eq
+Map	PageName		"Eq" 				Eq
+{{ rm.include_menus(curpage="Eq", submenu="effect", mainmenu_mini="common", effectpage="Eq") -}}
+Map	Button 1-1		EQ On/Off			Eq
+Map	Knob V4		EQ Lo Gain			Eq
+Map	Knob V5		EQ Mid Gain			Eq
+Map	Knob V6		EQ Hi Gain			Eq
+// Ambience
+Map	PageName		"Ambience" 				Ambience
+{{ rm.include_menus(curpage="Ambience", submenu="effect", mainmenu_mini="common", effectpage="Ambience") -}}
+Map	UDVButton 1-2_2-2		Ambience Type				Ambience
+Map	Fader 4		Ambience Level			Ambience
+// Output
+Map	PageName		"Output" 				Output
+{{ rm.include_menus(curpage="Output", submenu="effect", mainmenu_mini="common", effectpage="Output") -}}
+Map	Fader 3		Compression Amount			Output
+Map	Knob V4		Stereo Width			Output
+{% endblock main %}

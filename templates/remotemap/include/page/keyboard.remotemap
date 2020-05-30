@@ -1,0 +1,54 @@
+{% import "remotemap/include/macros.remotemap" as rm with context %}
+Map	Button C6		Page=Keyboard
+// Keyboard
+Map	PageName		"Keyboard"			Keyboard	
+{{ rm.include_menus(curpage="Keyboard") -}}
+{% if lptype == "pro" %}
+Map	Button A1		Layout=Kbd			Keyboard
+Map	Button A2		Layout=Drum			Keyboard
+{% endif -%}
+Map	KbdPageName		"Kbd"			Keyboard	
+{% if lptype == "mini" %}
+Map	Button 1-4		KbdVel=V25			Keyboard	Kbd
+Map	Button 1-5		KbdVel=V50			Keyboard	Kbd
+Map	Button 1-6		KbdVel=V75			Keyboard	Kbd
+Map	Button 1-7		KbdVel=V100			Keyboard	Kbd
+Map	Button 1-8		KbdVel=V127			Keyboard	Kbd
+Map	KbdVel		"25"			Keyboard	V25	Kbd
+Map	KbdVel		"50"			Keyboard	V50	Kbd
+Map	KbdVel		"75"			Keyboard	V75	Kbd
+Map	KbdVel		"100"			Keyboard	V100	Kbd
+Map	KbdVel		"127"			Keyboard	V127	Kbd
+{% endif -%}
+Map	Button 2-4		BaseKey=C0			Keyboard	Kbd
+Map	Button 2-5		BaseKey=C1			Keyboard	Kbd
+Map	Button 2-6		BaseKey=C2			Keyboard	Kbd
+Map	Button 2-7		BaseKey=C3			Keyboard	Kbd
+Map	Button 2-8		BaseKey=C4			Keyboard	Kbd
+Map	BaseKey		"0"			Keyboard	C0	Kbd
+Map	BaseKey		"1"			Keyboard	C1	Kbd
+Map	BaseKey		"2"			Keyboard	C2	Kbd
+Map	BaseKey		"3"			Keyboard	C3	Kbd
+Map	BaseKey		"4"			Keyboard	C4	Kbd
+{% if not hide_mod_wheel -%}
+// Mod Wheel
+Map	Button 1-2		KeyMod=ModWheel			Keyboard	Kbd
+Map	SubPageName		"Mod Wheel"			Keyboard	ModWheel	Kbd
+Map	Fader 1		Mod Wheel			Keyboard	ModWheel	Kbd
+{% endif -%}
+{% if not hide_pitch_bend -%}
+// Pitch Bend
+Map	Button 2-2		KeyMod=PitchBend			Keyboard	Kbd
+Map	SubPageName		"Pitch Bend"			Keyboard	PitchBend	Kbd
+Map	Knob V1		Pitch Bend			Keyboard	PitchBend	Kbd
+{% endif -%}
+{% if show_pitch_bend_range -%}
+{% if devicename=="Klang" or devicename=="Humana" or devicename=="Pangea" -%}
+Map	UDVButton 1-3_2-3		Pitch_Bend_Range 			Keyboard	PitchBend	Kbd
+{% elif devicename=="Revival" -%}
+Map	UDVButton 1-3_2-3		Voicing Pitch Bend Range 			Keyboard	PitchBend	Kbd
+{% else -%}
+Map	UDVButton 1-3_2-3		Pitch Bend Range 			Keyboard	PitchBend	Kbd
+{% endif -%}
+{% endif -%}
+Map	KbdPageName		"Drum"			Keyboard	Drum	

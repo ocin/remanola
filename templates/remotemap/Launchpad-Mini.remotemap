@@ -1,0 +1,6 @@
+{% set lptype="mini" %}
+{% include "remotemap/include/header_mini.remotemap" %}
+
+{% include "remotemap/include/copyright.remotemap" %}
+
+{% include "remotemap/include/devices.remotemap" %}

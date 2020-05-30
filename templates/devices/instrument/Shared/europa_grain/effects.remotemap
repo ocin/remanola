@@ -1,0 +1,76 @@
+{% set baseshortname=shortname -%}
+{% set shortname="europa_grain" -%}
+{% import "remotemap/include/macros.remotemap" as rm with context %}
+// Effects
+Map	PageName		"Effects" 				Effects
+{% if lptype == "mini" %}
+Map	Button 1-2		Effect On			Effects
+Map	Button 2-7		Phaser On			Effects
+Map	Button 3-7		Dist On			Effects
+Map	Button 4-7		Eq On			Effects
+Map	Button 5-7		Delay On			Effects
+Map	Button 6-7		Comp On			Effects
+Map	Button 7-7		Reverb On			Effects
+{% else %}
+Map	Button 1-1		Effect On			Effects	// template="BRedOnOff"
+Map	Button 8-1		Phaser On			Effects	// template="BRedOnOff"
+Map	Button 8-2		Dist On			Effects	// template="BRedOnOff"
+Map	Button 8-3		Eq On			Effects	// template="BRedOnOff"
+Map	Button 8-4		Delay On			Effects	// template="BRedOnOff"
+Map	Button 8-5		Comp On			Effects	// template="BRedOnOff"
+Map	Button 8-6		Reverb On			Effects	// template="BRedOnOff"
+{% endif %}
+{{ rm.include_menus(curpage="Effects", submenu="effects") -}}
+// Phaser
+Map	PageName		"Phaser" 				Phaser
+Map	Button 1-1		Phaser On			Phaser	// template="BRedOnOff"
+{{ rm.include_menus(curpage="Phaser",submenu="effects") -}}
+Map	UDVButton 5-1_6-1		Mod Effect Type				Phaser	// template="UDEffect"
+Map	Fader 3		Mod Effect Depth				Phaser	// template="FEffect"
+Map	Fader 4		Mod Effect Rate				Phaser	// template="FFreq"
+Map	Fader 5		Mod Effect Spread				Phaser	// template="FEffect"
+Map	Fader 7		Mod Effect Amount				Phaser	// template="FEffect"
+// Dist
+Map	PageName		"Dist" 				Dist
+Map	Button 1-1		Dist On			Dist	// template="BRedOnOff"
+{{ rm.include_menus(curpage="Dist",submenu="effects") -}}
+Map	UDVButton 5-1_6-1		Dist Type				Dist	// template="UDEffect"
+Map	Fader 4		Dist Drive				Dist	// template="FEffect"
+Map	Fader 5		Dist Tone				Dist	// template="FOsc"
+Map	Fader 7		Dist Amount				Dist	// template="FEffect"
+// Eq
+Map	PageName		"Eq" 				Eq
+Map	Button 1-1		Eq On			Eq	// template="BRedOnOff"
+{{ rm.include_menus(curpage="Eq",submenu="effects") -}}
+Map	Fader 4		Eq Freq				Eq	// template="FFreq"
+Map	Fader 5		Eq Q				Eq	// template="FEffect"
+Map	Fader 7		Eq Gain				Eq	// template="FAmount"
+// Delay
+Map	PageName		"Delay" 				Delay
+Map	Sel1_0		TempoSync=Free			Delay
+Map	Sel1_1		TempoSync=Sync			Delay
+Map	Button 1-1		Delay On			Delay	// template="BRedOnOff"
+{{ rm.include_menus(curpage="Delay",submenu="effects") -}}
+Map	Button 4-1		Delay Sync		SEL1	Delay	// template="BRedOnOff"
+Map	Button 6-1		Delay PingPong			Delay	// template="BRedOnOff"
+Map	Fader 2		Delay Time				Delay	Free	// template="FFreq"
+Map	UDVButton 7-2_8-2		Delay Synced Time				Delay	Sync	// template="UDFreq"
+Map	Fader 4		Delay Pan				Delay	// template="FEffect"
+Map	Fader 5		Delay FB				Delay	// template="FEffect"
+Map	Fader 7		Delay Amount				Delay	// template="FEffect"
+// Comp
+Map	PageName		"Comp" 				Comp
+Map	Button 1-1		Comp On			Comp	// template="BRedOnOff"
+{{ rm.include_menus(curpage="Comp",submenu="effects") -}}
+Map	Fader 3		Comp Attack				Comp	// template="FEffect"
+Map	Fader 4		Comp Release				Comp	// template="FEffect"
+Map	Fader 6		Comp Threshold				Comp	// template="FEffect"
+Map	Fader 7		Comp Ratio				Comp	// template="FEffect"
+// Reverb
+Map	PageName		"Reverb" 				Reverb
+Map	Button 1-1		Reverb On			Reverb	// template="BRedOnOff"
+{{ rm.include_menus(curpage="Reverb",submenu="effects") -}}
+Map	Fader 2		Reverb Decay				Reverb	// template="FFreq"
+Map	Fader 4		Reverb Size				Reverb	// template="FEffect"
+Map	Fader 5		Reverb Damp				Reverb	// template="FEffect"
+Map	Fader 7		Reverb Amount				Reverb	// template="FEffect"

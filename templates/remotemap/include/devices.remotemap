@@ -1,0 +1,4 @@
+{% import "devices.j2" as d %}
+{% for device in d.devices %}
+{% include "devices/" + device.type + "/" + device.name + "/" + device.name + ".remotemap" %}
+{% endfor -%}
