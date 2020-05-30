@@ -17,6 +17,8 @@ Define Group	Page	Main	Perf	Osc1	OscMod1	Osc2	OscMod2	Mixer	Filter	FilterEnv	Eff
 Define Group	TempoSync	Free	Sync
 {% endblock groups %}
 {% block main %}
+// confmap: NOgenhelptext
+// confmap: Map	PageName	"Default"
 // Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
@@ -54,8 +56,8 @@ Map	Fader 8		Master Volume				Main
 // Perf
 Map	PageName		"Perf" 				Perf
 {{ rm.include_menus(curpage="Perf") -}}
-Map	UDVButton 7-2_8-2		Polyphony				Perf
-Map	Fader 3		Glide				Perf
+Map	UDVButton 7-2_8-2		Polyphony				Perf	// template="UDOsc", inverted=true
+Map	Fader 3		Glide				Perf	// template="FPerf"
 {% for oscnum in range(1,3) -%}
 // Osc {{ oscnum }}
 Map	PageName		"Osc {{ oscnum }}" 				Osc{{ oscnum }}
