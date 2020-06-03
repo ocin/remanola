@@ -21,6 +21,18 @@
 		  "// template=\"$1\""
 		],
 	  },
+	"confmap-begin-page": {
+		"prefix": "be",
+		"body": [
+		  "// Begin Page $1"
+		],
+	  },
+	"confmap-end-page": {
+		"prefix": "en",
+		"body": [
+		  "// End Page $1"
+		],
+	  },
 	"confmap-inverted": {
 		"prefix": "in",
 		"body": [
