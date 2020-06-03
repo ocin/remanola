@@ -19,7 +19,7 @@ Define Group	TempoSync	Free	Sync
 {% block main %}
 // confmap: NOgenhelptext
 // confmap: Map	PageName	"Default"
-// Index
+// Begin Page Index
 Map	PageName		"Index" 				Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-2		Page=Mixer			Index
@@ -49,17 +49,20 @@ Map	Button 5-5		Page=LFO1			Index
 Map	Button 6-5		Page=LFO2			Index
 Map	Button 5-6		Page=ModEnv			Index
 Map	Button C7		Page=Internal			Index
-// Main
+// End Page Index
+// Begin Page Main
 Map	PageName		"Main" 				Main
 {{ rm.include_menus(curpage="Main") -}}
 Map	Fader 8		Master Volume				Main	// template="FVol"
-// Perf
+// End Page Main
+// Begin Page Perf
 Map	PageName		"Perf" 				Perf
 {{ rm.include_menus(curpage="Perf") -}}
 Map	UDVButton 7-2_8-2		Polyphony				Perf	// template="UDOsc", inverted=true
 Map	Fader 3		Glide				Perf	// template="FPerf"
+// End Page Perf
 {% for oscnum in range(1,3) -%}
-// Osc {{ oscnum }}
+// Begin Page Osc{{ oscnum }}
 Map	PageName		"Osc {{ oscnum }}" 				Osc{{ oscnum }}
 {{ rm.include_menus(curpage="Osc"+oscnum|string, mainmenu_mini="osc", submenu="osc", osc1page="Osc1", osc2page="Osc2", oscnum=oscnum) -}}
 Map	UDVButton 1-2_2-2		Osc {{ oscnum }} Waveform				Osc{{ oscnum }}	// template="UDOsc", inverted=true
@@ -68,7 +71,8 @@ Map	UDVButton 1-4_2-4		Osc {{ oscnum }} Dyad				Osc{{ oscnum }}
 Map	Fader 5		Osc {{ oscnum }} Phase				Osc{{ oscnum }}
 Map	Fader 6		Osc {{ oscnum }} Modifier				Osc{{ oscnum }}
 Map	Fader 8		Osc {{ oscnum }} Volume				Osc{{ oscnum }}
-// OscMod {{ oscnum }}
+// End Page Osc{{ oscnum }}
+// Begin Page OscMod {{ oscnum }}
 Map	PageName		"OscMod {{ oscnum }}" 				OscMod{{ oscnum }}
 {{ rm.include_menus(curpage="OscMod"+oscnum|string, mainmenu_mini="osc", submenu="osc", osc1page="OscMod1", osc2page="OscMod2", oscnum=oscnum) -}}
 Map	UDVButton 1-2_2-2		Osc {{ oscnum }} Semi				OscMod{{ oscnum }}
@@ -77,8 +81,9 @@ Map	UDVButton 1-4_2-4		Osc {{ oscnum }} Detune				OscMod{{ oscnum }}
 Map	Fader 5		Osc {{ oscnum }} Spread				OscMod{{ oscnum }}
 Map	Fader 7		Osc {{ oscnum }} Key Track				OscMod{{ oscnum }}
 Map	Knob V8		Osc {{ oscnum }} Pan				OscMod{{ oscnum }}
+// End Page OscMod {{ oscnum }}
 {% endfor -%}
-// Mixer
+// Begin Page Mixer
 Map	PageName		"Mixer" 				Mixer
 {{ rm.include_menus(curpage="Mixer", submenu="amp", amppage="Mixer") -}}
 Map	Fader 2		Osc 1 Volume				Mixer
@@ -86,7 +91,8 @@ Map	Fader 3		Osc 2 Volume				Mixer
 Map	Fader 4		Sub 1 Volume				Mixer
 Map	Fader 5		Sub 2 Volume				Mixer
 Map	Fader 6		Drift				Mixer
-// Filter
+// End Page Mixer
+// Begin Page Filter
 Map	PageName		"Filter" 				Filter
 {{ rm.include_menus(curpage="Filter", submenu="filter", filterpage="Filter") -}}
 Map	UDVButton 1-2_2-2		Filter Type				Filter
@@ -94,7 +100,8 @@ Map	Fader 3		Filter Cutoff				Filter
 Map	Fader 4		Filter Resonance				Filter
 Map	Fader 6		Filter Envelope Amount				Filter
 Map	Fader 8		Filter Key Track				Filter
-// Filter Envelope
+// End Page Filter
+// Begin Page Filter Envelope
 Map	PageName		"Filter Envelope" 				FilterEnv
 {{ rm.include_menus(curpage="FilterEnv", submenu="filter", filterpage="FilterEnv") -}}
 Map	Fader 2		Filter Envelope Amount				FilterEnv
@@ -102,7 +109,8 @@ Map	Fader 4		Filter Envelope Attack				FilterEnv
 Map	Fader 5		Filter Envelope Decay				FilterEnv
 Map	Fader 6		Filter Envelope Sustain				FilterEnv
 Map	Fader 7		Filter Envelope Release				FilterEnv
-// Effects
+// End Page Filter Envelope
+// Begin Page Effects
 Map	PageName		"Effects" 				Effects
 {% if lptype == "mini" %}
 Map	Fader 2		External Input Amount				Effects
@@ -124,7 +132,8 @@ Map	Button 8-6		Reverb			Effects
 Map	Button 8-7		Compressor			Effects
 {% endif %}
 {{ rm.include_menus(curpage="Effects", submenu="effects") -}}
-// EQ/Bass
+// End Page Effects
+// Begin Page EQ/Bass
 Map	PageName		"EQ/Bass" 				EQBass
 {{ rm.include_menus(curpage="EQBass", submenu="effects", mainmenu_mini="effect") -}}
 Map	Button 1-1		EQ/Bass			EQBass
@@ -136,7 +145,8 @@ Map	Fader 4		EQ Mid Q				EQBass
 Map	Fader 5		EQ Mid Gain				EQBass
 Map	Fader 6		EQ High Gain				EQBass
 Map	Fader 7		EQ Dry/Wet				EQBass
-// Dist
+// End Page EQ/Bass
+// Begin Page Dist
 Map	PageName		"Dist" 				Dist
 {{ rm.include_menus(curpage="Dist", submenu="effects", mainmenu_mini="effect") -}}
 Map	Button 1-1		Distortion			Dist
@@ -148,7 +158,8 @@ Map	Fader 4		Distortion Low Cut				Dist
 Map	Fader 5		Distortion High Cut				Dist
 Map	Fader 6		Distortion Out Gain				Dist
 Map	Fader 7		Distortion Dry/Wet				Dist
-// Phaser
+// End Page Dist
+// Begin Page Phaser
 Map	PageName		"Phaser" 				Phaser
 {{ rm.include_menus(curpage="Phaser", submenu="effects", mainmenu_mini="effect") -}}
 Map	Button 1-1		Phaser			Phaser
@@ -160,7 +171,8 @@ Map	Fader 4		Phaser Feedback				Phaser
 Map	Fader 5		Phaser Mod				Phaser
 Map	Fader 6		Phaser LR Offset				Phaser
 Map	Fader 7		Phaser Dry/Wet				Phaser
-// Chorus
+// End Page Phaser
+// Begin Page Chorus
 Map	PageName		"Chorus" 				Chorus
 {{ rm.include_menus(curpage="Chorus", submenu="effects", mainmenu_mini="effect") -}}
 Map	Button 1-1		Chorus			Chorus
@@ -170,7 +182,8 @@ Map	Fader 4		Chorus Depth				Chorus
 Map	Fader 5		Chorus Feedback				Chorus
 Map	Fader 6		Chorus LR Offset				Chorus
 Map	Fader 7		Chorus Dry/Wet				Chorus
-// Delay
+// End Page Chorus
+// Begin Page Delay
 Map	PageName		"Delay" 				Delay
 {{ rm.include_menus(curpage="Delay", submenu="effects", mainmenu_mini="effect") -}}
 Map	Button 1-1		Delay			Delay
@@ -182,7 +195,8 @@ Map	Fader 3		Delay Feedback				Delay
 Map	Fader 5		Delay Mod Rate				Delay
 Map	Fader 6		Delay Mod Amount				Delay
 Map	Fader 7		Delay Dry/Wet				Delay
-// Reverb
+// End Page Delay
+// Begin Page Reverb
 Map	PageName		"Reverb" 				Reverb
 {{ rm.include_menus(curpage="Reverb", submenu="effects", mainmenu_mini="effect") -}}
 Map	Button 1-1		Reverb			Reverb
@@ -193,7 +207,8 @@ Map	Fader 4		Reverb Low Cut				Reverb
 Map	Fader 5		Reverb High Cut				Reverb
 Map	Fader 6		Reverb Mod				Reverb
 Map	Fader 7		Reverb Dry/Wet				Reverb
-// Comp
+// End Page Reverb
+// Begin Page Comp
 Map	PageName		"Comp" 				Comp
 {{ rm.include_menus(curpage="Comp", submenu="effects", mainmenu_mini="effect") -}}
 Map	Button 1-1		Compressor			Comp
@@ -202,8 +217,9 @@ Map	Fader 2		Compressor Threshold				Comp
 Map	Fader 4		Compressor Attack				Comp
 Map	Fader 5		Compressor Release				Comp
 Map	Fader 7		Compressor Dry/Wet				Comp
+// End Page Comp
 {% for lfonum in range(1,3) %}
-// LFO {{ lfonum }}
+// Begin Page LFO {{ lfonum }}
 Map	PageName		"LFO {{ lfonum }}" 				LFO{{ lfonum }}
 {{ rm.include_menus(curpage="LFO"+lfonum|string, submenu="mod", modpage="LFO"+lfonum|string) -}}
 Map	Sel1_0		TempoSync=Free			LFO{{ lfonum }}
@@ -215,15 +231,17 @@ Map	Button 1-1		Lfo {{ lfonum }} Sync		SEL1	LFO{{ lfonum }}
 Map	Button 1-3		Lfo {{ lfonum }} Free Run			LFO{{ lfonum }}
 Map	UDVButton 3-1_4-1		Lfo {{ lfonum }} Shape				LFO{{ lfonum }}
 Map	UDVButton 7-1_8-1		Lfo {{ lfonum }} Target				LFO{{ lfonum }}
+// End Page LFO {{ lfonum }}
 {% endfor %}
-// Amp Env
+// Begin Page Amp Env
 Map	PageName		"Amp Env" 				AmpEnv
 {{ rm.include_menus(curpage="AmpEnv", submenu="amp", amppage="AmpEnv") -}}
 Map	Fader 3		Amp Envelope Attack				AmpEnv
 Map	Fader 4		Amp Envelope Decay				AmpEnv
 Map	Fader 5		Amp Envelope Sustain				AmpEnv
 Map	Fader 6		Amp Envelope Release				AmpEnv
-// Mod Env
+// End Page Amp Env
+// Begin Page Mod Env
 Map	PageName		"Mod Env" 				ModEnv
 {{ rm.include_menus(curpage="ModEnv", submenu="mod", modpage="ModEnv") -}}
 Map	UDVButton 3-1_4-1		Mod Envelope Target				ModEnv
@@ -232,7 +250,8 @@ Map	Fader 4		Mod Envelope Decay				ModEnv
 Map	Fader 5		Mod Envelope Sustain				ModEnv
 Map	Fader 6		Mod Envelope Release				ModEnv
 Map	Knob V8		Mod Envelope Target Amount				ModEnv
-// Arpeggiator
+// End Page Mod Env
+// Begin Page Arpeggiator
 Map	PageName		"Arpeggiator" 				Arp
 {{ rm.include_menus(curpage="Arp", submenu="perf", perfpage="Arp") -}}
 Map	UDHButton 3-1_3-2		Arp Mode				Arp
@@ -241,12 +260,14 @@ Map	UDHButton 6-1_6-2		Arp Rate				Arp
 Map	UDHButton 7-1_7-2		Arp Octave				Arp
 Map	Button 8-1		Arp Hold				Arp
 Map	Knob V4		Arp Gate				Arp
+// End Page Arpeggiator
 {% for mmnum in range(1,6) %}
-// Mod Matrix {{ mmnum }}
+// Begin Page Mod Matrix {{ mmnum }}
 Map	PageName		"Mod Matrix {{ mmnum }}" 			ModMatrix{{ mmnum }}
 {{ rm.include_menus(curpage="ModMatrix"+mmnum|string, submenu="perf", mainmenu_mini="perf", perfpage="ModMatrix"+mmnum|string) -}}
 Map	UDVButton 1-2_2-2		MM Slot {{ mmnum }} Source			 ModMatrix{{ mmnum }}
 Map	Knob V3		MM Slot {{ mmnum }} Amount			ModMatrix{{ mmnum }}
 Map	UDVButton 1-4_2-4		MM Slot {{ mmnum }} Destination			 ModMatrix{{ mmnum }}
+// End Page Page Mod Matrix {{ mmnum }}
 {% endfor %}
 {% endblock main %}
