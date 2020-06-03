@@ -1,5 +1,0 @@
-                        ["Button 1-1"]={template="BMainPage", helptext="Goto Main"},
-                        ["Button 2-1"]={template="BOscPage", helptext="Goto Osc 1"},
-                        ["Button 3-1"]={template="BOscPage", helptext="Goto Osc 2"},
-                        ["Button 4-1"]={template="BAmpPage", helptext="Goto Mixer"},
-                        ["Button 5-1"]={template="BFilterPage", helptext="Goto Filter"},

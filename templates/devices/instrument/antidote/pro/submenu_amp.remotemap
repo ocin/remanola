@@ -1,2 +1,2 @@
-Map	Button A1		Page=Mixer			{{ curpage }}
-Map	Button A2		Page=AmpEnv			{{ curpage }}
+Map	Button A1		Page=Mixer			{{ curpage }}	// template="BAmpPage"
+Map	Button A2		Page=AmpEnv			{{ curpage }}	// template="BAmpPage"

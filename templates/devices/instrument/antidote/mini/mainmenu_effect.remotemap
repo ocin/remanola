@@ -1,8 +1,8 @@
-Map	Button 1-8		Page=Effects			{{ curpage }}
-Map	Button 2-8		Page=EQBass			{{ curpage }}
-Map	Button 3-8		Page=Dist			{{ curpage }}
-Map	Button 4-8		Page=Phaser			{{ curpage }}
-Map	Button 5-8		Page=Chorus			{{ curpage }}
-Map	Button 6-8		Page=Delay			{{ curpage }}
-Map	Button 7-8		Page=Reverb			{{ curpage }}
-Map	Button 8-8		Page=Comp			{{ curpage }}
+Map	Button 1-8		Page=Effects			{{ curpage }}	// template="BMainEffectPage"
+Map	Button 2-8		Page=EQBass			{{ curpage }}	// template="BEffectPage"
+Map	Button 3-8		Page=Dist			{{ curpage }}	// template="BEffectPage"
+Map	Button 4-8		Page=Phaser			{{ curpage }}	// template="BEffectPage"
+Map	Button 5-8		Page=Chorus			{{ curpage }}	// template="BEffectPage"
+Map	Button 6-8		Page=Delay			{{ curpage }}	// template="BEffectPage"
+Map	Button 7-8		Page=Reverb			{{ curpage }}	// template="BEffectPage"
+Map	Button 8-8		Page=Comp			{{ curpage }}	// template="BEffectPage"

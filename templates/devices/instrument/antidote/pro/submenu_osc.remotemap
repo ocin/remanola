@@ -1,2 +1,2 @@
-Map	Button A1		Page=Osc{{ oscnum }}			{{ curpage }}
-Map	Button A2		Page=OscMod{{ oscnum }}			{{ curpage }}
+Map	Button A1		Page=Osc{{ oscnum }}			{{ curpage }}	// template="BOscPage"
+Map	Button A2		Page=OscMod{{ oscnum }}			{{ curpage }}	// template="BOscModPage"
