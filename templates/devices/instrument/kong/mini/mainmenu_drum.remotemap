@@ -1,16 +1,16 @@
-Map	Button 5-1		Page=Drum13			{{ curpage }}
-Map	Button 5-2		Page=Drum14			{{ curpage }}
-Map	Button 5-3		Page=Drum15			{{ curpage }}
-Map	Button 5-4		Page=Drum16			{{ curpage }}
-Map	Button 6-1		Page=Drum9			{{ curpage }}
-Map	Button 6-2		Page=Drum10			{{ curpage }}
-Map	Button 6-3		Page=Drum11			{{ curpage }}
-Map	Button 6-4		Page=Drum12			{{ curpage }}
-Map	Button 7-1		Page=Drum5			{{ curpage }}
-Map	Button 7-2		Page=Drum6			{{ curpage }}
-Map	Button 7-3		Page=Drum7			{{ curpage }}
-Map	Button 7-4		Page=Drum8			{{ curpage }}
-Map	Button 8-1		Page=Drum1			{{ curpage }}
-Map	Button 8-2		Page=Drum2			{{ curpage }}
-Map	Button 8-3		Page=Drum3			{{ curpage }}
-Map	Button 8-4		Page=Drum4			{{ curpage }}
+Map	Button 5-1		Page=Drum13			{{ curpage }}	// template="BOscPage"
+Map	Button 5-2		Page=Drum14			{{ curpage }}	// template="BOscPage"
+Map	Button 5-3		Page=Drum15			{{ curpage }}	// template="BOscPage"
+Map	Button 5-4		Page=Drum16			{{ curpage }}	// template="BOscPage"
+Map	Button 6-1		Page=Drum9			{{ curpage }}	// template="BOscPage"
+Map	Button 6-2		Page=Drum10			{{ curpage }}	// template="BOscPage"
+Map	Button 6-3		Page=Drum11			{{ curpage }}	// template="BOscPage"
+Map	Button 6-4		Page=Drum12			{{ curpage }}	// template="BOscPage"
+Map	Button 7-1		Page=Drum5			{{ curpage }}	// template="BOscPage"
+Map	Button 7-2		Page=Drum6			{{ curpage }}	// template="BOscPage"
+Map	Button 7-3		Page=Drum7			{{ curpage }}	// template="BOscPage"
+Map	Button 7-4		Page=Drum8			{{ curpage }}	// template="BOscPage"
+Map	Button 8-1		Page=Drum1			{{ curpage }}	// template="BOscPage"
+Map	Button 8-2		Page=Drum2			{{ curpage }}	// template="BOscPage"
+Map	Button 8-3		Page=Drum3			{{ curpage }}	// template="BOscPage"
+Map	Button 8-4		Page=Drum4			{{ curpage }}	// template="BOscPage"

@@ -1,2 +1,2 @@
-Map	Button 2-8		Page=BusFX			{{ curpage }}
-Map	Button 3-8		Page=MasterFX			{{ curpage }}
+Map	Button 2-8		Page=BusFX			{{ curpage }}	// template="BEffectPage"
+Map	Button 3-8		Page=MasterFX			{{ curpage }}	// template="BEffectPage"
