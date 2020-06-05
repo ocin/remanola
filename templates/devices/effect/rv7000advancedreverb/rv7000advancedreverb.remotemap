@@ -12,25 +12,25 @@ Define Group	TempoSync	Free	Sync
 {% block main %}
 Map	EditSelect		Edit Mode
 // Index
-Map	PageName		"Index" 				Index
+Map	PageName		"Index"			Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 2-8		Page=Reverb			Index
 Map	Button 3-8		Page=Eq			Index
 Map	Button 4-8		Page=Gate			Index
 Map	Button C7		Page=Internal			Index
 // Main
-Map	PageName		"Main" 				Main
+Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
 Map	UDVButton 1-1_2-1		Enabled			Main
 Map	Button 1-2		EQ On/Off			Main
 Map	Button 2-2		Gate On/Off			Main
-Map	Fader 3		Decay 				Main
-Map	Fader 4		HF Damp 				Main
-Map	Knob V5		Hi EQ 				Main
-Map	Fader 7		Dry/Wet 				Main
+Map	Fader 3		Decay			Main
+Map	Fader 4		HF Damp			Main
+Map	Knob V5		Hi EQ			Main
+Map	Fader 7		Dry/Wet			Main
 Map	Meter 8		Input Peak Meter			Main
 // Reverb
-Map	PageName		"Reverb" 				Reverb
+Map	PageName		"Reverb"			Reverb
 {{ rm.include_menus(curpage="Reverb") -}}
 Map	Sel1_0		Algorithm=SmallSpace			Reverb
 Map	Sel1_14		Algorithm=Room			Reverb
@@ -44,7 +44,7 @@ Map	Sel1_113		Algorithm=Reverse			Reverb
 Map	Sel1_127		Algorithm=Convolution			Reverb
 Map	UDVButton 1-1_2-1		Soft Knob 1		SEL1	Reverb
 // SmallSpace
-Map	SubPageName		"SmallSpace" 				Reverb	SmallSpace
+Map	SubPageName		"SmallSpace"			Reverb	SmallSpace
 Map	Fader 2		Soft Knob 2 			Reverb	SmallSpace
 Map	Fader 3		Soft Knob 3 			Reverb	SmallSpace
 Map	UDVButton 7-4_8-4		Soft Knob 4 			Reverb	SmallSpace
@@ -53,7 +53,7 @@ Map	Fader 6		Soft Knob 6 			Reverb	SmallSpace
 Map	Fader 7		Soft Knob 7 			Reverb	SmallSpace
 Map	Fader 8		Soft Knob 8 			Reverb	SmallSpace
 // Room
-Map	SubPageName		"Room" 				Reverb	Room
+Map	SubPageName		"Room"			Reverb	Room
 Map	Fader 2		Soft Knob 2 			Reverb	Room
 Map	Fader 3		Soft Knob 3 			Reverb	Room
 Map	UDVButton 7-4_8-4		Soft Knob 4 			Reverb	Room
@@ -62,7 +62,7 @@ Map	Fader 6		Soft Knob 6 			Reverb	Room
 Map	Fader 7		Soft Knob 7 			Reverb	Room
 Map	Fader 8		Soft Knob 8 			Reverb	Room
 // Hall
-Map	SubPageName		"Hall" 				Reverb	Hall
+Map	SubPageName		"Hall"			Reverb	Hall
 Map	Fader 2		Soft Knob 2 			Reverb	Hall
 Map	Fader 3		Soft Knob 3 			Reverb	Hall
 Map	UDVButton 7-4_8-4		Soft Knob 4 			Reverb	Hall
@@ -71,7 +71,7 @@ Map	Fader 6		Soft Knob 6 			Reverb	Hall
 Map	Fader 7		Soft Knob 7 			Reverb	Hall
 Map	Fader 8		Soft Knob 8 			Reverb	Hall
 // Arena
-Map	SubPageName		"Arena" 				Reverb	Arena
+Map	SubPageName		"Arena"			Reverb	Arena
 Map	Fader 2		Soft Knob 2 			Reverb	Arena
 Map	Fader 3		Soft Knob 3 			Reverb	Arena
 Map	Fader 4		Soft Knob 4 			Reverb	Arena
@@ -80,11 +80,11 @@ Map	Fader 6		Soft Knob 6 			Reverb	Arena
 Map	Fader 7		Soft Knob 7 			Reverb	Arena
 Map	Fader 8		Soft Knob 8 			Reverb	Arena
 // Plate
-Map	SubPageName		"Plate" 				Reverb	Plate
+Map	SubPageName		"Plate"			Reverb	Plate
 Map	Fader 5		Soft Knob 5 			Reverb	Plate
 Map	Fader 7		Soft Knob 7 			Reverb	Plate
 // Spring
-Map	SubPageName		"Spring" 				Reverb	Spring
+Map	SubPageName		"Spring"			Reverb	Spring
 Map	Fader 2		Soft Knob 2 			Reverb	Spring
 Map	Fader 3		Soft Knob 3 			Reverb	Spring
 Map	Fader 4		Soft Knob 4 			Reverb	Spring
@@ -93,7 +93,7 @@ Map	Button 8-6		Soft Knob 6 			Reverb	Spring
 Map	Fader 7		Soft Knob 7 			Reverb	Spring
 Map	Fader 8		Soft Knob 8 			Reverb	Spring
 // Echo
-Map	SubPageName		"Echo" 				Reverb	Echo
+Map	SubPageName		"Echo"			Reverb	Echo
 Map	Sel2_0		TempoSync=Free			Reverb	Echo
 Map	Sel2_1		TempoSync=Sync			Reverb	Echo
 Map	Fader 2		Soft Knob 2 			Reverb	Echo	Free
@@ -104,7 +104,7 @@ Map	Fader 5		Soft Knob 5 			Reverb	Echo
 Map	Fader 6		Soft Knob 6 			Reverb	Echo
 Map	Fader 7		Soft Knob 7 			Reverb	Echo
 // MultiTap
-Map	SubPageName		"MultiTap" 				Reverb	MultiTap
+Map	SubPageName		"MultiTap"			Reverb	MultiTap
 Map	Sel2_0		TempoSync=Free			Reverb	MultiTap
 Map	Sel2_1		TempoSync=Sync			Reverb	MultiTap
 Map	Sel3_0		Tap=TapNum			Reverb	MultiTap
@@ -123,7 +123,7 @@ Map	Knob V8		Soft Knob 8 			Reverb	MultiTap	TapNum
 Map	Fader 6		Soft Knob 6 			Reverb	MultiTap	RepeatTap	Free
 Map	UDVButton 7-6_8-6		Soft Knob 6 			Reverb	MultiTap	RepeatTap	Sync
 // Reverse
-Map	SubPageName		"Reverse" 				Reverb	Reverse
+Map	SubPageName		"Reverse"			Reverb	Reverse
 Map	Sel2_0		TempoSync=Free			Reverb	Reverse
 Map	Sel2_1		TempoSync=Sync			Reverb	Reverse
 Map	Fader 2		Soft Knob 2 			Reverb	Reverse	Free
@@ -132,7 +132,7 @@ Map	Fader 3		Soft Knob 3 			Reverb	Reverse
 Map	Button 8-4		Soft Knob 4 		SEL2	Reverb	Reverse
 Map	Fader 5		Soft Knob 5 			Reverb	Reverse
 // Convolution
-Map	SubPageName		"Convolution" 				Reverb	Convolution
+Map	SubPageName		"Convolution"			Reverb	Convolution
 Map	UDVButton 7-2_8-2		Soft Knob 2 			Reverb	Convolution
 Map	Fader 3		Soft Knob 3 			Reverb	Convolution
 Map	Knob V4		Soft Knob 4 			Reverb	Convolution
@@ -141,7 +141,7 @@ Map	UDVButton 7-6_8-6		Soft Knob 6 			Reverb	Convolution
 Map	Knob V7		Soft Knob 7 			Reverb	Convolution
 Map	Fader 8		Soft Knob 8 			Reverb	Convolution
 // Eq
-Map	PageName		"Eq" 				Eq
+Map	PageName		"Eq"			Eq
 {{ rm.include_menus(curpage="Eq") -}}
 Map	Button 1-1		EQ On/Off			Eq
 Map	Knob V2		Soft Knob 1 			Eq
@@ -150,7 +150,7 @@ Map	Knob V5		Soft Knob 5 			Eq
 Map	Fader 6		Soft Knob 6 			Eq
 Map	Fader 7		Soft Knob 7 			Eq
 // Gate
-Map	PageName		"Gate" 				Gate
+Map	PageName		"Gate"			Gate
 {{ rm.include_menus(curpage="Gate") -}}
 Map	Button 1-1		Gate On/Off			Gate
 Map	Fader 2		Soft Knob 1 			Gate	
