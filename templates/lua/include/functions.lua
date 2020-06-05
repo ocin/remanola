@@ -53,6 +53,9 @@ function get_item_conf_map(itemname, context, page)
 			return(item_conf_map[context][wildpage][get_current_subpage()][itemname])
 		end
 		if(item_conf_map[context][wildpage] == nil or item_conf_map[context][wildpage][itemname] == nil) then
+			if(item_conf_map[context]["Default"] == nil) then
+				context = "Default"
+			end
 			if(item_conf_map[context]["Default"][itemname] == nil) then
 				if(item_conf_map["Default"][page] == nil or item_conf_map["Default"][page][itemname] == nil) then
 					context = "Default"

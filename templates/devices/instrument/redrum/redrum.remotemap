@@ -15,8 +15,6 @@ Define Group	DrumMode	Play	Solo	Mute
 Define Group	EditMode	Rotate	Toggle	Flam
 {% endblock groups %}
 {% block main %}
-// confmap: NOgenhelptext
-// confmap: Map	PageName	"Default"
 Map	PlayingStep		Playing Step
 // Index
 Map	PageName		"Index"			Index
