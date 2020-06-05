@@ -1,8 +1,8 @@
-Map	Button A1		Page=Drum1{{ drumedit }}			{{ curpage }}
-Map	Button A2		Page=Drum2{{ drumedit }}			{{ curpage }}
-Map	Button A3		Page=Drum3{{ drumedit }}			{{ curpage }}
-Map	Button A4		Page=Drum4{{ drumedit }}			{{ curpage }}
-Map	Button A5		Page=Drum5{{ drumedit }}			{{ curpage }}
-Map	Button A6		Page=Drum6{{ drumedit }}			{{ curpage }}
-Map	Button A7		Page=Drum7{{ drumedit }}			{{ curpage }}
-Map	Button A8		Page=Drum8{{ drumedit }}			{{ curpage }}
+Map	Button A1		Page=Drum1{{ drumedit }}			{{ curpage }}	// template="BOscPage"
+Map	Button A2		Page=Drum2{{ drumedit }}			{{ curpage }}	// template="BOscPage"
+Map	Button A3		Page=Drum3{{ drumedit }}			{{ curpage }}	// template="BOscPage"
+Map	Button A4		Page=Drum4{{ drumedit }}			{{ curpage }}	// template="BOscPage"
+Map	Button A5		Page=Drum5{{ drumedit }}			{{ curpage }}	// template="BOscPage"
+Map	Button A6		Page=Drum6{{ drumedit }}			{{ curpage }}	// template="BOscPage"
+Map	Button A7		Page=Drum7{{ drumedit }}			{{ curpage }}	// template="BOscPage"
+Map	Button A8		Page=Drum8{{ drumedit }}			{{ curpage }}	// template="BOscPage"

@@ -31,14 +31,14 @@ Map	BaseKey		"2"			Keyboard	C2	Kbd
 Map	BaseKey		"3"			Keyboard	C3	Kbd
 Map	BaseKey		"4"			Keyboard	C4	Kbd
 {% if not hide_mod_wheel -%}
-// Mod Wheel
 Map	Button 1-2		KeyMod=ModWheel			Keyboard	Kbd
+Map	Button 2-2		KeyMod=PitchBend			Keyboard	Kbd
+// Mod Wheel
 Map	SubPageName		"Mod Wheel"			Keyboard	ModWheel	Kbd
 Map	Fader 1		Mod Wheel			Keyboard	ModWheel	Kbd
 {% endif -%}
 {% if not hide_pitch_bend -%}
 // Pitch Bend
-Map	Button 2-2		KeyMod=PitchBend			Keyboard	Kbd
 Map	SubPageName		"Pitch Bend"			Keyboard	PitchBend	Kbd
 Map	Knob V1		Pitch Bend			Keyboard	PitchBend	Kbd
 {% endif -%}
@@ -46,7 +46,7 @@ Map	Knob V1		Pitch Bend			Keyboard	PitchBend	Kbd
 {% if devicename=="Klang" or devicename=="Humana" or devicename=="Pangea" -%}
 Map	UDVButton 1-3_2-3		Pitch_Bend_Range 			Keyboard	PitchBend	Kbd
 {% elif devicename=="Revival" -%}
-Map	UDVButton 1-3_2-3		Voicing Pitch Bend Range 			Keyboard	PitchBend	Kbd
+Map	UDVButton 1-3_2-3		Voicing Pitch Bend Range			Keyboard	PitchBend	Kbd
 {% else -%}
 Map	UDVButton 1-3_2-3		Pitch Bend Range 			Keyboard	PitchBend	Kbd
 {% endif -%}

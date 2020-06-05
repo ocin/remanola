@@ -9,6 +9,7 @@ def buildconfmap(infile, confmapfile):
 	device = "Unknown"
 	deviceprinted = False
 	page = "Unknown"
+	subpage = "Unknown"
 	pageprinted = False
 	genhelptext = False
 
@@ -17,14 +18,19 @@ def buildconfmap(infile, confmapfile):
 	for line in lines:
 		m = re.search('Map\tDeviceScope\t\t"([^"]+)"', line)
 		if m:
+			if subpage is not 'Unknown' and subpageprinted:
+				c.write('\t\t\t},\n')
+				subpage = "Unknown"
 			if page is not 'Unknown' and pageprinted:
 				c.write('\t\t},\n')
 			if device is not 'Unknown' and deviceprinted:
 				c.write('\t},\n')
 			device = m.group(1)
 			page = "Unknown"
+			subpage = "Unknown"
 			deviceprinted = False
 			pageprinted = False
+			subpageprinted = False
 			genhelptext = False
 			continue
 
@@ -33,8 +39,12 @@ def buildconfmap(infile, confmapfile):
 			m = re.search('// confmap: Map.*PageName.*"(Default)"', line)
 		if m:
 			if page is not 'Unknown' and pageprinted:
+				if subpage is not 'Unknown' and subpageprinted:
+					c.write('\t\t\t},\n')
+					subpageprinted = False
 				c.write('\t\t},\n')
 			page = m.group(1)
+			subpage = "Unknown"
 			pageprinted = False
 			if page == 'Default':
 				if not deviceprinted:
@@ -42,6 +52,14 @@ def buildconfmap(infile, confmapfile):
 					deviceprinted = True
 				c.write('\t\t["' + page + '"]={\n')
 				pageprinted = True
+			continue
+
+		m = re.search('Map\tSubPageName\t\t"([^"]+)"', line)
+		if m:
+			if subpage is not 'Unknown' and subpageprinted:
+				c.write('\t\t\t},\n')
+			subpage = m.group(1)
+			subpageprinted = False
 			continue
 
 		m = re.search('// confmap: genhelptext', line)
@@ -74,6 +92,11 @@ def buildconfmap(infile, confmapfile):
 			if not pageprinted:
 				c.write('\t\t["' + page + '"]={\n')
 				pageprinted = True
+			if subpage is not 'Unknown' and not subpageprinted:
+				c.write('\t\t\t["' + subpage + '"]={\n')
+				subpageprinted = True
+			if subpage is not 'Unknown':
+				c.write('\t')
 			c.write('\t\t\t["' + item + '"]={' + confmap + '},\n')
 			continue
 
