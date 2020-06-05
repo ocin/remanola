@@ -13,11 +13,13 @@ Define Group	Page	Main	Perf	Osc	Filter	FilterEnv	Amp	LFO	Velocity	ModWheelContr	
 Define Group	TempoSync	Free	Sync
 {% endblock groups %}
 {% block main %}
+// confmap: NOgenhelptext
+// confmap: Map	PageName	"Default"
 // Index
-Map	PageName		"Index" 				Index
+Map	PageName		"Index"			Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-2		Page=Amp			Index
-Map	Button 1-4		Page=Perf			Index
+Map	Button 1-4		Page=Perf			Index	// template="BPerformancePage"
 Map	Button 1-5		Page=Controller			Index
 Map	Button 1-6		Page=ModWheelContr			Index
 Map	Button 1-7		Page=Velocity			Index
@@ -27,86 +29,86 @@ Map	Button 2-6		Page=FilterEnv			Index
 Map	Button 5-5		Page=LFO			Index
 Map	Button C7		Page=Internal			Index
 // Main
-Map	PageName		"Main" 				Main
+Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	Fader 8		Master Level 				Main
+Map	Fader 8		Master Level			Main	// template="FVol"
 // Perf
-Map	PageName		"Perf" 				Perf
+Map	PageName		"Perf"			Perf
 {{ rm.include_menus(curpage="Perf", submenu="perf", perfpage="Perf") -}}
-Map	Fader 1		Portamento 				Perf
-Map	UDVButton 1-2_2-2		Polyphony			Perf
-Map	Fader 3		Stereo Spread 				Perf
-Map	UDVButton 1-4_2-4		Spread Mode			Perf
-Map	Button 1-5		Low Bandwidth On/Off			Perf
-Map	UDVButton 1-6_2-6		Key Mode			Perf
-Map	UDVButton 1-7_2-7		Pitch Bend Range			Perf
+Map	Fader 1		Portamento			Perf	// template="FPerf"
+Map	UDVButton 1-2_2-2		Polyphony			Perf	// template="UDPerf"
+Map	Fader 3		Stereo Spread			Perf	// template="FEffect"
+Map	UDVButton 1-4_2-4		Spread Mode			Perf	// template="UDEffect", inverted=true
+Map	Button 1-5		Low Bandwidth On/Off			Perf	// template="BRedOnOff"
+Map	UDVButton 1-6_2-6		Key Mode			Perf	// template="UDPerf", inverted=true
+Map	UDVButton 1-7_2-7		Pitch Bend Range			Perf	// template="UDPerf"
 // Amp
-Map	PageName		"Amp" 				Amp
+Map	PageName		"Amp"			Amp
 {{ rm.include_menus(curpage="Amp") -}}
-Map	Fader 1		Master Level 				Amp
-Map	Fader 3		Amp Env Attack 				Amp
-Map	Fader 4		Amp Env Decay 				Amp
-Map	Fader 5		Amp Env Sustain 				Amp
-Map	Fader 6		Amp Env Release 				Amp
+Map	Fader 1		Master Level			Amp	// template="FVol"
+Map	Fader 3		Amp Env Attack			Amp	// template="FVol"
+Map	Fader 4		Amp Env Decay			Amp	// template="FVol"
+Map	Fader 5		Amp Env Sustain			Amp	// template="FVol"
+Map	Fader 6		Amp Env Release			Amp	// template="FVol"
 // Controller
-Map	PageName		"Controller" 				Controller
+Map	PageName		"Controller"			Controller
 {{ rm.include_menus(curpage="Controller", submenu="perf", perfpage="Controller") -}}
-Map	Knob V2		Filter Freq Ext Mod 				Controller
-Map	Knob V3		LFO Ext Mod 				Controller
-Map	Knob V4		Amp Ext Mod 				Controller
-Map	UDVButton 1-5_2-5		Ext Mod Select			Controller
+Map	Knob V2		Filter Freq Ext Mod			Controller	// template="FFreq"
+Map	Knob V3		LFO Ext Mod			Controller	// template="FLFO"
+Map	Knob V4		Amp Ext Mod			Controller	// template="FVol"
+Map	UDVButton 1-5_2-5		Ext Mod Select			Controller	// template="UDPerf", inverted=true
 // ModWheelContr
-Map	PageName		"Mod Wheel" 				ModWheelContr
+Map	PageName		"Mod Wheel"			ModWheelContr
 {{ rm.include_menus(curpage="ModWheelContr", submenu="perf", perfpage="ModWheelContr") -}}
-Map	Knob V2		Filter Freq Mod Wheel Amount 				ModWheelContr
-Map	Knob V3		Filter Res Mod Wheel Amount 				ModWheelContr
-Map	Knob V4		Filter Decay Mod Wheel Amount 				ModWheelContr
-Map	Knob V5		Amp Mod Wheel Amount 				ModWheelContr
-Map	Knob V6		LFO Mod Wheel Amount 				ModWheelContr
+Map	Knob V2		Filter Freq Mod Wheel Amount			ModWheelContr	// template="FFreq"
+Map	Knob V3		Filter Res Mod Wheel Amount			ModWheelContr	// template="FEffect"
+Map	Knob V4		Filter Decay Mod Wheel Amount			ModWheelContr	// template="FFreq"
+Map	Knob V5		Amp Mod Wheel Amount			ModWheelContr	// template="FVol"
+Map	Knob V6		LFO Mod Wheel Amount			ModWheelContr	// template="FLFO"
 // Velocity
-Map	PageName		"Velocity" 				Velocity
+Map	PageName		"Velocity"			Velocity
 {{ rm.include_menus(curpage="Velocity", submenu="perf", perfpage="Velocity") -}}
-Map	Knob V2		Filter Env Vel Amount 				Velocity
-Map	Knob V3		Filter Decay Vel Amount 				Velocity
-Map	Knob V4		Amp Vel Amount 				Velocity
-Map	Knob V5		Amp Attack Vel Amount 				Velocity
-Map	Knob V6		Sample Start Vel Amount 				Velocity
+Map	Knob V2		Filter Env Vel Amount			Velocity	// template="FFreq"
+Map	Knob V3		Filter Decay Vel Amount			Velocity	// template="FFreq"
+Map	Knob V4		Amp Vel Amount			Velocity	// template="FVol"
+Map	Knob V5		Amp Attack Vel Amount			Velocity	// template="FVol"
+Map	Knob V6		Sample Start Vel Amount			Velocity	// template="FVol"
 // Osc
-Map	PageName		"Osc" 				Osc
+Map	PageName		"Osc"			Osc
 {{ rm.include_menus(curpage="Osc") -}}
-Map	Fader 1		Sample Start 				Osc
-Map	Button 1-2		High Quality Interpolation			Osc
-Map	Knob V3		Osc Env Amount 				Osc
-Map	UDVButton 1-5_2-5		Osc Octave			Osc
-Map	UDVButton 1-6_2-6		Osc Semitone			Osc
-Map	UDVButton 1-7_2-7		Osc Fine Tune			Osc
-Map	Button 1-8		Osc Kbd Track			Osc
+Map	Fader 1		Sample Start			Osc	// template="FOsc"
+Map	Button 1-2		High Quality Interpolation			Osc	// template="BRedOnOff"
+Map	Knob V3		Osc Env Amount			Osc	// template="FOsc"
+Map	UDVButton 1-5_2-5		Osc Octave			Osc	// template="UDFreq"
+Map	UDVButton 1-6_2-6		Osc Semitone			Osc	// template="UDFreq"
+Map	UDVButton 1-7_2-7		Osc Fine Tune			Osc	// template="UDFreq"
+Map	Button 1-8		Osc Kbd Track			Osc	// template="BRedOnOff"
 // Filter
-Map	PageName		"Filter" 				Filter
-{{ rm.include_menus(curpage="Filter", submenu="filter", perfpage="Filter") -}}
-Map	Button 1-2		Filter On/Off			Filter
-Map	Fader 3		Filter Freq 				Filter
-Map	Fader 4		Filter Res 				Filter
-Map	UDVButton 1-5_2-5		Filter Mode			Filter
-Map	Fader 6		Filter Kbd Track 				Filter
+Map	PageName		"Filter"			Filter
+{{ rm.include_menus(curpage="Filter", submenu="filter", filterpage="Filter") -}}
+Map	Button 1-2		Filter On/Off			Filter	// template="BRedOnOff"
+Map	Fader 3		Filter Freq			Filter	// template="FFreq"
+Map	Fader 4		Filter Res			Filter	// template="FEffect"
+Map	UDVButton 1-5_2-5		Filter Mode			Filter	// template="UDFreq", inverted=true
+Map	Fader 6		Filter Kbd Track			Filter	// template="FPerf"
 // FilterEnv
-Map	PageName		"Filter Envelope" 				FilterEnv
-{{ rm.include_menus(curpage="FilterEnv", submenu="filter", perfpage="FilterEnv") -}}
-Map	Fader 2		Filter Env Attack 				FilterEnv
-Map	Fader 3		Filter Env Decay 				FilterEnv
-Map	Fader 4		Filter Env Sustain 				FilterEnv
-Map	Fader 5		Filter Env Release 				FilterEnv
-Map	Button 1-6		Filter Env Invert			FilterEnv
-Map	Fader 7		Filter Env Amount 				FilterEnv
+Map	PageName		"Filter Envelope"			FilterEnv
+{{ rm.include_menus(curpage="FilterEnv", submenu="filter", filterpage="FilterEnv") -}}
+Map	Fader 2		Filter Env Attack			FilterEnv	// template="FFreq"
+Map	Fader 3		Filter Env Decay			FilterEnv	// template="FFreq"
+Map	Fader 4		Filter Env Sustain			FilterEnv	// template="FFreq"
+Map	Fader 5		Filter Env Release			FilterEnv	// template="FFreq"
+Map	Button 1-6		Filter Env Invert			FilterEnv	// template="BRedOnOff"
+Map	Fader 7		Filter Env Amount			FilterEnv	// template="FEnv"
 // LFO
-Map	PageName		"LFO" 				LFO
+Map	PageName		"LFO"			LFO
 {{ rm.include_menus(curpage="LFO") -}}
 Map	Sel1_0		TempoSync=Free			LFO
 Map	Sel1_1		TempoSync=Sync			LFO
-Map	UDVButton 1-2_2-2		LFO Wave			LFO
-Map	Button 1-3		LFO Sync Enable		SEL1	LFO
-Map	Fader 4		LFO Rate 				LFO	Free
-Map	UDVButton 7-4_8-4		LFO Rate	8		LFO	Sync
-Map	Fader 5		LFO Amount 				LFO
-Map	UDVButton 1-6_2-6		LFO Dest			LFO
+Map	UDVButton 1-2_2-2		LFO Wave			LFO	// template="UDLFO", inverted=true
+Map	Button 1-3		LFO Sync Enable		SEL1	LFO	// template="BRedOnOff"
+Map	Fader 4		LFO Rate			LFO	Free	// template="FFreq"
+Map	UDVButton 7-4_8-4		LFO Rate	8		LFO	Sync	// template="UDFreq"
+Map	Fader 5		LFO Amount			LFO	// template="FLFO"
+Map	UDVButton 1-6_2-6		LFO Dest			LFO	// template="UDLFO", inverted=true
 {% endblock main %}
