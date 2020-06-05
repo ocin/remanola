@@ -12,8 +12,10 @@
 Define Group	Page	Main	Velocity	Tune	Resonance	Envelope	Mechanics	Eq	Ambience	Output	Index	Keyboard	Internal
 {% endblock groups %}
 {% block main %}
+// confmap: NOgenhelptext
+// confmap: Map	PageName	"Default"
 // Index
-Map	PageName		"Index" 				Index
+Map	PageName		"Index"			Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-2		Page=Envelope			Index
 Map	Button 1-5		Page=Velocity			Index
@@ -25,57 +27,57 @@ Map	Button 3-8		Page=Ambience			Index
 Map	Button 4-8		Page=Output			Index
 Map	Button C7		Page=Internal			Index
 // Main
-Map	PageName		"Main" 				Main
+Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	Fader 2		Sustain Pedal			Main
-Map	Fader 4		Character			Main
-Map	UDVButton 7-5_8-5		Microphone 1 Type				Main
-Map	Knob V6		Microphone and Instrument Blend			Main
-Map	UDVButton 7-7_8-7		Microphone 2 Type				Main
-Map	Fader 8		Master Volume			Main
+Map	Fader 2		Sustain Pedal			Main	// template="FEffect"
+Map	Fader 4		Character			Main	// template="FOsc"
+Map	UDVButton 7-5_8-5		Microphone 1 Type			Main	// template="UDOsc"
+Map	Knob V6		Microphone and Instrument Blend			Main	// template="FOsc"
+Map	UDVButton 7-7_8-7		Microphone 2 Type			Main	// template="UDOsc"
+Map	Fader 8		Master Volume			Main	// template="FVol"
 // Envelope
-Map	PageName		"Envelope" 				Envelope
+Map	PageName		"Envelope"			Envelope
 {{ rm.include_menus(curpage="Envelope") -}}
-Map	Fader 4		Env Attack			Envelope
-Map	Knob V5		Env Decay Curve			Envelope
-Map	Knob V6		Env Release			Envelope
+Map	Fader 4		Env Attack			Envelope	// template="FVol"
+Map	Knob V5		Env Decay Curve			Envelope	// template="FVol"
+Map	Knob V6		Env Release			Envelope	// template="FVol"
 // Velocity
-Map	PageName		"Velocity" 				Velocity
+Map	PageName		"Velocity"			Velocity
 {{ rm.include_menus(curpage="Velocity") -}}
-Map	Fader 4		Vel Response Low			Velocity
-Map	Fader 5		Vel Response High			Velocity
-Map	Knob V6		Vel Response Curve			Velocity
+Map	Fader 4		Vel Response Low			Velocity	// template="FPerf"
+Map	Fader 5		Vel Response High			Velocity	// template="FPerf"
+Map	Knob V6		Vel Response Curve			Velocity	// template="FPerf"
 // Tune
-Map	PageName		"Tune" 				Tune
+Map	PageName		"Tune"			Tune
 {{ rm.include_menus(curpage="Tune", mainmenu_mini="common") -}}
-Map	Knob V4		Tune			Tune
-Map	Fader 5		Tune Drift			Tune
+Map	Knob V4		Tune			Tune	// template="FFreq"
+Map	Fader 5		Tune Drift			Tune	// template="FOsc"
 // Resonance
-Map	PageName		"Resonance" 				Resonance
+Map	PageName		"Resonance"			Resonance
 {{ rm.include_menus(curpage="Resonance", mainmenu_mini="common") -}}
-Map	Knob V4		Symp Res Level			Resonance
-Map	Knob V5		Symp Res Release Time			Resonance
+Map	Knob V4		Symp Res Level			Resonance	// template="FOsc"
+Map	Knob V5		Symp Res Release Time			Resonance	// template="FFreq"
 // Mechanics
-Map	PageName		"Mechanics" 				Mechanics
+Map	PageName		"Mechanics"			Mechanics
 {{ rm.include_menus(curpage="Mechanics", mainmenu_mini="common") -}}
-Map	Knob V4		Key Down Level			Mechanics
-Map	Knob V5		Key Up Level			Mechanics
-Map	Knob V6		Pedal Level			Mechanics
+Map	Knob V4		Key Down Level			Mechanics	// template="FOsc"
+Map	Knob V5		Key Up Level			Mechanics	// template="FOsc"
+Map	Knob V6		Pedal Level			Mechanics	// template="FOsc"
 // Eq
-Map	PageName		"Eq" 				Eq
+Map	PageName		"Eq"			Eq
 {{ rm.include_menus(curpage="Eq", submenu="effect", mainmenu_mini="common", effectpage="Eq") -}}
-Map	Button 1-1		EQ On/Off			Eq
-Map	Knob V4		EQ Lo Gain			Eq
-Map	Knob V5		EQ Mid Gain			Eq
-Map	Knob V6		EQ Hi Gain			Eq
+Map	Button 1-1		EQ On/Off			Eq	// template="BRedOnOff"
+Map	Knob V4		EQ Lo Gain			Eq	// template="FEffect"
+Map	Knob V5		EQ Mid Gain			Eq	// template="FEffect"
+Map	Knob V6		EQ Hi Gain			Eq	// template="FEffect"
 // Ambience
-Map	PageName		"Ambience" 				Ambience
+Map	PageName		"Ambience"			Ambience
 {{ rm.include_menus(curpage="Ambience", submenu="effect", mainmenu_mini="common", effectpage="Ambience") -}}
-Map	UDVButton 1-2_2-2		Ambience Type				Ambience
-Map	Fader 4		Ambience Level			Ambience
+Map	UDVButton 1-2_2-2		Ambience Type			Ambience	// template="UDEffect", inverted=true
+Map	Fader 4		Ambience Level			Ambience	// template="FEffect"
 // Output
-Map	PageName		"Output" 				Output
+Map	PageName		"Output"			Output
 {{ rm.include_menus(curpage="Output", submenu="effect", mainmenu_mini="common", effectpage="Output") -}}
-Map	Fader 3		Compression Amount			Output
-Map	Knob V4		Stereo Width			Output
+Map	Fader 3		Compression Amount			Output	// template="FEffect"
+Map	Knob V4		Stereo Width			Output	// template="FEffect"
 {% endblock main %}
