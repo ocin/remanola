@@ -14,8 +14,10 @@
 Define Group	Page	Main	Perf	OscA	OscAEnv	OscB	OscBEnv	FilterA	FilterB	FilterEnv	ModA	ModB	Shaper	Velocity	ModWheelContr	Index	Keyboard	Internal
 {% endblock groups %}
 {% block main %}
+// confmap: NOgenhelptext
+// confmap: Map	PageName	"Default"
 // Index
-Map	PageName		"Index" 				Index
+Map	PageName		"Index"			Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-5		Page=Perf			Index
 Map	Button 1-6		Page=Velocity			Index
@@ -32,109 +34,108 @@ Map	Button 6-5		Page=ModB			Index
 Map	Button 2-8		Page=Shaper			Index
 Map	Button C7		Page=Internal			Index
 // Main
-Map	PageName		"Main" 				Main
+Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	Fader 7		Spread Amount			Main
-Map	Fader 8		Master Level			Main
+Map	Fader 7		Spread Amount			Main	// template="FEffect"
+Map	Fader 8		Master Level			Main	// template="FGain"
 // Perf
-Map	PageName		"Perf" 				Perf
+Map	PageName		"Perf"			Perf
 {{ rm.include_menus(curpage="Perf", submenu="perf", perfpage="Perf") -}}
-Map	UDVButton 7-2_8-2		Polyphony			Perf
-Map	Button 8-3		Legato On/Off			Perf
-Map	Fader 4		Portamento			Perf
-Map	UDVButton 7-5_8-5		Pitch Bend Range			Perf
+Map	UDVButton 7-2_8-2		Polyphony			Perf	// template="FPerf"
+Map	Button 8-3		Legato On/Off			Perf	// template="BYellowOnOff"
+Map	Fader 4		Portamento			Perf	// template="FPerf"
+Map	UDVButton 7-5_8-5		Pitch Bend Range			Perf	// template="FPerf"
 {% for oscnum in ['A', 'B'] -%}
 // Osc{{ oscnum }}
-Map	PageName		"Osc {{ oscnum }}" 				Osc{{ oscnum }}
+Map	PageName		"Osc {{ oscnum }}"			Osc{{ oscnum }}
 {{ rm.include_menus(curpage="Osc"+oscnum|string, mainmenu_mini="osc", submenu="osc", oscpage="Osc"+oscnum|string) -}}
-Map	Button 1-1		Oscillator {{ oscnum }} On/Off			Osc{{ oscnum }}
-//Map	UDVButton 3-1_4-1		Oscillator {{ oscnum }} Mode			Osc{{ oscnum }}
-Map	Fader 2		Oscillator {{ oscnum }} Motion			Osc{{ oscnum }}
-Map	Fader 3		Oscillator {{ oscnum }} Index			Osc{{ oscnum }}
-Map	Knob V4		Oscillator {{ oscnum }} Shift			Osc{{ oscnum }}
-Map	UDVButton 7-5_8-5		Oscillator {{ oscnum }} Octave			Osc{{ oscnum }}
-Map	UDVButton 7-6_8-6		Oscillator {{ oscnum }} Semi			Osc{{ oscnum }}
-Map	UDVButton 7-7_8-7		Oscillator {{ oscnum }} Cent			Osc{{ oscnum }}
-Map	Button 8-8		Route Oscillator {{ oscnum }} To Filter B			Osc{{ oscnum }}
+Map	Button 1-1		Oscillator {{ oscnum }} On/Off			Osc{{ oscnum }}	// template="BYellowOnOff"
+Map	Fader 2		Oscillator {{ oscnum }} Motion			Osc{{ oscnum }}	// template="FOsc"
+Map	Fader 3		Oscillator {{ oscnum }} Index			Osc{{ oscnum }}	// template="FOsc"
+Map	Knob V4		Oscillator {{ oscnum }} Shift			Osc{{ oscnum }}	// template="FOsc"
+Map	UDVButton 7-5_8-5		Oscillator {{ oscnum }} Octave			Osc{{ oscnum }}	// template="UDFreq"
+Map	UDVButton 7-6_8-6		Oscillator {{ oscnum }} Semi			Osc{{ oscnum }}	// template="UDFreq"
+Map	UDVButton 7-7_8-7		Oscillator {{ oscnum }} Cent			Osc{{ oscnum }}	// template="UDFreq"
+Map	Button 8-8		Route Oscillator {{ oscnum }} To Filter B			Osc{{ oscnum }}	// template="BYellowOnOff"
 // Osc{{ oscnum }} Env
-Map	PageName		"Osc {{ oscnum }} Env" 				Osc{{ oscnum }}Env
+Map	PageName		"Osc {{ oscnum }} Env"			Osc{{ oscnum }}Env
 {{ rm.include_menus(curpage="Osc"+oscnum+"Env", mainmenu_mini="osc", submenu="osc", oscpage="Osc"+oscnum+"Env") -}}
-Map	Fader 3		Oscillator {{ oscnum }} Attack			Osc{{ oscnum }}Env
-Map	Fader 4		Oscillator {{ oscnum }} Decay			Osc{{ oscnum }}Env
-Map	Fader 5		Oscillator {{ oscnum }} Sustain			Osc{{ oscnum }}Env
-Map	Fader 6		Oscillator {{ oscnum }} Release			Osc{{ oscnum }}Env
-Map	Fader 8		Oscillator {{ oscnum }} Gain			Osc{{ oscnum }}Env
+Map	Fader 3		Oscillator {{ oscnum }} Attack			Osc{{ oscnum }}Env	// template="FOsc"
+Map	Fader 4		Oscillator {{ oscnum }} Decay			Osc{{ oscnum }}Env	// template="FOsc"
+Map	Fader 5		Oscillator {{ oscnum }} Sustain			Osc{{ oscnum }}Env	// template="FOsc"
+Map	Fader 6		Oscillator {{ oscnum }} Release			Osc{{ oscnum }}Env	// template="FOsc"
+Map	Fader 8		Oscillator {{ oscnum }} Gain			Osc{{ oscnum }}Env	// template="FVol"
 {% endfor -%}
 // Extra Osc parameters
-Map	Button 7-8		Route Oscillator A To Shaper			OscA
+Map	Button 7-8		Route Oscillator A To Shaper			OscA	// template="BYellowOnOff"
 {% for filternum in ['A', 'B'] -%}
 // Filter{{ filternum }}
-Map	PageName		"Filter {{ filternum }}" 				Filter{{ filternum }}
+Map	PageName		"Filter {{ filternum }}"			Filter{{ filternum }}
 {{ rm.include_menus(curpage="Filter"+filternum|string, mainmenu_mini="filter", submenu="filter", filterpage="Filter"+filternum|string) -}}
-Map	Button 1-1		Filter {{ filternum }} On/Off			Filter{{ filternum }}
-Map	UDVButton 1-2_2-2		Filter {{ filternum }} Mode			Filter{{ filternum }}
-Map	Fader 3		Filter {{ filternum }} Resonance			Filter{{ filternum }}
-Map	Fader 4		Filter {{ filternum }} Freq			Filter{{ filternum }}
-Map	Button 8-5		Filter {{ filternum }} Env			Filter{{ filternum }}
-Map	Button 8-6		Filter {{ filternum }} Kbd Track			Filter{{ filternum }}
+Map	Button 1-1		Filter {{ filternum }} On/Off			Filter{{ filternum }}	// template="BYellowOnOff"
+Map	UDVButton 1-2_2-2		Filter {{ filternum }} Mode			Filter{{ filternum }}	// template="UDFreq", inverted=true
+Map	Fader 3		Filter {{ filternum }} Resonance			Filter{{ filternum }}	// template="FEffect"
+Map	Fader 4		Filter {{ filternum }} Freq			Filter{{ filternum }}	// template="FFreq"
+Map	Button 8-5		Filter {{ filternum }} Env			Filter{{ filternum }}	// template="BYellowOnOff"
+Map	Button 8-6		Filter {{ filternum }} Kbd Track			Filter{{ filternum }}	// template="BYellowOnOff"
 {% endfor -%}
-Map	Button 1-6		Route Filter B To Shaper			FilterB
+Map	Button 1-6		Route Filter B To Shaper			FilterB	// template="BYellowOnOff"
 // FilterEnv
-Map	PageName		"Filter Env" 				FilterEnv
+Map	PageName		"Filter Env"			FilterEnv
 {{ rm.include_menus(curpage="FilterEnv", submenu="filter", filterpage="FilterEnv") -}}
-Map	Fader 3		Filter Env Attack			FilterEnv
-Map	Fader 4		Filter Env Decay			FilterEnv
-Map	Fader 5		Filter Env Sustain			FilterEnv
-Map	Fader 6		Filter Env Release			FilterEnv
-Map	Button 8-7		Filter Env Invert			FilterEnv
-Map	Fader 8		Filter Env Amount			FilterEnv
+Map	Fader 3		Filter Env Attack			FilterEnv	// template="FFreq"
+Map	Fader 4		Filter Env Decay			FilterEnv	// template="FFreq"
+Map	Fader 5		Filter Env Sustain			FilterEnv	// template="FFreq"
+Map	Fader 6		Filter Env Release			FilterEnv	// template="FFreq"
+Map	Button 8-7		Filter Env Invert			FilterEnv	// template="BYellowOnOff"
+Map	Fader 8		Filter Env Amount			FilterEnv	// template="FEnv"
 // Shaper
-Map	PageName		"Shaper" 			Shaper
+Map	PageName		"Shaper"			Shaper
 {{ rm.include_menus(curpage="Shaper") -}}
-Map	Button 1-2		Shaper On/Off			Shaper
-Map	UDVButton 1-3_2-3		Shaper Mode			Shaper
-Map	Fader 8		Shaper Amount			Shaper
+Map	Button 1-2		Shaper On/Off			Shaper	// template="BYellowOnOff"
+Map	UDVButton 1-3_2-3		Shaper Mode			Shaper	// template="FEffect", inverted=true
+Map	Fader 8		Shaper Amount			Shaper	// template="FEffect"
 // ModA
-Map	PageName		"Mod A" 			ModA
+Map	PageName		"Mod A"			ModA
 {{ rm.include_menus(curpage="ModA", submenu="mod", mainmenu_mini="mod", modpage="ModA") -}}
-Map	Button 1-1		Modulator A On/Off			ModA
-Map	UDVButton 1-2_2-2		Modulator A Curve			ModA
-Map	Fader 3		Modulator A Rate			ModA
-Map	Knob V4		Modulator A To Pitch			ModA
-Map	Knob V5		Modulator A To Index			ModA
-Map	Knob V6		Modulator A To Shift			ModA
-Map	Button 1-8		Modulator A One Shot			ModA
-Map	Button 2-8		Modulator A Sync			ModA
-Map	UDVButton 7-8_8-8		Modulator A Target			ModA
+Map	Button 1-1		Modulator A On/Off			ModA	// template="BYellowOnOff"
+Map	UDVButton 1-2_2-2		Modulator A Curve			ModA	// template="UDLFO"
+Map	Fader 3		Modulator A Rate			ModA	// template="FFreq"
+Map	Knob V4		Modulator A To Pitch			ModA	// template="FOsc"
+Map	Knob V5		Modulator A To Index			ModA	// template="FOsc"
+Map	Knob V6		Modulator A To Shift			ModA	// template="FOsc"
+Map	Button 1-8		Modulator A One Shot			ModA	// template="BYellowOnOff"
+Map	Button 2-8		Modulator A Sync			ModA	// template="BYellowOnOff"
+Map	UDVButton 7-8_8-8		Modulator A Target			ModA	// template="UDLFO"
 // ModB
-Map	PageName		"Mod B" 			ModB
+Map	PageName		"Mod B"			ModB
 {{ rm.include_menus(curpage="ModB", submenu="mod", mainmenu_mini="mod", modpage="ModB") -}}
-Map	Button 1-1		Modulator B On/Off			ModB
-Map	UDVButton 1-2_2-2		Modulator B Curve			ModB
-Map	Fader 3		Modulator B Rate			ModB
-Map	Knob V4		Modulator B To Motion			ModB
-Map	Knob V5		Modulator B To Level			ModB
-Map	Knob V6		Modulator B To Filter			ModB
-Map	Knob V7		Modulator B To Modulator A			ModB
-Map	Button 1-8		Modulator B One Shot			ModB
-Map	Button 2-8		Modulator B Sync			ModB
-Map	UDVButton 7-8_8-8		Modulator B Target			ModB
+Map	Button 1-1		Modulator B On/Off			ModB	// template="BYellowOnOff"
+Map	UDVButton 1-2_2-2		Modulator B Curve			ModB	// template="UDLFO"
+Map	Fader 3		Modulator B Rate			ModB	// template="FFreq"
+Map	Knob V4		Modulator B To Motion			ModB	// template="FOsc"
+Map	Knob V5		Modulator B To Level			ModB	// template="FVol"
+Map	Knob V6		Modulator B To Filter			ModB	// template="FFreq"
+Map	Knob V7		Modulator B To Modulator A			ModB	// template="FLFO"
+Map	Button 1-8		Modulator B One Shot			ModB	// template="BYellowOnOff"
+Map	Button 2-8		Modulator B Sync			ModB	// template="BYellowOnOff"
+Map	UDVButton 7-8_8-8		Modulator B Target			ModB	// template="UDLFO"
 // Velocity
-Map	PageName		"Velocity" 			Velocity
+Map	PageName		"Velocity"			Velocity
 {{ rm.include_menus(curpage="Velocity", submenu="perf", perfpage="Velocity") -}}
-Map	Knob V2		Velocity To Level A			Velocity
-Map	Knob V3		Velocity To Level B			Velocity
-Map	Knob V4		Velocity To Filter Env			Velocity
-Map	Knob V5		Velocity To Attack			Velocity
-Map	Knob V6		Velocity To Shift			Velocity
-Map	Knob V7		Velocity To Modulator			Velocity
-Map	UDVButton 7-8_8-8		Velocity Target			Velocity
+Map	Knob V2		Velocity To Level A			Velocity	// template="FOsc"
+Map	Knob V3		Velocity To Level B			Velocity	// template="FOsc"
+Map	Knob V4		Velocity To Filter Env			Velocity	// template="FFreq"
+Map	Knob V5		Velocity To Attack			Velocity	// template="FVol"
+Map	Knob V6		Velocity To Shift			Velocity	// template="FOsc"
+Map	Knob V7		Velocity To Modulator			Velocity	// template="FLFO"
+Map	UDVButton 7-8_8-8		Velocity Target			Velocity	// template="UDPerf"
 // ModWheel
-Map	PageName		"ModWheel" 			ModWheelContr
+Map	PageName		"ModWheel"			ModWheelContr
 {{ rm.include_menus(curpage="ModWheelContr", submenu="perf", perfpage="ModWheelContr") -}}
-Map	Knob V2		Mod Wheel To Index			ModWheelContr
-Map	Knob V3		Mod Wheel To Shift			ModWheelContr
-Map	Knob V4		Mod Wheel To Filter			ModWheelContr
-Map	Knob V5		Mod Wheel To Modulator			ModWheelContr
-Map	UDVButton 7-8_8-8		Mod Wheel Target			ModWheelContr
+Map	Knob V2		Mod Wheel To Index			ModWheelContr	// template="FOsc"
+Map	Knob V3		Mod Wheel To Shift			ModWheelContr	// template="FOsc"
+Map	Knob V4		Mod Wheel To Filter			ModWheelContr	// template="FFreq"
+Map	Knob V5		Mod Wheel To Modulator			ModWheelContr	// template="FLFO"
+Map	UDVButton 7-8_8-8		Mod Wheel Target			ModWheelContr	// template="UDPerf"
 {% endblock main %}

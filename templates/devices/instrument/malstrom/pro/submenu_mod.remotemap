@@ -1,2 +1,2 @@
-Map	Button A1		Page=ModA			{{ curpage }}
-Map	Button A2		Page=ModB			{{ curpage }}
+Map	Button A1		Page=ModA			{{ curpage }}	// template="BLFOPage"
+Map	Button A2		Page=ModB			{{ curpage }}	// template="BLFOPage"
