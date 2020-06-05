@@ -1,2 +1,2 @@
-Map	Button A1		Page=Voicing1			{{ curpage }}
-Map	Button A2		Page=Voicing2			{{ curpage }}
+Map	Button A1		Page=Voicing1			{{ curpage }}	// template="BAmpPage"
+Map	Button A2		Page=Voicing2			{{ curpage }}	// template="BAmpPage"
