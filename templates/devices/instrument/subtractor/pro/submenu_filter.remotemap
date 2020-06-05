@@ -1,3 +1,3 @@
-Map	Button A1		Page=Filter			{{ curpage }}
-Map	Button A2		Page=Filter2			{{ curpage }}
-Map	Button A3		Page=FilterEnv			{{ curpage }}
+Map	Button A1		Page=Filter			{{ curpage }}	// template="BFilterPage"
+Map	Button A2		Page=Filter2			{{ curpage }}	// template="BFilterPage"
+Map	Button A3		Page=FilterEnv			{{ curpage }}	// template="BFilterModPage"

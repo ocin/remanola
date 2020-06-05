@@ -1,5 +1,5 @@
-Map	Button A1		Page=Perf			{{ curpage }}
-Map	Button A2		Page=Velocity1			{{ curpage }}
-Map	Button A3		Page=Velocity2			{{ curpage }}
-Map	Button A4		Page=ModWheelContr			{{ curpage }}
-Map	Button A5		Page=ExtMod			{{ curpage }}
+Map	Button A1		Page=Perf			{{ curpage }}	// template="BPerformancePage"
+Map	Button A2		Page=Velocity1			{{ curpage }}	// template="BPerformancePage"
+Map	Button A3		Page=Velocity2			{{ curpage }}	// template="BPerformancePage"
+Map	Button A4		Page=ModWheelContr			{{ curpage }}	// template="BPerformancePage"
+Map	Button A5		Page=ExtMod			{{ curpage }}	// template="BPerformancePage"
