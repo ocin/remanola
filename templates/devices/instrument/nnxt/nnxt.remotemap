@@ -4,8 +4,6 @@
 {% set devicename="NN-XT" -%}
 {% set shortname="nnxt" -%}
 {% block main %}
-// confmap: NOgenhelptext
-// confmap: Map	PageName	"Default"
 // Index
 Map	PageName		"Index"			Index
 Map	Button 1-1		Page=Main			Index

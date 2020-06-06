@@ -9,8 +9,6 @@ Define Group	Page	Main	Perf	Instrument	Filter	FilterEnv	Amp	Delay	Reverb	Index	K
 Define Group	TempoSync	Free	Sync
 {% include "remotemap/include/device/instrument.remotemap" %}
 {% import "remotemap/include/macros.remotemap" as rm with context %}
-// confmap: NOgenhelptext
-// confmap: Map	PageName	"Default"
 // Index
 Map	PageName		"Index"			Index
 Map	Button 1-1		Page=Main			Index

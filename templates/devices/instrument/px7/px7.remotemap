@@ -10,8 +10,6 @@ Define Group	Page	Main	Perf	OP1	OP2	OP3	OP4	OP5	OP6	LFO	Index	Keyboard	Internal
 Define Group	TempoSync	Free	Sync
 {% endblock groups %}
 {% block main %}
-// confmap: NOgenhelptext
-// confmap: Map	PageName	"Default"
 // Index
 Map	PageName		"Index" 				Index
 {{ rm.include_menus(curpage="Index",mainmenu_mini="common") -}}
