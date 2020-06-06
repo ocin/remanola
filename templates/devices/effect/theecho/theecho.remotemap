@@ -9,7 +9,7 @@ Define Group	TempoSync	Free	Sync
 {% endblock groups %}
 {% block main %}
 // Index
-Map	PageName		"Index" 				Index
+Map	PageName		"Index"			Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 2-8		Page=Delay			Index
 Map	Button 3-8		Page=Feedback			Index
@@ -17,7 +17,7 @@ Map	Button 4-8		Page=Color			Index
 Map	Button 5-5		Page=Modulation			Index
 Map	Button C7		Page=Internal			Index
 // Main
-Map	PageName		"Main" 				Main
+Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
 Map	UDVButton 1-1_2-1		Enabled			Main
 Map	UDVButton 1-2_2-2		Input Mode			Main
@@ -27,7 +27,7 @@ Map	Fader 6		Ducking			Main
 Map	Fader 7		Dry/Wet Balance			Main
 Map	Meter 8		Input Peak Meter			Main
 // Delay
-Map	PageName		"Delay" 				Delay
+Map	PageName		"Delay"			Delay
 {{ rm.include_menus(curpage="Delay") -}}
 Map	Sel1_0		TempoSync=Free			Delay
 Map	Sel1_1		TempoSync=Sync			Delay
@@ -39,7 +39,7 @@ Map	Button 1-5		Sync		SEL1	Delay
 Map	Button 8-5		Ping-Pong Mode			Delay
 Map	Knob V6		Ping-Pong Pan			Delay
 // Feedback
-Map	PageName		"Feedback" 				Feedback
+Map	PageName		"Feedback"			Feedback
 {{ rm.include_menus(curpage="Feedback") -}}
 Map	Fader 2		Feedback			Feedback
 Map	Knob V3		Right Ch Feedback Offset			Feedback
@@ -47,18 +47,18 @@ Map	Button 1-5		Diffuse On			Feedback
 Map	Fader 6		Diffuse Spread			Feedback
 Map	Fader 7		Diffuse Amount			Feedback
 // Color
-Map	PageName		"Color" 				Color
+Map	PageName		"Color"			Color
 {{ rm.include_menus(curpage="Color") -}}
-Map	Fader 2		Drive Amount 				Color
+Map	Fader 2		Drive Amount			Color
 Map	UDVButton 1-3_2-3		Drive Type			Color
 Map	Button 1-5		Filter On			Color
-Map	Fader 6		Filter Frequency 				Color
-Map	Fader 7		Filter Resonance 				Color
+Map	Fader 6		Filter Frequency			Color
+Map	Fader 7		Filter Resonance			Color
 // Modulation
-Map	PageName		"Modulation" 				Modulation
+Map	PageName		"Modulation"			Modulation
 {{ rm.include_menus(curpage="Modulation") -}}
-Map	Knob V2		Envelope 				Modulation
-Map	Fader 3		Wobble 				Modulation
-Map	Fader 5		LFO Rate 				Modulation
-Map	Fader 6		LFO Amount 				Modulation
+Map	Knob V2		Envelope			Modulation
+Map	Fader 3		Wobble			Modulation
+Map	Fader 5		LFO Rate			Modulation
+Map	Fader 6		LFO Amount			Modulation
 {% endblock main %}

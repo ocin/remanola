@@ -8,12 +8,12 @@ Define Group	Page	Main	LFO	Index	Internal
 {% endblock groups %}
 {% block main %}
 // Index
-Map	PageName		"Index" 				Index
+Map	PageName		"Index"			Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 5-5		Page=LFO			Index
 Map	Button C7		Page=Internal			Index
 // Main
-Map	PageName		"Main" 				Main
+Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
 Map	UDVButton 1-1_2-1		Enabled			Main
 Map	Meter 2		Peak Meter			Main
@@ -22,7 +22,7 @@ Map	Fader 4		Split			Main
 Map	Fader 5		Width			Main
 Map	Fader 6		Feedback			Main
 // LFO
-Map	PageName		"LFO" 				LFO
+Map	PageName		"LFO"			LFO
 {{ rm.include_menus(curpage="LFO") -}}
 Map	Fader 5		Rate			LFO
 Map	Button 1-6		LFO Sync Enable			LFO
