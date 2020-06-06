@@ -7,7 +7,7 @@ Map	PageName		"Keyboard"			Keyboard
 Map	Button A1		Layout=Kbd			Keyboard
 Map	Button A2		Layout=Drum			Keyboard
 {% endif -%}
-Map	KbdPageName		"Kbd"			Keyboard	
+Map	KbdPageName		"Kbd"			Keyboard
 {% if lptype == "mini" %}
 Map	Button 1-4		KbdVel=V25			Keyboard	Kbd
 Map	Button 1-5		KbdVel=V50			Keyboard	Kbd
@@ -44,11 +44,11 @@ Map	Knob V1		Pitch Bend			Keyboard	PitchBend	Kbd
 {% endif -%}
 {% if show_pitch_bend_range -%}
 {% if devicename=="Klang" or devicename=="Humana" or devicename=="Pangea" -%}
-Map	UDVButton 1-3_2-3		Pitch_Bend_Range 			Keyboard	PitchBend	Kbd
+Map	UDVButton 1-3_2-3		Pitch_Bend_Range			Keyboard	PitchBend	Kbd
 {% elif devicename=="Revival" -%}
 Map	UDVButton 1-3_2-3		Voicing Pitch Bend Range			Keyboard	PitchBend	Kbd
 {% else -%}
-Map	UDVButton 1-3_2-3		Pitch Bend Range 			Keyboard	PitchBend	Kbd
+Map	UDVButton 1-3_2-3		Pitch Bend Range			Keyboard	PitchBend	Kbd
 {% endif -%}
 {% endif -%}
 Map	KbdPageName		"Drum"			Keyboard	Drum	

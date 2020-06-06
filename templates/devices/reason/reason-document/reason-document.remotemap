@@ -8,7 +8,7 @@ Map	BeatPosition 		Beat Position
 Map	Button C1		Target Previous Track
 Map	Button C2		Target Next Track
 // Transport
-Map	DocPageName		"Transport" 				Transport
+Map	DocPageName		"Transport"			Transport
 Map	Button D1		Play			Transport
 Map	Button D2		Stop			Transport
 Map	Button D3		Record			Transport
@@ -18,7 +18,7 @@ Map	Button D6 		Loop On/Off			Transport
 Map	Button D7 		Click On/Off			Transport
 Map	Button D8 		DocMode=Options			Transport
 // Options
-Map	DocPageName		"Options" 				Options
+Map	DocPageName		"Options"			Options
 Map	Button D1 		PreCount On/Off			Options
 //Map	Button D2 		Click Level			Options
 //Map	Button D3 		Tempo BPM			Options

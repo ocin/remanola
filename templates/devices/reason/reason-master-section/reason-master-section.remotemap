@@ -8,7 +8,7 @@ Map	DeviceScope		"Master Section"
 Map	Button C5		Page=Main
 Map	Button C7		Page=Index
 // Index
-Map	PageName		"Index" 				Index
+Map	PageName		"Index"			Index
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-2		Page=ChFaders			Index
 Map	Button 1-3		Page=ChPans			Index
@@ -24,19 +24,19 @@ Map	Button 8-7		Page=SendReturn8			Index
 Map	Button 2-8		Page=MasterComp			Index
 Map	Button 3-8		Page=MasterSend			Index
 Map	Button 4-8		Page=MasterInsert			Index
-Map	Button 8-1		Previous 8 Remote Base Channel				Index
-Map	Button 8-2		Next 8 Remote Base Channel				Index
+Map	Button 8-1		Previous 8 Remote Base Channel			Index
+Map	Button 8-2		Next 8 Remote Base Channel			Index
 Map	Button C7		Page=Internal			Index
 // Internal
-Map	PageName		"Internal" 				Internal
+Map	PageName		"Internal"			Internal
 Map	Button 1-1		Page=Main			Internal
 Map	Button C7		Page=Main			Internal
 // Main
-Map	PageName		"Main" 				Main
-Map	SubPageName		"Vu" 				Main	Vu
+Map	PageName		"Main"			Main
+Map	SubPageName		"Vu"			Main	Vu
 Map	Meter 1		Master Level Meter Left			Main	Vu
 Map	Meter 2		Master Level Meter Right			Main	Vu
-Map	SubPageName		"Peak" 				Main	Peak
+Map	SubPageName		"Peak"			Main	Peak
 Map	Meter 1		Master Level Left Peak			Main	Peak
 Map	Meter 2		Master Level Right Peak			Main	Peak
 Map	BigFader 3		Master Level	2		Main
@@ -45,32 +45,32 @@ Map	Button 7-4		MeterMode=Peak			Main
 Map	Button 8-4		Reset Clip			Main
 Map	UDVButton 1-6_2-6		Ctrl Room Source			Main
 Map	UDVButton 1-7_2-7		Ctrl Room FX Select			Main
-Map	Fader 5		Ctrl Room Level				Main
+Map	Fader 5		Ctrl Room Level			Main
 Map	Button 8-6		All Mutes Off			Main
 Map	Button 8-7		All Solo Off			Main
 Map	Button 8-8		Dim -20dB			Main
 // Channel Mutes & Solos
-Map	PageName		"Channel Mutes & Solos" 				ChMutesSolos
-Map	Button 1-1		Channel 1 Mute				ChMutesSolos
-Map	Button 1-2		Channel 2 Mute				ChMutesSolos
-Map	Button 1-3		Channel 3 Mute				ChMutesSolos
-Map	Button 1-4		Channel 4 Mute				ChMutesSolos
-Map	Button 1-5		Channel 5 Mute				ChMutesSolos
-Map	Button 1-6		Channel 6 Mute				ChMutesSolos
-Map	Button 1-7		Channel 7 Mute				ChMutesSolos
-Map	Button 1-8		Channel 8 Mute				ChMutesSolos
-Map	Button 2-1		Channel 1 Solo				ChMutesSolos
-Map	Button 2-2		Channel 2 Solo				ChMutesSolos
-Map	Button 2-3		Channel 3 Solo				ChMutesSolos
-Map	Button 2-4		Channel 4 Solo				ChMutesSolos
-Map	Button 2-5		Channel 5 Solo				ChMutesSolos
-Map	Button 2-6		Channel 6 Solo				ChMutesSolos
-Map	Button 2-7		Channel 7 Solo				ChMutesSolos
-Map	Button 2-8		Channel 8 Solo				ChMutesSolos
-Map	Button 3-1		All Mutes Off				ChMutesSolos
-Map	Button 3-2		All Solo Off				ChMutesSolos
+Map	PageName		"Channel Mutes & Solos"			ChMutesSolos
+Map	Button 1-1		Channel 1 Mute			ChMutesSolos
+Map	Button 1-2		Channel 2 Mute			ChMutesSolos
+Map	Button 1-3		Channel 3 Mute			ChMutesSolos
+Map	Button 1-4		Channel 4 Mute			ChMutesSolos
+Map	Button 1-5		Channel 5 Mute			ChMutesSolos
+Map	Button 1-6		Channel 6 Mute			ChMutesSolos
+Map	Button 1-7		Channel 7 Mute			ChMutesSolos
+Map	Button 1-8		Channel 8 Mute			ChMutesSolos
+Map	Button 2-1		Channel 1 Solo			ChMutesSolos
+Map	Button 2-2		Channel 2 Solo			ChMutesSolos
+Map	Button 2-3		Channel 3 Solo			ChMutesSolos
+Map	Button 2-4		Channel 4 Solo			ChMutesSolos
+Map	Button 2-5		Channel 5 Solo			ChMutesSolos
+Map	Button 2-6		Channel 6 Solo			ChMutesSolos
+Map	Button 2-7		Channel 7 Solo			ChMutesSolos
+Map	Button 2-8		Channel 8 Solo			ChMutesSolos
+Map	Button 3-1		All Mutes Off			ChMutesSolos
+Map	Button 3-2		All Solo Off			ChMutesSolos
 // Channel Faders
-Map	PageName		"Channel Faders" 				ChFaders
+Map	PageName		"Channel Faders"			ChFaders
 Map	BigFader 1		Channel 1 Level			ChFaders
 Map	BigFader 2		Channel 2 Level			ChFaders
 Map	BigFader 3		Channel 3 Level			ChFaders
@@ -80,7 +80,7 @@ Map	BigFader 6		Channel 6 Level			ChFaders
 Map	BigFader 7		Channel 7 Level			ChFaders
 Map	BigFader 8		Channel 8 Level			ChFaders
 // Channel Pans
-Map	PageName		"Channel Pans" 				ChPans
+Map	PageName		"Channel Pans"			ChPans
 Map	Knob H1		Channel 1 Pan			ChPans
 Map	Knob H2		Channel 2 Pan			ChPans
 Map	Knob H3		Channel 3 Pan			ChPans
@@ -90,7 +90,7 @@ Map	Knob H6		Channel 6 Pan			ChPans
 Map	Knob H7		Channel 7 Pan			ChPans
 Map	Knob H8		Channel 8 Pan			ChPans
 // Master Compressor
-Map	PageName		"Master Compressor" 			MasterComp
+Map	PageName		"Master Compressor"			MasterComp
 Map	Button 1-2		Compressor On			MasterComp
 Map	Button 4-2		Key On			MasterComp
 Map	Fader 3		Threshold			MasterComp
@@ -100,7 +100,7 @@ Map	UDVButton 1-6_2-6		Release			MasterComp
 Map	Fader 7		Make-Up Gain			MasterComp
 Map	Meter 8		Gain Reduction			MasterComp
 // Master Send
-Map	PageName		"Master Send" 			MasterSend
+Map	PageName		"Master Send"			MasterSend
 Map	Fader 1		FX1 Send Level			MasterSend
 Map	Fader 2		FX2 Send Level			MasterSend
 Map	Fader 3		FX3 Send Level			MasterSend
@@ -110,7 +110,7 @@ Map	Fader 6		FX6 Send Level			MasterSend
 Map	Fader 7		FX7 Send Level			MasterSend
 Map	Fader 8		FX8 Send Level			MasterSend
 // Master Insert
-Map	PageName		"Master Insert" 				MasterInsert
+Map	PageName		"Master Insert"			MasterInsert
 Map	Button C3		Select Prev Insert FX Patch			MasterInsert
 Map	Button C4		Select Next Insert FX Patch			MasterInsert
 Map	PatchName		Insert FX Patch Name			MasterInsert
@@ -128,7 +128,7 @@ Map	Fader 6		Rotary 4			MasterInsert
 Map	Meter 8		From Insert FX Peak Meter			MasterInsert
 {% for fxnum in range(1,9) %}
 // Send Return {{ fxnum }}
-Map	PageName		"Send Return {{ fxnum }}" 				SendReturn{{ fxnum }}
+Map	PageName		"Send Return {{ fxnum }}"			SendReturn{{ fxnum }}
 Map	PatchName		FX{{ fxnum }} Name			SendReturn{{ fxnum }}
 Map	Button 1-8		Page=SendReturn1			SendReturn{{ fxnum }}
 Map	Button 2-8		Page=SendReturn2			SendReturn{{ fxnum }}
