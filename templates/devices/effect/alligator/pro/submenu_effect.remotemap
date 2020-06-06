@@ -1,4 +1,4 @@
-Map	Button A1		Page=HPEffects			{{ curpage }}
-Map	Button A2		Page=BPEffects			{{ curpage }}
-Map	Button A3		Page=LPEffects			{{ curpage }}
-Map	Button A5		Page=DryLevels			{{ curpage }}
+Map	Button A1		Page=HPEffects			{{ curpage }}	// template="BEffectPage"
+Map	Button A2		Page=BPEffects			{{ curpage }}	// template="BEffectPage"
+Map	Button A3		Page=LPEffects			{{ curpage }}	// template="BEffectPage"
+Map	Button A5		Page=DryLevels			{{ curpage }}	// template="BAmpPage"
