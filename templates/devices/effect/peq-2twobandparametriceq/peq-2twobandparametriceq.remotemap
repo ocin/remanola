@@ -15,13 +15,13 @@ Map	Button C7		Page=Internal			Index
 Map	PageName		"Main"			Main
 Map	Sel1_0		FilterB=Off			Main
 Map	Sel1_1		FilterB=On			Main
-Map	UDVButton 1-1_2-1		Enabled			Main
+Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
 Map	Meter 2		Peak Meter			Main
-Map	Button 8-1		Filter B On/Off		SEL1	Main
-Map	Fader 3		Filter A Freq			Main
-Map	Fader 4		Filter A Q			Main
-Map	Knob V5		Filter A Gain			Main
-Map	Fader 6		Filter B Freq			Main	On
-Map	Fader 7		Filter B Q			Main	On
-Map	Knob V8		Filter B Gain			Main	On
+Map	Button 8-1		Filter B On/Off		SEL1	Main	// template="BRedOnOff"
+Map	Fader 3		Filter A Freq			Main	// template="FFreq"
+Map	Fader 4		Filter A Q			Main	// template="FEffect"
+Map	Knob V5		Filter A Gain			Main	// template="FGain"
+Map	Fader 6		Filter B Freq			Main	On	// template="FFreq"
+Map	Fader 7		Filter B Q			Main	On	// template="FEffect"
+Map	Knob V8		Filter B Gain			Main	On	// template="FGain"
 {% endblock main %}
