@@ -1,8 +1,0 @@
-                        ["Button B1"]={template="BMainPage"},
-                        ["Button B2"]={template="BEffectPage"},
-                        ["Button B3"]={template="BAmpPage"},
-                        ["Button B4"]={template="BEffectPage"},
-                        ["Button B5"]={template="BEffectPage"},
-                        ["Button B6"]={template="BEnvPage"},
-                        ["Button B7"]={template="BLFOPage"},
-                        ["Button B8"]={template="BFilterPage"},

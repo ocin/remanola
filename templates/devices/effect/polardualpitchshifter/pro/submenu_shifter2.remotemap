@@ -1,2 +1,2 @@
-Map	Button A1		Page=Shifter2			{{ curpage }}
-Map	Button A2		Page=Shifter2Vol			{{ curpage }}
+Map	Button A1		Page=Shifter2			{{ curpage }}	// template="BEffectPage"
+Map	Button A2		Page=Shifter2Vol			{{ curpage }}	// template="BEffectPage"

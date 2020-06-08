@@ -18,41 +18,41 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	UDVButton 1-1_2-1		Enabled			Main
-Map	UDVButton 7-1_8-1		Routing			Main
-Map	Fader 2		Squash			Main
-Map	Fader 3		Release			Main
-Map	Fader 4		Dirt			Main
-Map	Fader 5		Tone			Main
-Map	Fader 6		Blend			Main
-Map	Fader 7		Volume			Main
+Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
+Map	UDVButton 7-1_8-1		Routing			Main	// template="UDPerf"
+Map	Fader 2		Squash			Main	// template="FEffect"
+Map	Fader 3		Release			Main	// template="FEnv"
+Map	Fader 4		Dirt			Main	// template="FEffect"
+Map	Fader 5		Tone			Main	// template="FOsc"
+Map	Fader 6		Blend			Main	// template="FEffect"
+Map	Fader 7		Volume			Main	// template="FVol"
 Map	Meter 8		Input Peak Meter			Main
 // Filter
 Map	PageName		"Filter"			Filter
 {{ rm.include_menus(curpage="Filter") -}}
-Map	UDVButton 1-2_2-2		Filter Mode			Filter
-Map	Fader 3		Filter Frequency			Filter
-Map	Fader 4		Peak			Filter
-Map	Knob V7		Tremor to Frequency			Filter
-Map	Knob V8		Follower to Frequency			Filter
+Map	UDVButton 1-2_2-2		Filter Mode			Filter	// template="UDFreq"
+Map	Fader 3		Filter Frequency			Filter	// template="FFreq"
+Map	Fader 4		Peak			Filter	// template="FEffect"
+Map	Knob V7		Tremor to Frequency			Filter	// template="FLFO"
+Map	Knob V8		Follower to Frequency			Filter	// template="FEnv"
 // Follower
 Map	PageName		"Follower"			Follower
 {{ rm.include_menus(curpage="Follower") -}}
-Map	Button 8-1		Follower Trig			Follower
-Map	Fader 2		Follower Threshold			Follower
-Map	Fader 4		Follower Attack			Follower
-Map	Fader 5		Follower Release			Follower
+Map	Button 8-1		Follower Trig			Follower	// template="BRedOnOff"
+Map	Fader 2		Follower Threshold			Follower	// template="FEffect"
+Map	Fader 4		Follower Attack			Follower	// template="FEnv"
+Map	Fader 5		Follower Release			Follower	// template="FEnv"
 Map	Meter 8		Follow			Follower
 // Tremor
 Map	PageName		"Tremor"			Tremor
 {{ rm.include_menus(curpage="Tremor") -}}
 Map	Sel1_0		TempoSync=Free			Tremor
 Map	Sel1_1		TempoSync=Sync			Tremor
-Map	Fader 2		Tremor Rate			Tremor	Free
-Map	UDVButton 7-2_8-2		Tremor Rate	9		Tremor	Sync
-Map	Button 1-3		Sync		SEL1	Tremor
-Map	UDVButton 1-4_2-4		Tremor Waveform			Tremor
-Map	Button 1-5		Tremor Spread			Tremor
-Map	Fader 6		Tremor Lag			Tremor
-Map	Knob V8		Tremor to Volume			Tremor
+Map	Fader 2		Tremor Rate			Tremor	Free	// template="FFreq"
+Map	UDVButton 7-2_8-2		Tremor Rate	9		Tremor	Sync	// template="UDFreq"
+Map	Button 1-3		Sync		SEL1	Tremor	// template="BGreenOnOff"
+Map	UDVButton 1-4_2-4		Tremor Waveform			Tremor	// template="UDEffect"
+Map	Button 1-5		Tremor Spread			Tremor	// template="BGreenOnOff"
+Map	Fader 6		Tremor Lag			Tremor	// template="FEffect"
+Map	Knob V8		Tremor to Volume			Tremor	// template="FVol"
 {% endblock main %}
