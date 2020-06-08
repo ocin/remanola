@@ -1,4 +1,4 @@
-Map	Button B1		Page=Main			{{ curpage }}
-Map	Button B2		Page=Reverb			{{ curpage }}
-Map	Button B3		Page=Eq			{{ curpage }}
-Map	Button B4		Page=Gate			{{ curpage }}
+Map	Button B1		Page=Main			{{ curpage }}	// template="BMainPage"
+Map	Button B2		Page=Reverb			{{ curpage }}	// template="BEffectPage"
+Map	Button B3		Page=Eq			{{ curpage }}	// template="BFilterPage"
+Map	Button B4		Page=Gate			{{ curpage }}	// template="BEffectPage"
