@@ -9,13 +9,13 @@ Map	Button 1-1		Page=Main			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
-Map	UDVButton 1-1_2-1		Enabled			Main
+Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
 Map	Meter 2		Peak Meter			Main
-Map	Knob V3		Low Width			Main
-Map	Meter 4		Low Width Meter			Main
-Map	Fader 5		X-Over Frequency			Main
-Map	Knob V6		High Width			Main
-Map	Meter 7		High Width Meter			Main
-Map	UDVButton 1-8_2-8		Solo Mode			Main
-Map	UDVButton 7-8_8-8		Separate Out Mode			Main
+Map	Knob V3		Low Width			Main	// template="FEffect"
+Map	Meter 4		Low Width Meter			Main	// template="FGain", bvmap="MeterSI"
+Map	Fader 5		X-Over Frequency			Main	// template="FFreq", bvmap="Fader64"
+Map	Knob V6		High Width			Main	// template="FEffect"
+Map	Meter 7		High Width Meter			Main	// template="FGain", bvmap="MeterSI"
+Map	UDVButton 1-8_2-8		Solo Mode			Main	// template="UDPerf"
+Map	UDVButton 7-8_8-8		Separate Out Mode			Main	// template="UDEffect"
 {% endblock main %}
