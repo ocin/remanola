@@ -15,19 +15,19 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	UDVButton 1-1_2-1		Enabled			Main
+Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
 Map	Meter 2		Peak Meter			Main
-Map	Fader 3		Frequency			Main
-Map	Fader 4		Resonance			Main
-Map	Fader 5		Env Amount			Main
-Map	Fader 6		Velocity			Main
-Map	UDVButton 1-7_2-7		Mode			Main
+Map	Fader 3		Frequency			Main	// template="FFreq"
+Map	Fader 4		Resonance			Main	// template="FEffect"
+Map	Fader 5		Env Amount			Main	// template="FEnv"
+Map	Fader 6		Velocity			Main	// template="FPerf"
+Map	UDVButton 1-7_2-7		Mode			Main	// template="UDFreq", inverted=true
 // Filter Envelope
 Map	PageName		"Filter Envelope"			FilterEnvelope
 {{ rm.include_menus(curpage="FilterEnvelope") -}}
-Map	Fader 1		Env Amount			FilterEnvelope
-Map	Fader 3		Attack			FilterEnvelope
-Map	Fader 4		Decay			FilterEnvelope
-Map	Fader 5		Sustain			FilterEnvelope
-Map	Fader 6		Release			FilterEnvelope
+Map	Fader 1		Env Amount			FilterEnvelope	// template="FEnv"
+Map	Fader 3		Attack			FilterEnvelope	// template="FFreq"
+Map	Fader 4		Decay			FilterEnvelope	// template="FFreq"
+Map	Fader 5		Sustain			FilterEnvelope	// template="FFreq"
+Map	Fader 6		Release			FilterEnvelope	// template="FFreq"
 {% endblock main %}
