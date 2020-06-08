@@ -1,4 +1,4 @@
-Map	Button B1		Page=Main			{{ curpage }}
-Map	Button B2		Page=PitchAdjust			{{ curpage }}
-Map	Button B3		Page=Transpose			{{ curpage }}
-Map	Button B4		Page=Formant			{{ curpage }}
+Map	Button B1		Page=Main			{{ curpage }}	// template="BMainPage"
+Map	Button B2		Page=PitchAdjust			{{ curpage }}	// template="BOscPage"
+Map	Button B3		Page=Transpose			{{ curpage }}	// template="BFilterPage"
+Map	Button B4		Page=Formant			{{ curpage }}	// template="BEffectPage"
