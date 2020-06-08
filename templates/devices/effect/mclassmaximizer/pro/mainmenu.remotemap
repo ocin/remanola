@@ -1,3 +1,3 @@
-Map	Button B1		Page=Main			{{ curpage }}
-Map	Button B2		Page=Limiter			{{ curpage }}
-Map	Button B3		Page=SoftCLip			{{ curpage }}
+Map	Button B1		Page=Main			{{ curpage }}	// template="BMainPage"
+Map	Button B2		Page=Limiter			{{ curpage }}	// template="BEffectPage"
+Map	Button B3		Page=SoftCLip			{{ curpage }}	// template="BEffectPage"
