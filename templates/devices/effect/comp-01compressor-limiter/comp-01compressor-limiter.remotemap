@@ -15,5 +15,5 @@ Map	Fader 3		Ratio			Main	// template="FEffect"
 Map	Fader 4		Threshold			Main	// template="FEffect"
 Map	Fader 5		Attack			Main	// template="FEffect"
 Map	Fader 6		Release			Main	// template="FEffect"
-Map	Meter 8		Gain			Main	// template="FGain",bvmap="MeterSI"}
+Map	Meter 8		Gain			Main	// template="FGain",bvmap="MeterSI"
 {% endblock main %}
