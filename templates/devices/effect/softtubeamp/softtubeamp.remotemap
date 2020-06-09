@@ -15,18 +15,18 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	UDVButton 1-1_2-1		Enabled			Main
-Map	UDVButton 1-2_2-2		Amp Switch			Main
-Map	UDVButton 5-2_6-2		Cab Switch			Main
-Map	Button 8-2		Boost			Main
-Map	Fader 3		Gate			Main
-Map	Fader 4		Gain			Main
-Map	Fader 7		Poweramp Gain			Main
-Map	Fader 8		Volume			Main
+Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
+Map	UDVButton 1-2_2-2		Amp Switch			Main	// template="UDEffect"
+Map	UDVButton 5-2_6-2		Cab Switch			Main	// template="UDEffect"
+Map	Button 8-2		Boost			Main	// template="BRedOnOff"
+Map	Fader 3		Gate			Main	// template="FEffect"
+Map	Fader 4		Gain			Main	// template="FGain"
+Map	Fader 7		Poweramp Gain			Main	// template="FGain"
+Map	Fader 8		Volume			Main	// template="FVol"
 // Eq
 Map	PageName		"Eq"			Eq
 {{ rm.include_menus(curpage="Eq") -}}
-Map	Fader 3		Bass			Eq
-Map	Fader 4		Mid			Eq
-Map	Fader 5		Treble			Eq
+Map	Fader 3		Bass			Eq	// template="FGain"
+Map	Fader 4		Mid			Eq	// template="FGain"
+Map	Fader 5		Treble			Eq	// template="FGain"
 {% endblock main %}
