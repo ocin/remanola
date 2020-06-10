@@ -1,0 +1,2 @@
+Map	Button A1		Previous 8 Remote Base Channel			{{ curpage }}	// template="BYellow"
+Map	Button A2		Next 8 Remote Base Channel			{{ curpage }}	// template="BYellow"

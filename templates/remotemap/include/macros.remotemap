@@ -1,4 +1,4 @@
-{% macro include_menus(curpage, submenu='UNDEFINED', mainmenu_mini='UNDEFINED', oscpage='UNDEFINED', osc1page='UNDEFINED', osc2page='UNDEFINED', perfpage='UNDEFINED', modpage='UNDEFINED', voicingpage='UNDEFINED', sectionpage='UNDEFINED', amppage='UNDEFINED', filterpage='UNDEFINED', effectpage='UNDEFINED', chanpage='UNDEFINED', levelpage='UNDEFINED', panpage='UNDEFINED', drumpage1='UNDEFINED', drumpage2='UNDEFINED', padpage1='UNDEFINED', padpage2='UNDEFINED', chanpage1='UNDEFINED', chanpage2='UNDEFINED', eqpage='UNDEFINED', sendpage='UNDEFINED', section='UNDEFINED', engnum='UNDEFINED', oscnum='UNDEFINED', drumsubpage='UNDEFINED', drumedit='UNDEFINED', effectspage='UNDEFINED') %}
+{% macro include_menus(curpage, submenu='UNDEFINED', mainmenu_mini='UNDEFINED', oscpage='UNDEFINED', osc1page='UNDEFINED', osc2page='UNDEFINED', perfpage='UNDEFINED', modpage='UNDEFINED', voicingpage='UNDEFINED', sectionpage='UNDEFINED', amppage='UNDEFINED', filterpage='UNDEFINED', effectpage='UNDEFINED', chanpage='UNDEFINED', levelpage='UNDEFINED', panpage='UNDEFINED', drumpage1='UNDEFINED', drumpage2='UNDEFINED', padpage1='UNDEFINED', padpage2='UNDEFINED', chanpage1='UNDEFINED', chanpage2='UNDEFINED', eqpage='UNDEFINED', sendreturnpage="UNDEFINED", sendpage='UNDEFINED', section='UNDEFINED', engnum='UNDEFINED', oscnum='UNDEFINED', drumsubpage='UNDEFINED', drumedit='UNDEFINED', effectspage='UNDEFINED') %}
 	{% if oscpage == 'UNDEFINED' and oscpagedefault is defined -%}
 		{% set oscpage=oscpagedefault -%}
 	{% endif -%}
@@ -58,6 +58,9 @@
 	{% endif -%}
 	{% if eqpage == 'UNDEFINED' and eqpagedefault is defined -%}
 		{% set eqpage=eqpagedefault -%}
+	{% endif -%}
+	{% if sendreturnpage == 'UNDEFINED' and sendreturnpagedefault is defined -%}
+		{% set sendreturnpage=sendreturnpagedefault -%}
 	{% endif -%}
 	{% if sendpage == 'UNDEFINED' and sendpagedefault is defined -%}
 		{% set sendpage=sendpagedefault -%}
