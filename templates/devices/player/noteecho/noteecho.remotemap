@@ -9,12 +9,10 @@ Define Group	Page	Main	Index	Internal
 {% block main %}
 // Index
 Map	PageName		"Index"			Index
-{{ rm.include_menus(curpage="Index",mainmenu_mini="common") -}}
 Map	Button 1-1		Page=Main			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
-{{ rm.include_menus(curpage="Main",mainmenu_mini="common") -}}
 Map	Button 1-1		On/Off			Main	// template="BGreenOnOff"
 Map	UDVButton 1-3_2-3		Step Length Free			Main	// template="UDPerf"
 Map	Button 1-4		Tempo Sync			Main	// template="BPerfOnOff"
