@@ -20,38 +20,38 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main" 				Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	UDVButton 7-3_8-3		Aux Pre/Post			Main
-Map	Fader 4		Aux Return Level			Main
-Map	Fader 6		Master Level			Main
+Map	UDVButton 7-3_8-3		Aux Pre/Post			Main	// template="FEffect"
+Map	Fader 4		Aux Return Level			Main	// template="FEffect"
+Map	Fader 6		Master Level			Main	// template="FVol"
 Map	Meter 7		Master Left Peak Meter			Main
 Map	Meter 8		Master Right Peak Meter			Main
 // Level
 Map	PageName		"Level" 				Level
 {{ rm.include_menus(curpage="Level", submenu="mutesolo") -}}
-Map	Fader 1		Channel 1 Level			Level
-Map	Fader 2		Channel 2 Level			Level
-Map	Fader 3		Channel 3 Level			Level
-Map	Fader 4		Channel 4 Level			Level
-Map	Fader 5		Channel 5 Level			Level
-Map	Fader 6		Channel 6 Level			Level
+Map	Fader 1		Channel 1 Level			Level	// template="FVol"
+Map	Fader 2		Channel 2 Level			Level	// template="FVol"
+Map	Fader 3		Channel 3 Level			Level	// template="FVol"
+Map	Fader 4		Channel 4 Level			Level	// template="FVol"
+Map	Fader 5		Channel 5 Level			Level	// template="FVol"
+Map	Fader 6		Channel 6 Level			Level	// template="FVol"
 // Pan
 Map	PageName		"Pan" 				Pan
 {{ rm.include_menus(curpage="Pan", submenu="mutesolo") -}}
-Map	Knob V1		Channel 1 Pan			Pan
-Map	Knob V2		Channel 2 Pan			Pan
-Map	Knob V3		Channel 3 Pan			Pan
-Map	Knob V4		Channel 4 Pan			Pan
-Map	Knob V5		Channel 5 Pan			Pan
-Map	Knob V6		Channel 6 Pan			Pan
+Map	Knob V1		Channel 1 Pan			Pan	// template="FPan"
+Map	Knob V2		Channel 2 Pan			Pan	// template="FPan"
+Map	Knob V3		Channel 3 Pan			Pan	// template="FPan"
+Map	Knob V4		Channel 4 Pan			Pan	// template="FPan"
+Map	Knob V5		Channel 5 Pan			Pan	// template="FPan"
+Map	Knob V6		Channel 6 Pan			Pan	// template="FPan"
 // Aux Send
 Map	PageName		"Aux Send" 				AuxSend
 {{ rm.include_menus(curpage="AuxSend", submenu="mutesolo") -}}
-Map	Fader 1		Channel 1 Aux Send			AuxSend
-Map	Fader 2		Channel 2 Aux Send			AuxSend
-Map	Fader 3		Channel 3 Aux Send			AuxSend
-Map	Fader 4		Channel 4 Aux Send			AuxSend
-Map	Fader 5		Channel 5 Aux Send			AuxSend
-Map	Fader 6		Channel 6 Aux Send			AuxSend
+Map	Fader 1		Channel 1 Aux Send			AuxSend	// template="FEffect"
+Map	Fader 2		Channel 2 Aux Send			AuxSend	// template="FEffect"
+Map	Fader 3		Channel 3 Aux Send			AuxSend	// template="FEffect"
+Map	Fader 4		Channel 4 Aux Send			AuxSend	// template="FEffect"
+Map	Fader 5		Channel 5 Aux Send			AuxSend	// template="FEffect"
+Map	Fader 6		Channel 6 Aux Send			AuxSend	// template="FEffect"
 // Meter
 Map	PageName		"Meter" 				Meter
 {{ rm.include_menus(curpage="Meter", submenu="mutesolo") -}}
@@ -64,16 +64,16 @@ Map	Fader 6		Channel 6 Peak Meter			Meter
 // MutesAndSolos
 Map	PageName		"MutesAndSolos" 				MutesAndSolos
 {{ rm.include_menus(curpage="MutesAndSolos") -}}
-Map	Button 1-1		Channel 1 Mute			MutesAndSolos
-Map	Button 1-2		Channel 2 Mute			MutesAndSolos
-Map	Button 1-3		Channel 3 Mute			MutesAndSolos
-Map	Button 1-4		Channel 4 Mute			MutesAndSolos
-Map	Button 1-5		Channel 5 Mute			MutesAndSolos
-Map	Button 1-6		Channel 6 Mute			MutesAndSolos
-Map	Button 2-1		Channel 1 Solo			MutesAndSolos
-Map	Button 2-2		Channel 2 Solo			MutesAndSolos
-Map	Button 2-3		Channel 3 Solo			MutesAndSolos
-Map	Button 2-4		Channel 4 Solo			MutesAndSolos
-Map	Button 2-5		Channel 5 Solo			MutesAndSolos
-Map	Button 2-6		Channel 6 Solo			MutesAndSolos
+Map	Button 1-1		Channel 1 Mute			MutesAndSolos	// template="BMute"
+Map	Button 1-2		Channel 2 Mute			MutesAndSolos	// template="BMute"
+Map	Button 1-3		Channel 3 Mute			MutesAndSolos	// template="BMute"
+Map	Button 1-4		Channel 4 Mute			MutesAndSolos	// template="BMute"
+Map	Button 1-5		Channel 5 Mute			MutesAndSolos	// template="BMute"
+Map	Button 1-6		Channel 6 Mute			MutesAndSolos	// template="BMute"
+Map	Button 2-1		Channel 1 Solo			MutesAndSolos	// template="BSolo"
+Map	Button 2-2		Channel 2 Solo			MutesAndSolos	// template="BSolo"
+Map	Button 2-3		Channel 3 Solo			MutesAndSolos	// template="BSolo"
+Map	Button 2-4		Channel 4 Solo			MutesAndSolos	// template="BSolo"
+Map	Button 2-5		Channel 5 Solo			MutesAndSolos	// template="BSolo"
+Map	Button 2-6		Channel 6 Solo			MutesAndSolos	// template="BSolo"
 {% endblock main %}

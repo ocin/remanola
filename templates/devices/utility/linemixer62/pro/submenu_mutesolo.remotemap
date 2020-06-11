@@ -1,16 +1,16 @@
-Map	Button A7		Submenu=Mute			{{ curpage }}
-Map	Button A8		Submenu=Solo			{{ curpage }}
+Map	Button A7		Submenu=Mute			{{ curpage }}	// template="BMute"
+Map	Button A8		Submenu=Solo			{{ curpage }}	// template="BSolo"
 Map	SubPageName		"Mute"			{{ curpage }}	Mute
-Map	Button A1		Channel 1 Mute			{{ curpage }}	Mute
-Map	Button A2		Channel 2 Mute			{{ curpage }}	Mute
-Map	Button A3		Channel 3 Mute			{{ curpage }}	Mute
-Map	Button A4		Channel 4 Mute			{{ curpage }}	Mute
-Map	Button A5		Channel 5 Mute			{{ curpage }}	Mute
-Map	Button A6		Channel 6 Mute			{{ curpage }}	Mute
+Map	Button A1		Channel 1 Mute			{{ curpage }}	Mute	// template="BMute"
+Map	Button A2		Channel 2 Mute			{{ curpage }}	Mute	// template="BMute"
+Map	Button A3		Channel 3 Mute			{{ curpage }}	Mute	// template="BMute"
+Map	Button A4		Channel 4 Mute			{{ curpage }}	Mute	// template="BMute"
+Map	Button A5		Channel 5 Mute			{{ curpage }}	Mute	// template="BMute"
+Map	Button A6		Channel 6 Mute			{{ curpage }}	Mute	// template="BMute"
 Map	SubPageName		"Solo"			{{ curpage }}	Solo
-Map	Button A1		Channel 1 Solo			{{ curpage }}	Solo
-Map	Button A2		Channel 2 Solo			{{ curpage }}	Solo
-Map	Button A3		Channel 3 Solo			{{ curpage }}	Solo
-Map	Button A4		Channel 4 Solo			{{ curpage }}	Solo
-Map	Button A5		Channel 5 Solo			{{ curpage }}	Solo
-Map	Button A6		Channel 6 Solo			{{ curpage }}	Solo
+Map	Button A1		Channel 1 Solo			{{ curpage }}	Solo	// template="BSolo"
+Map	Button A2		Channel 2 Solo			{{ curpage }}	Solo	// template="BSolo"
+Map	Button A3		Channel 3 Solo			{{ curpage }}	Solo	// template="BSolo"
+Map	Button A4		Channel 4 Solo			{{ curpage }}	Solo	// template="BSolo"
+Map	Button A5		Channel 5 Solo			{{ curpage }}	Solo	// template="BSolo"
+Map	Button A6		Channel 6 Solo			{{ curpage }}	Solo	// template="BSolo"
