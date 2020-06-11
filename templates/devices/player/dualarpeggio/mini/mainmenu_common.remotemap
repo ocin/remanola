@@ -1,3 +1,3 @@
-Map	Button 1-1		Page=Main			{{ curpage }}
-Map	Button 2-1		Page=Arp1			{{ curpage }}
-Map	Button 3-1		Page=Arp2			{{ curpage }}
+Map	Button 1-1		Page=Main			{{ curpage }}	// template="BMainPage"
+Map	Button 2-1		Page=Arp1			{{ curpage }}	// template="BPerfPage"
+Map	Button 3-1		Page=Arp2			{{ curpage }}	// template="BPerfPage"
