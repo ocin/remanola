@@ -100,4 +100,11 @@ def buildconfmap(infile, confmapfile):
 			c.write('\t\t\t["' + item + '"]={' + confmap + '},\n')
 			continue
 
+	if subpage is not 'Unknown' and subpageprinted:
+		c.write('\t\t\t},\n')
+	if page is not 'Unknown' and pageprinted:
+		c.write('\t\t},\n')
+	if device is not 'Unknown' and deviceprinted:
+		c.write('\t},\n')
+
 buildconfmap("/tmp/remanola-out/Launchpad-Pro-withconfmap.remotemap", "templates/tmp/confmap_generated.lua")

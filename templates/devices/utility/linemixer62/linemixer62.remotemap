@@ -27,40 +27,40 @@ Map	Meter 7		Master Left Peak Meter			Main
 Map	Meter 8		Master Right Peak Meter			Main
 // Level
 Map	PageName		"Level" 				Level
-{{ rm.include_menus(curpage="Level", submenu="mutesolo") -}}
 Map	Fader 1		Channel 1 Level			Level	// template="FVol"
 Map	Fader 2		Channel 2 Level			Level	// template="FVol"
 Map	Fader 3		Channel 3 Level			Level	// template="FVol"
 Map	Fader 4		Channel 4 Level			Level	// template="FVol"
 Map	Fader 5		Channel 5 Level			Level	// template="FVol"
 Map	Fader 6		Channel 6 Level			Level	// template="FVol"
+{{ rm.include_menus(curpage="Level", submenu="mutesolo") -}}
 // Pan
 Map	PageName		"Pan" 				Pan
-{{ rm.include_menus(curpage="Pan", submenu="mutesolo") -}}
 Map	Knob V1		Channel 1 Pan			Pan	// template="FPan"
 Map	Knob V2		Channel 2 Pan			Pan	// template="FPan"
 Map	Knob V3		Channel 3 Pan			Pan	// template="FPan"
 Map	Knob V4		Channel 4 Pan			Pan	// template="FPan"
 Map	Knob V5		Channel 5 Pan			Pan	// template="FPan"
 Map	Knob V6		Channel 6 Pan			Pan	// template="FPan"
+{{ rm.include_menus(curpage="Pan", submenu="mutesolo") -}}
 // Aux Send
 Map	PageName		"Aux Send" 				AuxSend
-{{ rm.include_menus(curpage="AuxSend", submenu="mutesolo") -}}
 Map	Fader 1		Channel 1 Aux Send			AuxSend	// template="FEffect"
 Map	Fader 2		Channel 2 Aux Send			AuxSend	// template="FEffect"
 Map	Fader 3		Channel 3 Aux Send			AuxSend	// template="FEffect"
 Map	Fader 4		Channel 4 Aux Send			AuxSend	// template="FEffect"
 Map	Fader 5		Channel 5 Aux Send			AuxSend	// template="FEffect"
 Map	Fader 6		Channel 6 Aux Send			AuxSend	// template="FEffect"
+{{ rm.include_menus(curpage="AuxSend", submenu="mutesolo") -}}
 // Meter
 Map	PageName		"Meter" 				Meter
-{{ rm.include_menus(curpage="Meter", submenu="mutesolo") -}}
 Map	Fader 1		Channel 1 Peak Meter			Meter
 Map	Fader 2		Channel 2 Peak Meter			Meter
 Map	Fader 3		Channel 3 Peak Meter			Meter
 Map	Fader 4		Channel 4 Peak Meter			Meter
 Map	Fader 5		Channel 5 Peak Meter			Meter
 Map	Fader 6		Channel 6 Peak Meter			Meter
+{{ rm.include_menus(curpage="Meter", submenu="mutesolo") -}}
 // MutesAndSolos
 Map	PageName		"MutesAndSolos" 				MutesAndSolos
 {{ rm.include_menus(curpage="MutesAndSolos") -}}

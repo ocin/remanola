@@ -18,6 +18,4 @@ Map	PageName		"Main"			Main
 Map	Button 1-1		On			Main	// template="BGreenOnOff"
 Map	Button 1-3		Record			Main	// template="BBRedOnOff"
 Map	Button 1-4		Play			Main	// template="BGreenOnOff"
-//Map	UDVButton 1-3_2-3		Step Length Free			Main	// template="UDPerf"
-//Map	Knob H3		Velocity			Main	// template="FPerf"
 {% endblock main %}
