@@ -1,0 +1,5 @@
+Map	Button B1		Page=Main			{{ curpage }}	// template="BMainPage"
+Map	Button B2		Page={{ drumpage1 }}			{{ curpage }}	// template="BOscPage"
+Map	Button B6		Page=Delay			{{ curpage }}	// template="BEffectPage"
+Map	Button B7		Page=Reverb			{{ curpage }}	// template="BEffectPage"
+Map	Button B8		Page=Comp			{{ curpage }}	// template="BEffectPage"
