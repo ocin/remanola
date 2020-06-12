@@ -32,9 +32,9 @@ Map	PageName		"Main"			Main
 Map	Fader 1		Master_Pitch			Main	// template="FOsc"
 Map	Fader 2		Master_Reverb			Main	// template="FEffect"
 Map	Fader 3		Master_Filter			Main	// template="FFreq"
-//Map	Fader 4		Master_Delay			Main	// template="FEffect"
-//Map	Fader 5		Master_Decay			Main	// template="FEffect"
-//Map	Fader 6		Master_Distortion			Main	// template="FEffect"
+Map	Fader 4		Master_Delay			Main	// template="FEffect"
+Map	Fader 5		Master_Decay			Main	// template="FEffect"
+Map	Fader 6		Master_Distortion			Main	// template="FEffect"
 Map	Fader 8		Master_Volume			Main	// template="FVol"
 {% for drumnum in range(1,9) -%}
 // Drum{{ drumnum }}
