@@ -1,0 +1,2 @@
+Map	Button A1		Page=Chorus			{{ curpage }}	// template="BEffectPage"
+Map	Button A2		Page=Delay			{{ curpage }}	// template="BEffectPage"
