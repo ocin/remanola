@@ -142,9 +142,9 @@ function handle_input_helpmode(event, button)
 		elseif(itemname == "Button C3" or itemname == "Button C4") then
 			g_scrolltext = remote.get_item_text_value(itemsindex["PatchName"])
 		elseif(itemname == "Button C7") then
-			g_scrolltext = get_current_page()
-		elseif(itemname == "Button D8") then
-			g_scrolltext = get_current_docpage()
+			g_scrolltext = "Current page "..get_current_page()
+		-- elseif(itemname == "Button D8") then
+			-- g_scrolltext = get_current_docpage()
 		elseif(itemname == "Button C8") then
 			g_valuemode = true
 			g_startflashing = true

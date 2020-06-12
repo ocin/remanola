@@ -1,0 +1,19 @@
+{% extends "devices/effect/effect-nopatch.remotemap" %}
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.Audiomatic" -%}
+{% set devicename="Audiomatic" -%}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main
+Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
+Map	Fader 2		Input Gain			Main	// template="FGain"
+Map	UDVButton 1-3_2-3		Preset			Main	// template="UDEffect"
+Map	Fader 5		Transform			Main	// template="FEffect"
+Map	Fader 6		Dry Wet			Main	// template="FEffect"
+Map	Fader 7		Volume			Main	// template="FVol"
+Map	Meter 8		Input Peak Meter			Main	// template="UDEffect"
+{% endblock main %}

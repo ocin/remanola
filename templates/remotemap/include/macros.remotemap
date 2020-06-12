@@ -1,0 +1,88 @@
+{% macro include_menus(curpage, submenu='UNDEFINED', mainmenu_mini='UNDEFINED', oscpage='UNDEFINED', osc1page='UNDEFINED', osc2page='UNDEFINED', perfpage='UNDEFINED', modpage='UNDEFINED', voicingpage='UNDEFINED', sectionpage='UNDEFINED', amppage='UNDEFINED', filterpage='UNDEFINED', effectpage='UNDEFINED', chanpage='UNDEFINED', levelpage='UNDEFINED', panpage='UNDEFINED', drumpage1='UNDEFINED', drumpage2='UNDEFINED', padpage1='UNDEFINED', padpage2='UNDEFINED', chanpage1='UNDEFINED', chanpage2='UNDEFINED', eqpage='UNDEFINED', sendreturnpage="UNDEFINED", sendpage='UNDEFINED', section='UNDEFINED', engnum='UNDEFINED', oscnum='UNDEFINED', drumsubpage='UNDEFINED', drumedit='UNDEFINED', effectspage='UNDEFINED') %}
+	{% if oscpage == 'UNDEFINED' and oscpagedefault is defined -%}
+		{% set oscpage=oscpagedefault -%}
+	{% endif -%}
+	{% if osc1page == 'UNDEFINED' and osc1pagedefault is defined -%}
+		{% set osc1page=osc1pagedefault -%}
+	{% endif -%}
+	{% if osc2page == 'UNDEFINED' and osc2pagedefault is defined -%}
+		{% set osc2page=osc2pagedefault -%}
+	{% endif -%}
+	{% if perfpage == 'UNDEFINED' and perfpagedefault is defined -%}
+		{% set perfpage=perfpagedefault -%}
+	{% endif -%}
+	{% if modpage == 'UNDEFINED' and modpagedefault is defined -%}
+		{% set modpage=modpagedefault -%}
+	{% endif -%}
+	{% if voicingpage == 'UNDEFINED' and voicingpagedefault is defined -%}
+		{% set voicingpage=voicingpagedefault -%}
+	{% endif -%}
+	{% if sectionpage == 'UNDEFINED' and sectionpagedefault is defined -%}
+		{% set sectionpage=sectionpagedefault -%}
+	{% endif -%}
+	{% if amppage == 'UNDEFINED' and amppagedefault is defined -%}
+		{% set amppage=amppagedefault -%}
+	{% endif -%}
+	{% if filterpage == 'UNDEFINED' and filterpagedefault is defined -%}
+		{% set filterpage=filterpagedefault -%}
+	{% endif -%}
+	{% if effectpage == 'UNDEFINED' and effectpagedefault is defined -%}
+		{% set effectpage=effectpagedefault -%}
+	{% endif -%}
+	{% if chanpage == 'UNDEFINED' and chanpagedefault is defined -%}
+		{% set chanpage=chanpagedefault -%}
+	{% endif -%}
+	{% if levelpage == 'UNDEFINED' and levelpagedefault is defined -%}
+		{% set levelpage=levelpagedefault -%}
+	{% endif -%}
+	{% if panpage == 'UNDEFINED' and panpagedefault is defined -%}
+		{% set panpage=panpagedefault -%}
+	{% endif -%}
+	{% if drumpage1 == 'UNDEFINED' and drumpage1default is defined -%}
+		{% set drumpage1=drumpage1default -%}
+	{% endif -%}
+	{% if drumpage2 == 'UNDEFINED' and drumpage2default is defined -%}
+		{% set drumpage2=drumpage2default -%}
+	{% endif -%}
+	{% if padpage1 == 'UNDEFINED' and padpage1default is defined -%}
+		{% set padpage1=padpage1default -%}
+	{% endif -%}
+	{% if padpage2 == 'UNDEFINED' and padpage2default is defined -%}
+		{% set padpage2=padpage2default -%}
+	{% endif -%}
+	{% if chanpage1 == 'UNDEFINED' and chanpage1default is defined -%}
+		{% set chanpage1=chanpage1default -%}
+	{% endif -%}
+	{% if chanpage2 == 'UNDEFINED' and chanpage2default is defined -%}
+		{% set chanpage2=chanpage2default -%}
+	{% endif -%}
+	{% if eqpage == 'UNDEFINED' and eqpagedefault is defined -%}
+		{% set eqpage=eqpagedefault -%}
+	{% endif -%}
+	{% if sendreturnpage == 'UNDEFINED' and sendreturnpagedefault is defined -%}
+		{% set sendreturnpage=sendreturnpagedefault -%}
+	{% endif -%}
+	{% if sendpage == 'UNDEFINED' and sendpagedefault is defined -%}
+		{% set sendpage=sendpagedefault -%}
+	{% endif -%}
+	{% if effectspage == 'UNDEFINED' and effectspagedefault is defined -%}
+		{% set effectspage=effectspagedefault -%}
+	{% endif -%}
+	{% if baseshortname is defined %}
+		{% set lmshortname=baseshortname %}
+		{% set bmshortname="Shared/"+shortname %}
+	{% else %}
+		{% set lmshortname=shortname %}
+		{% set bmshortname=shortname %}
+	{% endif %}
+	{% if lptype == "pro" %}
+		{% include "devices/"+devicetype+"/"+lmshortname+"/pro/mainmenu.remotemap" %}
+		{% if submenu != "UNDEFINED" %}
+			{% include "devices/"+devicetype+"/"+bmshortname+"/pro/submenu_"+submenu+".remotemap" %}
+		{% endif %}
+	{% else %}
+		{% if mainmenu_mini != "UNDEFINED" %}
+			{% include "devices/"+devicetype+"/"+bmshortname+"/mini/mainmenu_"+mainmenu_mini+".remotemap" %}
+		{% endif %}
+	{% endif %}
+{% endmacro %}

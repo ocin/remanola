@@ -1,0 +1,6 @@
+Map	Button B1		Page=Main			{{ curpage }}	// template="BMainPage"
+Map	Button B2		Page={{ oscpage }}			{{ curpage }}	// template="BOscPage"
+Map	Button B3		Page={{ filterpage }}			{{ curpage }}	// template="BFilterPage"
+Map	Button B4		Page={{ modpage }}			{{ curpage }}	// template="BLFOPage"
+Map	Button B7		Page={{ perfpage }}			{{ curpage }}	// template="BPerformancePage"
+Map	Button B8		Page=Shaper			{{ curpage }}	// template="BEffectPage"

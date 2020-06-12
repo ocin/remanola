@@ -1,0 +1,8 @@
+Map	Button B1		Page=Main			{{ curpage }}	// template="BMainPage"
+Map	Button B2		Page=Attack{{ sectionpage }}			{{ curpage }}	// template="BOscPage"
+Map	Button B3		Page=Primary{{ sectionpage }}			{{ curpage }}	// template="BOscPage"
+Map	Button B4		Page=Secondary{{ sectionpage }}			{{ curpage }}	// template="BOscPage"
+Map	Button B5		Page=Release{{ sectionpage }}			{{ curpage }}	// template="BOscPage"
+Map	Button B6		Page={{ voicingpage }}			{{ curpage }}	// template="BAmpPage"
+Map	Button B7		Page=PriSec			{{ curpage }}	// template="BOscModPage"
+Map	Button B8		Page=Effects			{{ curpage }}	// template="BEffectPage"

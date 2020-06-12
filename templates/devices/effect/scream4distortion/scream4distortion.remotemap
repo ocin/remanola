@@ -1,0 +1,42 @@
+{% extends "devices/effect/effect.remotemap" %}
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="Scream 4 Distortion" -%}
+{% set devicename="Scream 4 Distortion" -%}
+{% set shortname="scream4distortion" -%}
+{% block groups %}
+Define Group	Page	Main	Cut	Body	Index	Internal
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=Cut			Index
+Map	Button 2-8		Page=Body			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main
+{{ rm.include_menus(curpage="Main") -}}
+Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
+Map	Button 1-2		Damage On/Off			Main	// template="BRedOnOff"
+Map	Fader 3		Damage Control			Main	// template="FEffect"
+Map	UDVButton 1-4_2-4		Damage Type			Main	// template="UDEffect", inverted=true
+Map	Fader 5		Parameter 1			Main	// template="FEffect"
+Map	Fader 6		Parameter 2			Main	// template="FEffect"
+Map	Fader 7		Master Level			Main	// template="FGain"
+Map	Meter 8		Input Peak Meter			Main
+// Cut
+Map	PageName		"Cut"			Cut
+{{ rm.include_menus(curpage="Cut") -}}
+Map	Button 1-2		Cut On/Off			Cut	// template="BRedOnOff"
+Map	Knob V4		Cut Lo			Cut	// template="FFreq"
+Map	Knob V5		Cut Mid			Cut	// template="FFreq"
+Map	Knob V6		Cut Hi			Cut	// template="FFreq"
+// Body
+Map	PageName		"Body"			Body
+{{ rm.include_menus(curpage="Body") -}}
+Map	Button 1-2		Body On/Off			Body	// template="BRedOnOff"
+Map	Fader 4		Body Resonance			Body	// template="FEffect"
+Map	Fader 5		Body Scale			Body	// template="FEffect"
+Map	Fader 6		Body Auto			Body	// template="FEffect"
+Map	UDVButton 1-7_2-7		Body Type			Body	// template="UDEffect", inverted=true
+{% endblock main %}

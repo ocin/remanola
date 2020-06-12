@@ -53,6 +53,9 @@ function get_item_conf_map(itemname, context, page)
 			return(item_conf_map[context][wildpage][get_current_subpage()][itemname])
 		end
 		if(item_conf_map[context][wildpage] == nil or item_conf_map[context][wildpage][itemname] == nil) then
+			if(item_conf_map[context]["Default"] == nil) then
+				context = "Default"
+			end
 			if(item_conf_map[context]["Default"][itemname] == nil) then
 				if(item_conf_map["Default"][page] == nil or item_conf_map["Default"][page][itemname] == nil) then
 					context = "Default"
@@ -138,60 +141,60 @@ function get_button_color(context, itemname, buttonname, value)
 	local text = remote.get_item_text_value(itemsindex[itemname])
 
 	if(string.find(itemname, "UDHButton %d%-%d_%d%-%d") or string.find(itemname, "UDVButton %d%-%d_%d%-%d")) then
-        	if(enabled) then
-                	if(value) then
-                        	color = activecolor
-                	else
-                        	color = enabledcolor
-                	end
-        	else
-                	color = disabledcolor
-        	end
+		if(enabled) then
+			if(value) then
+				color = activecolor
+			else
+				color = enabledcolor
+			end
+		else
+			color = disabledcolor
+		end
 	elseif(string.find(itemname, "Button %d%-%d") or string.find(itemname, "Button C%d") or string.find(itemname, "Button %a")) then
 		if(g_scopetext == "Redrum" and string.match(get_current_page(), "Main") and (string.match(itemname, "Button [78]%-%d"))) then
 			if(g_playingbutton == itemname and (tonumber(remote.get_item_text_value(itemsindex["Button 6-1"])) == 1)) then
-                       		color = REDRUM_HIT
+				color = REDRUM_HIT
 			else 
 				if(textvalue == 1) then
-                       			color = REDRUM_SOFT
+					color = REDRUM_SOFT
 				elseif(textvalue == 2) then
-                       			color = REDRUM_MEDIUM
+					color = REDRUM_MEDIUM
 				elseif(textvalue == 3) then
-                       			color = REDRUM_HARD
+					color = REDRUM_HARD
 				else
-                       			color = REDRUM_NOHIT
+					color = REDRUM_NOHIT
 				end
 			end
 		elseif(g_scopetext == "Redrum" and string.match(get_current_page(), "Main") and (string.match(itemname, "Button 6%-6"))) then
 			if(textvalue == 1) then
-                       		color = REDRUM_SOFT
+				color = REDRUM_SOFT
 			elseif(textvalue == 2) then
-                       		color = REDRUM_MEDIUM
+				color = REDRUM_MEDIUM
 			elseif(textvalue == 3) then
-                       		color = REDRUM_HARD
+				color = REDRUM_HARD
 			else
-                       		color = REDRUM_NOHIT
+				color = REDRUM_NOHIT
 			end
 		elseif(g_scopetext == "Thor" and string.match(get_current_page(), "Step Sequencer") and (string.match(itemname, "Button [12]%-%d"))) then
 			if(g_playingbutton == itemname and (tonumber(remote.get_item_value(itemsindex["Button 8-1"])) == 1)) then
-                       		color = THOR_SEQ_ACTIVE
+				color = THOR_SEQ_ACTIVE
 			else 
 				if(value == 1) then
-                       			color = THOR_SEQ_STEPON
+					color = THOR_SEQ_STEPON
 				else
-                       			color = THOR_SEQ_STEPOFF
+					color = THOR_SEQ_STEPOFF
 				end
 			end
 		else
-        		if(enabled) then
-                		if(value == 1) then
-                        		color = activecolor
-                		else
-                        		color = enabledcolor
-                		end
-        		else
-                		color = disabledcolor
-        		end
+			if(enabled) then
+				if(value == 1) then
+					color = activecolor
+				else
+					color = enabledcolor
+				end
+			else
+				color = disabledcolor
+			end
 		end
 	elseif(string.find(itemname, "Knob H%d")) then
 		buttonindex = tonumber(string.sub(buttonname, -1,-1))

@@ -1,6 +1,0 @@
-                        ["Button A1"]={template="BPerformancePage"},
-                        ["Button A3"]={template="BPerformancePage"},
-                        ["Button A4"]={template="BPerformancePage"},
-                        ["Button A5"]={template="BPerformancePage"},
-                        ["Button A6"]={template="BPerformancePage"},
-                        ["Button A7"]={template="BPerformancePage"},

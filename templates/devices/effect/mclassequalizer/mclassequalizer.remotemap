@@ -1,0 +1,56 @@
+{% extends "devices/effect/effect-nopatch.remotemap" %}
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="MClass Equalizer" -%}
+{% set devicename="MClass Equalizer" -%}
+{% set shortname="mclassequalizer" -%}
+{% block groups %}
+Define Group	Page	Main	Low	Param1	Param2	Hi	Index	Internal
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=Low			Index
+Map	Button 3-8		Page=Param1			Index
+Map	Button 4-8		Page=Param2			Index
+Map	Button 5-8		Page=Hi			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main
+{{ rm.include_menus(curpage="Main", mainmenu_mini="common") -}}
+Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
+Map	Button 1-3		Low Cut Enable			Main	// template="BRedOnOff"
+Map	Button 1-4		Low Shelf Enable			Main	// template="BRedOnOff"
+Map	Button 1-5		Parametric 1 Enable			Main	// template="BRedOnOff"
+Map	Button 1-6		Parametric 2 Enable			Main	// template="BRedOnOff"
+Map	Button 1-7		Hi Shelf Enable			Main	// template="BRedOnOff"
+// Low
+Map	PageName		"Low"			Low
+{{ rm.include_menus(curpage="Low", mainmenu_mini="common") -}}
+Map	Button 1-2		Low Cut Enable			Low	// template="BRedOnOff"
+Map	Button 1-3		Low Shelf Enable			Low	// template="BRedOnOff"
+Map	Fader 4		Low Shelf Frequency			Low	// template="FFreq"
+Map	Knob V5		Low Shelf Gain			Low	// template="FGain"
+Map	Fader 6		Low Shelf Q			Low	// template="FEffect"
+// Param1
+Map	PageName		"Param1"			Param1
+{{ rm.include_menus(curpage="Param1", mainmenu_mini="common") -}}
+Map	Button 1-3		Parametric 1 Enable			Param1	// template="BRedOnOff"
+Map	Fader 4		Parametric 1 Frequency			Param1	// template="FFreq"
+Map	Knob V5		Parametric 1 Gain			Param1	// template="FGain"
+Map	Fader 6		Parametric 1 Q			Param1	// template="FEffect"
+// Param2
+Map	PageName		"Param2"			Param2
+{{ rm.include_menus(curpage="Param2", mainmenu_mini="common") -}}
+Map	Button 1-3		Parametric 2 Enable			Param2	// template="BRedOnOff"
+Map	Fader 4		Parametric 2 Frequency			Param2	// template="FFreq"
+Map	Knob V5		Parametric 2 Gain			Param2	// template="FGain"
+Map	Fader 6		Parametric 2 Q			Param2	// template="FEffect"
+// Hi
+Map	PageName		"Hi"			Hi
+{{ rm.include_menus(curpage="Hi", mainmenu_mini="common") -}}
+Map	Button 1-3		Hi Shelf Enable			Hi	// template="BRedOnOff"
+Map	Fader 4		Hi Shelf Frequency			Hi	// template="FFreq"
+Map	Knob V5		Hi Shelf Gain			Hi	// template="FGain"
+Map	Fader 6		Hi Shelf Q			Hi	// template="FEffect"
+{% endblock main %}

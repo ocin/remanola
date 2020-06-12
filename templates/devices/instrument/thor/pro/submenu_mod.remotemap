@@ -1,0 +1,4 @@
+Map	Button A1		Page=LFO1			{{ curpage }}	// template="BLFOPage"
+Map	Button A2		Page=LFO2			{{ curpage }}	// template="BLFOPage"
+Map	Button A5		Page=ModEnv			{{ curpage }}	// template="BEnvPage"
+Map	Button A6		Page=GlobalEnv			{{ curpage }}	// template="BEnvPage"

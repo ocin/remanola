@@ -1,0 +1,7 @@
+Map	Button B1		Page=Main			{{ curpage }}	// template="BMainPage"
+Map	Button B2		Page=AmpEnv			{{ curpage }}	// template="BAmpPage"
+Map	Button B3		Page={{ filterpage }}			{{ curpage }}	// template="BFilterPage"
+Map	Button B4		Page=LFO			{{ curpage }}	// template="BLFOPage"
+Map	Button B6		Page={{ effectpage }}			{{ curpage }}	// template="BEffectPage"
+Map	Button B7		Page=Delay			{{ curpage }}	// template="BEffectPage"
+Map	Button B8		Page=Phaser			{{ curpage }}	// template="BEffectPage"

@@ -1,0 +1,290 @@
+{% extends "devices/instrument/instrument.remotemap" %}
+{% set deviceman="Sononics" -%}
+{% set devicescope="com.sononics.Revival" -%}
+{% set devicename="Revival" -%}
+{% set shortname="revival" -%}
+{# Variables -#}
+{% set show_pitch_bend_range=true -%}
+{% set sectionpagedefault="" %}
+{% set voicingpagedefault="Voicing1" %}
+{# End Variables -#}
+{% block groups %}
+Define Group	Page	Main	Perf	Voicing1	Voicing2	PriSec	Solos	Attack	Primary	Secondary	Release	AttackL	AttackU	PrimaryL	PrimaryU	SecondaryL	SecondaryU	ReleaseL	ReleaseU	AttackModEnable	AttackMod1	AttackMod2	AttackMod3	PrimaryModEnable	PrimaryMod1	PrimaryMod2	PrimaryMod3	SecondaryModEnable	SecondaryMod1	SecondaryMod2	SecondaryMod3	ReleaseModEnable	ReleaseMod1	ReleaseMod2	ReleaseMod3	Effects	PreAmp	Phaser	ModFilter	Speaker	Reverb	Delay	Index	Keyboard	Internal
+Define Group	TempoSync	Free	Sync
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=Voicing1			Index
+Map	Button 1-3		Page=Voicing2			Index
+Map	Button 1-4		Page=PriSec			Index
+Map	Button 1-5		Page=Perf			Index
+Map	Button 1-6		Page=Solos			Index
+Map	Button 2-1		Page=Attack			Index
+Map	Button 3-1		Page=Primary			Index
+Map	Button 4-1		Page=Secondary			Index
+Map	Button 5-1		Page=Release			Index
+Map	Button 2-2		Page=AttackL			Index
+Map	Button 3-2		Page=PrimaryL			Index
+Map	Button 4-2		Page=SecondaryL			Index
+Map	Button 5-2		Page=ReleaseL			Index
+Map	Button 2-3		Page=AttackU			Index
+Map	Button 3-3		Page=PrimaryU			Index
+Map	Button 4-3		Page=SecondaryU			Index
+Map	Button 5-3		Page=ReleaseU			Index
+Map	Button 2-4		Page=AttackModEnable			Index	// template="BFilterPageHigh"
+Map	Button 3-4		Page=PrimaryModEnable			Index	// template="BFilterPageHigh"
+Map	Button 4-4		Page=SecondaryModEnable			Index	// template="BFilterPageHigh"
+Map	Button 5-4		Page=ReleaseModEnable			Index	// template="BFilterPageHigh"
+Map	Button 2-5		Page=AttackMod1			Index	// template="BFilterModPageHigh"
+Map	Button 3-5		Page=PrimaryMod1			Index	// template="BFilterModPageHigh"
+Map	Button 5-5		Page=ReleaseMod1			Index	// template="BFilterModPageHigh"
+Map	Button 4-5		Page=SecondaryMod1			Index	// template="BFilterModPageHigh"
+Map	Button 2-6		Page=AttackMod2			Index	// template="BFilterModPageHigh"
+Map	Button 3-6		Page=PrimaryMod2			Index	// template="BFilterModPageHigh"
+Map	Button 4-6		Page=SecondaryMod2			Index	// template="BFilterModPageHigh"
+Map	Button 5-6		Page=ReleaseMod2			Index	// template="BFilterModPageHigh"
+Map	Button 2-7		Page=AttackMod3			Index	// template="BFilterModPageHigh"
+Map	Button 3-7		Page=PrimaryMod3			Index	// template="BFilterModPageHigh"
+Map	Button 4-7		Page=SecondaryMod3			Index	// template="BFilterModPageHigh"
+Map	Button 5-7		Page=ReleaseMod3			Index	// template="BFilterModPageHigh"
+Map	Button 1-8		Page=Effects			Index
+Map	Button 2-8		Page=PreAmp			Index
+Map	Button 3-8		Page=Phaser			Index
+Map	Button 4-8		Page=ModFilter			Index
+Map	Button 5-8		Page=Speaker			Index
+Map	Button 6-8		Page=Reverb			Index
+Map	Button 7-8		Page=Delay			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main
+{{ rm.include_menus(curpage="Main", ) -}}
+Map	Button 1-1		Note On Indicator			Main
+Map	Button 6-2		S1 Switch			Main	// template="BYellowOnOff"
+Map	Button 6-3		S2 Switch			Main	// template="BYellowOnOff"
+Map	Button 7-2		Attack Enable Switch			Main	// template="BYellowOnOff"
+Map	Button 7-3		Vib/Trem Enable Switch			Main	// template="BYellowOnOff"
+Map	Button 8-2		Rotator Speed Switch			Main	// template="BYellowOnOff"
+Map	Button 8-3		Rotator Brake Switch			Main	// template="BYellowOnOff"
+Map	Fader 4		R1 Knob				Main	// template="FMisc"
+Map	Fader 5		R2 Knob				Main	// template="FMisc"
+Map	BigFader 8		Volume				Main	// template="FVol"
+// Perf
+Map	PageName		"Perf"			Perf
+{{ rm.include_menus(curpage="Perf") -}}
+Map	Button 1-1		Voicing Monophonic Mode			Perf	// template="BRedOnOff"
+Map	UDVButton 1-2_2-2		Voicing Transpose Amount			Perf	// template="UDFreq"
+Map	UDVButton 1-3_2-3		Voicing Pitch Bend Range			Perf	// template="UDPerf"
+Map	Fader 7		Voicing Portamento Rate			Perf	// template="FPerf"
+Map	UDVButton 7-8_8-8		Voicing Portamento Mode			Perf	// template="FPerf"
+// Voicing 1
+Map	PageName		"Voicing 1"			Voicing1
+{{ rm.include_menus(curpage="Voicing1", submenu="voicing", voicingpage="Voicing1") -}}
+Map	UDVButton 1-2_2-2		Voicing Overtone Type			Voicing1	// template="FOsc", inverted=true
+Map	UDVButton 1-3_2-3		Voicing Overlay Type			Voicing1	// template="FOsc", inverted=true
+Map	UDVButton 1-4_2-4		Voicing Velocity Type			Voicing1	// template="FPerf", inverted=true
+Map	UDVButton 1-5_2-5		Voicing Click Type			Voicing1	// template="FOsc", inverted=true
+Map	Fader 6		Voicing Attack First/All			Voicing1	// template="FOsc"
+// Voicing 2
+Map	PageName		"Voicing 2"			Voicing2
+{{ rm.include_menus(curpage="Voicing2", submenu="voicing", voicingpage="Voicing2") -}}
+Map	Fader 1		Voicing Velocity Sensitivity			Voicing2	// template="FPerf"
+Map	Fader 2		Voicing Chorus Depth			Voicing2	// template="FEffect"
+Map	Fader 3		Voicing Decay Keyboard Track			Voicing2	// template="FPerf"
+Map	Fader 6		Voicing Vibrato Depth			Voicing2	// template="FEffect"
+Map	Fader 7		Voicing Tremolo Depth			Voicing2	// template="FEffect"
+Map	Fader 8		Voicing Vibrato/Tremolo Rate			Voicing2	// template="FPerf"
+// Pri/Sec
+Map	PageName		"Pri/Sec"			PriSec
+{{ rm.include_menus(curpage="PriSec") -}}
+Map	UDVButton 1-2_2-2		Pri/Sec Fade Mode			PriSec	// template="UDOsc"
+Map	UDVButton 1-3_2-3		Pri/Sec AutoFade Type			PriSec	// template="UDOsc", inverted=true
+Map	Knob V4		Pri/Sec AutoFade CrossFade			PriSec	// template="FOsc"
+Map	Fader 6		Pri/Sec AutoFade Rate			PriSec	// template="FFreq"
+Map	Button 1-7		Pri/Sec Keep Primary			PriSec	// template="BRedOnOff"
+// Solos
+Map	PageName		"Solos"			Solos
+{{ rm.include_menus(curpage="Solos", mainmenu_mini="section") -}}
+Map	UDVButton 1-2_2-2		Drawbar Solo			Solos	// template="UDOsc"
+Map	Button 8-2		Attack Section Solo			Solos	// template="BSoloRevival"
+Map	Button 8-4		Primary Section Solo			Solos	// template="BSoloRevival"
+Map	Button 8-6		Secondary Section Solo			Solos	// template="BSoloRevival"
+Map	Button 8-8		Release Section Solo			Solos	// template="BSoloRevival"
+// Attack
+Map	PageName		"Attack"			Attack
+{{ rm.include_menus(curpage="Attack", submenu="section", mainmenu_mini="section",section="Attack") -}}
+Map	UDVButton 1-2_2-2		Attack Wave Set			Attack	// template="UDOsc", inverted=true
+Map	Fader 3		Attack Section Gain Adjust			Attack	// template="FVol"
+Map	Fader 5		Attack Section Click			Attack	// template="FOsc"
+Map	Fader 6		Attack Section Attack Rate			Attack	// template="FVol"
+Map	Fader 7		Attack Section Decay Rate			Attack	// template="FVol"
+Map	Button 1-8		Attack Section FX Bypass			Attack	// template="BRedOnOff"
+// Primary
+Map	PageName		"Primary"			Primary
+{{ rm.include_menus(curpage="Primary", submenu="section", mainmenu_mini="section",section="Primary") -}}
+Map	UDVButton 1-2_2-2		Primary Wave Set			Primary	// template="UDOsc", inverted=true
+Map	Fader 3		Primary Section Gain Adjust			Primary	// template="FVol"
+Map	Fader 7		Primary Section Decay Rate			Primary	// template="FVol"
+// Secondary
+Map	PageName		"Secondary"			Secondary
+{{ rm.include_menus(curpage="Secondary", submenu="section", mainmenu_mini="section",section="Secondary") -}}
+Map	UDVButton 1-2_2-2		Secondary Wave Set			Secondary	// template="UDOsc", inverted=true
+Map	Fader 3		Secondary Section Gain Adjust			Secondary	// template="FVol"
+Map	Fader 7		Secondary Section Decay Rate			Secondary	// template="FVol"
+// Release
+Map	PageName		"Release"			Release
+{{ rm.include_menus(curpage="Release", submenu="section", mainmenu_mini="section",section="Release") -}}
+Map	UDVButton 1-2_2-2		Release Wave Set			Release	// template="UDOsc", inverted=true
+Map	Fader 3		Release Section Gain Adjust			Release	// template="FVol"
+Map	Fader 5		Release Section Click			Release	// template="FOsc"
+Map	Fader 6		Release Section Attack Rate			Release	// template="FVol"
+Map	Fader 7		Release Section Decay Rate			Release	// template="FVol"
+Map	Button 1-8		Release Decay All Sections			Release	// template="BRedOnOff"
+{% for section in ['Attack', 'Primary', 'Secondary', 'Release'] -%}
+// {{ section }} Drawbars Lower
+Map	PageName		"{{ section }} Drawbars Lower"			{{ section }}L
+{{ rm.include_menus(curpage=section+"L", submenu="section", mainmenu_mini="section", section=section, sectionpage="L") -}}
+Map	Drawbar 2		{{ section }} Drawbar 1			{{ section }}L	// template="DSub"
+Map	Drawbar 3		{{ section }} Drawbar 2			{{ section }}L	// template="DSub"
+Map	Drawbar 4		{{ section }} Drawbar 3			{{ section }}L	// template="DFund"
+Map	Drawbar 5		{{ section }} Drawbar 4			{{ section }}L	// template="DFund"
+Map	Drawbar 6		{{ section }} Drawbar 5			{{ section }}L	// template="DHarm"
+Map	Drawbar 7		{{ section }} Drawbar 6			{{ section }}L	// template="DFund"
+Map	Drawbar 8		{{ section }} Drawbar 7			{{ section }}L	// template="DHarm"
+// {{ section }} Drawbars Upper
+Map	PageName		"{{ section }} Drawbars Upper"			{{ section }}U
+{{ rm.include_menus(curpage=section+"U", submenu="section", mainmenu_mini="section", section=section, sectionpage="U") -}}
+Map	Drawbar 2		{{ section }} Drawbar 8			{{ section }}U	// template="DHarm"
+Map	Drawbar 3		{{ section }} Drawbar 9			{{ section }}U	// template="DHarm7"
+Map	Drawbar 4		{{ section }} Drawbar 10			{{ section }}U	// template="DFund"
+// {{ section }} Mod Enable
+Map	PageName		"{{ section }} Mod Enable"			{{ section }}ModEnable
+{{ rm.include_menus(curpage=section+"ModEnable", submenu="section", mainmenu_mini="section", section=section, sectionpage="ModEnable") -}}
+Map	Button 1-2		{{ section }} Mod3 Enable 1			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 1-3		{{ section }} Mod3 Enable 2			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 1-4		{{ section }} Mod3 Enable 3			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 1-5		{{ section }} Mod3 Enable 4			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 1-6		{{ section }} Mod3 Enable 5			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 1-7		{{ section }} Mod3 Enable 6			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 1-8		{{ section }} Mod3 Enable 7			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 2-2		{{ section }} Mod3 Enable 8			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 2-3		{{ section }} Mod3 Enable 9			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 2-4		{{ section }} Mod3 Enable 10			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 3-2		{{ section }} Mod2 Enable 1			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 3-3		{{ section }} Mod2 Enable 2			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 3-4		{{ section }} Mod2 Enable 3			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 3-5		{{ section }} Mod2 Enable 4			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 3-6		{{ section }} Mod2 Enable 5			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 3-7		{{ section }} Mod2 Enable 6			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 3-8		{{ section }} Mod2 Enable 7			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 4-2		{{ section }} Mod2 Enable 8			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 4-3		{{ section }} Mod2 Enable 9			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 4-4		{{ section }} Mod2 Enable 10			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 5-2		{{ section }} Mod1 Enable 1			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 5-3		{{ section }} Mod1 Enable 2			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 5-4		{{ section }} Mod1 Enable 3			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 5-5		{{ section }} Mod1 Enable 4			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 5-6		{{ section }} Mod1 Enable 5			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 5-7		{{ section }} Mod1 Enable 6			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 5-8		{{ section }} Mod1 Enable 7			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 6-2		{{ section }} Mod1 Enable 8			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 6-3		{{ section }} Mod1 Enable 9			{{ section }}ModEnable	// template="BRedOnOff"
+Map	Button 6-4		{{ section }} Mod1 Enable 10			{{ section }}ModEnable	// template="BRedOnOff"
+{% for modnum in range(1,4) -%}
+// {{ section }} Mod {{ modnum }}
+Map	PageName		"{{ section }} Mod {{ modnum }}"			{{ section }}Mod{{ modnum }}
+{{ rm.include_menus(curpage=section+"Mod"+modnum|string, submenu="section", mainmenu_mini="section", section=section, sectionpage="Mod"+modnum|string) -}}
+Map	UDVButton 5-2_6-2		{{ section }} Mod{{ modnum }} Type			{{ section }}Mod{{ modnum }}	// template="UDFreq", inverted=true
+Map	UDVButton 7-2_8-2		{{ section }} Mod{{ modnum }} Animation Type			{{ section }}Mod{{ modnum }}	// template="UDEffect", inverted=true
+Map	Fader 3		{{ section }} Mod{{ modnum }} Amount			{{ section }}Mod{{ modnum }}	// template="FFreq"
+Map	Fader 4		{{ section }} Mod{{ modnum }} Tone			{{ section }}Mod{{ modnum }}	// template="FEffect"
+Map	Fader 5		{{ section }} Mod{{ modnum }} Note Scale			{{ section }}Mod{{ modnum }}	// template="FPerf"
+Map	Fader 6		{{ section }} Mod{{ modnum }} Velocity Scale			{{ section }}Mod{{ modnum }}	// template="FPerf"
+Map	Fader 7		{{ section }} Mod{{ modnum }} Animation Amount			{{ section }}Mod{{ modnum }}	// template="FLFO"
+Map	Fader 8		{{ section }} Mod{{ modnum }} Animation Rate			{{ section }}Mod{{ modnum }}	// template="FFreq"
+{% endfor -%}
+{% endfor -%}
+// Effects
+Map	PageName		"Effects"			Effects
+{{ rm.include_menus(curpage="Effects", submenu="effects", mainmenu_mini="effects") -}}
+{% if lptype == "pro" %}
+Map	Button 1-1		FX Limiter Enable			Effects	// template="BRedOnOff"
+Map	Button 8-1		FX PreAmp Enable			Effects	// template="BRedOnOff"
+Map	Button 8-2		FX Phaser Enable			Effects	// template="BRedOnOff"
+Map	Button 8-3		FX ModFilter Enable			Effects	// template="BRedOnOff"
+Map	Button 8-4		FX Speaker Enable			Effects	// template="BRedOnOff"
+Map	Button 8-5		FX Reverb Enable			Effects	// template="BRedOnOff"
+Map	Button 8-6		FX Delay Enable			Effects	// template="BRedOnOff"
+Map	Fader 8		FX Limiter Threshold			Effects	// template="FEffect"
+{% else %}
+Map	Button 8-4		FX Limiter Enable			Effects	// template="BRedOnOff"
+Map	Button 2-7		FX PreAmp Enable			Effects	// template="BRedOnOff"
+Map	Button 3-7		FX Phaser Enable			Effects	// template="BRedOnOff"
+Map	Button 4-7		FX ModFilter Enable			Effects	// template="BRedOnOff"
+Map	Button 5-7		FX Speaker Enable			Effects	// template="BRedOnOff"
+Map	Button 6-7		FX Reverb Enable			Effects	// template="BRedOnOff"
+Map	Button 7-7		FX Delay Enable			Effects	// template="BRedOnOff"
+Map	Fader 5		FX Limiter Threshold			Effects	// template="FEffect"
+{% endif %}
+// PreAmp
+Map	PageName		"PreAmp"			PreAmp
+{{ rm.include_menus(curpage="PreAmp", submenu="effects", mainmenu_mini="effects") -}}
+Map	Button 1-1		FX Preamp Enable			PreAmp	// template="BRedOnOff"
+Map	UDVButton 1-2_2-2		FX Preamp Type			PreAmp	// template="UDEffect", inverted=true
+Map	Button 8-2		FX Preamp Post-FX			PreAmp	// template="BRedOnOff"
+Map	Fader 3		FX Preamp Drive			PreAmp	// template="FAmount"
+Map	Fader 4		FX Preamp Tone			PreAmp	// template="FEffect"
+Map	Fader 5		FX Preamp Swell			PreAmp	// template="FEffect"
+// Phaser
+Map	PageName		"Phaser"			Phaser
+{{ rm.include_menus(curpage="Phaser", submenu="effects", mainmenu_mini="effects") -}}
+Map	Button 1-1		FX Phaser Enable			Phaser	// template="BRedOnOff"
+Map	UDVButton 1-2_2-2		FX Phaser Type			Phaser	// template="UDEffect", inverted=true
+Map	Fader 3		FX Phaser Rate			Phaser	// template="FFreq"
+Map	Fader 4		FX Phaser Depth			Phaser	// template="FEffect"
+Map	Fader 5		FX Phaser Feedback			Phaser	// template="FEffect"
+// ModFilter
+Map	PageName		"ModFilter"			ModFilter
+Map	Sel1_0		TempoSync=Free			ModFilter
+Map	Sel1_42		TempoSync=Free			ModFilter
+Map	Sel1_85		TempoSync=Sync			ModFilter
+Map	Sel1_127		TempoSync=Sync			ModFilter
+{{ rm.include_menus(curpage="ModFilter", submenu="effects", mainmenu_mini="effects") -}}
+Map	Button 1-1		FX ModFilter Enable			ModFilter	// template="BRedOnOff"
+Map	UDVButton 1-2_2-2		FX ModFilter Type			ModFilter	// template="UDEffect", inverted=true
+Map	Fader 3		FX ModFilter Frequency			ModFilter	// template="FFreq"
+Map	Fader 4		FX ModFilter Resonance			ModFilter	// template="FEffect"
+Map	UDVButton 1-5_2-5		FX ModFilter Sync Type		SEL1	ModFilter	// template="UDFreq"
+Map	UDVButton 7-5_8-5		FX ModFilter LFO Wave			ModFilter	// template="UDLFO"
+Map	Fader 6		FX ModFilter LFO Depth			ModFilter	// template="FLFO"
+Map	Fader 7		FX ModFilter LFO Rate			ModFilter	Free	// template="FFreq"
+Map	UDVButton 7-7_8-7		FX ModFilter LFO Synced-Rate			ModFilter	Sync	// template="UDFreq"
+// Speaker
+Map	PageName		"Speaker"			Speaker
+{{ rm.include_menus(curpage="Speaker", submenu="effects", mainmenu_mini="effects") -}}
+Map	Button 1-1		FX Speaker Enable			Speaker	// template="BRedOnOff"
+Map	UDVButton 1-2_2-2		FX Speaker Type			Speaker	// template="UDEffect", inverted=true
+Map	Fader 3		FX Speaker Rotator Amount			Speaker	// template="FEffect"
+Map	Knob V4		FX Speaker Rotator Balance			Speaker	// template="FEffect"
+Map	Fader 5		FX Speaker Rotator Air			Speaker	// template="FEffect"
+Map	Knob V7		FX Speaker Pan			Speaker	// template="FVol"
+// Reverb
+Map	PageName		"Reverb"			Reverb
+{{ rm.include_menus(curpage="Reverb", submenu="effects", mainmenu_mini="effects") -}}
+Map	Button 1-1		FX Reverb Enable			Reverb	// template="BRedOnOff"
+Map	UDVButton 1-2_2-2		FX Reverb Type			Reverb	// template="UDEffect", inverted=true
+Map	Fader 3		FX Reverb Pre-Delay			Reverb	// template="FFreq"
+Map	Knob V4		FX Reverb L/R Pos			Reverb	// template="FEffect"
+Map	Fader 5		FX Reverb Time			Reverb	// template="FEffect"
+Map	Fader 8		FX Reverb Depth			Reverb	// template="FEffect"
+// Delay
+Map	PageName		"Delay"			Delay
+{{ rm.include_menus(curpage="Delay", submenu="effects", mainmenu_mini="effects") -}}
+Map	Button 1-1		FX Delay Enable			Delay	// template="BRedOnOff"
+Map	UDVButton 1-2_2-2		FX Delay Type			Delay	// template="UDEffect", inverted=true
+Map	Fader 3		FX Delay Feedback			Delay	// template="FEffect"
+Map	Fader 4		FX Delay High-Frequency			Delay	// template="FFreq"
+Map	Fader 5		FX Delay Time			Delay	// template="FFreq"
+Map	Fader 6		FX Delay Depth			Delay	// template="FEffect"
+{% endblock main %}

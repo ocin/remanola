@@ -1,6 +1,0 @@
-                        ["Button B1"]={template="BMainPage"},
-                        ["Button B2"]={template="BPerformancePage"},
-                        ["Button B3"]={template="BAmpPage"},
-                        ["Button B4"]={template="BLFOPage"},
-                        ["Button B7"]={template="BAmpPage"},
-                        ["Button B8"]={template="BAmpPage"},

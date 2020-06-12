@@ -1,0 +1,6 @@
+Map	Button A1		Page=Phaser			{{ curpage }}	// template="BEffectPage"
+Map	Button A2		Page=Dist			{{ curpage }}	// template="BEffectPage"
+Map	Button A3		Page=Eq			{{ curpage }}	// template="BEffectPage"
+Map	Button A4		Page=Delay			{{ curpage }}	// template="BEffectPage"
+Map	Button A5		Page=Comp			{{ curpage }}	// template="BEffectPage"
+Map	Button A6		Page=Reverb			{{ curpage }}	// template="BEffectPage"

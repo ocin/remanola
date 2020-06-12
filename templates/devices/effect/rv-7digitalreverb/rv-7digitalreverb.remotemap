@@ -1,0 +1,19 @@
+{% extends "devices/effect/effect-nopatch.remotemap" %}
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="RV-7 Digital Reverb" -%}
+{% set devicename="RV-7 Digital Reverb" -%}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main	// template="UDEffect"
+Map	UDVButton 1-1_2-1		Enabled			Main
+Map	Meter 2		Peak Meter			Main
+Map	UDVButton 1-3_2-3		Algorithm			Main	// template="FEffect"
+Map	Knob V4		Size			Main	// template="FEffect"
+Map	Knob V5		Decay			Main	// template="FFreq"
+Map	Fader 7		Damping			Main	// template="FEffect"
+Map	Fader 8		Dry/Wet			Main	// template="FEffect"
+{% endblock main %}

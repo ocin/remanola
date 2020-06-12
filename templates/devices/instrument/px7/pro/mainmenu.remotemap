@@ -1,0 +1,8 @@
+Map	Button B1		Page=Main			{{ curpage }}	// template="BMainPage"
+Map	Button B2		Page=OP6			{{ curpage }}	// template="BOscPage"
+Map	Button B3		Page=OP5			{{ curpage }}	// template="BOscPage"
+Map	Button B4		Page=OP4			{{ curpage }}	// template="BOscPage"
+Map	Button B5		Page=OP3			{{ curpage }}	// template="BOscPage"
+Map	Button B6		Page=OP2			{{ curpage }}	// template="BOscPage"
+Map	Button B7		Page=OP1			{{ curpage }}	// template="BOscPage"
+Map	Button B8		Page=LFO			{{ curpage }}	// template="BLFOPage"

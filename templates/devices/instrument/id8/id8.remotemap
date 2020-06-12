@@ -1,0 +1,24 @@
+{% extends "devices/instrument/instrument.remotemap" %}
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="ID8 Instrument Device" -%}
+{% set devicename="ID8" -%}
+{% set shortname="id8" -%}
+{# Variables -#}
+{# End Variables -#}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main
+Map	Button 1-1		Select Previous Category			Main	// template="BSelCat"
+Map	Button 2-1		Select Next Category			Main	// template="BSelCat"
+Map	Button 1-4		Sound A			Main	// template="BSelSound"
+Map	Button 2-4		Sound B			Main	// template="BSelSound"
+Map	Button 3-4		Sound C			Main	// template="BSelSound"
+Map	Button 4-4		Sound D			Main	// template="BSelSound"
+Map	Fader 6		Parameter 1			Main	// template="FEffect"
+Map	Fader 7		Parameter 2			Main	// template="FEffect"
+Map	Fader 8		Volume			Main	// template="FVol"
+{% endblock main %}

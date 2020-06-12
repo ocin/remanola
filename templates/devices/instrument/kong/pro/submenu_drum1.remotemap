@@ -1,0 +1,8 @@
+Map	Button A1		Page=Drum1			{{ curpage }}	// template="BOscPage"
+Map	Button A2		Page=Drum2			{{ curpage }}	// template="BOscPage"
+Map	Button A3		Page=Drum3			{{ curpage }}	// template="BOscPage"
+Map	Button A4		Page=Drum4			{{ curpage }}	// template="BOscPage"
+Map	Button A5		Page=Drum5			{{ curpage }}	// template="BOscPage"
+Map	Button A6		Page=Drum6			{{ curpage }}	// template="BOscPage"
+Map	Button A7		Page=Drum7			{{ curpage }}	// template="BOscPage"
+Map	Button A8		Page=Drum8			{{ curpage }}	// template="BOscPage"

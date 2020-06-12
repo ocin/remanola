@@ -25,15 +25,15 @@
 {% if lptype == "mini" %}
 			["Button C5"]={template="BMainPage", helptext="Goto Main"},
 {% endif %}
-			["Button C6"]={template="BPerfPage"},
-			["Button C7"]={template="BIndexPage"},
+			["Button C6"]={template="BPerfPage", helptext="Goto Keyboard"},
+			["Button C7"]={template="BIndexPage", helptext="Goto Index"},
 			["Button C8"]={enabledcolor=YELLOW,      activecolor=RED,     disabledcolor=GREEN},
 			["Button B1"]={template="BMainPage"}, 
 
 			["Side LED"]={enabledcolor=GREEN,      activecolor=GREEN,     disabledcolor=GREEN},
 		},
 		["Index"]={
-			["Button C7"]={enabledcolor=WHITE,   activecolor=WHITE,  disabledcolor=NOCOLOR},
+			["Button C7"]={enabledcolor=WHITE,   activecolor=WHITE,  disabledcolor=NOCOLOR, helptext="Goto Internal"},
 			["Button 1-1"]={template="BMainPageHigh", helptext="Goto Main"},
 			["Button 2-1"]={template="BOscPageHigh"},
 			["Button 3-1"]={template="BOscPageHigh"},

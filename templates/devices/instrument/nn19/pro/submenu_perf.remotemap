@@ -1,0 +1,4 @@
+Map	Button A1		Page=Perf			{{ curpage }}	// template="BPerformancePage"
+Map	Button A2		Page=Controller			{{ curpage }}	// template="BPerformancePage"
+Map	Button A3		Page=ModWheelContr			{{ curpage }}	// template="BPerformancePage"
+Map	Button A4		Page=Velocity			{{ curpage }}	// template="BPerformancePage"
