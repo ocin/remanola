@@ -1,2 +1,2 @@
-Map	Button 5-1		Page=Main			{{ curpage }}
-Map	Button 6-1		Page=Pattern			{{ curpage }}
+Map	Button 5-1		Page=Main			{{ curpage }}	// template="BMainPage"
+Map	Button 6-1		Page=Pattern			{{ curpage }}	// template="BPerformancePage"
