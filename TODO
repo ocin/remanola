@@ -42,7 +42,7 @@
 - 7 Step Fader?
 - Reset default UD*Button
 
-+ Update devices with new menu setup
+* Update devices with new menu setup
 	* Instruments
 		* DrOctoRex
 		* Kong
@@ -50,9 +50,9 @@
 		* Parsec
 		* Radical Piano
 		* Redrum
-	+ Effects
+	* Effects
 		* Alligator
-		! BV512 Digital Vocoder
+		* BV512 Digital Vocoder
 		* ECF-42 Filter
 		* MClass compressor
 		* MClass Equalizer
@@ -115,8 +115,8 @@ Instruments:
 * Humana
 * Pangea
 * Radical Piano
-+ Thor
-	- Mod Matrix
+* Thor
+	* Mod Matrix
 - Ammo1200
 - Ammo400
 - Ammo100LA
@@ -162,7 +162,7 @@ Utilities:
 * RPG-8
 * Matrix
 * Pulsar
-- Mixer 14-2
-- Line Mixer 6-2
+* Mixer 14-2
+* Line Mixer 6-2
 - Jiggery Pokery Utilities
 - Hamu Utilities
