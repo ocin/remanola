@@ -6,7 +6,7 @@
 {# Variables -#}
 {# End Variables -#}
 {% block groups %}
-Define Group	Page	Main	Keyboard	Internal	Index	Osc	Perf
+Define Group	Page	Main	Keyboard	Internal	Index	Osc	Osc2
 Define Group	Range	LowHz	HighHz	Semitone	Cents	Tempo
 {% endblock groups %}
 {% block main %}
@@ -14,8 +14,8 @@ Define Group	Range	LowHz	HighHz	Semitone	Cents	Tempo
 Map	PageName		"Index"			Index
 {{ rm.include_menus(curpage="Index") -}}
 Map	Button 1-1		Page=Main			Index
-Map	Button 1-5		Page=Perf			Index
 Map	Button 2-1		Page=Osc			Index
+Map	Button 2-2		Page=Osc2			Index
 // Main
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
@@ -28,15 +28,27 @@ Map	Sel1_32		Range=HighHz			Osc
 Map	Sel1_64		Range=Semitone			Osc
 Map	Sel1_95		Range=Cents			Osc
 Map	Sel1_127		Range=Tempo			Osc
-Map	Button 1-1		Oscillator On			Osc	// template="BRedOnOff"
+Map	Button 1-1		Oscillator On			Osc	// template="BBlueOnOff"
 Map	UDVButton 1-2_2-2		Waveform			Osc	// template="UDOsc"
-Map	Fader 4		Low Rate Hz			Osc	LowHz	// template="FFreq"
-Map	Fader 4		High Rate Hz			Osc	HighHz	// template="FFreq"
-Map	UDVButton 1-4_2-4		Rate Semitone			Osc	Semitone	// template="UDFreq"
-Map	UDVButton 1-4_2-4		Cents Detune			Osc	Cents	// template="UDFreq"
-Map	UDVButton 1-4_2-4		Rate Tempo Sync			Osc	Tempo	// template="UDFreq"
-Map	UDVButton 7-5_8-5		Range		SEL1	Osc	// template="UDOsc"
-// Perf
-Map	PageName		"Perf"			Perf
-{{ rm.include_menus(curpage="Perf") -}}
+Map	UDVButton 5-2_6-2		Pulse Width	5		Osc	// template="UDOsc"
+Map	UDVButton 7-2_8-2		Rate CV In Amount	5		Osc	// template="UDLFO"
+Map	Fader 3		Low Rate Hz			Osc	LowHz	// template="FFreq"
+Map	Fader 3		High Rate Hz			Osc	HighHz	// template="FFreq"
+Map	UDVButton 1-3_2-3		Rate Semitone			Osc	Semitone	// template="UDFreq"
+Map	UDVButton 1-3_2-3		Cents Detune			Osc	Cents	// template="UDFreq"
+Map	UDVButton 1-3_2-3		Rate Tempo Sync			Osc	Tempo	// template="UDFreq"
+Map	UDVButton 7-4_8-4		Range		SEL1	Osc	// template="UDOsc"
+Map	UDVButton 7-5_8-5		Depth CV In Amount	5		Osc	// template="UDLFO"
+Map	Fader 6		Depth			Osc	// template="FFreq"
+Map	UDVButton 7-7_8-7		Phase CV In Amount	5		Osc	// template="UDLFO"
+Map	Fader 8		Phase			Osc	// template="FOsc"
+// Osc2
+Map	PageName		"Osc2"			Osc2
+Map	Fader 1		Keyboard			Osc2	// template="FPerf"
+Map	Fader 2		Envelope CV In Amount			Osc2	// template="FEnv"
+Map	Button 1-3		Oscillator Free Run			Osc2	// template="BYellowOnOff"
+Map	Button 1-4		Oneshot			Osc2	// template="BRedOnOff"
+Map	Fader 6		Lag Up			Osc2	// template="FOsc"
+Map	Fader 7		Lag Down			Osc2	// template="FOsc"
+{{ rm.include_menus(curpage="Osc2") -}}
 {% endblock main %}
