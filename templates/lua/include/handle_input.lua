@@ -1,12 +1,12 @@
 function handle_input_sel(event, selnum)
 	for selnum=1,g_selcount do
-        	if(g_sel[selnum] ~= nil) then
-                	local msg = { time_stamp = event.time_stamp, item = itemsindex["Sel"..selnum.."_"..g_sel[selnum]], value = 1 }
-                	remote.handle_input(msg)
-                	g_sel[selnum] = nil
-                	g_updateall = true
-        	end
-        end
+		if(g_sel[selnum] ~= nil) then
+			local msg = { time_stamp = event.time_stamp, item = itemsindex["Sel"..selnum.."_"..g_sel[selnum]], value = 1 }
+			remote.handle_input(msg)
+			g_sel[selnum] = nil
+			g_updateall = true
+		end
+	end
 end
 
 function handle_input_select(event)
@@ -32,15 +32,15 @@ function handle_input_lightshow(event)
 		if(button ~= nil and button.z > 0) then
 			return true
 		end
-                local button = remote.match_midi(buttonmidi.." 00", event)
-                if(button ~= nil) then
-                        if(g_lightshowtime + 500 < remote.get_time_ms()) then
+		local button = remote.match_midi(buttonmidi.." 00", event)
+		if(button ~= nil) then
+			if(g_lightshowtime + 500 < remote.get_time_ms()) then
 				g_lightshow = 0
 				g_updateall = true
-                        end
-                        return true
-                end
-        end
+			end
+			return true
+		end
+	end
 end
 
 function handle_input_kong(event, button)
@@ -169,7 +169,6 @@ function handle_input_valuemode(event, button)
 		g_updateall = true
 		local buttonname = get_button_name(button)
 		local itemname = get_item_by_button(buttonname)
-
 		if(itemname == "Button C1" or itemname == "Button C2") then
 			g_scrolltext = remote.get_item_text_value(itemsindex["DeviceName"])
 		elseif(itemname == "Button C8") then
@@ -177,7 +176,6 @@ function handle_input_valuemode(event, button)
 		else
 			g_scrolltext = tostring(remote.get_item_value(itemsindex[itemname]))
 		end
-
 		if(g_scrolltext == "") then
 			g_scrolltext = "Unknown"
 		end
