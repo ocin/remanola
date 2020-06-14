@@ -251,7 +251,7 @@ function handle_input_setveltomax(event, button)
 	if(button.z > 0 ) then
 		local midi = string.format("%02x %02x", button.x, button.y)
 		local item = itemsindex[midi_to_button[midi]]
-       		local msg = { time_stamp = event.time_stamp, item = item, value = 1, velocity = 127 }
+		local msg = { time_stamp = event.time_stamp, item = item, value = 1, velocity = 127 }
 		remote.handle_input(msg)
 		return true
 	end
