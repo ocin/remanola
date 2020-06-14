@@ -296,7 +296,7 @@ function get_button_color(context, itemname, buttonname, value)
 end
 
 function get_item_by_button(buttonname) 
-        for i=1,8 do
+	for i=1,8 do
 		local fadername = "Fader "..tostring(i)
 		if(remote.is_item_enabled(itemsindex[fadername])) then
 			if(string.find(buttonname, "Button %d%-"..tostring(i))) then
@@ -304,7 +304,7 @@ function get_item_by_button(buttonname)
 			end
 		end
 	end
-        for i=1,8 do
+	for i=1,8 do
 		local fadername = "BigFader "..tostring(i)
 		if(remote.is_item_enabled(itemsindex[fadername])) then
 			if(string.find(buttonname, "Button %d%-"..tostring(i))) then
@@ -312,7 +312,7 @@ function get_item_by_button(buttonname)
 			end
 		end
 	end
-        for i=1,8 do
+	for i=1,8 do
 		local fadername = "Drawbar "..tostring(i)
 		if(remote.is_item_enabled(itemsindex[fadername])) then
 			if(string.find(buttonname, "Button %d%-"..tostring(i))) then
@@ -320,7 +320,7 @@ function get_item_by_button(buttonname)
 			end
 		end
 	end
-        for i=1,8 do
+	for i=1,8 do
 		local fadername = "Meter "..tostring(i)
 		if(remote.is_item_enabled(itemsindex[fadername])) then
 			if(string.find(buttonname, "Button %d%-"..tostring(i))) then
@@ -328,7 +328,7 @@ function get_item_by_button(buttonname)
 			end
 		end
 	end
-        for i=1,8 do
+	for i=1,8 do
 		local fadername = "Knob H"..tostring(i)
 		if(remote.is_item_enabled(itemsindex[fadername])) then
 			if(string.find(buttonname, "Button "..tostring(i).."%-%d")) then
@@ -336,7 +336,7 @@ function get_item_by_button(buttonname)
 			end
 		end
 	end
-        for i=1,8 do
+for i=1,8 do
 		local fadername = "Knob V"..tostring(i)
 		if(remote.is_item_enabled(itemsindex[fadername])) then
 			if(string.find(buttonname, "Button %d%-"..tostring(i))) then
