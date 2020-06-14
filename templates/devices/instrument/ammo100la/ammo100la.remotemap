@@ -1,0 +1,42 @@
+{% extends "devices/instrument/instrument.remotemap" %}
+{% set deviceman="Jiggery Pokery" -%}
+{% set devicescope="com.jiggerypokery.Ammo100LA" -%}
+{% set devicename="Ammo 100LA" -%}
+{% set shortname="ammo100la" -%}
+{# Variables -#}
+{# End Variables -#}
+{% block groups %}
+Define Group	Page	Main	Keyboard	Internal	Index	Osc	Perf
+Define Group	Range	LowHz	HighHz	Semitone	Cents	Tempo
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+{{ rm.include_menus(curpage="Index") -}}
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-5		Page=Perf			Index
+Map	Button 2-1		Page=Osc			Index
+// Main
+Map	PageName		"Main"			Main
+{{ rm.include_menus(curpage="Main") -}}
+Map	Fader 8		Output			Main	// template="FVol"
+// Osc
+Map	PageName		"Osc"			Osc
+{{ rm.include_menus(curpage="Osc") -}}
+Map	Sel1_0		Range=LowHz			Osc
+Map	Sel1_32		Range=HighHz			Osc
+Map	Sel1_64		Range=Semitone			Osc
+Map	Sel1_95		Range=Cents			Osc
+Map	Sel1_127		Range=Tempo			Osc
+Map	Button 1-1		Oscillator On			Osc	// template="BRedOnOff"
+Map	UDVButton 1-2_2-2		Waveform			Osc	// template="UDOsc"
+Map	Fader 4		Low Rate Hz			Osc	LowHz	// template="FFreq"
+Map	Fader 4		High Rate Hz			Osc	HighHz	// template="FFreq"
+Map	UDVButton 1-4_2-4		Rate Semitone			Osc	Semitone	// template="UDFreq"
+Map	UDVButton 1-4_2-4		Cents Detune			Osc	Cents	// template="UDFreq"
+Map	UDVButton 1-4_2-4		Rate Tempo Sync			Osc	Tempo	// template="UDFreq"
+Map	UDVButton 7-5_8-5		Range		SEL1	Osc	// template="UDOsc"
+// Perf
+Map	PageName		"Perf"			Perf
+{{ rm.include_menus(curpage="Perf") -}}
+{% endblock main %}
