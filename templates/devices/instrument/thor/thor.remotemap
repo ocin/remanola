@@ -49,7 +49,8 @@ Map	Button 8-2		Button 1			Main	// template="BRedOnOff"
 Map	Button 8-3		Button 2			Main	// template="BRedOnOff"
 Map	Fader 4		Rotary 1			Main	// template="FMisc"
 Map	Fader 5		Rotary 2			Main	// template="FMisc"
-Map	Fader 8		Master Level 			Main	// template="FGain"
+Map	MFader 7-8		Master Level 			Main	// template="FGain"
+// Map	Fader 8		Master Level 			Main	// template="FGain"
 // Perf page
 Map	PageName		"Perf"			Perf
 {{ rm.include_menus(curpage="Perf") -}}

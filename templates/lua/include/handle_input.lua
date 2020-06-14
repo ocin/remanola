@@ -114,6 +114,16 @@ function handle_input_item(event, button)
 				local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
 				remote.handle_input(msg)
 				return(true)
+			elseif(itemtype == "MFader") then
+				local value = 1
+				if(is_up_mfader(buttonname, itemname)) then
+					value = remote.get_item_value(itemsindex[itemname]) + button.z/5
+				else
+					value = remote.get_item_value(itemsindex[itemname]) - button.z/5
+				end
+				local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
+				remote.handle_input(msg)
+				return(true)
 			end
 		end
 	else

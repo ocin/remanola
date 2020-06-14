@@ -19,6 +19,14 @@ function init_udbuttons()
 	end
 end
 
+function init_minifaders()
+	for row=1,8,2 do
+		for column=1,8 do
+			table.insert(items, {name = "MFader "..row.."-"..column, input = "value", output="value", min = 0, max = 127, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}})
+		end
+	end
+end
+
 function init_sel()
 	for sel=1,4 do
 		for val=0,127 do

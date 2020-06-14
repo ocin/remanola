@@ -271,6 +271,9 @@ function get_button_color(context, itemname, buttonname, value)
 		elseif(string.find(itemname, "Fader %d")) then
 			buttonindex = tonumber(string.sub(buttonname, -3,-3))
 			buttonvalue = get_item_bvmap(itemname)[buttonindex]
+		elseif(string.find(itemname, "MFader %d%-%d")) then
+			buttonindex = tonumber(string.sub(buttonname, -3,-3))%2+1
+			buttonvalue = get_item_bvmap(itemname)[buttonindex]
 		end
 
 		if(value >= buttonvalue) then
@@ -364,6 +367,18 @@ for i=1,8 do
 					return udvbuttonname
 				elseif(string.find(buttonname, "Button "..tostring(row+1).."%-"..column)) then
 					return udvbuttonname
+				end
+			end
+		end
+	end
+	for row=1,8,2 do
+		for column=1,8 do
+			local mfadername = "MFader "..row.."-"..column
+			if(remote.is_item_enabled(itemsindex[mfadername])) then
+				if(string.find(buttonname, "Button "..row.."%-"..column)) then
+					return mfadername
+				elseif(string.find(buttonname, "Button "..tostring(row+1).."%-"..column)) then
+					return mfadername
 				end
 			end
 		end
@@ -528,4 +543,12 @@ function is_up_udupbutton(buttonname, itemname)
 	end
 
 	return(buttonname == "Button "..upbutton)
+end
+
+function is_up_mfader(buttonname, itemname)
+	local mfader
+
+	first = string.match(itemname, "MFader (...)")
+
+	return(buttonname == "Button "..first)
 end
