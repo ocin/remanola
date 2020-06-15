@@ -285,7 +285,7 @@ function get_button_color(context, itemname, buttonname, value)
 			if(value >= buttonvalue) then
 				color = activecolor
 			elseif(value > prevbuttonvalue) then
-				color = dim_color(enabledcolor, activecolor, value/(buttonvalue - prevbuttonvalue))
+				color = dim_color(enabledcolor, activecolor, (value - prevbuttonvalue)/(buttonvalue - prevbuttonvalue))
 			else 
 				color = enabledcolor
 			end
