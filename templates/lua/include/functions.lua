@@ -268,18 +268,18 @@ function get_button_color(context, itemname, buttonname, value)
 		elseif(string.find(itemname, "BigFader %d")) then
 			buttonindex = tonumber(string.sub(buttonname, -3,-3))
 			buttonvalue = get_item_bvmap(itemname)[buttonindex]
+		elseif(string.find(itemname, "MFader %d%-%d")) then
+			buttonindex = tonumber(string.sub(buttonname, -3,-3))
+			buttonvalue = get_item_bvmap(itemname)[buttonindex%2+1]
 		elseif(string.find(itemname, "Fader %d")) then
 			buttonindex = tonumber(string.sub(buttonname, -3,-3))
-			buttonvalue = get_item_bvmap(itemname)[buttonindex]
-		elseif(string.find(itemname, "MFader %d%-%d")) then
-			buttonindex = tonumber(string.sub(buttonname, -3,-3))%2+1
 			buttonvalue = get_item_bvmap(itemname)[buttonindex]
 		end
 
 		if(string.find(itemname, "MFader %d%-%d")) then	
 			prevbuttonvalue = 0
-			if buttonindex == 1 or buttonindex == 3 or buttonindex == 5 or buttonindex == 7 then
-				prevbuttonvalue = get_item_bvmap(itemname)[buttonindex+1] 
+			if (buttonindex%2) == 1 then
+				prevbuttonvalue = get_item_bvmap(itemname)[(buttonindex+1)%2+1] 
 			end
 				
 			if(value >= buttonvalue) then
