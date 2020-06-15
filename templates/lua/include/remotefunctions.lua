@@ -1,6 +1,7 @@
 function remote_init()
 	init_buttons()
 	init_udbuttons()
+	init_minifaders()
 	init_sel()
 	init_itemsindex()
 	init_miditobutton()
