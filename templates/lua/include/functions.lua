@@ -290,6 +290,11 @@ function get_button_color(context, itemname, buttonname, value)
 				color = enabledcolor
 			end
 		else
+			prevbuttonvalue = 0
+			if not buttonindex == 1 then
+				prevbuttonvalue = get_item_bvmap(itemname)[buttonindex-1] 
+			end
+				
 			if(value >= buttonvalue) then
 				if(string.find(itemname, "Meter %d") and buttonindex == 0) then
 					color = maxcolor
@@ -300,12 +305,14 @@ function get_button_color(context, itemname, buttonname, value)
 						color = activecolor
 					end
 				end
-			else 
+			elseif(value > prevbuttonvalue) then
 				if((string.find(itemname, "BigFader %d") or string.find(itemname, "Fader %d")) and buttonvalue == defaultvalue) then
 					color = denabledcolor
 				else
 					color = enabledcolor
 				end
+			else 
+				color = dim_color(enabledcolor, activecolor, (value - buttonvalue)/(prevbuttonvalue - buttonvalue))
 			end
 		end
 	end
