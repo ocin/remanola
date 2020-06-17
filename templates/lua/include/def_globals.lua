@@ -40,6 +40,7 @@ g_beatupdate = false
 g_beatupdatetime = nil
 g_basekey = 2
 g_kbdvel = 100
+g_buttondown = {}
 
 g_updateditems = {}
 

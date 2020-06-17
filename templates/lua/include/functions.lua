@@ -142,7 +142,7 @@ function get_button_color(context, itemname, buttonname, value)
 
 	if(string.find(itemname, "UDHButton %d%-%d_%d%-%d") or string.find(itemname, "UDVButton %d%-%d_%d%-%d")) then
 		if(enabled) then
-			if(value) then
+			if(g_buttondown[buttonname] == 1) then
 				color = activecolor
 			else
 				color = enabledcolor
@@ -165,7 +165,7 @@ function get_button_color(context, itemname, buttonname, value)
 					color = REDRUM_NOHIT
 				end
 			end
-		elseif(g_scopetext == "Redrum" and string.match(get_current_page(), "Main") and (string.match(itemname, "Button 6%-6"))) then
+		elseif(g_scopetext == "Redrum" and string.match(get_current_page(), "Main") and (string.match(itemname, "Button 6%-5"))) then
 			if(textvalue == 1) then
 				color = REDRUM_SOFT
 			elseif(textvalue == 2) then

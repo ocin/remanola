@@ -79,6 +79,7 @@ function handle_input_item(event, button)
 	local col = get_button_col(buttonname)
 	local itemname = get_item_by_button(buttonname)
 	if(button.z > 0) then
+		g_buttondown[buttonname] = 1
 		if(buttonname ~= itemname) then
 			local itemtype = get_item_type(itemname)
 			if(itemtype == "Fader" or itemtype == "BigFader" or itemtype == "Drawbar") then
@@ -127,6 +128,8 @@ function handle_input_item(event, button)
 			end
 		end
 	else
+		g_buttondown[buttonname] = nil
+		g_updateall = true
 		local itemtype = get_item_type(itemname)
 		if(itemtype == "Knob") then
 			if(get_item_conf_map(itemname,g_colorscheme, get_current_page()).resetonrel) then
