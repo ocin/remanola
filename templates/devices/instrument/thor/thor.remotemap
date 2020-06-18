@@ -180,9 +180,9 @@ Map	Fader 5		Filter {{ filternum }} Res			Filter{{ filternum }}	LP	// template="
 Map	Button 1-6		Filter {{ filternum }} Self Osc			Filter{{ filternum }}	LP	// template="BGreenOnOff"
 Map	UDVButton 3-6_4-6		Filter {{ filternum }} Param X			Filter{{ filternum }}	LP	// template="UDFreq", inverted=true
 Map	Button 1-8		Filter {{ filternum }} {{ globalenv }}Env Invert			Filter{{ filternum }}	LP	// template="BGreenOnOff"
-Map	UDVButton 3-8_4-8		Filter {{ filternum }} {{ globalenv }}Env Amount	5		Filter{{ filternum }}	LP	// template="UDEnv"
-Map	UDVButton 5-8_6-8		Filter {{ filternum }} Velocity	5		Filter{{ filternum }}	LP	// template="UDPerf"
-Map	UDVButton 7-8_8-8		Filter {{ filternum }} Kbd	5		Filter{{ filternum }}	LP	// template="UDPerf2"
+Map	MFader 3-8		Filter {{ filternum }} {{ globalenv }}Env Amount			Filter{{ filternum }}	LP	// template="UDEnv"
+Map	MFader 5-8		Filter {{ filternum }} Velocity			Filter{{ filternum }}	LP	// template="UDPerf"
+Map	MFader 7-8		Filter {{ filternum }} Kbd			Filter{{ filternum }}	LP	// template="UDPerf2"
 // State Variable
 Map	SubPageName		"State Variable"			Filter{{ filternum }}	State
 Map	Fader 3		Filter {{ filternum }} Drive			Filter{{ filternum }}	State	// template="FGain"
@@ -192,9 +192,9 @@ Map	Button 1-6		Filter {{ filternum }} Self Osc			Filter{{ filternum }}	State	//
 Map	UDVButton 3-6_4-6		Filter {{ filternum }} Param X			Filter{{ filternum }}	State
 Map	Fader 7		Filter {{ filternum }} Param Y			Filter{{ filternum }}	State
 Map	Button 1-8		Filter {{ filternum }} {{ globalenv }}Env Invert			Filter{{ filternum }}	State	// template="BGreenOnOff"
-Map	UDVButton 3-8_4-8		Filter {{ filternum }} {{ globalenv }}Env Amount	5		Filter{{ filternum }}	State	// template="UDEnv"
-Map	UDVButton 5-8_6-8		Filter {{ filternum }} Velocity	5		Filter{{ filternum }}	State	// template="UDPerf"
-Map	UDVButton 7-8_8-8		Filter {{ filternum }} Kbd	5		Filter{{ filternum }}	State	// template="UDPerf2"
+Map	MFader 3-8		Filter {{ filternum }} {{ globalenv }}Env Amount			Filter{{ filternum }}	State	// template="UDEnv"
+Map	MFader 5-8		Filter {{ filternum }} Velocity			Filter{{ filternum }}	State	// template="UDPerf"
+Map	MFader 7-8		Filter {{ filternum }} Kbd			Filter{{ filternum }}	State	// template="UDPerf2"
 // Comb
 Map	SubPageName		"Comb"			Filter{{ filternum }}	Comb
 Map	Fader 3		Filter {{ filternum }} Drive			Filter{{ filternum }}	Comb	// template="FGain"
@@ -202,9 +202,9 @@ Map	Fader 4		Filter {{ filternum }} Freq			Filter{{ filternum }}	Comb	// templat
 Map	Fader 5		Filter {{ filternum }} Res			Filter{{ filternum }}	Comb	// template="FEffect"
 Map	UDVButton 3-6_4-6		Filter {{ filternum }} Param X			Filter{{ filternum }}	Comb
 Map	Button 1-8		Filter {{ filternum }} {{ globalenv }}Env Invert			Filter{{ filternum }}	Comb	// template="BGreenOnOff"
-Map	UDVButton 3-8_4-8		Filter {{ filternum }} {{ globalenv }}Env Amount	5		Filter{{ filternum }}	Comb	// template="UDEnv"
-Map	UDVButton 5-8_6-8		Filter {{ filternum }} Velocity	5		Filter{{ filternum }}	Comb	// template="UDPerf"
-Map	UDVButton 7-8_8-8		Filter {{ filternum }} Kbd	5		Filter{{ filternum }}	Comb	// template="UDPerf2"
+Map	MFader 3-8		Filter {{ filternum }} {{ globalenv }}Env Amount			Filter{{ filternum }}	Comb	// template="UDEnv"
+Map	MFader 5-8		Filter {{ filternum }} Velocity			Filter{{ filternum }}	Comb	// template="UDPerf"
+Map	MFader 7-8		Filter {{ filternum }} Kbd			Filter{{ filternum }}	Comb	// template="UDPerf2"
 // Formant
 Map	SubPageName		"Formant"			Filter{{ filternum }}	Formant
 Map	Fader 3		Filter {{ filternum }} Drive			Filter{{ filternum }}	Formant	// template="FGain"
@@ -212,9 +212,9 @@ Map	Fader 4		Filter {{ filternum }} Param X			Filter{{ filternum }}	Formant	// t
 Map	Fader 6		Filter {{ filternum }} Freq			Filter{{ filternum }}	Formant	// template="FEffect"
 Map	Fader 7		Filter {{ filternum }} Res			Filter{{ filternum }}	Formant	// template="FEffect"
 Map	Button 1-8		Filter {{ filternum }} {{ globalenv }}Env Invert			Filter{{ filternum }}	Formant	// template="BGreenOnOff"
-Map	UDVButton 3-8_4-8		Filter {{ filternum }} {{ globalenv }}Env Amount	5		Filter{{ filternum }}	Formant	// template="UDEnv"
-Map	UDVButton 5-8_6-8		Filter {{ filternum }} Velocity	5		Filter{{ filternum }}	Formant	// template="UDPerf"
-Map	UDVButton 7-8_8-8		Filter {{ filternum }} Kbd	5		Filter{{ filternum }}	Formant	// template="UDPerf2"
+Map	MFader 3-8		Filter {{ filternum }} {{ globalenv }}Env Amount			Filter{{ filternum }}	Formant	// template="UDEnv"
+Map	MFader 5-8		Filter {{ filternum }} Velocity			Filter{{ filternum }}	Formant	// template="UDPerf"
+Map	MFader 7-8		Filter {{ filternum }} Kbd			Filter{{ filternum }}	Formant	// template="UDPerf2"
 {% endfor -%}
 // FilterEnv
 Map	PageName		"Filter Env"			FilterEnv
