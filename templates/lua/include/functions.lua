@@ -142,7 +142,7 @@ function get_button_color(context, itemname, buttonname, value)
 
 	if(string.find(itemname, "UDHButton %d%-%d_%d%-%d") or string.find(itemname, "UDVButton %d%-%d_%d%-%d")) then
 		if(enabled) then
-			if(g_buttondown[buttonname] == 1) then
+			if(g_buttondown[buttonname] ~= nil) then
 				color = activecolor
 			else
 				color = enabledcolor
