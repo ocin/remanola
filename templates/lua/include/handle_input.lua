@@ -117,10 +117,17 @@ function handle_input_item(event, button)
 				return(true)
 			elseif(itemtype == "MFader") then
 				local value = 1
+				local divider = 30
+				if(button.z > 50) then
+					divider = 10
+				end
+				if(button.z > 80) then
+					divider = 5
+				end
 				if(is_up_mfader(buttonname, itemname)) then
-					value = remote.get_item_value(itemsindex[itemname]) + button.z/5
+					value = remote.get_item_value(itemsindex[itemname]) + button.z/divider
 				else
-					value = remote.get_item_value(itemsindex[itemname]) - button.z/5
+					value = remote.get_item_value(itemsindex[itemname]) - button.z/divider
 				end
 				local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
 				remote.handle_input(msg)
@@ -151,6 +158,22 @@ function handle_input_aftertouch(event, button)
 		local itemtype = get_item_type(itemname)
 		if(itemtype == "Fader" or itemtype == "BigFader" or itemtype == "Drawbar") then
 			value = get_item_bvmap(itemname)[row] + (button.z/127) * (get_item_bvmap(itemname)[1]-get_item_bvmap(itemname)[row])
+			local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
+			remote.handle_input(msg)
+			return(true)
+		elseif(itemtype == "MFader") then
+			local value = 1
+			if(is_up_mfader(buttonname, itemname)) then
+				value = remote.get_item_value(itemsindex[itemname]) + button.z/20
+			else
+				value = remote.get_item_value(itemsindex[itemname]) - button.z/20
+			end
+			if(value > 127) then
+				value = 127
+			end
+			if(value < 0) then
+				value = 0
+			end
 			local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
 			remote.handle_input(msg)
 			return(true)
