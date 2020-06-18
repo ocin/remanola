@@ -83,7 +83,7 @@ end
 
 function get_button_color(context, itemname, buttonname, value)
 	local color
-	local buttonindex
+	local buttonindex = 0
 	local buttonvalue = 0
 
 	local enabled = remote.is_item_enabled(itemsindex[itemname])
@@ -278,7 +278,7 @@ function get_button_color(context, itemname, buttonname, value)
 
 		if(string.find(itemname, "MFader %d%-%d")) then	
 			prevbuttonvalue = 0
-			if (buttonindex%2) == 1 then
+			if((buttonindex%2) == 1) then
 				prevbuttonvalue = get_item_bvmap(itemname)[(buttonindex+1)%2+1] 
 			end
 				
@@ -289,10 +289,10 @@ function get_button_color(context, itemname, buttonname, value)
 			else 
 				color = enabledcolor
 			end
-		else
-			prevbuttonvalue = 0
-			if not buttonindex == 1 then
-				prevbuttonvalue = get_item_bvmap(itemname)[buttonindex-1] 
+		elseif((string.find(itemname, "Fader %d")) or (string.find(itemname, "BigFader %d")) or (string.find(itemname, "Meter %d"))) then	
+			nextbuttonvalue = 0
+			if(buttonindex ~= 8) then
+				nextbuttonvalue = get_item_bvmap(itemname)[buttonindex+1] 
 			end
 				
 			if(value >= buttonvalue) then
@@ -305,14 +305,20 @@ function get_button_color(context, itemname, buttonname, value)
 						color = activecolor
 					end
 				end
-			elseif(value > prevbuttonvalue) then
+			elseif((value > nextbuttonvalue) and (value < buttonvalue)) then
+				color = dim_color(enabledcolor, activecolor, (value - nextbuttonvalue)/(buttonvalue - nextbuttonvalue))
+			else 
 				if((string.find(itemname, "BigFader %d") or string.find(itemname, "Fader %d")) and buttonvalue == defaultvalue) then
 					color = denabledcolor
 				else
 					color = enabledcolor
 				end
+			end
+		else
+			if(value >= buttonvalue) then
+				color = activecolor
 			else 
-				color = dim_color(enabledcolor, activecolor, (value - buttonvalue)/(prevbuttonvalue - buttonvalue))
+				color = enabledcolor
 			end
 		end
 	end
