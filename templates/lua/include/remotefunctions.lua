@@ -141,6 +141,12 @@ function remote_process_midi(event)
 		end
 	end
 
+	if(isaftertouch(button)) then
+		if(handle_input_aftertouch(event, button)) then
+			return(true)
+		end
+	end
+
 	if(g_helpmode or g_valuemode) then
 		return true
 	end

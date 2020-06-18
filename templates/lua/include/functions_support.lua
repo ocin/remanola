@@ -15,6 +15,10 @@ function mergetables(table1, table2)
 	end
 end
 
+function isaftertouch(button)
+	return(button ~= nil and button.x == 0xa0)
+end
+
 function isbutton(button)
 	return(button ~= nil and (button.x == 0x90 or button.x == 0xb0))
 end

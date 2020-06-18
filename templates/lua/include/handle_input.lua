@@ -141,6 +141,21 @@ function handle_input_item(event, button)
 	end
 end
 
+function handle_input_aftertouch(event, button)
+	local buttonname = get_button_name(button)
+	local itemname = get_item_by_button(buttonname)
+
+	if(button.z > 0) then
+		if(buttonname ~= itemname) then
+			local itemtype = get_item_type(itemname)
+			if(itemtype == "Fader" or itemtype == "BigFader" or itemtype == "Drawbar") then
+				local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = button.z }
+				remote.handle_input(msg)
+				return(true)
+			end
+		end
+	end
+end
 function handle_input_helpmode(event, button)
 	if(button.z == 0) then
 		g_helpmode = false

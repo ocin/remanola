@@ -531,8 +531,16 @@ function lightshow_center(buttonname, cyclelength)
 end
 
 function get_button_name(button)
-	local midistring = string.format("%02x %02x", button.x, button.y)
-	return(midi_to_button[midistring])
+	x = button.x
+	if(button.x == 0xa0) then
+		x = 0x90
+	end
+	local midistring = string.format("%02x %02x", x, button.y)
+	buttonname =midi_to_button[midistring]
+	if(buttonname == nil) then
+		error("No button found for midistring: "..midistring)
+	end
+	return(buttonname)
 end
 
 function get_knob_type(itemname)
