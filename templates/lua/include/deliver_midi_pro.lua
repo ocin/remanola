@@ -23,7 +23,11 @@ function deliver_midi_buttons(ret_events)
 					elseif(string.match(itemname, "Button C8") and g_valuemode) then
 						color = YELLOW
 					end
-		
+
+					if(color == nil) then
+						error(string.format("Undefined color device: %s page: %s item: %s", g_colorscheme, get_current_page(), itemname))
+					end
+
 					gridmidimsg = gridmidimsg.." "..get_rgb_midi(color)
 				end
 			end

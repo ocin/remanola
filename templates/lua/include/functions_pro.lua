@@ -7,6 +7,9 @@ function get_veloctity(velocity)
 end
 
 function get_rgb_midi(color)
+	if(color == nil) then
+		error("Undefined color")
+	end
 	r,g,b = string.match(color, "(..)(..)(..)")
 	return(string.format("%02x %02x %02x", tonumber(r,16)/4, tonumber(g,16)/4, tonumber(b,16)/4))
 end

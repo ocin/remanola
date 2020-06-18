@@ -79,7 +79,7 @@ function handle_input_item(event, button)
 	local col = get_button_col(buttonname)
 	local itemname = get_item_by_button(buttonname)
 	if(button.z > 0) then
-		g_buttondown[buttonname] = 1
+		g_buttondown[buttonname] = button.z
 		if(buttonname ~= itemname) then
 			local itemtype = get_item_type(itemname)
 			if(itemtype == "Fader" or itemtype == "BigFader" or itemtype == "Drawbar") then
@@ -141,6 +141,22 @@ function handle_input_item(event, button)
 	end
 end
 
+function handle_input_aftertouch(event, button)
+	local buttonname = get_button_name(button)
+	local row = get_button_row(buttonname)
+	local col = get_button_col(buttonname)
+	local itemname = get_item_by_button(buttonname)
+
+	if(buttonname ~= itemname) then
+		local itemtype = get_item_type(itemname)
+		if(itemtype == "Fader" or itemtype == "BigFader" or itemtype == "Drawbar") then
+			value = get_item_bvmap(itemname)[row] + (button.z/127) * (get_item_bvmap(itemname)[1]-get_item_bvmap(itemname)[row])
+			local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
+			remote.handle_input(msg)
+			return(true)
+		end
+	end
+end
 function handle_input_helpmode(event, button)
 	if(button.z == 0) then
 		g_helpmode = false
