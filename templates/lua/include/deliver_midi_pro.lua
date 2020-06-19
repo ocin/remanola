@@ -25,7 +25,7 @@ function deliver_midi_buttons(ret_events)
 					end
 
 					if(color == nil) then
-						error(string.format("Undefined color device: %s page: %s item: %s", g_colorscheme, get_current_page(), itemname))
+						error(string.format("Undefined color, device: %s page: %s item: %s", g_colorscheme, get_current_page(), itemname))
 					end
 
 					gridmidimsg = gridmidimsg.." "..get_rgb_midi(color)
