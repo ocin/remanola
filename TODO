@@ -39,8 +39,6 @@
 	- Update color documentation for pro
 	- Write user guide
 	- Write layout guide
-- 7 Step Fader?
-- Reset default UD*Button
 
 * Update devices with new menu setup
 	* Instruments
@@ -119,9 +117,9 @@ Instruments:
 * Rytmik
 + Thor
 	- Mod Matrix
+* Ammo100LA
 - Ammo1200
 - Ammo400
-- Ammo100LA
 - MIDI Instrument
 - Nautilus Bass Synthesizer
 
