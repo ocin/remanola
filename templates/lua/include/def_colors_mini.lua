@@ -31,17 +31,6 @@ YELLOW=YELLOW2
 ORANGE=ORANGE2
 
 NOCOLOR=0
--- Redrum hit
-REDRUM_HARD=ORANGE
-REDRUM_MEDIUM=AMBER
-REDRUM_SOFT=YELLOW
-REDRUM_HIT=RED
-REDRUM_NOHIT=WGREEN
-
--- Thor sequencer
-THOR_SEQ_ACTIVE=YELLOW
-THOR_SEQ_STEPON=RED
-THOR_SEQ_STEPOFF=WGREEN
 
 -- Short name color style
 S_RED=RED
@@ -49,3 +38,9 @@ S_WRED=WRED
 S_YELLOW=YELLOW
 S_WYELLOW=YELLOW1
 S_NOCOLOR=0
+
+{% import "devicelist.j2" as d %}
+{% for device in d.devices %}
+{% include "devices/" + device.type + "/" + device.name + "/hooks/def_colors_mini.lua" ignore missing %}
+{% endfor %}
+

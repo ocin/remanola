@@ -37,42 +37,10 @@ end
 
 function handle_changed_playingstep(citemindex, citemname)
 	if(string.match(citemname, "PlayingStep")) then
-		if(g_scopetext == "Redrum") then
-			local playingstep = tonumber(remote.get_item_text_value(itemsindex["PlayingStep"]))
-			local editsteps = math.floor(remote.get_item_value(itemsindex["UDVButton 5-4_6-4"])/42)+1
-			local cstep = (playingstep-1)%16
-			local cpage = math.floor(((playingstep-1))/16)+1
-			local crowstep = (cstep)%8+1
-			local crow = math.floor((cstep)/8)+1+6
-
-			if(editsteps == cpage) then
-{% if lptype == "mini" %}
-				g_updateditems[g_playingbutton] = true
-{% endif %}
-				g_playingbutton = "Button "..tostring(crow).."-"..tostring(crowstep)
-{% if lptype == "mini" %}
-				g_updateditems[g_playingbutton] = true
-{% else %}
-				g_updateall = true
-{% endif %}
-			else
-				g_playingbutton = "Other page"	
-			end
-		elseif(g_scopetext == "Thor") then
-			local playingstep = tonumber(remote.get_item_text_value(itemsindex["PlayingStep"]))
-			local crowstep = (playingstep)%8+1
-			local crow = math.floor((playingstep)/8)+1
-
-{% if lptype == "mini" %}
-			g_updateditems[g_playingbutton] = true
-{% endif %}
-			g_playingbutton = "Button "..tostring(crow).."-"..tostring(crowstep)
-{% if lptype == "mini" %}
-			g_updateditems[g_playingbutton] = true
-{% else %}
-			g_updateall = true
-{% endif %}
-		end
+		{% import "devicelist.j2" as d %}
+		{% for device in d.devices %}
+		{% include "devices/" + device.type + "/" + device.name + "/hooks/handle_changed_playingstep.lua" ignore missing %}
+		{% endfor %}
 	end
 end
 

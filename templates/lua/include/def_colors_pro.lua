@@ -65,21 +65,15 @@ WAMBER="401300"
 WYELLOW=DYELLOW
 YELLOW3="888822"
 
--- Redrum sequencer
-REDRUM_HARD=HRED
-REDRUM_MEDIUM=ORANGE
-REDRUM_SOFT=YELLOW
-REDRUM_HIT=RED
-REDRUM_NOHIT=DGREY
-
--- Thor sequencer
-THOR_SEQ_ACTIVE=YELLOW
-THOR_SEQ_STEPON=RED
-THOR_SEQ_STEPOFF=DGREY
-
 -- Short name color style
 S_RED=5
 S_WRED=7
 S_YELLOW=13
 S_WYELLOW=15
 S_NOCOLOR=0
+
+{% import "devicelist.j2" as d %}
+{% for device in d.devices %}
+{% include "devices/" + device.type + "/" + device.name + "/hooks/def_colors_pro.lua" ignore missing %}
+{% endfor %}
+
