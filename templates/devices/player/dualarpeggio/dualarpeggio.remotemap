@@ -35,6 +35,6 @@ Map	Button 5-4		Pattern On {{ arpnum }}			Arp{{ arpnum }}	// template="BGreenOnO
 Map	Button 5-6		Velocity On {{ arpnum }}			Arp{{ arpnum }}	// template="BGreenOnOff"
 Map	UDVButton 7-1_8-1		Shift Step {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf"
 Map	UDVButton 7-3_8-3		Transpose {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf"
-Map	UDVButton 7-5_8-5		Gate Length {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf"
+Map	MFader 7-5		Gate Length {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf"
 {% endfor -%}
 {% endblock main %}
