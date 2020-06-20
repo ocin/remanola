@@ -17,19 +17,19 @@ local color_templates = {
 	["FEnv"]={enabledcolor=WGREEN, activecolor=YELLOW},
 	["FPerf"]={enabledcolor=WGREEN, activecolor=YELLOW},
 	["FEffect"]={enabledcolor=WGREEN, activecolor=ORANGE},
-        -- Mix Channel
-        ["FMixComp"]={enabledcolor=WGREEN, activecolor=GREEN},
-        ["FMixGate"]={enabledcolor=WRED, activecolor=RED},
-        ["FMixFilter"]={enabledcolor=WORANGE, activecolor=ORANGE},
-        ["FMixEqHF"]={enabledcolor=WRED, activecolor=RED},
-        ["FMixEqHMF"]={enabledcolor=WGREEN, activecolor=GREEN},
-        ["FMixEqLMF"]={enabledcolor=WRED, activecolor=RED},
-        ["FMixEqLF"]={enabledcolor=WGREEN, activecolor=GREEN},
-        -- Drawbars
-        ["DSub"]={enabledcolor=WRED, activecolor=RED},
-        ["DFund"]={enabledcolor=WGREEN, activecolor=GREEN},
-        ["DHarm"]={enabledcolor=WGREEN, activecolor=YELLOW},
-        ["DHarm7"]={enabledcolor=WGREEN, activecolor=ORANGE},
+	-- Mix Channel
+	["FMixComp"]={enabledcolor=WGREEN, activecolor=GREEN},
+	["FMixGate"]={enabledcolor=WRED, activecolor=RED},
+	["FMixFilter"]={enabledcolor=WORANGE, activecolor=ORANGE},
+	["FMixEqHF"]={enabledcolor=WRED, activecolor=RED},
+	["FMixEqHMF"]={enabledcolor=WGREEN, activecolor=GREEN},
+	["FMixEqLMF"]={enabledcolor=WRED, activecolor=RED},
+	["FMixEqLF"]={enabledcolor=WGREEN, activecolor=GREEN},
+	-- Drawbars
+	["DSub"]={enabledcolor=WRED, activecolor=RED},
+	["DFund"]={enabledcolor=WGREEN, activecolor=GREEN},
+	["DHarm"]={enabledcolor=WGREEN, activecolor=YELLOW},
+	["DHarm7"]={enabledcolor=WGREEN, activecolor=ORANGE},
 	-- Special Vocoder Fader
 	["FVCGreen"]={enabledcolor=WGREEN, activecolor=GREEN, disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=89},
 	["FVCFreq"]={enabledcolor=WGREEN, activecolor=GREEN, disabledcolor=NOCOLOR, denabledcolor=WAMBER, dactivecolor=YELLOW, defaultvalue=89},
@@ -52,8 +52,8 @@ local color_templates = {
 	["UDOrange"]={enabledcolor=ORANGE, activecolor=ORANGE},
 	["UDNocolor"]={enabledcolor=NOCOLOR, activecolor=NOCOLOR},
 	-- UD by type
-        ["UDOsc"]={enabledcolor=AMBER, activecolor=AMBER},
-        ["UDOsc2"]={enabledcolor=WAMBER, activecolor=WAMBER},
+	["UDOsc"]={enabledcolor=AMBER, activecolor=AMBER},
+	["UDOsc2"]={enabledcolor=WAMBER, activecolor=WAMBER},
 	["UDAmount"]={enabledcolor=AMBER, activecolor=AMBER},
 	["UDAmount2"]={enabledcolor=WAMBER, activecolor=WAMBER},
 	["UDVol"]={enabledcolor=RED, activecolor=RED},
@@ -64,14 +64,14 @@ local color_templates = {
 	["UDFreq2"]={enabledcolor=WGREEN, activecolor=WGREEN},
 	["UDMisc"]={enabledcolor=YELLOW, activecolor=YELLOW},
 	["UDMisc2"]={enabledcolor=YELLOW3, activecolor=YELLOW3},
-        ["UDLFO"]={enabledcolor=YELLOW, activecolor=YELLOW},
-        ["UDLFO2"]={enabledcolor=WYELLOW, activecolor=WYELLOW},
-        ["UDEnv"]={enabledcolor=YELLOW, activecolor=YELLOW},
-        ["UDEnv2"]={enabledcolor=WYELLOW, activecolor=WYELLOW},
+	["UDLFO"]={enabledcolor=YELLOW, activecolor=YELLOW},
+	["UDLFO2"]={enabledcolor=WYELLOW, activecolor=WYELLOW},
+	["UDEnv"]={enabledcolor=YELLOW, activecolor=YELLOW},
+	["UDEnv2"]={enabledcolor=WYELLOW, activecolor=WYELLOW},
 	["UDEffect"]={enabledcolor=ORANGE, activecolor=ORANGE},
 	["UDEffect2"]={enabledcolor=WORANGE, activecolor=WORANGE},
-        ["UDPerf"]={enabledcolor=YELLOW, activecolor=YELLOW},
-        ["UDPerf2"]={enabledcolor=WYELLOW, activecolor=WYELLOW},
+	["UDPerf"]={enabledcolor=YELLOW, activecolor=YELLOW},
+	["UDPerf2"]={enabledcolor=WYELLOW, activecolor=WYELLOW},
 	-- Buttons
 	["BAmber"]={enabledcolor=AMBER, activecolor=AMBER,  disabledcolor=NOCOLOR},
 	["BRed"]={enabledcolor=RED, activecolor=RED,  disabledcolor=NOCOLOR},
@@ -89,7 +89,7 @@ local color_templates = {
 	["BPerfOnOff"]={enabledcolor=WGREEN,   activecolor=YELLOW,  disabledcolor=NOCOLOR},
 	["BBBlueOnOff"]={enabledcolor=WGREEN,   activecolor=GREEN,  disabledcolor=NOCOLOR},
 	["BBPerfOnOff"]={enabledcolor=WYELLOW,   activecolor=YELLOW,  disabledcolor=NOCOLOR},
-        -- Button On/OFf Mix channel
+		-- Button On/OFf Mix channel
 	["BMixOnOff"]={enabledcolor=WGREEN,   activecolor=GREEN,  disabledcolor=NOCOLOR},
 	-- Red LED
 	["BRedLed"]={enabledcolor=WGREEN,   activecolor=RED,  disabledcolor=NOCOLOR},
@@ -130,11 +130,11 @@ local color_templates = {
 	["BStep"]={enabledcolor=WGREEN,   activecolor=RED,  disabledcolor=NOCOLOR},
 	-- Pad
 	["BPad"]={enabledcolor=WGREEN,   activecolor=GREEN,  disabledcolor=NOCOLOR},
-        -- Keyboard page Pad
-        ["BULPad"]={enabledcolor=ORANGE,   activecolor=ORANGE,  disabledcolor=ORANGE},
-        ["BURPad"]={enabledcolor=GREEN,   activecolor=GREEN,  disabledcolor=GREEN},
-        ["BDLPad"]={enabledcolor=RED,   activecolor=RED,  disabledcolor=RED},
-        ["BDRPad"]={enabledcolor=YELLOW,   activecolor=YELLOW,  disabledcolor=YELLOW},
+	-- Keyboard page Pad
+	["BULPad"]={enabledcolor=ORANGE,   activecolor=ORANGE,  disabledcolor=ORANGE},
+	["BURPad"]={enabledcolor=GREEN,   activecolor=GREEN,  disabledcolor=GREEN},
+	["BDLPad"]={enabledcolor=RED,   activecolor=RED,  disabledcolor=RED},
+	["BDRPad"]={enabledcolor=YELLOW,   activecolor=YELLOW,  disabledcolor=YELLOW},
 	-- Keyboard
 	["BWhitekey"]={enabledcolor=GREEN,   activecolor=GREEN,  disabledcolor=GREEN},
 	["BBlackkey"]={enabledcolor=WGREEN,   activecolor=WGREEN,  disabledcolor=WGREEN},

@@ -6,6 +6,5 @@ function get_veloctity(velocity)
 	if(velocity > 0) then
 		velocity = g_kbdvel
 	end
-
-        return(velocity)
+	return(velocity)
 end

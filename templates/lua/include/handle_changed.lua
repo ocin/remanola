@@ -10,14 +10,14 @@ function handle_changed_devicescope(citemindex, citemname)
 	if(string.match(citemname, "DeviceScope")) then
 		-- g_scrolltext = remote.get_item_text_value(itemsindex["DeviceScope"])
 		g_updateall = true
-       		if(remote.is_item_enabled(itemsindex["DeviceScope"])) then
-             				local newscope = remote.get_item_text_value(itemsindex["DeviceScope"])
+		if(remote.is_item_enabled(itemsindex["DeviceScope"])) then
+			local newscope = remote.get_item_text_value(itemsindex["DeviceScope"])
 			g_scopetext = newscope
 			g_colorscheme = g_scopetext
-       		else
-             				local newscope = ""
+		else
+			local newscope = ""
 			g_scopetext = newscope
-       		end
+		end
 	end
 end
 
@@ -71,9 +71,9 @@ end
 
 function handle_changed_basekey(citemindex, citemname)
 	if(string.match(citemname, "BaseKey")) then
-             			local newbasekey = tonumber(remote.get_item_text_value(itemsindex["BaseKey"]))
+		local newbasekey = tonumber(remote.get_item_text_value(itemsindex["BaseKey"]))
 		if(newbasekey ~= nil) then
-             				g_basekey = newbasekey
+			g_basekey = newbasekey
 		end
 	end
 end

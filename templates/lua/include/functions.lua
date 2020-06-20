@@ -552,8 +552,6 @@ end
 
 function is_up_mfader(buttonname, itemname)
 	local mfader
-
 	first = string.match(itemname, "MFader (...)")
-
 	return(buttonname == "Button "..first)
 end
