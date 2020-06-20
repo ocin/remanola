@@ -146,7 +146,7 @@ local color_templates = {
 	["BSelSound"]={enabledcolor=WAMBER,   activecolor=AMBER,  disabledcolor=NOCOLOR},
 	-- Step sequencer
 	["BStep"]={enabledcolor=DGREEN,   activecolor=RED,  disabledcolor=NOCOLOR},
-	-- Kong Pad
+	-- Drum Pad
 	["BPad"]={enabledcolor=DGREEN,   activecolor=GREEN,  disabledcolor=NOCOLOR},
 	-- Keyboard page Pad
 	["BULPad"]={enabledcolor=MAGENTA,   activecolor=MAGENTA,  disabledcolor=MAGENTA},

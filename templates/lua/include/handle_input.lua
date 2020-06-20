@@ -43,15 +43,11 @@ function handle_input_lightshow(event)
 	end
 end
 
-function handle_input_kong(event, button)
-	if(g_scopetext == "Kong" and get_current_page() == "Main") then
-		local buttonname = get_button_name(button)
-		local padnote = button_to_padnote[buttonname]
-		if(padnote ~= nil) then
-			remote.handle_input({ time_stamp = event.time_stamp, item = 1, value = 1, note = padnote, velocity = button.z })
-			return true
-		end
-	end
+function handle_input_devices(event, button)
+	{% import "devicelist.j2" as d %}
+	{% for device in d.devices %}
+	{% include "devices/" + device.type + "/" + device.name + "/hooks/handle_input_devices.lua" ignore missing %}
+	{% endfor %}
 end
 
 function handle_input_keyboard(event, button)

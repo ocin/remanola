@@ -114,7 +114,7 @@ function remote_process_midi(event)
 				return(true)
 			end
 
-			if(handle_input_kong(event, button)) then
+			if(handle_input_devices(event, button)) then
 				return(true)
 			end
 	
