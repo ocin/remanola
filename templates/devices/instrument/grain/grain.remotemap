@@ -90,7 +90,7 @@ Map	SubPageName		"Spectral Grains"			Grains	SpectralGrains
 Map	Fader 2		Harm Snap			Grains	SpectralGrains	// template="FOsc"
 Map	Fader 3		Harm Filter			Grains	SpectralGrains	// template="FFreq"
 Map	Button 1-4		Curve On 			Grains	SpectralGrains	// template="BRedOnOff"
-Map	UDVButton 7-4_8-4		FFT Size			Grains	SpectralGrains	// template="UDOsc"
+Map	MFader 7-4		FFT Size			Grains	SpectralGrains	// template="UDOsc"
 Map	Fader 5		Curve Amt			Grains	SpectralGrains	// template="FOsc"
 Map	Fader 6		Formant			Grains	SpectralGrains	// template="FEffect"
 Map	Fader 7		Formant Tune			Grains	SpectralGrains	// template="FOsc"
