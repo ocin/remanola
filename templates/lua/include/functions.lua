@@ -140,6 +140,11 @@ function get_button_color(context, itemname, buttonname, value)
 	local textvalue = tonumber(remote.get_item_text_value(itemsindex[itemname]))
 	local text = remote.get_item_text_value(itemsindex[itemname])
 
+	{% import "devicelist.j2" as d %}
+	{% for device in d.devices %}
+	{% include "devices/" + device.type + "/" + device.name + "/hooks/get_button_color.lua" ignore missing %}
+	{% endfor %}
+
 	if(string.find(itemname, "UDHButton %d%-%d_%d%-%d") or string.find(itemname, "UDVButton %d%-%d_%d%-%d")) then
 		if(enabled) then
 			if(g_buttondown[buttonname] ~= nil) then
@@ -151,50 +156,14 @@ function get_button_color(context, itemname, buttonname, value)
 			color = disabledcolor
 		end
 	elseif(string.find(itemname, "Button %d%-%d") or string.find(itemname, "Button C%d") or string.find(itemname, "Button %a")) then
-		if(g_scopetext == "Redrum" and string.match(get_current_page(), "Main") and (string.match(itemname, "Button [78]%-%d"))) then
-			if(g_playingbutton == itemname and (tonumber(remote.get_item_text_value(itemsindex["Button 6-1"])) == 1)) then
-				color = REDRUM_HIT
-			else 
-				if(textvalue == 1) then
-					color = REDRUM_SOFT
-				elseif(textvalue == 2) then
-					color = REDRUM_MEDIUM
-				elseif(textvalue == 3) then
-					color = REDRUM_HARD
-				else
-					color = REDRUM_NOHIT
-				end
-			end
-		elseif(g_scopetext == "Redrum" and string.match(get_current_page(), "Main") and (string.match(itemname, "Button 6%-5"))) then
-			if(textvalue == 1) then
-				color = REDRUM_SOFT
-			elseif(textvalue == 2) then
-				color = REDRUM_MEDIUM
-			elseif(textvalue == 3) then
-				color = REDRUM_HARD
+		if(enabled) then
+			if(value == 1) then
+				color = activecolor
 			else
-				color = REDRUM_NOHIT
-			end
-		elseif(g_scopetext == "Thor" and string.match(get_current_page(), "Step Sequencer") and (string.match(itemname, "Button [12]%-%d"))) then
-			if(g_playingbutton == itemname and (tonumber(remote.get_item_value(itemsindex["Button 8-1"])) == 1)) then
-				color = THOR_SEQ_ACTIVE
-			else 
-				if(value == 1) then
-					color = THOR_SEQ_STEPON
-				else
-					color = THOR_SEQ_STEPOFF
-				end
+				color = enabledcolor
 			end
 		else
-			if(enabled) then
-				if(value == 1) then
-					color = activecolor
-				else
-					color = enabledcolor
-				end
-			else
-				color = disabledcolor
-			end
+			color = disabledcolor
 		end
 	elseif(string.find(itemname, "Knob H%d")) then
 		buttonindex = tonumber(string.sub(buttonname, -1,-1))
@@ -583,8 +552,6 @@ end
 
 function is_up_mfader(buttonname, itemname)
 	local mfader
-
 	first = string.match(itemname, "MFader (...)")
-
 	return(buttonname == "Button "..first)
 end

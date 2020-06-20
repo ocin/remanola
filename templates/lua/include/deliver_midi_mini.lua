@@ -1,5 +1,5 @@
 function deliver_midi_buttons(ret_events)
-        if(g_lightshow == 0 and not g_flashing) then
+	if(g_lightshow == 0 and not g_flashing) then
 		local curdisp
 		local curupdate
 
