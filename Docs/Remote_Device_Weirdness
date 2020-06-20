@@ -1,0 +1,25 @@
+PX7:
+	* Very few parameters remotable
+
+NN-XT:
+	* Very few parameters remotable
+
+Drum sequencer:
+	* On/Off button behaves in a non standard way (Support request #61008)
+
+Rytmik:
+	* Not all parameters are remoteable
+		* For exameple we have End and Release, but not Begin and Attack
+	* Remotable items are not named the same way as there interface counterparts
+		* For exameple "Fade Out" in the interface is "Release" in remote
+	* All remoteable items have underscores in them
+	* There are remotable items that have no corresponding items in the interface
+		* Master_Delay
+		* Master_Decay
+		* Master_Distortion
+
+Pangea and Humana:
+	* There are remoteable items not named the same as in Klang
+		* Klang: "Mod Wheel to Sample Start" Humana, Pangea: "ModWheel_to_SampleStart"
+		* Klang: "Mod Wheel to Filter Cutoff" Humana, Pangea: "ModWheel_to_Filter_Cutoff"
+		* Klang: "Mod Wheel to Amp Levet" Humana, Pangea: "ModWheel_to_Amp_Level"

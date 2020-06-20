@@ -94,7 +94,6 @@ Map:
 
 Instruments:
 * PX-7
-	- Poor implementation?
 * ID8
 * Malstrom
 * Subtractor
@@ -103,7 +102,6 @@ Instruments:
 * Dr.OctoRex
 * Kong
 * NN-XT
-	- Poor implementation?
 * NN-19
 * Parsec
 * Europa
@@ -152,8 +150,7 @@ Players:
 + Note Echo
 	- Fix tempo sync mode
 	- Fix repeats mode
-+ Drum Sequencer
-	- Found a major bug with remoting the play button, has been reported to REason Studios.
+* Drum Sequencer
 
 Utilities:
 * Combinator
