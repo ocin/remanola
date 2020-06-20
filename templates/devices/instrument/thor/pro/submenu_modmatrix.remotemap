@@ -1,0 +1,3 @@
+Map	Button A1		Page=ModMatrix1			{{ curpage }}	// template="BPerfPage"
+Map	Button A2		Page=ModMatrix2			{{ curpage }}	// template="BPerfPage"
+Map	Button A3		Page=ModMatrix3			{{ curpage }}	// template="BPerfPage"
