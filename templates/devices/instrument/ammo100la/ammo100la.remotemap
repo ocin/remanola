@@ -30,17 +30,17 @@ Map	Sel1_95		Range=Cents			Osc
 Map	Sel1_127		Range=Tempo			Osc
 Map	Button 1-1		Oscillator On			Osc	// template="BBlueOnOff"
 Map	UDVButton 1-2_2-2		Waveform			Osc	// template="UDOsc"
-Map	UDVButton 5-2_6-2		Pulse Width	5		Osc	// template="UDOsc"
-Map	UDVButton 7-2_8-2		Rate CV In Amount	5		Osc	// template="UDLFO"
+Map	MFader 5-2		Pulse Width			Osc	// template="UDOsc"
+Map	MFader 7-2		Rate CV In Amount			Osc	// template="UDLFO"
 Map	Fader 3		Low Rate Hz			Osc	LowHz	// template="FFreq"
 Map	Fader 3		High Rate Hz			Osc	HighHz	// template="FFreq"
 Map	UDVButton 1-3_2-3		Rate Semitone			Osc	Semitone	// template="UDFreq"
 Map	UDVButton 1-3_2-3		Cents Detune			Osc	Cents	// template="UDFreq"
 Map	UDVButton 1-3_2-3		Rate Tempo Sync			Osc	Tempo	// template="UDFreq"
 Map	UDVButton 7-4_8-4		Range		SEL1	Osc	// template="UDOsc"
-Map	UDVButton 7-5_8-5		Depth CV In Amount	5		Osc	// template="UDLFO"
+Map	MFader 7-5		Depth CV In Amount			Osc	// template="UDLFO"
 Map	Fader 6		Depth			Osc	// template="FFreq"
-Map	UDVButton 7-7_8-7		Phase CV In Amount	5		Osc	// template="UDLFO"
+Map	MFader 7-7		Phase CV In Amount			Osc	// template="UDLFO"
 Map	Fader 8		Phase			Osc	// template="FOsc"
 // Osc2
 Map	PageName		"Osc2"			Osc2
