@@ -48,9 +48,9 @@ Map	Fader 4		Drum_{{ drumnum }}_Release			Drum{{ drumnum }}	// template="FOsc"
 Map	Fader 5		Drum_{{ drumnum }}_Delay_Amount				Drum{{ drumnum }}	// template="FEffect"
 Map	Fader 6		Drum_{{ drumnum }}_Reverb_Amount			Drum{{ drumnum }}	// template="FEffect"
 Map	Knob V7		Drum_{{ drumnum }}_Pan			Drum{{ drumnum }}	// template="FVol"
-Map	UDVButton 1-8_2-8		Drum_{{ drumnum }}_Hi_Cut_Freq			Drum{{ drumnum }}	// template="FFreq"
-Map	UDVButton 3-8_4-8		Drum_{{ drumnum }}_Lo_Cut_Freq			Drum{{ drumnum }}	// template="FFreq"
-Map	UDVButton 5-8_6-8		Drum_{{ drumnum }}_Dist_Drive			Drum{{ drumnum }}	// template="FEffect"
+Map	MFader 1-8		Drum_{{ drumnum }}_Hi_Cut_Freq			Drum{{ drumnum }}	// template="FFreq"
+Map	MFader 3-8		Drum_{{ drumnum }}_Lo_Cut_Freq			Drum{{ drumnum }}	// template="FFreq"
+Map	MFader 5-8		Drum_{{ drumnum }}_Dist_Drive			Drum{{ drumnum }}	// template="FEffect"
 {% endfor -%}
 // Delay
 Map	PageName		"Delay"			Delay
