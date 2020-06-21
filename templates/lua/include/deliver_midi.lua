@@ -26,3 +26,9 @@ function deliver_midi_sel(ret_events)
 		end
 	end
 end
+
+function deliver_midi_velofader(ret_events)
+	if(g_velofader ~= nil) then
+		table.insert(ret_events, remote.make_midi(MIDI_OUT_GETVERSION))
+	end
+end

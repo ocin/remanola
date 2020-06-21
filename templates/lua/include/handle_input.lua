@@ -9,6 +9,39 @@ function handle_input_sel(event, selnum)
 	end
 end
 
+function handle_input_velofader(event, selnum)
+	if(g_velofader) then
+		updatetime = remote.get_time_ms()
+		timediff = updatetime -g_velofaderlastupdate
+		for buttonname, velocity in pairs(g_velofaderbuttons) do
+			local itemname = get_item_by_button(buttonname)
+			local row = get_button_row(buttonname)
+			local cvalue = remote.get_item_value(itemsindex[itemname])
+			local targetvalue = get_item_bvmap(itemname)[row]
+			local value = 0
+			if(targetvalue > cvalue) then
+				value = cvalue + velocity
+				if(value >= targetvalue) then
+					value = targetvalue
+				end
+			elseif(targetvalue < cvalue) then
+				value = cvalue - velocity
+				if(value <= targetvalue) then
+					value = targetvalue
+				end
+			elseif(targetvalue == cvalue) then
+				value = cvalue
+				g_velofaderbuttons[buttonname] = nil
+				g_velofader = nil
+			end
+			local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
+			remote.handle_input(msg)
+			g_updateall = true
+		end
+		g_velofaderlastupdate = updatetime
+	end
+end
+
 function handle_input_select(event)
 	for itemname,value in pairs(g_select) do
 		local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
@@ -79,9 +112,9 @@ function handle_input_item(event, button)
 		if(buttonname ~= itemname) then
 			local itemtype = get_item_type(itemname)
 			if(itemtype == "Fader" or itemtype == "BigFader" or itemtype == "Drawbar") then
-				local value = get_item_bvmap(itemname)[row]
-				local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
-				remote.handle_input(msg)
+				g_velofader = 1
+				g_velofaderbuttons[buttonname] = button.z
+				g_velofaderlastupdate = remote.get_time_ms()
 				return(true)
 			elseif(itemtype == "Knob") then
 				local oldvalue = remote.get_item_value(itemsindex[itemname])
@@ -132,6 +165,8 @@ function handle_input_item(event, button)
 		end
 	else
 		g_buttondown[buttonname] = nil
+		g_velofaderbuttons[buttonname] = nil
+		g_velofader = nil
 		g_updateall = true
 		local itemtype = get_item_type(itemname)
 		if(itemtype == "Knob") then
@@ -152,17 +187,15 @@ function handle_input_aftertouch(event, button)
 
 	if(buttonname ~= itemname) then
 		local itemtype = get_item_type(itemname)
---		if(itemtype == "Fader" or itemtype == "BigFader" or itemtype == "Drawbar") then
---			if(button.z > 70) then
---				value = get_item_bvmap(itemname)[row] + ((button.z-65)/125) * (get_item_bvmap(itemname)[1]-get_item_bvmap(itemname)[row]) * 2
---				local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
---				remote.handle_input(msg)
---			else
---				value = get_item_bvmap(itemname)[row]
---				local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
---				remote.handle_input(msg)
---			end
--- 			return(true)
+		if(itemtype == "Fader" or itemtype == "BigFader" or itemtype == "Drawbar") then
+			if(button.z > 0) then
+				if(g_velofader) then
+					g_velofaderbuttons[buttonname] = button.z
+					g_velofaderlastupdate = remote.get_time_ms()
+				end
+			end
+			return(true)
+		end
 		if(itemtype == "MFader") then
 			local value = 1
 			if(is_up_mfader(buttonname, itemname)) then
