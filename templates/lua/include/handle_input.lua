@@ -14,29 +14,34 @@ function handle_input_velofader(event, selnum)
 		updatetime = remote.get_time_ms()
 		timediff = updatetime -g_velofaderlastupdate
 		for buttonname, velocity in pairs(g_velofaderbuttons) do
-			local itemname = get_item_by_button(buttonname)
-			local row = get_button_row(buttonname)
-			local cvalue = remote.get_item_value(itemsindex[itemname])
-			local targetvalue = get_item_bvmap(itemname)[row]
-			local value = 0
-			if(targetvalue > cvalue) then
-				value = cvalue + velocity
-				if(value >= targetvalue) then
+			if(velocity > 0) then
+				local itemname = get_item_by_button(buttonname)
+				local row = get_button_row(buttonname)
+				local cvalue = remote.get_item_value(itemsindex[itemname])
+				local targetvalue = get_item_bvmap(itemname)[row]
+				local value = 0
+				if(velocity >= 120) then
 					value = targetvalue
+				elseif(targetvalue > cvalue) then
+					value = cvalue + velocity/50
+					if(value >= targetvalue) then
+						value = targetvalue
+					end
+				elseif(targetvalue < cvalue) then
+					value = cvalue - velocity/50
+					if(value <= targetvalue) then
+						value = targetvalue
+					end
 				end
-			elseif(targetvalue < cvalue) then
-				value = cvalue - velocity
-				if(value <= targetvalue) then
-					value = targetvalue
+				if(targetvalue == cvalue) then
+					value = cvalue
+					g_velofaderbuttons[buttonname] = nil
+					g_velofader = nil
 				end
-			elseif(targetvalue == cvalue) then
-				value = cvalue
-				g_velofaderbuttons[buttonname] = nil
-				g_velofader = nil
+				local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
+				remote.handle_input(msg)
+				g_updateall = true
 			end
-			local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
-			remote.handle_input(msg)
-			g_updateall = true
 		end
 		g_velofaderlastupdate = updatetime
 	end
