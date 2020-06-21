@@ -62,10 +62,11 @@ def buildconfmap(infile, confmapfile):
 			subpageprinted = False
 			continue
 
-		m = re.search('// confmap: genhelptext', line)
-		if m:
-			genhelptext = True
-			continue
+		# m = re.search('// confmap: genhelptext', line)
+		# if m:
+			# genhelptext = True
+			# continue
+		genhelptext = False
 
 		m = re.search('Map\t([^\t]+)\t\tPage=([^\t]+).*\n', line)
 		if m and genhelptext:
@@ -74,10 +75,11 @@ def buildconfmap(infile, confmapfile):
 			if not deviceprinted:
 				c.write('\t["' + device + '"]={\n')
 				deviceprinted = True
-			if not pageprinted:
+			if page is not 'Unknown' and not pageprinted:
 				c.write('\t\t["' + page + '"]={\n')
 				pageprinted = True
-			c.write('\t\t\t["' + item + '"]={helptext="Goto ' + gotopage + '"},\n')
+			if page is not 'Unknown':
+				c.write('\t\t\t["' + item + '"]={helptext="Goto ' + gotopage + '"},\n')
 			continue
 
 		m = re.search('Map\t([^\t]+)\t.*// (.*)', line)
@@ -97,7 +99,8 @@ def buildconfmap(infile, confmapfile):
 				subpageprinted = True
 			if subpage is not 'Unknown':
 				c.write('\t')
-			c.write('\t\t\t["' + item + '"]={' + confmap + '},\n')
+			if page is not 'Unknown':
+				c.write('\t\t\t["' + item + '"]={' + confmap + '},\n')
 			continue
 
 	if subpage is not 'Unknown' and subpageprinted:
