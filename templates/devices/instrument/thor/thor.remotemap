@@ -11,7 +11,7 @@
 {% set modpagedefault="LFO1" -%}
 {# End Variables -#}
 {% block groups %}
-Define Group	Page	Main	Perf	Osc1	Osc2	Osc3	Mixer	Filter1	Filter2	Filter3	FilterEnv	Amp	AmpEnv	ModEnv	GlobalEnv	LFO1	LFO2	Seq	Effects	Shaper	Delay	Chorus	Index	Keyboard	Internal
+Define Group	Page	Main	Perf	Osc1	Osc2	Osc3	Mixer	Filter1	Filter2	Filter3	FilterEnv	Amp	AmpEnv	ModEnv	GlobalEnv	LFO1	LFO2	Seq	Effects	Shaper	Delay	Chorus	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	Index	Keyboard	Internal
 Define Group	OscType	Analog	Wavetable	Phase	FM	Multi	Noise	Off
 Define Group	FilterType	LP	State	Comb	Formant	Bypass
 Define Group	SeqEditMode	Note	Velocity	GateLen	StepDur	Curve1	Curve2
@@ -37,6 +37,10 @@ Map	Button 5-5		Page=LFO1			Index
 Map	Button 6-5		Page=LFO2			Index
 Map	Button 5-6		Page=ModEnv			Index
 Map	Button 6-6		Page=GlobalEnv			Index
+Map	Button 7-1		Page=ModMatrix1			Index	// template="BModMPageHigh"
+Map	Button 7-2		Page=ModMatrix2			Index	// template="BModMPageHigh"
+Map	Button 7-3		Page=ModMatrix3			Index	// template="BModMPageHigh"
+Map	Button 7-4		Page=ModMatrix4			Index	// template="BModMPageHigh"
 Map	Button 1-8		Page=Effects			Index
 Map	Button 2-8		Page=Shaper			Index
 Map	Button 3-8		Page=Delay			Index
@@ -279,6 +283,31 @@ Map	Button 1-1		LFO 2 Key Sync			LFO2	// template="BGreenOnOff"
 Map	Button 2-1		LFO 2 Tempo Sync			LFO2	// template="BGreenOnOff"
 Map	Fader 3		LFO 2 Rate			LFO2	// template="FFreq"
 Map	Fader 4		LFO 2 Delay			LFO2	// template="FEffect"
+{% set page_range = {1: range(1,5), 2: range(5,8), 3: range(8,12), 4: range(12,14) } %}
+{% for mmpage in range(1,5) %}
+// ModMatrix{{ mmpage }}
+Map	PageName		"Mod Matrix {{ mmpage }}"			ModMatrix{{ mmpage }}
+{{ rm.include_menus(curpage="ModMatrix"+mmpage|string, submenu="mod", modpage="ModMatrix"+mmpage|string) -}}
+{% for mmnum in page_range[mmpage] %}
+//Map	UDVButton {{ loop.index*2-1 }}-1_{{ loop.index*2 }}-1		Mod {{ mmnum }} Source			ModMatrix{{ mmpage }}	// template="UDPerf"
+Map	MFader {{ loop.index*2-1 }}-2		Mod {{ mmnum }} Dest Amount			ModMatrix{{ mmpage }}	// template="FAmount"
+//Map	UDVButton {{ loop.index*2-1 }}-3_{{ loop.index*2 }}-3		Mod {{ mmnum }} Dest			ModMatrix{{ mmpage }}	// template="UDPerf"
+{% if mmnum in range(1,12) %}
+Map	MFader {{ loop.index*2-1 }}-7		Mod {{ mmnum }} Scale Amount 			ModMatrix{{ mmpage }}	// template="FAmount"
+//Map	UDVButton {{ loop.index*2-1 }}-8_{{ loop.index*2 }}-8		Mod {{ mmnum }} Scale			ModMatrix{{ mmpage }}	// template="UDPerf"
+{% endif %}
+{% if mmnum in range(8,12) %}
+Map	MFader {{ loop.index*2-1 }}-4		Mod {{ mmnum }} Dest 2 Amount			ModMatrix{{ mmpage }}	// template="FAmount"
+//Map	UDVButton {{ loop.index*2-1 }}-5_{{ loop.index*2 }}-5		Mod {{ mmnum }} Dest 2			ModMatrix{{ mmpage }}	// template="UDPerf"
+{% endif %}
+{% if mmnum in range(12,14) %}
+Map	MFader {{ loop.index*2-1 }}-5		Mod {{ mmnum }} Scale Amount 			ModMatrix{{ mmpage }}	// template="FAmount"
+//Map	UDVButton {{ loop.index*2-1 }}-6_{{ loop.index*2 }}-6		Mod {{ mmnum }} Scale			ModMatrix{{ mmpage }}	// template="UDPerf"
+Map	MFader {{ loop.index*2-1 }}-7		Mod {{ mmnum }} Scale 2 Amount 			ModMatrix{{ mmpage }}	// template="FAmount"
+//Map	UDVButton {{ loop.index*2-1 }}-8_{{ loop.index*2 }}-8		Mod {{ mmnum }} Scale 2			ModMatrix{{ mmpage }}	// template="UDPerf"
+{% endif %}
+{% endfor %}
+{% endfor %}
 // Step Sequencer 1
 Map	PageName		"Step Sequencer"			Seq
 {{ rm.include_menus(curpage="Seq") -}}
