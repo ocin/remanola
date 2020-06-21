@@ -24,6 +24,16 @@ function deliver_midi_buttons(ret_events)
 						color = YELLOW
 					end
 
+					if(string.match(itemname, "Button C5") and (g_debugupdate ~= 0)) then
+						if(g_debugupdate == 1) then
+							g_debugupdate = 2
+							color = RED
+						else
+							g_debugupdate = 1
+							color = BLUE
+						end
+					end
+
 					if(color == nil) then
 						error(string.format("Undefined color, device: %s page: %s item: %s", g_colorscheme, get_current_page(), itemname))
 					end
