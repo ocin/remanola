@@ -23,3 +23,6 @@ Pangea and Humana:
 		* Klang: "Mod Wheel to Sample Start" Humana, Pangea: "ModWheel_to_SampleStart"
 		* Klang: "Mod Wheel to Filter Cutoff" Humana, Pangea: "ModWheel_to_Filter_Cutoff"
 		* Klang: "Mod Wheel to Amp Levet" Humana, Pangea: "ModWheel_to_Amp_Level"
+
+Thor:
+	* ModMatrix dest and source are not remotable

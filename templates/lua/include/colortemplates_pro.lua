@@ -110,7 +110,8 @@ local color_templates = {
 	["BPerformancePage"]={enabledcolor=DCYAN,   activecolor=CYAN,  disabledcolor=NOCOLOR},
 	["BPerfPage"]={enabledcolor=DCYAN,   activecolor=CYAN,  disabledcolor=NOCOLOR},
 	["BLFOPage"]={enabledcolor=DYELLOW,   activecolor=YELLOW,  disabledcolor=NOCOLOR},
-	["BEnvPage"]={enabledcolor=DYELLOW,   activecolor=YELLOW,  disabledcolor=NOCOLOR},
+	["BEnvPage"]={enabledcolor=HYELLOW,   activecolor=YELLOW,  disabledcolor=NOCOLOR},
+	["BModMPage"]={enabledcolor=DYELLOW,   activecolor=YELLOW,  disabledcolor=NOCOLOR},
 	-- Button Page (High intensity version)
 	["BMainPageHigh"]={enabledcolor=WHITE,   activecolor=WHITE,  disabledcolor=NOCOLOR},
 	["BIndexPageHigh"]={enabledcolor=WHITE,   activecolor=WHITE,  disabledcolor=NOCOLOR},
@@ -129,6 +130,7 @@ local color_templates = {
 	["BPerfPageHigh"]={enabledcolor=CYAN,   activecolor=CYAN,  disabledcolor=NOCOLOR},
 	["BLFOPageHigh"]={enabledcolor=YELLOW,   activecolor=YELLOW,  disabledcolor=NOCOLOR},
 	["BEnvPageHigh"]={enabledcolor=YELLOW,   activecolor=YELLOW,  disabledcolor=NOCOLOR},
+	["BModMPageHigh"]={enabledcolor=YELLOW,   activecolor=YELLOW,  disabledcolor=NOCOLOR},
 	-- Mute/Solo
 	["BMute"]={enabledcolor=DRED,   activecolor=RED,  disabledcolor=NOCOLOR},
 	["BSolo"]={enabledcolor=WAMBER,   activecolor=GREEN,  disabledcolor=NOCOLOR},

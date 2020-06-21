@@ -111,6 +111,7 @@ local color_templates = {
 	["BPerfPage"]={enabledcolor=YELLOW,   activecolor=RED,  disabledcolor=NOCOLOR},
 	["BLFOPage"]={enabledcolor=YELLOW,   activecolor=RED,  disabledcolor=NOCOLOR},
 	["BEnvPage"]={enabledcolor=YELLOW,   activecolor=RED,  disabledcolor=NOCOLOR},
+	["BModMPage"]={enabledcolor=YELLOW,   activecolor=RED,  disabledcolor=NOCOLOR},
 	-- Mute/Solo
 	["BMute"]={enabledcolor=WRED,   activecolor=RED,  disabledcolor=NOCOLOR},
 	["BSolo"]={enabledcolor=WAMBER,   activecolor=GREEN,  disabledcolor=NOCOLOR},
