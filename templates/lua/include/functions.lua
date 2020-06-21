@@ -89,7 +89,7 @@ function get_button_color(context, itemname, buttonname, value)
 	local enabled = remote.is_item_enabled(itemsindex[itemname])
 	local value = remote.get_item_state(itemsindex[itemname]).value
 
-	local citem_conf_map = get_item_conf_map(itemname, context, get_current_page())
+	local citem_conf_map = get_item_conf_map(itemname, context, get_current_page(), "template")
 
 	if(citem_conf_map.template ~= nil) then
 		citem_conf_map_template = color_templates[citem_conf_map.template]	
@@ -534,13 +534,13 @@ function is_up_udupbutton(buttonname, itemname)
 	udtype,first,second = string.match(itemname, "UD(.)Button (...)_(...)")
 
 	if(udtype == 'V') then
-		if(get_item_conf_map(itemname, g_colorscheme, get_current_page()).inverted) then
+		if(get_item_conf_map(itemname, g_colorscheme, get_current_page(), "inverted")) then
 			upbutton = second
 		else
 			upbutton = first
 		end
 	else
-		if(get_item_conf_map(itemname, g_colorscheme, get_current_page()).inverted) then
+		if(get_item_conf_map(itemname, g_colorscheme, get_current_page(), "inverted")) then
 			upbutton = first
 		else
 			upbutton = second
