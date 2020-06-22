@@ -28,7 +28,10 @@ function deliver_midi_sel(ret_events)
 end
 
 function deliver_midi_velofader(ret_events)
-	if(g_velofader ~= nil) then
-		table.insert(ret_events, remote.make_midi(MIDI_OUT_GETVERSION))
+	for buttonname, velocity in pairs(g_velofaderbuttons) do
+		if(velocity ~= nil) then
+			table.insert(ret_events, remote.make_midi(MIDI_OUT_GETVERSION))
+			return
+		end
 	end
 end
