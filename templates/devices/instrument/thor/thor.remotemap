@@ -477,7 +477,7 @@ Map	Button 8-1		Delay Sync			Delay	// template="BGreenOnOff"
 Map	Fader 2		Delay Time			Delay	// template="FFreq"
 Map	Fader 3		Delay Feedback			Delay	// template="FEffect"
 Map	Fader 5		Delay Rate			Delay	// template="FFreq"
-Map	Fader 6		Delay Amt			Delay	// template="FFreq"
+Map	Fader 6		Delay Amt			Delay	// template="FLFO"
 Map	Fader 8		Delay Dry Wet			Delay	// template="FEffect"
 // Chorus
 Map	PageName		"Chorus"			Chorus

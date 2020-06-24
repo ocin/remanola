@@ -165,68 +165,6 @@ function get_button_color(context, itemname, buttonname, value)
 		else
 			color = disabledcolor
 		end
-	elseif(string.find(itemname, "Knob H%d")) then
-		buttonindex = tonumber(string.sub(buttonname, -1,-1))
-		if(value > 64) then
-			if(buttonindex >= 5) then
-				buttonvalue = get_item_bvmap(itemname)[buttonindex-1]
-				if(value > buttonvalue) then
-					color = activecolor
-				else 
-					color = enabledcolor
-				end
-			else
-				color = enabledcolor
-			end
-		elseif(value < 64) then
-			if(buttonindex <= 4) then
-				buttonvalue = get_item_bvmap(itemname)[buttonindex]
-				if(value <= buttonvalue) then
-					color = activecolor
-				else 
-					color = enabledcolor
-				end
-			else
-				color = enabledcolor
-			end
-		else
-			if(buttonindex == 4 or buttonindex == 5) then
-				color = activecolor
-			else
-				color = enabledcolor
-			end
-		end
-	elseif(string.find(itemname, "Knob V%d")) then
-		buttonindex = tonumber(string.sub(buttonname, -3,-3))
-		if(value > 64) then
-			if(buttonindex <= 4) then
-				buttonvalue = get_item_bvmap(itemname)[buttonindex+1]
-				if(value > buttonvalue) then
-					color = activecolor
-				else 
-					color = enabledcolor
-				end
-			else
-				color = enabledcolor
-			end
-		elseif(value < 64) then
-			if(buttonindex >= 5) then
-				buttonvalue = get_item_bvmap(itemname)[buttonindex-1]
-				if(value < buttonvalue) then
-					color = activecolor
-				else 
-					color = enabledcolor
-				end
-			else
-				color = enabledcolor
-			end
-		else
-			if(buttonindex == 4 or buttonindex == 5) then
-				color = activecolor
-			else
-				color = enabledcolor
-			end
-		end
 	else
 		if(string.find(itemname, "Drawbar %d")) then
 			buttonindex = tonumber(string.sub(buttonname, -3,-3))
@@ -242,6 +180,12 @@ function get_button_color(context, itemname, buttonname, value)
 			buttonvalue = get_item_bvmap(itemname)[buttonindex%2+1]
 		elseif(string.find(itemname, "Fader %d")) then
 			buttonindex = tonumber(string.sub(buttonname, -3,-3))
+			buttonvalue = get_item_bvmap(itemname)[buttonindex]
+		elseif(string.find(itemname, "Knob V%d")) then
+			buttonindex = tonumber(string.sub(buttonname, -3,-3))
+			buttonvalue = get_item_bvmap(itemname)[buttonindex]
+		elseif(string.find(itemname, "Knob H%d")) then
+			buttonindex = 9-tonumber(string.sub(buttonname, -1,-1))
 			buttonvalue = get_item_bvmap(itemname)[buttonindex]
 		end
 
@@ -283,9 +227,58 @@ function get_button_color(context, itemname, buttonname, value)
 					color = enabledcolor
 				end
 			end
+		elseif(string.find(itemname, "Knob H%d") or string.find(itemname, "Knob V%d")) then
+			if(value > 64) then
+				if(buttonindex <= 4) then
+					nextbuttonvalue = 127
+					if(buttonindex < 8) then
+						nextbuttonvalue = get_item_bvmap(itemname)[buttonindex+1] 
+					end
+
+					if(value >= buttonvalue) then
+						color = activecolor
+					elseif((value > nextbuttonvalue) and (value < buttonvalue)) then
+						color = dim_color(enabledcolor, activecolor, (value - nextbuttonvalue)/(buttonvalue - nextbuttonvalue))
+					else 
+						color = enabledcolor
+					end
+				else
+					color = enabledcolor
+				end
+			elseif(value < 64) then
+				if(buttonindex >= 5) then
+					prevbuttonvalue = 0
+					if(buttonindex ~= 0) then
+						prevbuttonvalue = get_item_bvmap(itemname)[buttonindex-1] 
+					end
+
+					if(value <= buttonvalue) then
+						color = activecolor
+					elseif((value < prevbuttonvalue) and (value > buttonvalue)) then
+						color = dim_color(enabledcolor, activecolor, (prevbuttonvalue - value)/(prevbuttonvalue - buttonvalue))
+					else 
+						color = enabledcolor
+					end
+				else
+					color = enabledcolor
+				end
+			else
+				if(buttonindex == 4 or buttonindex == 5) then
+					color = activecolor
+				else
+					color = enabledcolor
+				end
+			end
 		else
+			prevbuttonvalue = 0
+			if(buttonindex ~= 0) then
+				prevbuttonvalue = get_item_bvmap(itemname)[buttonindex-1] 
+			end
+				
 			if(value >= buttonvalue) then
 				color = activecolor
+			elseif((value > prevbuttonvalue) and (value < buttonvalue)) then
+				color = dim_color(enabledcolor, activecolor, (value - prevbuttonvalue)/(buttonvalue - prevbuttonvalue))
 			else 
 				color = enabledcolor
 			end

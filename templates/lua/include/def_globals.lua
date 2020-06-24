@@ -41,6 +41,8 @@ g_beatupdatetime = nil
 g_basekey = 2
 g_kbdvel = 100
 g_buttondown = {}
+g_velofaderbuttons = {}
+g_velofaderlastupdate = 0
 g_debugupdate = 0
 
 g_updateditems = {}
