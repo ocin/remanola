@@ -16,10 +16,10 @@ function handle_input_velofader(event, selnum)
 		if(velocity > 0) then
 			local itemname = get_item_by_button(buttonname)
 			local row = get_button_row(buttonname)
+			local col = get_button_col(buttonname)
 			local targetvalue = get_item_bvmap(itemname)[row]
 			if(string.find(itemname, "Knob H%d")) then
-				local col = get_button_col(buttonname)
-				local targetvalue = get_item_bvmap(itemname)[col]
+				targetvalue = get_item_bvmap(itemname)[9-col]
 			end
 			local cvalue = remote.get_item_value(itemsindex[itemname])
 			-- This is number of seconds to go from 0 to 127 at minimum velocity
@@ -132,8 +132,8 @@ function handle_input_item(event, button)
 				local oldvalue = remote.get_item_value(itemsindex[itemname])
 				local value
 
-				if(get_knob_type(itemname) == 'H') then
-					if((oldvalue < 64 and col == 5) or (oldvalue > 64 and col == 4)) then
+				if(string.find(itemname, "Knob H%d")) then
+					if((oldvalue > 64 and col == 4) or (oldvalue < 64 and col == 5)) then
 						value = 64
 						local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
 						remote.handle_input(msg)
