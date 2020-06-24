@@ -94,25 +94,25 @@ function get_button_color(context, itemname, buttonname, value)
 	end
 
 	if(citem_conf_map_template ~= nil) then
-		if(activecolor == nil) then
+		if(citem_conf_map_template.activecolor ~= nil) then
 			activecolor = citem_conf_map_template.activecolor
 		end
-		if(enabledcolor == nil) then
+		if(citem_conf_map_template.enabledcolor ~= nil) then
 			enabledcolor = citem_conf_map_template.enabledcolor
 		end
-		if(disabledcolor == nil) then
+		if(citem_conf_map_template.disabledcolor ~= nil) then
 			disabledcolor = citem_conf_map_template.disabledcolor
 		end
-		if(dactivecolor == nil) then
+		if(citem_conf_map_template.dactivecolor ~= nil) then
 			dactivecolor = citem_conf_map_template.dactivecolor
 		end
-		if(denabledcolor == nil) then
+		if(citem_conf_map_template.denabledcolor ~= nil) then
 			denabledcolor = citem_conf_map_template.denabledcolor
 		end
-		if(maxcolor == nil) then
+		if(citem_conf_map_template.maxcolor ~= nil) then
 			maxcolor = citem_conf_map_template.maxcolor
 		end
-		if(defaultvalue == nil) then
+		if(citem_conf_map_template.defaultvalue ~= nil) then
 			defaultvalue = citem_conf_map_template.defaultvalue
 		end
 	end
