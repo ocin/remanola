@@ -47,7 +47,9 @@ function get_item_conf_map_field(context, page, itemname, field)
 		field_value = check_item_conf_map("Default", "Default", subpage, itemname, field)
 	end
 	local defaultitemname = string.gsub(itemname, " .+", " *")
-	field_value = check_item_conf_map(context, page, subpage, defaultitemname, field)
+	if(field_value == nil) then
+		field_value = check_item_conf_map(context, page, subpage, defaultitemname, field)
+	end
 	if(field_value == nil) then
 		field_value = check_item_conf_map(context, "Default", subpage, defaultitemname, field)
 	end
