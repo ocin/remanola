@@ -22,6 +22,7 @@ Map	LFOSelect		LFO Select
 Map	EnvSelect		Env Select
 // Index
 Map	PageName		"Index"			Index
+{{ rm.include_menus(curpage="Index") -}}
 Map	Button 1-1		Page=Main			Index
 Map	Button 1-2		Page=Mixer			Index	// template="BAmpPage"
 Map	Button 1-3		Page=Amp			Index
