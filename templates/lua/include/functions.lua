@@ -4,11 +4,7 @@ function get_item_bvmap(itemname)
 	local currentpage = get_current_page()
 	local scope = g_colorscheme
 
-	local item_conf_map = get_item_conf_map(itemname, scope, currentpage)
-
-	if(item_conf_map.bvmap ~= nil) then
-		itemtype = item_conf_map.bvmap
-	end
+	local itemtype = get_item_conf_map_field(scope, currentpage, itemname, "bvmap")
 
 	if(item_bvmap[itemtype] == nil) then
 		itemtype = "Default"
@@ -17,7 +13,13 @@ function get_item_bvmap(itemname)
 	return(item_bvmap[itemtype])
 end
 
-function get_item_conf_map(itemname, context, page)
+function get_item_conf_map_field(context, page, itemname, field)
+	local defaultitemname = string.gsub(itemname, " .+", " *")
+
+	if(field == nil) then
+		error("Field is nil")
+	end
+
 	if(string.match(get_current_page(), "Internal")) then
 		context = "Default"
 	end
@@ -31,54 +33,48 @@ function get_item_conf_map(itemname, context, page)
 		context = "Default"
 	end
 
-	if(page == "Keyboard" and (get_current_kbdpage() == "Kbd" or get_current_kbdpage() == "Drum") and item_conf_map["Default"][page][get_current_kbdpage()][itemname] ~= nil) then
-		return(item_conf_map["Default"][page][get_current_kbdpage()][itemname])
-	end
+	local subpage = get_current_subpage()
 
-	if((item_conf_map[context][page] ~= nil) and (item_conf_map[context][page][get_current_subpage()] ~= nil) and (item_conf_map[context][page][get_current_subpage()][itemname] ~= nil)) then
-		return(item_conf_map[context][page][get_current_subpage()][itemname])
+	local field_value = check_all_conf_map(context, page, subpage, itemname, field)
+	if(field_value == nil) then
+		field_value = check_all_conf_map(context, page, subpage, defaultitemname, field)
 	end
-
-	if(item_conf_map[context][page] == nil or item_conf_map[context][page][itemname] == nil) then
-		wildpage = string.gsub(page, "%d+", "*")
-		-- Parsec and Malstrom uses A/B naming
-		wildpage = string.gsub(wildpage, " A", " *")
-		wildpage = string.gsub(wildpage, " B", " *")
-		-- Revival uses alternate naming of sections
-		wildpage = string.gsub(wildpage, "Attack", "*")
-		wildpage = string.gsub(wildpage, "Primary", "*")
-		wildpage = string.gsub(wildpage, "Secondary", "*")
-		wildpage = string.gsub(wildpage, "Release", "*")
-		if((item_conf_map[context][wildpage] ~= nil) and (item_conf_map[context][wildpage][get_current_subpage()] ~= nil) and (item_conf_map[context][wildpage][get_current_subpage()][itemname] ~= nil)) then
-			return(item_conf_map[context][wildpage][get_current_subpage()][itemname])
-		end
-		if(item_conf_map[context][wildpage] == nil or item_conf_map[context][wildpage][itemname] == nil) then
-			if(item_conf_map[context]["Default"] == nil) then
-				context = "Default"
-			end
-			if(item_conf_map[context]["Default"][itemname] == nil) then
-				if(item_conf_map["Default"][page] == nil or item_conf_map["Default"][page][itemname] == nil) then
-					context = "Default"
-					page = "Default"
-				else
-					context = "Default"
-				end	
-			else
-				page = "Default"
-			end
-		else
-			page = wildpage
+	if(field_value == nil and subpage ~= "Unknown") then
+		field_value = check_all_conf_map(context, page, "Unknown", itemname, field)
+		if(field_value == nil) then
+			field_value = check_all_conf_map(context, page, "Unknown", defaultitemname, field)
 		end
 	end
 
-	local citem_conf_map = item_conf_map[context][page][itemname]
+	return(field_value)
+end
 
-	if(not citem_conf_map) then
-		local defaultitemname = string.gsub(itemname, " .+", " *")
-		citem_conf_map = item_conf_map[context][page][defaultitemname]
+function check_all_conf_map(context, page, subpage, itemname, field)
+	local field_value = check_item_conf_map(context, page, subpage, itemname, field)
+	if(field_value == nil) then
+		field_value = check_item_conf_map(context, "Default", subpage, itemname, field)
+	end
+	if(field_value == nil) then
+		field_value = check_item_conf_map("Default", page, subpage, itemname, field)
+	end
+	if(field_value == nil) then
+		field_value = check_item_conf_map("Default", "Default", subpage, itemname, field)
 	end
 
-	return(citem_conf_map)
+	return(field_value)
+end
+
+function check_item_conf_map(context, page, subpage, itemname, field)
+	if(subpage ~= "Unknown") then
+		if(item_conf_map[context] and item_conf_map[context][page] and item_conf_map[context][page][subpage] and item_conf_map[context][page][subpage][itemname] and item_conf_map[context][page][subpage][itemname][field]) then
+			return(item_conf_map[context][page][subpage][itemname][field])
+		end
+	else
+		if(item_conf_map[context] and item_conf_map[context][page] and item_conf_map[context][page][itemname] and item_conf_map[context][page][itemname][field]) then
+			return(item_conf_map[context][page][itemname][field])
+		end
+	end
+	return(nil)
 end
 
 function get_button_color(context, itemname, buttonname, value)
@@ -89,44 +85,44 @@ function get_button_color(context, itemname, buttonname, value)
 	local enabled = remote.is_item_enabled(itemsindex[itemname])
 	local value = remote.get_item_state(itemsindex[itemname]).value
 
-	local citem_conf_map = get_item_conf_map(itemname, context, get_current_page())
-
-	if(citem_conf_map.template ~= nil) then
-		citem_conf_map_template = color_templates[citem_conf_map.template]	
-	end
-
 	-- Colors
-	local activecolor = citem_conf_map.activecolor
-	local enabledcolor = citem_conf_map.enabledcolor
-	local disabledcolor = citem_conf_map.disabledcolor
-	local dactivecolor = citem_conf_map.dactivecolor
-	local denabledcolor = citem_conf_map.denabledcolor
-	local maxcolor = citem_conf_map.maxcolor
+	local activecolor = get_item_conf_map_field(context, get_current_page(), itemname, "activecolor")
+	local enabledcolor = get_item_conf_map_field(context, get_current_page(), itemname, "enabledcolor")
+	local disabledcolor = get_item_conf_map_field(context, get_current_page(), itemname, "disabledcolor")
+	local dactivecolor = get_item_conf_map_field(context, get_current_page(), itemname, "dactivecolor")
+	local denabledcolor = get_item_conf_map_field(context, get_current_page(), itemname, "denabledcolor")
+	local maxcolor = get_item_conf_map_field(context, get_current_page(), itemname, "maxcolor")
 	--Config
-	local defaultvalue = citem_conf_map.defaultvalue
+	local defaultvalue = get_item_conf_map_field(context, get_current_page(), itemname, "defaultvalue")
+
+	local citem_conf_map_template = color_templates[get_item_conf_map_field(context, get_current_page(), itemname, "template")]
 
 	if(citem_conf_map_template ~= nil) then
-		if(activecolor == nil) then
+		if(citem_conf_map_template.activecolor ~= nil) then
 			activecolor = citem_conf_map_template.activecolor
 		end
-		if(enabledcolor == nil) then
+		if(citem_conf_map_template.enabledcolor ~= nil) then
 			enabledcolor = citem_conf_map_template.enabledcolor
 		end
-		if(disabledcolor == nil) then
+		if(citem_conf_map_template.disabledcolor ~= nil) then
 			disabledcolor = citem_conf_map_template.disabledcolor
 		end
-		if(dactivecolor == nil) then
+		if(citem_conf_map_template.dactivecolor ~= nil) then
 			dactivecolor = citem_conf_map_template.dactivecolor
 		end
-		if(denabledcolor == nil) then
+		if(citem_conf_map_template.denabledcolor ~= nil) then
 			denabledcolor = citem_conf_map_template.denabledcolor
 		end
-		if(maxcolor == nil) then
+		if(citem_conf_map_template.maxcolor ~= nil) then
 			maxcolor = citem_conf_map_template.maxcolor
 		end
-		if(defaultvalue == nil) then
+		if(citem_conf_map_template.defaultvalue ~= nil) then
 			defaultvalue = citem_conf_map_template.defaultvalue
 		end
+	end
+
+	if(activecolor == nil) then
+		error(string.format("activecolor is nil, device: %s page: %s item: %s", context, get_current_page(), itemname))
 	end
 
 	if(denabledcolor == nil) then
@@ -167,7 +163,7 @@ function get_button_color(context, itemname, buttonname, value)
 		end
 	else
 		if(string.find(itemname, "Drawbar %d")) then
-			buttonindex = tonumber(string.sub(buttonname, -3,-3))
+			buttonindex = 9-tonumber(string.sub(buttonname, -3,-3))
 			buttonvalue = get_item_bvmap(itemname)[buttonindex]
 		elseif(string.find(itemname, "Meter %d")) then
 			buttonindex = tonumber(string.sub(buttonname, -3,-3))
@@ -202,7 +198,7 @@ function get_button_color(context, itemname, buttonname, value)
 			else 
 				color = enabledcolor
 			end
-		elseif((string.find(itemname, "Fader %d")) or (string.find(itemname, "BigFader %d")) or (string.find(itemname, "Meter %d"))) then	
+		elseif((string.find(itemname, "Fader %d")) or (string.find(itemname, "BigFader %d")) or (string.find(itemname, "Meter %d")) or (string.find(itemname, "Drawbar %d"))) then	
 			nextbuttonvalue = 0
 			if(buttonindex ~= 8) then
 				nextbuttonvalue = get_item_bvmap(itemname)[buttonindex+1] 
@@ -399,6 +395,10 @@ end
 function get_current_subpage()
 	local subpagename = "Unknown"
 
+	if(get_current_page() == "Keyboard") then
+		return(get_current_kbdpage())
+	end
+
 	if(remote.is_item_enabled(itemsindex["SubPageName"])) then
 		subpagename = remote.get_item_text_value(itemsindex["SubPageName"])
 	end
@@ -527,13 +527,13 @@ function is_up_udupbutton(buttonname, itemname)
 	udtype,first,second = string.match(itemname, "UD(.)Button (...)_(...)")
 
 	if(udtype == 'V') then
-		if(get_item_conf_map(itemname, g_colorscheme, get_current_page()).inverted) then
+		if(get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "inverted")) then
 			upbutton = second
 		else
 			upbutton = first
 		end
 	else
-		if(get_item_conf_map(itemname, g_colorscheme, get_current_page()).inverted) then
+		if(get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "inverted")) then
 			upbutton = first
 		else
 			upbutton = second

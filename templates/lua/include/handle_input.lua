@@ -21,6 +21,9 @@ function handle_input_velofader(event, selnum)
 			if(string.find(itemname, "Knob H%d")) then
 				targetvalue = get_item_bvmap(itemname)[9-col]
 			end
+			if(string.find(itemname, "Drawbar %d")) then
+				targetvalue = get_item_bvmap(itemname)[9-row]
+			end
 			local cvalue = remote.get_item_value(itemsindex[itemname])
 			-- This is number of seconds to go from 0 to 127 at minimum velocity
 			local divider=3
@@ -184,7 +187,7 @@ function handle_input_item(event, button)
 		g_updateall = true
 		local itemtype = get_item_type(itemname)
 		if(itemtype == "Knob") then
-			if(get_item_conf_map(itemname,g_colorscheme, get_current_page()).resetonrel) then
+			if(get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "resetonrel")) then
 				local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = 64 }
 				remote.handle_input(msg)
 				return true
@@ -254,7 +257,7 @@ function handle_input_helpmode(event, button)
 			g_scrolltext = remote.get_item_name(itemsindex[itemname])
 		end
 		if(g_scrolltext == "") then
-			g_scrolltext = get_item_conf_map(itemname, g_colorscheme, get_current_page()).helptext
+			g_scrolltext = get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "helptext")
 			if(g_scrolltext == nil) then
 				g_scrolltext = "Unknown: "..itemname
 			end

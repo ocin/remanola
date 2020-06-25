@@ -136,42 +136,42 @@ function deliver_midi_lightshow(ret_events)
 end
 
 function deliver_midi_transport(ret_events)
-      if(get_current_docpage() == "Transport") then
-              if(remote.get_item_value(itemsindex["Button D1"]) > 0) then
-                      if(g_startbar) then
-                              g_barupdatetime = remote.get_time_ms()
-                              g_startbar = false
-                              g_barupdate = true
-                              table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button D1"], bit.bor(RED, COPY))))
-                      elseif(g_startbeat) then
-                              g_beatupdatetime = remote.get_time_ms()
-                              g_startbeat = false
-                              g_beatupdate = true
-                              table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button D1"], bit.bor(WAMBER, COPY))))
-                      end
+	if(get_current_docpage() == "Transport") then
+		if(remote.get_item_value(itemsindex["Button D1"]) > 0) then
+			if(g_startbar) then
+				g_barupdatetime = remote.get_time_ms()
+				g_startbar = false
+				g_barupdate = true
+				table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button D1"], bit.bor(RED, COPY))))
+			elseif(g_startbeat) then
+				g_beatupdatetime = remote.get_time_ms()
+				g_startbeat = false
+				g_beatupdate = true
+				table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button D1"], bit.bor(WAMBER, COPY))))
+			end
 
-                      if(g_barupdate) then
-                              if(g_barupdatetime + 200 < remote.get_time_ms()) then
-                                      g_barupdate = false
-                                      table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button D1"], bit.bor(GREEN, COPY))))
-                              end
-                      elseif(g_beatupdate) then
-                              if(g_beatupdatetime + 200 < remote.get_time_ms()) then
-                                      g_beatupdate = false
-                                      table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button D1"], bit.bor(GREEN, COPY))))
-                              end
-                      end
-              else
-                      g_startbar = false
-                      g_startbeat = false
-                      g_barupdate = false
-                      g_beatupdate = false
-              end
-      else
-              g_startbar = false
-              g_startbeat = false
-              g_barupdate = false
-              g_beatupdate = false
-      end
+			if(g_barupdate) then
+				if(g_barupdatetime + 200 < remote.get_time_ms()) then
+					g_barupdate = false
+					table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button D1"], bit.bor(GREEN, COPY))))
+				end
+			elseif(g_beatupdate) then
+				if(g_beatupdatetime + 200 < remote.get_time_ms()) then
+					g_beatupdate = false
+					table.insert(ret_events, remote.make_midi(string.format("%s %02x", buttons["Button D1"], bit.bor(GREEN, COPY))))
+				end
+			end
+		else
+			g_startbar = false
+			g_startbeat = false
+			g_barupdate = false
+			g_beatupdate = false
+		end
+	else
+		g_startbar = false
+		g_startbeat = false
+		g_barupdate = false
+		g_beatupdate = false
+	end
 end
 
