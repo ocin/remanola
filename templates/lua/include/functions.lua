@@ -14,6 +14,8 @@ function get_item_bvmap(itemname)
 end
 
 function get_item_conf_map_field(context, page, itemname, field)
+	local defaultitemname = string.gsub(itemname, " .+", " *")
+
 	if(field == nil) then
 		error("Field is nil")
 	end
@@ -32,10 +34,22 @@ function get_item_conf_map_field(context, page, itemname, field)
 	end
 
 	local subpage = get_current_subpage()
-	if(page == "Keyboard") then
-		subpage = get_current_kbdpage()
+
+	local field_value = check_all_conf_map(context, page, subpage, itemname, field)
+	if(field_value == nil) then
+		field_value = check_all_conf_map(context, page, subpage, defaultitemname, field)
+	end
+	if(field_value == nil and subpage ~= "Unknown") then
+		field_value = check_all_conf_map(context, page, "Unknown", itemname, field)
+		if(field_value == nil) then
+			field_value = check_all_conf_map(context, page, "Unknown", defaultitemname, field)
+		end
 	end
 
+	return(field_value)
+end
+
+function check_all_conf_map(context, page, subpage, itemname, field)
 	local field_value = check_item_conf_map(context, page, subpage, itemname, field)
 	if(field_value == nil) then
 		field_value = check_item_conf_map(context, "Default", subpage, itemname, field)
@@ -45,19 +59,6 @@ function get_item_conf_map_field(context, page, itemname, field)
 	end
 	if(field_value == nil) then
 		field_value = check_item_conf_map("Default", "Default", subpage, itemname, field)
-	end
-	local defaultitemname = string.gsub(itemname, " .+", " *")
-	if(field_value == nil) then
-		field_value = check_item_conf_map(context, page, subpage, defaultitemname, field)
-	end
-	if(field_value == nil) then
-		field_value = check_item_conf_map(context, "Default", subpage, defaultitemname, field)
-	end
-	if(field_value == nil) then
-		field_value = check_item_conf_map("Default", page, subpage, defaultitemname, field)
-	end
-	if(field_value == nil) then
-		field_value = check_item_conf_map("Default", "Default", subpage, defaultitemname, field)
 	end
 
 	return(field_value)
@@ -393,6 +394,10 @@ end
 
 function get_current_subpage()
 	local subpagename = "Unknown"
+
+	if(get_current_page() == "Keyboard") then
+		return(get_current_kbdpage())
+	end
 
 	if(remote.is_item_enabled(itemsindex["SubPageName"])) then
 		subpagename = remote.get_item_text_value(itemsindex["SubPageName"])
