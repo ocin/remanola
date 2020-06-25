@@ -21,6 +21,9 @@ function handle_input_velofader(event, selnum)
 			if(string.find(itemname, "Knob H%d")) then
 				targetvalue = get_item_bvmap(itemname)[9-col]
 			end
+			if(string.find(itemname, "Drawbar %d")) then
+				targetvalue = get_item_bvmap(itemname)[9-row]
+			end
 			local cvalue = remote.get_item_value(itemsindex[itemname])
 			-- This is number of seconds to go from 0 to 127 at minimum velocity
 			local divider=3

@@ -163,7 +163,7 @@ function get_button_color(context, itemname, buttonname, value)
 		end
 	else
 		if(string.find(itemname, "Drawbar %d")) then
-			buttonindex = tonumber(string.sub(buttonname, -3,-3))
+			buttonindex = 9-tonumber(string.sub(buttonname, -3,-3))
 			buttonvalue = get_item_bvmap(itemname)[buttonindex]
 		elseif(string.find(itemname, "Meter %d")) then
 			buttonindex = tonumber(string.sub(buttonname, -3,-3))
@@ -198,7 +198,7 @@ function get_button_color(context, itemname, buttonname, value)
 			else 
 				color = enabledcolor
 			end
-		elseif((string.find(itemname, "Fader %d")) or (string.find(itemname, "BigFader %d")) or (string.find(itemname, "Meter %d"))) then	
+		elseif((string.find(itemname, "Fader %d")) or (string.find(itemname, "BigFader %d")) or (string.find(itemname, "Meter %d")) or (string.find(itemname, "Drawbar %d"))) then	
 			nextbuttonvalue = 0
 			if(buttonindex ~= 8) then
 				nextbuttonvalue = get_item_bvmap(itemname)[buttonindex+1] 
