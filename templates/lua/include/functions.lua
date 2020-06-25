@@ -92,7 +92,7 @@ function get_button_color(context, itemname, buttonname, value)
 	--Config
 	local defaultvalue = get_item_conf_map_field(context, get_current_page(), itemname, "defaultvalue")
 
-	local citem_conf_map_template = get_item_conf_map_field(context, get_current_page(), itemname, "template")
+	local citem_conf_map_template = color_templates[get_item_conf_map_field(context, get_current_page(), itemname, "template")]
 
 	if(citem_conf_map_template ~= nil) then
 		if(citem_conf_map_template.activecolor ~= nil) then
