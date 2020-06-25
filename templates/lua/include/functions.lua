@@ -14,6 +14,10 @@ function get_item_bvmap(itemname)
 end
 
 function get_item_conf_map_field(context, page, itemname, field)
+	if(field == nil) then
+		error("Field is nil")
+	end
+
 	if(string.match(get_current_page(), "Internal")) then
 		context = "Default"
 	end
@@ -43,21 +47,22 @@ function get_item_conf_map_field(context, page, itemname, field)
 		field_value = check_item_conf_map("Default", "Default", subpage, itemname, field)
 	end
 	local defaultitemname = string.gsub(itemname, " .+", " *")
-	if(field_value == nil) then
-		field_value = check_item_conf_map(context, page, subpage, defaultitemname, field)
-	end
+	field_value = check_item_conf_map(context, page, subpage, defaultitemname, field)
 	if(field_value == nil) then
 		field_value = check_item_conf_map(context, "Default", subpage, defaultitemname, field)
 	end
 	if(field_value == nil) then
 		field_value = check_item_conf_map("Default", page, subpage, defaultitemname, field)
 	end
+	if(field_value == nil) then
+		field_value = check_item_conf_map("Default", "Default", subpage, defaultitemname, field)
+	end
 
 	return(field_value)
 end
 
 function check_item_conf_map(context, page, subpage, itemname, field)
-	if(subpage ~= nil) then
+	if(subpage ~= "Unknown") then
 		if(item_conf_map[context] and item_conf_map[context][page] and item_conf_map[context][page][subpage] and item_conf_map[context][page][subpage][itemname] and item_conf_map[context][page][subpage][itemname][field]) then
 			return(item_conf_map[context][page][subpage][itemname][field])
 		end
@@ -77,8 +82,6 @@ function get_button_color(context, itemname, buttonname, value)
 	local enabled = remote.is_item_enabled(itemsindex[itemname])
 	local value = remote.get_item_state(itemsindex[itemname]).value
 
-	local citem_conf_map_template = get_item_conf_map_field(context, get_current_page(), itemname, "template")
-
 	-- Colors
 	local activecolor = get_item_conf_map_field(context, get_current_page(), itemname, "activecolor")
 	local enabledcolor = get_item_conf_map_field(context, get_current_page(), itemname, "enabledcolor")
@@ -89,9 +92,7 @@ function get_button_color(context, itemname, buttonname, value)
 	--Config
 	local defaultvalue = get_item_conf_map_field(context, get_current_page(), itemname, "defaultvalue")
 
-	if(1) then
-		return(NOCOLOR)
-	end
+	local citem_conf_map_template = get_item_conf_map_field(context, get_current_page(), itemname, "template")
 
 	if(citem_conf_map_template ~= nil) then
 		if(citem_conf_map_template.activecolor ~= nil) then
@@ -115,6 +116,10 @@ function get_button_color(context, itemname, buttonname, value)
 		if(citem_conf_map_template.defaultvalue ~= nil) then
 			defaultvalue = citem_conf_map_template.defaultvalue
 		end
+	end
+
+	if(activecolor == nil) then
+		error(string.format("activecolor is nil, device: %s page: %s item: %s", context, get_current_page(), itemname))
 	end
 
 	if(denabledcolor == nil) then
