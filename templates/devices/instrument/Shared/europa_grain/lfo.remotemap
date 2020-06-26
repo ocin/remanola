@@ -11,7 +11,7 @@ Map	Button 6-2		LFO {{ lfonum }} TempoSync		SEL1	LFO{{ lfonum }}	// template="BR
 Map	Button 7-2		LFO {{ lfonum }} KeySync			LFO{{ lfonum }}	// template="BRedOnOff"
 Map	Button 8-2		LFO {{ lfonum }} Global			LFO{{ lfonum }}	// template="BRedOnOff"
 Map	Fader 3		LFO {{ lfonum }} Rate			LFO{{ lfonum }}	Free	// template="FFreq"
-Map	UDVButton 7-3_8-3		LFO {{ lfonum }} SyncRate			LFO{{ lfonum }}	Sync	// template="FEffect"
-Map	Fader 4		LFO {{ lfonum }} Delay			LFO{{ lfonum }}	// template="FOsc"
+Map	UDVButton 7-3_8-3		LFO {{ lfonum }} SyncRate			LFO{{ lfonum }}	Sync	// template="UDFreq"
+Map	Fader 4		LFO {{ lfonum }} Delay			LFO{{ lfonum }}	// template="FEffect"
 {{ rm.include_menus(curpage="LFO"+lfonum|string, submenu="mod",mainmenu_mini="lfo", modpage="LFO"+lfonum|string) -}}
 {% endfor %}
