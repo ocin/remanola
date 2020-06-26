@@ -11,6 +11,7 @@ local items = {
 	{name = "KeyboardMode", output = "text" },
 	{name = "KbdVel", output = "text" },
 	{name = "BaseKey", output = "text" },
+	{name = "Aftertouch", input = "value", output = "value", min = 0, max = 127},
 	{name = "BarPosition", input= "button", output = "value", min = 0, max = 127},
 	{name = "BeatPosition", input= "button", output = "value", min = 0, max = 127},
 	{name = "EngineSelect", input= "value", output = "value", min = 0, max = 2, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}},

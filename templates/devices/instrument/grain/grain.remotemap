@@ -16,6 +16,7 @@ Define Group	Algorithm	SpectralGrains	GrainOsc	LongGrains	Tape
 Define Group	TempoSync	Free	Sync
 {% endblock groups %}
 {% block main %}
+Map	Aftertouch		Aftertouch
 // Select
 Map	EffectSelect		Effect Select
 Map	LFOSelect		LFO Select

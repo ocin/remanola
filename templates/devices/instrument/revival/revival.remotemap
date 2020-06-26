@@ -13,6 +13,7 @@ Define Group	Page	Main	Perf	Voicing1	Voicing2	PriSec	Solos	Attack	Primary	Second
 Define Group	TempoSync	Free	Sync
 {% endblock groups %}
 {% block main %}
+Map	Aftertouch		Aftertouch
 // Index
 Map	PageName		"Index"			Index
 Map	Button 1-1		Page=Main			Index
