@@ -56,15 +56,15 @@ fi
 ./build_remotemap.py
 ./build_confmap.py
 ./stripconfmap_remotemap.py
-check_for_undef "$OUTDIR/Launchpad-Mini.remotemap"
+#check_for_undef "$OUTDIR/Launchpad-Mini.remotemap"
 check_for_undef "$OUTDIR/Launchpad-Pro.remotemap"
 ./build_lua.py
 
 # Mini
-cp -r $OUTDIR/Launchpad-Mini.lua "$CODECSDIR"
-cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.luacodec "$CODECSDIR"
-cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.png "$CODECSDIR"
-cp -r $OUTDIR/Launchpad-Mini.remotemap "$MAPSDIR"
+#cp -r $OUTDIR/Launchpad-Mini.lua "$CODECSDIR"
+#cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.luacodec "$CODECSDIR"
+#cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.png "$CODECSDIR"
+#cp -r $OUTDIR/Launchpad-Mini.remotemap "$MAPSDIR"
 
 # Pro
 cp -r $OUTDIR/Launchpad-Pro.lua "$CODECSDIR"
