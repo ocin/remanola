@@ -72,6 +72,7 @@ function remote_deliver_midi(maxbytes, port)
 	deliver_midi_endscroll(ret_events)
 	deliver_midi_sel(ret_events)
 	deliver_midi_velofader(ret_events)
+	deliver_midi_repeatud(ret_events)
 {% if lptype == "mini" %}
 	-- Mini specific
 	deliver_midi_flashing(ret_events)
@@ -90,6 +91,7 @@ function remote_process_midi(event)
 	handle_input_select(event)
 
 	handle_input_velofader(event)
+	handle_input_repeatud(event)
 
 	if(handle_input_scrollend(event)) then
 		return(true)

@@ -43,6 +43,8 @@ g_kbdvel = 100
 g_buttondown = {}
 g_velofaderbuttons = {}
 g_velofaderlastupdate = 0
+g_repeatudbuttons = {}
+g_repeatudlastupdate = 0
 g_debugupdate = 0
 
 g_updateditems = {}

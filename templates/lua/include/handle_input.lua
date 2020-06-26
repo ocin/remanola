@@ -9,6 +9,30 @@ function handle_input_sel(event, selnum)
 	end
 end
 
+function handle_input_repeatud(event, selnum)
+	updatetime = remote.get_time_ms()
+	timediff = updatetime - g_repeatudlastupdate
+
+	local firstwait = 1000
+	local wait = 200
+
+	for buttonname, count in pairs(g_repeatudbuttons) do
+		if((count == 1 and timediff > firstwait) or (count > 1 and timediff > wait)) then
+			g_repeatudbuttons[buttonname] = count + 1
+			local itemname = get_item_by_button(buttonname)
+			local value = 1
+			if(is_up_udupbutton(buttonname, itemname)) then
+				value = 1
+			else
+				value = -1
+			end
+			local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
+			remote.handle_input(msg)
+			g_repeatudlastupdate = updatetime
+		end
+	end
+end
+
 function handle_input_velofader(event, selnum)
 	updatetime = remote.get_time_ms()
 	timediff = updatetime - g_velofaderlastupdate
@@ -53,7 +77,6 @@ function handle_input_velofader(event, selnum)
 			end
 			local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
 			remote.handle_input(msg)
-			g_updateall = true
 		end
 	end
 	g_velofaderlastupdate = updatetime
@@ -154,6 +177,8 @@ function handle_input_item(event, button)
 				return(true)
 			elseif(itemtype == "UDVButton" or itemtype == "UDHButton") then
 				local value = 1
+				g_repeatudbuttons[buttonname] = 1
+				g_repeatudlastupdate = remote.get_time_ms()
 				if(is_up_udupbutton(buttonname, itemname)) then
 					value = 1
 				else
@@ -184,6 +209,7 @@ function handle_input_item(event, button)
 	else
 		g_buttondown[buttonname] = nil
 		g_velofaderbuttons[buttonname] = nil
+		g_repeatudbuttons[buttonname] = nil
 		g_updateall = true
 		local itemtype = get_item_type(itemname)
 		if(itemtype == "Knob") then

@@ -29,3 +29,11 @@ Thor:
 
 Kong:
 	* remotable items to control which drum is selected (like effects and engines work in Europa)
+
+Europa and Garin:
+	* Missing remotables in Envelopes 
+		* TempoSync
+		* Bipolar
+		* Global
+		* Loop
+		* And a bunch more in the editing section
