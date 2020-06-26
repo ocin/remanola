@@ -37,3 +37,6 @@ Europa and Garin:
 		* Global
 		* Loop
 		* And a bunch more in the editing section
+
+Midi instrument:
+	* Midi device name as TextOutput, so we can create remote maps that adapt depending on midi device
