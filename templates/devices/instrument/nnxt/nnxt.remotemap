@@ -4,6 +4,7 @@
 {% set devicename="NN-XT" -%}
 {% set shortname="nnxt" -%}
 {% block main %}
+Map	Aftertouch		External Controller
 // Index
 Map	PageName		"Index"			Index
 Map	Button 1-1		Page=Main			Index

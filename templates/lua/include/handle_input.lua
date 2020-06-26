@@ -129,7 +129,7 @@ function handle_input_keyboard_at(event, button)
 		buttonname = get_button_name(button)
 		keynote = button_to_keynote[buttonname]
 		if(keynote ~= nil) then
-			-- remote.handle_input({ time_stamp = event.time_stamp, item = 1, value = 1, note = (keynote+12*g_basekey), velocity = velocity })
+			remote.handle_input({ time_stamp = event.time_stamp, item = itemsindex['Aftertouch'], value = velocity })
 			return true
 		end
 	end
