@@ -18,6 +18,8 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
+Map	Button 1-1		Note On			Main	// template="BRedOnOff"
+Map	Button 4-1		Controller Activity			Main	// template="BRedOnOff"
 {% for cc in range(0,120) %}
 Map	Sel1_{{ (cc*(127/119))|round|int }}		CC={{ cc }}			Main
 Map	Fader 4		CC {{ cc }}			Main	{{ cc }}	// template="FMisc"
