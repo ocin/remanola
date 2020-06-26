@@ -20,11 +20,11 @@ Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
 {% for cc in range(0,120) %}
 Map	Sel1_{{ (cc*(127/119))|round|int }}		CC={{ cc }}			Main
-Map	Fader 1		CC {{ cc }}			Main	{{ cc }}	// template="FMisc"
+Map	Fader 4		CC {{ cc }}			Main	{{ cc }}	// template="FMisc"
 {% endfor %}
-Map	UDVButton 1-2_2-2		CC Assignment		SEL1	Main	// template="UDMisc"
-Map	Button 4-2		Assignable Knob On/Off			Main	// template="BRedOnOff"
-Map	UDVButton 1-5_2-5		Program Change			Main	// template="UDMisc"
-Map	Button 4-5		Program Change On/Off			Main	// template="BRedOnOff"
-Map	UDVButton 1-7_2-7		MIDI Channel			Main	// template="UDMisc"
+Map	UDVButton 1-7_2-7		Program Change			Main	// template="UDPerf"
+Map	Button 1-8		Program Change On/Off			Main	// template="BRedOnOff"
+Map	UDVButton 3-7_4-7		CC Assignment		SEL1	Main	// template="UDMisc"
+Map	Button 3-8		Assignable Knob On/Off			Main	// template="BRedOnOff"
+Map	UDVButton 5-7_6-7		MIDI Channel			Main	// template="UDPerf"
 {% endblock main %}
