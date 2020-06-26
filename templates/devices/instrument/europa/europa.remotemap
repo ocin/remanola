@@ -16,6 +16,7 @@ Define Group	Enginenum	Eng1	Eng2	Eng3
 Define Group	TempoSync	Free	Sync
 {% endblock groups %}
 {% block main %}
+Map	Aftertouch		Aftertouch
 // Select
 Map	EngineSelect		OscSel		SEL2
 Map	EffectSelect		Effect Select

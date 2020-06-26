@@ -17,6 +17,7 @@ Define Group	Page	Main	Perf	Osc1	OscMod1	Osc2	OscMod2	Mixer	Filter	FilterEnv	Eff
 Define Group	TempoSync	Free	Sync
 {% endblock groups %}
 {% block main %}
+Map	Aftertouch		Aftertouch
 // Begin Page Index
 Map	PageName		"Index"			Index
 Map	Button 1-1		Page=Main			Index
