@@ -147,6 +147,10 @@ function remote_process_midi(event)
 	end
 
 	if(isaftertouch(button)) then
+		if(handle_input_keyboard_at(event, button)) then
+			return(true)
+		end
+
 		if(handle_input_aftertouch(event, button)) then
 			return(true)
 		end
