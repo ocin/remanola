@@ -35,3 +35,12 @@ function deliver_midi_velofader(ret_events)
 		end
 	end
 end
+
+function deliver_midi_repeatud(ret_events)
+	for buttonname, velocity in pairs(g_repeatudbuttons) do
+		if(velocity ~= nil) then
+			table.insert(ret_events, remote.make_midi(MIDI_OUT_GETVERSION))
+			return
+		end
+	end
+end
