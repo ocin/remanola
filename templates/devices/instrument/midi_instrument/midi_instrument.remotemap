@@ -1,0 +1,26 @@
+{% extends "devices/instrument/instrument.remotemap" %}
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.externalmidiinstrument" -%}
+{% set devicename="External Midi Instrument" -%}
+{% set shortname="midi_instrument" -%}
+{# Variables -#}
+{% set show_pitch_bend_range=true -%}
+{# End Variables -#}
+{% block groups %}
+Define Group	Page	Main	Index	Keyboard	Internal
+Define Group	CC	{% for cc in range(0,120) %}{{ cc }}	{% endfor %}	
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main
+{{ rm.include_menus(curpage="Main") -}}
+{% for cc in range(0,120) %}
+Map	Sel1_{{ (cc*(127/119))|round|int }}		CC={{ cc }}			Main
+Map	Fader 1		CC {{ cc }}			Main	{{ cc }}	// template="FMisc"
+{% endfor %}
+Map	UDVButton 1-2_2-2		CC Assignment		SEL1	Main	// template="UDMisc"
+{% endblock main %}
