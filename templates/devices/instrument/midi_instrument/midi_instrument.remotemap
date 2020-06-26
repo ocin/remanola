@@ -23,4 +23,8 @@ Map	Sel1_{{ (cc*(127/119))|round|int }}		CC={{ cc }}			Main
 Map	Fader 1		CC {{ cc }}			Main	{{ cc }}	// template="FMisc"
 {% endfor %}
 Map	UDVButton 1-2_2-2		CC Assignment		SEL1	Main	// template="UDMisc"
+Map	Button 4-2		Assignable Knob On/Off			Main	// template="BRedOnOff"
+Map	UDVButton 1-5_2-5		Program Change			Main	// template="UDMisc"
+Map	Button 4-5		Program Change On/Off			Main	// template="BRedOnOff"
+Map	UDVButton 1-7_2-7		MIDI Channel			Main	// template="UDMisc"
 {% endblock main %}
