@@ -9,6 +9,7 @@
 {# End Variables -#}
 {% block groups %}
 Define Group	Page	Main	Perf	OscA	OscB	OscC	OscD	Index	Keyboard	Internal
+Define Group	Range	LowHz	HighHz	Semitone	Cents	Tempo
 {% endblock groups %}
 {% block main %}
 Map	Aftertouch		External Controller
@@ -34,7 +35,21 @@ Map	Button 1-6		Osc.D On			Main	// template="BBlueOnOff"
 // Osc{{ oscnum }}
 Map	PageName		"Osc {{ oscnum }}"			Osc{{ oscnum }}
 {{ rm.include_menus(curpage="Osc"+oscnum|string, submenu="osc", oscpage="Osc"+oscnum|string)  -}}
-Map	Button 8-1		Osc.{{ oscnum }} On			Osc{{ oscnum }}	// template="B{{ osccolor[oscnum] }}OnOff"
-Map	Fader 3		Osc.{{ oscnum }} Depth			Osc{{ oscnum }}	// template="FOsc"
+Map	Sel1_0		Range=LowHz			Osc{{ oscnum }}
+Map	Sel1_32		Range=HighHz			Osc{{ oscnum }}
+Map	Sel1_64		Range=Semitone			Osc{{ oscnum }}
+Map	Sel1_95		Range=Cents			Osc{{ oscnum }}
+Map	Sel1_127		Range=Tempo			Osc{{ oscnum }}
+Map	Button 1-1		Osc.{{ oscnum }} On			Osc{{ oscnum }}	// template="B{{ osccolor[oscnum] }}OnOff"
+Map	UDVButton 1-2_2-2		Osc.{{ oscnum }} Waveform			Osc{{ oscnum }}	// template="UDOsc"
+Map	MFader 5-2		Osc.{{ oscnum }} Pulse Width			Osc{{ oscnum }}	// template="UDOsc"
+Map	Fader 3		Osc.{{ oscnum }} Low Rate Hz			Osc{{ oscnum }}	LowHz	// template="FFreq"
+Map	Fader 3		Osc.{{ oscnum }} High Rate Hz			Osc{{ oscnum }}	HighHz	// template="FFreq"
+Map	UDVButton 1-3_2-3		Osc.{{ oscnum }} Rate Semitone			Osc{{ oscnum }}	Semitone	// template="UDFreq"
+Map	UDVButton 1-3_2-3		Osc.{{ oscnum }} Cents Detune			Osc{{ oscnum }}	Cents	// template="UDFreq"
+Map	UDVButton 1-3_2-3		Osc.{{ oscnum }} Rate Tempo Sync			Osc{{ oscnum }}	Tempo	// template="UDFreq"
+Map	UDVButton 7-4_8-4		Osc.{{ oscnum }} Range		SEL1	Osc{{ oscnum }}	// template="UDOsc"
+Map	Fader 6		Osc.{{ oscnum }} Depth			Osc{{ oscnum }}	// template="FFreq"
+Map	Fader 8		Osc.{{ oscnum }} Phase			Osc{{ oscnum }}	// template="FOsc"
 {% endfor -%}
 {% endblock main %}
