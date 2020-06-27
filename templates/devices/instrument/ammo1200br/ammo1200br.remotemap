@@ -9,7 +9,7 @@
 {% set osccolor={'A': 'Red', 'B': 'Green', 'C': 'Yellow', 'D': 'Blue',} %}
 {# End Variables -#}
 {% block groups %}
-Define Group	Page	Main	OscA	OscB	OscC	OscD	VPMA	VPMB	VPMC	VPMD	Envelope	Perf	ModMatrix	Index	Keyboard	Internal
+Define Group	Page	Main	OscA	OscB	OscC	OscD	VPMA	VPMB	VPMC	VPMD	Envelope	Perf	ModMatrix	Battery	SampleAndHold	Comparator	ElektroSwitch	Attenuator	Index	Keyboard	Internal
 Define Group	Range	LowHz	HighHz	Semitone	Cents	Tempo
 Define Group	XFade	XFadeOff	XFadeOn
 {% endblock groups %}
