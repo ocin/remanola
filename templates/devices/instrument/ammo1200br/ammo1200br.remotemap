@@ -1,8 +1,8 @@
 {% extends "devices/instrument/instrument.remotemap" %}
 {% set deviceman="Jiggery Pokery" -%}
-{% set devicescope="com.jiggerypokery.Ammo400R" -%}
-{% set devicename="Ammo 400R" -%}
-{% set shortname="ammo400r" -%}
+{% set devicescope="com.jiggerypokery.Ammo1200BR" -%}
+{% set devicename="Ammo 1200BR" -%}
+{% set shortname="ammo1200br" -%}
 {# Variables -#}
 {% set oscpagedefault="OscA" -%}
 {% set amppagedefault="VPMA" -%}

@@ -1,0 +1,26 @@
+{% set baseshortname=shortname -%}
+{% set shortname="ammo" -%}
+{% import "remotemap/include/macros.remotemap" as rm with context %}
+// Perf
+Map	PageName		"Perf"			Perf
+{{ rm.include_menus(curpage="Perf") -}}
+Map	MFader 1-1		Pitch Wheel Input			Perf	// template="FPerf"
+Map	Button 1-5		Pitch Wheel to Osc.A			Perf	// template="BRedOnOff"
+Map	Button 1-6		Pitch Wheel to Osc.B			Perf	// template="BGreenOnOff"
+Map	Button 1-7		Pitch Wheel to Osc.C			Perf	// template="BYellowOnOff"
+Map	Button 1-8		Pitch Wheel to Osc.D			Perf	// template="BBlueOnOff"
+Map	MFader 3-1		Mod Wheel Input			Perf	// template="FPerf"
+Map	Button 3-5		Mod Wheel to Osc.A			Perf	// template="BRedOnOff"
+Map	Button 3-6		Mod Wheel to Osc.B			Perf	// template="BGreenOnOff"
+Map	Button 3-7		Mod Wheel to Osc.C			Perf	// template="BYellowOnOff"
+Map	Button 3-8		Mod Wheel to Osc.D			Perf	// template="BBlueOnOff"
+Map	MFader 5-1		Aftertouch Input			Perf	// template="FPerf"
+Map	Button 5-5		Aftertouch to Osc.A			Perf	// template="BRedOnOff"
+Map	Button 5-6		Aftertouch to Osc.B			Perf	// template="BGreenOnOff"
+Map	Button 5-7		Aftertouch to Osc.C			Perf	// template="BYellowOnOff"
+Map	Button 5-8		Aftertouch to Osc.D			Perf	// template="BBlueOnOff"
+Map	MFader 7-1		Expression Input			Perf	// template="FPerf"
+Map	Button 7-5		Expression to Osc.A			Perf	// template="BRedOnOff"
+Map	Button 7-6		Expression to Osc.B			Perf	// template="BGreenOnOff"
+Map	Button 7-7		Expression to Osc.C			Perf	// template="BYellowOnOff"
+Map	Button 7-8		Expression to Osc.D			Perf	// template="BBlueOnOff"

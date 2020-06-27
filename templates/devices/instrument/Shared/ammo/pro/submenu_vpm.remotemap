@@ -1,0 +1,4 @@
+Map	Button A1		Page=VPMA			{{ curpage }}	// template="BAmpPage"
+Map	Button A2		Page=VPMB			{{ curpage }}	// template="BAmpPage"
+Map	Button A3		Page=VPMC			{{ curpage }}	// template="BAmpPage"
+Map	Button A4		Page=VPMD			{{ curpage }}	// template="BAmpPage"
