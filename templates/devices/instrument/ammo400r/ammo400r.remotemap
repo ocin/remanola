@@ -37,19 +37,26 @@ Map	PageName		"Osc {{ oscnum }}"			Osc{{ oscnum }}
 {{ rm.include_menus(curpage="Osc"+oscnum|string, submenu="osc", oscpage="Osc"+oscnum|string)  -}}
 Map	Sel1_0		Range=LowHz			Osc{{ oscnum }}
 Map	Sel1_32		Range=HighHz			Osc{{ oscnum }}
-Map	Sel1_64		Range=Semitone			Osc{{ oscnum }}
-Map	Sel1_95		Range=Cents			Osc{{ oscnum }}
-Map	Sel1_127		Range=Tempo			Osc{{ oscnum }}
+Map	Sel1_64		Range=Tempo			Osc{{ oscnum }}
+Map	Sel1_95		Range=Semitone			Osc{{ oscnum }}
+Map	Sel1_127		Range=Cents			Osc{{ oscnum }}
 Map	Button 1-1		Osc.{{ oscnum }} On			Osc{{ oscnum }}	// template="B{{ osccolor[oscnum] }}OnOff"
-Map	UDVButton 1-2_2-2		Osc.{{ oscnum }} Waveform			Osc{{ oscnum }}	// template="UDOsc"
-Map	MFader 5-2		Osc.{{ oscnum }} Pulse Width			Osc{{ oscnum }}	// template="UDOsc"
-Map	Fader 3		Osc.{{ oscnum }} Low Rate Hz			Osc{{ oscnum }}	LowHz	// template="FFreq"
-Map	Fader 3		Osc.{{ oscnum }} High Rate Hz			Osc{{ oscnum }}	HighHz	// template="FFreq"
-Map	UDVButton 1-3_2-3		Osc.{{ oscnum }} Rate Semitone			Osc{{ oscnum }}	Semitone	// template="UDFreq"
-Map	UDVButton 1-3_2-3		Osc.{{ oscnum }} Cents Detune			Osc{{ oscnum }}	Cents	// template="UDFreq"
-Map	UDVButton 1-3_2-3		Osc.{{ oscnum }} Rate Tempo Sync			Osc{{ oscnum }}	Tempo	// template="UDFreq"
-Map	UDVButton 7-4_8-4		Osc.{{ oscnum }} Range		SEL1	Osc{{ oscnum }}	// template="UDOsc"
-Map	Fader 6		Osc.{{ oscnum }} Depth			Osc{{ oscnum }}	// template="FFreq"
-Map	Fader 8		Osc.{{ oscnum }} Phase			Osc{{ oscnum }}	// template="FOsc"
+Map	UDVButton 3-1_4-1		Osc.{{ oscnum }} Waveform			Osc{{ oscnum }}	// template="UDOsc"
+Map	Fader 2		Osc.{{ oscnum }} Low Rate Hz			Osc{{ oscnum }}	LowHz	// template="FFreq"
+Map	Fader 2		Osc.{{ oscnum }} High Rate Hz			Osc{{ oscnum }}	HighHz	// template="FFreq"
+Map	UDVButton 1-2_2-2		Osc.{{ oscnum }} Rate Tempo Sync			Osc{{ oscnum }}	Tempo	// template="UDFreq"
+Map	UDVButton 1-2_2-2		Osc.{{ oscnum }} Rate Semitone			Osc{{ oscnum }}	Semitone	// template="UDFreq"
+Map	UDVButton 1-2_2-2		Osc.{{ oscnum }} Cents Detune			Osc{{ oscnum }}	Cents	// template="UDFreq"
+Map	UDVButton 1-3_2-3		Osc.{{ oscnum }} Range		SEL1	Osc{{ oscnum }}	// template="UDOsc"
+{% if(oscnum == 'A') %}
+Map	Button 8-3		Apply Master Rate to Slaves			OscA	// template="BRedOnOff"
+{% else %}
+Map	Button 8-3		Osc.{{ oscnum }} Osc Sync			Osc{{ oscnum }}	// template="BRedOnOff"
+{% endif %}
+Map	Fader 4		Osc.{{ oscnum }} Depth			Osc{{ oscnum }}	// template="FFreq"
+Map	Fader 5		Osc.{{ oscnum }} Keyboard			Osc{{ oscnum }}	// template="FPerf"
+Map	Fader 6		Osc.{{ oscnum }} Phase			Osc{{ oscnum }}	// template="FOsc"
+Map	Button 1-8		Osc.{{ oscnum }} Env Sync			Osc{{ oscnum }}	// template="BRedOnOff"
+Map	Button 5-8		Osc.{{ oscnum }} Oneshot			Osc{{ oscnum }}	// template="BRedOnOff"
 {% endfor -%}
 {% endblock main %}
