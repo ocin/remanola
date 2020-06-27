@@ -12,7 +12,6 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	Fader 1		External Controller			Main	// template="FPerf"
 Map	Knob V2		Filter Freq			Main	// template="FFreq"
 Map	Knob V3		Filter Res			Main	// template="FEffect"
 Map	Knob V4		Amp Env Attack			Main	// template="FVol"
