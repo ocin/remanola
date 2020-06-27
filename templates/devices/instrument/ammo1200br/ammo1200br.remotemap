@@ -5,6 +5,7 @@
 {% set shortname="ammo1200br" -%}
 {# Variables -#}
 {% set oscpagedefault="OscA" -%}
+{% set modpagedefault="Battery" -%}
 {% set amppagedefault="VPMA" -%}
 {% set osccolor={'A': 'Red', 'B': 'Green', 'C': 'Yellow', 'D': 'Blue',} %}
 {# End Variables -#}
@@ -12,6 +13,7 @@
 Define Group	Page	Main	OscA	OscB	OscC	OscD	VPMA	VPMB	VPMC	VPMD	Envelope	Perf	ModMatrix	Battery	SampleAndHold	Comparator	ElektroSwitch	Attenuator	Index	Keyboard	Internal
 Define Group	Range	LowHz	HighHz	Semitone	Cents	Tempo
 Define Group	XFade	XFadeOff	XFadeOn
+Define Group	TempoSync	Free	Sync
 {% endblock groups %}
 {% block main %}
 Map	Aftertouch		Aftertouch
@@ -34,6 +36,87 @@ Map	Button 1-3		Osc.A On			Main	// template="BRedOnOff"
 Map	Button 1-4		Osc.B On			Main	// template="BGreenOnOff"
 Map	Button 1-5		Osc.C On			Main	// template="BYellowOnOff"
 Map	Button 1-6		Osc.D On			Main	// template="BBlueOnOff"
+// Battery
+Map	PageName		"Battery"			Battery
+{{ rm.include_menus(curpage="Battery", submenu="battery", modpage="Battery") -}}
+Map	MFader 1-1		Audio A in Level			Battery	// template="FGain"
+Map	MFader 3-1		Audio B in Level			Battery	// template="FGain"
+Map	MFader 5-1		Audio C in Level			Battery	// template="FGain"
+Map	MFader 7-1		Audio D in Level			Battery	// template="FGain"
+Map	Button 1-5		Ch.A to Battery			Battery	// template="BRedOnOff"
+Map	Button 3-5		Ch.B to Battery			Battery	// template="BGreenOnOff"
+Map	Button 5-5		Ch.C to Battery			Battery	// template="BYellowOnOff"
+Map	Button 7-5		Ch.D to Battery			Battery	// template="BBlueOnOff"
+// SampleAndHold
+Map	PageName		"SampleAndHold"			SampleAndHold
+{{ rm.include_menus(curpage="SampleAndHold", submenu="battery", modpage="SampleAndHold") -}}
+Map	UDHButton 1-1_1-2		Noise Mode			SampleAndHold	// template="UDOsc"
+Map	Button 2-1		Ch.A S&H			SampleAndHold	// template="BRedOnOff"
+Map	Button 4-1		Ch.B S&H			SampleAndHold	// template="BGreenOnOff"
+Map	Button 6-1		Ch.C S&H			SampleAndHold	// template="BYellowOnOff"
+Map	Button 8-1		Ch.D S&H			SampleAndHold	// template="BBlueOnOff"
+Map	MFader 1-3		S&H Noise A Level			SampleAndHold	// template="FGain"
+Map	MFader 3-3		S&H Noise B Level			SampleAndHold	// template="FGain"
+Map	MFader 5-3		S&H Noise C Level			SampleAndHold	// template="FGain"
+Map	MFader 7-3		S&H Noise D Level			SampleAndHold	// template="FGain"
+Map	MFader 1-5		S&H Sample Rate A			SampleAndHold	// template="FFreq"
+Map	MFader 3-5		S&H Sample Rate B			SampleAndHold	// template="FFreq"
+Map	MFader 5-5		S&H Sample Rate C			SampleAndHold	// template="FFreq"
+Map	MFader 7-5		S&H Sample Rate D			SampleAndHold	// template="FFreq"
+// Comparator
+Map	PageName		"Comparator"			Comparator
+{{ rm.include_menus(curpage="Comparator", submenu="battery", modpage="Comparator") -}}
+Map	Button 2-1		Ch.A Comparator			Comparator	// template="BRedOnOff"
+Map	Button 4-1		Ch.B Comparator			Comparator	// template="BGreenOnOff"
+Map	Button 6-1		Ch.C Comparator			Comparator	// template="BYellowOnOff"
+Map	Button 8-1		Ch.D Comparator			Comparator	// template="BBlueOnOff"
+Map	UDHButton 2-3_2-4		Ch.A-B Comparator Mode			Comparator	// template="UDOsc"
+Map	UDHButton 4-3_4-4		Ch.B Comparator A-B Mode			Comparator	// template="UDOsc"
+Map	UDHButton 6-3_6-4		Ch.C-D Comparator Mode			Comparator	// template="UDOsc"
+Map	UDHButton 8-3_8-4		Ch.D Comparator C-D Mode			Comparator	// template="UDOsc"
+// ElektroSwitch
+Map	PageName		"ElektroSwitch"			ElektroSwitch
+{{ rm.include_menus(curpage="ElektroSwitch", submenu="battery", modpage="ElektroSwitch") -}}
+Map	Sel1_0		TempoSync=Free			ElektroSwitch
+Map	Sel1_1		TempoSync=Sync			ElektroSwitch
+Map	Button 2-1		Ch.A ES			ElektroSwitch	// template="BRedOnOff"
+Map	Button 4-1		Ch.B ES			ElektroSwitch	// template="BGreenOnOff"
+Map	Button 6-1		Ch.C ES			ElektroSwitch	// template="BYellowOnOff"
+Map	Button 8-1		Ch.D ES			ElektroSwitch	// template="BBlueOnOff"
+Map	UDHButton 2-3_2-4		Ch.A ES Mode			ElektroSwitch	// template="UDOsc"
+Map	UDHButton 4-3_4-4		Ch.B ES Mode			ElektroSwitch	// template="UDOsc"
+Map	UDHButton 6-3_6-4		Ch.C ES Mode			ElektroSwitch	// template="UDOsc"
+Map	UDHButton 8-3_8-4		Ch.D ES Mode			ElektroSwitch	// template="UDOsc"
+Map	MFader 1-5		Electro-Switch 1 Depth			ElektroSwitch	// template="FLFO"
+Map	MFader 5-5		Electro-Switch 2 Depth			ElektroSwitch	// template="FLFO"
+Map	Button 1-6		Electro-Switch Tempo Sync		SEL1	ElektroSwitch	// template="BRedOnOff"
+Map	MFader 1-7		ES 01 LFO i Free Rate			ElektroSwitch	Free	// template="FFreq"
+Map	UDVButton 1-7_2-7		ES 01 LFO i Sync Rate			ElektroSwitch	Sync	// template="UDFreq"
+Map	MFader 3-7		ES 01 LFO ii Free Rate			ElektroSwitch	Free	// template="FFreq"
+Map	UDVButton 3-7_4-7		ES 01 LFO ii Sync Rate			ElektroSwitch	Sync	// template="UDFreq"
+Map	MFader 5-7		ES 02 LFO iii Free Rate			ElektroSwitch	Free	// template="FFreq"
+Map	UDVButton 5-7_6-7		ES 02 LFO iii Sync Rate			ElektroSwitch	Sync	// template="UDFreq"
+Map	MFader 7-7		ES 02 LFO iv Free Rate			ElektroSwitch	Free	// template="FFreq"
+Map	UDVButton 7-7_8-7		ES 02 LFO iv Sync Rate			ElektroSwitch	Sync	// template="UDFreq"
+Map	UDVButton 1-8_2-8		ES 01 LFO i Waveform			ElektroSwitch	// template="UDLFO"
+Map	UDVButton 3-8_4-8		ES 01 LFO ii Waveform			ElektroSwitch	// template="UDLFO"
+Map	UDVButton 5-8_6-8		ES 02 LFO iii Waveform			ElektroSwitch	// template="UDLFO"
+Map	UDVButton 7-8_8-8		ES 02 LFO iv Waveform			ElektroSwitch	// template="UDLFO"
+// Attenuator
+Map	PageName		"Attenuator"			Attenuator
+{{ rm.include_menus(curpage="Attenuator", submenu="battery", modpage="Attenuator") -}}
+Map	Button 2-1		Ch.A Attntr			Attenuator	// template="BRedOnOff"
+Map	Button 4-1		Ch.B Attntr			Attenuator	// template="BGreenOnOff"
+Map	Button 6-1		Ch.C Attntr			Attenuator	// template="BYellowOnOff"
+Map	Button 8-1		Ch.D Attntr			Attenuator	// template="BBlueOnOff"
+Map	MFader 1-3		Attntr Scale A Level			Attenuator	// template="FLFO"
+Map	MFader 3-3		Attntr Scale B Level			Attenuator	// template="FLFO"
+Map	MFader 5-3		Attntr Scale C Level			Attenuator	// template="FLFO"
+Map	MFader 7-3		Attntr Scale D Level			Attenuator	// template="FLFO"
+Map	MFader 1-5		Attntr Shift A Level			Attenuator	// template="FEffect"
+Map	MFader 3-5		Attntr Shift B Level			Attenuator	// template="FEffect"
+Map	MFader 5-5		Attntr Shift C Level			Attenuator	// template="FEffect"
+Map	MFader 7-5		Attntr Shift D Level			Attenuator	// template="FEffect"
 {% include "devices/instrument/Shared/ammo/perf.remotemap" %}
 {% include "devices/instrument/Shared/ammo/envelope.remotemap" %}
 {% include "devices/instrument/Shared/ammo/modmatrix.remotemap" %}
