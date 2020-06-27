@@ -9,8 +9,9 @@
 {% set osccolor={'A': 'Red', 'B': 'Green', 'C': 'Yellow', 'D': 'Blue',} %}
 {# End Variables -#}
 {% block groups %}
-Define Group	Page	Main	Perf	OscA	OscB	OscC	OscD	VPMA	VPMB	VPMC	VPMD	Index	Keyboard	Internal
+Define Group	Page	Main	OscA	OscB	OscC	OscD	VPMA	VPMB	VPMC	VPMD	Envelope	Perf	ModMatrix	Index	Keyboard	Internal
 Define Group	Range	LowHz	HighHz	Semitone	Cents	Tempo
+Define Group	XFade	XFadeOff	XFadeOn
 {% endblock groups %}
 {% block main %}
 Map	Aftertouch		Aftertouch
@@ -22,6 +23,7 @@ Map	Button 2-1		Page=OscA			Index
 Map	Button 3-1		Page=OscB			Index
 Map	Button 4-1		Page=OscC			Index
 Map	Button 5-1		Page=OscD			Index
+Map	Button 7-1		Page=ModMatrix			Index	// template="BModMPageHigh"
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
@@ -64,17 +66,75 @@ Map	Button 5-8		Osc.{{ oscnum }} Oneshot			Osc{{ oscnum }}	// template="BRedOnOf
 // VPM{{ vpmnum }}
 Map	PageName		"VPM {{ vpmnum }}"			VPM{{ vpmnum }}
 {{ rm.include_menus(curpage="VPM"+vpmnum|string, submenu="vpm", amppage="VPM"+vpmnum|string)  -}}
-Map	MFader 1-1		VPM {{ vpmnum }} Sum A			VPM{{ vpmnum }}	// template="FGain"
-Map	Button 4-1		VPM A			VPM{{ vpmnum }}	// template="BRedOnOff"
-Map	MFader 1-2		VPM {{ vpmnum }} Sum B			VPM{{ vpmnum }}	// template="FGain"
-Map	Button 4-2		VPM B			VPM{{ vpmnum }}	// template="BGreenOnOff"
-Map	MFader 1-3		VPM {{ vpmnum }} Sum C			VPM{{ vpmnum }}	// template="FGain"
-Map	Button 4-3		VPM C			VPM{{ vpmnum }}	// template="BYellowOnOff"
-Map	MFader 1-4		VPM {{ vpmnum }} Sum D			VPM{{ vpmnum }}	// template="FGain"
-Map	Button 4-4		VPM D			VPM{{ vpmnum }}	// template="BBlueOnOff"
-//Map	Fader 5		VPM {{ vpmnum }} X-Fade B-C-D			VPM{{ vpmnum }}	// template="FGain"
+Map	Sel1_0		XFade=XFadeOff			VPM{{ vpmnum }}
+Map	Sel1_1		XFade=XFadeOn			VPM{{ vpmnum }}
+Map	MFader 1-1		VPM {{ vpmnum }} Sum A			VPM{{ vpmnum }}	{% if vpmnum == 'A' %}XFadeOff{% endif %}	// template="FGain"
+{% if vpmnum == 'A' %}
+Map	MFader 3-1		VPM A X-Fade B-C-D			VPM{{ vpmnum }}	XFadeOn	// template="FVol"
+{% endif %}
+Map	Button 5-1		VPM A			VPM{{ vpmnum }}	// template="BRedOnOff"
+Map	MFader 1-2		VPM {{ vpmnum }} Sum B			VPM{{ vpmnum }}	{% if vpmnum == 'B' %}XFadeOff{% endif %}	// template="FGain"
+{% if vpmnum == 'B' %}
+Map	MFader 3-2		VPM B X-Fade A-C-D			VPM{{ vpmnum }}	XFadeOn	// template="FVol"
+{% endif %}
+Map	Button 5-2		VPM B			VPM{{ vpmnum }}	// template="BGreenOnOff"
+Map	MFader 1-3		VPM {{ vpmnum }} Sum C			VPM{{ vpmnum }}	{% if vpmnum == 'C' %}XFadeOff{% endif %}	// template="FGain"
+{% if vpmnum == 'C' %}
+Map	MFader 3-3		VPM C X-Fade A-B-D			VPM{{ vpmnum }}	XFadeOn	// template="FVol"
+{% endif %}
+Map	Button 5-3		VPM C			VPM{{ vpmnum }}	// template="BYellowOnOff"
+Map	MFader 1-4		VPM {{ vpmnum }} Sum D			VPM{{ vpmnum }}	{% if vpmnum == 'D' %}XFadeOff{% endif %}	// template="FGain"
+{% if vpmnum == 'D' %}
+Map	MFader 3-4		VPM D X-Fade A-B-C			VPM{{ vpmnum }}	XFadeOn	// template="FVol"
+{% endif %}
+Map	Button 5-4		VPM D			VPM{{ vpmnum }}	// template="BBlueOnOff"
+Map	Button 8-1		X-Fade Mode		SEL1	VPM{{ vpmnum }}	// template="BRedOnOff"
+Map	Button 8-5		Lag Mode			VPM{{ vpmnum }}	// template="BRedOnOff"
 Map	Fader 6		VPM {{ vpmnum }} Lag Up			VPM{{ vpmnum }}	// template="FOsc"
 Map	Fader 7		VPM {{ vpmnum }} Lag Down			VPM{{ vpmnum }}	// template="FOsc"
 Map	Fader 8		VPM {{ vpmnum }} Output			VPM{{ vpmnum }}	// template="FGain"
 {% endfor -%}
+// Envelope
+Map	PageName		"Envelope"			Envelope
+{{ rm.include_menus(curpage="Envelope") -}}
+Map	Fader 1		Envelope Delay			Envelope	// template="FEffect"
+Map	Fader 2		Envelope Attack			Envelope	// template="FEnv"
+Map	Fader 3		Envelope Hold			Envelope	// template="FEffect"
+Map	Fader 4		Envelope Decay			Envelope	// template="FEnv"
+Map	Fader 5		Envelope Sustain			Envelope	// template="FEnv"
+Map	Fader 6		Envelope Release			Envelope	// template="FEnv"
+// Perf
+Map	PageName		"Perf"			Perf
+{{ rm.include_menus(curpage="Perf") -}}
+Map	MFader 1-1		Pitch Wheel Input			Perf	// template="FPerf"
+Map	Button 1-5		Pitch Wheel to Osc.A			Perf	// template="BRedOnOff"
+Map	Button 1-6		Pitch Wheel to Osc.B			Perf	// template="BGreenOnOff"
+Map	Button 1-7		Pitch Wheel to Osc.C			Perf	// template="BYellowOnOff"
+Map	Button 1-8		Pitch Wheel to Osc.D			Perf	// template="BBlueOnOff"
+Map	MFader 3-1		Mod Wheel Input			Perf	// template="FPerf"
+Map	Button 3-5		Mod Wheel to Osc.A			Perf	// template="BRedOnOff"
+Map	Button 3-6		Mod Wheel to Osc.B			Perf	// template="BGreenOnOff"
+Map	Button 3-7		Mod Wheel to Osc.C			Perf	// template="BYellowOnOff"
+Map	Button 3-8		Mod Wheel to Osc.D			Perf	// template="BBlueOnOff"
+Map	MFader 5-1		Aftertouch Input			Perf	// template="FPerf"
+Map	Button 5-5		Aftertouch to Osc.A			Perf	// template="BRedOnOff"
+Map	Button 5-6		Aftertouch to Osc.B			Perf	// template="BGreenOnOff"
+Map	Button 5-7		Aftertouch to Osc.C			Perf	// template="BYellowOnOff"
+Map	Button 5-8		Aftertouch to Osc.D			Perf	// template="BBlueOnOff"
+Map	MFader 7-1		Expression Input			Perf	// template="FPerf"
+Map	Button 7-5		Expression to Osc.A			Perf	// template="BRedOnOff"
+Map	Button 7-6		Expression to Osc.B			Perf	// template="BGreenOnOff"
+Map	Button 7-7		Expression to Osc.C			Perf	// template="BYellowOnOff"
+Map	Button 7-8		Expression to Osc.D			Perf	// template="BBlueOnOff"
+// ModMatrix
+Map	PageName		"ModMatrix"			ModMatrix
+{{ rm.include_menus(curpage="ModMatrix") -}}
+Map	MFader 1-2		Source 1 Target 1 Input			ModMatrix	// template="FMod"
+Map	MFader 1-4		Source 1 Target 2 Input			ModMatrix	// template="FMod"
+Map	MFader 3-2		Source 2 Target 1 Input			ModMatrix	// template="FMod"
+Map	MFader 3-4		Source 2 Target 2 Input			ModMatrix	// template="FMod"
+Map	MFader 5-2		Source 3 Target 1 Input			ModMatrix	// template="FMod"
+Map	MFader 5-4		Source 3 Target 2 Input			ModMatrix	// template="FMod"
+Map	MFader 7-2		Source 4 Target 1 Input			ModMatrix	// template="FMod"
+Map	MFader 7-4		Source 4 Target 2 Input			ModMatrix	// template="FMod"
 {% endblock main %}
