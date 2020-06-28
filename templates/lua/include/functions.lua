@@ -543,6 +543,35 @@ function is_up_udupbutton(buttonname, itemname)
 	return(buttonname == "Button "..upbutton)
 end
 
+function fader_nearby_down(buttonname, itemname)
+	local row = tonumber(string.match(buttonname, "Button (%d)%-%d"))
+	local col = tonumber(string.match(buttonname, "Button %d%-(%d)"))
+	local upbutton = "Button "..(row+1).."-"..col
+	local downbutton = "Button "..(row-1).."-"..col
+
+	return(g_buttondown[upbutton] or g_buttondown[downbutton])
+end
+
+function fader_get_otherbutton(buttonname, itemname)
+	local row = tonumber(string.match(buttonname, "Button (%d)%-%d"))
+	local col = tonumber(string.match(buttonname, "Button %d%-(%d)"))
+	local otherrow = 1
+	if(row == 1) then
+		otherrow = 8
+	end
+	return("Button "..otherrow.."-"..col)
+end
+
+function fader_already_down(buttonname, itemname)
+	local row = tonumber(string.match(buttonname, "Button (%d)%-%d"))
+	local otherbutton = fader_get_otherbutton(buttonname, itemname)
+
+	if((row == 1) or (row == 8)) then
+		return(g_buttondown[otherbutton])
+	end
+	return(nil)
+end
+
 function is_up_mfader(buttonname, itemname)
 	local mfader
 	first = string.match(itemname, "MFader (...)")

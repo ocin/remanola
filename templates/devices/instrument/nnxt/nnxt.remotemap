@@ -18,5 +18,5 @@ Map	Knob V4		Amp Env Attack			Main	// template="FVol"
 Map	Knob V5		Amp Env Decay			Main	// template="FVol"
 Map	Knob V6		Amp Env Release			Main	// template="FVol"
 Map	Knob V7		Mod Env Decay			Main	// template="FEnv"
-Map	Fader 8		Master Volume			Main	// template="FVol"
+Map	Fader 8		Master Volume			Main	// template="FVol", defaultvalue=100
 {% endblock main %}
