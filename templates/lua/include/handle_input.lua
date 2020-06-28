@@ -205,7 +205,7 @@ function handle_input_item(event, button)
 				if(mfader_already_down(buttonname, itemname)) then
 					g_buttondown[buttonname] = nil
 					g_buttondown[mfader_get_otherbutton(buttonname, itemname)] = nil
-					value = 63
+					value = 64
 				else
 					local divider = 30
 					if(button.z > 50) then
