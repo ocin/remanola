@@ -183,6 +183,9 @@ function handle_input_item(event, button)
 					if(fader_nearby_down(buttonname, itemname) ~= nil) then
 						local row = get_button_row(buttonname)
 						value = get_item_bvmap(itemname)[row]
+						if(string.find(itemname, "Drawbar %d")) then
+							value = get_item_bvmap(itemname)[9-row]
+						end
 						local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
 						remote.handle_input(msg)
 					else
