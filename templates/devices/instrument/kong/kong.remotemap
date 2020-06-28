@@ -72,7 +72,7 @@ Map	Button 8-1		Pad 1 Hit Indication			Main	// template="BPad"
 Map	Button 8-2		Pad 2 Hit Indication			Main	// template="BPad"
 Map	Button 8-3		Pad 3 Hit Indication			Main	// template="BPad"
 Map	Button 8-4		Pad 4 Hit Indication			Main	// template="BPad"
-Map	Fader 6		Master Level			Main	// template="FVol"
+Map	Fader 6		Master Level			Main	// template="FVol", defaultvalue=100
 Map	Meter 7		Master Level Output Left			Main
 Map	Meter 8		Master Level Output Right			Main
 // Mutes & Solos
@@ -127,12 +127,12 @@ Map	Button 4-1		DrumPage=DrumFX2			Drum{{ drumnum }}	// template="BEffectPage"
 Map	SubPageName		"DrumMain"			Drum{{ drumnum }}	DrumMain
 Map	MFader 1-2		Drum {{ drumnum }} Pitch Offset			Drum{{ drumnum }}	DrumMain	// template="UDOsc"
 Map	MFader 3-2		Drum {{ drumnum }} Decay Offset			Drum{{ drumnum }}	DrumMain	// template="UDFreq"
-Map	MFader 1-3		Drum {{ drumnum }} Bus FX Send			Drum{{ drumnum }}	DrumMain	// template="UDEffect"
-Map	MFader 3-3		Drum {{ drumnum }} Aux 1 Send			Drum{{ drumnum }}	DrumMain	// template="UDEffect"
-Map	MFader 3-4		Drum {{ drumnum }} Aux 2 Send			Drum{{ drumnum }}	DrumMain	// template="UDEffect"
+Map	MFader 1-3		Drum {{ drumnum }} Bus FX Send			Drum{{ drumnum }}	DrumMain	// template="UDEffect", defaultvalue=0
+Map	MFader 3-3		Drum {{ drumnum }} Aux 1 Send			Drum{{ drumnum }}	DrumMain	// template="UDEffect", defaultvalue=0
+Map	MFader 3-4		Drum {{ drumnum }} Aux 2 Send			Drum{{ drumnum }}	DrumMain	// template="UDEffect", defaultvalue=0
 Map	Knob V5		Drum {{ drumnum }} Tone			Drum{{ drumnum }}	DrumMain	// template="FOsc"
 Map	Knob V6		Drum {{ drumnum }} Pan			Drum{{ drumnum }}	DrumMain	// template="FPan"
-Map	Fader 7		Drum {{ drumnum }} Level			Drum{{ drumnum }}	DrumMain	// template="FVol"
+Map	Fader 7		Drum {{ drumnum }} Level			Drum{{ drumnum }}	DrumMain	// template="FVol", defaultvalue=100
 Map	UDVButton 5-8_6-8		Drum {{ drumnum }} Output			Drum{{ drumnum }}	DrumMain	// template="UDVol"
 Map	UDVButton 7-8_8-8		Drum {{ drumnum }} Pitch Bend Range			Drum{{ drumnum }}	DrumMain	// template="UDPerf"
 // Drum {{ drumnum }} DrumModule
@@ -141,7 +141,7 @@ Map	Button 1-2		Drum {{ drumnum }} DM On			Drum{{ drumnum }}	DrumModule	// templ
 Map	Fader 5		Drum {{ drumnum }} DM Decay			Drum{{ drumnum }}	DrumModule	// template="FFreq"
 Map	Knob V6		Drum {{ drumnum }} DM Pitch			Drum{{ drumnum }}	DrumModule	// template="FOsc"
 Map	Fader 7		Drum {{ drumnum }} DM Variable			Drum{{ drumnum }}	DrumModule	// template="FOsc"
-Map	Fader 8		Drum {{ drumnum }} DM Level			Drum{{ drumnum }}	DrumModule	// template="FVol"
+Map	Fader 8		Drum {{ drumnum }} DM Level			Drum{{ drumnum }}	DrumModule	// template="FVol", defaultvalue=100
 // Drum {{ drumnum }} DrumFX1
 Map	SubPageName		"DrumFX1"			Drum{{ drumnum }}	DrumFX1
 Map	Button 1-2		Drum {{ drumnum }} FX1 On			Drum{{ drumnum }}	DrumFX1	// template="BYellowOnOff"
@@ -170,7 +170,7 @@ Map	PageName		"Pad {{ padnum }}"			Pad{{ padnum }}
 {{ rm.include_menus(curpage="Pad"+padnum|string, mainmenu_mini="pad", submenu="pad2", padpage2="Pad"+padnum|string) -}}
 {% endif %}
 Map	UDVButton 1-2_2-2		Pad {{ padnum }} Drum Assignment			Pad{{ padnum }}	// template="UDOsc"
-Map	UDVButton 3-2_4-2		Pad {{ padnum }} Hit Type			Pad{{ padnum }}	// template="UDPerf"
+Map	UDVButton 3-2_4-2		Pad {{ padnum }} Hit Type			Pad{{ padnum }}	// template="UDPerf", inverted=true
 Map	Button 1-6		Pad {{ padnum }} Group A			Pad{{ padnum }}	// template="BYellowOnOff"
 Map	Button 1-7		Pad {{ padnum }} Group B			Pad{{ padnum }}	// template="BYellowOnOff"
 Map	Button 1-8		Pad {{ padnum }} Group C			Pad{{ padnum }}	// template="BYellowOnOff"
@@ -188,7 +188,7 @@ Map	Meter 1		Bus FX Peak Meter			BusFX
 Map	Button 1-2		Bus FX On			BusFX	// template="BYellowOnOff"
 Map	Fader 3		Bus FX P1			BusFX	// template="FEffect"
 Map	Fader 4		Bus FX P2			BusFX	// template="FEffect"
-Map	Fader 6		Level Bus FX to Master FX			BusFX	// template="FVol"
+Map	Fader 6		Level Bus FX to Master FX			BusFX	// template="FVol", defaultvalue=100
 // Master FX
 Map	PageName		"Master FX"			MasterFX
 {{ rm.include_menus(curpage="MasterFX", mainmenu_mini="effects") -}}
