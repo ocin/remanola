@@ -548,3 +548,20 @@ function is_up_mfader(buttonname, itemname)
 	first = string.match(itemname, "MFader (...)")
 	return(buttonname == "Button "..first)
 end
+
+function mfader_get_otherbutton(buttonname, itemname)
+	local otherbutton
+	local firstbutton = string.match(itemname, "MFader (...)")
+	local row = string.match(itemname, "MFader (%d)%-%d")
+	local col = string.match(itemname, "MFader %d%-(%d)")
+	if(buttonname == "Button "..firstbutton) then
+		otherbutton = "Button "..tostring(row+1).."-"..col
+	else
+		otherbutton = "Button "..firstbutton
+	end
+	return(otherbutton)
+end
+
+function mfader_already_down(buttonname, itemname)
+	return(g_buttondown[mfader_get_otherbutton(buttonname, itemname)])
+end
