@@ -62,6 +62,14 @@ def buildconfmap(infile, confmapfile):
 			subpageprinted = False
 			continue
 
+		m = re.search('// End SubPage', line)
+		if m:
+			if subpage is not 'Unknown' and subpageprinted:
+				c.write('\t\t\t},\n')
+			subpageprinted = False
+			subpage = 'Unknown'
+			continue
+
 		m = re.search('Map\t([^\t]+)\t.*// (.*)', line)
 		hm = re.search('Map\t([^\t]+)\t\tPage=([^\t]+).*\n', line)
 		if not m:
