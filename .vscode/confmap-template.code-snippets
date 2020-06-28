@@ -33,6 +33,12 @@
 		  "// End Page $1"
 		],
 	  },
+	"confmap-end-page": {
+		"prefix": "de",
+		"body": [
+		  ", defaultvalue=$1"
+		],
+	  },
 	"confmap-inverted": {
 		"prefix": "in",
 		"body": [
