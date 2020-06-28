@@ -54,6 +54,13 @@ function handle_changed_pagename(citemindex, citemname)
 	end
 end
 
+function handle_changed_custom(citemindex, citemname)
+	{% import "devicelist.j2" as d %}
+	{% for device in d.devices %}
+	{% include "devices/" + device.type + "/" + device.name + "/hooks/handle_changed_custom.lua" ignore missing %}
+	{% endfor %}
+end
+
 function handle_changed_subpagename(citemindex, citemname)
 	if(string.match(citemname, "SubPageName")) then
 		g_updateall = true

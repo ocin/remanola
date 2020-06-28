@@ -57,3 +57,7 @@ local itemsmodeindex = {}
 
 midi_to_button = {}
 
+{% import "devicelist.j2" as d %}
+{% for device in d.devices %}
+{% include "devices/" + device.type + "/" + device.name + "/hooks/def_globals.lua" ignore missing %}
+{% endfor %}

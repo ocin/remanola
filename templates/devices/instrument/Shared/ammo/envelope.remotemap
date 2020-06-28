@@ -1,0 +1,15 @@
+{% set baseshortname=shortname -%}
+{% set shortname="ammo" -%}
+{% import "remotemap/include/macros.remotemap" as rm with context %}
+// Envelope
+Map	PageName		"Envelope"			Envelope
+{{ rm.include_menus(curpage="Envelope") -}}
+Map	Fader 1		Envelope Delay			Envelope	// template="FEffect"
+Map	Fader 2		Envelope Attack			Envelope	// template="FEnv"
+Map	Fader 3		Envelope Hold			Envelope	// template="FEffect"
+Map	Fader 4		Envelope Decay			Envelope	// template="FEnv"
+Map	Fader 5		Envelope Sustain			Envelope	// template="FEnv"
+Map	Fader 6		Envelope Release			Envelope	// template="FEnv"
+{% if(devicename == "Ammo 1200BR") %}
+Map	Button 1-8		Envelope Trigger Mode			Envelope	// template="BRedOnOff"
+{% endif %}
