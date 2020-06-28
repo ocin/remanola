@@ -28,7 +28,12 @@ Map	MFader 3-4		VPM D X-Fade A-B-C			VPM{{ vpmnum }}	XFadeOn	// template="FVol"
 {% endif %}
 Map	Button 5-4		VPM D			VPM{{ vpmnum }}	// template="BBlueOnOff"
 Map	Button 8-1		X-Fade Mode		SEL1	VPM{{ vpmnum }}	// template="BRedOnOff"
+{% if(devicename == "Ammo 1200BR") %}
+Map	Button 8-4		Lag Up Mode			VPM{{ vpmnum }}	// template="BRedOnOff"
+Map	Button 8-5		Lag Down Mode			VPM{{ vpmnum }}	// template="BRedOnOff"
+{% else %}
 Map	Button 8-5		Lag Mode			VPM{{ vpmnum }}	// template="BRedOnOff"
+{% endif %}
 Map	Fader 6		VPM {{ vpmnum }} Lag Up			VPM{{ vpmnum }}	// template="FOsc"
 Map	Fader 7		VPM {{ vpmnum }} Lag Down			VPM{{ vpmnum }}	// template="FOsc"
 Map	Fader 8		VPM {{ vpmnum }} Output			VPM{{ vpmnum }}	// template="FGain"

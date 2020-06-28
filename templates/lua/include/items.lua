@@ -19,6 +19,7 @@ local items = {
 	{name = "EditSelect", input= "value", output = "value", min = 0, max = 2, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}},
 	{name = "LFOSelect", input= "value", output = "value", min = 0, max = 2, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}},
 	{name = "EnvSelect", input= "value", output = "value", min = 0, max = 3, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}},
+	{name = "PWSelect", input= "value", output = "value", min = 0, max = 3, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}},
 	{name = "Hidden", input = "delta", output = "value", min = 0, max = 127, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}},
 	{name = "Fader 1", input = "value", output = "value", min = 0, max = 127},
 	{name = "Fader 2", input = "value", output = "value", min = 0, max = 127},

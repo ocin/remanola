@@ -48,6 +48,7 @@ function remote_set_state(changed_items)
 			handle_changed_subpagename(citemindex, citemname)
 			handle_changed_kbdvel(citemindex, citemname)
 			handle_changed_basekey(citemindex, citemname)
+			handle_changed_custom(citemindex, citemname)
 		end
 	end
 end
