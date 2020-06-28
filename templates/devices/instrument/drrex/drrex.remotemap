@@ -38,14 +38,14 @@ Map	Button 5-6		Select Loop 8			Main	// template="BYellowOnOff"
 Map	Button 1-7		Enable Loop Playback			Main	// template="BRedOnOff"
 Map	Button 5-7		Run			Main	// template="BRun"
 Map	UDVButton 7-7_8-7		Transpose			Main	// template="FFreq"
-Map	Fader 8		Master Level			Main	// template="FVol"
+Map	Fader 8		Master Level			Main	// template="FVol", defaultvalue=100
 // AmpEnv
 Map	PageName		"AmpEnv"			AmpEnv
 {{ rm.include_menus(curpage="AmpEnv") -}}
-Map	Fader 4		Amp Env Attack			AmpEnv	// template="FVol"
-Map	Fader 5		Amp Env Decay			AmpEnv	// template="FVol"
-Map	Fader 6		Amp Env Sustain			AmpEnv	// template="FVol"
-Map	Fader 7		Amp Env Release			AmpEnv	// template="FVol"
+Map	Fader 4		Amp Env Attack			AmpEnv	// template="FVol", defaultvalue=0
+Map	Fader 5		Amp Env Decay			AmpEnv	// template="FVol", defaultvalue=127
+Map	Fader 6		Amp Env Sustain			AmpEnv	// template="FVol", defaultvalue=0
+Map	Fader 7		Amp Env Release			AmpEnv	// template="FVol", defaultvalue=10
 // Osc
 Map	PageName		"Osc"			Osc
 {{ rm.include_menus(curpage="Osc") -}}
@@ -58,7 +58,7 @@ Map	PageName		"Loop"			Loop
 Map	Button 1-2		Follow Loop Playback			Loop	// template="BRedOnOff"
 Map	UDVButton 1-3_2-3		Selected Loop in Editor			Loop	// template="UDPerf"
 Map	UDVButton 1-4_2-4		Loop Transpose			Loop	// template="UDFreq"
-Map	Fader 8		Loop Level			Loop	// template="FVol"
+Map	Fader 8		Loop Level			Loop	// template="FVol", defaultvalue=127
 // Performance
 Map	PageName		"Performance"			Performance
 {{ rm.include_menus(curpage="Performance") -}}
@@ -75,16 +75,16 @@ Map	PageName		"Filter"			Filter
 {{ rm.include_menus(curpage="Filter") -}}
 Map	Button 1-6		Filter On/Off			Filter	// template="BRedOnOff"
 Map	UDVButton 7-6_8-6		Filter Mode			Filter	// template="FFreq", inverted=true
-Map	Fader 4		Filter Freq			Filter	// template="FFreq"
-Map	Fader 5		Filter Res			Filter	// template="FEffect"
+Map	Fader 4		Filter Freq			Filter	// template="FFreq", defaultvalue=127
+Map	Fader 5		Filter Res			Filter	// template="FEffect", defaultvalue=0
 // FilterEnv
 Map	PageName		"FilterEnv"			FilterEnv
 {{ rm.include_menus(curpage="FilterEnv") -}}
-Map	Fader 2		Filter Env Amount			FilterEnv	// template="FEnv"
-Map	Fader 4		Filter Env Attack			FilterEnv	// template="FFreq"
-Map	Fader 5		Filter Env Decay			FilterEnv	// template="FFreq"
-Map	Fader 6		Filter Env Sustain			FilterEnv	// template="FFreq"
-Map	Fader 7		Filter Env Release			FilterEnv	// template="FFreq"
+Map	Fader 2		Filter Env Amount			FilterEnv	// template="FEnv", defaultvalue=0
+Map	Fader 4		Filter Env Attack			FilterEnv	// template="FFreq", defaultvalue=0
+Map	Fader 5		Filter Env Decay			FilterEnv	// template="FFreq", defaultvalue=64
+Map	Fader 6		Filter Env Sustain			FilterEnv	// template="FFreq", defaultvalue=0
+Map	Fader 7		Filter Env Release			FilterEnv	// template="FFreq", defaultvalue=64
 // LFO
 Map	PageName		"LFO"			LFO
 {{ rm.include_menus(curpage="LFO") -}}
@@ -94,6 +94,6 @@ Map	Button 1-1		LFO Sync Enable		SEL1	LFO	// template="BRedOnOff"
 Map	UDVButton 7-1_8-1		LFO1 Wave			LFO	// template="UDLFO", inverted=true
 Map	Fader 3		LFO1 Rate			LFO	Free	// template="FFreq"
 Map	UDVButton 7-3_8-3		LFO1 Rate	9		LFO	Sync	// template="UDFreq"
-Map	Fader 6		LFO1 Amount			LFO	// template="FLFO"
+Map	Fader 6		LFO1 Amount			LFO	// template="FLFO", defaultvalue=0
 Map	UDVButton 7-8_8-8		LFO1 Dest			LFO	// template="UDLFO", inverted=true
 {% endblock main %}
