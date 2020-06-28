@@ -77,7 +77,7 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main",mainmenu_mini="common") -}}
-Map	Fader 8		Master Volume			Main	// template="FGain"
+Map	Fader 8		Master Volume			Main	// template="FGain", defaultvalue=89
 // Perf
 Map	PageName		"Perf"			Perf
 {{ rm.include_menus(curpage="Perf",mainmenu_mini="common") -}}
@@ -89,9 +89,9 @@ Map	UDVButton 7-8_8-8		Voices			Perf	// template="UDOsc"
 // Mixer 
 Map	PageName		"Mixer"			Mixer
 {{ rm.include_menus(curpage="Mixer", submenu="amp",mainmenu_mini="common", amppage="Mixer") -}}
-Map	Fader 2		Osc1 Level			Mixer	// template="FVol"
-Map	Fader 3		Osc2 Level			Mixer	// template="FVol"
-Map	Fader 4		Osc3 Level			Mixer	// template="FVol"
+Map	Fader 2		Osc1 Level			Mixer	// template="FVol", defaultvalue=89
+Map	Fader 3		Osc2 Level			Mixer	// template="FVol", defaultvalue=89
+Map	Fader 4		Osc3 Level			Mixer	// template="FVol", defaultvalue=89
 Map	Knob V6		Osc1 Pan			Mixer	// template="FPan"
 Map	Knob V7		Osc2 Pan			Mixer	// template="FPan"
 Map	Knob V8		Osc3 Pan			Mixer	// template="FPan"
@@ -102,23 +102,23 @@ Map	Button 5-1		Osc1 To Filter			Filter	// template="BRedOnOff"
 Map	Button 6-1		Osc2 To Filter			Filter	// template="BRedOnOff"
 Map	Button 7-1		Osc3 To Filter			Filter	// template="BRedOnOff"
 Map	UDVButton 1-2_2-2		Filter Type			Filter	// template="UDFreq", inverted=true
-Map	Fader 3		Filter Drive			Filter	// template="FGain"
-Map	Fader 4		Filter Reso			Filter	// template="FEffect"
+Map	Fader 3		Filter Drive			Filter	// template="FGain", defaultvalue=25
+Map	Fader 4		Filter Reso			Filter	// template="FEffect", defaultvalue=0
 Map	Fader 5		Filter Freq			Filter	// template="FFreq"
-Map	MFader 1-6		Filter Kbd			Filter	// template="UDPerf"
-Map	MFader 3-6		Filter Mod			Filter	// template="UDLFO"
-Map	MFader 5-6		Filter Vel			Filter	// template="UDPerf"
+Map	MFader 1-6		Filter Kbd			Filter	// template="UDPerf", defaultvalue=127
+Map	MFader 3-6		Filter Mod			Filter	// template="UDLFO", defaultvalue=0
+Map	MFader 5-6		Filter Vel			Filter	// template="UDPerf", defaultvalue=0
 Map	UDVButton 3-7_4-7		Filter Mod Source			Filter	// template="UDLFO", inverted=true
 // Amp 
 Map	PageName		"Amp"			Amp
 {{ rm.include_menus(curpage="Amp", submenu="amp",mainmenu_mini="common", amppage="Amp") -}}
 Map	Knob V2		Pan			Amp	// template="FPan"
-Map	Fader 3		Amp Gain			Amp	// template="FGain"
-Map	Fader 4		Amp Velocity			Amp	// template="FPerf"
-Map	Fader 5		Amp Attack			Amp	// template="FVol"
-Map	Fader 6		Amp Decay			Amp	// template="FVol"
-Map	Fader 7		Amp Sustain			Amp	// template="FVol"
-Map	Fader 8		Amp Release			Amp	// template="FVol"
+Map	Fader 3		Amp Gain			Amp	// template="FGain", defaultvalue=102
+Map	Fader 4		Amp Velocity			Amp	// template="FPerf", defaultvalue=0
+Map	Fader 5		Amp Attack			Amp	// template="FVol", defaultvalue=13
+Map	Fader 6		Amp Decay			Amp	// template="FVol", defaultvalue=64
+Map	Fader 7		Amp Sustain			Amp	// template="FVol", defaultvalue=127
+Map	Fader 8		Amp Release			Amp	// template="FVol", defaultvalue=13
 {% for engnum in range(1,4) %}
 // Eng {{ engnum }}
 Map	PageName		"Eng {{ engnum }}"			Eng{{ engnum }}Osc
@@ -130,19 +130,19 @@ Map	UDVButton 3-3_4-3		Osc{{ engnum }} Semi			Eng{{ engnum }}Osc	// template="UD
 Map	UDVButton 5-3_6-3		Osc{{ engnum }} Tune			Eng{{ engnum }}Osc	// template="UDFreq"
 Map	MFader 7-3		Osc{{ engnum }} Pitch Kbd			Eng{{ engnum }}Osc	// template="UDPerf", defaultvalue=127
 Map	UDVButton 1-4_2-4		Osc{{ engnum }} Wave			Eng{{ engnum }}Osc	// template="UDOsc", inverted=true
-Map	Fader 5		Osc{{ engnum }} Shape			Eng{{ engnum }}Osc	// template="FOsc"
+Map	Fader 5		Osc{{ engnum }} Shape			Eng{{ engnum }}Osc	// template="FOsc", defaultvalue=0
 Map	Button 8-4		Osc{{ engnum }} SyncPhase			Eng{{ engnum }}Osc	// template="BRedOnOff"
 Map	UDVButton 7-6_8-6		Osc{{ engnum }} Shape Source			Eng{{ engnum }}Osc	// template="UDLFO", inverted=true
-Map	Fader 7		Osc{{ engnum }} Shape Amt			Eng{{ engnum }}Osc	// template="FLFO"
-Map	Fader 8		Osc{{ engnum }} Shape Vel			Eng{{ engnum }}Osc	// template="FPerf"
+Map	Fader 7		Osc{{ engnum }} Shape Amt			Eng{{ engnum }}Osc	// template="FLFO", defaultvalue=0
+Map	Fader 8		Osc{{ engnum }} Shape Vel			Eng{{ engnum }}Osc	// template="FPerf", defaultvalue=0
 {% for modnum in range(1,3) %}
 // Eng {{ engnum }} Modifier {{ modnum }}
 Map	PageName		"Eng {{ engnum }} Mod {{ modnum }}"			Eng{{ engnum }}Mod{{ modnum }}
 {{ rm.include_menus(curpage="Eng"+engnum|string+"Mod"+modnum|string,mainmenu_mini="common", submenu="osc", oscpage="Mod"+modnum|string, engnum=engnum) -}}
 Map	Button 1-2		Osc{{ engnum }} Mod{{ modnum }} On			Eng{{ engnum }}Mod{{ modnum }}	// template="BRedOnOff"
 Map	UDVButton 1-3_2-3		Osc{{ engnum }} Mod{{ modnum }}			Eng{{ engnum }}Mod{{ modnum }}	// template="UDOsc", inverted=true
-Map	Fader 4		Osc{{ engnum }} Mod{{ modnum }} Amt			Eng{{ engnum }}Mod{{ modnum }}	// template="FOsc"
-Map	Fader 5		Osc{{ engnum }} Mod{{ modnum }} Mod			Eng{{ engnum }}Mod{{ modnum }}	// template="FLFO"
+Map	Fader 4		Osc{{ engnum }} Mod{{ modnum }} Amt			Eng{{ engnum }}Mod{{ modnum }}	// template="FOsc", defaultvalue=0
+Map	Fader 5		Osc{{ engnum }} Mod{{ modnum }} Mod			Eng{{ engnum }}Mod{{ modnum }}	// template="FLFO", defaultvalue=0
 Map	UDVButton 7-6_8-6		Osc{{ engnum }} Mod{{ modnum }} Source			Eng{{ engnum }}Mod{{ modnum }}	// template="UDLFO", inverted=true
 {% endfor -%}
 // Eng {{ engnum }} Spectral Filter
@@ -151,17 +151,17 @@ Map	PageName		"Eng {{ engnum }} Spectral Filter"			Eng{{ engnum }}Filter
 Map	Button 1-2		Osc{{ engnum }} Filter On			Eng{{ engnum }}Filter	// template="BRedOnOff"
 Map	UDVButton 3-2_4-2		Osc{{ engnum }} Filter			Eng{{ engnum }}Filter	// template="UDFreq", inverted=true
 Map	Fader 3		Osc{{ engnum }} Filter Freq			Eng{{ engnum }}Filter	// template="FFreq"
-Map	Fader 4		Osc{{ engnum }} Filter Reso			Eng{{ engnum }}Filter	// template="FEffect"
-Map	Fader 5		Osc{{ engnum }} Filter Kbd			Eng{{ engnum }}Filter	// template="FPerf"
-Map	Fader 6		Osc{{ engnum }} Filter Mod			Eng{{ engnum }}Filter	// template="FLFO"
+Map	Fader 4		Osc{{ engnum }} Filter Reso			Eng{{ engnum }}Filter	// template="FEffect", defaultvalue=0
+Map	Fader 5		Osc{{ engnum }} Filter Kbd			Eng{{ engnum }}Filter	// template="FPerf", defaultvalue=127
+Map	Fader 6		Osc{{ engnum }} Filter Mod			Eng{{ engnum }}Filter	// template="FLFO", defaultvalue=0
 Map	UDVButton 7-7_8-7		Osc{{ engnum }} Filter Source			Eng{{ engnum }}Filter	// template="FLFO", inverted=true
-Map	Fader 8		Osc{{ engnum }} Filter Vel			Eng{{ engnum }}Filter	// template="FPerf"
+Map	Fader 8		Osc{{ engnum }} Filter Vel			Eng{{ engnum }}Filter	// template="FPerf", defaultvalue=0
 // Eng {{ engnum }} Harmonics
 Map	PageName		"Eng {{ engnum }} Harmonics"			Eng{{ engnum }}Harm
 {{ rm.include_menus(curpage="Eng"+engnum|string+"Harm",mainmenu_mini="common", submenu="osc", oscpage="Harm", engnum=engnum) -}}
 Map	Button 1-2		Osc{{ engnum }} Harm On			Eng{{ engnum }}Harm	// template="BRedOnOff"
 Map	UDVButton 1-3_2-3		Osc{{ engnum }} Harm			Eng{{ engnum }}Harm	// template="UDOsc", inverted=true
-Map	Fader 4		Osc{{ engnum }} Harm Pos			Eng{{ engnum }}Harm	// template="FOsc"
+Map	Fader 4		Osc{{ engnum }} Harm Pos			Eng{{ engnum }}Harm	// template="FOsc", defaultvalue=0
 Map	Fader 5		Osc{{ engnum }} Harm Amt			Eng{{ engnum }}Harm	// template="FOsc"
 // Eng {{ engnum }} Unison
 Map	PageName		"Eng {{ engnum }} Unison"			Eng{{ engnum }}Unison
@@ -169,9 +169,9 @@ Map	PageName		"Eng {{ engnum }} Unison"			Eng{{ engnum }}Unison
 Map	Button 1-2		Osc{{ engnum }} Unison On			Eng{{ engnum }}Unison	// template="BRedOnOff"
 Map	UDVButton 1-3_2-3		Osc{{ engnum }} Unison Mode			Eng{{ engnum }}Unison	// template="UDEffect", inverted=true
 Map	UDVButton 1-4_2-4		Osc{{ engnum }} Count			Eng{{ engnum }}Unison	// template="UDEffect"
-Map	Fader 5		Osc{{ engnum }} Blend			Eng{{ engnum }}Unison	// template="FEffect"
+Map	Fader 5		Osc{{ engnum }} Blend			Eng{{ engnum }}Unison	// template="FEffect", defaultvalue=127
 Map	Fader 6		Osc{{ engnum }} Detune			Eng{{ engnum }}Unison	// template="FFreq"
-Map	Fader 7		Osc{{ engnum }} Spread			Eng{{ engnum }}Unison	// template="FEffect"
+Map	Fader 7		Osc{{ engnum }} Spread			Eng{{ engnum }}Unison	// template="FEffect", defaultvalue=89
 {% endfor -%}
 {% set oscpage="Osc" %}
 {% include "devices/instrument/Shared/europa_grain/lfo.remotemap" %}

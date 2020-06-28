@@ -26,25 +26,25 @@ Map	PageName		"Phaser"			Phaser
 Map	Button 1-1		Phaser On			Phaser	// template="BRedOnOff"
 {{ rm.include_menus(curpage="Phaser",submenu="effects") -}}
 Map	UDVButton 5-1_6-1		Mod Effect Type			Phaser	// template="UDEffect"
-Map	Fader 3		Mod Effect Depth			Phaser	// template="FEffect"
-Map	Fader 4		Mod Effect Rate			Phaser	// template="FFreq"
-Map	Fader 5		Mod Effect Spread			Phaser	// template="FEffect"
-Map	Fader 7		Mod Effect Amount			Phaser	// template="FEffect"
+Map	Fader 3		Mod Effect Depth			Phaser	// template="FEffect", defaultvalue=102
+Map	Fader 4		Mod Effect Rate			Phaser	// template="FFreq", defaultvalue=25
+Map	Fader 5		Mod Effect Spread			Phaser	// template="FEffect", defaultvalue=38
+Map	Fader 7		Mod Effect Amount			Phaser	// template="FEffect", defaultvalue=76
 // Dist
 Map	PageName		"Dist"			Dist
 Map	Button 1-1		Dist On			Dist	// template="BRedOnOff"
 {{ rm.include_menus(curpage="Dist",submenu="effects") -}}
 Map	UDVButton 5-1_6-1		Dist Type			Dist	// template="UDEffect"
-Map	Fader 4		Dist Drive			Dist	// template="FEffect"
-Map	Fader 5		Dist Tone			Dist	// template="FOsc"
-Map	Fader 7		Dist Amount			Dist	// template="FEffect"
+Map	Fader 4		Dist Drive			Dist	// template="FEffect", defaultvalue=64
+Map	Fader 5		Dist Tone			Dist	// template="FOsc", defaultvalue=102
+Map	Fader 7		Dist Amount			Dist	// template="FEffect", defaultvalue=127
 // Eq
 Map	PageName		"Eq"			Eq
 Map	Button 1-1		Eq On			Eq	// template="BRedOnOff"
 {{ rm.include_menus(curpage="Eq",submenu="effects") -}}
-Map	Fader 4		Eq Freq			Eq	// template="FFreq"
-Map	Fader 5		Eq Q			Eq	// template="FEffect"
-Map	Fader 7		Eq Gain			Eq	// template="FAmount"
+Map	Fader 4		Eq Freq			Eq	// template="FFreq", defaultvalue=13
+Map	Fader 5		Eq Q			Eq	// template="FEffect", defaultvalue=13
+Map	Fader 7		Eq Gain			Eq	// template="FAmount", defaultvalue=64
 // Delay
 Map	PageName		"Delay"			Delay
 Map	Sel1_0		TempoSync=Free			Delay
@@ -53,11 +53,11 @@ Map	Button 1-1		Delay On			Delay	// template="BRedOnOff"
 {{ rm.include_menus(curpage="Delay",submenu="effects") -}}
 Map	Button 4-1		Delay Sync		SEL1	Delay	// template="BRedOnOff"
 Map	Button 6-1		Delay PingPong			Delay	// template="BRedOnOff"
-Map	Fader 2		Delay Time			Delay	Free	// template="FFreq"
+Map	Fader 2		Delay Time			Delay	Free	// template="FFreq", defaultvalue=13
 Map	UDVButton 7-2_8-2		Delay Synced Time			Delay	Sync	// template="UDFreq"
-Map	Fader 4		Delay Pan			Delay	// template="FEffect"
-Map	Fader 5		Delay FB			Delay	// template="FEffect"
-Map	Fader 7		Delay Amount			Delay	// template="FEffect"
+Map	Fader 4		Delay Pan			Delay	// template="FEffect", defaultvalue=25
+Map	Fader 5		Delay FB			Delay	// template="FEffect", defaultvalue=38
+Map	Fader 7		Delay Amount			Delay	// template="FEffect", defaultvalue=16
 // Comp
 Map	PageName		"Comp"			Comp
 Map	Button 1-1		Comp On			Comp	// template="BRedOnOff"
@@ -71,6 +71,6 @@ Map	PageName		"Reverb"			Reverb
 Map	Button 1-1		Reverb On			Reverb	// template="BRedOnOff"
 {{ rm.include_menus(curpage="Reverb",submenu="effects") -}}
 Map	Fader 2		Reverb Decay			Reverb	// template="FFreq"
-Map	Fader 4		Reverb Size			Reverb	// template="FEffect"
-Map	Fader 5		Reverb Damp			Reverb	// template="FEffect"
-Map	Fader 7		Reverb Amount			Reverb	// template="FEffect"
+Map	Fader 4		Reverb Size			Reverb	// template="FEffect", defaultvalue=89
+Map	Fader 5		Reverb Damp			Reverb	// template="FEffect", defaultvalue=38
+Map	Fader 7		Reverb Amount			Reverb	// template="FEffect", defaultvalue=76
