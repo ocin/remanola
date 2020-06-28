@@ -4,7 +4,7 @@
 			["Fader *"]={template="FYellow"},
 			["BigFader *"]={enabledcolor=WAMBER, activecolor=GREEN, disabledcolor=NOCOLOR, denabledcolor=WGREEN, dactivecolor=YELLOW, defaultvalue=751, bvmap="BigFader"},
 			["MFader *"]={enabledcolor=WYELLOW, activecolor=YELLOW, disabledcolor=NOCOLOR},
-			["Drawbar *"]={ttemplate="FYellow"},
+			["Drawbar *"]={ttemplate="FYellow", defaultvalue=0},
 			["Meter *"]={enabledcolor=WAMBER, activecolor=GREEN, disabledcolor=NOCOLOR, maxcolor=RED},
 			["Knob *"]={template="FYellow"},
 			["UDHButton *"]={enabledcolor=YELLOW, activecolor=YELLOW, disabledcolor=NOCOLOR},

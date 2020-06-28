@@ -68,8 +68,8 @@ Map	Button 7-2		Attack Enable Switch			Main	// template="BYellowOnOff"
 Map	Button 7-3		Vib/Trem Enable Switch			Main	// template="BYellowOnOff"
 Map	Button 8-2		Rotator Speed Switch			Main	// template="BYellowOnOff"
 Map	Button 8-3		Rotator Brake Switch			Main	// template="BYellowOnOff"
-Map	Fader 4		R1 Knob				Main	// template="FMisc"
-Map	Fader 5		R2 Knob				Main	// template="FMisc"
+Map	Fader 4		R1 Knob				Main	// template="FMisc", defaultvalue=0
+Map	Fader 5		R2 Knob				Main	// template="FMisc", defaultvalue=0
 Map	BigFader 8		Volume				Main	// template="FVol"
 // Perf
 Map	PageName		"Perf"			Perf
