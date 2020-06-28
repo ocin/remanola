@@ -165,7 +165,30 @@ function handle_input_item(event, button)
 		if(buttonname ~= itemname) then
 			local itemtype = get_item_type(itemname)
 			if(itemtype == "Fader" or itemtype == "BigFader" or itemtype == "Drawbar") then
-				g_velofaderbuttons[buttonname] = button.z
+				if(fader_already_down(buttonname, itemname) ~= nil) then
+					local value = 0
+					local defaultvalue = get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "defaultvalue") 
+					g_buttondown[buttonname] = nil
+					g_buttondown[fader_get_otherbutton(buttonname, itemname)] = nil
+					g_velofaderbuttons[buttonname] = nil
+					g_velofaderbuttons[fader_get_otherbutton(buttonname, itemname)] = nil
+					if(defaultvalue ~= nil) then
+						value = defaultvalue
+					else
+						value = 64
+					end
+					local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
+					remote.handle_input(msg)
+				else
+					if(fader_nearby_down(buttonname, itemname) ~= nil) then
+						local row = get_button_row(buttonname)
+						value = get_item_bvmap(itemname)[row]
+						local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
+						remote.handle_input(msg)
+					else
+						g_velofaderbuttons[buttonname] = button.z
+					end
+				end
 				return(true)
 			elseif(itemtype == "Knob") then
 				local oldvalue = remote.get_item_value(itemsindex[itemname])
@@ -186,7 +209,14 @@ function handle_input_item(event, button)
 						return(true)
 					end
 				end
-				g_velofaderbuttons[buttonname] = button.z
+				if(fader_nearby_down(buttonname, itemname) ~= nil) then
+					local row = get_button_row(buttonname)
+					value = get_item_bvmap(itemname)[row]
+					local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
+					remote.handle_input(msg)
+				else
+					g_velofaderbuttons[buttonname] = button.z
+				end
 				return(true)
 			elseif(itemtype == "UDVButton" or itemtype == "UDHButton") then
 				local value = 1
@@ -205,7 +235,12 @@ function handle_input_item(event, button)
 				if(mfader_already_down(buttonname, itemname)) then
 					g_buttondown[buttonname] = nil
 					g_buttondown[mfader_get_otherbutton(buttonname, itemname)] = nil
-					value = 64
+					local defaultvalue = get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "defaultvalue") 
+					if(defaultvalue ~= nil) then
+						value = defaultvalue
+					else
+						value = 64
+					end
 				else
 					local divider = 30
 					if(button.z > 50) then
@@ -250,10 +285,12 @@ function handle_input_aftertouch(event, button)
 	if(buttonname ~= itemname) then
 		local itemtype = get_item_type(itemname)
 		if(itemtype == "Fader" or itemtype == "BigFader" or itemtype == "Drawbar" or itemtype == "Knob") then
-			if(button.z > 0) then
-				for bn, v in pairs(g_velofaderbuttons) do
-					if(v ~= nil) then
-						g_velofaderbuttons[buttonname] = button.z
+			if(g_buttondown[buttonname] ~= nil) then
+				if(button.z > 0) then
+					for bn, v in pairs(g_velofaderbuttons) do
+						if(v ~= nil) then
+							g_velofaderbuttons[buttonname] = button.z
+						end
 					end
 				end
 			end
