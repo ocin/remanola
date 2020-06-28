@@ -59,7 +59,7 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	Fader 8		Master Volume			Main	// template="FGain"
+Map	Fader 8		Master Volume			Main	// template="FGain", defaultvalue=89
 // Perf
 Map	PageName		"Perf"			Perf
 {{ rm.include_menus(curpage="Perf") -}}
@@ -71,13 +71,13 @@ Map	UDVButton 7-8_8-8		Voices			Perf	// template="UDOsc"
 // Sample
 Map	PageName		"Sample"			Sample
 {{ rm.include_menus(curpage="Sample") -}}
-Map	Fader 1		Zoom			Sample	// template="FMisc"
-Map	Fader 2		Scroll			Sample	// template="FMisc"
-Map	Fader 3		Position			Sample	// template="UDOsc"
-Map	Fader 4		End Pos			Sample	// template="FFreq"
+Map	Fader 1		Zoom			Sample	// template="FMisc", defaultvalue=36
+Map	Fader 2		Scroll			Sample	// template="FMisc", defaultvalue=0
+Map	Fader 3		Position			Sample	// template="UDOsc", defaultvalue=0
+Map	Fader 4		End Pos			Sample	// template="FFreq", defaultvalue=127
 Map	UDVButton 1-5_2-5		Motion			Sample	// template="UDOsc", inverted=true
 Map	Fader 6		Speed			Sample	// template="FFreq"
-Map	Fader 7		Jitter			Sample	// template="FOsc"
+Map	Fader 7		Jitter			Sample	// template="FOsc", defaultvalue=0
 Map	Button 1-8		Global Position			Sample	// template="BRedOnOff"
 // Grains
 Map	PageName		"Grains"			Grains
@@ -89,30 +89,30 @@ Map	Sel1_127		Algorithm=Tape			Grains
 Map	UDVButton 1-1_2-1		Algorithm		SEL1	Grains	// template="UDOsc", inverted=true
 // Spectral Grains
 Map	SubPageName		"Spectral Grains"			Grains	SpectralGrains
-Map	Fader 2		Harm Snap			Grains	SpectralGrains	// template="FOsc"
-Map	Fader 3		Harm Filter			Grains	SpectralGrains	// template="FFreq"
+Map	Fader 2		Harm Snap			Grains	SpectralGrains	// template="FOsc", defaultvalue=0
+Map	Fader 3		Harm Filter			Grains	SpectralGrains	// template="FFreq", defaultvalue=0
 Map	Button 1-4		Curve On 			Grains	SpectralGrains	// template="BRedOnOff"
-Map	MFader 7-4		FFT Size			Grains	SpectralGrains	// template="UDOsc"
-Map	Fader 5		Curve Amt			Grains	SpectralGrains	// template="FOsc"
-Map	Fader 6		Formant			Grains	SpectralGrains	// template="FEffect"
-Map	Fader 7		Formant Tune			Grains	SpectralGrains	// template="FOsc"
-Map	Fader 8		Formant Kbd			Grains	SpectralGrains	// template="FPerf"
+Map	UDVButton 7-4_8-4		FFT Size			Grains	SpectralGrains	// template="UDOsc"
+Map	Fader 5		Curve Amt			Grains	SpectralGrains	// template="FOsc", defaultvalue=127
+Map	Fader 6		Formant			Grains	SpectralGrains	// template="FEffect", defaultvalue=64
+Map	Fader 7		Formant Tune			Grains	SpectralGrains	// template="FOsc", defaultvalue=64
+Map	Fader 8		Formant Kbd			Grains	SpectralGrains	// template="FPerf", defaultvalue=127
 // Grain Oscillator
 Map	SubPageName		"Grain Oscillator"			Grains	GrainOsc
-Map	Fader 2		Pan Spread			Grains	GrainOsc	// template="FOsc"
-Map	Fader 3		Pitch Jitter			Grains	GrainOsc	// template="FOsc"
-Map	Fader 4		Grain Length			Grains	GrainOsc	// template="FFreq"
-Map	Fader 5		Rate-Spacing			Grains	GrainOsc	// template="FOsc"
-Map	Fader 6		Formant			Grains	GrainOsc	// template="FEffect"
-Map	Fader 7		Formant Tune			Grains	GrainOsc	// template="FOsc"
-Map	Fader 8		Formant Kbd			Grains	GrainOsc	// template="FPerf"
+Map	Fader 2		Pan Spread			Grains	GrainOsc	// template="FOsc", defaultvalue=0
+Map	Fader 3		Pitch Jitter			Grains	GrainOsc	// template="FOsc", defaultvalue=0
+Map	Fader 4		Grain Length			Grains	GrainOsc	// template="FFreq", defaultvalue=89
+Map	Fader 5		Rate-Spacing			Grains	GrainOsc	// template="FOsc", defaultvalue=64
+Map	Fader 6		Formant			Grains	GrainOsc	// template="FEffect", defaultvalue=64
+Map	Fader 7		Formant Tune			Grains	GrainOsc	// template="FOsc", defaultvalue=64
+Map	Fader 8		Formant Kbd			Grains	GrainOsc	// template="FPerf", defaultvalue=127
 // Long Grains
 Map	SubPageName		"Long Grains" 			Grains	LongGrains	// template="FOsc"
-Map	Fader 2		Pan Spread			Grains	LongGrains	// template="FOsc"
-Map	Fader 3		Pitch Jitter			Grains	LongGrains	// template="FOsc"
-Map	Fader 5		Grain Length			Grains	LongGrains	// template="FOsc"
-Map	Fader 6		Rate-Spacing			Grains	LongGrains	// template="FFreq"
-Map	Fader 7		XFade			Grains	LongGrains	// template="FOsc"
+Map	Fader 2		Pan Spread			Grains	LongGrains	// template="FOsc", defaultvalue=0
+Map	Fader 3		Pitch Jitter			Grains	LongGrains	// template="FOsc", defaultvalue=0
+Map	Fader 5		Grain Length			Grains	LongGrains	// template="FOsc", defaultvalue=89
+Map	Fader 6		Rate-Spacing			Grains	LongGrains	// template="FFreq", defaultvalue=64
+Map	Fader 7		XFade			Grains	LongGrains	// template="FOsc", defaultvalue=89
 // Tape
 Map	SubPageName		"Tape"			Grains	Tape
 Map	Fader 6		XFade			Grains	Tape	// template="FOsc"
@@ -122,7 +122,7 @@ Map	PageName		"Pitch" 			Pitch
 Map	UDVButton 1-2_2-2		Oct			Pitch	// template="UDFreq"
 Map	UDVButton 1-3_2-3		Semi			Pitch	// template="UDFreq"
 Map	UDVButton 1-4_2-4		Tune			Pitch	// template="UDFreq"
-Map	Fader 6		Pitch Kbd			Pitch	// template="FPerf"
+Map	Fader 6		Pitch Kbd			Pitch	// template="FPerf", defaultvalue=127
 // Osc
 Map	PageName		"Osc"			Osc
 {{ rm.include_menus(curpage="Osc",submenu="osc",oscpage="Osc") -}}
@@ -134,27 +134,27 @@ Map	Fader 6		Osc Mod			Osc	// template="FOsc"
 Map	PageName		"Mixer" 			Mixer
 {{ rm.include_menus(curpage="Mixer",submenu="amp", amppage="Mixer") -}}
 Map	UDVButton 1-2_2-2		Sample To Filter			Mixer	// template="UDAmount", inverted=true
-Map	Fader 3		Sample Level			Mixer	// template="FVol"
+Map	Fader 3		Sample Level			Mixer	// template="FVol", defaultvalue=89
 Map	UDVButton 1-5_2-5		Osc To Filter			Mixer	// template="UDAmount"
-Map	Fader 6		Osc Level			Mixer	// template="FVol"
+Map	Fader 6		Osc Level			Mixer	// template="FVol", defaultvalue=89
 // Filter 
 Map	PageName		"Filter"			Filter
 {{ rm.include_menus(curpage="Filter") -}}
 Map	UDVButton 1-2_2-2		Filter Type			Filter	// template="UDFreq", inverted=true
-Map	Fader 3		Filter Freq			Filter	// template="FFreq"
-Map	Fader 4		Filter Reso			Filter	// template="FEffect"
-Map	Fader 6		Filter Env2			Filter	// template="FEnv"
-Map	Fader 7		Filter Vel			Filter	// template="FPerf"
-Map	Fader 8		Filter Kbd			Filter	// template="FPerf"
+Map	Fader 3		Filter Freq			Filter	// template="FFreq", defaultvalue=64
+Map	Fader 4		Filter Reso			Filter	// template="FEffect", defaultvalue=0
+Map	Fader 6		Filter Env2			Filter	// template="FEnv", defaultvalue=0
+Map	Fader 7		Filter Vel			Filter	// template="FPerf", defaultvalue=0
+Map	Fader 8		Filter Kbd			Filter	// template="FPerf", defaultvalue=0
 // Amp
 Map	PageName		"Amp"			Amp
 {{ rm.include_menus(curpage="Amp",submenu="amp", amppage="Amp") -}}
-Map	Fader 2		Amp Attack			Amp	// template="FGain"
-Map	Fader 3		Amp Decay			Amp	// template="FGain"
-Map	Fader 4		Amp Sustain			Amp	// template="FGain"
-Map	Fader 5		Amp Release			Amp	// template="FGain"
-Map	Fader 6		Amp Gain			Amp	// template="FAmount"
-Map	Fader 7		Amp Velocity			Amp	// template="FMisc"
+Map	Fader 2		Amp Attack			Amp	// template="FGain", defaultvalue=6
+Map	Fader 3		Amp Decay			Amp	// template="FGain", defaultvalue=64
+Map	Fader 4		Amp Sustain			Amp	// template="FGain", defaultvalue=127
+Map	Fader 5		Amp Release			Amp	// template="FGain", defaultvalue=13
+Map	Fader 6		Amp Gain			Amp	// template="FAmount", defaultvalue=102
+Map	Fader 7		Amp Velocity			Amp	// template="FPerf", defaultvalue=0
 Map	Knob V8		Pan			Amp	// template="FGain"
 {% include "devices/instrument/Shared/europa_grain/lfo.remotemap" %}
 {% include "devices/instrument/Shared/europa_grain/env.remotemap" %}
