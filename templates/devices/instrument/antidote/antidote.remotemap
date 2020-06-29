@@ -52,13 +52,13 @@ Map	Button C7		Page=Internal			Index
 // Begin Page Main
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	Fader 8		Master Volume			Main	// template="FVol"
+Map	Fader 8		Master Volume			Main	// template="FVol", defaultvalue=64
 // End Page Main
 // Begin Page Perf
 Map	PageName		"Perf" 			Perf
 {{ rm.include_menus(curpage="Perf") -}}
 Map	UDVButton 7-2_8-2		Polyphony			Perf	// template="UDOsc", inverted=true
-Map	Fader 3		Glide			Perf	// template="FPerf"
+Map	Fader 3		Glide			Perf	// template="FPerf", defaultvalue=0
 // End Page Perf
 {% for oscnum in range(1,3) -%}
 // Begin Page Osc{{ oscnum }}
@@ -67,9 +67,9 @@ Map	PageName		"Osc {{ oscnum }}"			Osc{{ oscnum }}
 Map	UDVButton 1-2_2-2		Osc {{ oscnum }} Waveform			Osc{{ oscnum }}	// template="UDOsc", inverted=true
 Map	UDVButton 1-3_2-3		Osc {{ oscnum }} Voices			Osc{{ oscnum }}	// template="UDOsc2"
 Map	UDVButton 1-4_2-4		Osc {{ oscnum }} Dyad			Osc{{ oscnum }}	// template="UDOsc2"
-Map	Fader 5		Osc {{ oscnum }} Phase			Osc{{ oscnum }}	// template="FOsc"
-Map	Fader 6		Osc {{ oscnum }} Modifier			Osc{{ oscnum }}	// template="FOsc"
-Map	Fader 8		Osc {{ oscnum }} Volume			Osc{{ oscnum }}	// template="FEffect"
+Map	Fader 5		Osc {{ oscnum }} Phase			Osc{{ oscnum }}	// template="FOsc", defaultvalue=64
+Map	Fader 6		Osc {{ oscnum }} Modifier			Osc{{ oscnum }}	// template="FOsc", defaultvalue=0
+Map	Fader 8		Osc {{ oscnum }} Volume			Osc{{ oscnum }}	// template="FVol", defaultvalue=64
 // End Page Osc{{ oscnum }}
 // Begin Page OscMod {{ oscnum }}
 Map	PageName		"OscMod {{ oscnum }}"			OscMod{{ oscnum }}
@@ -77,37 +77,37 @@ Map	PageName		"OscMod {{ oscnum }}"			OscMod{{ oscnum }}
 Map	UDVButton 1-2_2-2		Osc {{ oscnum }} Semi			OscMod{{ oscnum }}	// template="UDFreq"
 Map	UDVButton 1-3_2-3		Osc {{ oscnum }} Fine			OscMod{{ oscnum }}	// template="UDFreq"
 Map	UDVButton 1-4_2-4		Osc {{ oscnum }} Detune			OscMod{{ oscnum }}	// template="UDFreq"
-Map	Fader 5		Osc {{ oscnum }} Spread			OscMod{{ oscnum }}	// template="FEffect"
-Map	Fader 7		Osc {{ oscnum }} Key Track			OscMod{{ oscnum }}	// template="FPerf"
+Map	Fader 5		Osc {{ oscnum }} Spread			OscMod{{ oscnum }}	// template="FEffect", defaultvalue=0
+Map	Fader 7		Osc {{ oscnum }} Key Track			OscMod{{ oscnum }}	// template="FPerf", defaultvalue=127
 Map	Knob V8		Osc {{ oscnum }} Pan			OscMod{{ oscnum }}	// template="FVol"
 // End Page OscMod {{ oscnum }}
 {% endfor -%}
 // Begin Page Mixer
 Map	PageName		"Mixer"			Mixer
 {{ rm.include_menus(curpage="Mixer", submenu="amp", amppage="Mixer") -}}
-Map	Fader 2		Osc 1 Volume			Mixer	// template="FEffect"
-Map	Fader 3		Osc 2 Volume			Mixer	// template="FEffect"
-Map	Fader 4		Sub 1 Volume			Mixer	// template="FGain"
-Map	Fader 5		Sub 2 Volume			Mixer	// template="FGain"
-Map	Fader 6		Drift			Mixer	// template="FMisc"
+Map	Fader 2		Osc 1 Volume			Mixer	// template="FVol", defaultvalue=64
+Map	Fader 3		Osc 2 Volume			Mixer	// template="FVol", defaultvalue=64
+Map	Fader 4		Sub 1 Volume			Mixer	// template="FGain", defaultvalue=0
+Map	Fader 5		Sub 2 Volume			Mixer	// template="FGain", defaultvalue=0
+Map	Fader 6		Drift			Mixer	// template="FEffect", defaultvalue=0
 // End Page Mixer
 // Begin Page Filter
 Map	PageName		"Filter"			Filter
 {{ rm.include_menus(curpage="Filter", submenu="filter", filterpage="Filter") -}}
 Map	UDVButton 1-2_2-2		Filter Type			Filter	// template="UDFreq", inverted=true
-Map	Fader 3		Filter Cutoff			Filter	// template="FFreq"
-Map	Fader 4		Filter Resonance			Filter	// template="FEffect"
-Map	Fader 6		Filter Envelope Amount			Filter	// template="FEnv"
-Map	Fader 8		Filter Key Track			Filter	// template="FPerf"
+Map	Fader 3		Filter Cutoff			Filter	// template="FFreq", defaultvalue=127
+Map	Fader 4		Filter Resonance			Filter	// template="FEffect", defaultvalue=0
+Map	Fader 6		Filter Envelope Amount			Filter	// template="FEnv", defaultvalue=0
+Map	Fader 8		Filter Key Track			Filter	// template="FPerf", defaultvalue=0
 // End Page Filter
 // Begin Page Filter Envelope
 Map	PageName		"Filter Envelope"			FilterEnv
 {{ rm.include_menus(curpage="FilterEnv", submenu="filter", filterpage="FilterEnv") -}}
-Map	Fader 2		Filter Envelope Amount			FilterEnv	// template="FEnv"
-Map	Fader 4		Filter Envelope Attack			FilterEnv	// template="FFreq"
-Map	Fader 5		Filter Envelope Decay			FilterEnv	// template="FFreq"
-Map	Fader 6		Filter Envelope Sustain			FilterEnv	// template="FFreq"
-Map	Fader 7		Filter Envelope Release			FilterEnv	// template="FFreq"
+Map	Fader 2		Filter Envelope Amount			FilterEnv	// template="FEnv", defaultvalue=0
+Map	Fader 4		Filter Envelope Attack			FilterEnv	// template="FFreq", defaultvalue=0
+Map	Fader 5		Filter Envelope Decay			FilterEnv	// template="FFreq", defaultvalue=64
+Map	Fader 6		Filter Envelope Sustain			FilterEnv	// template="FFreq", defaultvalue=127
+Map	Fader 7		Filter Envelope Release			FilterEnv	// template="FFreq", defaultvalue=64
 // End Page Filter Envelope
 // Begin Page Effects
 Map	PageName		"Effects"			Effects
@@ -128,7 +128,7 @@ Map	Button 8-4		Chorus			Effects	// template="BGreenOnOff"
 Map	Button 8-5		Delay			Effects	// template="BGreenOnOff"
 Map	Button 8-6		Reverb			Effects	// template="BGreenOnOff"
 Map	Button 8-7		Compressor			Effects	// template="BGreenOnOff"
-Map	Fader 8		External Input Amount			Effects	// template="FEffect"
+Map	Fader 8		External Input Amount			Effects	// template="FEffect", defaultvalue=64
 {% endif %}
 {{ rm.include_menus(curpage="Effects", submenu="effects") -}}
 // End Page Effects
@@ -136,51 +136,51 @@ Map	Fader 8		External Input Amount			Effects	// template="FEffect"
 Map	PageName		"EQ/Bass"			EQBass
 {{ rm.include_menus(curpage="EQBass", submenu="effects", mainmenu_mini="effect") -}}
 Map	Button 1-1		EQ/Bass			EQBass	// template="BGreenOnOff"
-Map	MFader 3-1		Bass Freq			EQBass	// template="UDFreq"
-Map	MFader 5-1		Bass Amount			EQBass	// template="UDEffect"
-Map	Fader 2		EQ Low Gain			EQBass	// template="FGain"
-Map	Fader 3		EQ Mid Freq			EQBass	// template="FFreq"
-Map	Fader 4		EQ Mid Q			EQBass	// template="FEffect"
-Map	Fader 5		EQ Mid Gain			EQBass	// template="FGain"
-Map	Fader 6		EQ High Gain			EQBass	// template="FGain"
-Map	Fader 7		EQ Dry/Wet			EQBass	// template="FEffect"
+Map	Fader 2		EQ Low Gain			EQBass	// template="FGain", defaultvalue=64
+Map	Fader 3		EQ Mid Freq			EQBass	// template="FFreq", defaultvalue=64
+Map	Fader 4		EQ Mid Q			EQBass	// template="FEffect", defaultvalue=64
+Map	Fader 5		EQ Mid Gain			EQBass	// template="FGain", defaultvalue=64
+Map	Fader 6		EQ High Gain			EQBass	// template="FGain", defaultvalue=64
+Map	MFader 1-7		Bass Freq			EQBass	// template="UDFreq", defaultvalue=57
+Map	MFader 5-7		Bass Amount			EQBass	// template="UDEffect", defaultvalue=0
+Map	Fader 8		EQ Dry/Wet			EQBass	// template="FGain", defaultvalue=127
 // End Page EQ/Bass
 // Begin Page Dist
 Map	PageName		"Dist"			Dist
 {{ rm.include_menus(curpage="Dist", submenu="effects", mainmenu_mini="effect") -}}
 Map	Button 1-1		Distortion			Dist	// template="BGreenOnOff"
 Map	UDVButton 3-1_4-1		Distortion Type			Dist	// template="UDEffect"
-Map	MFader 5-1		Distortion Symmetry			Dist	// template="UDEffect"
-Map	Fader 2		Distortion Drive			Dist	// template="FAmount"
-Map	Fader 3		Distortion Tone			Dist	// template="FEffect"
-Map	Fader 4		Distortion Low Cut			Dist	// template="FFreq"
-Map	Fader 5		Distortion High Cut			Dist	// template="FFreq"
-Map	Fader 6		Distortion Out Gain			Dist	// template="FAmount"
-Map	Fader 7		Distortion Dry/Wet			Dist	// template="FEffect"
+Map	MFader 5-1		Distortion Drive			Dist	// template="FAmount", defaultvalue=0
+Map	Fader 2		Distortion Symmetry			Dist	// template="UDEffect", defaultvalue=64
+Map	Fader 3		Distortion Tone			Dist	// template="FEffect", defaultvalue=64
+Map	Fader 4		Distortion Low Cut			Dist	// template="FFreq", defaultvalue=0
+Map	Fader 5		Distortion High Cut			Dist	// template="FFreq", defaultvalue=127
+Map	Fader 6		Distortion Out Gain			Dist	// template="FAmount", defaultvalue=64
+Map	Fader 8		Distortion Dry/Wet			Dist	// template="FGain", defaultvalue=127
 // End Page Dist
 // Begin Page Phaser
 Map	PageName		"Phaser"			Phaser
 {{ rm.include_menus(curpage="Phaser", submenu="effects", mainmenu_mini="effect") -}}
 Map	Button 1-1		Phaser			Phaser	// template="BGreenOnOff"
 Map	UDVButton 3-1_4-1		Phaser Stages			Phaser	// template="UDEffect"
-Map	UDVButton 5-1_6-1		Phaser Rate			Phaser	// template="UDFreq"
-Map	Fader 2		Phaser Freq			Phaser	// template="FFreq"
-Map	Fader 3		Phaser Spread			Phaser	// template="FEffect"
-Map	Fader 4		Phaser Feedback			Phaser	// template="FEffect"
-Map	Fader 5		Phaser Mod			Phaser	// template="FLFO"
-Map	Fader 6		Phaser LR Offset			Phaser	// template="FEffect"
-Map	Fader 7		Phaser Dry/Wet			Phaser	// template="FEffect"
+Map	Fader 2		Phaser Freq			Phaser	// template="FFreq", defaultvalue=64
+Map	Fader 3		Phaser Spread			Phaser	// template="FEffect", defaultvalue=127
+Map	Fader 4		Phaser Feedback			Phaser	// template="FEffect", defaultvalue=64
+Map	UDVButton 7-5_8-5		Phaser Rate			Phaser	// template="UDFreq"
+Map	Fader 6		Phaser Mod			Phaser	// template="FLFO", defaultvalue=64
+Map	Fader 7		Phaser LR Offset			Phaser	// template="FEffect", defaultvalue=64
+Map	Fader 8		Phaser Dry/Wet			Phaser	// template="FGain", defaultvalue=64
 // End Page Phaser
 // Begin Page Chorus
 Map	PageName		"Chorus"			Chorus
 {{ rm.include_menus(curpage="Chorus", submenu="effects", mainmenu_mini="effect") -}}
 Map	Button 1-1		Chorus			Chorus	// template="BGreenOnOff"
-Map	Fader 2		Chorus Delay			Chorus	// template="FFreq"
-Map	Fader 3		Chorus Rate			Chorus	// template="FFreq"
-Map	Fader 4		Chorus Depth			Chorus	// template="FEffect"
-Map	Fader 5		Chorus Feedback			Chorus	// template="FEffect"
-Map	Fader 6		Chorus LR Offset			Chorus	// template="FEffect"
-Map	Fader 7		Chorus Dry/Wet			Chorus	// template="FEffect"
+Map	Fader 2		Chorus Delay			Chorus	// template="FFreq", defaultvalue=102
+Map	Fader 3		Chorus Rate			Chorus	// template="FFreq", defaultvalue=64
+Map	Fader 4		Chorus Depth			Chorus	// template="FEffect", defaultvalue=25
+Map	Fader 5		Chorus Feedback			Chorus	// template="FEffect", defaultvalue=64
+Map	Fader 6		Chorus LR Offset			Chorus	// template="FEffect", defaultvalue=64
+Map	Fader 8		Chorus Dry/Wet			Chorus	// template="FGain", defaultvalue=64
 // End Page Chorus
 // Begin Page Delay
 Map	PageName		"Delay"			Delay
@@ -189,33 +189,33 @@ Map	Button 1-1		Delay			Delay	// template="BGreenOnOff"
 Map	UDVButton 3-1_4-1		Delay Type			Delay	// template="UDEffect"
 Map	UDVButton 5-1_6-1		Delay L-Rate			Delay	// template="UDFreq"
 Map	UDVButton 7-1_8-1		Delay R-Rate			Delay	// template="UDFreq"
-Map	Fader 2		Delay Color			Delay	// template="FEffect"
-Map	Fader 3		Delay Feedback			Delay	// template="FEffect"
-Map	Fader 5		Delay Mod Rate			Delay	// template="FFreq"
-Map	Fader 6		Delay Mod Amount			Delay	// template="FLFO"
-Map	Fader 7		Delay Dry/Wet			Delay	// template="FEffect"
+Map	Fader 2		Delay Color			Delay	// template="FEffect", defaultvalue=64
+Map	Fader 3		Delay Feedback			Delay	// template="FEffect", defaultvalue=64
+Map	Fader 5		Delay Mod Rate			Delay	// template="FFreq", defaultvalue=64
+Map	Fader 6		Delay Mod Amount			Delay	// template="FLFO", defaultvalue=13
+Map	Fader 8		Delay Dry/Wet			Delay	// template="FGain", defaultvalue=64
 // End Page Delay
 // Begin Page Reverb
 Map	PageName		"Reverb"			Reverb
 {{ rm.include_menus(curpage="Reverb", submenu="effects", mainmenu_mini="effect") -}}
 Map	Button 1-1		Reverb			Reverb	// template="BGreenOnOff"
-Map	MFader 3-1		Reverb Pre-Delay			Reverb	// template="UDEffect"
-Map	Fader 2		Reverb Time			Reverb	// template="FEffect"
-Map	Fader 3		Reverb HF-Damp			Reverb	// template="FFreq"
-Map	Fader 4		Reverb Low Cut			Reverb	// template="FFreq"
-Map	Fader 5		Reverb High Cut			Reverb	// template="FFreq"
-Map	Fader 6		Reverb Mod			Reverb	// template="FLFO"
-Map	Fader 7		Reverb Dry/Wet			Reverb	// template="FEffect"
+Map	MFader 3-1		Reverb Pre-Delay			Reverb	// template="UDEffect", defaultvalue=0
+Map	Fader 2		Reverb Time			Reverb	// template="FEffect", defaultvalue=64
+Map	Fader 3		Reverb HF-Damp			Reverb	// template="FFreq", defaultvalue=127
+Map	Fader 4		Reverb Low Cut			Reverb	// template="FFreq", defaultvalue=0
+Map	Fader 5		Reverb High Cut			Reverb	// template="FFreq", defaultvalue=127
+Map	Fader 6		Reverb Mod			Reverb	// template="FLFO", defaultvalue=64
+Map	Fader 8		Reverb Dry/Wet			Reverb	// template="FGain", defaultvalue=64
 // End Page Reverb
 // Begin Page Comp
 Map	PageName		"Comp"			Comp
 {{ rm.include_menus(curpage="Comp", submenu="effects", mainmenu_mini="effect") -}}
 Map	Button 1-1		Compressor			Comp	// template="BGreenOnOff"
 Map	UDVButton 3-1_4-1		Compressor Ratio			Comp	// template="UDEffect"
-Map	Fader 2		Compressor Threshold			Comp	// template="FEffect"
-Map	Fader 4		Compressor Attack			Comp	// template="FEffect"
-Map	Fader 5		Compressor Release			Comp	// template="FEffect"
-Map	Fader 7		Compressor Dry/Wet			Comp	// template="FEffect"
+Map	Fader 2		Compressor Threshold			Comp	// template="FEffect", defaultvalue=64
+Map	Fader 4		Compressor Attack			Comp	// template="FEffect", defaultvalue=0
+Map	Fader 5		Compressor Release			Comp	// template="FEffect", defaultvalue=95
+Map	Fader 8		Compressor Dry/Wet			Comp	// template="FGain", defaultvalue=127
 // End Page Comp
 {% for lfonum in range(1,3) %}
 // Begin Page LFO {{ lfonum }}
@@ -235,19 +235,19 @@ Map	UDVButton 7-1_8-1		Lfo {{ lfonum }} Target			LFO{{ lfonum }}	// template="UD
 // Begin Page Amp Env
 Map	PageName		"Amp Env"			AmpEnv
 {{ rm.include_menus(curpage="AmpEnv", submenu="amp", amppage="AmpEnv") -}}
-Map	Fader 3		Amp Envelope Attack			AmpEnv	// template="FVol"
-Map	Fader 4		Amp Envelope Decay			AmpEnv	// template="FVol"
-Map	Fader 5		Amp Envelope Sustain			AmpEnv	// template="FVol"
-Map	Fader 6		Amp Envelope Release			AmpEnv	// template="FVol"
+Map	Fader 3		Amp Envelope Attack			AmpEnv	// template="FVol", defaultvalue=0
+Map	Fader 4		Amp Envelope Decay			AmpEnv	// template="FVol", defaultvalue=64
+Map	Fader 5		Amp Envelope Sustain			AmpEnv	// template="FVol", defaultvalue=127
+Map	Fader 6		Amp Envelope Release			AmpEnv	// template="FVol", defaultvalue=64
 // End Page Amp Env
 // Begin Page Mod Env
 Map	PageName		"Mod Env"			ModEnv
 {{ rm.include_menus(curpage="ModEnv", submenu="mod", modpage="ModEnv") -}}
 Map	UDVButton 3-1_4-1		Mod Envelope Target			ModEnv	// template="UDEnv", inverted=true
-Map	Fader 3		Mod Envelope Attack			ModEnv	// template="FEnv"
-Map	Fader 4		Mod Envelope Decay			ModEnv	// template="FEnv"
-Map	Fader 5		Mod Envelope Sustain			ModEnv	// template="FEnv"
-Map	Fader 6		Mod Envelope Release			ModEnv	// template="FEnv"
+Map	Fader 3		Mod Envelope Attack			ModEnv	// template="FEnv", defaultvalue=0
+Map	Fader 4		Mod Envelope Decay			ModEnv	// template="FEnv", defaultvalue=64
+Map	Fader 5		Mod Envelope Sustain			ModEnv	// template="FEnv", defaultvalue=127
+Map	Fader 6		Mod Envelope Release			ModEnv	// template="FEnv", defaultvalue=64
 Map	Knob V8		Mod Envelope Target Amount			ModEnv	// template="FEnv"
 // End Page Mod Env
 // Begin Page Arpeggiator
