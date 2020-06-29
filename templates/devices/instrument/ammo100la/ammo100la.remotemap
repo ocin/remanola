@@ -19,7 +19,7 @@ Map	Button 2-2		Page=Osc2			Index
 // Main
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	Fader 8		Output			Main	// template="FVol"
+Map	Fader 8		Output			Main	// template="FVol", defaultvalue=64
 // Osc
 Map	PageName		"Osc"			Osc
 {{ rm.include_menus(curpage="Osc") -}}
@@ -30,25 +30,25 @@ Map	Sel1_95		Range=Cents			Osc
 Map	Sel1_127		Range=Tempo			Osc
 Map	Button 1-1		Oscillator On			Osc	// template="BBlueOnOff"
 Map	UDVButton 1-2_2-2		Waveform			Osc	// template="UDOsc"
-Map	MFader 5-2		Pulse Width			Osc	// template="UDOsc"
-Map	MFader 7-2		Rate CV In Amount			Osc	// template="UDLFO"
+Map	MFader 5-2		Pulse Width			Osc	// template="UDOsc", defaultvalue=64
+Map	MFader 7-2		Rate CV In Amount			Osc	// template="UDLFO", defaultvalue=127
 Map	Fader 3		Low Rate Hz			Osc	LowHz	// template="FFreq"
 Map	Fader 3		High Rate Hz			Osc	HighHz	// template="FFreq"
 Map	UDVButton 1-3_2-3		Rate Semitone			Osc	Semitone	// template="UDFreq"
 Map	UDVButton 1-3_2-3		Cents Detune			Osc	Cents	// template="UDFreq"
 Map	UDVButton 1-3_2-3		Rate Tempo Sync			Osc	Tempo	// template="UDFreq"
 Map	UDVButton 7-4_8-4		Range		SEL1	Osc	// template="UDOsc"
-Map	MFader 7-5		Depth CV In Amount			Osc	// template="UDLFO"
-Map	Fader 6		Depth			Osc	// template="FFreq"
-Map	MFader 7-7		Phase CV In Amount			Osc	// template="UDLFO"
-Map	Fader 8		Phase			Osc	// template="FOsc"
+Map	MFader 7-5		Depth CV In Amount			Osc	// template="UDLFO", defaultvalue=127
+Map	Fader 6		Depth			Osc	// template="FFreq", defaultvalue=127
+Map	MFader 7-7		Phase CV In Amount			Osc	// template="UDLFO", defaultvalue=127
+Map	Fader 8		Phase			Osc	// template="FOsc", defaultvalue=0
 // Osc2
 Map	PageName		"Osc2"			Osc2
-Map	Fader 1		Keyboard			Osc2	// template="FPerf"
-Map	Fader 2		Envelope CV In Amount			Osc2	// template="FEnv"
+Map	Fader 1		Keyboard			Osc2	// template="FPerf", defaultvalue=0
+Map	Fader 2		Envelope CV In Amount			Osc2	// template="FEnv", defaultvalue=127
 Map	Button 1-3		Oscillator Free Run			Osc2	// template="BYellowOnOff"
 Map	Button 1-4		Oneshot			Osc2	// template="BRedOnOff"
-Map	Fader 6		Lag Up			Osc2	// template="FOsc"
-Map	Fader 7		Lag Down			Osc2	// template="FOsc"
+Map	Fader 6		Lag Up			Osc2	// template="FOsc", defaultvalue=0
+Map	Fader 7		Lag Down			Osc2	// template="FOsc", defaultvalue=127
 {{ rm.include_menus(curpage="Osc2") -}}
 {% endblock main %}
