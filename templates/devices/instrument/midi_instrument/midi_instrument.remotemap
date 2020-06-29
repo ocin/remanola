@@ -23,7 +23,7 @@ Map	Button 1-1		Note On			Main	// template="BRedOnOff"
 Map	Button 4-1		Controller Activity			Main	// template="BRedOnOff"
 {% for cc in range(0,120) %}
 Map	Sel1_{{ (cc*(127/119))|round|int }}		CC={{ cc }}			Main
-Map	Fader 4		CC {{ cc }}			Main	{{ cc }}	// template="FMisc"
+Map	Fader 4		CC {{ cc }}			Main	{{ cc }}	// template="FMisc", defaultvalue=0
 {% endfor %}
 Map	UDVButton 1-7_2-7		Program Change			Main	// template="UDPerf"
 Map	Button 1-8		Program Change On/Off			Main	// template="BRedOnOff"
