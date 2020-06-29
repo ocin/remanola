@@ -26,70 +26,70 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	Fader 8		Volume			Main	// template="FVol"
+Map	Fader 8		Volume			Main	// template="FVol", defaultvalue=89
 // Osc
 Map	PageName		"Osc"			Osc
 {{ rm.include_menus(curpage="Osc") -}}
 Map	UDVButton 1-1_2-1		Osc1 Wave			Osc	// template="UDOsc"
 Map	UDVButton 3-1_4-1		Osc1 Oct			Osc	// template="UDFreq"
 Map	Knob V3		Osc Mix			Osc	// template="FVol"
-Map	Fader 4		Osc Detune			Osc	// template="FEffect"
+Map	Fader 4		Osc Detune			Osc	// template="FFreq", defaultvalue=64
 Map	UDVButton 1-5_2-5		Osc2 Wave			Osc	// template="UDOsc"
 Map	UDVButton 3-5_4-5		Osc2 Oct			Osc	// template="UDFreq"
 Map	UDVButton 5-5_6-5		Osc2 Pitch			Osc	// template="UDFreq"
-Map	Fader 6		Noise			Osc	// template="FOsc"
-Map	Fader 7		Pitch LFO Amt			Osc	// template="FLFO"
-Map	Fader 8		FM Env Amt			Osc	// template="FLFO"
+Map	Fader 6		Noise			Osc	// template="FOsc", defaultvalue=13
+Map	Fader 7		Pitch LFO Amt			Osc	// template="FLFO", defaultvalue=0
+Map	Fader 8		FM Env Amt			Osc	// template="FLFO", defaultvalue=0
 // Filter
 Map	PageName		"Filter"			Filter
 {{ rm.include_menus(curpage="Filter") -}}
-Map	Fader 1		Filter Drive			Filter	// template="FGain"
-Map	Fader 2		Filter Freq			Filter	// template="FFreq"
-Map	Fader 3		Filter Reso			Filter	// template="FEffect"
-Map	Fader 5		Filter Env Amount			Filter	// template="FEnv"
-Map	Fader 6		Filter Key Amt			Filter	// template="FPerf"
-Map	Fader 7		Filter LFO Amt			Filter	// template="FLFO"
+Map	Fader 1		Filter Drive			Filter	// template="FGain", defaultvalue=64
+Map	Fader 2		Filter Freq			Filter	// template="FFreq", defaultvalue=38
+Map	Fader 3		Filter Reso			Filter	// template="FEffect", defaultvalue=25
+Map	Fader 5		Filter Env Amount			Filter	// template="FEnv", defaultvalue=51
+Map	Fader 6		Filter Key Amt			Filter	// template="FPerf", defaultvalue=25
+Map	Fader 7		Filter LFO Amt			Filter	// template="FLFO", defaultvalue=0
 // Amp
 Map	PageName		"Amp"			Amp
 {{ rm.include_menus(curpage="Amp") -}}
-Map	Fader 1		Amp Attack			Amp	// template="FVol"
-Map	Fader 2		Amp Decay			Amp	// template="FVol"
-Map	Fader 3		Amp Sustain			Amp	// template="FVol"
-Map	Fader 4		Amp Release			Amp	// template="FVol"
-Map	Fader 6		Amp Velocity			Amp	// template="FPerf"
+Map	Fader 1		Amp Attack			Amp	// template="FVol", defaultvalue=5
+Map	Fader 2		Amp Decay			Amp	// template="FVol", defaultvalue=64
+Map	Fader 3		Amp Sustain			Amp	// template="FVol", defaultvalue=64
+Map	Fader 4		Amp Release			Amp	// template="FVol", defaultvalue=13
+Map	Fader 6		Amp Velocity			Amp	// template="FPerf", defaultvalue=0
 // LFO
 Map	PageName		"LFO"			LFO
 {{ rm.include_menus(curpage="LFO") -}}
-Map	Fader 1		LFO Rate			LFO	// template="FFreq"
+Map	Fader 1		LFO Rate			LFO	// template="FFreq", defaultvalue=64
 Map	UDVButton 1-2_2-2		LFO Wave			LFO	// template="FLFO"
 // Env
 Map	PageName		"Env"			Env
 {{ rm.include_menus(curpage="Env") -}}
-Map	Fader 1		Filter Attack			Env	// template="FEnv"
-Map	Fader 2		Filter Decay			Env	// template="FEnv"
-Map	Fader 3		Filter Sustain			Env	// template="FEnv"
-Map	Fader 4		Filter Release			Env	// template="FEnv"
-Map	Fader 6		Filter Vel			Env	// template="FPerf"
+Map	Fader 1		Filter Attack			Env	// template="FEnv", defaultvalue=0
+Map	Fader 2		Filter Decay			Env	// template="FEnv", defaultvalue=51
+Map	Fader 3		Filter Sustain			Env	// template="FEnv", defaultvalue=0
+Map	Fader 4		Filter Release			Env	// template="FEnv", defaultvalue=89
+Map	Fader 6		Filter Vel			Env	// template="FPerf", defaultvalue=64
 // Perf
 Map	PageName		"Perf"			Perf
 {{ rm.include_menus(curpage="Perf") -}}
 Map	UDVButton 1-1_2-1		Portamento Mode			Perf	// template="UDPerf"
-Map	Fader 2		Portamento			Perf	// template="FPerf"
+Map	Fader 2		Portamento			Perf	// template="FPerf", defaultvalue=0
 Map	Button 1-3		ReTrig			Perf	// template="BRedOnOff"
 Map	UDVButton 1-4_2-4		Bend Range			Perf	// template="UDPerf"
-Map	Fader 5		Wheel Filter Amt			Perf	// template="FFreq"
-Map	Fader 6		Wheel LFO Amt			Perf	// template="FLFO"
+Map	Fader 5		Wheel Filter Amt			Perf	// template="FFreq", defaultvalue=64
+Map	Fader 6		Wheel LFO Amt			Perf	// template="FLFO", defaultvalue=64
 // Chorus
 Map	PageName		"Chorus"			Chorus
 {{ rm.include_menus(curpage="Chorus", submenu="effects", effectspage="Chorus") -}}
-Map	Fader 1		Chorus Amount			Chorus	// template="FEffect"
-Map	Fader 2		Chorus Rate			Chorus	// template="FFreq"
-Map	Fader 3		Chorus Spread			Chorus	// template="FEffect"
+Map	Fader 1		Chorus Amount			Chorus	// template="FEffect", defaultvalue=0
+Map	Fader 2		Chorus Rate			Chorus	// template="FFreq", defaultvalue=51
+Map	Fader 3		Chorus Spread			Chorus	// template="FEffect", defaultvalue=97
 // Delay
 Map	PageName		"Delay"			Delay
 {{ rm.include_menus(curpage="Delay", submenu="effects", effectspage="Delay") -}}
-Map	Fader 1		Delay Amount			Delay	// template="FEffect"
-Map	Fader 2		Delay Time			Delay	// template="FFreq"
-Map	Fader 3		Delay Feedback			Delay	// template="FEffect"
+Map	Fader 1		Delay Amount			Delay	// template="FEffect", defaultvalue=0
+Map	Fader 2		Delay Time			Delay	// template="FFreq", defaultvalue=51
+Map	Fader 3		Delay Feedback			Delay	// template="FEffect", defaultvalue=0
 Map	Button 1-4		Delay Pingpong			Delay	// template="BRedOnOff"
 {% endblock main %}
