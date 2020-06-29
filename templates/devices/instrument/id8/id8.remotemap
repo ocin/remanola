@@ -18,7 +18,7 @@ Map	Button 1-4		Sound A			Main	// template="BSelSound"
 Map	Button 2-4		Sound B			Main	// template="BSelSound"
 Map	Button 3-4		Sound C			Main	// template="BSelSound"
 Map	Button 4-4		Sound D			Main	// template="BSelSound"
-Map	Fader 6		Parameter 1			Main	// template="FEffect"
-Map	Fader 7		Parameter 2			Main	// template="FEffect"
-Map	Fader 8		Volume			Main	// template="FVol"
+Map	Fader 6		Parameter 1			Main	// template="FEffect", defaultvalue=0
+Map	Fader 7		Parameter 2			Main	// template="FEffect", defaultvalue=0
+Map	Fader 8		Volume			Main	// template="FVol", defaultvalue=100
 {% endblock main %}
