@@ -38,7 +38,7 @@ Map	Button 8-5		Lag Down Mode			VPM{{ vpmnum }}	// template="BRedOnOff"
 {% else %}
 Map	Button 8-5		Lag Mode			VPM{{ vpmnum }}	// template="BRedOnOff"
 {% endif %}
-Map	Fader 6		VPM {{ vpmnum }} Lag Up			VPM{{ vpmnum }}	// template="FOsc"
-Map	Fader 7		VPM {{ vpmnum }} Lag Down			VPM{{ vpmnum }}	// template="FOsc"
+Map	Fader 6		VPM {{ vpmnum }} Lag Up			VPM{{ vpmnum }}	// template="FOsc", defaultvalue=0
+Map	Fader 7		VPM {{ vpmnum }} Lag Down			VPM{{ vpmnum }}	// template="FOsc", defaultvalue=127
 Map	Fader 8		VPM {{ vpmnum }} Output			VPM{{ vpmnum }}	// template="FGain"
 {% endfor -%}

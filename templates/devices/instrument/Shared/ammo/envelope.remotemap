@@ -4,12 +4,12 @@
 // Envelope
 Map	PageName		"Envelope"			Envelope
 {{ rm.include_menus(curpage="Envelope") -}}
-Map	Fader 1		Envelope Delay			Envelope	// template="FEffect"
-Map	Fader 2		Envelope Attack			Envelope	// template="FEnv"
-Map	Fader 3		Envelope Hold			Envelope	// template="FEffect"
-Map	Fader 4		Envelope Decay			Envelope	// template="FEnv"
-Map	Fader 5		Envelope Sustain			Envelope	// template="FEnv"
-Map	Fader 6		Envelope Release			Envelope	// template="FEnv"
+Map	Fader 1		Envelope Delay			Envelope	// template="FEffect", defaultvalue=0
+Map	Fader 2		Envelope Attack			Envelope	// template="FEnv", defaultvalue=0
+Map	Fader 3		Envelope Hold			Envelope	// template="FEffect", defaultvalue=0
+Map	Fader 4		Envelope Decay			Envelope	// template="FEnv", defaultvalue=0
+Map	Fader 5		Envelope Sustain			Envelope	// template="FEnv", defaultvalue=127
+Map	Fader 6		Envelope Release			Envelope	// template="FEnv", defaultvalue=0
 {% if(devicename == "Ammo 1200BR") %}
 Map	Button 1-8		Envelope Trigger Mode			Envelope	// template="BRedOnOff"
 {% endif %}
