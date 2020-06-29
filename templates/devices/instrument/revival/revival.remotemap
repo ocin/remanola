@@ -77,7 +77,7 @@ Map	PageName		"Perf"			Perf
 Map	Button 1-1		Voicing Monophonic Mode			Perf	// template="BRedOnOff"
 Map	UDVButton 1-2_2-2		Voicing Transpose Amount			Perf	// template="UDFreq"
 Map	UDVButton 1-3_2-3		Voicing Pitch Bend Range			Perf	// template="UDPerf"
-Map	Fader 7		Voicing Portamento Rate			Perf	// template="FPerf"
+Map	Fader 7		Voicing Portamento Rate			Perf	// template="FPerf", defaultvalue=0
 Map	UDVButton 7-8_8-8		Voicing Portamento Mode			Perf	// template="FPerf"
 // Voicing 1
 Map	PageName		"Voicing 1"			Voicing1
@@ -86,23 +86,23 @@ Map	UDVButton 1-2_2-2		Voicing Overtone Type			Voicing1	// template="FOsc", inve
 Map	UDVButton 1-3_2-3		Voicing Overlay Type			Voicing1	// template="FOsc", inverted=true
 Map	UDVButton 1-4_2-4		Voicing Velocity Type			Voicing1	// template="FPerf", inverted=true
 Map	UDVButton 1-5_2-5		Voicing Click Type			Voicing1	// template="FOsc", inverted=true
-Map	Fader 6		Voicing Attack First/All			Voicing1	// template="FOsc"
+Map	Fader 6		Voicing Attack First/All			Voicing1	// template="FOsc", defaultvalue=0
 // Voicing 2
 Map	PageName		"Voicing 2"			Voicing2
 {{ rm.include_menus(curpage="Voicing2", submenu="voicing", voicingpage="Voicing2") -}}
-Map	Fader 1		Voicing Velocity Sensitivity			Voicing2	// template="FPerf"
-Map	Fader 2		Voicing Chorus Depth			Voicing2	// template="FEffect"
-Map	Fader 3		Voicing Decay Keyboard Track			Voicing2	// template="FPerf"
-Map	Fader 6		Voicing Vibrato Depth			Voicing2	// template="FEffect"
-Map	Fader 7		Voicing Tremolo Depth			Voicing2	// template="FEffect"
-Map	Fader 8		Voicing Vibrato/Tremolo Rate			Voicing2	// template="FPerf"
+Map	Fader 1		Voicing Velocity Sensitivity			Voicing2	// template="FPerf", defaultvalue=0
+Map	Fader 2		Voicing Chorus Depth			Voicing2	// template="FEffect", defaultvalue=0
+Map	Fader 3		Voicing Decay Keyboard Track			Voicing2	// template="FPerf", defaultvalue=0
+Map	Fader 6		Voicing Vibrato Depth			Voicing2	// template="FEffect", defaultvalue=64
+Map	Fader 7		Voicing Tremolo Depth			Voicing2	// template="FEffect", defaultvalue=0
+Map	Fader 8		Voicing Vibrato/Tremolo Rate			Voicing2	// template="FPerf", defaultvalue=64
 // Pri/Sec
 Map	PageName		"Pri/Sec"			PriSec
 {{ rm.include_menus(curpage="PriSec") -}}
 Map	UDVButton 1-2_2-2		Pri/Sec Fade Mode			PriSec	// template="UDOsc"
 Map	UDVButton 1-3_2-3		Pri/Sec AutoFade Type			PriSec	// template="UDOsc", inverted=true
 Map	Knob V4		Pri/Sec AutoFade CrossFade			PriSec	// template="FOsc"
-Map	Fader 6		Pri/Sec AutoFade Rate			PriSec	// template="FFreq"
+Map	Fader 6		Pri/Sec AutoFade Rate			PriSec	// template="FFreq", defaultvalue=64
 Map	Button 1-7		Pri/Sec Keep Primary			PriSec	// template="BRedOnOff"
 // Solos
 Map	PageName		"Solos"			Solos
@@ -116,31 +116,31 @@ Map	Button 8-8		Release Section Solo			Solos	// template="BSoloRevival"
 Map	PageName		"Attack"			Attack
 {{ rm.include_menus(curpage="Attack", submenu="section", mainmenu_mini="section",section="Attack") -}}
 Map	UDVButton 1-2_2-2		Attack Wave Set			Attack	// template="UDOsc", inverted=true
-Map	Fader 3		Attack Section Gain Adjust			Attack	// template="FVol"
-Map	Fader 5		Attack Section Click			Attack	// template="FOsc"
-Map	Fader 6		Attack Section Attack Rate			Attack	// template="FVol"
-Map	Fader 7		Attack Section Decay Rate			Attack	// template="FVol"
+Map	Fader 3		Attack Section Gain Adjust			Attack	// template="FVol", defaultvalue=64
+Map	Fader 5		Attack Section Click			Attack	// template="FOsc", defaultvalue=0
+Map	Fader 6		Attack Section Attack Rate			Attack	// template="FVol", defaultvalue=0
+Map	Fader 7		Attack Section Decay Rate			Attack	// template="FVol", defaultvalue=25
 Map	Button 1-8		Attack Section FX Bypass			Attack	// template="BRedOnOff"
 // Primary
 Map	PageName		"Primary"			Primary
 {{ rm.include_menus(curpage="Primary", submenu="section", mainmenu_mini="section",section="Primary") -}}
 Map	UDVButton 1-2_2-2		Primary Wave Set			Primary	// template="UDOsc", inverted=true
-Map	Fader 3		Primary Section Gain Adjust			Primary	// template="FVol"
-Map	Fader 7		Primary Section Decay Rate			Primary	// template="FVol"
+Map	Fader 3		Primary Section Gain Adjust			Primary	// template="FVol", defaultvalue=64
+Map	Fader 7		Primary Section Decay Rate			Primary	// template="FVol", defaultvalue=127
 // Secondary
 Map	PageName		"Secondary"			Secondary
 {{ rm.include_menus(curpage="Secondary", submenu="section", mainmenu_mini="section",section="Secondary") -}}
 Map	UDVButton 1-2_2-2		Secondary Wave Set			Secondary	// template="UDOsc", inverted=true
-Map	Fader 3		Secondary Section Gain Adjust			Secondary	// template="FVol"
-Map	Fader 7		Secondary Section Decay Rate			Secondary	// template="FVol"
+Map	Fader 3		Secondary Section Gain Adjust			Secondary	// template="FVol", defaultvalue=64
+Map	Fader 7		Secondary Section Decay Rate			Secondary	// template="FVol", defaultvalue=127
 // Release
 Map	PageName		"Release"			Release
 {{ rm.include_menus(curpage="Release", submenu="section", mainmenu_mini="section",section="Release") -}}
 Map	UDVButton 1-2_2-2		Release Wave Set			Release	// template="UDOsc", inverted=true
-Map	Fader 3		Release Section Gain Adjust			Release	// template="FVol"
-Map	Fader 5		Release Section Click			Release	// template="FOsc"
-Map	Fader 6		Release Section Attack Rate			Release	// template="FVol"
-Map	Fader 7		Release Section Decay Rate			Release	// template="FVol"
+Map	Fader 3		Release Section Gain Adjust			Release	// template="FVol", defaultvalue=64
+Map	Fader 5		Release Section Click			Release	// template="FOsc", defaultvalue=0
+Map	Fader 6		Release Section Attack Rate			Release	// template="FVol", defaultvalue=0
+Map	Fader 7		Release Section Decay Rate			Release	// template="FVol", defaultvalue=19
 Map	Button 1-8		Release Decay All Sections			Release	// template="BRedOnOff"
 {% for section in ['Attack', 'Primary', 'Secondary', 'Release'] -%}
 // {{ section }} Drawbars Lower
@@ -198,12 +198,12 @@ Map	PageName		"{{ section }} Mod {{ modnum }}"			{{ section }}Mod{{ modnum }}
 {{ rm.include_menus(curpage=section+"Mod"+modnum|string, submenu="section", mainmenu_mini="section", section=section, sectionpage="Mod"+modnum|string) -}}
 Map	UDVButton 5-2_6-2		{{ section }} Mod{{ modnum }} Type			{{ section }}Mod{{ modnum }}	// template="UDFreq", inverted=true
 Map	UDVButton 7-2_8-2		{{ section }} Mod{{ modnum }} Animation Type			{{ section }}Mod{{ modnum }}	// template="UDEffect", inverted=true
-Map	Fader 3		{{ section }} Mod{{ modnum }} Amount			{{ section }}Mod{{ modnum }}	// template="FFreq"
-Map	Fader 4		{{ section }} Mod{{ modnum }} Tone			{{ section }}Mod{{ modnum }}	// template="FEffect"
-Map	Fader 5		{{ section }} Mod{{ modnum }} Note Scale			{{ section }}Mod{{ modnum }}	// template="FPerf"
-Map	Fader 6		{{ section }} Mod{{ modnum }} Velocity Scale			{{ section }}Mod{{ modnum }}	// template="FPerf"
-Map	Fader 7		{{ section }} Mod{{ modnum }} Animation Amount			{{ section }}Mod{{ modnum }}	// template="FLFO"
-Map	Fader 8		{{ section }} Mod{{ modnum }} Animation Rate			{{ section }}Mod{{ modnum }}	// template="FFreq"
+Map	Fader 3		{{ section }} Mod{{ modnum }} Amount			{{ section }}Mod{{ modnum }}	// template="FFreq", defaultvalue=127
+Map	Fader 4		{{ section }} Mod{{ modnum }} Tone			{{ section }}Mod{{ modnum }}	// template="FEffect", defaultvalue=0
+Map	Fader 5		{{ section }} Mod{{ modnum }} Note Scale			{{ section }}Mod{{ modnum }}	// template="FPerf", defaultvalue=0
+Map	Fader 6		{{ section }} Mod{{ modnum }} Velocity Scale			{{ section }}Mod{{ modnum }}	// template="FPerf", defaultvalue=127
+Map	Fader 7		{{ section }} Mod{{ modnum }} Animation Amount			{{ section }}Mod{{ modnum }}	// template="FLFO", defaultvalue=127
+Map	Fader 8		{{ section }} Mod{{ modnum }} Animation Rate			{{ section }}Mod{{ modnum }}	// template="FFreq", defaultvalue=64
 {% endfor -%}
 {% endfor -%}
 // Effects
@@ -217,7 +217,7 @@ Map	Button 8-3		FX ModFilter Enable			Effects	// template="BRedOnOff"
 Map	Button 8-4		FX Speaker Enable			Effects	// template="BRedOnOff"
 Map	Button 8-5		FX Reverb Enable			Effects	// template="BRedOnOff"
 Map	Button 8-6		FX Delay Enable			Effects	// template="BRedOnOff"
-Map	Fader 8		FX Limiter Threshold			Effects	// template="FEffect"
+Map	Fader 8		FX Limiter Threshold			Effects	// template="FEffect", defaultvalue=127
 {% else %}
 Map	Button 8-4		FX Limiter Enable			Effects	// template="BRedOnOff"
 Map	Button 2-7		FX PreAmp Enable			Effects	// template="BRedOnOff"
@@ -234,17 +234,17 @@ Map	PageName		"PreAmp"			PreAmp
 Map	Button 1-1		FX Preamp Enable			PreAmp	// template="BRedOnOff"
 Map	UDVButton 1-2_2-2		FX Preamp Type			PreAmp	// template="UDEffect", inverted=true
 Map	Button 8-2		FX Preamp Post-FX			PreAmp	// template="BRedOnOff"
-Map	Fader 3		FX Preamp Drive			PreAmp	// template="FAmount"
-Map	Fader 4		FX Preamp Tone			PreAmp	// template="FEffect"
-Map	Fader 5		FX Preamp Swell			PreAmp	// template="FEffect"
+Map	Fader 3		FX Preamp Drive			PreAmp	// template="FAmount", defaultvalue=0
+Map	Fader 4		FX Preamp Tone			PreAmp	// template="FEffect", defaultvalue=64
+Map	Fader 5		FX Preamp Swell			PreAmp	// template="FEffect", defaultvalue=64
 // Phaser
 Map	PageName		"Phaser"			Phaser
 {{ rm.include_menus(curpage="Phaser", submenu="effects", mainmenu_mini="effects") -}}
 Map	Button 1-1		FX Phaser Enable			Phaser	// template="BRedOnOff"
 Map	UDVButton 1-2_2-2		FX Phaser Type			Phaser	// template="UDEffect", inverted=true
-Map	Fader 3		FX Phaser Rate			Phaser	// template="FFreq"
-Map	Fader 4		FX Phaser Depth			Phaser	// template="FEffect"
-Map	Fader 5		FX Phaser Feedback			Phaser	// template="FEffect"
+Map	Fader 3		FX Phaser Rate			Phaser	// template="FFreq", defaultvalue=64
+Map	Fader 4		FX Phaser Depth			Phaser	// template="FEffect", defaultvalue=64
+Map	Fader 5		FX Phaser Feedback			Phaser	// template="FEffect", defaultvalue=64
 // ModFilter
 Map	PageName		"ModFilter"			ModFilter
 Map	Sel1_0		TempoSync=Free			ModFilter
@@ -254,38 +254,38 @@ Map	Sel1_127		TempoSync=Sync			ModFilter
 {{ rm.include_menus(curpage="ModFilter", submenu="effects", mainmenu_mini="effects") -}}
 Map	Button 1-1		FX ModFilter Enable			ModFilter	// template="BRedOnOff"
 Map	UDVButton 1-2_2-2		FX ModFilter Type			ModFilter	// template="UDEffect", inverted=true
-Map	Fader 3		FX ModFilter Frequency			ModFilter	// template="FFreq"
-Map	Fader 4		FX ModFilter Resonance			ModFilter	// template="FEffect"
+Map	Fader 3		FX ModFilter Frequency			ModFilter	// template="FFreq", defaultvalue=64
+Map	Fader 4		FX ModFilter Resonance			ModFilter	// template="FEffect", defaultvalue=0
 Map	UDVButton 1-5_2-5		FX ModFilter Sync Type		SEL1	ModFilter	// template="UDFreq"
 Map	UDVButton 7-5_8-5		FX ModFilter LFO Wave			ModFilter	// template="UDLFO"
-Map	Fader 6		FX ModFilter LFO Depth			ModFilter	// template="FLFO"
-Map	Fader 7		FX ModFilter LFO Rate			ModFilter	Free	// template="FFreq"
+Map	Fader 6		FX ModFilter LFO Depth			ModFilter	// template="FLFO", defaultvalue=0
+Map	Fader 7		FX ModFilter LFO Rate			ModFilter	Free	// template="FFreq", defaultvalue=64
 Map	UDVButton 7-7_8-7		FX ModFilter LFO Synced-Rate			ModFilter	Sync	// template="UDFreq"
 // Speaker
 Map	PageName		"Speaker"			Speaker
 {{ rm.include_menus(curpage="Speaker", submenu="effects", mainmenu_mini="effects") -}}
 Map	Button 1-1		FX Speaker Enable			Speaker	// template="BRedOnOff"
 Map	UDVButton 1-2_2-2		FX Speaker Type			Speaker	// template="UDEffect", inverted=true
-Map	Fader 3		FX Speaker Rotator Amount			Speaker	// template="FEffect"
+Map	Fader 3		FX Speaker Rotator Amount			Speaker	// template="FEffect", defaultvalue=127
 Map	Knob V4		FX Speaker Rotator Balance			Speaker	// template="FEffect"
-Map	Fader 5		FX Speaker Rotator Air			Speaker	// template="FEffect"
+Map	Fader 5		FX Speaker Rotator Air			Speaker	// template="FEffect", defaultvalue=64
 Map	Knob V7		FX Speaker Pan			Speaker	// template="FVol"
 // Reverb
 Map	PageName		"Reverb"			Reverb
 {{ rm.include_menus(curpage="Reverb", submenu="effects", mainmenu_mini="effects") -}}
 Map	Button 1-1		FX Reverb Enable			Reverb	// template="BRedOnOff"
 Map	UDVButton 1-2_2-2		FX Reverb Type			Reverb	// template="UDEffect", inverted=true
-Map	Fader 3		FX Reverb Pre-Delay			Reverb	// template="FFreq"
+Map	Fader 3		FX Reverb Pre-Delay			Reverb	// template="FFreq", defaultvalue=0
 Map	Knob V4		FX Reverb L/R Pos			Reverb	// template="FEffect"
-Map	Fader 5		FX Reverb Time			Reverb	// template="FEffect"
-Map	Fader 8		FX Reverb Depth			Reverb	// template="FEffect"
+Map	Fader 5		FX Reverb Time			Reverb	// template="FEffect", defaultvalue=64
+Map	Fader 8		FX Reverb Depth			Reverb	// template="FEffect", defaultvalue=64
 // Delay
 Map	PageName		"Delay"			Delay
 {{ rm.include_menus(curpage="Delay", submenu="effects", mainmenu_mini="effects") -}}
 Map	Button 1-1		FX Delay Enable			Delay	// template="BRedOnOff"
 Map	UDVButton 1-2_2-2		FX Delay Type			Delay	// template="UDEffect", inverted=true
-Map	Fader 3		FX Delay Feedback			Delay	// template="FEffect"
-Map	Fader 4		FX Delay High-Frequency			Delay	// template="FFreq"
-Map	Fader 5		FX Delay Time			Delay	// template="FFreq"
-Map	Fader 6		FX Delay Depth			Delay	// template="FEffect"
+Map	Fader 3		FX Delay Feedback			Delay	// template="FEffect", defaultvalue=0
+Map	Fader 4		FX Delay High-Frequency			Delay	// template="FFreq", defaultvalue=64
+Map	Fader 5		FX Delay Time			Delay	// template="FFreq", defaultvalue=32
+Map	Fader 6		FX Delay Depth			Delay	// template="FEffect", defaultvalue=64
 {% endblock main %}
