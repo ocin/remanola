@@ -43,11 +43,11 @@ Map	Button 5-4		Gate 3 Trig			Main	// template="BRedOnOff"
 Map	Button 1-5		Gate 1 Open			Main	// template="BRedOnOff"
 Map	Button 3-5		Gate 2 Open			Main	// template="BRedOnOff"
 Map	Button 5-5		Gate 3 Open			Main	// template="BRedOnOff"
-Map	Fader 7		Master Volume			Main	// template="BRedOnOff", defaultvalue=100
+Map	Fader 7		Master Volume			Main	// template="FVol", defaultvalue=100
 Map	Meter 8		Input Peak Meter			Main	// template="FGain"
 // HPFilter
 Map	PageName		"HPFilter"			HPFilter
-{{ rm.include_menus(curpage="HPFilter", mainmenu_mini="filter", submenu="filter", oscpage="HPFilter") -}}
+{{ rm.include_menus(curpage="HPFilter", mainmenu_mini="filter", submenu="filter", filterpage="HPFilter") -}}
 Map	Button 1-2		High Pass Filter On			HPFilter	// template="BGreenOnOff"
 Map	Knob V3		High Pass LFO Amount			HPFilter	// template="FLFO"
 Map	Fader 4		High Pass Frequency			HPFilter	// template="FFreq", defaultvalue=74
@@ -55,7 +55,7 @@ Map	Fader 5		High Pass Resonance			HPFilter	// template="FEffect", defaultvalue=
 Map	Knob V6		High Pass Env Amount			HPFilter	// template="FEnv"
 // BPFilter
 Map	PageName		"BPFilter"			BPFilter
-{{ rm.include_menus(curpage="BPFilter", mainmenu_mini="filter", submenu="filter", oscpage="BPFilter") -}}
+{{ rm.include_menus(curpage="BPFilter", mainmenu_mini="filter", submenu="filter", filterpage="BPFilter") -}}
 Map	Button 1-2		Band Pass Filter On			BPFilter	// template="BGreenOnOff"
 Map	Knob V3		Band Pass LFO Amount			BPFilter	// template="FLFO"
 Map	Fader 4		Band Pass Frequency			BPFilter	// template="FFreq", defaultvalue=52
@@ -63,7 +63,7 @@ Map	Fader 5		Band Pass Resonance			BPFilter	// template="FEffect", defaultvalue=
 Map	Knob V6		Band Pass Env Amount			BPFilter	// template="FEnv"
 // LPFilter
 Map	PageName		"LPFilter"			LPFilter
-{{ rm.include_menus(curpage="LPFilter", mainmenu_mini="filter", submenu="filter", oscpage="LPFilter") -}}
+{{ rm.include_menus(curpage="LPFilter", mainmenu_mini="filter", submenu="filter", filterpage="LPFilter") -}}
 Map	Button 1-2		Low Pass Filter On			LPFilter	// template="BGreenOnOff"
 Map	Knob V3		Low Pass LFO Amount			LPFilter	// template="FLFO"
 Map	Fader 4		Low Pass Frequency			LPFilter	// template="FFreq", defaultvalue=43
@@ -71,7 +71,7 @@ Map	Fader 5		Low Pass Resonance			LPFilter	// template="FEffect", defaultvalue=1
 Map	Knob V6		Low Pass Env Amount			LPFilter	// template="FEnv"
 // HPEffects
 Map	PageName		"HPEffects"			HPEffects
-{{ rm.include_menus(curpage="HPEffects", mainmenu_mini="effect", submenu="effect", oscpage="HPEffects") -}}
+{{ rm.include_menus(curpage="HPEffects", mainmenu_mini="effect", submenu="effect", effectpage="HPEffects") -}}
 Map	Fader 2		High Pass Drive Amount			HPEffects	// template="FAmount", defaultvalue=0
 Map	Fader 3		High Pass Phaser Amount			HPEffects	// template="FEffect", defaultvalue=0
 Map	Fader 4		High Pass Delay Amount			HPEffects	// template="FEffect", defaultvalue=0
@@ -79,7 +79,7 @@ Map	Knob V6		High Pass Pan			HPEffects	// template="FPan"
 Map	Fader 7		High Pass Volume			HPEffects	// template="FVol", defaultvalue=100
 // BPEffects
 Map	PageName		"BPEffects"			BPEffects
-{{ rm.include_menus(curpage="BPEffects", mainmenu_mini="effect", submenu="effect", oscpage="BPEffects") -}}
+{{ rm.include_menus(curpage="BPEffects", mainmenu_mini="effect", submenu="effect", effectpage="BPEffects") -}}
 Map	Fader 2		Band Pass Drive Amount			BPEffects	// template="FAmount", defaultvalue=0
 Map	Fader 3		Band Pass Phaser Amount			BPEffects	// template="FEffect", defaultvalue=0
 Map	Fader 4		Band Pass Delay Amount			BPEffects	// template="FEffect", defaultvalue=0
@@ -87,7 +87,7 @@ Map	Knob V6		Band Pass Pan			BPEffects	// template="FPan"
 Map	Fader 7		Band Pass Volume			BPEffects	// template="FVol", defaultvalue=100
 // LPEffects
 Map	PageName		"LPEffects"			LPEffects
-{{ rm.include_menus(curpage="LPEffects", mainmenu_mini="effect", submenu="effect", oscpage="LPEffects") -}}
+{{ rm.include_menus(curpage="LPEffects", mainmenu_mini="effect", submenu="effect", effectpage="LPEffects") -}}
 Map	Fader 2		Low Pass Drive Amount			LPEffects	// template="FAmount", defaultvalue=0
 Map	Fader 3		Low Pass Phaser Amount			LPEffects	// template="FEffect", defaultvalue=0
 Map	Fader 4		Low Pass Delay Amount			LPEffects	// template="FEffect", defaultvalue=0
@@ -116,13 +116,13 @@ Map	Fader 4		Amp Env Decay			AmpEnv	// template="FVol", defaultvalue=127
 Map	Fader 5		Amp Env Release			AmpEnv	// template="FVol", defaultvalue=20
 // DryLevels
 Map	PageName		"DryLevels"			DryLevels
-{{ rm.include_menus(curpage="DryLevels", mainmenu_mini="effect", submenu="effect", oscpage="DryLevels") -}}
+{{ rm.include_menus(curpage="DryLevels", mainmenu_mini="effect", submenu="effect", effectpage="DryLevels") -}}
 Map	Fader 2		Ducking			DryLevels	// template="FEffect", defaultvalue=0
 Map	Knob V4		Dry Pan			DryLevels	// template="FPan"
 Map	Fader 5		Dry Volume			DryLevels	// template="FVol", defaultvalue=0
 // FilterEnv
 Map	PageName		"FilterEnv"			FilterEnv
-{{ rm.include_menus(curpage="FilterEnv", mainmenu_mini="filter", submenu="filter", oscpage="FilterEnv") -}}
+{{ rm.include_menus(curpage="FilterEnv", mainmenu_mini="filter", submenu="filter", filterpage="FilterEnv") -}}
 Map	Fader 3		Filter Env Attack			FilterEnv	// template="FFreq", defaultvalue=40
 Map	Fader 4		Filter Env Decay			FilterEnv	// template="FFreq", defaultvalue=40
 Map	Fader 5		Filter Env Release			FilterEnv	// template="FFreq", defaultvalue=10
