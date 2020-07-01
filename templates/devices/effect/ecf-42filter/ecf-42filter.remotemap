@@ -17,17 +17,17 @@ Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
 Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
 Map	Meter 2		Peak Meter			Main
-Map	Fader 3		Frequency			Main	// template="FFreq"
-Map	Fader 4		Resonance			Main	// template="FEffect"
-Map	Fader 5		Env Amount			Main	// template="FEnv"
-Map	Fader 6		Velocity			Main	// template="FPerf"
+Map	Fader 3		Frequency			Main	// template="FFreq", defaultvalue=64
+Map	Fader 4		Resonance			Main	// template="FEffect", defaultvalue=0
+Map	Fader 5		Env Amount			Main	// template="FEnv", defaultvalue=32
+Map	Fader 6		Velocity			Main	// template="FPerf", defaultvalue=0
 Map	UDVButton 1-7_2-7		Mode			Main	// template="UDFreq", inverted=true
 // Filter Envelope
 Map	PageName		"Filter Envelope"			FilterEnvelope
 {{ rm.include_menus(curpage="FilterEnvelope") -}}
-Map	Fader 1		Env Amount			FilterEnvelope	// template="FEnv"
-Map	Fader 3		Attack			FilterEnvelope	// template="FFreq"
-Map	Fader 4		Decay			FilterEnvelope	// template="FFreq"
-Map	Fader 5		Sustain			FilterEnvelope	// template="FFreq"
-Map	Fader 6		Release			FilterEnvelope	// template="FFreq"
+Map	Fader 1		Env Amount			FilterEnvelope	// template="FEnv", defaultvalue=32
+Map	Fader 3		Attack			FilterEnvelope	// template="FFreq", defaultvalue=0
+Map	Fader 4		Decay			FilterEnvelope	// template="FFreq", defaultvalue=64
+Map	Fader 5		Sustain			FilterEnvelope	// template="FFreq", defaultvalue=0
+Map	Fader 6		Release			FilterEnvelope	// template="FFreq", defaultvalue=64
 {% endblock main %}
