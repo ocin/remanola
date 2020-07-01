@@ -33,22 +33,22 @@ Map	Meter 2		Audio Input LED			Main
 Map	UDVButton 1-3_2-3		Analysis Type			Main	// template="UDEffect", inverted=true
 Map	UDVButton 5-3_6-3		Algorithm Type			Main	// template="UDEffect", inverted=true
 Map	Button 8-3		Keyboard Input Enable			Main	// template="BRedOnOff"
-Map	Fader 4		Loop Length			Main	// template="FFreq"
-Map	Fader 6		Auto Pan Rate			Main	// template="FFreq"
+Map	Fader 4		Loop Length			Main	// template="FFreq", defaultvalue=64
+Map	Fader 6		Auto Pan Rate			Main	// template="FFreq", defaultvalue=32
 // Dry
 Map	PageName		"Dry Signal"			Dry
 {{ rm.include_menus(curpage="Dry") -}}
 Map	Button 1-2		Dry Enable			Dry	// template="BRedOnOff"
-Map	Fader 3		Dry Delay			Dry	// template="FEffect"
+Map	Fader 3		Dry Delay			Dry	// template="FEffect", defaultvalue=0
 Map	Knob V4		Dry Pan			Dry	// template="FPan"
 Map	Knob V5		Dry Auto Pan Amount			Dry	// template="FLFO"
-Map	Fader 8		Dry Level			Dry	// template="FGain"
+Map	Fader 8		Dry Level			Dry	// template="FGain", defaultvalue=127
 // DelayBuffer
 Map	PageName		"Delay Buffer"			DelayBuffer
 {{ rm.include_menus(curpage="DelayBuffer", mainmenu_mini="common") -}}
 Map	Button 1-2		Lock Buffer			DelayBuffer	// template="BRedOnOff"
 Map	Button 5-2		Delay/Buffer Delay Mode			DelayBuffer	// template="BRedOnOff"
-Map	Fader 3		Delay/Buffer Position			DelayBuffer	// template="FEffect"
+Map	Fader 3		Delay/Buffer Position			DelayBuffer	// template="FEffect", defaultvalue=0
 Map	Button 1-4		Input Summing Left + Right			DelayBuffer	// template="BRedOnOff"
 Map	Knob V5		Buffer LFO Amount			DelayBuffer	// template="FLFO"
 Map	Knob V6		Buffer Env Amount			DelayBuffer	// template="FEnv"
@@ -57,7 +57,7 @@ Map	PageName		"Shifter 1"			Shifter1
 {{ rm.include_menus(curpage="Shifter1", mainmenu_mini="common", submenu="shifter1", osc1page="Shifter1") -}}
 Map	UDVButton 7-2_8-2		Shifter 1 Semi			Shifter1	// template="BRedOnOff"
 Map	Knob V3		Shifter 1 Fine			Shifter1	// template="FFreq"
-Map	Fader 4		Shifter 1 Feedback			Shifter1	// template="FEffect"
+Map	Fader 4		Shifter 1 Feedback			Shifter1	// template="FEffect", defaultvalue=0
 Map	Knob V6		Shifter 1 LFO Amount			Shifter1	// template="FLFO"
 Map	Knob V7		Shifter 1 Env Amount			Shifter1	// template="FEnv"
 // Shifter1Vol
@@ -65,15 +65,15 @@ Map	PageName		"Shifter 1 Vol"			Shifter1Vol
 {{ rm.include_menus(curpage="Shifter1Vol", mainmenu_mini="common", submenu="shifter1", osc1page="Shifter1Vol") -}}
 Map	Knob V2		Shifter 1 Pan			Shifter1Vol	// template="FPan"
 Map	Knob V3		Shifter 1 Auto Pan			Shifter1Vol	// template="FLFO"
-Map	Fader 6		Shifter 1 Level			Shifter1Vol	// template="FVol"
+Map	Fader 6		Shifter 1 Level			Shifter1Vol	// template="FVol", defaultvalue=127
 // Shifter2
 Map	PageName		"Shifter 2"			Shifter2
 {{ rm.include_menus(curpage="Shifter2", mainmenu_mini="common", submenu="shifter2", osc2page="Shifter2") -}}
 Map	Button 1-1		Shifter 2 Enable			Shifter2	// template="BRedOnOff"
 Map	UDVButton 7-2_8-2		Shifter 2 Semi			Shifter2	// template="UDFreq"
 Map	Knob V3		Shifter 2 Fine			Shifter2	// template="FFreq"
-Map	Fader 4		Shifter 2 Feedback			Shifter2	// template="FEffect"
-Map	Fader 5		Shifter 2 Delay			Shifter2	// template="FEffect"
+Map	Fader 4		Shifter 2 Feedback			Shifter2	// template="FEffect", defaultvalue=0
+Map	Fader 5		Shifter 2 Delay			Shifter2	// template="FEffect", defaultvalue=0
 Map	Knob V6		Shifter 2 LFO Amount			Shifter2	// template="FLFO"
 Map	Knob V7		Shifter 2 Env Amount			Shifter2	// template="FEnv"
 // Shifter2Vol
@@ -81,34 +81,34 @@ Map	PageName		"Shifter Vol 2"			Shifter2Vol
 {{ rm.include_menus(curpage="Shifter2Vol", mainmenu_mini="common", submenu="shifter2", osc2page="Shifter2Vol") -}}
 Map	Knob V2		Shifter 2 Pan			Shifter2Vol	// template="FPan"
 Map	Knob V3		Shifter 2 Auto Pan			Shifter2Vol	// template="FLFO"
-Map	Fader 6		Shifter 2 Level			Shifter2Vol	// template="FVol"
+Map	Fader 6		Shifter 2 Level			Shifter2Vol	// template="FVol", defaultvalue=127
 // Env
 Map	PageName		"Envelope"			Env
 {{ rm.include_menus(curpage="Env") -}}
 Map	Button 1-2		Envelope Gate			Env	// template="BRedOnOff"
-Map	Fader 3		Envelope Attack			Env	// template="FEnv"
-Map	Fader 4		Envelope Decay			Env	// template="FEnv"
-Map	Fader 5		Envelope Sustain			Env	// template="FEnv"
-Map	Fader 6		Envelope Release			Env	// template="FEnv"
+Map	Fader 3		Envelope Attack			Env	// template="FEnv", defaultvalue=0
+Map	Fader 4		Envelope Decay			Env	// template="FEnv", defaultvalue=64
+Map	Fader 5		Envelope Sustain			Env	// template="FEnv", defaultvalue=0
+Map	Fader 6		Envelope Release			Env	// template="FEnv", defaultvalue=64
 Map	Button 1-7		Env To Amp			Env	// template="BRedOnOff"
 // LFO
 Map	PageName		"LFO"			LFO
 {{ rm.include_menus(curpage="LFO") -}}
 Map	Sel1_0		TempoSync=Free			LFO
 Map	Sel1_1		TempoSync=Sync			LFO
-Map	Fader 2		LFO Rate Free			LFO	Free	// template="FFreq"
+Map	Fader 2		LFO Rate Free			LFO	Free	// template="FFreq", defaultvalue=64
 Map	UDVButton 7-2_8-2		LFO Rate Synced			LFO	Sync	// template="UDFreq"
 Map	Button 8-3		LFO Tempo Sync		SEL1	LFO	// template="BRedOnOff"
-Map	Fader 5		LFO Phase			LFO	// template="FLFO"
+Map	Fader 5		LFO Phase			LFO	// template="FLFO", defaultvalue=0
 Map	UDVButton 7-6_8-6		LFO Waveform			LFO	// template="UDLFO"
 // Filter
 Map	PageName		"Filter"			Filter
 {{ rm.include_menus(curpage="Filter") -}}
 Map	Button 1-2		Filter Enable			Filter	// template="BRedOnOff"
 Map	UDVButton 7-3_8-3		Filter Type			Filter	// template="UDFreq", inverted=true
-Map	Fader 4		Filter Frequency			Filter	// template="FFreq"
-Map	Fader 5		Filter Resonance			Filter	// template="FEffect"
-Map	Fader 6		Filter Keyboard Tracking			Filter	// template="FPerf"
+Map	Fader 4		Filter Frequency			Filter	// template="FFreq", defaultvalue=64
+Map	Fader 5		Filter Resonance			Filter	// template="FEffect", defaultvalue=0
+Map	Fader 6		Filter Keyboard Tracking			Filter	// template="FPerf", defaultvalue=0
 Map	Knob V7		Filter LFO Amount			Filter	// template="FLFO"
 Map	Knob V8		Filter Env Amount			Filter	// template="FEnv"
 {% endblock main %}
