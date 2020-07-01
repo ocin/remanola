@@ -10,10 +10,10 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
 Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
-Map	Fader 2		Input Gain			Main	// template="FGain"
+Map	Fader 2		Input Gain			Main	// template="FGain", defaultvalue=64
 Map	UDVButton 1-3_2-3		Preset			Main	// template="UDEffect"
-Map	Fader 5		Transform			Main	// template="FEffect"
-Map	Fader 6		Dry Wet			Main	// template="FEffect"
-Map	Fader 7		Volume			Main	// template="FVol"
-Map	Meter 8		Input Peak Meter			Main	// template="UDEffect"
+Map	Fader 5		Transform			Main	// template="FEffect", defaultvalue=64
+Map	Fader 6		Dry Wet			Main	// template="FEffect", defaultvalue=127
+Map	Fader 7		Volume			Main	// template="FVol", defaultvalue=64
+Map	Meter 8		Input Peak Meter			Main
 {% endblock main %}

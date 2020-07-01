@@ -44,7 +44,7 @@ Map	Button 1-5		Gate 1 Open			Main	// template="BRedOnOff"
 Map	Button 3-5		Gate 2 Open			Main	// template="BRedOnOff"
 Map	Button 5-5		Gate 3 Open			Main	// template="BRedOnOff"
 Map	Fader 7		Master Volume			Main	// template="FVol", defaultvalue=100
-Map	Meter 8		Input Peak Meter			Main	// template="FGain"
+Map	Meter 8		Input Peak Meter			Main
 // HPFilter
 Map	PageName		"HPFilter"			HPFilter
 {{ rm.include_menus(curpage="HPFilter", mainmenu_mini="filter", submenu="filter", filterpage="HPFilter") -}}
