@@ -19,16 +19,16 @@ Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
 Map	Button 7-1		Sidechain Active			Main	// template="BRedLed"
 Map	Button 8-1		Sidechain Solo			Main	// template="BRedOnOff"
 Map	Meter 2		Peak Meter			Main
-Map	Knob V3		Input Gain			Main	// template="FGain"
-Map	Fader 4		Threshold			Main	// template="FEffect"
+Map	Fader 3		Input Gain			Main	// template="FGain", defaultvalue=64
+Map	Fader 4		Threshold			Main	// template="FEffect", defaultvalue=64
 Map	Button 1-5		Soft Knee			Main	// template="BRedOnOff"
-Map	Fader 6		Ratio			Main	// template="FEffect"	
+Map	Fader 6		Ratio			Main	// template="FEffect"	, defaultvalue=64
 Map	Meter 7		Gain Meter			Main	// template="InvMeter"
-Map	Knob V8		Output Gain			Main	// template="FGain"
+Map	Fader 8		Output Gain			Main	// template="FGain", defaultvalue=64
 // Env
 Map	PageName		"Env"			Env
 {{ rm.include_menus(curpage="Env") -}}
-Map	Fader 4		Attack			Env	// template="FEffect"
-Map	Fader 5		Release			Env	// template="FEffect"
+Map	Fader 4		Attack			Env	// template="FEffect", defaultvalue=64
+Map	Fader 5		Release			Env	// template="FEffect", defaultvalue=64
 Map	Button 1-6		Adapt			Env	// template="BRedOnOff"
 {% endblock main %}
