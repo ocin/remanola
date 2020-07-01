@@ -14,6 +14,6 @@ Map	Meter 2		Peak Meter			Main
 Map	UDVButton 1-3_2-3		Algorithm			Main	// template="FEffect"
 Map	Knob V4		Size			Main	// template="FEffect"
 Map	Knob V5		Decay			Main	// template="FFreq"
-Map	Fader 7		Damping			Main	// template="FEffect"
-Map	Fader 8		Dry/Wet			Main	// template="FEffect"
+Map	Fader 7		Damping			Main	// template="FEffect", defaultvalue=40
+Map	Fader 8		Dry/Wet			Main	// template="FEffect", defaultvalue=127
 {% endblock main %}
