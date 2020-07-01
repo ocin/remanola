@@ -12,6 +12,6 @@ Map	PageName		"Main"			Main
 Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
 Map	Meter 2		Peak Meter			Main
 Map	UDVButton 1-3_2-3		Voice Count			Main	// template="UDEffect", inverted=true
-Map	Fader 4		Detune			Main	// template="FEffect"
-Map	Fader 8		Dry/Wet			Main	// template="FEffect"
+Map	Fader 4		Detune			Main	// template="FEffect", defaultvalue=40
+Map	Fader 8		Dry/Wet			Main	// template="FEffect", defaultvalue=127
 {% endblock main %}
