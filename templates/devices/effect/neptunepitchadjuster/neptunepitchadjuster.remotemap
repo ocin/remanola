@@ -19,20 +19,20 @@ Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
 Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
 Map	Meter 2		Input Peak Meter			Main
-Map	Fader 3		Vibrato Rate			Main	// template="UDEffect"
+Map	Fader 3		Vibrato Rate			Main	// template="UDEffect", defaultvalue=64
 Map	Button 1-4		Low Freq Input			Main	// template="BYellowOnOff"
 Map	Button 3-4		Wide Vibrato			Main	// template="BYellowOnOff"
 Map	Button 5-4		Live Mode			Main	// template="BYellowOnOff"
 Map	UDVButton 7-4_8-4		MIDI Destination			Main	// template="UDEffect", inverted=true
 Map	UDVButton 1-5_2-5		Scale Memory			Main	// template="UDEffect"
-Map	Fader 7		Pitched Signal Level			Main	// template="FEffect"
-Map	Fader 8		Voice Synth Level			Main	// template="FEffect"
+Map	Fader 7		Pitched Signal Level			Main	// template="FEffect", defaultvalue=100
+Map	Fader 8		Voice Synth Level			Main	// template="FEffect", defaultvalue=100
 // PitchAdjust
 Map	PageName		"PitchAdjust"			PitchAdjust
 {{ rm.include_menus(curpage="PitchAdjust") -}}
 Map	Button 1-2		Pitch Adjust On/Off			PitchAdjust	// template="BYellowOnOff"
-Map	Fader 4		Correction Speed			PitchAdjust	// template="FEffect"
-Map	Fader 5		Preserve Expression			PitchAdjust	// template="FEffect"
+Map	Fader 4		Correction Speed			PitchAdjust	// template="FEffect", defaultvalue=64
+Map	Fader 5		Preserve Expression			PitchAdjust	// template="FEffect", defaultvalue=0
 // Transpose
 Map	PageName		"Transpose"			Transpose
 {{ rm.include_menus(curpage="Transpose") -}}
