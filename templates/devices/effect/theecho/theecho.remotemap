@@ -22,18 +22,18 @@ Map	PageName		"Main"			Main
 Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
 Map	UDVButton 1-2_2-2		Input Mode			Main	// template="UDEffect"
 Map	Button 1-3		Trig			Main	// template="BYellowOnOff"
-Map	Fader 4		Roll Enabled			Main	// template="FEffect"
-Map	Fader 6		Ducking			Main	// template="FEffect"
-Map	Fader 7		Dry/Wet Balance			Main	// template="FEffect"
+Map	Fader 4		Roll Enabled			Main	// template="FEffect", defaultvalue=0
+Map	Fader 6		Ducking			Main	// template="FEffect", defaultvalue=0
+Map	Fader 7		Dry/Wet Balance			Main	// template="FEffect", defaultvalue=127
 Map	Meter 8		Input Peak Meter			Main
 // Delay
 Map	PageName		"Delay"			Delay
 {{ rm.include_menus(curpage="Delay") -}}
 Map	Sel1_0		TempoSync=Free			Delay
 Map	Sel1_1		TempoSync=Sync			Delay
-Map	Fader 2		Delay Time			Delay	Free	// template="FFreq"
+Map	Fader 2		Delay Time			Delay	Free	// template="FFreq", defaultvalue=76
 Map	UDVButton 7-2_8-2		Delay Time	7		Delay	Sync	// template="UDFreq"
-Map	Fader 3		Right Ch Time Offset			Delay	// template="FFreq"
+Map	Fader 3		Right Ch Time Offset			Delay	// template="FFreq", defaultvalue=0
 Map	Button 1-4		Keep Pitch			Delay	// template="BYellowOnOff"
 Map	Button 1-5		Sync		SEL1	Delay	// template="BYellowOnOff"
 Map	Button 8-5		Ping-Pong Mode			Delay	// template="BYellowOnOff"
@@ -42,23 +42,23 @@ Map	Knob V6		Ping-Pong Pan			Delay	// template="FEffect"
 Map	PageName		"Feedback"			Feedback
 {{ rm.include_menus(curpage="Feedback") -}}
 Map	Fader 2		Feedback			Feedback	// template="FEffect"
-Map	Knob V3		Right Ch Feedback Offset			Feedback	// template="FEffect"
+Map	Knob V3		Right Ch Feedback Offset			Feedback	// template="FEffect", defaultvalue=20
 Map	Button 1-5		Diffuse On			Feedback	// template="BYellowOnOff"
-Map	Fader 6		Diffuse Spread			Feedback	// template="FEffect"
-Map	Fader 7		Diffuse Amount			Feedback	// template="FAmount"
+Map	Fader 6		Diffuse Spread			Feedback	// template="FEffect", defaultvalue=64
+Map	Fader 7		Diffuse Amount			Feedback	// template="FAmount", defaultvalue=64
 // Color
 Map	PageName		"Color"			Color
 {{ rm.include_menus(curpage="Color") -}}
-Map	Fader 2		Drive Amount			Color	// template="FAmount"
+Map	Fader 2		Drive Amount			Color	// template="FAmount", defaultvalue=29
 Map	UDVButton 1-3_2-3		Drive Type			Color	// template="UDEffect"
 Map	Button 1-5		Filter On			Color	// template="BYellowOnOff"
-Map	Fader 6		Filter Frequency			Color	// template="FFreq"
-Map	Fader 7		Filter Resonance			Color	// template="FEffect"
+Map	Fader 6		Filter Frequency			Color	// template="FFreq", defaultvalue=64
+Map	Fader 7		Filter Resonance			Color	// template="FEffect", defaultvalue=64
 // Modulation
 Map	PageName		"Modulation"			Modulation
 {{ rm.include_menus(curpage="Modulation") -}}
 Map	Knob V2		Envelope			Modulation	// template="FEnv"
-Map	Fader 3		Wobble			Modulation	// template="FEffect"
-Map	Fader 5		LFO Rate			Modulation	// template="FFreq"
-Map	Fader 6		LFO Amount			Modulation	// template="FLFO"
+Map	Fader 3		Wobble			Modulation	// template="FEffect", defaultvalue=0
+Map	Fader 5		LFO Rate			Modulation	// template="FFreq", defaultvalue=29
+Map	Fader 6		LFO Amount			Modulation	// template="FLFO", defaultvalue=0
 {% endblock main %}

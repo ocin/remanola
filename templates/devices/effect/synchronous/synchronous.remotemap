@@ -38,8 +38,8 @@ Map	PageName		"Filter"			Filter
 {{ rm.include_menus(curpage="Filter") -}}
 Map	Button 1-2		Filter On			Filter	// template="BRedOnOff"
 Map	UDVButton 3-2_4-2		Filter Type			Filter	// template="UDEffect"
-Map	Fader 4		Filter Freq			Filter	// template="FFreq", defaultvalue=96
-Map	Fader 5		Filter Reso			Filter	// template="FEffect", defaultvalue=0
+Map	Fader 4		Filter Freq			Filter	// template="FFreq", defaultvalue=64
+Map	Fader 5		Filter Reso			Filter	// template="FEffect", defaultvalue=64
 Map	Fader 7		Filter Lag			Filter	// template="FEffect", defaultvalue=0
 // Delay
 Map	PageName		"Delay"			Delay
