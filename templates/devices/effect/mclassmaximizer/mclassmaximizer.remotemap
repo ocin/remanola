@@ -18,7 +18,7 @@ Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
 Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
 Map	Meter 2		Peak Meter			Main
-Map	Knob V3		Input Gain			Main	// template="FGain"
+Map	Fader 3		Input Gain			Main	// template="FGain", defaultvalue=64
 Map	Button 1-6		Output Level Meter Mode			Main	// template="BRedOnOff"
 Map	Meter 7		Output Level Left			Main
 Map	Meter 8		Output Level Right			Main
@@ -30,10 +30,10 @@ Map	Button 4-2		Look Ahead Enable			Limiter	// template="BRedOnOff"
 Map	Meter 3		Gain Meter			Limiter	// template="InvMeter"
 Map	UDVButton 1-4_2-4		Attack Speed			Limiter	// template="UDEffect", inverted=true
 Map	UDVButton 1-5_2-5		Release Speed			Limiter	// template="UDEffect", inverted=true
-Map	Knob V6		Output Gain			Limiter	// template="FGain"
+Map	Fader 6		Output Gain			Limiter	// template="FGain", defaultvalue=64
 // SoftClip
 Map	PageName		"SoftClip"			SoftClip
 {{ rm.include_menus(curpage="SoftClip") -}}
 Map	Button 1-2		Soft Clip Enable			SoftClip	// template="BRedOnOff"
-Map	Fader 3		Soft Clip Amount			SoftClip	// template="FEffect"
+Map	Fader 3		Soft Clip Amount			SoftClip	// template="FEffect", defaultvalue=64
 {% endblock main %}
