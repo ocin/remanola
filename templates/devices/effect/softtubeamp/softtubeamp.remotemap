@@ -19,14 +19,14 @@ Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
 Map	UDVButton 1-2_2-2		Amp Switch			Main	// template="UDEffect"
 Map	UDVButton 5-2_6-2		Cab Switch			Main	// template="UDEffect"
 Map	Button 8-2		Boost			Main	// template="BRedOnOff"
-Map	Fader 3		Gate			Main	// template="FEffect"
-Map	Fader 4		Gain			Main	// template="FGain"
-Map	Fader 7		Poweramp Gain			Main	// template="FGain"
-Map	Fader 8		Volume			Main	// template="FVol"
+Map	Fader 3		Gate			Main	// template="FEffect", defaultvalue=0
+Map	Fader 4		Gain			Main	// template="FGain", defaultvalue=64
+Map	Fader 7		Poweramp Gain			Main	// template="FGain", defaultvalue=64
+Map	Fader 8		Volume			Main	// template="FVol", defaultvalue=64
 // Eq
 Map	PageName		"Eq"			Eq
 {{ rm.include_menus(curpage="Eq") -}}
-Map	Fader 3		Bass			Eq	// template="FGain"
-Map	Fader 4		Mid			Eq	// template="FGain"
-Map	Fader 5		Treble			Eq	// template="FGain"
+Map	Fader 3		Bass			Eq	// template="FGain", defaultvalue=64
+Map	Fader 4		Mid			Eq	// template="FGain", defaultvalue=64
+Map	Fader 5		Treble			Eq	// template="FGain", defaultvalue=64
 {% endblock main %}
