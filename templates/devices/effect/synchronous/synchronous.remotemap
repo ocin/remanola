@@ -20,10 +20,10 @@ Map	Button C7		Page=Internal			Index
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
 Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
-Map	Fader 3		Level			Main	// template="FGain"
+Map	Fader 3		Level			Main	// template="FGain", defaultvalue=64
 Map	Button 8-4		Level InOut			Main	// template="BRedOnOff"
-Map	Fader 6		DryWet			Main	// template="FEffect"
-Map	Fader 7		Master Level			Main	// template="FGain"
+Map	Fader 6		DryWet			Main	// template="FEffect", defaultvalue=127
+Map	Fader 7		Master Level			Main	// template="FGain", defaultvalue=64
 Map	Meter 8		Input Peak Meter			Main
 // Dist
 Map	PageName		"Dist"			Dist
@@ -31,16 +31,16 @@ Map	PageName		"Dist"			Dist
 Map	Button 1-2		Dist On			Dist	// template="BRedOnOff"
 Map	UDVButton 3-2_4-2		Dist Type			Dist	// template="UDEffect"
 Map	Button 8-2		Dist Post Filter			Dist	// template="BRedOnOff"
-Map	Fader 4		Dist Amount			Dist	// template="FEffect"
-Map	Fader 5		Dist Character			Dist	// template="FEffect"
+Map	Fader 4		Dist Amount			Dist	// template="FEffect", defaultvalue=64
+Map	Fader 5		Dist Character			Dist	// template="FEffect", defaultvalue=64
 // Filter
 Map	PageName		"Filter"			Filter
 {{ rm.include_menus(curpage="Filter") -}}
 Map	Button 1-2		Filter On			Filter	// template="BRedOnOff"
 Map	UDVButton 3-2_4-2		Filter Type			Filter	// template="UDEffect"
-Map	Fader 4		Filter Freq			Filter	// template="FFreq"
-Map	Fader 5		Filter Reso			Filter	// template="FEffect"
-Map	Fader 7		Filter Lag			Filter	// template="FEffect"
+Map	Fader 4		Filter Freq			Filter	// template="FFreq", defaultvalue=96
+Map	Fader 5		Filter Reso			Filter	// template="FEffect", defaultvalue=0
+Map	Fader 7		Filter Lag			Filter	// template="FEffect", defaultvalue=0
 // Delay
 Map	PageName		"Delay"			Delay
 {{ rm.include_menus(curpage="Delay") -}}
@@ -49,21 +49,21 @@ Map	Sel1_1		TempoSync=Sync			Delay
 Map	Button 1-2		Delay On			Delay	// template="BRedOnOff"
 Map	Button 3-2		Delay Keep Pitch			Delay	// template="BRedOnOff"
 Map	Button 4-2		Delay Ping Pong			Delay	// template="BRedOnOff"
-Map	Fader 3		Delay  Amount			Delay	// template="FEffect"
-Map	Fader 4		Delay Time			Delay	Free	// template="FFreq"
+Map	Fader 3		Delay  Amount			Delay	// template="FEffect", defaultvalue=64
+Map	Fader 4		Delay Time			Delay	Free	// template="FFreq", defaultvalue=64
 Map	UDVButton 7-4_8-4		Delay Synched Time			Delay	Sync	// template="UDFreq"
 Map	Button 1-5		Delay Tempo Sync		SEL1	Delay	// template="BRedOnOff"
 Map	Button 8-5		Delay SendReturn			Delay	// template="BRedOnOff"
-Map	Fader 6		Delay Feedback			Delay	// template="FEffect"
+Map	Fader 6		Delay Feedback			Delay	// template="FEffect", defaultvalue=64
 Map	Button 8-7		Delay Roll			Delay	// template="BRedOnOff"
 Map	Knob V8		Delay Pan			Delay	// template="FEffect"
 // Reverb
 Map	PageName		"Reverb"			Reverb
 {{ rm.include_menus(curpage="Reverb") -}}
 Map	Button 1-2		Reverb On			Reverb	// template="BRedOnOff"
-Map	Fader 3		Reverb Amount			Reverb	// template="FEffect"
-Map	Fader 4		Reverb Decay			Reverb	// template="FFreq"
-Map	Fader 6		Reverb Size			Reverb	// template="FEffect"
-Map	Fader 7		Reverb Damp			Reverb	// template="FEffect"
+Map	Fader 3		Reverb Amount			Reverb	// template="FEffect", defaultvalue=64
+Map	Fader 4		Reverb Decay			Reverb	// template="FFreq", defaultvalue=64
+Map	Fader 6		Reverb Size			Reverb	// template="FEffect", defaultvalue=64
+Map	Fader 7		Reverb Damp			Reverb	// template="FEffect", defaultvalue=25
 Map	Button 8-8		Reverb SendReturn			Reverb	// template="BRedOnOff"
 {% endblock main %}
