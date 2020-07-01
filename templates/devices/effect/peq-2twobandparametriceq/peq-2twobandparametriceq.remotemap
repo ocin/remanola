@@ -20,8 +20,8 @@ Map	Meter 2		Peak Meter			Main
 Map	Button 8-1		Filter B On/Off		SEL1	Main	// template="BRedOnOff"
 Map	Fader 3		Filter A Freq			Main	// template="FFreq"
 Map	Fader 4		Filter A Q			Main	// template="FEffect"
-Map	Knob V5		Filter A Gain			Main	// template="FGain"
+Map	Fader 5		Filter A Gain			Main	// template="FGain"
 Map	Fader 6		Filter B Freq			Main	On	// template="FFreq"
 Map	Fader 7		Filter B Q			Main	On	// template="FEffect"
-Map	Knob V8		Filter B Gain			Main	On	// template="FGain"
+Map	Fader 8		Filter B Gain			Main	On	// template="FGain"
 {% endblock main %}
