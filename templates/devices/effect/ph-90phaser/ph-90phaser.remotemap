@@ -17,14 +17,14 @@ Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
 Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
 Map	Meter 2		Peak Meter			Main
-Map	Fader 3		Frequency			Main	// template="FFreq"
-Map	Fader 4		Split			Main	// template="FEffect"
-Map	Fader 5		Width			Main	// template="FEffect"
-Map	Fader 6		Feedback			Main	// template="FEffect"
+Map	Fader 3		Frequency			Main	// template="FFreq", defaultvalue=58
+Map	Fader 4		Split			Main	// template="FEffect", defaultvalue=64
+Map	Fader 5		Width			Main	// template="FEffect", defaultvalue=100
+Map	Fader 6		Feedback			Main	// template="FEffect", defaultvalue=100
 // LFO
 Map	PageName		"LFO"			LFO
 {{ rm.include_menus(curpage="LFO") -}}
-Map	Fader 5		Rate			LFO	// template="FFreq"
+Map	Fader 5		Rate			LFO	// template="FFreq", defaultvalue=32
 Map	Button 1-6		LFO Sync Enable			LFO	// template="BRedOnOff"
-Map	Fader 7		Frequency Modulation			LFO	// template="FLFO"
+Map	Fader 7		Frequency Modulation			LFO	// template="FLFO", defaultvalue=70
 {% endblock main %}
