@@ -39,73 +39,73 @@ Map	UDVButton 5-1_6-1		Band Count		SEL1	Main	// template="UDEffect"
 Map	UDVButton 7-1_8-1		Vocoder/Equalizer			Main	// template="UDEffect"
 Map	Meter 2		Source Peak Meter			Main
 Map	Meter 3		Modulator Peak Meter			Main
-Map	Fader 4		Attack			Main	// template="FAmount"
-Map	Fader 5		Decay			Main	// template="FAmount"
+Map	Fader 4		Attack			Main	// template="FAmount", defaultvalue=0
+Map	Fader 5		Decay			Main	// template="FAmount", defaultvalue=30
 Map	Knob V6		Shift			Main	// template="FGain"
-Map	Fader 7		HF Emphasis			Main	// template="FFreq"
-Map	Fader 8		Dry/Wet			Main	// template="FEffect"
+Map	Fader 7		HF Emphasis			Main	// template="FFreq", defaultvalue=64
+Map	Fader 8		Dry/Wet			Main	// template="FEffect", defaultvalue=127
 // Band1-8
 Map	PageName		"Band1-8"			Band1-8
 {{ rm.include_menus(curpage="Band1-8") -}}
 Map	UDVButton 7-1_8-1		Band Count		SEL1	Band1-8	// template="UDNocolor"
-Map	Fader 1		Band Level 1			Band1-8	// template="FVCFreq"
-Map	Fader 2		Band Level 2			Band1-8	// template="FVCFreq"
-Map	Fader 3		Band Level 3			Band1-8	// template="FVCFreq"
-Map	Fader 4		Band Level 4			Band1-8	// template="FVCFreq"
-Map	Fader 5		Band Level 5			Band1-8	8Band	// template="FVCFreq"
-Map	Fader 6		Band Level 6			Band1-8	8Band	// template="FVCFreq"
-Map	Fader 7		Band Level 7			Band1-8	8Band	// template="FVCFreq"
-Map	Fader 8		Band Level 8			Band1-8	8Band	// template="FVCFreq"
-Map	Fader 5		Band Level 5			Band1-8	16Band	// template="FVCFreq"
-Map	Fader 6		Band Level 6			Band1-8	16Band	// template="FVCFreq"
-Map	Fader 7		Band Level 7			Band1-8	16Band	// template="FVCFreq"
-Map	Fader 8		Band Level 8			Band1-8	16Band	// template="FVCFreq"
-Map	Fader 5		Band Level 5			Band1-8	32Band	// template="FVCFreq"
-Map	Fader 6		Band Level 6			Band1-8	32Band	// template="FVCFreq"
-Map	Fader 7		Band Level 7			Band1-8	32Band	// template="FVCFreq"
-Map	Fader 8		Band Level 8			Band1-8	32Band	// template="FVCFreq"
+Map	Fader 1		Band Level 1			Band1-8	// template="FVCFreq", defaultvalue=89
+Map	Fader 2		Band Level 2			Band1-8	// template="FVCFreq", defaultvalue=89
+Map	Fader 3		Band Level 3			Band1-8	// template="FVCFreq", defaultvalue=89
+Map	Fader 4		Band Level 4			Band1-8	// template="FVCFreq", defaultvalue=89
+Map	Fader 5		Band Level 5			Band1-8	8Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 6		Band Level 6			Band1-8	8Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 7		Band Level 7			Band1-8	8Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 8		Band Level 8			Band1-8	8Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 5		Band Level 5			Band1-8	16Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 6		Band Level 6			Band1-8	16Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 7		Band Level 7			Band1-8	16Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 8		Band Level 8			Band1-8	16Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 5		Band Level 5			Band1-8	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 6		Band Level 6			Band1-8	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 7		Band Level 7			Band1-8	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 8		Band Level 8			Band1-8	32Band	// template="FVCFreq", defaultvalue=89
 // Band9-16 
 Map	PageName		"Band9-16"			Band9-16
 {{ rm.include_menus(curpage="Band9-16") -}}
 Map	UDVButton 7-1_8-1		Band Count		SEL1	Band9-16	// template="UDNocolor"
-Map	Fader 1		Band Level 9			Band9-16	16Band	// template="FVCFreq"
-Map	Fader 2		Band Level 10			Band9-16	16Band	// template="FVCFreq"
-Map	Fader 3		Band Level 11			Band9-16	16Band	// template="FVCFreq"
-Map	Fader 4		Band Level 12			Band9-16	16Band	// template="FVCFreq"
-Map	Fader 5		Band Level 13			Band9-16	16Band	// template="FVCFreq"
-Map	Fader 6		Band Level 14			Band9-16	16Band	// template="FVCFreq"
-Map	Fader 7		Band Level 15			Band9-16	16Band	// template="FVCFreq"
-Map	Fader 8		Band Level 16			Band9-16	16Band	// template="FVCFreq"
-Map	Fader 1		Band Level 9			Band9-16	32Band	// template="FVCFreq"
-Map	Fader 2		Band Level 10			Band9-16	32Band	// template="FVCFreq"
-Map	Fader 3		Band Level 11			Band9-16	32Band	// template="FVCFreq"
-Map	Fader 4		Band Level 12			Band9-16	32Band	// template="FVCFreq"
-Map	Fader 5		Band Level 13			Band9-16	32Band	// template="FVCFreq"
-Map	Fader 6		Band Level 14			Band9-16	32Band	// template="FVCFreq"
-Map	Fader 7		Band Level 15			Band9-16	32Band	// template="FVCFreq"
-Map	Fader 8		Band Level 16			Band9-16	32Band	// template="FVCFreq"
+Map	Fader 1		Band Level 9			Band9-16	16Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 2		Band Level 10			Band9-16	16Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 3		Band Level 11			Band9-16	16Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 4		Band Level 12			Band9-16	16Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 5		Band Level 13			Band9-16	16Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 6		Band Level 14			Band9-16	16Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 7		Band Level 15			Band9-16	16Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 8		Band Level 16			Band9-16	16Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 1		Band Level 9			Band9-16	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 2		Band Level 10			Band9-16	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 3		Band Level 11			Band9-16	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 4		Band Level 12			Band9-16	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 5		Band Level 13			Band9-16	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 6		Band Level 14			Band9-16	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 7		Band Level 15			Band9-16	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 8		Band Level 16			Band9-16	32Band	// template="FVCFreq", defaultvalue=89
 // Band17-24
 Map	PageName		"Band17-24"			Band17-24
 {{ rm.include_menus(curpage="Band17-24") -}}
 Map	UDVButton 7-1_8-1		Band Count		SEL1	Band17-24	// template="UDNocolor"
-Map	Fader 1		Band Level 17			Band17-24	32Band	// template="FVCFreq"
-Map	Fader 2		Band Level 18			Band17-24	32Band	// template="FVCFreq"
-Map	Fader 3		Band Level 19			Band17-24	32Band	// template="FVCFreq"
-Map	Fader 4		Band Level 20			Band17-24	32Band	// template="FVCFreq"
-Map	Fader 5		Band Level 21			Band17-24	32Band	// template="FVCFreq"
-Map	Fader 6		Band Level 22			Band17-24	32Band	// template="FVCFreq"
-Map	Fader 7		Band Level 23			Band17-24	32Band	// template="FVCFreq"
-Map	Fader 8		Band Level 24			Band17-24	32Band	// template="FVCFreq"
+Map	Fader 1		Band Level 17			Band17-24	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 2		Band Level 18			Band17-24	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 3		Band Level 19			Band17-24	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 4		Band Level 20			Band17-24	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 5		Band Level 21			Band17-24	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 6		Band Level 22			Band17-24	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 7		Band Level 23			Band17-24	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 8		Band Level 24			Band17-24	32Band	// template="FVCFreq", defaultvalue=89
 // Band25-32
 Map	PageName		"Band25-32"			Band25-32
 {{ rm.include_menus(curpage="Band25-32") -}}
 Map	UDVButton 7-1_8-1		Band Count		SEL1	Band25-32	// template="UDNocolor"
-Map	Fader 1		Band Level 25			Band25-32	32Band	// template="FVCFreq"
-Map	Fader 2		Band Level 26			Band25-32	32Band	// template="FVCFreq"
-Map	Fader 3		Band Level 27			Band25-32	32Band	// template="FVCFreq"
-Map	Fader 4		Band Level 28			Band25-32	32Band	// template="FVCFreq"
-Map	Fader 5		Band Level 29			Band25-32	32Band	// template="FVCFreq"
-Map	Fader 6		Band Level 30			Band25-32	32Band	// template="FVCFreq"
-Map	Fader 7		Band Level 31			Band25-32	32Band	// template="FVCFreq"
-Map	Fader 8		Band Level 32			Band25-32	32Band	// template="FVCFreq"
+Map	Fader 1		Band Level 25			Band25-32	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 2		Band Level 26			Band25-32	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 3		Band Level 27			Band25-32	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 4		Band Level 28			Band25-32	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 5		Band Level 29			Band25-32	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 6		Band Level 30			Band25-32	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 7		Band Level 31			Band25-32	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 8		Band Level 32			Band25-32	32Band	// template="FVCFreq", defaultvalue=89
 {% endblock main %}
