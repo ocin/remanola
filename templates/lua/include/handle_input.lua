@@ -225,14 +225,19 @@ function handle_input_item(event, button)
 			elseif(itemtype == "UDVButton" or itemtype == "UDHButton") then
 				local value = 1
 				if(ud_already_down(buttonname, itemname)) then
-					g_buttondown[buttonname] = nil
-					g_buttondown[ud_get_otherbutton(buttonname, itemname)] = nil
+					g_repeatudbuttons[buttonname] = nil
+					g_repeatudbuttons[ud_get_otherbutton(buttonname, itemname)] = nil
 					local defaultvalue = get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "defaultvalue")
 					if(defaultvalue ~= nil) then
 						value = defaultvalue
 					else
 						value = 64
 					end
+					local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = -127 }
+					remote.handle_input(msg)
+					local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
+					remote.handle_input(msg)
+					return(true)
 				else
 					g_repeatudbuttons[buttonname] = 1
 					g_repeatudlastupdate = remote.get_time_ms()
