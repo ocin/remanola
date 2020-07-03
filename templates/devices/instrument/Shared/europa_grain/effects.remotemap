@@ -25,7 +25,7 @@ Map	Button 8-6		Reverb On			Effects	// template="BRedOnOff"
 Map	PageName		"Phaser"			Phaser
 Map	Button 1-1		Phaser On			Phaser	// template="BRedOnOff"
 {{ rm.include_menus(curpage="Phaser",submenu="effects") -}}
-Map	UDVButton 5-1_6-1		Mod Effect Type			Phaser	// template="UDEffect"
+Map	UDVButton 5-1_6-1		Mod Effect Type			Phaser	// template="UDEffect", defaultvalue=0
 Map	Fader 3		Mod Effect Depth			Phaser	// template="FEffect", defaultvalue=102
 Map	Fader 4		Mod Effect Rate			Phaser	// template="FFreq", defaultvalue=25
 Map	Fader 5		Mod Effect Spread			Phaser	// template="FEffect", defaultvalue=38
@@ -34,7 +34,7 @@ Map	Fader 7		Mod Effect Amount			Phaser	// template="FEffect", defaultvalue=76
 Map	PageName		"Dist"			Dist
 Map	Button 1-1		Dist On			Dist	// template="BRedOnOff"
 {{ rm.include_menus(curpage="Dist",submenu="effects") -}}
-Map	UDVButton 5-1_6-1		Dist Type			Dist	// template="UDEffect"
+Map	UDVButton 5-1_6-1		Dist Type			Dist	// template="UDEffect", defaultvalue=0
 Map	Fader 4		Dist Drive			Dist	// template="FEffect", defaultvalue=64
 Map	Fader 5		Dist Tone			Dist	// template="FOsc", defaultvalue=102
 Map	Fader 7		Dist Amount			Dist	// template="FEffect", defaultvalue=127
@@ -54,7 +54,7 @@ Map	Button 1-1		Delay On			Delay	// template="BRedOnOff"
 Map	Button 4-1		Delay Sync		SEL1	Delay	// template="BRedOnOff"
 Map	Button 6-1		Delay PingPong			Delay	// template="BRedOnOff"
 Map	Fader 2		Delay Time			Delay	Free	// template="FFreq", defaultvalue=13
-Map	UDVButton 7-2_8-2		Delay Synced Time			Delay	Sync	// template="UDFreq"
+Map	UDVButton 7-2_8-2		Delay Synced Time			Delay	Sync	// template="UDFreq", defaultvalue=4
 Map	Fader 4		Delay Pan			Delay	// template="FEffect", defaultvalue=25
 Map	Fader 5		Delay FB			Delay	// template="FEffect", defaultvalue=38
 Map	Fader 7		Delay Amount			Delay	// template="FEffect", defaultvalue=16
