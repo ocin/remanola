@@ -15,6 +15,7 @@ Define Group	Page	Main	Perf	Osc1	Osc2	Osc3	Mixer	Filter1	Filter2	Filter3	FilterE
 Define Group	OscType	Analog	Wavetable	Phase	FM	Multi	Noise	Off
 Define Group	FilterType	LP	State	Comb	Formant	Bypass
 Define Group	SeqEditMode	Note	Velocity	GateLen	StepDur	Curve1	Curve2
+Define Group	TempoSync	Free	Sync
 {% endblock groups %}
 {% block main %}
 Map	PlayingStep		Step Sequencer Step Index
@@ -333,9 +334,10 @@ Map	Button 2-8		Pattern Step Gate 16			Seq	// template="BRedOnOff"
 Map	Button 8-1		Step Sequencer Run			Seq	// template="BRun"
 Map	UDVButton 7-2_8-2		Step Sequencer Run Mode			Seq	// template="UDPerf", defaultvalue=0
 Map	UDVButton 7-3_8-3		Step Sequencer Direction			Seq	// template="UDPerf", inverted=true, defaultvalue=0
-Map	Button 8-4		Step Sequencer Synced			Seq	// template="BGreenOnOff"
-// Defaultvalue for Rate is f**ked up
-Map	UDVButton 7-5_8-5		Step Sequencer Rate	5			Seq	// template="UDFreq", defaultvalue=-1
+Map	Button 8-4		Step Sequencer Synced		SEL2	Seq	// template="BGreenOnOff"
+Map	MFader 7-5		Step Sequencer Rate				Seq	Free	// template="FFreq", defaultvalue=31
+// Defaultvalue for Synced Rate is f**ked up
+Map	UDVButton 7-5_8-5		Step Sequencer Rate	5			Seq	Sync	// template="UDFreq", defaultvalue=-1
 Map	UDVButton 7-6_8-6		Step Sequencer Edit Mode		SEL1	Seq	// template="UDPerf", defaultvalue=5
 Map	UDVButton 7-7_8-7		Step Sequencer Octave Range			Seq	// template="UDFreq", inverted=true, defaultvalue=0
 Map	UDVButton 7-8_8-8		Step Sequencer Step Count			Seq	// template="UDPerf", defaultvalue=16
@@ -345,6 +347,8 @@ Map	Sel1_76		SeqEditMode=GateLen			Seq	// template="BRedOnOff"
 Map	Sel1_51		SeqEditMode=StepDur			Seq	// template="BRedOnOff"
 Map	Sel1_25		SeqEditMode=Curve1			Seq	// template="BRedOnOff"
 Map	Sel1_0		SeqEditMode=Curve2			Seq	// template="BRedOnOff"
+Map	Sel2_0		TempoSync=Free			Seq
+Map	Sel2_1		TempoSync=Sync			Seq
 // Seq Note
 Map	SubPageName		"Note"			Seq	Note
 Map	UDVButton 3-1_4-1		Pattern Step Knob 1			Seq	Note	// template="UDFreq", defaultvalue=12
