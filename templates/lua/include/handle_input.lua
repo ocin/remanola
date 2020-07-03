@@ -224,19 +224,21 @@ function handle_input_item(event, button)
 				return(true)
 			elseif(itemtype == "UDVButton" or itemtype == "UDHButton") then
 				local value = 1
-				if(ud_already_down(buttonname, itemname)) then
+				if(ud_already_down(buttonname, itemname) and defaultvalue ~= -1) then
+					local defaultvalue = get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "defaultvalue")
 					g_repeatudbuttons[buttonname] = nil
 					g_repeatudbuttons[ud_get_otherbutton(buttonname, itemname)] = nil
-					local defaultvalue = get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "defaultvalue")
 					if(defaultvalue ~= nil) then
 						value = defaultvalue
 					else
 						value = 64
 					end
-					local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = -127 }
-					remote.handle_input(msg)
-					local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
-					remote.handle_input(msg)
+					if(defaultvalue ~= -1) then
+						local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = -127 }
+						remote.handle_input(msg)
+						local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
+						remote.handle_input(msg)
+					end
 					return(true)
 				else
 					g_repeatudbuttons[buttonname] = 1
@@ -380,6 +382,8 @@ function handle_input_valuemode(event, button)
 		local itemname = get_item_by_button(buttonname)
 		if(itemname == "Button C1" or itemname == "Button C2") then
 			g_scrolltext = remote.get_item_text_value(itemsindex["DeviceName"])
+		elseif(itemname == "Button C7") then
+			g_scrolltext = "SubPage: "..get_current_subpage()
 		elseif(itemname == "Button C8") then
 			return true
 		else

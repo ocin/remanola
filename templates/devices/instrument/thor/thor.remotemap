@@ -335,7 +335,7 @@ Map	UDVButton 7-2_8-2		Step Sequencer Run Mode			Seq	// template="UDPerf", defau
 Map	UDVButton 7-3_8-3		Step Sequencer Direction			Seq	// template="UDPerf", inverted=true, defaultvalue=0
 Map	Button 8-4		Step Sequencer Synced			Seq	// template="BGreenOnOff"
 // Defaultvalue for Rate is f**ked up
-Map	UDVButton 7-5_8-5		Step Sequencer Rate	5			Seq	// template="UDFreq", defaultvalue=129
+Map	UDVButton 7-5_8-5		Step Sequencer Rate	5			Seq	// template="UDFreq", defaultvalue=-1
 Map	UDVButton 7-6_8-6		Step Sequencer Edit Mode		SEL1	Seq	// template="UDPerf", defaultvalue=5
 Map	UDVButton 7-7_8-7		Step Sequencer Octave Range			Seq	// template="UDFreq", inverted=true, defaultvalue=0
 Map	UDVButton 7-8_8-8		Step Sequencer Step Count			Seq	// template="UDPerf", defaultvalue=16
