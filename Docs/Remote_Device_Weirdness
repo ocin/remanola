@@ -26,6 +26,7 @@ Pangea and Humana:
 
 Thor:
 	* ModMatrix dest and source are not remotable
+	* Sync rate is acting weird when used with delta control
 
 Kong:
 	* remotable items to control which drum is selected (like effects and engines work in Europa)
