@@ -383,7 +383,9 @@ function handle_input_valuemode(event, button)
 		elseif(itemname == "Button C8") then
 			return true
 		else
-			g_scrolltext = tostring(remote.get_item_value(itemsindex[itemname]))
+			local value = tostring(remote.get_item_value(itemsindex[itemname]))
+			local textvalue = remote.get_item_text_value(itemsindex[itemname])
+			g_scrolltext = value..", "..textvalue
 		end
 		if(g_scrolltext == "") then
 			g_scrolltext = "Unknown"
