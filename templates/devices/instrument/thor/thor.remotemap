@@ -58,10 +58,10 @@ Map	Fader 8		Master Level 			Main	// template="FGain", defaultvalue=100
 // Perf page
 Map	PageName		"Perf"			Perf
 {{ rm.include_menus(curpage="Perf") -}}
-Map	UDVButton 1-2_2-2		Polyphony			Perf	// template="UDPerf"
-Map	UDVButton 3-2_4-2		Release Polyphony			Perf	// template="UDPerf2"
-Map	UDVButton 5-2_6-2		Key Mode			Perf	// template="UDPerf", inverted=true
-Map	UDVButton 7-2_8-2		Portamento Mode			Perf	// template="UDPerf2"
+Map	UDVButton 1-2_2-2		Polyphony			Perf	// template="UDPerf", defaultvalue=8
+Map	UDVButton 3-2_4-2		Release Polyphony			Perf	// template="UDPerf2", defaultvalue=4
+Map	UDVButton 5-2_6-2		Key Mode			Perf	// template="UDPerf", inverted=true, defaultvalue=2
+Map	UDVButton 7-2_8-2		Portamento Mode			Perf	// template="UDPerf2", defaultvalue=0
 Map	Fader 3		Portamento			Perf	// template="FPerf", defaultvalue=40
 Map	Button 1-4		Note Trigger MIDI			Perf	// template="BGreenOnOff"
 Map	Button 2-4		Note Trigger Step Seq			Perf	// template="BGreenOnOff"
