@@ -15,10 +15,10 @@ function handle_input_repeatud(event, selnum)
 
 	local firstwait = 500 -- 1s
 	local wait = 200 -- 0.2s/step after 0.5
-	local finalwait = 20 -- 0.02s/step after 0.2*10 + 0.5 = 2.5s
+	local finalwait = 5 -- 0.01s/step after 0.2*10 + 0.5 = 2.5s
 
 	for buttonname, count in pairs(g_repeatudbuttons) do
-		if((count == 1 and timediff > firstwait) or (count > 1 and timediff > wait) or (count > 11 and timediff > finalwait)) then
+		if((count == 1 and timediff > firstwait) or (count > 1 and timediff > wait) or (count > 8 and timediff > finalwait)) then
 			g_repeatudbuttons[buttonname] = count + 1
 			local itemname = get_item_by_button(buttonname)
 			local value = 1
