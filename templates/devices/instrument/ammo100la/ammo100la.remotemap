@@ -29,15 +29,16 @@ Map	Sel1_64		Range=Semitone			Osc
 Map	Sel1_95		Range=Cents			Osc
 Map	Sel1_127		Range=Tempo			Osc
 Map	Button 1-1		Oscillator On			Osc	// template="BBlueOnOff"
-Map	UDVButton 1-2_2-2		Waveform			Osc	// template="UDOsc"
+Map	UDVButton 1-2_2-2		Waveform			Osc	// template="UDOsc", defaultvalue=0
 Map	MFader 5-2		Pulse Width			Osc	// template="UDOsc", defaultvalue=64
 Map	MFader 7-2		Rate CV In Amount			Osc	// template="UDLFO", defaultvalue=127
 Map	Fader 3		Low Rate Hz			Osc	LowHz	// template="FFreq", defaultvalue=64
 Map	Fader 3		High Rate Hz			Osc	HighHz	// template="FFreq", defaultvalue=64
-Map	UDVButton 1-3_2-3		Rate Semitone			Osc	Semitone	// template="UDFreq"
-Map	UDVButton 1-3_2-3		Cents Detune			Osc	Cents	// template="UDFreq"
-Map	UDVButton 1-3_2-3		Rate Tempo Sync			Osc	Tempo	// template="UDFreq"
-Map	UDVButton 7-4_8-4		Range		SEL1	Osc	// template="UDOsc"
+// UD reset to default value does not work for rate!
+Map	UDVButton 7-3_8-3		Rate Semitone			Osc	Semitone	// template="UDFreq", defaultvalue=0
+Map	UDVButton 7-3_8-3		Cents Detune			Osc	Cents	// template="UDFreq"
+Map	UDVButton 7-3_8-3		Rate Tempo Sync			Osc	Tempo	// template="UDFreq"
+Map	UDVButton 7-4_8-4		Range		SEL1	Osc	// template="UDFreq", defaultvalue=0
 Map	MFader 7-5		Depth CV In Amount			Osc	// template="UDLFO", defaultvalue=127
 Map	Fader 6		Depth			Osc	// template="FFreq", defaultvalue=127
 Map	MFader 7-7		Phase CV In Amount			Osc	// template="UDLFO", defaultvalue=127
