@@ -6,7 +6,7 @@ function handle_changed_sel(citemindex, citemname)
 	end
 end
 
-function handle_changed_devicescope(citemindex, citemname)
+function handle_changed_devicescope(citemname)
 	if(string.match(citemname, "DeviceScope")) then
 		-- g_scrolltext = remote.get_item_text_value(itemsindex["DeviceScope"])
 		g_updateall = true
@@ -21,13 +21,13 @@ function handle_changed_devicescope(citemindex, citemname)
 	end
 end
 
+{% if lptype == "mini" %}
 function handle_changed_barposition(citemindex, citemname)
 	if(string.match(citemname, "BarPosition")) then
 		g_startbar = true
 	end
 end
 
-{% if lptype == "mini" %}
 function handle_changed_beatposition(citemindex, citemname)
 	if(string.match(citemname, "BeatPosition")) then
 		if(not g_barupdate and not g_startbar) then
@@ -35,9 +35,18 @@ function handle_changed_beatposition(citemindex, citemname)
 		end
 	end
 end
+
+function handle_changed_kbdvel(citemname)
+	if(string.match(citemname, "KbdVel")) then
+		local newkbdvel = tonumber(remote.get_item_text_value(itemsindex["KbdVel"]))
+		if(newkbdvel ~= nil) then
+			g_kbdvel = newkbdvel
+		end
+	end
+end
 {% endif %}
 
-function handle_changed_playingstep(citemindex, citemname)
+function handle_changed_playingstep(citemname)
 	if(string.match(citemname, "PlayingStep")) then
 		{% import "devicelist.j2" as d %}
 		{% for device in d.devices %}
@@ -46,7 +55,7 @@ function handle_changed_playingstep(citemindex, citemname)
 	end
 end
 
-function handle_changed_pagename(citemindex, citemname)
+function handle_changed_pagename(citemname)
 	if(string.match(citemname, "PageName")) then
 		g_updateall = true
 		{% import "devicelist.j2" as d %}
@@ -56,29 +65,20 @@ function handle_changed_pagename(citemindex, citemname)
 	end
 end
 
-function handle_changed_custom(citemindex, citemname)
+function handle_changed_custom(citemname)
 	{% import "devicelist.j2" as d %}
 	{% for device in d.devices %}
 	{% include "devices/" + device.type + "/" + device.name + "/hooks/handle_changed_custom.lua" ignore missing %}
 	{% endfor %}
 end
 
-function handle_changed_subpagename(citemindex, citemname)
+function handle_changed_subpagename(citemname)
 	if(string.match(citemname, "SubPageName")) then
 		g_updateall = true
 	end
 end
 
-function handle_changed_kbdvel(citemindex, citemname)
-	if(string.match(citemname, "KbdVel")) then
-		local newkbdvel = tonumber(remote.get_item_text_value(itemsindex["KbdVel"]))
-		if(newkbdvel ~= nil) then
-			g_kbdvel = newkbdvel
-		end
-	end
-end
-
-function handle_changed_basekey(citemindex, citemname)
+function handle_changed_basekey(citemname)
 	if(string.match(citemname, "BaseKey")) then
 		local newbasekey = tonumber(remote.get_item_text_value(itemsindex["BaseKey"]))
 		if(newbasekey ~= nil) then

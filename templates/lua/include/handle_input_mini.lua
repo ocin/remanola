@@ -1,4 +1,4 @@
-function handle_input_buttonendscroll(event, button)
+function handle_input_buttonendscroll(button)
 	if(g_scrolling) then
 		if(button.z == 0) then
 			if(g_scrolltime + 100 < remote.get_time_ms()) then
@@ -55,6 +55,23 @@ function handle_input_internalpage(event, button)
 			g_updatetime = remote.get_time_ms()
 			g_lightshowcycle = 1
 			g_lightshowloop = 1
+			return true
+		end
+	end
+end
+
+function handle_input_lightshow(event)
+	for buttonname,buttonmidi in pairs(buttons) do
+		local button = remote.match_midi(buttonmidi.." zz", event)
+		if(button ~= nil and button.z > 0) then
+			return true
+		end
+		local button = remote.match_midi(buttonmidi.." 00", event)
+		if(button ~= nil) then
+			if(g_lightshowtime + 500 < remote.get_time_ms()) then
+				g_lightshow = 0
+				g_updateall = true
+			end
 			return true
 		end
 	end

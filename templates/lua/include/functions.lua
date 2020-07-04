@@ -413,21 +413,21 @@ function get_current_docpage()
 end
 
 function get_button_name(button)
-	x = button.x
+	local x = button.x
 	if(button.x == 0xa0) then
 		x = 0x90
 	end
 	local midistring = string.format("%02x %02x", x, button.y)
-	buttonname =midi_to_button[midistring]
+	local buttonname = midi_to_button[midistring]
 	if(buttonname == nil) then
 		error("No button found for midistring: "..midistring)
 	end
 	return(buttonname)
 end
 
-function get_knob_type(itemname)
-	return(string.match(itemname, ".+ (.).+"))
-end
+-- function get_knob_type(itemname)
+-- 	return(string.match(itemname, ".+ (.).+"))
+-- end
 
 function get_item_type(itemname)
 	return(string.match(itemname, "(.+) .+"))
@@ -444,7 +444,7 @@ end
 function is_up_udupbutton(buttonname, itemname)
 	local upbutton
 
-	udtype,first,second = string.match(itemname, "UD(.)Button (...)_(...)")
+	local udtype,first,second = string.match(itemname, "UD(.)Button (...)_(...)")
 
 	if(udtype == 'V') then
 		if(get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "inverted")) then
@@ -463,7 +463,7 @@ function is_up_udupbutton(buttonname, itemname)
 	return(buttonname == "Button "..upbutton)
 end
 
-function fader_nearby_down(buttonname, itemname)
+function fader_nearby_down(buttonname)
 	local row = tonumber(string.match(buttonname, "Button (%d)%-%d"))
 	local col = tonumber(string.match(buttonname, "Button %d%-(%d)"))
 	local upbutton = "Button "..(row+1).."-"..col
@@ -472,7 +472,7 @@ function fader_nearby_down(buttonname, itemname)
 	return(g_buttondown[upbutton] or g_buttondown[downbutton])
 end
 
-function fader_get_otherbutton(buttonname, itemname)
+function fader_get_otherbutton(buttonname)
 	local row = tonumber(string.match(buttonname, "Button (%d)%-%d"))
 	local col = tonumber(string.match(buttonname, "Button %d%-(%d)"))
 	local otherrow = 1
@@ -482,9 +482,9 @@ function fader_get_otherbutton(buttonname, itemname)
 	return("Button "..otherrow.."-"..col)
 end
 
-function fader_already_down(buttonname, itemname)
+function fader_already_down(buttonname)
 	local row = tonumber(string.match(buttonname, "Button (%d)%-%d"))
-	local otherbutton = fader_get_otherbutton(buttonname, itemname)
+	local otherbutton = fader_get_otherbutton(buttonname)
 
 	if((row == 1) or (row == 8)) then
 		return(g_buttondown[otherbutton])
@@ -493,8 +493,7 @@ function fader_already_down(buttonname, itemname)
 end
 
 function is_up_mfader(buttonname, itemname)
-	local mfader
-	first = string.match(itemname, "MFader (...)")
+	local first = string.match(itemname, "MFader (...)")
 	return(buttonname == "Button "..first)
 end
 

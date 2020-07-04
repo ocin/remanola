@@ -7,6 +7,7 @@ g_scrollcolor_default = 13
 g_scrollcolor = g_scrollcolor_default
 g_scrolling = false
 g_scrollspeed_default = 6
+g_endscroll = true
 g_scrollspeed = g_scrollspeed_default
 g_playingbutton = 1
 g_flashing = false

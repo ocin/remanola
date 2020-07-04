@@ -38,25 +38,33 @@ function remote_set_state(changed_items)
 		g_updateditems[citemname] = true
 {% endif %}
 
-		if(citemname ~= nil) then
+		if(i ~= nil and citemname ~= nil) then
 			handle_changed_sel(citemindex, citemname)
-			handle_changed_devicescope(citemindex, citemname)
+			handle_changed_devicescope(citemname)
 {% if lptype == "mini" %}
 			handle_changed_barposition(citemindex, citemname)
 			handle_changed_beatposition(citemindex, citemname)
-			handle_changed_kbdvel(citemindex, citemname)
+			handle_changed_kbdvel(citemname)
 {% endif %}
-			handle_changed_playingstep(citemindex, citemname)
-			handle_changed_pagename(citemindex, citemname)
-			handle_changed_subpagename(citemindex, citemname)
-			handle_changed_basekey(citemindex, citemname)
-			handle_changed_custom(citemindex, citemname)
+			handle_changed_playingstep(citemname)
+			handle_changed_pagename(citemname)
+			handle_changed_subpagename(citemname)
+			handle_changed_basekey(citemname)
+			handle_changed_custom(citemname)
 		end
 	end
 end
 
 function remote_deliver_midi(maxbytes, port)
 	local ret_events = {}
+
+	if(maxbytes == nil) then
+		error("Maxbytes is nil")
+	end
+
+	if(port == nil) then
+		error("Port is nil")
+	end
 
 	if(g_stopflashing) then
 {% if lptype == "mini" %}
@@ -111,15 +119,15 @@ function remote_process_midi(event)
 
 	if(isbutton(button)) then
 		if(g_helpmode) then
-			if(handle_input_helpmode(event, button)) then
+			if(handle_input_helpmode(button)) then
 				return(true)
 			end
 		elseif(g_valuemode) then
-			if(handle_input_valuemode(event, button)) then
+			if(handle_input_valuemode(button)) then
 				return(true)
 			end
 		else
-			if(handle_input_buttonendscroll(event, button)) then
+			if(handle_input_buttonendscroll()) then
 				return(true)
 			end
 
@@ -145,7 +153,7 @@ function remote_process_midi(event)
 				return(true)
 			end
 
-			if(handle_input_starthelpmode(event, button)) then
+			if(handle_input_starthelpmode(button)) then
 				return(true)
 			end
 
