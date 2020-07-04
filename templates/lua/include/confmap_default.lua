@@ -10,15 +10,15 @@
 			["UDHButton *"]={enabledcolor=YELLOW, activecolor=YELLOW, disabledcolor=NOCOLOR},
 			["UDVButton *"]={enabledcolor=YELLOW, activecolor=YELLOW, disabledcolor=NOCOLOR},
 
-			["Button D1"]={enabledcolor=WGREEN, activecolor=WGREEN, disabledcolor=NOCOLOR}, 
-			["Button D2"]={enabledcolor=ORANGE, activecolor=YELLOW, disabledcolor=NOCOLOR}, 
-			["Button D3"]={enabledcolor=WRED, activecolor=RED, disabledcolor=NOCOLOR}, 
-			["Button D4"]={enabledcolor=WAMBER, activecolor=GREEN, disabledcolor=NOCOLOR}, 
-			["Button D5"]={enabledcolor=WAMBER, activecolor=GREEN, disabledcolor=NOCOLOR}, 
-			["Button D6"]={enabledcolor=YELLOW, activecolor=GREEN, disabledcolor=NOCOLOR}, 
-			["Button D7"]={enabledcolor=YELLOW, activecolor=GREEN, disabledcolor=NOCOLOR}, 
+			["Button D1"]={enabledcolor=WGREEN, activecolor=WGREEN, disabledcolor=NOCOLOR},
+			["Button D2"]={enabledcolor=ORANGE, activecolor=YELLOW, disabledcolor=NOCOLOR},
+			["Button D3"]={enabledcolor=WRED, activecolor=RED, disabledcolor=NOCOLOR},
+			["Button D4"]={enabledcolor=WAMBER, activecolor=GREEN, disabledcolor=NOCOLOR},
+			["Button D5"]={enabledcolor=WAMBER, activecolor=GREEN, disabledcolor=NOCOLOR},
+			["Button D6"]={enabledcolor=YELLOW, activecolor=GREEN, disabledcolor=NOCOLOR},
+			["Button D7"]={enabledcolor=YELLOW, activecolor=GREEN, disabledcolor=NOCOLOR},
 			["Button D8"]={enabledcolor=RED, activecolor=AMBER, disabledcolor=NOCOLOR},
-		
+
 			["Button C1"]={enabledcolor=ORANGE, activecolor=ORANGE, disabledcolor=NOCOLOR},
 			["Button C2"]={enabledcolor=ORANGE, activecolor=ORANGE, disabledcolor=NOCOLOR},
 			["Button C3"]={enabledcolor=GREEN, activecolor=GREEN, disabledcolor=NOCOLOR},
@@ -29,7 +29,7 @@
 			["Button C6"]={template="BPerfPage", helptext="Goto Keyboard"},
 			["Button C7"]={template="BIndexPage", helptext="Goto Index"},
 			["Button C8"]={enabledcolor=YELLOW, activecolor=RED, disabledcolor=GREEN},
-			["Button B1"]={template="BMainPage"}, 
+			["Button B1"]={template="BMainPage"},
 
 			["Side LED"]={enabledcolor=GREEN, activecolor=GREEN, disabledcolor=GREEN},
 		},
@@ -148,7 +148,7 @@
 				["Button 2-6"]={template="BFilterPage"},
 				["Button 2-7"]={template="BFilterPage"},
 				["Button 2-8"]={template="BFilterPage"},
-				--
+
 				["Button 8-2"]={template="BWhitekey"},
 				["Button 7-2"]={template="BBlackkey"},
 				["Button 8-3"]={template="BWhitekey"},
@@ -161,7 +161,7 @@
 				["Button 8-7"]={template="BWhitekey"},
 				["Button 7-7"]={template="BBlackkey"},
 				["Button 8-8"]={template="BWhitekey"},
-				--
+
 				["Button 6-2"]={template="BWhitekey"},
 				["Button 5-2"]={template="BBlackkey"},
 				["Button 6-3"]={template="BWhitekey"},
@@ -174,7 +174,7 @@
 				["Button 6-7"]={template="BWhitekey"},
 				["Button 5-7"]={template="BBlackkey"},
 				["Button 6-8"]={template="BWhitekey"},
-				--
+
 				["Button 4-2"]={template="BWhitekey"},
 				["Button 3-2"]={template="BBlackkey"},
 				["Button 4-3"]={template="BWhitekey"},
@@ -244,7 +244,7 @@
 				["Button 5-5"]={template="BDRPad"},
 				["Button 5-6"]={template="BDRPad"},
 				["Button 5-7"]={template="BDRPad"},
-				
+
 				["Button 6-5"]={template="BDRPad"},
 				["Button 6-6"]={template="BDRPad"},
 				["Button 6-7"]={template="BDRPad"},
@@ -260,15 +260,14 @@
 			},
 		},
 		["Transport"]={
-			["Button D1"]={enabledcolor=GREEN, activecolor=GREEN, disabledcolor=NOCOLOR}, 
-			["Button D2"]={enabledcolor=ORANGE, activecolor=YELLOW, disabledcolor=NOCOLOR}, 
-			["Button D3"]={enabledcolor=WRED, activecolor=RED, disabledcolor=NOCOLOR}, 
-			["Button D4"]={enabledcolor=AMBER, activecolor=GREEN, disabledcolor=NOCOLOR}, 
-			["Button D5"]={enabledcolor=AMBER, activecolor=GREEN, disabledcolor=NOCOLOR}, 
-			["Button D6"]={template="BBGreenOnOff"}, 
-			["Button D7"]={template="BBGreenOnOff"}, 
+			["Button D1"]={enabledcolor=GREEN, activecolor=GREEN, disabledcolor=NOCOLOR},
+			["Button D2"]={enabledcolor=ORANGE, activecolor=YELLOW, disabledcolor=NOCOLOR},
+			["Button D3"]={enabledcolor=WRED, activecolor=RED, disabledcolor=NOCOLOR},
+			["Button D4"]={enabledcolor=AMBER, activecolor=GREEN, disabledcolor=NOCOLOR},
+			["Button D5"]={enabledcolor=AMBER, activecolor=GREEN, disabledcolor=NOCOLOR},
+			["Button D6"]={template="BBGreenOnOff"},
+			["Button D7"]={template="BBGreenOnOff"},
 			["Button D8"]={enabledcolor=YELLOW, activecolor=YELLOW, disabledcolor=NOCOLOR},
-		
 		},
 		["Options"]={
 			["Button D1"]={template="BRedOnOff"},

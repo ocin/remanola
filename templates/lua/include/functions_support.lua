@@ -1,6 +1,6 @@
 local function hex_encode_text(text)
 	local hexstring = ""
-	
+
 	for i = 1, #text do
 		hexstring = hexstring..string.format("%02x ", string.byte(text:sub(i,i)))
 	end

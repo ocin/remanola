@@ -79,7 +79,7 @@ local color_templates = {
 	["BYellow"]={enabledcolor=YELLOW, activecolor=YELLOW, disabledcolor=NOCOLOR},
 	["BYellow3"]={enabledcolor=YELLOW3, activecolor=YELLOW3, disabledcolor=NOCOLOR},
 	["BOrange"]={enabledcolor=ORANGE, activecolor=ORANGE, disabledcolor=NOCOLOR},
-	-- Button On/Off 
+	-- Button On/Off
 	["BRedOnOff"]={enabledcolor=HGREY, activecolor=RED, disabledcolor=NOCOLOR},
 	["BYellowOnOff"]={enabledcolor=HGREY, activecolor=YELLOW, disabledcolor=NOCOLOR},
 	["BGreenOnOff"]={enabledcolor=HGREY, activecolor=GREEN, disabledcolor=NOCOLOR},

@@ -1,7 +1,5 @@
 g_scopetext = "none"
 g_colorscheme = "Default"
-g_scopetext_saved = ""
-g_colorscheme_saved = ""
 g_brightness = 4
 g_brightness_new = 4
 g_helpmode = false
