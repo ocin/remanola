@@ -1,6 +1,5 @@
 g_scopetext = "none"
 g_colorscheme = "Default"
-g_brightness_new = 4
 g_helpmode = false
 g_valuemode = false
 g_scrolltext = nil
@@ -13,11 +12,6 @@ g_playingbutton = 1
 g_flashing = false
 g_stopflashing = false
 g_startflashing = false
-g_lightshow = 0
-g_lightshowtime = nil
-g_lightshowcycle = 1
-g_lightshowloop = 1
-g_updatetime = nil
 g_sel = {}
 g_selcount = 4
 g_select = {}
@@ -32,6 +26,7 @@ g_debugupdate = 0
 
 {% if lptype == "mini" %}
 g_brightness = 4
+g_brightness_new = 4
 g_scrolltime = nil
 g_flashstate = 0
 g_flashlength = 250
@@ -45,6 +40,22 @@ g_startbar = false
 g_barupdate = false
 g_kbdvel = 100
 g_updateditems = {}
+g_updatetime = nil
+g_lightshow = 0
+g_lightshowtime = nil
+g_lightshowcycle = 1
+g_lightshowloop = 1
+
+gradient={
+	[1]=WGREEN,
+	[2]=GREEN,
+	[3]=YELLOW,
+	[4]=ORANGE,
+	[5]=AMBER,
+	[6]=WAMBER,
+	[7]=RED,
+	[8]=WRED,
+}
 {% endif %}
 
 local inputs = {}

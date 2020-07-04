@@ -23,7 +23,7 @@ function dim_color(colorlow, colorhigh, dimlevel)
 	return(string.format("%02x%02x%02x", r, g, b))
 end
 
-function gen_color_midi(button, color)
-	local buttonmidi = string.match(button, ".. (..)")
-	return(string.format("f0 00 20 29 02 10 0b %s %s f7", buttonmidi, get_rgb_midi(color)))
-end
+-- function gen_color_midi(button, color)
+-- 	local buttonmidi = string.match(button, ".. (..)")
+-- 	return(string.format("f0 00 20 29 02 10 0b %s %s f7", buttonmidi, get_rgb_midi(color)))
+-- end

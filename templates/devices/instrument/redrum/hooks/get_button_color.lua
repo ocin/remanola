@@ -1,7 +1,7 @@
 	if(g_scopetext == "Redrum" and string.match(get_current_page(), "Main") and (string.match(itemname, "Button [78]%-%d"))) then
 		if(g_playingbutton == itemname and (tonumber(remote.get_item_text_value(itemsindex["Button 6-1"])) == 1)) then
 			return(REDRUM_HIT)
-		else 
+		else
 			if(textvalue == 1) then
 				return(REDRUM_SOFT)
 			elseif(textvalue == 2) then

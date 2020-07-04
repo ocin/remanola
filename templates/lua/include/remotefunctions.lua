@@ -99,12 +99,13 @@ function remote_process_midi(event)
 	if(handle_input_scrollend(event)) then
 		return(true)
 	end
-
+{% if lptype == "mini" %}
 	if(g_lightshow > 0) then
 		if(handle_input_lightshow(event)) then
 			return(true)
 		end
 	end
+{% endif %}
 
 	local button = remote.match_midi("xx yy zz", event)
 
@@ -125,23 +126,25 @@ function remote_process_midi(event)
 			if(handle_input_devices(event, button)) then
 				return(true)
 			end
-	
+
 			if(handle_input_keyboard(event, button)) then
 				return(true)
 			end
-	
+
 			if(handle_input_item(event, button)) then
 				return(true)
 			end
 
+{% if lptype == "mini" %}
 			if(handle_input_internalpage(event, button)) then
 				return(true)
 			end
+{% endif %}
 
 			if(handle_input_setveltomax(event, button)) then
 				return(true)
 			end
-	
+
 			if(handle_input_starthelpmode(event, button)) then
 				return(true)
 			end
