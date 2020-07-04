@@ -40,11 +40,11 @@ g_startbar = false
 g_barupdate = false
 g_kbdvel = 100
 g_updateditems = {}
-g_updatetime = nil
 g_lightshow = 0
 g_lightshowtime = nil
 g_lightshowcycle = 1
 g_lightshowloop = 1
+g_updatetime = nil
 
 gradient={
 	[1]=WGREEN,
