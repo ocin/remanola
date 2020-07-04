@@ -15,10 +15,10 @@ function handle_input_repeatud(event, selnum)
 
 	local firstwait = 500 -- 1s
 	local wait = 200 -- 0.2s/step after 0.5
-	local finalwait = 20 -- 0.02s/step after 0.2*10 + 0.5 = 2.5s
+	local finalwait = 5 -- 0.01s/step after 0.2*10 + 0.5 = 2.5s
 
 	for buttonname, count in pairs(g_repeatudbuttons) do
-		if((count == 1 and timediff > firstwait) or (count > 1 and timediff > wait) or (count > 11 and timediff > finalwait)) then
+		if((count == 1 and timediff > firstwait) or (count > 1 and timediff > wait) or (count > 8 and timediff > finalwait)) then
 			g_repeatudbuttons[buttonname] = count + 1
 			local itemname = get_item_by_button(buttonname)
 			local value = 1
@@ -224,12 +224,30 @@ function handle_input_item(event, button)
 				return(true)
 			elseif(itemtype == "UDVButton" or itemtype == "UDHButton") then
 				local value = 1
-				g_repeatudbuttons[buttonname] = 1
-				g_repeatudlastupdate = remote.get_time_ms()
-				if(is_up_udupbutton(buttonname, itemname)) then
-					value = 1
+				if(ud_already_down(buttonname, itemname) and defaultvalue ~= -1) then
+					local defaultvalue = get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "defaultvalue")
+					g_repeatudbuttons[buttonname] = nil
+					g_repeatudbuttons[ud_get_otherbutton(buttonname, itemname)] = nil
+					if(defaultvalue ~= nil) then
+						value = defaultvalue
+					else
+						value = 64
+					end
+					if(defaultvalue ~= -1) then
+						local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = -127 }
+						remote.handle_input(msg)
+						local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
+						remote.handle_input(msg)
+					end
+					return(true)
 				else
-					value = -1
+					g_repeatudbuttons[buttonname] = 1
+					g_repeatudlastupdate = remote.get_time_ms()
+					if(is_up_udupbutton(buttonname, itemname)) then
+						value = 1
+					else
+						value = -1
+					end
 				end
 				local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
 				remote.handle_input(msg)
@@ -239,7 +257,7 @@ function handle_input_item(event, button)
 				if(mfader_already_down(buttonname, itemname)) then
 					g_buttondown[buttonname] = nil
 					g_buttondown[mfader_get_otherbutton(buttonname, itemname)] = nil
-					local defaultvalue = get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "defaultvalue") 
+					local defaultvalue = get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "defaultvalue")
 					if(defaultvalue ~= nil) then
 						value = defaultvalue
 					else
@@ -364,10 +382,14 @@ function handle_input_valuemode(event, button)
 		local itemname = get_item_by_button(buttonname)
 		if(itemname == "Button C1" or itemname == "Button C2") then
 			g_scrolltext = remote.get_item_text_value(itemsindex["DeviceName"])
+		elseif(itemname == "Button C7") then
+			g_scrolltext = "SubPage: "..get_current_subpage()
 		elseif(itemname == "Button C8") then
 			return true
 		else
-			g_scrolltext = tostring(remote.get_item_value(itemsindex[itemname]))
+			local value = tostring(remote.get_item_value(itemsindex[itemname]))
+			local textvalue = remote.get_item_text_value(itemsindex[itemname])
+			g_scrolltext = value..", "..textvalue
 		end
 		if(g_scrolltext == "") then
 			g_scrolltext = "Unknown"

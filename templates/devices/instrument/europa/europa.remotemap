@@ -51,14 +51,14 @@ Map	Button 2-7		Page=Eng1Unison			Index	// template="BEffect2PageHigh"
 Map	Button 3-7		Page=Eng2Unison			Index	// template="BEffect2PageHigh"
 Map	Button 4-7		Page=Eng3Unison			Index	// template="BEffect2PageHigh"
 Map	Button 5-5		Page=Filter			Index	// template="BFilterPageHigh"
-Map	Button 7-1		Page=ModMatrix1			Index	// template="BPerformancePageHigh"
-Map	Button 7-2		Page=ModMatrix2			Index	// template="BPerformancePageHigh"
-Map	Button 7-3		Page=ModMatrix3			Index	// template="BPerformancePageHigh"
-Map	Button 7-4		Page=ModMatrix4			Index	// template="BPerformancePageHigh"
-Map	Button 8-1		Page=ModMatrix5			Index	// template="BPerformancePageHigh"
-Map	Button 8-2		Page=ModMatrix6			Index	// template="BPerformancePageHigh"
-Map	Button 8-3		Page=ModMatrix7			Index	// template="BPerformancePageHigh"
-Map	Button 8-4		Page=ModMatrix8			Index	// template="BPerformancePageHigh"
+Map	Button 7-1		Page=ModMatrix1			Index	// template="BModMPageHigh"
+Map	Button 7-2		Page=ModMatrix2			Index	// template="BModMPageHigh"
+Map	Button 7-3		Page=ModMatrix3			Index	// template="BModMPageHigh"
+Map	Button 7-4		Page=ModMatrix4			Index	// template="BModMPageHigh"
+Map	Button 8-1		Page=ModMatrix5			Index	// template="BModMPageHigh"
+Map	Button 8-2		Page=ModMatrix6			Index	// template="BModMPageHigh"
+Map	Button 8-3		Page=ModMatrix7			Index	// template="BModMPageHigh"
+Map	Button 8-4		Page=ModMatrix8			Index	// template="BModMPageHigh"
 Map	Button 6-5		Page=LFO1			Index
 Map	Button 7-5		Page=LFO2			Index
 Map	Button 8-5		Page=LFO3			Index
@@ -125,50 +125,52 @@ Map	PageName		"Eng {{ engnum }}"			Eng{{ engnum }}Osc
 {% set oscpage="Osc" %}
 {{ rm.include_menus(curpage="Eng"+engnum|string+"Osc",mainmenu_mini="common", submenu="osc", oscpage="Osc", engnum=engnum) -}}
 Map	Button 1-2		Osc{{ engnum }} On			Eng{{ engnum }}Osc	// template="BRedOnOff"
-Map	UDVButton 1-3_2-3		Osc{{ engnum }} Oct			Eng{{ engnum }}Osc	// template="UDFreq"
-Map	UDVButton 3-3_4-3		Osc{{ engnum }} Semi			Eng{{ engnum }}Osc	// template="UDFreq2"
-Map	UDVButton 5-3_6-3		Osc{{ engnum }} Tune			Eng{{ engnum }}Osc	// template="UDFreq"
+Map	UDVButton 1-3_2-3		Osc{{ engnum }} Oct			Eng{{ engnum }}Osc	// template="UDFreq", defaultvalue=2
+Map	UDVButton 3-3_4-3		Osc{{ engnum }} Semi			Eng{{ engnum }}Osc	// template="UDFreq2", defaultvalue=0
+Map	UDVButton 5-3_6-3		Osc{{ engnum }} Tune			Eng{{ engnum }}Osc	// template="UDFreq", defaultvalue=50
 Map	MFader 7-3		Osc{{ engnum }} Pitch Kbd			Eng{{ engnum }}Osc	// template="UDPerf", defaultvalue=127
-Map	UDVButton 1-4_2-4		Osc{{ engnum }} Wave			Eng{{ engnum }}Osc	// template="UDOsc", inverted=true
+Map	UDVButton 1-4_2-4		Osc{{ engnum }} Wave			Eng{{ engnum }}Osc	// template="UDOsc", inverted=true, defaultvalue=0
 Map	Fader 5		Osc{{ engnum }} Shape			Eng{{ engnum }}Osc	// template="FOsc", defaultvalue=0
 Map	Button 8-4		Osc{{ engnum }} SyncPhase			Eng{{ engnum }}Osc	// template="BRedOnOff"
-Map	UDVButton 7-6_8-6		Osc{{ engnum }} Shape Source			Eng{{ engnum }}Osc	// template="UDLFO", inverted=true
+Map	UDVButton 7-6_8-6		Osc{{ engnum }} Shape Source			Eng{{ engnum }}Osc	// template="UDLFO", inverted=true, defaultvalue=6
 Map	Fader 7		Osc{{ engnum }} Shape Amt			Eng{{ engnum }}Osc	// template="FLFO", defaultvalue=0
 Map	Fader 8		Osc{{ engnum }} Shape Vel			Eng{{ engnum }}Osc	// template="FPerf", defaultvalue=0
+{% set dv_mod = {1: 7, 2: 0} %}
+{% set dv_mod_mod_source = {1: 3, 2: 10} %}
 {% for modnum in range(1,3) %}
 // Eng {{ engnum }} Modifier {{ modnum }}
 Map	PageName		"Eng {{ engnum }} Mod {{ modnum }}"			Eng{{ engnum }}Mod{{ modnum }}
 {{ rm.include_menus(curpage="Eng"+engnum|string+"Mod"+modnum|string,mainmenu_mini="common", submenu="osc", oscpage="Mod"+modnum|string, engnum=engnum) -}}
 Map	Button 1-2		Osc{{ engnum }} Mod{{ modnum }} On			Eng{{ engnum }}Mod{{ modnum }}	// template="BRedOnOff"
-Map	UDVButton 1-3_2-3		Osc{{ engnum }} Mod{{ modnum }}			Eng{{ engnum }}Mod{{ modnum }}	// template="UDOsc", inverted=true
+Map	UDVButton 1-3_2-3		Osc{{ engnum }} Mod{{ modnum }}			Eng{{ engnum }}Mod{{ modnum }}	// template="UDOsc", inverted=true, defaultvalue={{ dv_mod[modnum] }}
 Map	Fader 4		Osc{{ engnum }} Mod{{ modnum }} Amt			Eng{{ engnum }}Mod{{ modnum }}	// template="FOsc", defaultvalue=0
 Map	Fader 5		Osc{{ engnum }} Mod{{ modnum }} Mod			Eng{{ engnum }}Mod{{ modnum }}	// template="FLFO", defaultvalue=0
-Map	UDVButton 7-6_8-6		Osc{{ engnum }} Mod{{ modnum }} Source			Eng{{ engnum }}Mod{{ modnum }}	// template="UDLFO", inverted=true
+Map	UDVButton 7-6_8-6		Osc{{ engnum }} Mod{{ modnum }} Source			Eng{{ engnum }}Mod{{ modnum }}	// template="UDLFO", inverted=true, defaultvalue={{ dv_mod_mod_source[modnum] }}
 {% endfor -%}
 // Eng {{ engnum }} Spectral Filter
 Map	PageName		"Eng {{ engnum }} Spectral Filter"			Eng{{ engnum }}Filter
 {{ rm.include_menus(curpage="Eng"+engnum|string+"Filter",mainmenu_mini="common", submenu="osc", oscpage="Filter", engnum=engnum) -}}
 Map	Button 1-2		Osc{{ engnum }} Filter On			Eng{{ engnum }}Filter	// template="BRedOnOff"
-Map	UDVButton 3-2_4-2		Osc{{ engnum }} Filter			Eng{{ engnum }}Filter	// template="UDFreq", inverted=true
+Map	UDVButton 3-2_4-2		Osc{{ engnum }} Filter			Eng{{ engnum }}Filter	// template="UDFreq", inverted=true, defaultvalue=0
 Map	Fader 3		Osc{{ engnum }} Filter Freq			Eng{{ engnum }}Filter	// template="FFreq"
 Map	Fader 4		Osc{{ engnum }} Filter Reso			Eng{{ engnum }}Filter	// template="FEffect", defaultvalue=0
 Map	Fader 5		Osc{{ engnum }} Filter Kbd			Eng{{ engnum }}Filter	// template="FPerf", defaultvalue=127
 Map	Fader 6		Osc{{ engnum }} Filter Mod			Eng{{ engnum }}Filter	// template="FLFO", defaultvalue=0
-Map	UDVButton 7-7_8-7		Osc{{ engnum }} Filter Source			Eng{{ engnum }}Filter	// template="FLFO", inverted=true
+Map	UDVButton 7-7_8-7		Osc{{ engnum }} Filter Source			Eng{{ engnum }}Filter	// template="FLFO", inverted=true, defaultvalue=7
 Map	Fader 8		Osc{{ engnum }} Filter Vel			Eng{{ engnum }}Filter	// template="FPerf", defaultvalue=0
 // Eng {{ engnum }} Harmonics
 Map	PageName		"Eng {{ engnum }} Harmonics"			Eng{{ engnum }}Harm
 {{ rm.include_menus(curpage="Eng"+engnum|string+"Harm",mainmenu_mini="common", submenu="osc", oscpage="Harm", engnum=engnum) -}}
 Map	Button 1-2		Osc{{ engnum }} Harm On			Eng{{ engnum }}Harm	// template="BRedOnOff"
-Map	UDVButton 1-3_2-3		Osc{{ engnum }} Harm			Eng{{ engnum }}Harm	// template="UDOsc", inverted=true
+Map	UDVButton 1-3_2-3		Osc{{ engnum }} Harm			Eng{{ engnum }}Harm	// template="UDOsc", inverted=true, defaultvalue=0
 Map	Fader 4		Osc{{ engnum }} Harm Pos			Eng{{ engnum }}Harm	// template="FOsc", defaultvalue=0
 Map	Fader 5		Osc{{ engnum }} Harm Amt			Eng{{ engnum }}Harm	// template="FOsc"
 // Eng {{ engnum }} Unison
 Map	PageName		"Eng {{ engnum }} Unison"			Eng{{ engnum }}Unison
 {{ rm.include_menus(curpage="Eng"+engnum|string+"Unison",mainmenu_mini="common", submenu="osc", oscpage="Unison", engnum=engnum) -}}
 Map	Button 1-2		Osc{{ engnum }} Unison On			Eng{{ engnum }}Unison	// template="BRedOnOff"
-Map	UDVButton 1-3_2-3		Osc{{ engnum }} Unison Mode			Eng{{ engnum }}Unison	// template="UDEffect", inverted=true
-Map	UDVButton 1-4_2-4		Osc{{ engnum }} Count			Eng{{ engnum }}Unison	// template="UDEffect"
+Map	UDVButton 1-3_2-3		Osc{{ engnum }} Unison Mode			Eng{{ engnum }}Unison	// template="UDEffect", inverted=true, defaultvalue=0
+Map	UDVButton 1-4_2-4		Osc{{ engnum }} Count			Eng{{ engnum }}Unison	// template="UDEffect", defaultvalue=4
 Map	Fader 5		Osc{{ engnum }} Blend			Eng{{ engnum }}Unison	// template="FEffect", defaultvalue=127
 Map	Fader 6		Osc{{ engnum }} Detune			Eng{{ engnum }}Unison	// template="FFreq"
 Map	Fader 7		Osc{{ engnum }} Spread			Eng{{ engnum }}Unison	// template="FEffect", defaultvalue=89

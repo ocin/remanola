@@ -594,3 +594,18 @@ end
 function mfader_already_down(buttonname, itemname)
 	return(g_buttondown[mfader_get_otherbutton(buttonname, itemname)])
 end
+
+function ud_get_otherbutton(buttonname, itemname)
+	local otherbutton
+	local firstbutton, secondbutton = string.match(itemname, "UD.Button (...)_(...)")
+	if(buttonname == "Button "..firstbutton) then
+		otherbutton = "Button "..secondbutton
+	else
+		otherbutton = "Button "..firstbutton
+	end
+	return(otherbutton)
+end
+
+function ud_already_down(buttonname, itemname)
+	return(g_buttondown[ud_get_otherbutton(buttonname, itemname)])
+end

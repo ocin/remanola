@@ -63,11 +63,11 @@ Map	Fader 8		Master Volume			Main	// template="FGain", defaultvalue=89
 // Perf
 Map	PageName		"Perf"			Perf
 {{ rm.include_menus(curpage="Perf") -}}
-Map	UDVButton 7-1_8-1		Key Mode			Perf	// template="UDPerf2"
-Map	UDVButton 7-3_8-3		Portamento Mode			Perf	// template="UDPerf"
-Map	Fader 4		Portamento			Perf	// template="FPerf"
-Map	UDVButton 7-6_8-6		Pitch Bend Range			Perf	// template="UDPerf"
-Map	UDVButton 7-8_8-8		Voices			Perf	// template="UDOsc"
+Map	UDVButton 7-1_8-1		Key Mode			Perf	// template="UDPerf2", defaultvalue=2
+Map	UDVButton 7-3_8-3		Portamento Mode			Perf	// template="UDPerf", defaultvalue=2
+Map	Fader 4		Portamento			Perf	// template="FPerf", defaultvalue=32
+Map	UDVButton 7-6_8-6		Pitch Bend Range			Perf	// template="UDPerf", defaultvalue=2
+Map	UDVButton 7-8_8-8		Voices			Perf	// template="UDOsc", defaultvalue=7
 // Sample
 Map	PageName		"Sample"			Sample
 {{ rm.include_menus(curpage="Sample") -}}
@@ -75,8 +75,8 @@ Map	Fader 1		Zoom			Sample	// template="FMisc", defaultvalue=36
 Map	Fader 2		Scroll			Sample	// template="FMisc", defaultvalue=0
 Map	Fader 3		Position			Sample	// template="UDOsc", defaultvalue=0
 Map	Fader 4		End Pos			Sample	// template="FFreq", defaultvalue=127
-Map	UDVButton 1-5_2-5		Motion			Sample	// template="UDOsc", inverted=true
-Map	Fader 6		Speed			Sample	// template="FFreq"
+Map	UDVButton 1-5_2-5		Motion			Sample	// template="UDOsc", inverted=true, defaultvalue=2
+Map	Fader 6		Speed			Sample	// template="FFreq", defaultvalue=64
 Map	Fader 7		Jitter			Sample	// template="FOsc", defaultvalue=0
 Map	Button 1-8		Global Position			Sample	// template="BRedOnOff"
 // Grains
@@ -86,13 +86,13 @@ Map	Sel1_0		Algorithm=SpectralGrains			Grains
 Map	Sel1_42		Algorithm=GrainOsc			Grains
 Map	Sel1_85		Algorithm=LongGrains			Grains
 Map	Sel1_127		Algorithm=Tape			Grains
-Map	UDVButton 1-1_2-1		Algorithm		SEL1	Grains	// template="UDOsc", inverted=true
+Map	UDVButton 1-1_2-1		Algorithm		SEL1	Grains	// template="UDOsc", inverted=true, defaultvalue=2
 // Spectral Grains
 Map	SubPageName		"Spectral Grains"			Grains	SpectralGrains
 Map	Fader 2		Harm Snap			Grains	SpectralGrains	// template="FOsc", defaultvalue=0
 Map	Fader 3		Harm Filter			Grains	SpectralGrains	// template="FFreq", defaultvalue=0
 Map	Button 1-4		Curve On 			Grains	SpectralGrains	// template="BRedOnOff"
-Map	UDVButton 7-4_8-4		FFT Size			Grains	SpectralGrains	// template="UDOsc"
+Map	UDVButton 7-4_8-4		FFT Size			Grains	SpectralGrains	// template="UDOsc", defaultvalue=2
 Map	Fader 5		Curve Amt			Grains	SpectralGrains	// template="FOsc", defaultvalue=127
 Map	Fader 6		Formant			Grains	SpectralGrains	// template="FEffect", defaultvalue=64
 Map	Fader 7		Formant Tune			Grains	SpectralGrains	// template="FOsc", defaultvalue=64
@@ -119,16 +119,16 @@ Map	Fader 6		XFade			Grains	Tape	// template="FOsc"
 // Pitch
 Map	PageName		"Pitch" 			Pitch
 {{ rm.include_menus(curpage="Pitch",submenu="osc",oscpage="Pitch") -}}
-Map	UDVButton 1-2_2-2		Oct			Pitch	// template="UDFreq"
-Map	UDVButton 1-3_2-3		Semi			Pitch	// template="UDFreq"
-Map	UDVButton 1-4_2-4		Tune			Pitch	// template="UDFreq"
+Map	UDVButton 1-2_2-2		Oct			Pitch	// template="UDFreq", defaultvalue=2
+Map	UDVButton 1-3_2-3		Semi			Pitch	// template="UDFreq", defaultvalue=0
+Map	UDVButton 1-4_2-4		Tune			Pitch	// template="UDFreq", defaultvalue=50
 Map	Fader 6		Pitch Kbd			Pitch	// template="FPerf", defaultvalue=127
 // Osc
 Map	PageName		"Osc"			Osc
 {{ rm.include_menus(curpage="Osc",submenu="osc",oscpage="Osc") -}}
 Map	Button 1-2		Osc On 			Osc	// template="BRedOnOff"
-Map	UDVButton 1-3_2-3		Osc Oct			Osc	// template="UDFreq"
-Map	UDVButton 1-4_2-4		Osc Wave			Osc	// template="UDOsc"
+Map	UDVButton 1-3_2-3		Osc Oct			Osc	// template="UDFreq", defaultvalue=2
+Map	UDVButton 1-4_2-4		Osc Wave			Osc	// template="UDOsc", defaultvalue=0
 Map	Fader 6		Osc Mod			Osc	// template="FOsc"
 // Mixer 
 Map	PageName		"Mixer" 			Mixer
@@ -140,7 +140,7 @@ Map	Fader 6		Osc Level			Mixer	// template="FVol", defaultvalue=89
 // Filter 
 Map	PageName		"Filter"			Filter
 {{ rm.include_menus(curpage="Filter") -}}
-Map	UDVButton 1-2_2-2		Filter Type			Filter	// template="UDFreq", inverted=true
+Map	UDVButton 1-2_2-2		Filter Type			Filter	// template="UDFreq", inverted=true, defaultvalue=3
 Map	Fader 3		Filter Freq			Filter	// template="FFreq", defaultvalue=64
 Map	Fader 4		Filter Reso			Filter	// template="FEffect", defaultvalue=0
 Map	Fader 6		Filter Env2			Filter	// template="FEnv", defaultvalue=0
