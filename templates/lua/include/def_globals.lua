@@ -23,6 +23,7 @@ g_velofaderlastupdate = 0
 g_repeatudbuttons = {}
 g_repeatudlastupdate = 0
 g_debugupdate = 0
+g_lightshow = 0
 
 {% if lptype == "mini" %}
 g_brightness = 4
@@ -40,7 +41,6 @@ g_startbar = false
 g_barupdate = false
 g_kbdvel = 100
 g_updateditems = {}
-g_lightshow = 0
 g_lightshowtime = nil
 g_lightshowcycle = 1
 g_lightshowloop = 1
