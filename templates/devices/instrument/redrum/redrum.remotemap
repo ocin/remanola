@@ -73,22 +73,23 @@ Map	Button 8-5		Selected Drum Step 13			Main	Rotate	// template="BStep"
 Map	Button 8-6		Selected Drum Step 14			Main	Rotate	// template="BStep"
 Map	Button 8-7		Selected Drum Step 15			Main	Rotate	// template="BStep"
 Map	Button 8-8		Selected Drum Step 16			Main	Rotate	// template="BStep"
-Map	Button 7-1		Selected Drum Toggle Step 1			Main	Toggle	// template="BStep"
-Map	Button 7-2		Selected Drum Toggle Step 2			Main	Toggle	// template="BStep"
-Map	Button 7-3		Selected Drum Toggle Step 3			Main	Toggle	// template="BStep"
-Map	Button 7-4		Selected Drum Toggle Step 4			Main	Toggle	// template="BStep"
-Map	Button 7-5		Selected Drum Toggle Step 5			Main	Toggle	// template="BStep"
-Map	Button 7-6		Selected Drum Toggle Step 6			Main	Toggle	// template="BStep"
-Map	Button 7-7		Selected Drum Toggle Step 7			Main	Toggle	// template="BStep"
-Map	Button 7-8		Selected Drum Toggle Step 8			Main	Toggle	// template="BStep"
-Map	Button 8-1		Selected Drum Toggle Step 9			Main	Toggle	// template="BStep"
-Map	Button 8-2		Selected Drum Toggle Step 10			Main	Toggle	// template="BStep"
-Map	Button 8-3		Selected Drum Toggle Step 11			Main	Toggle	// template="BStep"
-Map	Button 8-4		Selected Drum Toggle Step 12			Main	Toggle	// template="BStep"
-Map	Button 8-5		Selected Drum Toggle Step 13			Main	Toggle	// template="BStep"
-Map	Button 8-6		Selected Drum Toggle Step 14			Main	Toggle	// template="BStep"
-Map	Button 8-7		Selected Drum Toggle Step 15			Main	Toggle	// template="BStep"
-Map	Button 8-8		Selected Drum Toggle Step 16			Main	Toggle	// template="BStep"
+// Templates for toggle is same as above
+Map	Button 7-1		Selected Drum Toggle Step 1			Main	Toggle
+Map	Button 7-2		Selected Drum Toggle Step 2			Main	Toggle
+Map	Button 7-3		Selected Drum Toggle Step 3			Main	Toggle
+Map	Button 7-4		Selected Drum Toggle Step 4			Main	Toggle
+Map	Button 7-5		Selected Drum Toggle Step 5			Main	Toggle
+Map	Button 7-6		Selected Drum Toggle Step 6			Main	Toggle
+Map	Button 7-7		Selected Drum Toggle Step 7			Main	Toggle
+Map	Button 7-8		Selected Drum Toggle Step 8			Main	Toggle
+Map	Button 8-1		Selected Drum Toggle Step 9			Main	Toggle
+Map	Button 8-2		Selected Drum Toggle Step 10			Main	Toggle
+Map	Button 8-3		Selected Drum Toggle Step 11			Main	Toggle
+Map	Button 8-4		Selected Drum Toggle Step 12			Main	Toggle
+Map	Button 8-5		Selected Drum Toggle Step 13			Main	Toggle
+Map	Button 8-6		Selected Drum Toggle Step 14			Main	Toggle
+Map	Button 8-7		Selected Drum Toggle Step 15			Main	Toggle
+Map	Button 8-8		Selected Drum Toggle Step 16			Main	Toggle
 Map	SubPageName		"Play"			Main	Play
 Map	Button 1-1		Channel 1 Play			Main	Play	// template="BPad"
 Map	Button 1-2		Channel 2 Play			Main	Play	// template="BPad"

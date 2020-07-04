@@ -27,13 +27,15 @@ function handle_changed_barposition(citemindex, citemname)
 	end
 end
 
-function handle_changed_barposition(citemindex, citemname)
+{% if lptype == "mini" %}
+function handle_changed_beatposition(citemindex, citemname)
 	if(string.match(citemname, "BeatPosition")) then
 		if(not g_barupdate and not g_startbar) then
 			g_startbeat = true
 		end
 	end
 end
+{% endif %}
 
 function handle_changed_playingstep(citemindex, citemname)
 	if(string.match(citemname, "PlayingStep")) then

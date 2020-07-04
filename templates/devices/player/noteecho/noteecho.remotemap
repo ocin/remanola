@@ -32,9 +32,11 @@ Map	MFader 1-8		Velocity			Main	// template="FPerf"
 Map	UDVButton 3-8_4-8		Pitch			Main	// template="UDOsc"
 Map	Button 5-1		Original Note Enable			Main	// template="BPerfOnOff"
 {% set step_to_button = {1: '6-1',2: '6-2',3: '6-3',4: '6-4',5: '6-5',6: '6-6',7: '6-7',8: '6-8',9: '7-1',10: '7-2',11: '7-3',12: '7-4',13: '7-5',14: '7-6',15: '7-7',16: '7-8', 17: '8-1' } %}
-{% for step in range(1,18) %}
-{% for steppage in range(step,18) %}
+{% for steppage in range(1,18) %}
+Map	SubPageName		"Step{{ steppage }}"			Main	Step{{ steppage }}
+{% for step in range(1,steppage+1) %}
 Map	Button {{ step_to_button[step] }}		Step {{ step }} Enable			Main	Step{{ steppage }}	// template="BPerfOnOff"
 {% endfor %}
+// End SubPage
 {% endfor %}
 {% endblock main %}

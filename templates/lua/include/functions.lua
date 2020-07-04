@@ -186,7 +186,7 @@ function get_button_color(context, itemname, buttonname, value)
 		end
 
 		if(string.find(itemname, "MFader %d%-%d")) then	
-			prevbuttonvalue = 0
+			local prevbuttonvalue = 0
 			if((buttonindex%2) == 1) then
 				prevbuttonvalue = get_item_bvmap(itemname)[(buttonindex+1)%2+1] 
 			end
@@ -199,7 +199,7 @@ function get_button_color(context, itemname, buttonname, value)
 				color = enabledcolor
 			end
 		elseif((string.find(itemname, "Fader %d")) or (string.find(itemname, "BigFader %d")) or (string.find(itemname, "Meter %d")) or (string.find(itemname, "Drawbar %d"))) then	
-			nextbuttonvalue = 0
+			local nextbuttonvalue = 0
 			if(buttonindex ~= 8) then
 				nextbuttonvalue = get_item_bvmap(itemname)[buttonindex+1] 
 			end
@@ -226,7 +226,7 @@ function get_button_color(context, itemname, buttonname, value)
 		elseif(string.find(itemname, "Knob H%d") or string.find(itemname, "Knob V%d")) then
 			if(value > 64) then
 				if(buttonindex <= 4) then
-					nextbuttonvalue = 127
+					local nextbuttonvalue = 127
 					if(buttonindex < 8) then
 						nextbuttonvalue = get_item_bvmap(itemname)[buttonindex+1] 
 					end
@@ -266,7 +266,7 @@ function get_button_color(context, itemname, buttonname, value)
 				end
 			end
 		else
-			prevbuttonvalue = 0
+			local prevbuttonvalue = 0
 			if(buttonindex ~= 0) then
 				prevbuttonvalue = get_item_bvmap(itemname)[buttonindex-1] 
 			end

@@ -41,12 +41,14 @@ function remote_set_state(changed_items)
 		if(citemname ~= nil) then
 			handle_changed_sel(citemindex, citemname)
 			handle_changed_devicescope(citemindex, citemname)
+{% if lptype == "mini" %}
 			handle_changed_barposition(citemindex, citemname)
-			handle_changed_barposition(citemindex, citemname)
+			handle_changed_beatposition(citemindex, citemname)
+			handle_changed_kbdvel(citemindex, citemname)
+{% endif %}
 			handle_changed_playingstep(citemindex, citemname)
 			handle_changed_pagename(citemindex, citemname)
 			handle_changed_subpagename(citemindex, citemname)
-			handle_changed_kbdvel(citemindex, citemname)
 			handle_changed_basekey(citemindex, citemname)
 			handle_changed_custom(citemindex, citemname)
 		end

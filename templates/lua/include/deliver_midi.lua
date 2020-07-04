@@ -2,7 +2,7 @@ function deliver_midi_scrolltext(ret_events)
 	if(g_scrolltext ~= nil) then
 		table.insert(ret_events, remote.make_midi(gen_scroll_string(g_scrolltext, g_scrollcolor, g_scrollspeed)))
 		g_scrolling = true
-		g_scrolltime = remote.get_time_ms()
+		-- g_scrolltime = remote.get_time_ms()
 		g_scrolltext = nil
 		g_scrollcolor = g_scrollcolor_default
 		g_scrollspeed = g_scrollspeed_default

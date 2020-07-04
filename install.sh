@@ -60,6 +60,8 @@ fi
 check_for_undef "$OUTDIR/Launchpad-Pro.remotemap"
 ./build_lua.py
 
+#/opt/local/share/luarocks/bin/luacheck --no-color --no-max-line-length --globals remote --allow-defined-top files /tmp/remanola-out/Launchpad-Pro.lua
+
 # Mini
 #cp -r $OUTDIR/Launchpad-Mini.lua "$CODECSDIR"
 #cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.luacodec "$CODECSDIR"

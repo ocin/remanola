@@ -10,16 +10,16 @@ function get_rgb_midi(color)
 	if(color == nil) then
 		error("Undefined color")
 	end
-	r,g,b = string.match(color, "(..)(..)(..)")
+	local r,g,b = string.match(color, "(..)(..)(..)")
 	return(string.format("%02x %02x %02x", tonumber(r,16)/4, tonumber(g,16)/4, tonumber(b,16)/4))
 end
 
 function dim_color(colorlow, colorhigh, dimlevel)
-	rl,gl,bl = string.match(colorlow, "(..)(..)(..)")
-	rh,gh,bh = string.match(colorhigh, "(..)(..)(..)")
-	r = tonumber(rl,16) + (tonumber(rh,16) - tonumber(rl,16)) * dimlevel
-	g = tonumber(gl,16) + (tonumber(gh,16) - tonumber(gl,16)) * dimlevel
-	b = tonumber(bl,16) + (tonumber(bh,16) - tonumber(bl,16)) * dimlevel
+	local rl,gl,bl = string.match(colorlow, "(..)(..)(..)")
+	local rh,gh,bh = string.match(colorhigh, "(..)(..)(..)")
+	local r = tonumber(rl,16) + (tonumber(rh,16) - tonumber(rl,16)) * dimlevel
+	local g = tonumber(gl,16) + (tonumber(gh,16) - tonumber(gl,16)) * dimlevel
+	local b = tonumber(bl,16) + (tonumber(bh,16) - tonumber(bl,16)) * dimlevel
 	return(string.format("%02x%02x%02x", r, g, b))
 end
 

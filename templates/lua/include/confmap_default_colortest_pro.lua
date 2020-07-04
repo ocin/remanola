@@ -40,7 +40,7 @@
 			["Button 7-3"]={enabledcolor=NOCOLOR, activecolor=NOCOLOR, disabledcolor=DGOLD},
 
 			["Button 5-4"]={enabledcolor=NOCOLOR, activecolor=NOCOLOR, disabledcolor=MARINE},
-			["Button 6-4"]={enabledcolor=NOCOLOR, activecolor=NOCOLOR, disabledcolor=MARINE},
+			["Button 6-4"]={enabledcolor=NOCOLOR, activecolor=NOCOLOR, disabledcolor=HMARINE},
 			["Button 7-4"]={enabledcolor=NOCOLOR, activecolor=NOCOLOR, disabledcolor=DMARINE},
 
 			["Button 5-5"]={enabledcolor=NOCOLOR, activecolor=NOCOLOR, disabledcolor=CADET},
