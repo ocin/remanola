@@ -57,16 +57,16 @@ Map	Fader 8		Master Volume			Main	// template="FVol", defaultvalue=64
 // Begin Page Perf
 Map	PageName		"Perf" 			Perf
 {{ rm.include_menus(curpage="Perf") -}}
-Map	UDVButton 7-2_8-2		Polyphony			Perf	// template="UDOsc", inverted=true
+Map	UDVButton 7-2_8-2		Polyphony			Perf	// template="UDOsc", inverted=true, defaultvalue=3
 Map	Fader 3		Glide			Perf	// template="FPerf", defaultvalue=0
 // End Page Perf
 {% for oscnum in range(1,3) -%}
 // Begin Page Osc{{ oscnum }}
 Map	PageName		"Osc {{ oscnum }}"			Osc{{ oscnum }}
 {{ rm.include_menus(curpage="Osc"+oscnum|string, mainmenu_mini="osc", submenu="osc", osc1page="Osc1", osc2page="Osc2", oscnum=oscnum) -}}
-Map	UDVButton 1-2_2-2		Osc {{ oscnum }} Waveform			Osc{{ oscnum }}	// template="UDOsc", inverted=true
-Map	UDVButton 1-3_2-3		Osc {{ oscnum }} Voices			Osc{{ oscnum }}	// template="UDOsc2"
-Map	UDVButton 1-4_2-4		Osc {{ oscnum }} Dyad			Osc{{ oscnum }}	// template="UDOsc2"
+Map	UDVButton 1-2_2-2		Osc {{ oscnum }} Waveform			Osc{{ oscnum }}	// template="UDOsc", inverted=true, defaultvalue=0
+Map	UDVButton 1-3_2-3		Osc {{ oscnum }} Voices			Osc{{ oscnum }}	// template="UDOsc", defaultvalue=1
+Map	UDVButton 1-4_2-4		Osc {{ oscnum }} Dyad			Osc{{ oscnum }}	// template="UDOsc", defaultvalue=0
 Map	Fader 5		Osc {{ oscnum }} Phase			Osc{{ oscnum }}	// template="FOsc", defaultvalue=64
 Map	Fader 6		Osc {{ oscnum }} Modifier			Osc{{ oscnum }}	// template="FOsc", defaultvalue=0
 Map	Fader 8		Osc {{ oscnum }} Volume			Osc{{ oscnum }}	// template="FVol", defaultvalue=64
@@ -74,9 +74,9 @@ Map	Fader 8		Osc {{ oscnum }} Volume			Osc{{ oscnum }}	// template="FVol", defau
 // Begin Page OscMod {{ oscnum }}
 Map	PageName		"OscMod {{ oscnum }}"			OscMod{{ oscnum }}
 {{ rm.include_menus(curpage="OscMod"+oscnum|string, mainmenu_mini="osc", submenu="osc", osc1page="OscMod1", osc2page="OscMod2", oscnum=oscnum) -}}
-Map	UDVButton 1-2_2-2		Osc {{ oscnum }} Semi			OscMod{{ oscnum }}	// template="UDFreq"
-Map	UDVButton 1-3_2-3		Osc {{ oscnum }} Fine			OscMod{{ oscnum }}	// template="UDFreq"
-Map	UDVButton 1-4_2-4		Osc {{ oscnum }} Detune			OscMod{{ oscnum }}	// template="UDFreq"
+Map	UDVButton 1-2_2-2		Osc {{ oscnum }} Semi			OscMod{{ oscnum }}	// template="UDFreq", defaultvalue=24
+Map	UDVButton 1-3_2-3		Osc {{ oscnum }} Fine			OscMod{{ oscnum }}	// template="UDFreq", defaultvalue=50
+Map	UDVButton 1-4_2-4		Osc {{ oscnum }} Detune			OscMod{{ oscnum }}	// template="UDFreq", defaultvalue=50
 Map	Fader 5		Osc {{ oscnum }} Spread			OscMod{{ oscnum }}	// template="FEffect", defaultvalue=0
 Map	Fader 7		Osc {{ oscnum }} Key Track			OscMod{{ oscnum }}	// template="FPerf", defaultvalue=127
 Map	Knob V8		Osc {{ oscnum }} Pan			OscMod{{ oscnum }}	// template="FVol"
@@ -94,7 +94,7 @@ Map	Fader 6		Drift			Mixer	// template="FEffect", defaultvalue=0
 // Begin Page Filter
 Map	PageName		"Filter"			Filter
 {{ rm.include_menus(curpage="Filter", submenu="filter", filterpage="Filter") -}}
-Map	UDVButton 1-2_2-2		Filter Type			Filter	// template="UDFreq", inverted=true
+Map	UDVButton 1-2_2-2		Filter Type			Filter	// template="UDFreq", inverted=true, defaultvalue=0
 Map	Fader 3		Filter Cutoff			Filter	// template="FFreq", defaultvalue=127
 Map	Fader 4		Filter Resonance			Filter	// template="FEffect", defaultvalue=0
 Map	Fader 6		Filter Envelope Amount			Filter	// template="FEnv", defaultvalue=0
@@ -149,7 +149,7 @@ Map	Fader 8		EQ Dry/Wet			EQBass	// template="FGain", defaultvalue=127
 Map	PageName		"Dist"			Dist
 {{ rm.include_menus(curpage="Dist", submenu="effects", mainmenu_mini="effect") -}}
 Map	Button 1-1		Distortion			Dist	// template="BGreenOnOff"
-Map	UDVButton 3-1_4-1		Distortion Type			Dist	// template="UDEffect"
+Map	UDVButton 3-1_4-1		Distortion Type			Dist	// template="UDEffect", defaultvalue=0
 Map	MFader 5-1		Distortion Drive			Dist	// template="FAmount", defaultvalue=0
 Map	Fader 2		Distortion Symmetry			Dist	// template="UDEffect", defaultvalue=64
 Map	Fader 3		Distortion Tone			Dist	// template="FEffect", defaultvalue=64
@@ -162,11 +162,11 @@ Map	Fader 8		Distortion Dry/Wet			Dist	// template="FGain", defaultvalue=127
 Map	PageName		"Phaser"			Phaser
 {{ rm.include_menus(curpage="Phaser", submenu="effects", mainmenu_mini="effect") -}}
 Map	Button 1-1		Phaser			Phaser	// template="BGreenOnOff"
-Map	UDVButton 3-1_4-1		Phaser Stages			Phaser	// template="UDEffect"
+Map	UDVButton 3-1_4-1		Phaser Stages			Phaser	// template="UDEffect", defaultvalue=1
 Map	Fader 2		Phaser Freq			Phaser	// template="FFreq", defaultvalue=64
 Map	Fader 3		Phaser Spread			Phaser	// template="FEffect", defaultvalue=127
 Map	Fader 4		Phaser Feedback			Phaser	// template="FEffect", defaultvalue=64
-Map	UDVButton 7-5_8-5		Phaser Rate			Phaser	// template="UDFreq"
+Map	UDVButton 7-5_8-5		Phaser Rate			Phaser	// template="UDFreq", defaultvalue=13
 Map	Fader 6		Phaser Mod			Phaser	// template="FLFO", defaultvalue=64
 Map	Fader 7		Phaser LR Offset			Phaser	// template="FEffect", defaultvalue=64
 Map	Fader 8		Phaser Dry/Wet			Phaser	// template="FGain", defaultvalue=64
@@ -186,9 +186,9 @@ Map	Fader 8		Chorus Dry/Wet			Chorus	// template="FGain", defaultvalue=64
 Map	PageName		"Delay"			Delay
 {{ rm.include_menus(curpage="Delay", submenu="effects", mainmenu_mini="effect") -}}
 Map	Button 1-1		Delay			Delay	// template="BGreenOnOff"
-Map	UDVButton 3-1_4-1		Delay Type			Delay	// template="UDEffect"
-Map	UDVButton 5-1_6-1		Delay L-Rate			Delay	// template="UDFreq"
-Map	UDVButton 7-1_8-1		Delay R-Rate			Delay	// template="UDFreq"
+Map	UDVButton 3-1_4-1		Delay Type			Delay	// template="UDEffect", defaultvalue=0
+Map	UDVButton 5-1_6-1		Delay L-Rate			Delay	// template="UDFreq", defaultvalue=10
+Map	UDVButton 7-1_8-1		Delay R-Rate			Delay	// template="UDFreq", defaultvalue=10
 Map	Fader 2		Delay Color			Delay	// template="FEffect", defaultvalue=64
 Map	Fader 3		Delay Feedback			Delay	// template="FEffect", defaultvalue=64
 Map	Fader 5		Delay Mod Rate			Delay	// template="FFreq", defaultvalue=64
@@ -211,7 +211,7 @@ Map	Fader 8		Reverb Dry/Wet			Reverb	// template="FGain", defaultvalue=64
 Map	PageName		"Comp"			Comp
 {{ rm.include_menus(curpage="Comp", submenu="effects", mainmenu_mini="effect") -}}
 Map	Button 1-1		Compressor			Comp	// template="BGreenOnOff"
-Map	UDVButton 3-1_4-1		Compressor Ratio			Comp	// template="UDEffect"
+Map	UDVButton 3-1_4-1		Compressor Ratio			Comp	// template="UDEffect", defaultvalue=25
 Map	Fader 2		Compressor Threshold			Comp	// template="FEffect", defaultvalue=64
 Map	Fader 4		Compressor Attack			Comp	// template="FEffect", defaultvalue=0
 Map	Fader 5		Compressor Release			Comp	// template="FEffect", defaultvalue=95
@@ -225,11 +225,11 @@ Map	Sel1_0		TempoSync=Free			LFO{{ lfonum }}
 Map	Sel1_1		TempoSync=Sync			LFO{{ lfonum }}
 Map	Button 1-1		Lfo {{ lfonum }} Sync		SEL1	LFO{{ lfonum }}	// template="BGreenOnOff"
 Map	Button 1-3		Lfo {{ lfonum }} Free Run			LFO{{ lfonum }}	// template="BGreenOnOff"
-Map	UDVButton 3-1_4-1		Lfo {{ lfonum }} Shape			LFO{{ lfonum }}	// template="UDLFO", inverted=true
+Map	UDVButton 3-1_4-1		Lfo {{ lfonum }} Shape			LFO{{ lfonum }}	// template="UDLFO", inverted=true, defaultvalue=0
 Map	Fader 4		Lfo {{ lfonum }} Rate			LFO{{ lfonum }}	Free	// template="FFreq"
-Map	UDVButton 7-4_8-4		Lfo {{ lfonum }} Rate Sync			LFO{{ lfonum }}	Sync	// template="UDFreq"
+Map	UDVButton 7-4_8-4		Lfo {{ lfonum }} Rate Sync			LFO{{ lfonum }}	Sync	// template="UDFreq", defaultvalue=13
 Map	Knob V5		Lfo {{ lfonum }} Target Amount			LFO{{ lfonum }}	// template="FLFO"
-Map	UDVButton 7-1_8-1		Lfo {{ lfonum }} Target			LFO{{ lfonum }}	// template="UDLFO", inverted=true
+Map	UDVButton 7-1_8-1		Lfo {{ lfonum }} Target			LFO{{ lfonum }}	// template="UDLFO", inverted=true, defaultvalue=0
 // End Page LFO {{ lfonum }}
 {% endfor %}
 // Begin Page Amp Env
@@ -243,7 +243,7 @@ Map	Fader 6		Amp Envelope Release			AmpEnv	// template="FVol", defaultvalue=64
 // Begin Page Mod Env
 Map	PageName		"Mod Env"			ModEnv
 {{ rm.include_menus(curpage="ModEnv", submenu="mod", modpage="ModEnv") -}}
-Map	UDVButton 3-1_4-1		Mod Envelope Target			ModEnv	// template="UDEnv", inverted=true
+Map	UDVButton 3-1_4-1		Mod Envelope Target			ModEnv	// template="UDEnv", inverted=true, defaultvalue=0
 Map	Fader 3		Mod Envelope Attack			ModEnv	// template="FEnv", defaultvalue=0
 Map	Fader 4		Mod Envelope Decay			ModEnv	// template="FEnv", defaultvalue=64
 Map	Fader 5		Mod Envelope Sustain			ModEnv	// template="FEnv", defaultvalue=127
@@ -253,20 +253,20 @@ Map	Knob V8		Mod Envelope Target Amount			ModEnv	// template="FEnv"
 // Begin Page Arpeggiator
 Map	PageName		"Arpeggiator"			Arp
 {{ rm.include_menus(curpage="Arp", submenu="perf", perfpage="Arp") -}}
-Map	UDHButton 3-1_3-2		Arp Mode			Arp	// template="UDPerf"
-Map	UDHButton 5-1_5-2		Arp Pattern			Arp	// template="UDPerf"
-Map	UDHButton 6-1_6-2		Arp Rate			Arp	// template="UDFreq"
-Map	UDHButton 7-1_7-2		Arp Octave			Arp	// template="UDFreq"
-Map	Button 8-1		Arp Hold			Arp	// template="FPerf"
-Map	Knob V4		Arp Gate			Arp	// template="BGreenOnOff"
+Map	UDVButton 1-1_2-1		Arp Mode			Arp	// template="UDPerf", defaultvalue=0
+Map	UDVButton 3-1_4-1		Arp Pattern			Arp	// template="UDPerf", defaultvalue=0
+Map	UDVButton 5-1_6-1		Arp Rate			Arp	// template="UDFreq", defaultvalue=19
+Map	MFader 1-3		Arp Gate			Arp	// template="FEffect", defaultvalue=64
+Map	Button 3-3		Arp Hold			Arp	// template="BGreenOnOff"
+Map	UDVButton 5-3_6-3		Arp Octave			Arp	// template="UDFreq", defaultvalue=0
 // End Page Arpeggiator
 {% for mmnum in range(1,6) %}
 // Begin Page Mod Matrix {{ mmnum }}
 Map	PageName		"Mod Matrix {{ mmnum }}"			ModMatrix{{ mmnum }}
 {{ rm.include_menus(curpage="ModMatrix"+mmnum|string, submenu="perf", mainmenu_mini="perf", perfpage="ModMatrix"+mmnum|string) -}}
-Map	UDVButton 1-2_2-2		MM Slot {{ mmnum }} Source			ModMatrix{{ mmnum }}	// template="UDAmount", inverted=true
+Map	UDVButton 1-2_2-2		MM Slot {{ mmnum }} Source			ModMatrix{{ mmnum }}	// template="UDAmount", inverted=true, defaultvalue=0
 Map	Knob V3		MM Slot {{ mmnum }} Amount			ModMatrix{{ mmnum }}	// template="FAmount"
-Map	UDVButton 1-4_2-4		MM Slot {{ mmnum }} Destination			ModMatrix{{ mmnum }}	// template="UDEffect", inverted=true
+Map	UDVButton 1-4_2-4		MM Slot {{ mmnum }} Destination			ModMatrix{{ mmnum }}	// template="UDEffect", inverted=true, defaultvalue=0
 // End Page Page Mod Matrix {{ mmnum }}
 {% endfor %}
 {% endblock main %}
