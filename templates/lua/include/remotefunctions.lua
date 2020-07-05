@@ -127,7 +127,7 @@ function remote_process_midi(event)
 				return(true)
 			end
 		else
-			if(handle_input_buttonendscroll()) then
+			if(handle_input_buttonendscroll(button)) then
 				return(true)
 			end
 
