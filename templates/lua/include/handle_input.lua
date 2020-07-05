@@ -1,4 +1,4 @@
-function handle_input_sel(event, selnum)
+function handle_input_sel(event)
 	for selnum=1,g_selcount do
 		if(g_sel[selnum] ~= nil) then
 			local msg = { time_stamp = event.time_stamp, item = itemsindex["Sel"..selnum.."_"..g_sel[selnum]], value = 1 }
@@ -9,9 +9,9 @@ function handle_input_sel(event, selnum)
 	end
 end
 
-function handle_input_repeatud(event, selnum)
-	updatetime = remote.get_time_ms()
-	timediff = updatetime - g_repeatudlastupdate
+function handle_input_repeatud(event)
+	local updatetime = remote.get_time_ms()
+	local timediff = updatetime - g_repeatudlastupdate
 
 	local firstwait = 500 -- 1s
 	local wait = 200 -- 0.2s/step after 0.5
@@ -21,7 +21,7 @@ function handle_input_repeatud(event, selnum)
 		if((count == 1 and timediff > firstwait) or (count > 1 and timediff > wait) or (count > 8 and timediff > finalwait)) then
 			g_repeatudbuttons[buttonname] = count + 1
 			local itemname = get_item_by_button(buttonname)
-			local value = 1
+			local value
 			if(is_up_udupbutton(buttonname, itemname)) then
 				value = 1
 			else
@@ -34,9 +34,9 @@ function handle_input_repeatud(event, selnum)
 	end
 end
 
-function handle_input_velofader(event, selnum)
-	updatetime = remote.get_time_ms()
-	timediff = updatetime - g_velofaderlastupdate
+function handle_input_velofader(event)
+	local updatetime = remote.get_time_ms()
+	local timediff = updatetime - g_velofaderlastupdate
 	for buttonname, velocity in pairs(g_velofaderbuttons) do
 		if(velocity > 0) then
 			local itemname = get_item_by_button(buttonname)
@@ -101,23 +101,6 @@ function handle_input_scrollend(event)
 	end
 end
 
-function handle_input_lightshow(event)
-	for buttonname,buttonmidi in pairs(buttons) do
-		local button = remote.match_midi(buttonmidi.." zz", event)
-		if(button ~= nil and button.z > 0) then
-			return true
-		end
-		local button = remote.match_midi(buttonmidi.." 00", event)
-		if(button ~= nil) then
-			if(g_lightshowtime + 500 < remote.get_time_ms()) then
-				g_lightshow = 0
-				g_updateall = true
-			end
-			return true
-		end
-	end
-end
-
 function handle_input_devices(event, button)
 	{% import "devicelist.j2" as d %}
 	{% for device in d.devices %}
@@ -128,8 +111,8 @@ end
 function handle_input_keyboard_at(event, button)
 	local velocity = get_veloctity(button.z)
 	if(get_current_page() == "Keyboard" and get_current_kbdpage() == "Kbd") then
-		buttonname = get_button_name(button)
-		keynote = button_to_keynote[buttonname]
+		local buttonname = get_button_name(button)
+		local keynote = button_to_keynote[buttonname]
 		if(keynote ~= nil) then
 			remote.handle_input({ time_stamp = event.time_stamp, item = itemsindex['Aftertouch'], value = velocity })
 			return true
@@ -140,8 +123,8 @@ end
 function handle_input_keyboard(event, button)
 	local velocity = get_veloctity(button.z)
 	if(get_current_page() == "Keyboard" and get_current_kbdpage() == "Kbd") then
-		buttonname = get_button_name(button)
-		keynote = button_to_keynote[buttonname]
+		local buttonname = get_button_name(button)
+		local keynote = button_to_keynote[buttonname]
 		if(keynote ~= nil) then
 			remote.handle_input({ time_stamp = event.time_stamp, item = 1, value = 1, note = (keynote+12*g_basekey), velocity = velocity })
 			return true
@@ -166,13 +149,13 @@ function handle_input_item(event, button)
 		if(buttonname ~= itemname) then
 			local itemtype = get_item_type(itemname)
 			if(itemtype == "Fader" or itemtype == "BigFader" or itemtype == "Drawbar") then
-				if(fader_already_down(buttonname, itemname) ~= nil) then
-					local value = 0
-					local defaultvalue = get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "defaultvalue") 
+				if(fader_already_down(buttonname) ~= nil) then
+					local value
+					local defaultvalue = get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "defaultvalue")
 					g_buttondown[buttonname] = nil
-					g_buttondown[fader_get_otherbutton(buttonname, itemname)] = nil
+					g_buttondown[fader_get_otherbutton(buttonname)] = nil
 					g_velofaderbuttons[buttonname] = nil
-					g_velofaderbuttons[fader_get_otherbutton(buttonname, itemname)] = nil
+					g_velofaderbuttons[fader_get_otherbutton(buttonname)] = nil
 					if(defaultvalue ~= nil) then
 						value = defaultvalue
 					else
@@ -181,9 +164,8 @@ function handle_input_item(event, button)
 					local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
 					remote.handle_input(msg)
 				else
-					if(fader_nearby_down(buttonname, itemname) ~= nil) then
-						local row = get_button_row(buttonname)
-						value = get_item_bvmap(itemname)[row]
+					if(fader_nearby_down(buttonname) ~= nil) then
+						local value = get_item_bvmap(itemname)[row]
 						if(string.find(itemname, "Drawbar %d")) then
 							value = get_item_bvmap(itemname)[9-row]
 						end
@@ -213,8 +195,7 @@ function handle_input_item(event, button)
 						return(true)
 					end
 				end
-				if(fader_nearby_down(buttonname, itemname) ~= nil) then
-					local row = get_button_row(buttonname)
+				if(fader_nearby_down(buttonname) ~= nil) then
 					value = get_item_bvmap(itemname)[row]
 					local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
 					remote.handle_input(msg)
@@ -223,9 +204,9 @@ function handle_input_item(event, button)
 				end
 				return(true)
 			elseif(itemtype == "UDVButton" or itemtype == "UDHButton") then
-				local value = 1
+				local value
+				local defaultvalue = get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "defaultvalue")
 				if(ud_already_down(buttonname, itemname) and defaultvalue ~= -1) then
-					local defaultvalue = get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "defaultvalue")
 					g_repeatudbuttons[buttonname] = nil
 					g_repeatudbuttons[ud_get_otherbutton(buttonname, itemname)] = nil
 					if(defaultvalue ~= nil) then
@@ -236,7 +217,7 @@ function handle_input_item(event, button)
 					if(defaultvalue ~= -1) then
 						local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = -127 }
 						remote.handle_input(msg)
-						local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
+						msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
 						remote.handle_input(msg)
 					end
 					return(true)
@@ -253,7 +234,7 @@ function handle_input_item(event, button)
 				remote.handle_input(msg)
 				return(true)
 			elseif(itemtype == "MFader") then
-				local value = 1
+				local value
 				if(mfader_already_down(buttonname, itemname)) then
 					g_buttondown[buttonname] = nil
 					g_buttondown[mfader_get_otherbutton(buttonname, itemname)] = nil
@@ -300,8 +281,6 @@ end
 
 function handle_input_aftertouch(event, button)
 	local buttonname = get_button_name(button)
-	local row = get_button_row(buttonname)
-	local col = get_button_col(buttonname)
 	local itemname = get_item_by_button(buttonname)
 
 	if(buttonname ~= itemname) then
@@ -310,7 +289,7 @@ function handle_input_aftertouch(event, button)
 			if(g_buttondown[buttonname] ~= nil) then
 				if(button.z > 0) then
 					for bn, v in pairs(g_velofaderbuttons) do
-						if(v ~= nil) then
+						if(v ~= nil and buttonname == bn) then
 							g_velofaderbuttons[buttonname] = button.z
 						end
 					end
@@ -319,7 +298,7 @@ function handle_input_aftertouch(event, button)
 			return(true)
 		end
 		if(itemtype == "MFader") then
-			local value = 1
+			local value
 			if(g_buttondown[buttonname] ~= nil) then
 				if(is_up_mfader(buttonname, itemname)) then
 					value = remote.get_item_value(itemsindex[itemname]) + button.z/20
@@ -339,7 +318,8 @@ function handle_input_aftertouch(event, button)
 		end
 	end
 end
-function handle_input_helpmode(event, button)
+
+function handle_input_helpmode(button)
 	if(button.z == 0) then
 		g_helpmode = false
 		g_stopflashing = true
@@ -372,7 +352,7 @@ function handle_input_helpmode(event, button)
 	end
 end
 
-function handle_input_valuemode(event, button)
+function handle_input_valuemode(button)
 	if(button.z == 0) then
 		g_valuemode = false
 		g_stopflashing = true
@@ -398,59 +378,8 @@ function handle_input_valuemode(event, button)
 	end
 end
 
-function handle_input_internalpage(event, button)
-	if(string.match(get_current_page(), "Internal")) then
-		local button_brightnessup = remote.match_midi(buttons["Button 7-8"].." zz", event)
-		local button_brightnessdown = remote.match_midi(buttons["Button 8-8"].." zz", event)
-		if(button_brightnessup ~= nil and button_brightnessup.z > 0) then
-			if(g_brightness_new < 5) then
-				g_brightness_new = g_brightness_new+1
-			end
-			return true
-		elseif(button_brightnessdown ~= nil and button_brightnessdown.z > 0) then
-			if(g_brightness_new > 1) then
-				g_brightness_new = g_brightness_new-1
-			end
-			return true
-		end
-		local button_lightshow1 = remote.match_midi(buttons["Button 1-6"].." zz", event)
-		if(button_lightshow1 ~= nil and button_lightshow1.z > 0) then
-			g_lightshow = 1
-			g_lightshowtime = remote.get_time_ms()
-			g_updatetime = remote.get_time_ms()
-			g_lightshowcycle = 1
-			return true
-		end
-		local button_lightshow2 = remote.match_midi(buttons["Button 1-7"].." zz", event)
-		if(button_lightshow2 ~= nil and button_lightshow2.z > 0) then
-			g_lightshow = 2
-			g_lightshowtime = remote.get_time_ms()
-			g_updatetime = remote.get_time_ms()
-			g_lightshowcycle = 1
-			return true
-		end
-		local button_lightshow3 = remote.match_midi(buttons["Button 1-8"].." zz", event)
-		if(button_lightshow3 ~= nil and button_lightshow3.z > 0) then
-			g_lightshow = 3
-			g_lightshowtime = remote.get_time_ms()
-			g_updatetime = remote.get_time_ms()
-			g_lightshowcycle = 1
-			return true
-		end
-		local button_lightshow4 = remote.match_midi(buttons["Button 2-8"].." zz", event)
-		if(button_lightshow4 ~= nil and button_lightshow4.z > 0) then
-			g_lightshow = 4
-			g_lightshowtime = remote.get_time_ms()
-			g_updatetime = remote.get_time_ms()
-			g_lightshowcycle = 1
-			g_lightshowloop = 1
-			return true
-		end
-	end
-end
-
-function handle_input_starthelpmode(event, button)
-	buttonname = get_button_name(button)
+function handle_input_starthelpmode(button)
+	local buttonname = get_button_name(button)
 	if(buttonname == 'Button C8') then
 		g_helpmode = true
 		g_startflashing = true

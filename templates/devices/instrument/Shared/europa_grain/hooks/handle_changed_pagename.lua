@@ -8,7 +8,7 @@
 				g_select["LFOSelect"] = clfo-1
 			end
 
-			cenv = tonumber(string.match(get_current_page(), "Env (%d)"))
+			local cenv = tonumber(string.match(get_current_page(), "Env (%d)"))
 			if(cenv ~= nil) then
 				g_select["EnvSelect"] = cenv-1
 			end

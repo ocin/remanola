@@ -21,14 +21,10 @@ Map	PageName		"Index"
 Map	UDVButton 7-1_8-1		Band Count		SEL1	Index	// template="UDNocolor"
 //Map	Hidden		Band Count		SEL1	Index
 Map	Button 1-1		Page=Main			Index
-Map	Button 2-8		Page=Band1-8			Index	4Band
-Map	Button 2-8		Page=Band1-8			Index	8Band
-Map	Button 2-8		Page=Band1-8			Index	16Band
-Map	Button 2-8		Page=Band1-8			Index	32Band
-Map	Button 3-8		Page=Band9-16			Index	16Band
-Map	Button 3-8		Page=Band9-16			Index	32Band
-Map	Button 4-8		Page=Band17-24			Index	32Band
-Map	Button 5-8		Page=Band25-32			Index	32Band
+Map	Button 2-8		Page=Band1-8			Index
+Map	Button 3-8		Page=Band9-16			Index
+Map	Button 4-8		Page=Band17-24			Index
+Map	Button 5-8		Page=Band25-32			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
@@ -52,18 +48,18 @@ Map	Fader 1		Band Level 1			Band1-8	// template="FVCFreq", defaultvalue=89
 Map	Fader 2		Band Level 2			Band1-8	// template="FVCFreq", defaultvalue=89
 Map	Fader 3		Band Level 3			Band1-8	// template="FVCFreq", defaultvalue=89
 Map	Fader 4		Band Level 4			Band1-8	// template="FVCFreq", defaultvalue=89
-Map	Fader 5		Band Level 5			Band1-8	8Band	// template="FVCFreq", defaultvalue=89
-Map	Fader 6		Band Level 6			Band1-8	8Band	// template="FVCFreq", defaultvalue=89
-Map	Fader 7		Band Level 7			Band1-8	8Band	// template="FVCFreq", defaultvalue=89
-Map	Fader 8		Band Level 8			Band1-8	8Band	// template="FVCFreq", defaultvalue=89
-Map	Fader 5		Band Level 5			Band1-8	16Band	// template="FVCFreq", defaultvalue=89
-Map	Fader 6		Band Level 6			Band1-8	16Band	// template="FVCFreq", defaultvalue=89
-Map	Fader 7		Band Level 7			Band1-8	16Band	// template="FVCFreq", defaultvalue=89
-Map	Fader 8		Band Level 8			Band1-8	16Band	// template="FVCFreq", defaultvalue=89
-Map	Fader 5		Band Level 5			Band1-8	32Band	// template="FVCFreq", defaultvalue=89
-Map	Fader 6		Band Level 6			Band1-8	32Band	// template="FVCFreq", defaultvalue=89
-Map	Fader 7		Band Level 7			Band1-8	32Band	// template="FVCFreq", defaultvalue=89
-Map	Fader 8		Band Level 8			Band1-8	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 5		Band Level 5			Band1-8	8Band
+Map	Fader 6		Band Level 6			Band1-8	8Band
+Map	Fader 7		Band Level 7			Band1-8	8Band
+Map	Fader 8		Band Level 8			Band1-8	8Band
+Map	Fader 5		Band Level 5			Band1-8	16Band
+Map	Fader 6		Band Level 6			Band1-8	16Band
+Map	Fader 7		Band Level 7			Band1-8	16Band
+Map	Fader 8		Band Level 8			Band1-8	16Band
+Map	Fader 5		Band Level 5			Band1-8	32Band
+Map	Fader 6		Band Level 6			Band1-8	32Band
+Map	Fader 7		Band Level 7			Band1-8	32Band
+Map	Fader 8		Band Level 8			Band1-8	32Band
 // Band9-16 
 Map	PageName		"Band9-16"			Band9-16
 {{ rm.include_menus(curpage="Band9-16") -}}
@@ -76,14 +72,14 @@ Map	Fader 5		Band Level 13			Band9-16	16Band	// template="FVCFreq", defaultvalue
 Map	Fader 6		Band Level 14			Band9-16	16Band	// template="FVCFreq", defaultvalue=89
 Map	Fader 7		Band Level 15			Band9-16	16Band	// template="FVCFreq", defaultvalue=89
 Map	Fader 8		Band Level 16			Band9-16	16Band	// template="FVCFreq", defaultvalue=89
-Map	Fader 1		Band Level 9			Band9-16	32Band	// template="FVCFreq", defaultvalue=89
-Map	Fader 2		Band Level 10			Band9-16	32Band	// template="FVCFreq", defaultvalue=89
-Map	Fader 3		Band Level 11			Band9-16	32Band	// template="FVCFreq", defaultvalue=89
-Map	Fader 4		Band Level 12			Band9-16	32Band	// template="FVCFreq", defaultvalue=89
-Map	Fader 5		Band Level 13			Band9-16	32Band	// template="FVCFreq", defaultvalue=89
-Map	Fader 6		Band Level 14			Band9-16	32Band	// template="FVCFreq", defaultvalue=89
-Map	Fader 7		Band Level 15			Band9-16	32Band	// template="FVCFreq", defaultvalue=89
-Map	Fader 8		Band Level 16			Band9-16	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 1		Band Level 9			Band9-16	32Band
+Map	Fader 2		Band Level 10			Band9-16	32Band
+Map	Fader 3		Band Level 11			Band9-16	32Band
+Map	Fader 4		Band Level 12			Band9-16	32Band
+Map	Fader 5		Band Level 13			Band9-16	32Band
+Map	Fader 6		Band Level 14			Band9-16	32Band
+Map	Fader 7		Band Level 15			Band9-16	32Band
+Map	Fader 8		Band Level 16			Band9-16	32Band
 // Band17-24
 Map	PageName		"Band17-24"			Band17-24
 {{ rm.include_menus(curpage="Band17-24") -}}

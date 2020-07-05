@@ -134,7 +134,6 @@ local color_templates = {
 	-- Mute/Solo
 	["BMute"]={enabledcolor=DRED, activecolor=RED, disabledcolor=NOCOLOR},
 	["BSolo"]={enabledcolor=WAMBER, activecolor=GREEN, disabledcolor=NOCOLOR},
-	["BSolo"]={enabledcolor=WAMBER, activecolor=GREEN, disabledcolor=NOCOLOR},
 	["BSoloRevival"]={enabledcolor=WAMBER, activecolor=YELLOW, disabledcolor=NOCOLOR},
 	-- Select
 	["BPlaySel"]={enabledcolor=DGREEN, activecolor=GREEN, disabledcolor=NOCOLOR},

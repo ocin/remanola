@@ -67,9 +67,9 @@ YELLOW3="888822"
 
 -- Short name color style
 S_RED=5
-S_WRED=7
+-- S_WRED=7
 S_YELLOW=13
-S_WYELLOW=15
+-- S_WYELLOW=15
 S_NOCOLOR=0
 
 {% import "devicelist.j2" as d %}

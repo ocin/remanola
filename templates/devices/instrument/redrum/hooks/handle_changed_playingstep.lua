@@ -17,6 +17,6 @@
 				g_updateall = true
 {% endif %}
 			else
-				g_playingbutton = "Other page"	
+				g_playingbutton = "Other page"
 			end
 		end

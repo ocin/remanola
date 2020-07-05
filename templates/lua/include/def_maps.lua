@@ -1,21 +1,11 @@
-gradient={
-	[1]=WGREEN,
-	[2]=GREEN,
-	[3]=YELLOW,
-	[4]=ORANGE,
-	[5]=AMBER,
-	[6]=WAMBER,
-	[7]=RED,
-	[8]=WRED,
-}
 
-brightness={
-	[1]="0d",
-	[2]="08",
-	[3]="04",
-	[4]="02",
-	[5]="00",
-}
+-- brightness={
+-- 	[1]="0d",
+-- 	[2]="08",
+-- 	[3]="04",
+-- 	[4]="02",
+-- 	[5]="00",
+-- }
 
 item_bvmap={
 	["Default"]={

@@ -1,6 +1,4 @@
 function get_item_bvmap(itemname)
-	local itemtype = string.match(itemname, "(.+%w)%s*%d")
-
 	local currentpage = get_current_page()
 	local scope = g_colorscheme
 
@@ -23,7 +21,7 @@ function get_item_conf_map_field(context, page, itemname, field)
 	if(string.match(get_current_page(), "Internal")) then
 		context = "Default"
 	end
-	
+
 	if(item_conf_map[context] == nil) then
 		context = "Default"
 	end
@@ -77,13 +75,12 @@ function check_item_conf_map(context, page, subpage, itemname, field)
 	return(nil)
 end
 
-function get_button_color(context, itemname, buttonname, value)
+function get_button_color(context, itemname, buttonname)
 	local color
 	local buttonindex = 0
 	local buttonvalue = 0
 
 	local enabled = remote.is_item_enabled(itemsindex[itemname])
-	local value = remote.get_item_state(itemsindex[itemname]).value
 
 	-- Colors
 	local activecolor = get_item_conf_map_field(context, get_current_page(), itemname, "activecolor")
@@ -134,7 +131,6 @@ function get_button_color(context, itemname, buttonname, value)
 
 	local value = remote.get_item_value(itemsindex[itemname])
 	local textvalue = tonumber(remote.get_item_text_value(itemsindex[itemname]))
-	local text = remote.get_item_text_value(itemsindex[itemname])
 
 	{% import "devicelist.j2" as d %}
 	{% for device in d.devices %}
@@ -185,29 +181,29 @@ function get_button_color(context, itemname, buttonname, value)
 			buttonvalue = get_item_bvmap(itemname)[buttonindex]
 		end
 
-		if(string.find(itemname, "MFader %d%-%d")) then	
-			prevbuttonvalue = 0
+		if(string.find(itemname, "MFader %d%-%d")) then
+			local prevbuttonvalue = 0
 			if((buttonindex%2) == 1) then
-				prevbuttonvalue = get_item_bvmap(itemname)[(buttonindex+1)%2+1] 
+				prevbuttonvalue = get_item_bvmap(itemname)[(buttonindex+1)%2+1]
 			end
-				
+
 			if(value >= buttonvalue) then
 				color = activecolor
 			elseif(value > prevbuttonvalue) then
 				color = dim_color(enabledcolor, activecolor, (value - prevbuttonvalue)/(buttonvalue - prevbuttonvalue))
-			else 
+			else
 				color = enabledcolor
 			end
-		elseif((string.find(itemname, "Fader %d")) or (string.find(itemname, "BigFader %d")) or (string.find(itemname, "Meter %d")) or (string.find(itemname, "Drawbar %d"))) then	
-			nextbuttonvalue = 0
+		elseif((string.find(itemname, "Fader %d")) or (string.find(itemname, "BigFader %d")) or (string.find(itemname, "Meter %d")) or (string.find(itemname, "Drawbar %d"))) then
+			local nextbuttonvalue = 0
 			if(buttonindex ~= 8) then
-				nextbuttonvalue = get_item_bvmap(itemname)[buttonindex+1] 
+				nextbuttonvalue = get_item_bvmap(itemname)[buttonindex+1]
 			end
-				
+
 			if(value >= buttonvalue) then
 				if(string.find(itemname, "Meter %d") and buttonindex == 0) then
 					color = maxcolor
-				else 
+				else
 					if((string.find(itemname, "BigFader %d") or string.find(itemname, "Fader %d")) and buttonvalue == defaultvalue) then
 						color = dactivecolor
 					else
@@ -216,7 +212,7 @@ function get_button_color(context, itemname, buttonname, value)
 				end
 			elseif((value > nextbuttonvalue) and (value < buttonvalue)) then
 				color = dim_color(enabledcolor, activecolor, (value - nextbuttonvalue)/(buttonvalue - nextbuttonvalue))
-			else 
+			else
 				if((string.find(itemname, "BigFader %d") or string.find(itemname, "Fader %d")) and buttonvalue == defaultvalue) then
 					color = denabledcolor
 				else
@@ -226,16 +222,16 @@ function get_button_color(context, itemname, buttonname, value)
 		elseif(string.find(itemname, "Knob H%d") or string.find(itemname, "Knob V%d")) then
 			if(value > 64) then
 				if(buttonindex <= 4) then
-					nextbuttonvalue = 127
+					local nextbuttonvalue = 127
 					if(buttonindex < 8) then
-						nextbuttonvalue = get_item_bvmap(itemname)[buttonindex+1] 
+						nextbuttonvalue = get_item_bvmap(itemname)[buttonindex+1]
 					end
 
 					if(value >= buttonvalue) then
 						color = activecolor
 					elseif((value > nextbuttonvalue) and (value < buttonvalue)) then
 						color = dim_color(enabledcolor, activecolor, (value - nextbuttonvalue)/(buttonvalue - nextbuttonvalue))
-					else 
+					else
 						color = enabledcolor
 					end
 				else
@@ -243,16 +239,16 @@ function get_button_color(context, itemname, buttonname, value)
 				end
 			elseif(value < 64) then
 				if(buttonindex >= 5) then
-					prevbuttonvalue = 0
+					local prevbuttonvalue = 0
 					if(buttonindex ~= 0) then
-						prevbuttonvalue = get_item_bvmap(itemname)[buttonindex-1] 
+						prevbuttonvalue = get_item_bvmap(itemname)[buttonindex-1]
 					end
 
 					if(value <= buttonvalue) then
 						color = activecolor
 					elseif((value < prevbuttonvalue) and (value > buttonvalue)) then
 						color = dim_color(enabledcolor, activecolor, (prevbuttonvalue - value)/(prevbuttonvalue - buttonvalue))
-					else 
+					else
 						color = enabledcolor
 					end
 				else
@@ -266,16 +262,16 @@ function get_button_color(context, itemname, buttonname, value)
 				end
 			end
 		else
-			prevbuttonvalue = 0
+			local prevbuttonvalue = 0
 			if(buttonindex ~= 0) then
-				prevbuttonvalue = get_item_bvmap(itemname)[buttonindex-1] 
+				prevbuttonvalue = get_item_bvmap(itemname)[buttonindex-1]
 			end
-				
+
 			if(value >= buttonvalue) then
 				color = activecolor
 			elseif((value > prevbuttonvalue) and (value < buttonvalue)) then
 				color = dim_color(enabledcolor, activecolor, (value - prevbuttonvalue)/(buttonvalue - prevbuttonvalue))
-			else 
+			else
 				color = enabledcolor
 			end
 		end
@@ -284,7 +280,7 @@ function get_button_color(context, itemname, buttonname, value)
 	return color
 end
 
-function get_item_by_button(buttonname) 
+function get_item_by_button(buttonname)
 	for i=1,8 do
 		local fadername = "Fader "..tostring(i)
 		if(remote.is_item_enabled(itemsindex[fadername])) then
@@ -416,98 +412,22 @@ function get_current_docpage()
 	return pagename
 end
 
-function lightshow_bars(buttonname, cyclelength, orientation) 
-	local color
-	
-	if(g_updatetime + cyclelength < remote.get_time_ms()) then
-		g_lightshowcycle = g_lightshowcycle + 1
-		if(g_lightshowcycle > 8) then
-			g_lightshowcycle = 1
-		end
-		g_updatetime = remote.get_time_ms()
-	end
-
-	if(string.match(buttonname, "Button C%d") or string.match(buttonname, "Button %a")) then
-		color = NOCOLOR
-	else
-		local row
-		local col
-		row, col = string.match(buttonname, "Button (%d)%-(%d)")
-		local dim
-		if(orientation == 1) then
-			dim = row
-		else 
-			dim = col
-		end
-		local cloop = tonumber(dim) - g_lightshowcycle
-		if(cloop < 1) then
-			cloop = cloop + 8
-		end
-		color = gradient[cloop]
-	end
-	return color
-end
-
-function lightshow_center(buttonname, cyclelength) 
-	local color
-	
-	if(g_updatetime + cyclelength < remote.get_time_ms()) then
-		g_lightshowcycle = g_lightshowcycle + 1
-		if(g_lightshowcycle > 4) then
-			g_lightshowcycle = 1
-			g_lightshowloop = g_lightshowloop + 1
-			if(g_lightshowloop > 8) then
-				g_lightshowloop = 1
-			end
-		end
-		g_updatetime = remote.get_time_ms()
-	end
-
-	if(string.match(buttonname, "Button C%d") or string.match(buttonname, "Button %a")) then
-		color = NOCOLOR
-	else
-		local row
-		local col
-		row, col = string.match(buttonname, "Button (%d)%-(%d)")
-
-		local x
-		local y
-
-		if(tonumber(row) >= 5) then
-			x = tonumber(row) - 4
-		else 
-			x = 5-tonumber(row)
-		end
-		if(tonumber(col) >= 5) then
-			y = tonumber(col) - 4
-		else 
-			y = 5-tonumber(col)
-		end
-		if(x <= g_lightshowcycle and y <= g_lightshowcycle) then
-			color = gradient[g_lightshowloop]
-		else
-			color = NOCOLOR
-		end
-	end
-	return color
-end
-
 function get_button_name(button)
-	x = button.x
+	local x = button.x
 	if(button.x == 0xa0) then
 		x = 0x90
 	end
 	local midistring = string.format("%02x %02x", x, button.y)
-	buttonname =midi_to_button[midistring]
+	local buttonname = midi_to_button[midistring]
 	if(buttonname == nil) then
 		error("No button found for midistring: "..midistring)
 	end
 	return(buttonname)
 end
 
-function get_knob_type(itemname)
-	return(string.match(itemname, ".+ (.).+"))
-end
+-- function get_knob_type(itemname)
+-- 	return(string.match(itemname, ".+ (.).+"))
+-- end
 
 function get_item_type(itemname)
 	return(string.match(itemname, "(.+) .+"))
@@ -524,7 +444,7 @@ end
 function is_up_udupbutton(buttonname, itemname)
 	local upbutton
 
-	udtype,first,second = string.match(itemname, "UD(.)Button (...)_(...)")
+	local udtype,first,second = string.match(itemname, "UD(.)Button (...)_(...)")
 
 	if(udtype == 'V') then
 		if(get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "inverted")) then
@@ -543,7 +463,7 @@ function is_up_udupbutton(buttonname, itemname)
 	return(buttonname == "Button "..upbutton)
 end
 
-function fader_nearby_down(buttonname, itemname)
+function fader_nearby_down(buttonname)
 	local row = tonumber(string.match(buttonname, "Button (%d)%-%d"))
 	local col = tonumber(string.match(buttonname, "Button %d%-(%d)"))
 	local upbutton = "Button "..(row+1).."-"..col
@@ -552,7 +472,7 @@ function fader_nearby_down(buttonname, itemname)
 	return(g_buttondown[upbutton] or g_buttondown[downbutton])
 end
 
-function fader_get_otherbutton(buttonname, itemname)
+function fader_get_otherbutton(buttonname)
 	local row = tonumber(string.match(buttonname, "Button (%d)%-%d"))
 	local col = tonumber(string.match(buttonname, "Button %d%-(%d)"))
 	local otherrow = 1
@@ -562,9 +482,9 @@ function fader_get_otherbutton(buttonname, itemname)
 	return("Button "..otherrow.."-"..col)
 end
 
-function fader_already_down(buttonname, itemname)
+function fader_already_down(buttonname)
 	local row = tonumber(string.match(buttonname, "Button (%d)%-%d"))
-	local otherbutton = fader_get_otherbutton(buttonname, itemname)
+	local otherbutton = fader_get_otherbutton(buttonname)
 
 	if((row == 1) or (row == 8)) then
 		return(g_buttondown[otherbutton])
@@ -573,8 +493,7 @@ function fader_already_down(buttonname, itemname)
 end
 
 function is_up_mfader(buttonname, itemname)
-	local mfader
-	first = string.match(itemname, "MFader (...)")
+	local first = string.match(itemname, "MFader (...)")
 	return(buttonname == "Button "..first)
 end
 

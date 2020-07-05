@@ -354,8 +354,8 @@ Map	SubPageName		"Note"			Seq	Note
 Map	UDVButton 3-1_4-1		Pattern Step Knob 1			Seq	Note	// template="UDFreq", defaultvalue=12
 Map	UDVButton 3-2_4-2		Pattern Step Knob 2			Seq	Note	// template="UDFreq", defaultvalue=12
 Map	UDVButton 3-3_4-3		Pattern Step Knob 3			Seq	Note	// template="UDFreq", defaultvalue=12
-Map	UDVButton 3-4_4-4		Pattern Step Knob 4			Seq	Note	// template="UDFreq", defaultvalue=12, defaultvalue=12
-Map	UDVButton 3-5_4-5		Pattern Step Knob 5			Seq	Note	// template="UDFreq"
+Map	UDVButton 3-4_4-4		Pattern Step Knob 4			Seq	Note	// template="UDFreq", defaultvalue=12
+Map	UDVButton 3-5_4-5		Pattern Step Knob 5			Seq	Note	// template="UDFreq", defaultvalue=12
 Map	UDVButton 3-6_4-6		Pattern Step Knob 6			Seq	Note	// template="UDFreq", defaultvalue=12
 Map	UDVButton 3-7_4-7		Pattern Step Knob 7			Seq	Note	// template="UDFreq", defaultvalue=12
 Map	UDVButton 3-8_4-8		Pattern Step Knob 8			Seq	Note	// template="UDFreq", defaultvalue=12
