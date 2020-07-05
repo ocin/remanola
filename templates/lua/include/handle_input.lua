@@ -52,8 +52,8 @@ function handle_input_velofader(event)
 			end
 			local cvalue = remote.get_item_value(itemsindex[itemname])
 			-- This is number of seconds to go from 0 to 127 at minimum velocity
-			local divider=3
-			local change = (velocity*timediff*(maxvalue/127))/(divider*1000)
+			local divider=100
+			local change = (velocity*timediff*maxvalue)/(divider*1000)
 			if(change < 1) then
 				return
 			end
