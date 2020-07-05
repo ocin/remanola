@@ -3,7 +3,7 @@
 			["Button *"]={enabledcolor=YELLOW, activecolor=GREEN, disabledcolor=NOCOLOR},
 			["Fader *"]={template="FYellow"},
 			["BigFader *"]={enabledcolor=WAMBER, activecolor=GREEN, disabledcolor=NOCOLOR, denabledcolor=WGREEN, dactivecolor=YELLOW, defaultvalue=751, bvmap="BigFader"},
-			["MFader *"]={enabledcolor=WYELLOW, activecolor=YELLOW, disabledcolor=NOCOLOR},
+			["MFader *"]={enabledcolor=WYELLOW, activecolor=YELLOW, disabledcolor=NOCOLOR, bvmap="MFader"},
 			["Drawbar *"]={ttemplate="FYellow", defaultvalue=0},
 			["Meter *"]={enabledcolor=WAMBER, activecolor=GREEN, disabledcolor=NOCOLOR, maxcolor=RED},
 			["Knob *"]={template="FYellow"},

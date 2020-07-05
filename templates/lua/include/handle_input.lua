@@ -9,6 +9,48 @@ function handle_input_sel(event)
 	end
 end
 
+function handle_input_mfader(event)
+	local updatetime = remote.get_time_ms()
+	local timediff = updatetime - g_mfaderlastupdate
+	for buttonname, velocity in pairs(g_mfaderbuttons) do
+		if(velocity > 0) then
+			local itemname = get_item_by_button(buttonname)
+			local maxvalue = get_item_bvmap(itemname)[2]
+			-- This is number of seconds to go from 0 to 127 at minimum velocity
+			local divider=100
+			local change = (velocity*timediff*maxvalue)/(divider*1000)
+			local value
+			if(change < 1) then
+				return
+			end
+			local cvalue = remote.get_item_value(itemsindex[itemname])
+			if(velocity >= 0x7f) then
+				if(is_up_mfader(buttonname, itemname)) then
+					value = maxvalue
+				else
+					value = 0
+				end
+			elseif(is_up_mfader(buttonname, itemname)) then
+				value = cvalue + change
+			else
+				value = cvalue - change
+			end
+			if(value > maxvalue) then
+				value = maxvalue
+			elseif(value < 0) then
+				value = 0
+			end
+			if(value == maxvalue or value == 0) then
+				g_mfaderlastupdate = nil
+				g_mfaderbuttons[buttonname] = nil
+			end
+			local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
+			remote.handle_input(msg)
+		end
+	end
+	g_mfaderlastupdate = updatetime
+end
+
 function handle_input_repeatud(event)
 	local updatetime = remote.get_time_ms()
 	local timediff = updatetime - g_repeatudlastupdate
@@ -44,6 +86,7 @@ function handle_input_velofader(event)
 			local col = get_button_col(buttonname)
 			local targetvalue = get_item_bvmap(itemname)[row]
 			local maxvalue = get_item_bvmap(itemname)[1]
+			local value = 0
 			if(string.find(itemname, "Knob H%d")) then
 				targetvalue = get_item_bvmap(itemname)[9-col]
 			end
@@ -57,7 +100,6 @@ function handle_input_velofader(event)
 			if(change < 1) then
 				return
 			end
-			local value = 0
 			if(velocity >= 0x7f) then
 				value = targetvalue
 				g_velofaderbuttons[buttonname] = nil
@@ -234,38 +276,29 @@ function handle_input_item(event, button)
 				remote.handle_input(msg)
 				return(true)
 			elseif(itemtype == "MFader") then
-				local value
 				if(mfader_already_down(buttonname, itemname)) then
+					local value
+					local defaultvalue = get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "defaultvalue")
 					g_buttondown[buttonname] = nil
 					g_buttondown[mfader_get_otherbutton(buttonname, itemname)] = nil
-					local defaultvalue = get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "defaultvalue")
+					g_mfaderbuttons[buttonname] = nil
+					g_mfaderbuttons[mfader_get_otherbutton(buttonname, itemname)] = nil
 					if(defaultvalue ~= nil) then
 						value = defaultvalue
 					else
 						value = 64
 					end
+					local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
+					remote.handle_input(msg)
 				else
-					local divider = 30
-					if(button.z > 50) then
-						divider = 10
-					end
-					if(button.z > 80) then
-						divider = 5
-					end
-					if(is_up_mfader(buttonname, itemname)) then
-						value = remote.get_item_value(itemsindex[itemname]) + button.z/divider
-					else
-						value = remote.get_item_value(itemsindex[itemname]) - button.z/divider
-					end
+					g_mfaderbuttons[buttonname] = button.z
 				end
-				local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
-				remote.handle_input(msg)
-				return(true)
 			end
 		end
 	else
 		g_buttondown[buttonname] = nil
 		g_velofaderbuttons[buttonname] = nil
+		g_mfaderbuttons[buttonname] = nil
 		g_repeatudbuttons[buttonname] = nil
 		g_updateall = true
 		local itemtype = get_item_type(itemname)
@@ -279,7 +312,7 @@ function handle_input_item(event, button)
 	end
 end
 
-function handle_input_aftertouch(event, button)
+function handle_input_aftertouch(button)
 	local buttonname = get_button_name(button)
 	local itemname = get_item_by_button(buttonname)
 
@@ -298,21 +331,14 @@ function handle_input_aftertouch(event, button)
 			return(true)
 		end
 		if(itemtype == "MFader") then
-			local value
 			if(g_buttondown[buttonname] ~= nil) then
-				if(is_up_mfader(buttonname, itemname)) then
-					value = remote.get_item_value(itemsindex[itemname]) + button.z/20
-				else
-					value = remote.get_item_value(itemsindex[itemname]) - button.z/20
+				if(button.z > 0) then
+					for bn, v in pairs(g_mfaderbuttons) do
+						if(v ~= nil and buttonname == bn) then
+							g_mfaderbuttons[buttonname] = button.z
+						end
+					end
 				end
-				if(value > 127) then
-					value = 127
-				end
-				if(value < 0) then
-					value = 0
-				end
-				local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = value }
-				remote.handle_input(msg)
 			end
 			return(true)
 		end
