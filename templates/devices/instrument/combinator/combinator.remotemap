@@ -10,7 +10,7 @@ Map	Button 1-1		Page=Main			Index
 Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
-Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDGain"
+Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDMisc", defaultvalue=1
 Map	Button 5-1		Run Pattern Devices			Main	// template="BRedOnOff"
 Map	Button 6-1		Bypass All FX			Main	// template="BRedOnOff"
 Map	Button 8-1		Button 1			Main	// template="BRedOnOff"
