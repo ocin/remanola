@@ -27,9 +27,9 @@ Map	SubPageName		"CC {{ cc }}"			Main	{{ cc }}
 Map	Fader 4		CC {{ cc }}			Main	{{ cc }}	// template="FMisc", defaultvalue=0
 // End SubPage
 {% endfor %}
-Map	UDVButton 1-7_2-7		Program Change			Main	// template="UDPerf"
+Map	UDVButton 1-7_2-7		Program Change			Main	// template="UDPerf", defaultvalue=0
 Map	Button 1-8		Program Change On/Off			Main	// template="BRedOnOff"
-Map	UDVButton 3-7_4-7		CC Assignment		SEL1	Main	// template="UDMisc"
+Map	UDVButton 3-7_4-7		CC Assignment		SEL1	Main	// template="UDMisc", defaultvalue=0
 Map	Button 3-8		Assignable Knob On/Off			Main	// template="BRedOnOff"
-Map	UDVButton 5-7_6-7		MIDI Channel			Main	// template="UDPerf"
+Map	UDVButton 5-7_6-7		MIDI Channel			Main	// template="UDPerf", defaultvalue=0
 {% endblock main %}
