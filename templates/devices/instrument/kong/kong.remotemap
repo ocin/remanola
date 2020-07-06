@@ -133,8 +133,8 @@ Map	MFader 3-4		Drum {{ drumnum }} Aux 2 Send			Drum{{ drumnum }}	DrumMain	// te
 Map	Knob V5		Drum {{ drumnum }} Tone			Drum{{ drumnum }}	DrumMain	// template="FOsc"
 Map	Knob V6		Drum {{ drumnum }} Pan			Drum{{ drumnum }}	DrumMain	// template="FPan"
 Map	Fader 7		Drum {{ drumnum }} Level			Drum{{ drumnum }}	DrumMain	// template="FVol", defaultvalue=100
-Map	UDVButton 5-8_6-8		Drum {{ drumnum }} Output			Drum{{ drumnum }}	DrumMain	// template="UDVol"
-Map	UDVButton 7-8_8-8		Drum {{ drumnum }} Pitch Bend Range			Drum{{ drumnum }}	DrumMain	// template="UDPerf"
+Map	UDVButton 5-8_6-8		Drum {{ drumnum }} Output			Drum{{ drumnum }}	DrumMain	// template="UDVol", defaultvalue=0
+Map	UDVButton 7-8_8-8		Drum {{ drumnum }} Pitch Bend Range			Drum{{ drumnum }}	DrumMain	// template="UDPerf", defaultvalue=6
 // Drum {{ drumnum }} DrumModule
 Map	SubPageName		"DrumModule"			Drum{{ drumnum }}	DrumModule
 Map	Button 1-2		Drum {{ drumnum }} DM On			Drum{{ drumnum }}	DrumModule	// template="BYellowOnOff"
@@ -169,8 +169,8 @@ Map	PageName		"Pad {{ padnum }}"			Pad{{ padnum }}
 {% else %}
 {{ rm.include_menus(curpage="Pad"+padnum|string, mainmenu_mini="pad", submenu="pad2", padpage2="Pad"+padnum|string) -}}
 {% endif %}
-Map	UDVButton 1-2_2-2		Pad {{ padnum }} Drum Assignment			Pad{{ padnum }}	// template="UDOsc"
-Map	UDVButton 3-2_4-2		Pad {{ padnum }} Hit Type			Pad{{ padnum }}	// template="UDPerf", inverted=true
+Map	UDVButton 1-2_2-2		Pad {{ padnum }} Drum Assignment			Pad{{ padnum }}	// template="UDOsc", defaultvalue=0
+Map	UDVButton 3-2_4-2		Pad {{ padnum }} Hit Type			Pad{{ padnum }}	// template="UDPerf", inverted=true, defaultvalue=0
 Map	Button 1-6		Pad {{ padnum }} Group A			Pad{{ padnum }}	// template="BYellowOnOff"
 Map	Button 1-7		Pad {{ padnum }} Group B			Pad{{ padnum }}	// template="BYellowOnOff"
 Map	Button 1-8		Pad {{ padnum }} Group C			Pad{{ padnum }}	// template="BYellowOnOff"
