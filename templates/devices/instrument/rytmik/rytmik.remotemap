@@ -55,7 +55,7 @@ Map	MFader 5-8		Drum_{{ drumnum }}_Dist_Drive			Drum{{ drumnum }}	// template="F
 // Delay
 Map	PageName		"Delay"			Delay
 {{ rm.include_menus(curpage="Delay") -}}
-Map	UDVButton 1-1_2-1		Delay_Time			Delay	// template="UDFreq"
+Map	UDVButton 1-1_2-1		Delay_Time			Delay	// template="UDFreq", defaultvalue=0
 Map	Fader 2		Delay_Feedback			Delay	// template="FEffect", defaultvalue=64
 // Reverb
 Map	PageName		"Reverb"			Reverb
