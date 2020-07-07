@@ -23,18 +23,18 @@ Map	Button 1-5		Hold			Main	// template="BRedOnOff"
 Map	PageName		"Arp {{ arpnum }}"			Arp{{ arpnum }}
 {{ rm.include_menus(curpage="Arp"+arpnum|string,mainmenu_mini="common") -}}
 Map	Button 1-1		Arpeggio On {{ arpnum }}			Arp{{ arpnum }}	// template="BGreenOnOff"
-Map	UDVButton 1-3_2-3		Low Key {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf"
-Map	UDVButton 1-5_2-5		High Key {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf"
-Map	UDVButton 3-1_4-1		Rate {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf"
-Map	UDVButton 3-3_4-3		Octaves {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf"
-Map	UDVButton 3-5_4-5		Direction {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf"
-Map	Button 3-6		Repeat {{ arpnum }}			Arp{{ arpnum }}	// template="BGreenOnOff"
-Map	Button 5-1		Arp Steps On {{ arpnum }}			Arp{{ arpnum }}	// template="BGreenOnOff"
-Map	UDVButton 5-2_6-2		Arp Steps {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf"
-Map	Button 5-4		Pattern On {{ arpnum }}			Arp{{ arpnum }}	// template="BGreenOnOff"
-Map	Button 5-6		Velocity On {{ arpnum }}			Arp{{ arpnum }}	// template="BGreenOnOff"
-Map	UDVButton 7-1_8-1		Shift Step {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf"
-Map	UDVButton 7-3_8-3		Transpose {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf"
-Map	MFader 7-5		Gate Length {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf"
+Map	UDVButton 3-1_4-1		Low Key {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf", defaultvalue=0
+Map	UDVButton 3-2_4-2		High Key {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf", defaultvalue=127
+Map	Button 8-1		Repeat {{ arpnum }}			Arp{{ arpnum }}	// template="BGreenOnOff"
+Map	UDVButton 1-3_2-3		Rate {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf", defaultvalue=15
+Map	UDVButton 3-3_4-3		Octaves {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf2", defaultvalue=0
+Map	UDVButton 5-3_6-3		Direction {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf", defaultvalue=0
+Map	Button 1-5		Arp Steps On {{ arpnum }}			Arp{{ arpnum }}	// template="BBAmberOnOff"
+Map	Button 3-5		Pattern On {{ arpnum }}			Arp{{ arpnum }}	// template="BBGreenOnOff"
+Map	Button 5-5		Velocity On {{ arpnum }}			Arp{{ arpnum }}	// template="BBBlueOnOff"
+Map	UDVButton 1-6_2-6		Arp Steps {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf", defaultvalue=4
+Map	UDVButton 1-8_2-8		Shift Step {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf", defaultvalue=16
+Map	UDVButton 3-8_4-8		Transpose {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf", defaultvalue=24
+Map	MFader 7-8		Gate Length {{ arpnum }}			Arp{{ arpnum }}	// template="UDPerf"
 {% endfor -%}
 {% endblock main %}

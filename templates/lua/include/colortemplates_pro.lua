@@ -84,6 +84,7 @@ local color_templates = {
 	["BYellowOnOff"]={enabledcolor=HGREY, activecolor=YELLOW, disabledcolor=NOCOLOR},
 	["BGreenOnOff"]={enabledcolor=HGREY, activecolor=GREEN, disabledcolor=NOCOLOR},
 	["BAmberOnOff"]={enabledcolor=HGREY, activecolor=AMBER, disabledcolor=NOCOLOR},
+	["BBAmberOnOff"]={enabledcolor=DAMBER, activecolor=AMBER, disabledcolor=NOCOLOR},
 	["BBlueOnOff"]={enabledcolor=HGREY, activecolor=BLUE, disabledcolor=NOCOLOR},
 	["BBGreenOnOff"]={enabledcolor=DGREEN, activecolor=GREEN, disabledcolor=NOCOLOR},
 	["BBRedOnOff"]={enabledcolor=DRED, activecolor=RED, disabledcolor=NOCOLOR},
