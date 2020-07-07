@@ -37,8 +37,8 @@ Map	BigFader 3		Master Level	2		Main
 Map	Button 6-4		MeterMode=Vu			Main	// template="BAmpPage"
 Map	Button 7-4		MeterMode=Peak			Main	// template="BAmpPage"
 Map	Button 8-4		Reset Clip			Main	// template="BRedOnOff"
-Map	UDVButton 1-6_2-6		Ctrl Room Source			Main	// template="BRed", inverted=true
-Map	UDVButton 1-7_2-7		Ctrl Room FX Select			Main	// template="BOrange", inverted=true
+Map	UDVButton 1-6_2-6		Ctrl Room Source			Main	// template="UDGain", inverted=true, defaultvalue=0
+Map	UDVButton 1-7_2-7		Ctrl Room FX Select			Main	// template="BOrange", inverted=true, defaultvalue=0
 Map	Fader 5		Ctrl Room Level			Main	// template="FRed", defaultvalue=100
 Map	Button 8-6		All Mutes Off			Main	// template="BMute"
 Map	Button 8-7		All Solo Off			Main	// template="BSolo"
@@ -98,9 +98,9 @@ Map	PageName		"Master Compressor"			MasterComp
 Map	Button 1-2		Compressor On			MasterComp	// template="BRedOnOff"
 Map	Button 4-2		Key On			MasterComp	// template="BRedOnOff"
 Map	Fader 3		Threshold			MasterComp	// template="FEffect", defaultvalue=64
-Map	UDVButton 1-4_2-4		Ratio			MasterComp	// template="FEffect"
-Map	UDVButton 1-5_2-5		Attack			MasterComp	// template="FEffect"
-Map	UDVButton 1-6_2-6		Release			MasterComp	// template="FEffect"
+Map	UDVButton 1-4_2-4		Ratio			MasterComp	// template="FEffect", defaultvalue=0
+Map	UDVButton 1-5_2-5		Attack			MasterComp	// template="FEffect", defaultvalue=4
+Map	UDVButton 1-6_2-6		Release			MasterComp	// template="FEffect", defaultvalue=2
 Map	Fader 7		Make-Up Gain			MasterComp	// template="FEffect", defaultvalue=50
 Map	Meter 8		Gain Reduction			MasterComp
 // Master Send
