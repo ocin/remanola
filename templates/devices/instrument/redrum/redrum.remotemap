@@ -50,7 +50,7 @@ Map	Button 4-7		Select Drum 9			Main	// template="BOscSel"
 Map	Button 4-8		Select Drum 10			Main	// template="BOscSel"
 // Pattern
 Map	Button 6-1		Run			Main	// template="BRun"
-Map	UDVButton 5-2_6-2		Edit Steps			Main	// template="UDPerf"
+Map	UDVButton 5-2_6-2		Edit Steps			Main	// template="UDPerf", defaultvalue=0
 Map	Button 5-4		EditMode=Rotate			Main	// template="BPerformancePage"
 Map	Button 5-5		EditMode=Toggle			Main	// template="BPerformancePage"
 Map	Button 6-5		Edit Accent			Main	Toggle	// template="BRedOnOff"
@@ -140,8 +140,8 @@ Map	Button 5-1		Bank A			Performance	// template="BPerformancePage"
 Map	Button 5-2		Bank B			Performance	// template="BPerformancePage"
 Map	Button 5-3		Bank C			Performance	// template="BPerformancePage"
 Map	Button 5-4		Bank D			Performance	// template="BPerformancePage"
-Map	UDVButton 7-1_8-1		Steps			Performance	// template="FPerf"
-Map	UDVButton 7-4_8-4		Resolution			Performance	// template="FFreq"
+Map	UDVButton 7-1_8-1		Steps			Performance	// template="FPerf", defaultvalue=15
+Map	UDVButton 7-4_8-4		Resolution			Performance	// template="FFreq", defaultvalue=4
 Map	Button 8-5		Shuffle			Performance	// template="BRedOnOff"
 Map	Fader 8		Master Level			Performance	// template="FVol", defaultvalue=100
 {% for drumnum in range(1,11) -%}
@@ -174,7 +174,7 @@ Map	Button 1-2		Drum {{ drumnum }} Mute			Drum{{ drumnum }}Edit	// template="BMu
 Map	Button 1-3		Drum {{ drumnum }} Solo			Drum{{ drumnum }}Edit	// template="BSolo"
 Map	Button 2-1		Page=Drum{{ drumnum }}			Drum{{ drumnum }}Edit	// template="BOscPage"
 Map	Button 3-1		Page=Drum{{ drumnum }}Edit			Drum{{ drumnum }}Edit	// template="BOscPage"
-Map	UDVButton 5-2_6-2		Drum {{ drumnum }} Decay/Gate Mode			Drum{{ drumnum }}Edit	// template="UDOsc"
+Map	UDVButton 5-2_6-2		Drum {{ drumnum }} Decay/Gate Mode			Drum{{ drumnum }}Edit	// template="UDOsc", defaultvalue=0
 Map	Fader 5		Drum {{ drumnum }} Length			Drum{{ drumnum }}Edit	// template="FFreq", defaultvalue=127
 Map	Knob V6		Drum {{ drumnum }} Pitch			Drum{{ drumnum }}Edit	// template="FOsc"
 {% if drumnum == 1 or drumnum == 2 or drumnum == 10 -%}
@@ -184,7 +184,7 @@ Map	Knob V8		Drum {{ drumnum }} Vel to Tone			Drum{{ drumnum }}Edit	// template=
 Map	Knob V7		Drum {{ drumnum }} Sample Start			Drum{{ drumnum }}Edit	// template="FOsc"
 Map	Knob V8		Drum {{ drumnum }} Vel to Sample Start			Drum{{ drumnum }}Edit	// template="FPerf"
 {% elif drumnum == 6 or drumnum == 7 -%}
-Map	UDVButton 5-4_6-4		Drum {{ drumnum }} Pitch Bend Amount	5		Drum{{ drumnum }}Edit	// template="UDPerf"
+Map	UDVButton 5-4_6-4		Drum {{ drumnum }} Pitch Bend Amount			Drum{{ drumnum }}Edit	// template="UDPerf", defaultvalue=64
 Map	Knob V7		Drum {{ drumnum }} Pitch Bend Rate			Drum{{ drumnum }}Edit	// template="FOsc"
 Map	Knob V8		Drum {{ drumnum }} Vel to Pitch Bend			Drum{{ drumnum }}Edit	// template="FPerf"
 {% endif -%}
