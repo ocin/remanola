@@ -31,11 +31,11 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
+Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect", defaultvalue=1
 Map	Button 1-2		Pattern Enable			Main	// template="BRedOnOff"
 Map	Button 3-2		Shuffle			Main	// template="BGreenOnOff"
-Map	UDVButton 5-2_6-2		Pattern			Main	// template="UDEffect"
-Map	UDVButton 7-2_8-2		Resolution			Main	// template="UDFreq"
+Map	UDVButton 5-2_6-2		Pattern			Main	// template="UDEffect", defaultvalue=1
+Map	UDVButton 7-2_8-2		Resolution			Main	// template="UDFreq", defaultvalue=2
 Map	MFader 7-3		Shift			Main	// template="UDEffect", defaultvalue=64
 Map	Button 1-4		Gate 1 Trig			Main	// template="BRedOnOff"
 Map	Button 3-4		Gate 2 Trig			Main	// template="BRedOnOff"
@@ -99,7 +99,7 @@ Map	PageName		"Delay"			Delay
 Map	Sel1_0		TempoSync=Free			Delay
 Map	Sel1_1		TempoSync=Sync			Delay
 Map	Fader 2		Delay Time			Delay	Free	// template="FFreq"
-Map	UDVButton 7-2_8-2		Delay Time	10		Delay	Sync	// template="UDFreq"
+Map	UDVButton 7-2_8-2		Delay Time	10		Delay	Sync	// template="UDFreq", defaultvalue=5
 Map	Button 1-3		DelaySync		SEL1	Delay	// template="BGreenOnOff"
 Map	Fader 4		Delay Feedback			Delay	// template="FEffect", defaultvalue=61
 Map	Knob V5		Delay Pan			Delay	// template="FEffect"
@@ -131,8 +131,8 @@ Map	PageName		"LFO"			LFO
 {{ rm.include_menus(curpage="LFO") -}}
 Map	Sel1_0		TempoSync=Free			LFO
 Map	Sel1_1		TempoSync=Sync			LFO
-Map	UDVButton 1-2_2-2		LFO Waveform			LFO	// template="UDLFO"
+Map	UDVButton 1-2_2-2		LFO Waveform			LFO	// template="UDLFO", defaultvalue=0
 Map	Fader 4		LFO Freq 			LFO	Free	// template="FFreq", defaultvalue=32
-Map	UDVButton 7-4_8-4		LFO Freq	8		LFO	Sync	// template="UDFreq"
+Map	UDVButton 7-4_8-4		LFO Freq	8		LFO	Sync	// template="UDFreq", defaultvalue=4
 Map	Button 1-5		LFOSync		SEL1	LFO	// template="BGreenOnOff"
 {% endblock main %}
