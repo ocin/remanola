@@ -21,7 +21,7 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
+Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect", defaultvalue=2
 Map	Button 1-2		EQ On/Off			Main	// template="BRedOnOff"
 Map	Button 2-2		Gate On/Off			Main	// template="BRedOnOff"
 Map	Fader 3		Decay			Main	// template="FEffect", defaultvalue=82
@@ -42,12 +42,12 @@ Map	Sel1_85		Algorithm=Echo			Reverb
 Map	Sel1_99		Algorithm=MultiTap			Reverb
 Map	Sel1_113		Algorithm=Reverse			Reverb
 Map	Sel1_127		Algorithm=Convolution			Reverb
-Map	UDVButton 1-1_2-1		Soft Knob 1		SEL1	Reverb	// template="UDEffect"
+Map	UDVButton 1-1_2-1		Soft Knob 1		SEL1	Reverb	// template="UDEffect", defaultvalue=2
 // SmallSpace
 Map	SubPageName		"SmallSpace"			Reverb	SmallSpace
 Map	Fader 2		Soft Knob 2 			Reverb	SmallSpace	// template="FEffect", defaultvalue=30
 Map	Fader 3		Soft Knob 3 			Reverb	SmallSpace	// template="FFreq", defaultvalue=10
-Map	UDVButton 7-4_8-4		Soft Knob 4 			Reverb	SmallSpace	// template="UDEffect"
+Map	UDVButton 7-4_8-4		Soft Knob 4 			Reverb	SmallSpace	// template="UDEffect", defaultvalue=1
 Map	Fader 5		Soft Knob 5 			Reverb	SmallSpace	// template="FFreq", defaultvalue=32
 Map	Fader 6		Soft Knob 6 			Reverb	SmallSpace	// template="FEffect", defaultvalue=127
 Map	Fader 7		Soft Knob 7 			Reverb	SmallSpace	// template="FFreq", defaultvalue=0
@@ -56,7 +56,7 @@ Map	Fader 8		Soft Knob 8 			Reverb	SmallSpace	// template="FLFO", defaultvalue=1
 Map	SubPageName		"Room"			Reverb	Room
 Map	Fader 2		Soft Knob 2 			Reverb	Room	// template="FEffect", defaultvalue=64
 Map	Fader 3		Soft Knob 3 			Reverb	Room	// template="FEffect", defaultvalue=127
-Map	UDVButton 7-4_8-4		Soft Knob 4 			Reverb	Room	// template="UDEffect"
+Map	UDVButton 7-4_8-4		Soft Knob 4 			Reverb	Room	// template="UDEffect", defaultvalue=0
 Map	Fader 5		Soft Knob 5 			Reverb	Room	// template="FEffect", defaultvalue=64
 Map	Fader 6		Soft Knob 6 			Reverb	Room	// template="FEffect", defaultvalue=64
 Map	Fader 7		Soft Knob 7 			Reverb	Room	// template="FFreq", defaultvalue=0
@@ -65,7 +65,7 @@ Map	Fader 8		Soft Knob 8 			Reverb	Room	// template="FLFO", defaultvalue=10
 Map	SubPageName		"Hall"			Reverb	Hall
 Map	Fader 2		Soft Knob 2 			Reverb	Hall	// template="FEffect", defaultvalue=64
 Map	Fader 3		Soft Knob 3 			Reverb	Hall	// template="FEffect", defaultvalue=127
-Map	UDVButton 7-4_8-4		Soft Knob 4 			Reverb	Hall	// template="UDEffect"
+Map	UDVButton 7-4_8-4		Soft Knob 4 			Reverb	Hall	// template="UDEffect", defaultvalue=0
 Map	Fader 5		Soft Knob 5 			Reverb	Hall	// template="FEffect", defaultvalue=64
 Map	Fader 6		Soft Knob 6 			Reverb	Hall	// template="FEffect", defaultvalue=64
 Map	Fader 7		Soft Knob 7 			Reverb	Hall	// template="FFreq", defaultvalue=10
@@ -97,7 +97,7 @@ Map	SubPageName		"Echo"			Reverb	Echo
 Map	Sel2_0		TempoSync=Free			Reverb	Echo
 Map	Sel2_1		TempoSync=Sync			Reverb	Echo
 Map	Fader 2		Soft Knob 2 			Reverb	Echo	Free	// template="FEffect", defaultvalue=12
-Map	UDVButton 7-2_8-2		Soft Knob 2 			Reverb	Echo	Sync	// template="UDEffect"
+Map	UDVButton 7-2_8-2		Soft Knob 2 			Reverb	Echo	Sync	// template="UDEffect", defaultvalue=2
 Map	Fader 3		Soft Knob 3 			Reverb	Echo	// template="FEffect", defaultvalue=32
 Map	Button 8-4		Soft Knob 4 		SEL2	Reverb	Echo	// template="BRedOnOff"
 Map	Fader 5		Soft Knob 5 			Reverb	Echo	// template="FFreq", defaultvalue=32
@@ -115,9 +115,9 @@ Map	Sel3_127		Tap=RepeatTap			Reverb	MultiTap
 Map	Button 8-2		Soft Knob 2 		SEL2	Reverb	MultiTap	// template="BRedOnOff"
 Map	Fader 3		Soft Knob 3 			Reverb	MultiTap	// template="FEffect", defaultvalue=50
 Map	Fader 4		Soft Knob 4 			Reverb	MultiTap	// template="FFreq", defaultvalue=0
-Map	UDVButton 7-5_8-5		Soft Knob 5 		SEL3	Reverb	MultiTap	// template="UDEffect"
+Map	UDVButton 7-5_8-5		Soft Knob 5 		SEL3	Reverb	MultiTap	// template="UDEffect", defaultvalue=0
 Map	Fader 6		Soft Knob 6 			Reverb	MultiTap	TapNum	Free	// template="FFreq", defaultvalue=9
-Map	UDVButton 7-6_8-6		Soft Knob 6 			Reverb	MultiTap	TapNum	Sync	// template="UDFreq"
+Map	UDVButton 7-6_8-6		Soft Knob 6 			Reverb	MultiTap	TapNum	Sync	// template="UDFreq", defaultvalue=0
 Map	Fader 7		Soft Knob 7 			Reverb	MultiTap	TapNum	// template="FVol", defaultvalue=100
 Map	Knob V8		Soft Knob 8 			Reverb	MultiTap	TapNum	// template="FPan"
 Map	Fader 6		Soft Knob 6 			Reverb	MultiTap	RepeatTap	Free
@@ -127,17 +127,17 @@ Map	SubPageName		"Reverse"			Reverb	Reverse
 Map	Sel2_0		TempoSync=Free			Reverb	Reverse
 Map	Sel2_1		TempoSync=Sync			Reverb	Reverse
 Map	Fader 2		Soft Knob 2 			Reverb	Reverse	Free	// template="FEffect", defaultvalue=0
-Map	UDVButton 7-2_8-2		Soft Knob 2 			Reverb	Reverse	Sync	// template="UDEffect"
+Map	UDVButton 7-2_8-2		Soft Knob 2 			Reverb	Reverse	Sync	// template="UDEffect", defaultvalue=3
 Map	Fader 3		Soft Knob 3 			Reverb	Reverse	// template="FEffect", defaultvalue=127
 Map	Button 8-4		Soft Knob 4 		SEL2	Reverb	Reverse	// template="BRedOnOff"
 Map	Fader 5		Soft Knob 5 			Reverb	Reverse	// template="FEffect", defaultvalue=64
 // Convolution
 Map	SubPageName		"Convolution"			Reverb	Convolution
-Map	UDVButton 7-2_8-2		Soft Knob 2 			Reverb	Convolution	// template="UDEffect"
+Map	UDVButton 7-2_8-2		Soft Knob 2 			Reverb	Convolution	// template="UDEffect", defaultvalue=0
 Map	Fader 3		Soft Knob 3 			Reverb	Convolution	// template="FEffect", defaultvalue=127
 Map	Knob V4		Soft Knob 4 			Reverb	Convolution	// template="FEffect"
 Map	Fader 5		Soft Knob 5 			Reverb	Convolution	// template="FFreq", defaultvalue=0
-Map	UDVButton 7-6_8-6		Soft Knob 6 			Reverb	Convolution	// template="UDEffect"
+Map	UDVButton 7-6_8-6		Soft Knob 6 			Reverb	Convolution	// template="UDEffect", defaultvalue=0
 Map	Knob V7		Soft Knob 7 			Reverb	Convolution	// template="FFreq"
 Map	Fader 8		Soft Knob 8 			Reverb	Convolution	// template="FGain", defaultvalue=64
 // Eq
