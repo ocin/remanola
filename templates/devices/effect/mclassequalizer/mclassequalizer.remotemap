@@ -18,7 +18,7 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main", mainmenu_mini="common") -}}
-Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
+Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect", defaultvalue=1
 Map	Button 1-3		Low Cut Enable			Main	// template="BRedOnOff"
 Map	Button 1-4		Low Shelf Enable			Main	// template="BRedOnOff"
 Map	Button 1-5		Parametric 1 Enable			Main	// template="BRedOnOff"
