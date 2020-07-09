@@ -19,8 +19,8 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
-Map	UDVButton 1-2_2-2		Input Mode			Main	// template="UDEffect"
+Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect", defaultvalue=1
+Map	UDVButton 1-2_2-2		Input Mode			Main	// template="UDEffect", defaultvalue=2
 Map	Button 1-3		Trig			Main	// template="BYellowOnOff"
 Map	Fader 4		Roll Enabled			Main	// template="FEffect", defaultvalue=0
 Map	Fader 6		Ducking			Main	// template="FEffect", defaultvalue=0
@@ -32,7 +32,7 @@ Map	PageName		"Delay"			Delay
 Map	Sel1_0		TempoSync=Free			Delay
 Map	Sel1_1		TempoSync=Sync			Delay
 Map	Fader 2		Delay Time			Delay	Free	// template="FFreq", defaultvalue=76
-Map	UDVButton 7-2_8-2		Delay Time	7		Delay	Sync	// template="UDFreq"
+Map	UDVButton 7-2_8-2		Delay Time	7		Delay	Sync	// template="UDFreq", defaultvalue=11
 Map	Fader 3		Right Ch Time Offset			Delay	// template="FFreq", defaultvalue=0
 Map	Button 1-4		Keep Pitch			Delay	// template="BYellowOnOff"
 Map	Button 1-5		Sync		SEL1	Delay	// template="BYellowOnOff"
@@ -50,7 +50,7 @@ Map	Fader 7		Diffuse Amount			Feedback	// template="FAmount", defaultvalue=64
 Map	PageName		"Color"			Color
 {{ rm.include_menus(curpage="Color") -}}
 Map	Fader 2		Drive Amount			Color	// template="FAmount", defaultvalue=29
-Map	UDVButton 1-3_2-3		Drive Type			Color	// template="UDEffect"
+Map	UDVButton 1-3_2-3		Drive Type			Color	// template="UDEffect", defaultvalue=3
 Map	Button 1-5		Filter On			Color	// template="BYellowOnOff"
 Map	Fader 6		Filter Frequency			Color	// template="FFreq", defaultvalue=64
 Map	Fader 7		Filter Resonance			Color	// template="FEffect", defaultvalue=64
