@@ -15,12 +15,16 @@ Map	Button C7		Page=Internal			Index
 Map	PageName		"Main"			Main
 Map	Sel1_0		DelayUnit=MS			Main
 Map	Sel1_127		DelayUnit=Steps			Main
-Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect"
+Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect", defaultvalue=1
 Map	Meter 2		Peak Meter			Main
-Map	UDVButton 1-3_2-3		DelayTime (steps)			Main	Steps	// template="UDFreq"
-Map	UDVButton 1-3_2-3		DelayTime (ms)			Main	Ms
-Map	UDVButton 1-4_2-4		Unit		SEL1	Main	// template="UDFreq", inverted=true
-Map	UDVButton 1-5_2-5		Step Length			Main	// template="UDFreq", inverted=true
+Map	SubPageName		"Steps"			Main	Steps
+Map	UDVButton 1-3_2-3		DelayTime (steps)			Main	Steps	// template="UDFreq", defaultvalue=2
+// End SubPage
+Map	SubPageName		"Ms"			Main	Ms
+Map	UDVButton 1-3_2-3		DelayTime (ms)			Main	Ms	// template="UDFreq", defaultvalue=23
+// End SubPage
+Map	UDVButton 1-4_2-4		Unit		SEL1	Main	// template="UDFreq", inverted=true, defaultvalue=0
+Map	UDVButton 1-5_2-5		Step Length			Main	// template="UDFreq", inverted=true, defaultvalue=0
 Map	Fader 6		Feedback			Main	// template="FEffect", defaultvalue=40
 Map	Knob V7		Pan			Main	// template="FGain"
 Map	Fader 8		Dry/Wet Balance			Main	// template="FEffect", defaultvalue=127
