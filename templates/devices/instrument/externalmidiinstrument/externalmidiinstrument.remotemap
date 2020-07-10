@@ -2,7 +2,7 @@
 {% set deviceman="Propellerhead Software" -%}
 {% set devicescope="se.propellerheads.externalmidiinstrument" -%}
 {% set devicename="External Midi Instrument" -%}
-{% set shortname="midi_instrument" -%}
+{% set shortname="externalmidiinstrument" -%}
 {# Variables -#}
 {% set show_pitch_bend_range=true -%}
 {# End Variables -#}
