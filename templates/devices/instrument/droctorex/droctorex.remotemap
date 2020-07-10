@@ -2,7 +2,7 @@
 {% set deviceman="Propellerheads" -%}
 {% set devicescope="Dr.REX Loop Player" -%}
 {% set devicename="DrOctoRex" -%}
-{% set shortname="drrex" -%}
+{% set shortname="droctorex" -%}
 {# Variables -#}
 {% set show_pitch_bend_range=true -%}
 {# End Variables -#}
