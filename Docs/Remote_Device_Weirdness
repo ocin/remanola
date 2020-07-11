@@ -42,6 +42,6 @@ Europa and Garin:
 Midi instrument:
 	* Midi device name as TextOutput, so we can create remote maps that adapt depending on midi device
 
-Ammo 1200BR:
+Ammo 1200BR: (Reported to Jiggery Pokery, not allowed to change remote mappings because of Reason upload rules)
 	* "Electro-Switch 2 Depth" maps to "Electro-Switch 1 Depth" in UI
 	* "Electro-Switch 1 Depth" does not map to anything
