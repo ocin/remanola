@@ -79,18 +79,6 @@ Map	Sel1_85		OscType=Multi			Osc{{ oscnum }}
 Map	Sel1_106		OscType=Noise			Osc{{ oscnum }}
 Map	Sel1_127		OscType=Off			Osc{{ oscnum }}
 Map	UDVButton 1-1_2-1		Osc {{ oscnum }} Type 		SEL1	Osc{{ oscnum }}	// template="UDOsc", inverted=true, defaultvalue={{ dv_osc_type[oscnum] }}
-// Extra Osc parameters
-{% if oscnum == 1 %}
-Map	Fader 8		Osc 1 AM From Osc 2			Osc1	// template="FEffect", defaultvalue=0
-{% endif %}
-{% if oscnum == 2 %}
-Map	Button 8-1		Osc 2 Sync To Osc 1			Osc2	// template="BRedOnOff"
-Map	Fader 8		Osc 2 Sync BW			Osc2	// template="FEffect", defaultvalue=127
-{% endif %}
-{% if oscnum == 3 %}
-Map	Button 8-1		Osc 3 Sync To Osc 1			Osc3	// template="BRedOnOff"
-Map	Fader 8		Osc 3 Sync BW			Osc3	// template="FEffect", defaultvalue=127
-{% endif %}
 // Analog
 Map	SubPageName		"Analog"			Osc{{ oscnum }}	Analog
 Map	UDVButton 7-3_8-3		Osc {{ oscnum }} Param B			Osc{{ oscnum }}	Analog	// template="UDOsc", inverted=true , defaultvalue=0
@@ -145,6 +133,19 @@ Map	UDVButton 1-6_2-6		Osc {{ oscnum }} Tune			Osc{{ oscnum }}	Noise	// template
 Map	Fader 7		Osc {{ oscnum }} Mod			Osc{{ oscnum }}	Noise	// template="FOsc", defaultvalue=24
 // Off
 Map	SubPageName		"Off"			Osc{{ oscnum }}	Off
+// End SubPage
+// Extra Osc parameters
+{% if oscnum == 1 %}
+Map	Fader 8		Osc 1 AM From Osc 2			Osc1	// template="FEffect", defaultvalue=0
+{% endif %}
+{% if oscnum == 2 %}
+Map	Button 8-1		Osc 2 Sync To Osc 1			Osc2	// template="BRedOnOff"
+Map	Fader 8		Osc 2 Sync BW			Osc2	// template="FEffect", defaultvalue=127
+{% endif %}
+{% if oscnum == 3 %}
+Map	Button 8-1		Osc 3 Sync To Osc 1			Osc3	// template="BRedOnOff"
+Map	Fader 8		Osc 3 Sync BW			Osc3	// template="FEffect", defaultvalue=127
+{% endif %}
 {% endfor -%}
 // Mixer
 Map	PageName		"Mixer"			Mixer
