@@ -66,8 +66,8 @@ Map	Button 6-2		S1 Switch			Main	// template="BYellowOnOff"
 Map	Button 6-3		S2 Switch			Main	// template="BYellowOnOff"
 Map	Button 7-2		Attack Enable Switch			Main	// template="BYellowOnOff"
 Map	Button 7-3		Vib/Trem Enable Switch			Main	// template="BYellowOnOff"
-Map	Button 8-2		Rotator Speed Switch			Main	// template="BYellowOnOff"
-Map	Button 8-3		Rotator Brake Switch			Main	// template="BYellowOnOff"
+Map	Button 8-2		Rotator Speed Switch			Main	// template="BBAmberOnOff"
+Map	Button 8-3		Rotator Brake Switch			Main	// template="BBAmberOnOff"
 Map	Fader 4		R1 Knob				Main	// template="FMisc", defaultvalue=0
 Map	Fader 5		R2 Knob				Main	// template="FMisc", defaultvalue=0
 Map	BigFader 8		Volume				Main	// template="FVol"
