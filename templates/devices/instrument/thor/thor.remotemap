@@ -265,10 +265,10 @@ Map	PageName		"Global Env"			GlobalEnv
 Map	Button 1-1		Global Env Gate Trig On			GlobalEnv	// template="BGreenOnOff"
 Map	Button 2-1		Global Env Tempo Sync			GlobalEnv	// template="BGreenOnOff"
 Map	Button 4-1		Global Env Loop			GlobalEnv	// template="BGreenOnOff"
-Map	Fader 2		Global Env Delay			GlobalEnv	// template="FEnv", defaultvalue=0
-Map	Fader 3		Global Env Attack			GlobalEnv	// template="FEffect", defaultvalue=0
-Map	Fader 4		Global Env Hold			GlobalEnv	// template="FEnv", defaultvalue=0
-Map	Fader 5		Global Env Decay			GlobalEnv	// template="FEffect", defaultvalue=40
+Map	Fader 2		Global Env Delay			GlobalEnv	// template="FEffect", defaultvalue=0
+Map	Fader 3		Global Env Attack			GlobalEnv	// template="FEnv", defaultvalue=0
+Map	Fader 4		Global Env Hold			GlobalEnv	// template="FEffect", defaultvalue=0
+Map	Fader 5		Global Env Decay			GlobalEnv	// template="FEnv", defaultvalue=40
 Map	Fader 6		Global Env Sustain			GlobalEnv	// template="FEnv", defaultvalue=55
 Map	Fader 7		Global Env Release			GlobalEnv	// template="FEnv", defaultvalue=40
 // LFO1
@@ -475,7 +475,7 @@ Map	PageName		"Shaper"			Shaper
 {{ rm.include_menus(curpage="Shaper", submenu="effect", mainmenu_mini="effects") -}}
 Map	Button 1-1		Shaper On			Shaper	// template="BGreenOnOff"
 Map	UDVButton 1-2_2-2		Shaper Type			Shaper	// template="UDEffect", inverted=true, defaultvalue=0
-Map	Fader 3		Shaper Drive			Shaper	// template="FGain", defaultvalue=37
+Map	Fader 3		Shaper Drive			Shaper	// template="FEffect", defaultvalue=37
 Map	UDVButton 7-4_8-4		Shaper Output Dest			Shaper	// template="UDAmount"
 // Delay
 Map	PageName		"Delay"			Delay
