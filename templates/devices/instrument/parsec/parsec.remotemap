@@ -59,57 +59,41 @@ Map	Fader 6		Portamento			Perf	// template="FPerf", defaultvalue=38
 // AmpEnv
 Map	PageName		"Amp Envelope"			AmpEnv
 {{ rm.include_menus(curpage="AmpEnv") -}}
-Map	Fader 2		Gain			AmpEnv	// template="FVol", defaultvalue=64
+Map	Fader 2		Gain			AmpEnv	// template="FGain", defaultvalue=64
 Map	Fader 4		Amp Attack			AmpEnv	// template="FVol", defaultvalue=0
 Map	Fader 5		Amp Decay			AmpEnv	// template="FVol", defaultvalue=64
 Map	Fader 6		Amp Sustain			AmpEnv	// template="FVol", defaultvalue=127
 Map	Fader 7		Amp Release			AmpEnv	// template="FVol", defaultvalue=13
-// Generator A
-Map	PageName		"Generator A"			GenereratorA
-{{ rm.include_menus(curpage="GenereratorA", submenu="osc", oscpage="GenereratorA") -}}
-Map	UDVButton 1-2_2-2		A Gen Select			GenereratorA	// template="UDOsc", inverted=true, defaultvalue=0
-Map	Button 8-2		A Phase Sync			GenereratorA	// template="BBlueOnOff"
-Map	Fader 3		A Gen X			GenereratorA	// template="FOsc", defaultvalue=0
-Map	UDVButton 1-4_2-4		A Oct			GenereratorA	// template="UDFreq", defaultvalue=2
-Map	UDVButton 3-4_4-4		A Semi			GenereratorA	// template="UDFreq2", defaultvalue=0
-Map	UDVButton 5-4_6-4		A Tune			GenereratorA	// template="UDFreq", defaultvalue=50
-Map	Fader 5		A Pitch Kbd			GenereratorA	// template="FPerf", defaultvalue=127
-Map	Fader 6		A Cutoff Slope			GenereratorA	// template="FEffect", defaultvalue=64
-Map	Fader 7		A Cutoff Freq			GenereratorA	// template="FFreq", defaultvalue=64
-Map	Fader 8		A Cutoff Kbd			GenereratorA	// template="FPerf", defaultvalue=64
-// Generator B
-Map	PageName		"Generator B"			GenereratorB
-{{ rm.include_menus(curpage="GenereratorB", submenu="osc", oscpage="GenereratorB") -}}
+{% for oscnum in ['A', 'B'] -%}
+// Generator {{ oscnum }}
+Map	PageName		"Generator {{ oscnum }}"			Genererator{{ oscnum }}
+{{ rm.include_menus(curpage="Genererator"+oscnum, submenu="osc", oscpage="GenereratorA") -}}
+{% if oscnum == 'B' %}
 Map	Button 1-1		B Enable			GenereratorB	// template="BBlueOnOff"
-Map	UDVButton 1-2_2-2		B Gen Select			GenereratorB	// template="UDOsc", inverted=true, defaultvalue=0
-Map	Button 8-2		B Phase Sync			GenereratorB	// template="BBlueOnOff"
-Map	Fader 3		B Gen X			GenereratorB	// template="FOsc", defaultvalue=0
-Map	UDVButton 1-4_2-4		B Oct			GenereratorB	// template="UDFreq", defaultvalue=2
-Map	UDVButton 3-4_4-4		B Semi			GenereratorB	// template="UDFreq2", defaultvalue=0
-Map	UDVButton 5-4_6-4		B Tune			GenereratorB	// template="UDFreq", defaultvalue=50
-Map	Fader 5		B Pitch Kbd			GenereratorB	// template="FPerf", defaultvalue=127
-Map	Fader 6		B Cutoff Slope			GenereratorB	// template="FEffect", defaultvalue=64
-Map	Fader 7		B Cutoff Freq			GenereratorB	// template="FFreq", defaultvalue=64
-Map	Fader 8		B Cutoff Kbd			GenereratorB	// template="FPerf", defaultvalue=64
-// Sound Engine A
-Map	PageName		"Sound Engine A"			SoundEngineA
-{{ rm.include_menus(curpage="SoundEngineA", submenu="filter", filterpage="SoundEngineA") -}}
-Map	UDVButton 1-2_2-2		A Mod1 Select			SoundEngineA	// template="UDEffect", inverted=true, defaultvalue=0
-Map	Fader 3		A Mod1 X			SoundEngineA	// template="FEffect", defaultvalue=64
-Map	Fader 4		A Mod1 Y			SoundEngineA	// template="FEffect", defaultvalue=64
-Map	UDVButton 1-5_2-5		A Mod2 Select			SoundEngineA	// template="UDEffect", inverted=true, defaultvalue=0
-Map	Fader 6		A Mod2 X			SoundEngineA	// template="FEffect", defaultvalue=64
-Map	Fader 7		A Mod2 Y			SoundEngineA	// template="FEffect", defaultvalue=64
-// Sound Engine B
-Map	PageName		"Sound Engine B"			SoundEngineB
-{{ rm.include_menus(curpage="SoundEngineB", submenu="filter", filterpage="SoundEngineB") -}}
-Map	Button 1-1		B Enable			SoundEngineB	// template="BBlueOnOff"
-Map	UDVButton 1-2_2-2		B Mod1 Select			SoundEngineB	// template="UDEffect", inverted=true, defaultvalue=0
-Map	Fader 3		B Mod1 X			SoundEngineB	// template="FEffect", defaultvalue=64
-Map	Fader 4		B Mod1 Y			SoundEngineB	// template="FEffect", defaultvalue=64
-Map	UDVButton 1-5_2-5		B Mod2 Select			SoundEngineB	// template="UDEffect", inverted=true, defaultvalue=0
-Map	Fader 6		B Mod2 X			SoundEngineB	// template="FEffect", defaultvalue=64
-Map	Fader 7		B Mod2 Y			SoundEngineB	// template="FEffect", defaultvalue=64
+{% endif %}
+Map	UDVButton 1-2_2-2		{{ oscnum }} Gen Select			Genererator{{ oscnum }}	// template="UDOsc", inverted=true, defaultvalue=0
+Map	Button 8-1		{{ oscnum }} Phase Sync			Genererator{{ oscnum }}	// template="BBlueOnOff"
+Map	Fader 3		{{ oscnum }} Gen X			Genererator{{ oscnum }}	// template="FOsc", defaultvalue=0
+Map	UDVButton 1-5_2-5		{{ oscnum }} Oct			Genererator{{ oscnum }}	// template="UDFreq", defaultvalue=2
+Map	UDVButton 1-6_2-6		{{ oscnum }} Semi			Genererator{{ oscnum }}	// template="UDFreq", defaultvalue=0
+Map	UDVButton 1-7_2-7		{{ oscnum }} Tune			Genererator{{ oscnum }}	// template="UDFreq", defaultvalue=50
+Map	MFader 1-8		{{ oscnum }} Pitch Kbd			Genererator{{ oscnum }}	// template="FPerf", defaultvalue=127
+Map	MFader 3-5		{{ oscnum }} Cutoff Slope			Genererator{{ oscnum }}	// template="FEffect", defaultvalue=64
+Map	MFader 3-6		{{ oscnum }} Cutoff Freq			Genererator{{ oscnum }}	// template="FFreq", defaultvalue=64
+Map	MFader 3-7		{{ oscnum }} Cutoff Kbd			Genererator{{ oscnum }}	// template="FPerf", defaultvalue=64
+// Sound Engine {{ oscnum }}
+Map	PageName		"Sound Engine {{ oscnum }}"			SoundEngine{{ oscnum }}
+{{ rm.include_menus(curpage="SoundEngine"+oscnum, submenu="filter", filterpage="SoundEngineB") -}}
+{% if oscnum == 'B' %}
+Map	Button 1-1		B Enable			SoundEngine{{ oscnum }}	// template="BBlueOnOff"
+{% endif %}
+Map	UDVButton 1-2_2-2		{{ oscnum }} Mod1 Select			SoundEngine{{ oscnum }}	// template="UDEffect", inverted=true, defaultvalue=0
+Map	Fader 3		{{ oscnum }} Mod1 X			SoundEngine{{ oscnum }}	// template="FEffect", defaultvalue=64
+Map	Fader 4		{{ oscnum }} Mod1 Y			SoundEngine{{ oscnum }}	// template="FEffect", defaultvalue=64
+Map	UDVButton 1-5_2-5		{{ oscnum }} Mod2 Select			SoundEngine{{ oscnum }}	// template="UDEffect", inverted=true, defaultvalue=0
+Map	Fader 6		{{ oscnum }} Mod2 X			SoundEngine{{ oscnum }}	// template="FEffect", defaultvalue=64
+Map	Fader 7		{{ oscnum }} Mod2 Y			SoundEngine{{ oscnum }}	// template="FEffect", defaultvalue=64
+{% endfor -%}
 // Reverb
 Map	PageName		"Reverb"			Reverb
 {{ rm.include_menus(curpage="Reverb") -}}
@@ -124,7 +108,7 @@ Map	PageName		"Delay"			Delay
 Map	Sel1_0		TempoSync=Free			Delay
 Map	Sel1_1		TempoSync=Sync			Delay
 Map	Button 1-2		Delay On			Delay	// template="BBlueOnOff"
-Map	Button 1-3		Delay Sync		SEL1	Delay	// template="BBlueOnOff"
+Map	Button 8-3		Delay Sync		SEL1	Delay	// template="BBlueOnOff"
 Map	Fader 4		Delay Time			Delay	Free	// template="FFreq", defaultvalue=64
 Map	UDVButton 7-4_8-4		Delay Time Synced			Delay	Sync	// template="UDFreq", defaultvalue=4
 Map	Fader 5		Delay Feedback			Delay	// template="FEffect", defaultvalue=38
@@ -141,7 +125,7 @@ Map	PageName		"LFO 2"			LFO2
 Map	Sel1_0		TempoSync=Free			LFO2
 Map	Sel1_1		TempoSync=Sync			LFO2
 Map	UDVButton 1-2_2-2		LFO2 Wave			LFO2	// template="UDLFO", defaultvalue=0
-Map	Button 1-3		LFO2 Sync		SEL1	LFO2	// template="BBlueOnOff"
+Map	Button 8-3		LFO2 Sync		SEL1	LFO2	// template="BBlueOnOff"
 Map	Fader 4		LFO2 Rate			LFO2	Free	// template="FFreq", defaultvalue=64
 Map	UDVButton 7-4_8-4		LFO2 Synced Rate			LFO2	Sync	// template="UDFreq", defaultvalue=10
 // Env 1
