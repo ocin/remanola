@@ -54,6 +54,9 @@ Map	Knob V4		Oscillator {{ oscnum }} Shift			Osc{{ oscnum }}	// template="FOsc"
 Map	UDVButton 7-5_8-5		Oscillator {{ oscnum }} Octave			Osc{{ oscnum }}	// template="UDFreq", defaultvalue=4
 Map	UDVButton 7-6_8-6		Oscillator {{ oscnum }} Semi			Osc{{ oscnum }}	// template="UDFreq", defaultvalue=0
 Map	UDVButton 7-7_8-7		Oscillator {{ oscnum }} Cent			Osc{{ oscnum }}	// template="UDFreq", defaultvalue=50
+{% if oscnum == 'A' %}
+Map	Button 7-8		Route Oscillator A To Shaper			OscA	// template="BYellowOnOff"
+{% endif %}
 Map	Button 8-8		Route Oscillator {{ oscnum }} To Filter B			Osc{{ oscnum }}	// template="BYellowOnOff"
 // Osc{{ oscnum }} Env
 Map	PageName		"Osc {{ oscnum }} Env"			Osc{{ oscnum }}Env
@@ -65,7 +68,6 @@ Map	Fader 6		Oscillator {{ oscnum }} Release			Osc{{ oscnum }}Env	// template="F
 Map	Fader 8		Oscillator {{ oscnum }} Gain			Osc{{ oscnum }}Env	// template="FVol", defaultvalue=90
 {% endfor -%}
 // Extra Osc parameters
-Map	Button 7-8		Route Oscillator A To Shaper			OscA	// template="BYellowOnOff"
 {% for filternum in ['A', 'B'] -%}
 // Filter{{ filternum }}
 Map	PageName		"Filter {{ filternum }}"			Filter{{ filternum }}
