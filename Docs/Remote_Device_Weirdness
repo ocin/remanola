@@ -8,14 +8,6 @@ Ammo 1200BR: (Reported to Jiggery Pokery, not allowed to change remote mappings 
 Drum sequencer:
 	* On/Off button behaves in a non standard way (Support request #61008)
 
-Europa and Grain:
-	* Missing remotables in Envelopes 
-		* TempoSync
-		* Bipolar
-		* Global
-		* Loop
-		* And a bunch more in the editing section
-
 Pangea and Humana:
 	* There are remoteable items not named the same as in Klang
 		* Klang: "Mod Wheel to Sample Start" Humana, Pangea: "ModWheel_to_SampleStart"
@@ -23,8 +15,6 @@ Pangea and Humana:
 		* Klang: "Mod Wheel to Amp Levet" Humana, Pangea: "ModWheel_to_Amp_Level"
 
 Rytmik:
-	* Not all parameters are remoteable
-		* For exameple we have End and Release, but not Begin and Attack
 	* Remotable items are not named the same way as there interface counterparts
 		* For exameple "Fade Out" in the interface is "Release" in remote
 	* All remoteable items have underscores in them
@@ -35,13 +25,23 @@ Rytmik:
 
 Thor:
 	* ModMatrix dest and source are not remotable
-	* Sync rate is acting weird when used with delta control
 
 ----------------------------------------------------------------------------------------------------------------
 Feaures:
 ----------------------------------------------------------------------------------------------------------------
+Europa and Grain:
+	* Missing remotables in Envelopes 
+		* TempoSync
+		* Bipolar
+		* Global
+		* Loop
+		* And a bunch more in the editing section
+
 Kong:
 	* remotable items to control which drum is selected (like effects and engines work in Europa)
+
+Malstrom:
+	* Missing remotable select grain table
 
 Midi instrument:
 	* Midi device name as TextOutput, so we can create remote maps that adapt depending on midi device
@@ -51,3 +51,10 @@ NN-XT:
 
 PX7:
 	* Very few parameters remotable
+
+Rytmik:
+	* Not all parameters are remoteable
+		* For exameple we have End and Release, but not Begin and Attack
+
+Thor:
+	* ModMatrix dest and source are not remotable
