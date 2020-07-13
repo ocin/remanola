@@ -68,7 +68,7 @@ Map	Button 8-2		Rotator Speed Switch			Main	// template="BBAmberOnOff"
 Map	Button 8-3		Rotator Brake Switch			Main	// template="BBAmberOnOff"
 Map	Fader 4		R1 Knob				Main	// template="FMisc", defaultvalue=0
 Map	Fader 5		R2 Knob				Main	// template="FMisc", defaultvalue=0
-Map	BigFader 8		Volume				Main	// template="FVol"
+Map	Fader 8		Volume				Main	// template="FVol"
 // Voicing
 Map	PageName		"Voicing"			Voicing
 {{ rm.include_menus(curpage="Voicing") -}}
