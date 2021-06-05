@@ -190,7 +190,10 @@ function handle_input_item(event, button)
 		g_buttondown[buttonname] = button.z
 		if(buttonname ~= itemname) then
 			local itemtype = get_item_type(itemname)
-			if(itemtype == "Fader" or itemtype == "BigFader" or itemtype == "Drawbar") then
+			if(itemname == "EFSButton") then
+				local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = 3-row }
+				remote.handle_input(msg)
+			elseif(itemtype == "Fader" or itemtype == "BigFader" or itemtype == "Drawbar") then
 				if(fader_already_down(buttonname) ~= nil) then
 					local value
 					local defaultvalue = get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "defaultvalue")
@@ -389,8 +392,7 @@ function handle_input_valuemode(button)
 		if(itemname == "Button C1" or itemname == "Button C2") then
 			g_scrolltext = remote.get_item_text_value(itemsindex["DeviceName"])
 		elseif(itemname == "Button C7") then
-			-- g_scrolltext = "SubPage: "..get_current_subpage()
-			g_scrolltext = "EffetcState: "..get_current_effectstate()
+			g_scrolltext = "SubPage: "..get_current_subpage()
 		elseif(itemname == "Button C8") then
 			return true
 		else

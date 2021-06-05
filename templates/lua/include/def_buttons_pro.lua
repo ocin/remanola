@@ -116,3 +116,14 @@ local buttons = {
 	["Button D8"]="b0 13",
 }
 
+local efsactive = {
+	[1] = WHITE,
+	[2] = GREEN,
+	[3] = RED,
+}
+
+local efsinactive = {
+	[1] = DGREY,
+	[2] = DGREEN,
+	[3] = DRED,
+}

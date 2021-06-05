@@ -137,7 +137,16 @@ function get_button_color(context, itemname, buttonname)
 	{% include "devices/" + device.type + "/" + device.name + "/hooks/get_button_color.lua" ignore missing %}
 	{% endfor %}
 
-	if(string.find(itemname, "UDHButton %d%-%d_%d%-%d") or string.find(itemname, "UDVButton %d%-%d_%d%-%d")) then
+	if(string.find(itemname, "EFSButton")) then
+		buttonindex = tonumber(string.sub(buttonname, -3,-3))
+		if(enabled) then
+			if(buttonindex == 3-value) then
+				color = efsactive[buttonindex]
+			else
+				color = efsinactive[buttonindex]
+			end
+		end
+	elseif(string.find(itemname, "UDHButton %d%-%d_%d%-%d") or string.find(itemname, "UDVButton %d%-%d_%d%-%d")) then
 		if(enabled) then
 			if(g_buttondown[buttonname] ~= nil) then
 				color = activecolor
@@ -281,6 +290,13 @@ function get_button_color(context, itemname, buttonname)
 end
 
 function get_item_by_button(buttonname)
+	if(remote.is_item_enabled(itemsindex["EFSButton"])) then
+		local row = get_button_row(buttonname)
+		local col = get_button_col(buttonname)
+		if((col == 1) and (row <= 3)) then
+			return "EFSButton"
+		end
+	end
 	for i=1,8 do
 		local fadername = "Fader "..tostring(i)
 		if(remote.is_item_enabled(itemsindex[fadername])) then
@@ -376,16 +392,6 @@ function get_current_page()
 	end
 
 	return pagename
-end
-
-function get_current_effectstate()
-	local effectstate = "Unknown"
-
-	if(remote.is_item_enabled(itemsindex["EffectStateName"])) then
-		effectstate = remote.get_item_text_value(itemsindex["EffectStateName"])
-	end
-
-	return effectstate
 end
 
 function get_current_kbdpage()
