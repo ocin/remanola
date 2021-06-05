@@ -378,6 +378,16 @@ function get_current_page()
 	return pagename
 end
 
+function get_current_effectstate()
+	local effectstate = "Unknown"
+
+	if(remote.is_item_enabled(itemsindex["EffectStateName"])) then
+		effectstate = remote.get_item_text_value(itemsindex["EffectStateName"])
+	end
+
+	return effectstate
+end
+
 function get_current_kbdpage()
 	local kbdpagename = "Unknown"
 

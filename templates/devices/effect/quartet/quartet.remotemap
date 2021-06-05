@@ -1,0 +1,31 @@
+{% extends "devices/effect/effect.remotemap" %}
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.Quartet" -%}
+{% set devicename="Quartet" -%}
+{% set shortname="quartet" -%}
+{% block groups %}
+Define Group	Page	Main	Index	Internal
+Define Group	EffectState	On	Off	Bypass
+{% endblock groups %}
+{% block main %}
+// Select
+Map	EffectState		Enabled
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main
+Map	Button 1-1		EffectState=Bypass			Main	// template="BBWhiteOnOff"
+Map	EffectStateName		"Bypass"			Bypass
+Map	Button 2-1		EffectState=On			Main	// template="BBGreenOnOff"
+Map	EffectStateName		"On"			On
+Map	Button 3-1		EffectState=Off			Main	// template="BBRedOnOff"
+Map	EffectStateName		"Off"			Off
+Map	Fader 2		Chorus Delay			Main	// template="FEffect", defaultvalue=32
+Map	Fader 3		Chorus Depth			Main	// template="FLFO", defaultvalue=63
+Map	Fader 4		Chorus Rate			Main	// template="FLFO", defaultvalue=63
+Map	Fader 5		Chorus Feedback			Main	// template="FEffect", defaultvalue=0
+Map	Fader 6		Chorus Width			Main	// template="FEffect", defaultvalue=127
+Map	Fader 8		Chorus DryWet			Main	// template="FEffect", defaultvalue=127
+{% endblock main %}
