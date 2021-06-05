@@ -22,7 +22,7 @@ Map	Button 2-1		EffectState=On			Main	// template="BBGreenOnOff"
 Map	EffectStateName		"On"			On
 Map	Button 3-1		EffectState=Off			Main	// template="BBRedOnOff"
 Map	EffectStateName		"Off"			Off
-Map	Fader 2		Chorus Delay			Main	// template="FEffect", defaultvalue=32
+Map	Fader 2		Chorus Delay			Main	// template="FEffect", defaultvalue=33
 Map	Fader 3		Chorus Depth			Main	// template="FLFO", defaultvalue=63
 Map	Fader 4		Chorus Rate			Main	// template="FLFO", defaultvalue=63
 Map	Fader 5		Chorus Feedback			Main	// template="FEffect", defaultvalue=0
