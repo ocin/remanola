@@ -17,7 +17,7 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect", defaultvalue=1
+Map	EFSButton		Enabled			Main
 Map	Meter 2		Input Peak Meter			Main
 Map	Fader 3		Vibrato Rate			Main	// template="UDEffect", defaultvalue=64
 Map	Button 1-4		Low Freq Input			Main	// template="BYellowOnOff"

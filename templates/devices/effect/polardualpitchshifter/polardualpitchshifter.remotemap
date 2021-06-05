@@ -28,7 +28,7 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect", defaultvalue=1
+Map	EFSButton		Enabled			Main
 Map	Meter 2		Audio Input LED			Main
 Map	UDVButton 1-3_2-3		Analysis Type			Main	// template="UDEffect", inverted=true, defaultvalue=1
 Map	UDVButton 5-3_6-3		Algorithm Type			Main	// template="UDEffect", inverted=true, defaultvalue=0

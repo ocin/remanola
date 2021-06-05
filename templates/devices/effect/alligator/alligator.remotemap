@@ -31,7 +31,7 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect", defaultvalue=1
+Map	EFSButton		Enabled			Main
 Map	Button 1-2		Pattern Enable			Main	// template="BRedOnOff"
 Map	Button 3-2		Shuffle			Main	// template="BGreenOnOff"
 Map	UDVButton 5-2_6-2		Pattern			Main	// template="UDEffect", defaultvalue=1
