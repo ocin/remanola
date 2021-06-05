@@ -17,6 +17,7 @@ local items = {
 	{name = "EFSButton", input= "value", output = "value", min = 0, max = 2},
 	{name = "EngineSelect", input= "value", output = "value", min = 0, max = 2, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}},
 	{name = "EffectSelect", input= "value", output = "value", min = 0, max = 5, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}},
+	{name = "EffectSelect4", input= "value", output = "value", min = 0, max = 3, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}},
 	{name = "EditSelect", input= "value", output = "value", min = 0, max = 2, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}},
 	{name = "LFOSelect", input= "value", output = "value", min = 0, max = 2, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}},
 	{name = "EnvSelect", input= "value", output = "value", min = 0, max = 3, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}},

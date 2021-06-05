@@ -4,15 +4,21 @@
 {% set devicename="Quartet" -%}
 {% set shortname="quartet" -%}
 {% block groups %}
-Define Group	Page	Main	Index	Internal
+Define Group	Page	Main	Chorus	BBD	FFT	Grain	Index	Internal
 {% endblock groups %}
 {% block main %}
+// Select
+Map	EffectSelect4		Effect Select
 // Index
 Map	PageName		"Index"			Index
-Map	Button 1-1		Page=Main			Index
+Map	Button 2-7		Page=Main			Index
+Map	Button 3-7		Page=BBD			Index
+Map	Button 4-7		Page=FFT			Index
+Map	Button 5-7		Page=Grain			Index
 Map	Button C7		Page=Internal			Index
-// Main
-Map	PageName		"Main"			Main
+// Chorus
+Map	PageName		"Chorus"			Main
+{{ rm.include_menus(curpage="Main") -}}
 Map	EFSButton		Enabled			Main
 Map	Fader 2		Chorus Delay			Main	// template="FEffect", defaultvalue=33
 Map	Fader 3		Chorus Depth			Main	// template="FLFO", defaultvalue=63
@@ -20,4 +26,35 @@ Map	Fader 4		Chorus Rate			Main	// template="FLFO", defaultvalue=63
 Map	Fader 5		Chorus Feedback			Main	// template="FEffect", defaultvalue=0
 Map	Fader 6		Chorus Width			Main	// template="FEffect", defaultvalue=127
 Map	Fader 8		Chorus DryWet			Main	// template="FEffect", defaultvalue=127
+// BBD
+Map	PageName		"BBD"			BBD
+{{ rm.include_menus(curpage="BBD") -}}
+Map	EFSButton		Enabled			BBD
+Map	Fader 2		BBD Delay			BBD	// template="FEffect", defaultvalue=33
+Map	Fader 3		BBD Depth			BBD	// template="FLFO", defaultvalue=63
+Map	Fader 4		BBD Rate			BBD	// template="FLFO", defaultvalue=63
+Map	Fader 5		BBD Noise			BBD	// template="FEffect", defaultvalue=0
+Map	Fader 6		BBD Width			BBD	// template="FEffect", defaultvalue=127
+Map	Fader 8		BBD DryWet			BBD	// template="FEffect", defaultvalue=127
+// FFT
+Map	PageName		"FFT"			FFT
+{{ rm.include_menus(curpage="FFT") -}}
+Map	EFSButton		Enabled			FFT
+Map	UDHButton 5-1_5-2		FFT Size			FFT	// template="UDEffect", defaultvalue=2
+Map	Fader 3		FFT Depth			FFT	// template="FLFO", defaultvalue=63
+Map	Fader 4		FFT Start			FFT	// template="FEffect", defaultvalue=0
+Map	Fader 5		FFT Stop			FFT	// template="FEffect", defaultvalue=0
+Map	Fader 6		FFT Width			FFT	// template="FEffect", defaultvalue=127
+Map	Fader 8		FFT DryWet			FFT	// template="FEffect", defaultvalue=127
+// Grain
+Map	PageName		"Grain"			Grain
+{{ rm.include_menus(curpage="Grain") -}}
+Map	EFSButton		Enabled			Grain
+Map	Button 5-1		Grain Phase			Grain	// template="BRedOnOff"
+Map	Fader 3		Grain Size			Grain	// template="FEffect", defaultvalue=63
+Map	Fader 4		Grain Depth			Grain	// template="FLFO", defaultvalue=63
+Map	Fader 5		Grain Jitter			Grain	// template="FEffect", defaultvalue=0
+Map	Fader 6		Grain Density			Grain	// template="FEffect", defaultvalue=127
+Map	Fader 7		Grain Width			Grain	// template="FEffect", defaultvalue=127
+Map	Fader 8		Grain DryWet			Grain	// template="FEffect", defaultvalue=127
 {% endblock main %}
