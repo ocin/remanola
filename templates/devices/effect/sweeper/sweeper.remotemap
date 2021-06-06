@@ -50,6 +50,9 @@ Map	UDVButton 1-5_2-5		Filter Type			Main	Filter	// template="UDFreq", defaultva
 // LFO
 Map	PageName		"LFO"			LFO
 {{ rm.include_menus(curpage="LFO") -}}
+Map	UDVButton 1-1_2-1		LFO Wave			LFO	// template="UDLFO", defaultvalue=1
+Map	Button 8-1		LFO Sync			LFO	// template="BRedOnOff"
+Map	Fader 2		LFO Rate			LFO	// template="FFreq", defaultvalue=15
 // Modulator
 Map	PageName		"Modulator"			Modulator
 {{ rm.include_menus(curpage="Modulator") -}}
