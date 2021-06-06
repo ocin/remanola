@@ -139,6 +139,9 @@ function get_button_color(context, itemname, buttonname)
 
 	if(string.find(itemname, "ARadioButton")) then
 		local abuttonnum = tonumber(string.sub(buttonname, -1,-1))
+		if(get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "inverted")) then
+			abuttonnum = tonumber(string.match(itemname, "ARadioButton(%d)"))-abuttonnum+1
+		end
 		if(abuttonnum-1 == value) then
 			color = activecolor
 		else
@@ -297,16 +300,22 @@ function get_button_color(context, itemname, buttonname)
 end
 
 function get_item_by_button(buttonname)
-	if(remote.is_item_enabled(itemsindex["ARadioButton4"]) and string.find(buttonname, "Button A")) then
+	if(remote.is_item_enabled(itemsindex["ARadioButton2"]) and string.find(buttonname, "Button A")) then
 		local num = get_a_button_num(buttonname)
-		if(num <= 4) then
-			return "ARadioButton4"
+		if(num <= 2) then
+			return "ARadioButton2"
 		end
 	end
 	if(remote.is_item_enabled(itemsindex["ARadioButton3"]) and string.find(buttonname, "Button A")) then
 		local num = get_a_button_num(buttonname)
 		if(num <= 3) then
 			return "ARadioButton3"
+		end
+	end
+	if(remote.is_item_enabled(itemsindex["ARadioButton4"]) and string.find(buttonname, "Button A")) then
+		local num = get_a_button_num(buttonname)
+		if(num <= 4) then
+			return "ARadioButton4"
 		end
 	end
 	if(remote.is_item_enabled(itemsindex["EFSButton"])) then

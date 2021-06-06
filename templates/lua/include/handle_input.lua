@@ -190,8 +190,11 @@ function handle_input_item(event, button)
 		g_buttondown[buttonname] = button.z
 		if(buttonname ~= itemname) then
 			local itemtype = get_item_type(itemname)
-			if(itemname == "ARadioButton4" or itemname == "ARadioButton3") then
+			if(itemname == "ARadioButton2" or itemname == "ARadioButton3" or itemname == "ARadioButton4") then
 				local num = get_a_button_num(buttonname)
+				if(get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "inverted")) then
+					num = tonumber(string.match(itemname, "ARadioButton(%d)"))-num+1
+				end
 				local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = num-1 }
 				remote.handle_input(msg)
 			elseif(itemname == "EFSButton") then

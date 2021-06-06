@@ -10,6 +10,7 @@
 			["UDHButton *"]={enabledcolor=YELLOW, activecolor=YELLOW, disabledcolor=NOCOLOR},
 			["UDVButton *"]={enabledcolor=YELLOW, activecolor=YELLOW, disabledcolor=NOCOLOR},
 			["EFSButton"]={enabledcolor=YELLOW, activecolor=GREEN, disabledcolor=NOCOLOR},
+			["ARadioButton2"]={template="BRedOnOff"},
 			["ARadioButton3"]={template="BRedOnOff"},
 			["ARadioButton4"]={template="BRedOnOff"},
 
