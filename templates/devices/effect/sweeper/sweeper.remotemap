@@ -1,0 +1,56 @@
+{% extends "devices/effect/effect.remotemap" %}
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.Sweeper" -%}
+{% set devicename="Sweeper" -%}
+{% set shortname="sweeper" -%}
+{% block groups %}
+Define Group	Page	Main	LFO	Modulator	Index	Internal
+Define Group	Effect	Phaser	Flanger	Filter
+{% endblock groups %}
+{% block main %}
+Map	ARadioButton3		Type		SEL1		// template="BRedOnOff"
+// Select
+Map	Sel1_0		Effect=Phaser
+Map	Sel1_1		Effect=Flanger
+Map	Sel1_2		Effect=Filter
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+// Main
+Map	PageName		"Main"			Main
+{{ rm.include_menus(curpage="Main") -}}
+Map	EFSButton		Enabled			Main
+Map	Button 8-1		Stereo Mode			Main	// template="BBlueOnOff"
+Map	Fader 6		Spread			Main	// template="FEffect", defaultvalue=0
+Map	Fader 7		DryWet			Main	// template="FEffect", defaultvalue=127
+Map	Fader 8		Volume			Main	// template="FGain", defaultvalue=63
+// Phaser
+Map	SubPageName		"Phaser"			Main	Phaser
+Map	Fader 2		Freq			Main	Phaser	// template="FFreq", defaultvalue=63
+Map	Fader 3		Bandwidth			Main	Phaser	// template="FEffect", defaultvalue=30
+Map	Fader 4		Feedback			Main	Phaser	// template="FEffect", defaultvalue=63
+Map	UDVButton 1-5_2-5		Phaser Stages			Main	Phaser	// template="UDEffect", defaultvalue=4
+Map	Button 5-5		Polarity			Main	Phaser	// template="BRedOnOff"
+Map	Button 7-5		Mute Dry			Main	Phaser	// template="BRedOnOff"
+// End SubPage
+// Flanger
+Map	SubPageName		"Flanger"			Main	Flanger
+Map	Fader 2		Freq			Main	Flanger	// template="FFreq", defaultvalue=63
+Map	Fader 4		Feedback			Main	Flanger	// template="FEffect", defaultvalue=63
+Map	Button 5-5		Polarity			Main	Flanger	// template="BRedOnOff"
+Map	Button 7-5		Mute Dry			Main	Flanger	// template="BRedOnOff"
+// End SubPage
+// Filter
+Map	SubPageName		"Filter"			Main	Filter
+Map	Fader 2		Filter Drive			Main	Filter	// template="FGain", defaultvalue=30
+Map	Fader 3		Freq			Main	Filter	// template="FFreq", defaultvalue=63
+Map	Fader 4		Reso			Main	Filter	// template="FEffect", defaultvalue=0
+Map	UDVButton 1-5_2-5		Filter Type			Main	Filter	// template="UDFreq", defaultvalue=4
+// End SubPage
+// LFO
+Map	PageName		"LFO"			LFO
+{{ rm.include_menus(curpage="LFO") -}}
+// Modulator
+Map	PageName		"Modulator"			Modulator
+{{ rm.include_menus(curpage="Modulator") -}}
+{% endblock main %}

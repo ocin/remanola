@@ -137,7 +137,7 @@ function get_button_color(context, itemname, buttonname)
 	{% include "devices/" + device.type + "/" + device.name + "/hooks/get_button_color.lua" ignore missing %}
 	{% endfor %}
 
-	if(string.find(itemname, "ARadioButton4")) then
+	if(string.find(itemname, "ARadioButton")) then
 		local abuttonnum = tonumber(string.sub(buttonname, -1,-1))
 		if(abuttonnum-1 == value) then
 			color = activecolor
@@ -301,6 +301,12 @@ function get_item_by_button(buttonname)
 		local num = get_a_button_num(buttonname)
 		if(num <= 4) then
 			return "ARadioButton4"
+		end
+	end
+	if(remote.is_item_enabled(itemsindex["ARadioButton3"]) and string.find(buttonname, "Button A")) then
+		local num = get_a_button_num(buttonname)
+		if(num <= 3) then
+			return "ARadioButton3"
 		end
 	end
 	if(remote.is_item_enabled(itemsindex["EFSButton"])) then
