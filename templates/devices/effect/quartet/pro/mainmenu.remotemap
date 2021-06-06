@@ -1,4 +1,1 @@
-Map	Button A1		Page=Main			{{ curpage }}	// template="BEffectPage"
-Map	Button A2		Page=BBD			{{ curpage }}	// template="BEffectPage"
-Map	Button A3		Page=FFT			{{ curpage }}	// template="BEffectPage"
-Map	Button A4		Page=Grain			{{ curpage }}	// template="BEffectPage"
+Map	ARadioButton4		Effect Select		SEL1	{{ curpage }}	// template="BRedOnOff"

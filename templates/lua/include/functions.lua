@@ -137,7 +137,14 @@ function get_button_color(context, itemname, buttonname)
 	{% include "devices/" + device.type + "/" + device.name + "/hooks/get_button_color.lua" ignore missing %}
 	{% endfor %}
 
-	if(string.find(itemname, "EFSButton")) then
+	if(string.find(itemname, "ARadioButton4")) then
+		local abuttonnum = tonumber(string.sub(buttonname, -1,-1))
+		if(abuttonnum-1 == value) then
+			color = activecolor
+		else
+			color = enabledcolor
+		end
+	elseif(string.find(itemname, "EFSButton")) then
 		buttonindex = tonumber(string.sub(buttonname, -3,-3))
 		if(enabled) then
 			if(buttonindex == 3-value) then
@@ -290,6 +297,12 @@ function get_button_color(context, itemname, buttonname)
 end
 
 function get_item_by_button(buttonname)
+	if(remote.is_item_enabled(itemsindex["ARadioButton4"]) and string.find(buttonname, "Button A")) then
+		local num = get_a_button_num(buttonname)
+		if(num <= 4) then
+			return "ARadioButton4"
+		end
+	end
 	if(remote.is_item_enabled(itemsindex["EFSButton"])) then
 		local row = get_button_row(buttonname)
 		local col = get_button_col(buttonname)
@@ -455,6 +468,10 @@ end
 
 function get_button_col(buttonname)
 	return(tonumber(string.match(buttonname, "Button %d%-(%d)")))
+end
+
+function get_a_button_num(buttonname)
+	return(tonumber(string.match(buttonname, "Button A(%d)")))
 end
 
 function is_up_udupbutton(buttonname, itemname)

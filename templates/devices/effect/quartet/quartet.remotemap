@@ -4,57 +4,58 @@
 {% set devicename="Quartet" -%}
 {% set shortname="quartet" -%}
 {% block groups %}
-Define Group	Page	Main	Chorus	BBD	FFT	Grain	Index	Internal
+Define Group	Page	Main	Index	Internal
+Define Group	Effect	Chorus	BBD	FFT	Grain
 {% endblock groups %}
 {% block main %}
 // Select
-Map	EffectSelect4		Effect Select
+Map	Sel1_0		Effect=Chorus
+Map	Sel1_1		Effect=BBD
+Map	Sel1_2		Effect=FFT
+Map	Sel1_3		Effect=Grain
 // Index
 Map	PageName		"Index"			Index
-Map	Button 2-7		Page=Main			Index
-Map	Button 3-7		Page=BBD			Index
-Map	Button 4-7		Page=FFT			Index
-Map	Button 5-7		Page=Grain			Index
-Map	Button C7		Page=Internal			Index
-// Chorus
-Map	PageName		"Chorus"			Main
+Map	Button 1-1		Page=Main			Index
+// Main
+Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
 Map	EFSButton		Enabled			Main
-Map	Fader 2		Chorus Delay			Main	// template="FEffect", defaultvalue=33
-Map	Fader 3		Chorus Depth			Main	// template="FLFO", defaultvalue=63
-Map	Fader 4		Chorus Rate			Main	// template="FLFO", defaultvalue=63
-Map	Fader 5		Chorus Feedback			Main	// template="FEffect", defaultvalue=0
-Map	Fader 6		Chorus Width			Main	// template="FEffect", defaultvalue=127
-Map	Fader 8		Chorus DryWet			Main	// template="FEffect", defaultvalue=127
+Map	Button 8-1		Stereo Mode			Main		// template="BBlueOnOff"
+// Chorus
+Map	SubPageName		"Chorus"			Main	Chorus
+Map	Fader 2		Chorus Delay			Main	Chorus	// template="FEffect", defaultvalue=33
+Map	Fader 3		Chorus Depth			Main	Chorus	// template="FLFO", defaultvalue=63
+Map	Fader 4		Chorus Rate			Main	Chorus	// template="FLFO", defaultvalue=63
+Map	Fader 5		Chorus Feedback			Main	Chorus	// template="FEffect", defaultvalue=0
+Map	Fader 7		Chorus Width			Main	Chorus	// template="FEffect", defaultvalue=127
+Map	Fader 8		Chorus DryWet			Main	Chorus	// template="FEffect", defaultvalue=127
+// End SubPage
 // BBD
-Map	PageName		"BBD"			BBD
-{{ rm.include_menus(curpage="BBD") -}}
-Map	EFSButton		Enabled			BBD
-Map	Fader 2		BBD Delay			BBD	// template="FEffect", defaultvalue=33
-Map	Fader 3		BBD Depth			BBD	// template="FLFO", defaultvalue=63
-Map	Fader 4		BBD Rate			BBD	// template="FLFO", defaultvalue=63
-Map	Fader 5		BBD Noise			BBD	// template="FEffect", defaultvalue=0
-Map	Fader 6		BBD Width			BBD	// template="FEffect", defaultvalue=127
-Map	Fader 8		BBD DryWet			BBD	// template="FEffect", defaultvalue=127
+Map	SubPageName		"BBD"			Main	BBD
+Map	Fader 2		BBD Delay			Main	BBD	// template="FEffect", defaultvalue=33
+Map	Fader 3		BBD Depth			Main	BBD	// template="FLFO", defaultvalue=63
+Map	Fader 4		BBD Rate			Main	BBD	// template="FLFO", defaultvalue=63
+Map	Fader 5		BBD Noise			Main	BBD	// template="FEffect", defaultvalue=0
+Map	Fader 7		BBD Width			Main	BBD	// template="FEffect", defaultvalue=127
+Map	Fader 8		BBD DryWet			Main	BBD	// template="FEffect", defaultvalue=127
+// End SubPage
 // FFT
-Map	PageName		"FFT"			FFT
-{{ rm.include_menus(curpage="FFT") -}}
-Map	EFSButton		Enabled			FFT
-Map	UDHButton 5-1_5-2		FFT Size			FFT	// template="UDEffect", defaultvalue=2
-Map	Fader 3		FFT Depth			FFT	// template="FLFO", defaultvalue=63
-Map	Fader 4		FFT Start			FFT	// template="FEffect", defaultvalue=0
-Map	Fader 5		FFT Stop			FFT	// template="FEffect", defaultvalue=0
-Map	Fader 6		FFT Width			FFT	// template="FEffect", defaultvalue=127
-Map	Fader 8		FFT DryWet			FFT	// template="FEffect", defaultvalue=127
+Map	SubPageName		"FFT"			Main	FFT
+Map	UDVButton 5-2_6-2		FFT Size			Main	FFT	// template="UDEffect", defaultvalue=2
+Map	Fader 3		FFT Depth			Main	FFT	// template="FLFO", defaultvalue=63
+Map	Fader 4		FFT Start			Main	FFT	// template="FEffect", defaultvalue=0
+Map	Fader 5		FFT End			Main	FFT	// template="FEffect", defaultvalue=127
+Map	Fader 7		FFT Width			Main	FFT	// template="FEffect", defaultvalue=127
+Map	Fader 8		FFT DryWet			Main	FFT	// template="FEffect", defaultvalue=127
+// End SubPage
 // Grain
-Map	PageName		"Grain"			Grain
-{{ rm.include_menus(curpage="Grain") -}}
-Map	EFSButton		Enabled			Grain
-Map	Button 5-1		Grain Phase			Grain	// template="BRedOnOff"
-Map	Fader 3		Grain Size			Grain	// template="FEffect", defaultvalue=63
-Map	Fader 4		Grain Depth			Grain	// template="FLFO", defaultvalue=63
-Map	Fader 5		Grain Jitter			Grain	// template="FEffect", defaultvalue=0
-Map	Fader 6		Grain Density			Grain	// template="FEffect", defaultvalue=127
-Map	Fader 7		Grain Width			Grain	// template="FEffect", defaultvalue=127
-Map	Fader 8		Grain DryWet			Grain	// template="FEffect", defaultvalue=127
+Map	SubPageName		"Grain"			Main	Grain
+Map	Button 5-1		Grain Phase			Main	Grain	// template="BRedOnOff"
+Map	Fader 3		Grain Size			Main	Grain	// template="FEffect", defaultvalue=63
+Map	Fader 4		Grain Depth			Main	Grain	// template="FLFO", defaultvalue=50
+Map	Fader 5		Grain Jitter			Main	Grain	// template="FEffect", defaultvalue=63
+Map	Fader 6		Grain Density			Main	Grain	// template="FEffect", defaultvalue=70
+Map	Fader 7		Grain Width			Main	Grain	// template="FEffect", defaultvalue=127
+Map	Fader 8		Grain DryWet			Main	Grain	// template="FEffect", defaultvalue=127
+// End SubPage
 {% endblock main %}

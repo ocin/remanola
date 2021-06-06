@@ -190,7 +190,11 @@ function handle_input_item(event, button)
 		g_buttondown[buttonname] = button.z
 		if(buttonname ~= itemname) then
 			local itemtype = get_item_type(itemname)
-			if(itemname == "EFSButton") then
+			if(itemname == "ARadioButton4") then
+				local num = get_a_button_num(buttonname)
+				local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = num-1 }
+				remote.handle_input(msg)
+			elseif(itemname == "EFSButton") then
 				local msg = { time_stamp = event.time_stamp, item = itemsindex[itemname], value = 3-row }
 				remote.handle_input(msg)
 			elseif(itemtype == "Fader" or itemtype == "BigFader" or itemtype == "Drawbar") then

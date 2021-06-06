@@ -15,6 +15,7 @@ local items = {
 	{name = "BarPosition", input= "button", output = "value", min = 0, max = 127},
 	{name = "BeatPosition", input= "button", output = "value", min = 0, max = 127},
 	{name = "EFSButton", input= "value", output = "value", min = 0, max = 2},
+	{name = "ARadioButton4", input= "value", output = "value", min = 0, max = 3, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}},
 	{name = "EngineSelect", input= "value", output = "value", min = 0, max = 2, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}},
 	{name = "EffectSelect", input= "value", output = "value", min = 0, max = 5, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}},
 	{name = "EffectSelect4", input= "value", output = "value", min = 0, max = 3, modes={"NORMAL", "SEL1", "SEL2", "SEL3", "SEL4"}},
