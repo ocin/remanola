@@ -104,6 +104,7 @@ local color_templates = {
 	["BOscModPage"]={enabledcolor=DAMBER, activecolor=AMBER, disabledcolor=NOCOLOR},
 	["BFilterPage"]={enabledcolor=DGREEN, activecolor=GREEN, disabledcolor=NOCOLOR},
 	["BFilterModPage"]={enabledcolor=DGREEN, activecolor=GREEN, disabledcolor=NOCOLOR},
+	["BGainPage"]={enabledcolor=DRED, activecolor=RED, disabledcolor=NOCOLOR},
 	["BMainEffectPage"]={enabledcolor=DBLUE, activecolor=BLUE, disabledcolor=NOCOLOR},
 	["BEffectPage"]={enabledcolor=DBLUE, activecolor=BLUE, disabledcolor=NOCOLOR},
 	["BEffect2Page"]={enabledcolor=DBLUE, activecolor=BLUE, disabledcolor=NOCOLOR},
