@@ -1,0 +1,3 @@
+Map	Button B1		Page=Main			{{ curpage }}	// template="BMainPage"
+Map	Button B2		Page=LFO			{{ curpage }}	// template="BLFOPage"
+Map	Button B3		Page=Modulator			{{ curpage }}	// template="BEnvPage"

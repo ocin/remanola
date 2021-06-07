@@ -29,7 +29,7 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect", defaultvalue=1
+Map	EFSButton		Enabled			Main
 Map	Button 4-1		Hold			Main	// template="BRedOnOff"
 Map	UDVButton 5-1_6-1		Band Count		SEL1	Main	// template="UDEffect", defaultvalue=2
 Map	UDVButton 7-1_8-1		Vocoder/Equalizer			Main	// template="UDEffect", defaultvalue=0

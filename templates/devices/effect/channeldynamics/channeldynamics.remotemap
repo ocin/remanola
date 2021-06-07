@@ -1,0 +1,47 @@
+{% extends "devices/effect/effect.remotemap" %}
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.ChannelDynamics" -%}
+{% set devicename="Channel Dynamics" -%}
+{% set shortname="channeldynamics" -%}
+{% block groups %}
+Define Group	Page	Main	Compressor	GateExpander	Index	Internal
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=Compressor			Index
+Map	Button 3-8		Page=GateExpander			Index
+// Main
+Map	PageName		"Main"			Main
+{{ rm.include_menus(curpage="Main") -}}
+Map	EFSButton		Enabled			Main
+Map	Fader 2		Input Gain			Main	// template="FGain", defaultvalue=63
+Map	Button 8-7		Sidechain			Main	// template="BRedOnOff"
+Map	Fader 8		Mix			Main	// template="FEffect", defaultvalue=127
+// Compressor
+Map	PageName		"Compressor"			Compressor
+{{ rm.include_menus(curpage="Compressor") -}}
+Map	EFSButton		Enabled			Compressor
+Map	Button 5-1		Comp On			Compressor	// template="BBlueOnOff"
+Map	Button 8-1		Comp Peak On			Compressor	// template="BBlueOnOff"
+Map	Fader 2		Input Gain			Compressor	// template="FGain", defaultvalue=63
+Map	Fader 3		Comp Ratio			Compressor	// template="FEffect", defaultvalue=63
+Map	Fader 4		Comp Threshold			Compressor	// template="FEffect", defaultvalue=63
+Map	Button 8-5		Comp Fast On			Compressor	// template="BBlueOnOff"
+Map	Fader 6		Comp Release			Compressor	// template="FEffect", defaultvalue=63
+Map	Meter 7		Comp Meter			Compressor
+Map	Fader 8		Mix			Compressor	// template="FEffect", defaultvalue=127
+// Gate/Expander
+Map	PageName		"Gate/Expander"			GateExpander
+{{ rm.include_menus(curpage="GateExpander") -}}
+Map	EFSButton		Enabled			GateExpander
+Map	Button 5-1		Gate On			GateExpander	// template="BBlueOnOff"
+Map	Button 8-1		Gate Exp On			GateExpander	// template="BBlueOnOff"
+Map	Fader 2		Gate Range			GateExpander	// template="FEffect", defaultvalue=63
+Map	Fader 3		Gate Hold			GateExpander	// template="FEffect", defaultvalue=0
+Map	Fader 4		Gate Threshold			GateExpander	// template="FEffect", defaultvalue=45
+Map	Button 8-5		Gate Fast On			GateExpander	// template="BBlueOnOff"
+Map	Fader 6		Gate Release			GateExpander	// template="FEffect", defaultvalue=63
+Map	Fader 8		Mix			GateExpander	// template="FEffect", defaultvalue=127
+{% endblock main %}

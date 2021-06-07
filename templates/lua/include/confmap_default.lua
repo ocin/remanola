@@ -9,6 +9,10 @@
 			["Knob *"]={template="FYellow"},
 			["UDHButton *"]={enabledcolor=YELLOW, activecolor=YELLOW, disabledcolor=NOCOLOR},
 			["UDVButton *"]={enabledcolor=YELLOW, activecolor=YELLOW, disabledcolor=NOCOLOR},
+			["EFSButton"]={enabledcolor=YELLOW, activecolor=GREEN, disabledcolor=NOCOLOR},
+			["ARadioButton2"]={template="BRedOnOff"},
+			["ARadioButton3"]={template="BRedOnOff"},
+			["ARadioButton4"]={template="BRedOnOff"},
 
 			["Button D1"]={enabledcolor=WGREEN, activecolor=WGREEN, disabledcolor=NOCOLOR},
 			["Button D2"]={enabledcolor=ORANGE, activecolor=YELLOW, disabledcolor=NOCOLOR},

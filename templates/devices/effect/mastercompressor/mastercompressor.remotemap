@@ -1,0 +1,25 @@
+{% extends "devices/effect/effect.remotemap" %}
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.MasterCompressor" -%}
+{% set devicename="Master Compressor" -%}
+{% set shortname="mastercompressor" -%}
+{% block groups %}
+Define Group	Page	Main	Index	Internal
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+// Main
+Map	PageName		"Main"			Main
+Map	EFSButton		Enabled			Main
+Map	Button 8-1		Sidechain			Main	// template="BRedOnOff"
+Map	Fader 2		Input Gain			Main	// template="FGain", defaultvalue=63
+Map	Fader 3		Threshold			Main	// template="FEffect", defaultvalue=63
+Map	UDVButton 1-4_2-4		Ratio			Main	// template="UDEffect2", defaultvalue=0
+Map	UDVButton 5-4_6-4		Attack			Main	// template="UDFreq2", defaultvalue=2
+Map	UDVButton 7-4_8-4		Release			Main	// template="UDFreq", defaultvalue=2
+Map	Fader 6		Make-Up Gain			Main	// template="FGain", defaultvalue=63
+Map	Meter 7		Comp Meter			Main
+Map	Fader 8		Mix			Main	// template="FEffect", defaultvalue=127
+{% endblock main %}

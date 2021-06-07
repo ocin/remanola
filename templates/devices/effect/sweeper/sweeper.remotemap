@@ -1,0 +1,90 @@
+{% extends "devices/effect/effect.remotemap" %}
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.Sweeper" -%}
+{% set devicename="Sweeper" -%}
+{% set shortname="sweeper" -%}
+{% block groups %}
+Define Group	Page	Main	LFO	Modulator	Index	Internal
+Define Group	Effect	Phaser	Flanger	Filter
+Define Group	TempoSync	Free	Sync
+Define Group	ModType	Env	Audio
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+// Main
+Map	PageName		"Main"			Main
+Map	Sel1_0		Effect=Phaser			Main
+Map	Sel1_1		Effect=Flanger			Main
+Map	Sel1_2		Effect=Filter			Main
+{{ rm.include_menus(curpage="Main") -}}
+Map	EFSButton		Enabled			Main
+Map	Button 8-1		Stereo Mode			Main	// template="BBlueOnOff"
+Map	Fader 6		Spread			Main	// template="FEffect", defaultvalue=0
+Map	Fader 7		DryWet			Main	// template="FEffect", defaultvalue=127
+Map	Fader 8		Volume			Main	// template="FGain", defaultvalue=63
+Map	ARadioButton3		Type		SEL1	Main	// template="BRedOnOff"
+// Phaser
+Map	SubPageName		"Phaser"			Main	Phaser
+Map	Fader 2		Freq			Main	Phaser	// template="FFreq", defaultvalue=63
+Map	Fader 3		Bandwidth			Main	Phaser	// template="FEffect", defaultvalue=30
+Map	Fader 4		Feedback			Main	Phaser	// template="FEffect", defaultvalue=63
+Map	UDVButton 1-5_2-5		Phaser Stages			Main	Phaser	// template="UDEffect", defaultvalue=4
+Map	Button 5-5		Polarity			Main	Phaser	// template="BRedOnOff"
+Map	Button 7-5		Mute Dry			Main	Phaser	// template="BRedOnOff"
+// End SubPage
+// Flanger
+Map	SubPageName		"Flanger"			Main	Flanger
+Map	Fader 2		Freq			Main	Flanger	// template="FFreq", defaultvalue=63
+Map	Fader 4		Feedback			Main	Flanger	// template="FEffect", defaultvalue=63
+Map	Button 5-5		Polarity			Main	Flanger	// template="BRedOnOff"
+Map	Button 7-5		Mute Dry			Main	Flanger	// template="BRedOnOff"
+// End SubPage
+// Filter
+Map	SubPageName		"Filter"			Main	Filter
+Map	Fader 2		Filter Drive			Main	Filter	// template="FGain", defaultvalue=30
+Map	Fader 3		Freq			Main	Filter	// template="FFreq", defaultvalue=63
+Map	Fader 4		Reso			Main	Filter	// template="FEffect", defaultvalue=0
+Map	UDVButton 1-5_2-5		Filter Type			Main	Filter	// template="UDFreq", defaultvalue=4
+// End SubPage
+// LFO
+Map	PageName		"LFO"			LFO
+{{ rm.include_menus(curpage="LFO") -}}
+Map	Sel1_0		TempoSync=Free			LFO
+Map	Sel1_1		TempoSync=Sync			LFO
+Map	UDVButton 1-1_2-1		LFO Wave			LFO	// template="UDLFO", defaultvalue=1
+Map	Button 8-1		LFO Sync		SEL1	LFO	// template="BRedOnOff"
+Map	Fader 2		LFO Rate			LFO	Free	// template="FFreq", defaultvalue=15
+Map	UDVButton 7-2_8-2		LFO Synced Rate			LFO	Sync	// template="UDFreq", defaultvalue=0
+Map	Fader 5		Rate Mod			LFO	// template="FLFO", defaultvalue=0
+Map	Fader 7		LFO Freq Mod			LFO	// template="FFreq", defaultvalue=63
+Map	Fader 8		LFO Amp Mod			LFO	// template="FGain", defaultvalue=63
+// Modulator
+Map	PageName		"Modulator"			Modulator
+{{ rm.include_menus(curpage="Modulator") -}}
+Map	Sel2_1		ModType=Env			Modulator
+Map	Sel2_0		ModType=Audio			Modulator
+Map	ARadioButton2		ModType		SEL2	Modulator	// template="BRedOnOff", inverted=true
+// Env
+Map	SubPageName		"Env"			Modulator	Env
+Map	Sel1_0		TempoSync=Free			Modulator	Env
+Map	Sel1_1		TempoSync=Sync			Modulator	Env
+Map	Button 8-1		EditYPos			Modulator	Env	// template="BRedOnOff"
+Map	Button 1-2		Env Loop			Modulator	Env	// template="BRedOnOff"
+Map	Button 8-2		BeatSync		SEL1	Modulator	Env	// template="BRedOnOff"
+Map	Fader 3		Env Rate			Modulator	Env	Free	// template="FFreq", defaultvalue=63
+Map	UDVButton 7-3_8-3		Env Synced Rate			Modulator	Env	Sync	// template="UDFreq", defaultvalue=0
+Map	Button 8-4		Trig On			Modulator	Env	// template="BRedOnOff"
+Map	Fader 5		Trig Thres			Modulator	Env	// template="FEffect", defaultvalue=30
+// End SubPage
+// Audio
+Map	SubPageName		"Audio"			Modulator	Audio
+Map	Fader 2		Follow Gain			Modulator	Audio	// template="FGain", defaultvalue=63
+Map	Fader 3		Follow Attack			Modulator	Audio	// template="FLFO", defaultvalue=63
+Map	Fader 4		Follow Release			Modulator	Audio	// template="FLFO", defaultvalue=63
+// End SubPage
+Map	Fader 6		Rate Mod			Modulator	// template="FLFO", defaultvalue=0
+Map	Fader 7		Env Freq Mod			Modulator	// template="FFreq", defaultvalue=63
+Map	Fader 8		Env Amp Mod			Modulator	// template="FGain", defaultvalue=63
+{% endblock main %}

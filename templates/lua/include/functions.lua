@@ -137,7 +137,26 @@ function get_button_color(context, itemname, buttonname)
 	{% include "devices/" + device.type + "/" + device.name + "/hooks/get_button_color.lua" ignore missing %}
 	{% endfor %}
 
-	if(string.find(itemname, "UDHButton %d%-%d_%d%-%d") or string.find(itemname, "UDVButton %d%-%d_%d%-%d")) then
+	if(string.find(itemname, "ARadioButton")) then
+		local abuttonnum = tonumber(string.sub(buttonname, -1,-1))
+		if(get_item_conf_map_field(g_colorscheme, get_current_page(), itemname, "inverted")) then
+			abuttonnum = tonumber(string.match(itemname, "ARadioButton(%d)"))-abuttonnum+1
+		end
+		if(abuttonnum-1 == value) then
+			color = activecolor
+		else
+			color = enabledcolor
+		end
+	elseif(string.find(itemname, "EFSButton")) then
+		buttonindex = tonumber(string.sub(buttonname, -3,-3))
+		if(enabled) then
+			if(buttonindex == 3-value) then
+				color = efsactive[buttonindex]
+			else
+				color = efsinactive[buttonindex]
+			end
+		end
+	elseif(string.find(itemname, "UDHButton %d%-%d_%d%-%d") or string.find(itemname, "UDVButton %d%-%d_%d%-%d")) then
 		if(enabled) then
 			if(g_buttondown[buttonname] ~= nil) then
 				color = activecolor
@@ -281,6 +300,31 @@ function get_button_color(context, itemname, buttonname)
 end
 
 function get_item_by_button(buttonname)
+	if(remote.is_item_enabled(itemsindex["ARadioButton2"]) and string.find(buttonname, "Button A")) then
+		local num = get_a_button_num(buttonname)
+		if(num <= 2) then
+			return "ARadioButton2"
+		end
+	end
+	if(remote.is_item_enabled(itemsindex["ARadioButton3"]) and string.find(buttonname, "Button A")) then
+		local num = get_a_button_num(buttonname)
+		if(num <= 3) then
+			return "ARadioButton3"
+		end
+	end
+	if(remote.is_item_enabled(itemsindex["ARadioButton4"]) and string.find(buttonname, "Button A")) then
+		local num = get_a_button_num(buttonname)
+		if(num <= 4) then
+			return "ARadioButton4"
+		end
+	end
+	if(remote.is_item_enabled(itemsindex["EFSButton"])) then
+		local row = get_button_row(buttonname)
+		local col = get_button_col(buttonname)
+		if((col == 1) and (row <= 3)) then
+			return "EFSButton"
+		end
+	end
 	for i=1,8 do
 		local fadername = "Fader "..tostring(i)
 		if(remote.is_item_enabled(itemsindex[fadername])) then
@@ -439,6 +483,10 @@ end
 
 function get_button_col(buttonname)
 	return(tonumber(string.match(buttonname, "Button %d%-(%d)")))
+end
+
+function get_a_button_num(buttonname)
+	return(tonumber(string.match(buttonname, "Button A(%d)")))
 end
 
 function is_up_udupbutton(buttonname, itemname)

@@ -18,7 +18,7 @@ Map	Button C7		Page=Internal			Index
 // Main
 Map	PageName		"Main"			Main
 {{ rm.include_menus(curpage="Main") -}}
-Map	UDVButton 1-1_2-1		Enabled			Main	// template="UDEffect", defaultvalue=1
+Map	EFSButton		Enabled			Main
 Map	UDVButton 7-1_8-1		Routing			Main	// template="UDPerf", defaultvalue=1
 Map	Fader 2		Squash			Main	// template="FEffect", defaultvalue=0
 Map	Fader 3		Release			Main	// template="FEnv", defaultvalue=63

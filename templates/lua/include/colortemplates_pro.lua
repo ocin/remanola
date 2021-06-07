@@ -89,6 +89,7 @@ local color_templates = {
 	["BBGreenOnOff"]={enabledcolor=DGREEN, activecolor=GREEN, disabledcolor=NOCOLOR},
 	["BBRedOnOff"]={enabledcolor=DRED, activecolor=RED, disabledcolor=NOCOLOR},
 	["BBBlueOnOff"]={enabledcolor=DBLUE, activecolor=BLUE, disabledcolor=NOCOLOR},
+	["BBWhiteOnOff"]={enabledcolor=DGREY, activecolor=WHITE, disabledcolor=NOCOLOR},
 	["BPerfOnOff"]={enabledcolor=DCYAN, activecolor=CYAN, disabledcolor=NOCOLOR},
 	-- Button On/OFf Mix channel
 	["BMixOnOff"]={enabledcolor=HGREY, activecolor=BLUE, disabledcolor=NOCOLOR},
@@ -103,6 +104,7 @@ local color_templates = {
 	["BOscModPage"]={enabledcolor=DAMBER, activecolor=AMBER, disabledcolor=NOCOLOR},
 	["BFilterPage"]={enabledcolor=DGREEN, activecolor=GREEN, disabledcolor=NOCOLOR},
 	["BFilterModPage"]={enabledcolor=DGREEN, activecolor=GREEN, disabledcolor=NOCOLOR},
+	["BGainPage"]={enabledcolor=DRED, activecolor=RED, disabledcolor=NOCOLOR},
 	["BMainEffectPage"]={enabledcolor=DBLUE, activecolor=BLUE, disabledcolor=NOCOLOR},
 	["BEffectPage"]={enabledcolor=DBLUE, activecolor=BLUE, disabledcolor=NOCOLOR},
 	["BEffect2Page"]={enabledcolor=DBLUE, activecolor=BLUE, disabledcolor=NOCOLOR},
