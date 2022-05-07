@@ -17,6 +17,8 @@
 # You should have received a copy of the GNU General Public License
 # along with Remanola.  If not, see <http://www.gnu.org/licenses/>.
 
+set -e
+
 check_for_undef() {
 	if grep -q UNDEFINED $1; then 
 		echo "Found UNDEFINED tag in $1"
@@ -60,7 +62,7 @@ fi
 check_for_undef "$OUTDIR/Launchpad-Pro.remotemap"
 ./build_lua.py
 
-/opt/local/share/luarocks/bin/luacheck --config .luacheckrc /tmp/remanola-out/Launchpad-Pro.lua
+#/opt/local/share/luarocks/bin/luacheck --config .luacheckrc /tmp/remanola-out/Launchpad-Pro.lua
 
 # Mini
 #cp -r $OUTDIR/Launchpad-Mini.lua "$CODECSDIR"

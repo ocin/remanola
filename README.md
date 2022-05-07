@@ -5,10 +5,10 @@ This is an alternative mapping of Novation Launchpad Mini for Propellerhead Reas
 Downloads:
 
 Mac OS X Installer:
-https://www.niconet.se/nico/Remanola/Remanola-0.11.1.pkg
+https://www.niconet.se/nico/Remanola/Remanola-1.0.0.pkg
 
 Zip file:
-https://www.niconet.se/nico/Remanola/Remanola-0.11.1.zip
+https://www.niconet.se/nico/Remanola/Remanola-1.0.0.zip
 
 User Manual:
 https://www.niconet.se/nico/Remanola/RemanolaUserManual-0.11.1.pdf
