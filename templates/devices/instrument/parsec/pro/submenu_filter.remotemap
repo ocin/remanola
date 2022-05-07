@@ -1,0 +1,2 @@
+Map	Button A1		Page=SoundEngineA			{{ curpage }}	// template="BFilterPage"
+Map	Button A2		Page=SoundEngineB			{{ curpage }}	// template="BFilterPage"

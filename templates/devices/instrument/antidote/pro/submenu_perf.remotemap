@@ -1,0 +1,6 @@
+Map	Button A1		Page=Arp			{{ curpage }}	// template="BPerformancePage"
+Map	Button A3		Page=ModMatrix1			{{ curpage }}	// template="BPerformancePage"
+Map	Button A4		Page=ModMatrix2			{{ curpage }}	// template="BPerformancePage"
+Map	Button A5		Page=ModMatrix3			{{ curpage }}	// template="BPerformancePage"
+Map	Button A6		Page=ModMatrix4			{{ curpage }}	// template="BPerformancePage"
+Map	Button A7		Page=ModMatrix5			{{ curpage }}	// template="BPerformancePage"

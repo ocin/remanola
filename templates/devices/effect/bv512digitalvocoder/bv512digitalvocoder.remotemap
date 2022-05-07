@@ -1,0 +1,107 @@
+{% extends "devices/effect/effect-nopatch.remotemap" %}
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="BV512 Digital Vocoder" -%}
+{% set devicename="BV512 Digital Vocoder" -%}
+{% set shortname="bv512digitalvocoder" -%}
+{# Variables -#}
+{# End Variables -#}
+{% block groups %}
+Define Group	Page	Main	Band1-8	Band9-16	Band17-24	Band25-32	Index	Internal
+Define Group	BandCount	4Band	8Band	16Band	32Band	FFT
+{% endblock groups %}
+{% block main %}
+// Index
+Map	Sel1_0		BandCount=4Band			
+Map	Sel1_32		BandCount=8Band			
+Map	Sel1_64		BandCount=16Band			
+Map	Sel1_95		BandCount=32Band			
+Map	Sel1_127		BandCount=32Band			
+Map	PageName		"Index"			
+{{ rm.include_menus(curpage="Index") -}}
+Map	UDVButton 7-1_8-1		Band Count		SEL1	Index	// template="UDNocolor"
+//Map	Hidden		Band Count		SEL1	Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=Band1-8			Index
+Map	Button 3-8		Page=Band9-16			Index
+Map	Button 4-8		Page=Band17-24			Index
+Map	Button 5-8		Page=Band25-32			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main
+{{ rm.include_menus(curpage="Main") -}}
+Map	EFSButton		Enabled			Main
+Map	Button 4-1		Hold			Main	// template="BRedOnOff"
+Map	UDVButton 5-1_6-1		Band Count		SEL1	Main	// template="UDEffect", defaultvalue=2
+Map	UDVButton 7-1_8-1		Vocoder/Equalizer			Main	// template="UDEffect", defaultvalue=0
+Map	Meter 2		Source Peak Meter			Main
+Map	Meter 3		Modulator Peak Meter			Main
+Map	Fader 4		Attack			Main	// template="FAmount", defaultvalue=0
+Map	Fader 5		Decay			Main	// template="FAmount", defaultvalue=30
+Map	Knob V6		Shift			Main	// template="FGain"
+Map	Fader 7		HF Emphasis			Main	// template="FFreq", defaultvalue=64
+Map	Fader 8		Dry/Wet			Main	// template="FEffect", defaultvalue=127
+// Band1-8
+Map	PageName		"Band1-8"			Band1-8
+{{ rm.include_menus(curpage="Band1-8") -}}
+Map	UDVButton 7-1_8-1		Band Count		SEL1	Band1-8	// template="UDNocolor"
+Map	Fader 1		Band Level 1			Band1-8	// template="FVCFreq", defaultvalue=89
+Map	Fader 2		Band Level 2			Band1-8	// template="FVCFreq", defaultvalue=89
+Map	Fader 3		Band Level 3			Band1-8	// template="FVCFreq", defaultvalue=89
+Map	Fader 4		Band Level 4			Band1-8	// template="FVCFreq", defaultvalue=89
+Map	Fader 5		Band Level 5			Band1-8	8Band
+Map	Fader 6		Band Level 6			Band1-8	8Band
+Map	Fader 7		Band Level 7			Band1-8	8Band
+Map	Fader 8		Band Level 8			Band1-8	8Band
+Map	Fader 5		Band Level 5			Band1-8	16Band
+Map	Fader 6		Band Level 6			Band1-8	16Band
+Map	Fader 7		Band Level 7			Band1-8	16Band
+Map	Fader 8		Band Level 8			Band1-8	16Band
+Map	Fader 5		Band Level 5			Band1-8	32Band
+Map	Fader 6		Band Level 6			Band1-8	32Band
+Map	Fader 7		Band Level 7			Band1-8	32Band
+Map	Fader 8		Band Level 8			Band1-8	32Band
+// Band9-16 
+Map	PageName		"Band9-16"			Band9-16
+{{ rm.include_menus(curpage="Band9-16") -}}
+Map	UDVButton 7-1_8-1		Band Count		SEL1	Band9-16	// template="UDNocolor"
+Map	Fader 1		Band Level 9			Band9-16	16Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 2		Band Level 10			Band9-16	16Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 3		Band Level 11			Band9-16	16Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 4		Band Level 12			Band9-16	16Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 5		Band Level 13			Band9-16	16Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 6		Band Level 14			Band9-16	16Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 7		Band Level 15			Band9-16	16Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 8		Band Level 16			Band9-16	16Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 1		Band Level 9			Band9-16	32Band
+Map	Fader 2		Band Level 10			Band9-16	32Band
+Map	Fader 3		Band Level 11			Band9-16	32Band
+Map	Fader 4		Band Level 12			Band9-16	32Band
+Map	Fader 5		Band Level 13			Band9-16	32Band
+Map	Fader 6		Band Level 14			Band9-16	32Band
+Map	Fader 7		Band Level 15			Band9-16	32Band
+Map	Fader 8		Band Level 16			Band9-16	32Band
+// Band17-24
+Map	PageName		"Band17-24"			Band17-24
+{{ rm.include_menus(curpage="Band17-24") -}}
+Map	UDVButton 7-1_8-1		Band Count		SEL1	Band17-24	// template="UDNocolor"
+Map	Fader 1		Band Level 17			Band17-24	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 2		Band Level 18			Band17-24	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 3		Band Level 19			Band17-24	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 4		Band Level 20			Band17-24	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 5		Band Level 21			Band17-24	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 6		Band Level 22			Band17-24	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 7		Band Level 23			Band17-24	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 8		Band Level 24			Band17-24	32Band	// template="FVCFreq", defaultvalue=89
+// Band25-32
+Map	PageName		"Band25-32"			Band25-32
+{{ rm.include_menus(curpage="Band25-32") -}}
+Map	UDVButton 7-1_8-1		Band Count		SEL1	Band25-32	// template="UDNocolor"
+Map	Fader 1		Band Level 25			Band25-32	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 2		Band Level 26			Band25-32	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 3		Band Level 27			Band25-32	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 4		Band Level 28			Band25-32	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 5		Band Level 29			Band25-32	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 6		Band Level 30			Band25-32	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 7		Band Level 31			Band25-32	32Band	// template="FVCFreq", defaultvalue=89
+Map	Fader 8		Band Level 32			Band25-32	32Band	// template="FVCFreq", defaultvalue=89
+{% endblock main %}

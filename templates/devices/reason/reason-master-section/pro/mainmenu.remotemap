@@ -1,0 +1,8 @@
+Map	Button B1		Page=Main			{{ curpage }}	// template="BMainPage"
+Map	Button B2		Page=ChFaders			{{ curpage }}	// template="BAmpPage"
+Map	Button B3		Page=ChPans			{{ curpage }}	// template="BAmpPage"
+Map	Button B4		Page=ChMutesSolos			{{ curpage }}	// template="BPerformancePage"
+Map	Button B5		Page={{ sendreturnpage }}			{{ curpage }}	// template="BEffectPage"
+Map	Button B6		Page=MasterComp			{{ curpage }}	// template="BEffectPage"
+Map	Button B7		Page=MasterSend			{{ curpage }}	// template="BEffectPage"
+Map	Button B8		Page=MasterInsert			{{ curpage }}	// template="BEffectPage"

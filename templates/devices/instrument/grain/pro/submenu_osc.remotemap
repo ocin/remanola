@@ -1,0 +1,3 @@
+Map	Button A1		Page=Grains			{{ curpage }}	// template="BOscPage"
+Map	Button A2		Page=Pitch			{{ curpage }}	// template="BOscModPage"
+Map	Button A5		Page=Osc			{{ curpage }}	// template="BOscPage"

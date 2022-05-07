@@ -1,0 +1,97 @@
+{# Variables -#}
+{% set show_pitch_bend_range=true -%}
+{% set baseshortname="Shared/klang_pangea_humana" -%}
+{% set shortname="klang_pangea_humana" -%}
+{% set devicetype="instrument" -%}
+{% set dv_instrument={'Klang': 2, 'Humana': 6, 'Pangea': 9} -%}
+{# End Variables -#}
+{% include "remotemap/include/device/scope.remotemap" %}
+Define Group	Page	Main	Perf	Instrument	Filter	FilterEnv	Amp	Delay	Reverb	Index	Keyboard	Internal
+Define Group	TempoSync	Free	Sync
+{% include "remotemap/include/device/instrument.remotemap" %}
+{% import "remotemap/include/macros.remotemap" as rm with context %}
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=Amp			Index
+Map	Button 1-5		Page=Perf			Index
+Map	Button 2-1		Page=Instrument			Index
+Map	Button 2-5		Page=Filter			Index
+Map	Button 2-6		Page=FilterEnv			Index
+Map	Button 2-8		Page=Delay			Index
+Map	Button 3-8		Page=Reverb			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main
+{{ rm.include_menus(curpage="Main") -}}
+Map	UDVButton 1-2_2-2		Instrument			Main	// template="UDOsc", inverted=true, defaultvalue={{ dv_instrument[devicename] }}
+Map	Fader 8		Master_Volume			Main	// template="FVol", defaultvalue=80
+// Perf
+Map	PageName		"Perf"			Perf
+{{ rm.include_menus(curpage="Perf") -}}
+Map	UDVButton 7-1_8-1		Pitch_Bend_Range			Perf	// template="UDPerf", defaultvalue=2
+{% if devicename == "Klang" %}
+Map	Fader 2		Mod Wheel to Sample Start			Perf	// template="FOsc", defaultvalue=99
+Map	Fader 3		Mod Wheel to Filter Cutoff			Perf	// template="FFreq", defaultvalue=64
+Map	Fader 4		Mod Wheel to Amp Level			Perf	// template="FVol", defaultvalue=64
+{% else %}
+Map	Fader 2		ModWheel_to_SampleStart			Perf	// template="FOsc", defaultvalue=99
+Map	Fader 3		ModWheel_to_Filter_Cutoff			Perf	// template="FFreq", defaultvalue=64
+Map	Fader 4		ModWheel_to_Amp_Level			Perf	// template="FVol", defaultvalue=64
+{% endif %}
+// Instrument
+Map	PageName		"Instrument"			Instrument
+{{ rm.include_menus(curpage="Instrument") -}}
+Map	UDVButton 1-2_2-2		Instrument			Instrument	// template="UDOsc", inverted=true, defaultvalue={{ dv_instrument[devicename] }}
+Map	Fader 4		SampleStart			Instrument	// template="FOsc", defaultvalue=0
+Map	UDVButton 1-5_2-5		Octave			Instrument	// template="UDFreq", defaultvalue=2
+Map	UDVButton 1-6_2-6		Semitune			Instrument	// template="UDFreq", defaultvalue=12
+Map	UDVButton 1-7_2-7		Finetune			Instrument	// template="UDFreq", defaultvalue=50
+// Filter
+Map	PageName		"Filter" 			Filter
+{{ rm.include_menus(curpage="Filter") -}}
+Map	Button 1-1		Filter_On			Filter	// template="BRedOnOff"
+Map	UDVButton 1-2_2-2		Filter_Type			Filter	// template="UDFreq", inverted=true, defaultvalue=0
+Map	Fader 3		Filter_Cutoff			Filter	// template="FFreq", defaultvalue=44
+Map	Fader 4		Filter_Reso			Filter	// template="FEffect", defaultvalue=0
+Map	Fader 5		Filter_Env			Filter	// template="FEnv", defaultvalue=83
+Map	Fader 7		Filter_Velocity			Filter	// template="FPerf", defaultvalue=0
+Map	Fader 8		Filter_KeyFollow			Filter	// template="FPerf", defaultvalue=0
+// FilterEnv
+Map	PageName		"Filter Envelope"			FilterEnv
+{{ rm.include_menus(curpage="FilterEnv") -}}
+Map	Fader 2		Filter_Env			FilterEnv	// template="FEnv", defaultvalue=83
+Map	Fader 4		Filter_Attack			FilterEnv	// template="FFreq", defaultvalue=0
+Map	Fader 5		Filter_Decay			FilterEnv	// template="FFreq", defaultvalue=64
+Map	Fader 6		Filter_Sustain			FilterEnv	// template="FFreq", defaultvalue=0
+Map	Fader 7		Filter_Release			FilterEnv	// template="FFreq", defaultvalue=56
+// Amp
+Map	PageName		"Amp"			Amp
+{{ rm.include_menus(curpage="Amp") -}}
+Map	Fader 2		Amp_Velocity			Amp	// template="FPerf", defaultvalue=67
+Map	Fader 4		Amp_Attack			Amp	// template="FVol", defaultvalue=0
+Map	Fader 5		Amp_Decay			Amp	// template="FVol", defaultvalue=80
+Map	Fader 6		Amp_Sustain			Amp	// template="FVol", defaultvalue=127
+Map	Fader 7		Amp_Release			Amp	// template="FVol", defaultvalue=94
+// Delay
+Map	PageName		"Delay"			Delay
+{{ rm.include_menus(curpage="Delay") -}}
+Map	Sel1_0		TempoSync=Free			Delay
+Map	Sel1_1		TempoSync=Sync			Delay
+Map	Button 1-1		Delay_On			Delay	// template="BRedOnOff"
+Map	Fader 2		Delay_Time			Delay	Free	// template="FFreq", defaultvalue=38
+Map	UDVButton 7-2_8-2		Synced_Delay_Time			Delay	Sync	// template="UDFreq", defaultvalue=6
+Map	Button 1-3		Delay_Sync		SEL1	Delay	// template="BRedOnOff"
+Map	Fader 4		Delay_Feedback			Delay	// template="FEffect", defaultvalue=65
+Map	Button 1-5		Delay_PingPong			Delay	// template="BRedOnOff"
+Map	Fader 6		Delay_Damp			Delay	// template="FEffect", defaultvalue=0
+Map	Fader 7		Delay{{ soundiron_wtf_delay }}Amount			Delay	// template="FEffect", defaultvalue=45
+// Reverb
+Map	PageName		"Reverb"			Reverb
+{{ rm.include_menus(curpage="Reverb") -}}
+Map	Button 1-1		Reverb_On			Reverb	// template="BRedOnOff"
+Map	Fader 2		Reverb_Time			Reverb	// template="FEffect", defaultvalue=70
+Map	Fader 3		Reverb_PreDelay			Reverb	// template="FFreq", defaultvalue=0
+Map	Fader 5		Reverb_HighDamp			Reverb	// template="FFreq", defaultvalue=34
+Map	Fader 6		Reverb_LowDamp			Reverb	// template="FFreq", defaultvalue=0
+Map	Fader 8		Reverb{{ soundiron_wtf_reverb }}Amount			Reverb	// template="FEffect", defaultvalue=45

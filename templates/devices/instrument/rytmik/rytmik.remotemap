@@ -1,0 +1,71 @@
+{% extends "devices/instrument/instrument.remotemap" %}
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.DMFC" -%}
+{% set devicename="Rytmik" -%}
+{% set shortname="rytmik" -%}
+{# Variables -#}
+{% set drumpage1default="Drum1" -%}
+{# End Variables -#}
+{% block groups %}
+Define Group	Page	Main	Keyboard	Internal	Index	Drum1	Drum2	Drum3	Drum4	Drum5	Drum6	Drum7	Drum8	Delay	Reverb	Comp
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+{{ rm.include_menus(curpage="Index") -}}
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-1		Page=Drum1			Index
+Map	Button 2-2		Page=Drum2			Index
+Map	Button 2-3		Page=Drum3			Index
+Map	Button 2-4		Page=Drum4			Index
+Map	Button 3-1		Page=Drum5			Index
+Map	Button 3-2		Page=Drum6			Index
+Map	Button 3-3		Page=Drum7			Index
+Map	Button 3-4		Page=Drum8			Index
+Map	Button 1-8		Page=Delay			Index
+Map	Button 2-8		Page=Reverb			Index
+Map	Button 3-8		Page=Comp			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main
+{{ rm.include_menus(curpage="Main") -}}
+Map	Fader 1		Master_Pitch			Main	// template="FOsc"
+Map	Fader 2		Master_Reverb			Main	// template="FEffect"
+Map	Fader 3		Master_Filter			Main	// template="FFreq"
+Map	Fader 4		Master_Delay			Main	// template="FEffect"
+Map	Fader 5		Master_Decay			Main	// template="FEffect"
+Map	Fader 6		Master_Distortion			Main	// template="FEffect"
+Map	Fader 8		Master_Volume			Main	// template="FVol", defaultvalue=101
+{% for drumnum in range(1,9) -%}
+// Drum{{ drumnum }}
+Map	PageName		"Drum{{ drumnum }}"			Drum{{ drumnum }}
+{{ rm.include_menus(curpage="Drum"+drumnum|string, submenu="drum", drumpage1="Drum"+drumnum|string) -}}
+Map	Fader 1		Drum_{{ drumnum }}_Volume			Drum{{ drumnum }}	// template="FVol", defaultvalue=101
+Map	Button 1-2		Drum_{{ drumnum }}_Mute			Drum{{ drumnum }}	// template="BMute"
+Map	Button 2-2		Drum_{{ drumnum }}_Solo			Drum{{ drumnum }}	// template="BSolo"
+Map	Fader 3		Drum_{{ drumnum }}_End			Drum{{ drumnum }}	// template="FOsc", defaultvalue=127
+Map	Fader 4		Drum_{{ drumnum }}_Release			Drum{{ drumnum }}	// template="FOsc", defaultvalue=0
+Map	Fader 5		Drum_{{ drumnum }}_Delay_Amount				Drum{{ drumnum }}	// template="FEffect", defaultvalue=0
+Map	Fader 6		Drum_{{ drumnum }}_Reverb_Amount			Drum{{ drumnum }}	// template="FEffect", defaultvalue=0
+Map	Knob V7		Drum_{{ drumnum }}_Pan			Drum{{ drumnum }}	// template="FVol"
+Map	MFader 1-8		Drum_{{ drumnum }}_Hi_Cut_Freq			Drum{{ drumnum }}	// template="FFreq", defaultvalue=127
+Map	MFader 3-8		Drum_{{ drumnum }}_Lo_Cut_Freq			Drum{{ drumnum }}	// template="FFreq", defaultvalue=0
+Map	MFader 5-8		Drum_{{ drumnum }}_Dist_Drive			Drum{{ drumnum }}	// template="FEffect", defaultvalue=0
+{% endfor -%}
+// Delay
+Map	PageName		"Delay"			Delay
+{{ rm.include_menus(curpage="Delay") -}}
+Map	UDVButton 1-1_2-1		Delay_Time			Delay	// template="UDFreq", defaultvalue=0
+Map	Fader 2		Delay_Feedback			Delay	// template="FEffect", defaultvalue=64
+// Reverb
+Map	PageName		"Reverb"			Reverb
+{{ rm.include_menus(curpage="Reverb") -}}
+Map	Fader 1		Reverb_Decay			Reverb	// template="FEffect", defaultvalue=64
+Map	Fader 2		Reverb_LoCut			Reverb	// template="FFreq", defaultvalue=0
+Map	Fader 3		Reverb_HiCut			Reverb	// template="FFreq", defaultvalue=127
+// Comp
+Map	PageName		"Comp"			Comp
+{{ rm.include_menus(curpage="Comp") -}}
+Map	Fader 1		Compressor_Ratio			Comp	// template="FEffect", defaultvalue=50
+Map	Fader 2		Compressor_Threshold			Comp	// template="FEffect", defaultvalue=85
+{% endblock main %}

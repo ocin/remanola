@@ -1,0 +1,6 @@
+Map	Button A1		Page=Eng{{ engnum }}Osc			{{ curpage }}	// template="BOscPage"
+Map	Button A2		Page=Eng{{ engnum }}Mod1			{{ curpage }}	// template="BOscModPage"
+Map	Button A3		Page=Eng{{ engnum }}Mod2			{{ curpage }}	// template="BOscModPage"
+Map	Button A5		Page=Eng{{ engnum }}Filter			{{ curpage }}	// template="BFilterPage"
+Map	Button A6		Page=Eng{{ engnum }}Harm			{{ curpage }}	// template="BFilterModPage"
+Map	Button A7		Page=Eng{{ engnum }}Unison			{{ curpage }}	// template="BEffectPage"

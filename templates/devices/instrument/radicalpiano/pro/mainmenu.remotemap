@@ -1,0 +1,7 @@
+Map	Button B1		Page=Main			{{ curpage }}	// template="BMainPage"
+Map	Button B2		Page=Tune			{{ curpage }}	// template="BOscPage"
+Map	Button B3		Page=Resonance			{{ curpage }}	// template="BOscPage"
+Map	Button B4		Page=Mechanics			{{ curpage }}	// template="BOscPage"
+Map	Button B6		Page=Envelope			{{ curpage }}	// template="BAmpPage"
+Map	Button B7		Page=Velocity			{{ curpage }}	// template="BPerformancePage"
+Map	Button B8		Page={{ effectpage }}			{{ curpage }}	// template="BEffectPage"

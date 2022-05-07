@@ -1,0 +1,3 @@
+Map	Button B1		Page=Main			{{ curpage }}	// template="BMainPage"
+Map	Button B2		Page=Compressor			{{ curpage }}	// template="BFilterPage"
+Map	Button B3		Page=GateExpander			{{ curpage }}	// template="BGainPage"

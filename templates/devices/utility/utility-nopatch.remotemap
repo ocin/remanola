@@ -1,0 +1,13 @@
+{% set devicetype="utility" -%}
+{% import "remotemap/include/macros.remotemap" as rm with context %}
+{% block scope %}
+{% include "remotemap/include/device/scope.remotemap" %}
+{% endblock scope %}
+{% block groups %}
+Define Group	Page	Main	Index	Internal
+{% endblock groups %}
+{% block includes %}
+{% include "remotemap/include/device/utility-nopatch.remotemap" %}
+{% endblock includes %}
+{% block main %}
+{% endblock main %}

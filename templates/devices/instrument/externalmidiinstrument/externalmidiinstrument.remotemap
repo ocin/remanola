@@ -1,0 +1,35 @@
+{% extends "devices/instrument/instrument.remotemap" %}
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.externalmidiinstrument" -%}
+{% set devicename="External Midi Instrument" -%}
+{% set shortname="externalmidiinstrument" -%}
+{# Variables -#}
+{% set show_pitch_bend_range=true -%}
+{# End Variables -#}
+{% block groups %}
+Define Group	Page	Main	Index	Keyboard	Internal
+Define Group	CC	{% for cc in range(0,120) %}{{ cc }}	{% endfor %}	
+{% endblock groups %}
+{% block main %}
+Map	Aftertouch		Aftertouch
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main
+{{ rm.include_menus(curpage="Main") -}}
+Map	Button 1-1		Note On			Main	// template="BRedOnOff"
+Map	Button 4-1		Controller Activity			Main	// template="BRedOnOff"
+{% for cc in range(0,120) %}
+Map	Sel1_{{ (cc*(127/119))|round|int }}		CC={{ cc }}			Main
+Map	SubPageName		"CC {{ cc }}"			Main	{{ cc }}
+Map	Fader 4		CC {{ cc }}			Main	{{ cc }}	// template="FMisc", defaultvalue=0
+// End SubPage
+{% endfor %}
+Map	UDVButton 1-7_2-7		Program Change			Main	// template="UDPerf", defaultvalue=0
+Map	Button 1-8		Program Change On/Off			Main	// template="BRedOnOff"
+Map	UDVButton 3-7_4-7		CC Assignment		SEL1	Main	// template="UDMisc", defaultvalue=0
+Map	Button 3-8		Assignable Knob On/Off			Main	// template="BRedOnOff"
+Map	UDVButton 5-7_6-7		MIDI Channel			Main	// template="UDPerf", defaultvalue=0
+{% endblock main %}

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+mkdir -p ~/venv
+if [ ! -d ~/venv/remanola ]; then
+	python3 -m venv ~/venv/remanola
+fi
+source ~/venv/remanola/bin/activate
+pip install jinja2

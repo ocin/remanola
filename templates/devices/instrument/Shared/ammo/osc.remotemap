@@ -1,0 +1,37 @@
+{% set baseshortname=shortname -%}
+{% set shortname="ammo" -%}
+{% import "remotemap/include/macros.remotemap" as rm with context %}
+{% for oscnum in ['A', 'B', 'C', 'D'] -%}
+// Osc{{ oscnum }}
+Map	PageName		"Osc {{ oscnum }}"			Osc{{ oscnum }}
+{{ rm.include_menus(curpage="Osc"+oscnum|string, submenu="osc", oscpage="Osc"+oscnum|string)  -}}
+Map	Sel1_0		Range=LowHz			Osc{{ oscnum }}
+Map	Sel1_32		Range=HighHz			Osc{{ oscnum }}
+Map	Sel1_64		Range=Tempo			Osc{{ oscnum }}
+Map	Sel1_95		Range=Semitone			Osc{{ oscnum }}
+Map	Sel1_127		Range=Cents			Osc{{ oscnum }}
+Map	Button 1-1		Osc.{{ oscnum }} On			Osc{{ oscnum }}	// template="B{{ osccolor[oscnum] }}OnOff"
+Map	UDVButton 3-1_4-1		Osc.{{ oscnum }} Waveform			Osc{{ oscnum }}	// template="UDOsc", defaultvalue=0
+Map	SubPageName		"Low Rate Hz"			Osc{{ oscnum }}	LowHz
+Map	BigFader 2		Osc.{{ oscnum }} Low Rate Hz			Osc{{ oscnum }}	LowHz	// template="FFreq", defaultvalue=305
+Map	SubPageName		"High Rate Hz"			Osc{{ oscnum }}	HighHz
+Map	BigFader 2		Osc.{{ oscnum }} High Rate Hz			Osc{{ oscnum }}	HighHz	// template="FFreq", defaultvalue=639
+Map	SubPageName		"Rate Semitone"			Osc{{ oscnum }}	Semitone
+Map	UDVButton 1-2_2-2		Osc.{{ oscnum }} Rate Semitone			Osc{{ oscnum }}	Semitone	// template="UDFreq", defaultvalue=36
+Map	SubPageName		"Cents Detune"			Osc{{ oscnum }}	Cents
+Map	UDVButton 1-2_2-2		Osc.{{ oscnum }} Cents Detune			Osc{{ oscnum }}	Cents	// template="UDFreq", defaultvalue=50
+Map	SubPageName		"Rate Tempo Sync"			Osc{{ oscnum }}	Tempo
+Map	UDVButton 1-2_2-2		Osc.{{ oscnum }} Rate Tempo Sync			Osc{{ oscnum }}	Tempo	// template="UDFreq", defaultvalue=18
+// End SubPage
+Map	UDVButton 1-3_2-3		Osc.{{ oscnum }} Range		SEL1	Osc{{ oscnum }}	// template="UDOsc", defaultvalue=0
+{% if(oscnum == 'A') %}
+Map	Button 8-3		Apply Master Rate to Slaves			OscA	// template="BRedOnOff"
+{% else %}
+Map	Button 8-3		Osc.{{ oscnum }} Osc Sync			Osc{{ oscnum }}	// template="BRedOnOff"
+{% endif %}
+Map	Fader 4		Osc.{{ oscnum }} Depth			Osc{{ oscnum }}	// template="FOsc", defaultvalue=127
+Map	Fader 5		Osc.{{ oscnum }} Keyboard			Osc{{ oscnum }}	// template="FPerf", defaultvalue=0
+Map	Fader 6		Osc.{{ oscnum }} Phase			Osc{{ oscnum }}	// template="FEffect", defaultvalue=0
+Map	Button 1-8		Osc.{{ oscnum }} Env Sync			Osc{{ oscnum }}	// template="BRedOnOff"
+Map	Button 5-8		Osc.{{ oscnum }} Oneshot			Osc{{ oscnum }}	// template="BRedOnOff"
+{% endfor -%}

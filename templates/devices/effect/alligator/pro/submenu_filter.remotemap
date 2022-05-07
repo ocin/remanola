@@ -1,0 +1,4 @@
+Map	Button A1		Page=HPFilter			{{ curpage }}	// template="BFilterPage"
+Map	Button A2		Page=BPFilter			{{ curpage }}	// template="BFilterPage"
+Map	Button A3		Page=LPFilter			{{ curpage }}	// template="BFilterPage"
+Map	Button A5		Page=FilterEnv			{{ curpage }}	// template="BFilterModPage"

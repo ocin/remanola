@@ -1,0 +1,2 @@
+Map	Button 2-1		Page=OscA			{{ curpage }}	// template="BOscPage"
+Map	Button 3-1		Page=OscB			{{ curpage }}	// template="BOscPage"

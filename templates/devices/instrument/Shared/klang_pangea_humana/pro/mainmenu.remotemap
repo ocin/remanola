@@ -1,0 +1,8 @@
+Map	Button B1		Page=Main			{{ curpage }}	// template="BMainPage"
+Map	Button B2		Page=Instrument			{{ curpage }}	// template="BOscPage"
+Map	Button B3		Page=Filter			{{ curpage }}	// template="BFilterPage"
+Map	Button B4		Page=FilterEnv			{{ curpage }}	// template="BFilterModPage"
+Map	Button B5		Page=Amp			{{ curpage }}	// template="BAmpPage"
+Map	Button B6		Page=Perf			{{ curpage }}	// template="BPerformancePage"
+Map	Button B7		Page=Delay			{{ curpage }}	// template="BEffectPage"
+Map	Button B8		Page=Reverb			{{ curpage }}	// template="BEffectPage"

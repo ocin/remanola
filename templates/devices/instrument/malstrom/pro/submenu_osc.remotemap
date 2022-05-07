@@ -1,0 +1,4 @@
+Map	Button A1		Page=OscA			{{ curpage }}	// template="BOscPage"
+Map	Button A2		Page=OscAEnv			{{ curpage }}	// template="BOscModPage"
+Map	Button A5		Page=OscB			{{ curpage }}	// template="BOscPage"
+Map	Button A6		Page=OscBEnv			{{ curpage }}	// template="BOscModPage"

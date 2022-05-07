@@ -1,0 +1,47 @@
+{% extends "devices/effect/effect-nopatch.remotemap" %}
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="Neptune Pitch Adjuster" -%}
+{% set devicename="Neptune Pitch Adjuster" -%}
+{% set shortname="neptunepitchadjuster" -%}
+{% block groups %}
+Define Group	Page	Main	PitchAdjust	Transpose	Formant	Index	Internal
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=PitchAdjust			Index
+Map	Button 3-8		Page=Transpose			Index
+Map	Button 4-8		Page=Formant			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main
+{{ rm.include_menus(curpage="Main") -}}
+Map	EFSButton		Enabled			Main
+Map	Meter 2		Input Peak Meter			Main
+Map	Fader 3		Vibrato Rate			Main	// template="UDEffect", defaultvalue=64
+Map	Button 1-4		Low Freq Input			Main	// template="BYellowOnOff"
+Map	Button 3-4		Wide Vibrato			Main	// template="BYellowOnOff"
+Map	Button 5-4		Live Mode			Main	// template="BYellowOnOff"
+Map	UDVButton 7-4_8-4		MIDI Destination			Main	// template="UDEffect", inverted=true, defaultvalue=0
+Map	UDVButton 1-5_2-5		Scale Memory			Main	// template="UDEffect", defaultvalue=0
+Map	Fader 7		Pitched Signal Level			Main	// template="FEffect", defaultvalue=100
+Map	Fader 8		Voice Synth Level			Main	// template="FEffect", defaultvalue=100
+// PitchAdjust
+Map	PageName		"PitchAdjust"			PitchAdjust
+{{ rm.include_menus(curpage="PitchAdjust") -}}
+Map	Button 1-2		Pitch Adjust On/Off			PitchAdjust	// template="BYellowOnOff"
+Map	Fader 4		Correction Speed			PitchAdjust	// template="FEffect", defaultvalue=64
+Map	Fader 5		Preserve Expression			PitchAdjust	// template="FEffect", defaultvalue=0
+// Transpose
+Map	PageName		"Transpose"			Transpose
+{{ rm.include_menus(curpage="Transpose") -}}
+Map	Button 1-2		Transpose On/Off			Transpose	// template="BYellowOnOff"
+Map	UDVButton 1-4_2-4		Semitones			Transpose	// template="UDFreq", defaultvalue=12
+Map	UDVButton 5-4_6-4		Cent			Transpose	// template="UDFreq", defaultvalue=50
+// Formant
+Map	PageName		"Formant"			Formant
+{{ rm.include_menus(curpage="Formant") -}}
+Map	Button 1-2		Formant On/Off			Formant	// template="BYellowOnOff"
+Map	Knob V5		Formant Shift			Formant	// template="FEffect"
+{% endblock main %}

@@ -1,0 +1,15 @@
+{% extends "devices/effect/effect.remotemap" %}
+{% set deviceman="Softube" -%}
+{% set devicescope="com.softube.re.SaturationKnob" -%}
+{% set devicename="Saturation Knob" -%}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main
+Map	EFSButton		Enabled			Main
+Map	Fader 3		Saturation			Main	// template="FEffect", defaultvalue=0
+Map	UDVButton 1-4_2-4		Saturation Type			Main	// template="UDEffect", defaultvalue=1
+{% endblock main %}

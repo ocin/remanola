@@ -1,0 +1,138 @@
+{% extends "devices/effect/effect.remotemap" %}
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="Alligator" -%}
+{% set devicename="Alligator" -%}
+{% set shortname="alligator" -%}
+{# Variables -#}
+{% set filterpagedefault="HPFilter" -%}
+{% set effectpagedefault="HPEffects" -%}
+{# End Variables -#}
+{% block groups %}
+Define Group	Page	Main	HPFilter	BPFilter	LPFilter	HPEffects	BPEffects	LPEffects	DryLevels	AmpEnv	LFO	FilterEnv	Delay	Phaser	Index	Internal
+Define Group	TempoSync	Free	Sync
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 1-2		Page=AmpEnv			Index
+Map	Button 1-3		Page=DryLevels			Index
+Map	Button 2-5		Page=HPFilter			Index
+Map	Button 2-6		Page=FilterEnv			Index
+Map	Button 3-5		Page=BPFilter			Index
+Map	Button 4-5		Page=LPFilter			Index
+Map	Button 2-8		Page=HPEffects			Index
+Map	Button 3-8		Page=BPEffects			Index
+Map	Button 4-8		Page=LPEffects			Index
+Map	Button 6-8		Page=Delay			Index
+Map	Button 7-8		Page=Phaser			Index
+Map	Button 5-5		Page=LFO			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main
+{{ rm.include_menus(curpage="Main") -}}
+Map	EFSButton		Enabled			Main
+Map	Button 1-2		Pattern Enable			Main	// template="BRedOnOff"
+Map	Button 3-2		Shuffle			Main	// template="BGreenOnOff"
+Map	UDVButton 5-2_6-2		Pattern			Main	// template="UDEffect", defaultvalue=1
+Map	UDVButton 7-2_8-2		Resolution			Main	// template="UDFreq", defaultvalue=2
+Map	MFader 7-3		Shift			Main	// template="UDEffect", defaultvalue=64
+Map	Button 1-4		Gate 1 Trig			Main	// template="BRedOnOff"
+Map	Button 3-4		Gate 2 Trig			Main	// template="BRedOnOff"
+Map	Button 5-4		Gate 3 Trig			Main	// template="BRedOnOff"
+Map	Button 1-5		Gate 1 Open			Main	// template="BRedOnOff"
+Map	Button 3-5		Gate 2 Open			Main	// template="BRedOnOff"
+Map	Button 5-5		Gate 3 Open			Main	// template="BRedOnOff"
+Map	Fader 7		Master Volume			Main	// template="FVol", defaultvalue=100
+Map	Meter 8		Input Peak Meter			Main
+// HPFilter
+Map	PageName		"HPFilter"			HPFilter
+{{ rm.include_menus(curpage="HPFilter", mainmenu_mini="filter", submenu="filter", filterpage="HPFilter") -}}
+Map	Button 1-2		High Pass Filter On			HPFilter	// template="BGreenOnOff"
+Map	Knob V3		High Pass LFO Amount			HPFilter	// template="FLFO"
+Map	Fader 4		High Pass Frequency			HPFilter	// template="FFreq", defaultvalue=74
+Map	Fader 5		High Pass Resonance			HPFilter	// template="FEffect", defaultvalue=15
+Map	Knob V6		High Pass Env Amount			HPFilter	// template="FEnv"
+// BPFilter
+Map	PageName		"BPFilter"			BPFilter
+{{ rm.include_menus(curpage="BPFilter", mainmenu_mini="filter", submenu="filter", filterpage="BPFilter") -}}
+Map	Button 1-2		Band Pass Filter On			BPFilter	// template="BGreenOnOff"
+Map	Knob V3		Band Pass LFO Amount			BPFilter	// template="FLFO"
+Map	Fader 4		Band Pass Frequency			BPFilter	// template="FFreq", defaultvalue=52
+Map	Fader 5		Band Pass Resonance			BPFilter	// template="FEffect", defaultvalue=15
+Map	Knob V6		Band Pass Env Amount			BPFilter	// template="FEnv"
+// LPFilter
+Map	PageName		"LPFilter"			LPFilter
+{{ rm.include_menus(curpage="LPFilter", mainmenu_mini="filter", submenu="filter", filterpage="LPFilter") -}}
+Map	Button 1-2		Low Pass Filter On			LPFilter	// template="BGreenOnOff"
+Map	Knob V3		Low Pass LFO Amount			LPFilter	// template="FLFO"
+Map	Fader 4		Low Pass Frequency			LPFilter	// template="FFreq", defaultvalue=43
+Map	Fader 5		Low Pass Resonance			LPFilter	// template="FEffect", defaultvalue=15
+Map	Knob V6		Low Pass Env Amount			LPFilter	// template="FEnv"
+// HPEffects
+Map	PageName		"HPEffects"			HPEffects
+{{ rm.include_menus(curpage="HPEffects", mainmenu_mini="effect", submenu="effect", effectpage="HPEffects") -}}
+Map	Fader 2		High Pass Drive Amount			HPEffects	// template="FAmount", defaultvalue=0
+Map	Fader 3		High Pass Phaser Amount			HPEffects	// template="FEffect", defaultvalue=0
+Map	Fader 4		High Pass Delay Amount			HPEffects	// template="FEffect", defaultvalue=0
+Map	Knob V6		High Pass Pan			HPEffects	// template="FPan"
+Map	Fader 7		High Pass Volume			HPEffects	// template="FVol", defaultvalue=100
+// BPEffects
+Map	PageName		"BPEffects"			BPEffects
+{{ rm.include_menus(curpage="BPEffects", mainmenu_mini="effect", submenu="effect", effectpage="BPEffects") -}}
+Map	Fader 2		Band Pass Drive Amount			BPEffects	// template="FAmount", defaultvalue=0
+Map	Fader 3		Band Pass Phaser Amount			BPEffects	// template="FEffect", defaultvalue=0
+Map	Fader 4		Band Pass Delay Amount			BPEffects	// template="FEffect", defaultvalue=0
+Map	Knob V6		Band Pass Pan			BPEffects	// template="FPan"
+Map	Fader 7		Band Pass Volume			BPEffects	// template="FVol", defaultvalue=100
+// LPEffects
+Map	PageName		"LPEffects"			LPEffects
+{{ rm.include_menus(curpage="LPEffects", mainmenu_mini="effect", submenu="effect", effectpage="LPEffects") -}}
+Map	Fader 2		Low Pass Drive Amount			LPEffects	// template="FAmount", defaultvalue=0
+Map	Fader 3		Low Pass Phaser Amount			LPEffects	// template="FEffect", defaultvalue=0
+Map	Fader 4		Low Pass Delay Amount			LPEffects	// template="FEffect", defaultvalue=0
+Map	Knob V6		Low Pass Pan			LPEffects	// template="FPan"
+Map	Fader 7		Low Pass Volume			LPEffects	// template="FVol", defaultvalue=100
+// Delay
+Map	PageName		"Delay"			Delay
+{{ rm.include_menus(curpage="Delay", mainmenu_mini="effect") -}}
+Map	Sel1_0		TempoSync=Free			Delay
+Map	Sel1_1		TempoSync=Sync			Delay
+Map	Fader 2		Delay Time			Delay	Free	// template="FFreq"
+Map	UDVButton 7-2_8-2		Delay Time	10		Delay	Sync	// template="UDFreq", defaultvalue=5
+Map	Button 1-3		DelaySync		SEL1	Delay	// template="BGreenOnOff"
+Map	Fader 4		Delay Feedback			Delay	// template="FEffect", defaultvalue=61
+Map	Knob V5		Delay Pan			Delay	// template="FEffect"
+// Phaser
+Map	PageName		"Phaser"			Phaser
+{{ rm.include_menus(curpage="Phaser", mainmenu_mini="effect") -}}
+Map	Fader 2		Phaser Rate 			Phaser	// template="FFreq", defaultvalue=20
+Map	Fader 4		Phaser Feedback 			Phaser	// template="FEffect", defaultvalue=37
+// AmpEnv
+Map	PageName		"AmpEnv"			AmpEnv
+{{ rm.include_menus(curpage="AmpEnv") -}}
+Map	Fader 3		Amp Env Attack			AmpEnv	// template="FVol", defaultvalue=20
+Map	Fader 4		Amp Env Decay			AmpEnv	// template="FVol", defaultvalue=127
+Map	Fader 5		Amp Env Release			AmpEnv	// template="FVol", defaultvalue=20
+// DryLevels
+Map	PageName		"DryLevels"			DryLevels
+{{ rm.include_menus(curpage="DryLevels", mainmenu_mini="effect", submenu="effect", effectpage="DryLevels") -}}
+Map	Fader 2		Ducking			DryLevels	// template="FEffect", defaultvalue=0
+Map	Knob V4		Dry Pan			DryLevels	// template="FPan"
+Map	Fader 5		Dry Volume			DryLevels	// template="FVol", defaultvalue=0
+// FilterEnv
+Map	PageName		"FilterEnv"			FilterEnv
+{{ rm.include_menus(curpage="FilterEnv", mainmenu_mini="filter", submenu="filter", filterpage="FilterEnv") -}}
+Map	Fader 3		Filter Env Attack			FilterEnv	// template="FFreq", defaultvalue=40
+Map	Fader 4		Filter Env Decay			FilterEnv	// template="FFreq", defaultvalue=40
+Map	Fader 5		Filter Env Release			FilterEnv	// template="FFreq", defaultvalue=10
+// LFO
+Map	PageName		"LFO"			LFO
+{{ rm.include_menus(curpage="LFO") -}}
+Map	Sel1_0		TempoSync=Free			LFO
+Map	Sel1_1		TempoSync=Sync			LFO
+Map	UDVButton 1-2_2-2		LFO Waveform			LFO	// template="UDLFO", defaultvalue=0
+Map	Fader 4		LFO Freq 			LFO	Free	// template="FFreq", defaultvalue=32
+Map	UDVButton 7-4_8-4		LFO Freq	8		LFO	Sync	// template="UDFreq", defaultvalue=4
+Map	Button 1-5		LFOSync		SEL1	LFO	// template="BGreenOnOff"
+{% endblock main %}

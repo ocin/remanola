@@ -1,0 +1,36 @@
+{% extends "devices/player/player.remotemap" %}
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.ScalesAndChords" -%}
+{% set devicename="Scales & Chords" -%}
+{% set shortname="scalesandchords" -%}
+{% block groups %}
+Define Group	Page	Main	Scales	Chords	Index	Internal
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+{{ rm.include_menus(curpage="Index",mainmenu_mini="common") -}}
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main
+{{ rm.include_menus(curpage="Main",mainmenu_mini="common") -}}
+Map	Button 1-1		On/Off			Main	// template="BGreenOnOff"
+Map	Button 1-5		Filter Notes			Main	// template="BBAmberOnOff"
+// Scales
+Map	PageName		"Scales"			Scales
+{{ rm.include_menus(curpage="Scales",mainmenu_mini="common") -}}
+Map	UDVButton 1-1_2-1		Key			Scales	// template="UDPerf", defaultvalue=0
+Map	UDVButton 1-5_2-5		Scale			Scales	// template="UDPerf", defaultvalue=1
+// Chords
+Map	PageName		"Chords"			Chords
+{{ rm.include_menus(curpage="Chords",mainmenu_mini="common") -}}
+Map	Button 1-1		Chords			Chords	// template="BBGreenOnOff"
+Map	UDVButton 3-1_4-1		Notes			Chords	// template="UDPerf", defaultvalue=2
+Map	UDVButton 3-3_4-3		Inversion			Chords	// template="UDPerf", defaultvalue=0
+Map	Button 3-5		Open Chords			Chords	// template="BBGreenOnOff"
+Map	Button 2-7		Add Octave Up			Chords	// template="BBGreenOnOff"
+Map	Button 3-7		Add Octave Down			Chords	// template="BBGreenOnOff"
+Map	Button 4-7		Add Color			Chords	// template="BBGreenOnOff"
+Map	Button 3-8		Alter			Chords	// template="BBGreenOnOff"
+{% endblock main %}

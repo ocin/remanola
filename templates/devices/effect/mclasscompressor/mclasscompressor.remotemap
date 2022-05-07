@@ -1,0 +1,34 @@
+{% extends "devices/effect/effect-nopatch.remotemap" %}
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="MClass Compressor" -%}
+{% set devicename="MClass Compressor" -%}
+{% set shortname="mclasscompressor" -%}
+{% block groups %}
+Define Group	Page	Main	Env	Index	Internal
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=Env			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main
+{{ rm.include_menus(curpage="Main") -}}
+Map	EFSButton		Enabled			Main
+Map	Button 7-1		Sidechain Active			Main	// template="BRedLed"
+Map	Button 8-1		Sidechain Solo			Main	// template="BRedOnOff"
+Map	Meter 2		Peak Meter			Main
+Map	Fader 3		Input Gain			Main	// template="FGain", defaultvalue=64
+Map	Fader 4		Threshold			Main	// template="FEffect", defaultvalue=64
+Map	Button 1-5		Soft Knee			Main	// template="BRedOnOff"
+Map	Fader 6		Ratio			Main	// template="FEffect"	, defaultvalue=64
+Map	Meter 7		Gain Meter			Main	// template="InvMeter"
+Map	Fader 8		Output Gain			Main	// template="FGain", defaultvalue=64
+// Env
+Map	PageName		"Env"			Env
+{{ rm.include_menus(curpage="Env") -}}
+Map	Fader 4		Attack			Env	// template="FEffect", defaultvalue=64
+Map	Fader 5		Release			Env	// template="FEffect", defaultvalue=64
+Map	Button 1-6		Adapt			Env	// template="BRedOnOff"
+{% endblock main %}

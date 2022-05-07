@@ -1,0 +1,8 @@
+Map	Button A1		Page=Pad1			{{ curpage }}	// template="BPerformancePage"
+Map	Button A2		Page=Pad2			{{ curpage }}	// template="BPerformancePage"
+Map	Button A3		Page=Pad3			{{ curpage }}	// template="BPerformancePage"
+Map	Button A4		Page=Pad4			{{ curpage }}	// template="BPerformancePage"
+Map	Button A5		Page=Pad5			{{ curpage }}	// template="BPerformancePage"
+Map	Button A6		Page=Pad6			{{ curpage }}	// template="BPerformancePage"
+Map	Button A7		Page=Pad7			{{ curpage }}	// template="BPerformancePage"
+Map	Button A8		Page=Pad8			{{ curpage }}	// template="BPerformancePage"

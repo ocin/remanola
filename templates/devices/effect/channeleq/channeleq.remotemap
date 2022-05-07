@@ -1,0 +1,61 @@
+{% extends "devices/effect/effect.remotemap" %}
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.ChannelEQ" -%}
+{% set devicename="Channel EQ" -%}
+{% set shortname="channeleq" -%}
+{% block groups %}
+Define Group	Page	Main	Filter	LF	LMF	HMF	HF	Index	Internal
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=Filter			Index
+Map	Button 3-8		Page=LF			Index
+Map	Button 4-8		Page=LMF			Index
+Map	Button 5-8		Page=HMF			Index
+Map	Button 6-8		Page=HF			Index
+// Main
+Map	PageName		"Main"			Main
+{{ rm.include_menus(curpage="Main") -}}
+Map	EFSButton		Enabled			Main
+Map	Fader 8		Gain			Main	// template="FGain", defaultvalue=63
+// Filter
+Map	PageName		"Filter"			Filter
+{{ rm.include_menus(curpage="Filter") -}}
+Map	EFSButton		Enabled			Filter
+Map	Button 8-2		HPF On			Filter	// template="BBlueOnOff"
+Map	Fader 3		HPF Frequency			Filter	// template="FFreq", defaultvalue=0
+Map	Button 8-4		LPF On			Filter	// template="BBlueOnOff"
+Map	Fader 5		LPF Frequency			Filter	// template="FFreq", defaultvalue=127
+// LF
+Map	PageName		"LF"			LF
+{{ rm.include_menus(curpage="LF") -}}
+Map	EFSButton		Enabled			LF
+Map	Button 8-2		LF Bell On			LF	// template="BBlueOnOff"
+Map	Fader 3		LF Gain			LF	// template="FGain", defaultvalue=63
+Map	Fader 4		LF Frequency			LF	// template="FFreq", defaultvalue=63
+// LMF
+Map	PageName		"LMF"			LMF
+{{ rm.include_menus(curpage="LMF") -}}
+Map	EFSButton		Enabled			LMF
+Map	Button 8-2		E Mode On			LMF	// template="BBlueOnOff"
+Map	Fader 3		LMF Gain			LMF	// template="FGain", defaultvalue=63
+Map	Fader 4		LMF Frequency			LMF	// template="FFreq", defaultvalue=63
+Map	Fader 5		LMF Q			LMF	// template="FEffect", defaultvalue=63
+// HMF
+Map	PageName		"HMF"			HMF
+{{ rm.include_menus(curpage="HMF") -}}
+Map	EFSButton		Enabled			HMF
+Map	Button 8-2		E Mode On			HMF	// template="BBlueOnOff"
+Map	Fader 3		HMF Gain			HMF	// template="FGain", defaultvalue=63
+Map	Fader 4		HMF Frequency			HMF	// template="FFreq", defaultvalue=63
+Map	Fader 5		HMF Q			HMF	// template="FEffect", defaultvalue=63
+// HF
+Map	PageName		"HF"			HF
+{{ rm.include_menus(curpage="HF") -}}
+Map	EFSButton		Enabled			HF
+Map	Button 8-2		HF Bell On			HF	// template="BBlueOnOff"
+Map	Fader 3		HF Gain			HF	// template="FGain", defaultvalue=63
+Map	Fader 4		HF Frequency			HF	// template="FFreq", defaultvalue=63
+{% endblock main %}

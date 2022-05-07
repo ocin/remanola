@@ -1,0 +1,8 @@
+Map	Button A1		Page=SendReturn1			{{ curpage }}	// template="BEffectPage"
+Map	Button A2		Page=SendReturn2			{{ curpage }}	// template="BEffectPage"
+Map	Button A3		Page=SendReturn3			{{ curpage }}	// template="BEffectPage"
+Map	Button A4		Page=SendReturn4			{{ curpage }}	// template="BEffectPage"
+Map	Button A5		Page=SendReturn5			{{ curpage }}	// template="BEffectPage"
+Map	Button A6		Page=SendReturn6			{{ curpage }}	// template="BEffectPage"
+Map	Button A7		Page=SendReturn7			{{ curpage }}	// template="BEffectPage"
+Map	Button A8		Page=SendReturn8			{{ curpage }}	// template="BEffectPage"

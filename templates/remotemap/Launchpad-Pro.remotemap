@@ -1,0 +1,6 @@
+{% set lptype="pro" %}
+{% include "remotemap/include/header_pro.remotemap" %}
+
+{% include "remotemap/include/copyright.remotemap" %}
+
+{% include "remotemap/include/devices.remotemap" %}

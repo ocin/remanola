@@ -1,0 +1,27 @@
+{% extends "devices/effect/effect-nopatch.remotemap" %}
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="PEQ-2 Two Band Parametric EQ" -%}
+{% set devicename="PEQ-2 Two Band Parametric EQ" -%}
+{% block groups %}
+Define Group	Page	Main	Index	Internal
+Define Group	FilterB	On	Off
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main
+Map	Sel1_0		FilterB=Off			Main
+Map	Sel1_1		FilterB=On			Main
+Map	EFSButton		Enabled			Main
+Map	Meter 2		Peak Meter			Main
+Map	Button 8-1		Filter B On/Off		SEL1	Main	// template="BRedOnOff"
+Map	Fader 3		Filter A Freq			Main	// template="FFreq"
+Map	Fader 4		Filter A Q			Main	// template="FEffect"
+Map	Fader 5		Filter A Gain			Main	// template="FGain"
+Map	Fader 6		Filter B Freq			Main	On	// template="FFreq"
+Map	Fader 7		Filter B Q			Main	On	// template="FEffect"
+Map	Fader 8		Filter B Gain			Main	On	// template="FGain"
+{% endblock main %}

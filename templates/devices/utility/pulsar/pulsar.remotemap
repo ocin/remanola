@@ -1,0 +1,56 @@
+{% extends "devices/utility/utility-nopatch.remotemap" %}
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.Pulsar" -%}
+{% set devicename="Pulsar" -%}
+{% set shortname="pulsar" -%}
+{% block groups %}
+Define Group	Page	Main	LFO1	LFO2	Env	Index	Internal
+Define Group	TempoSync	Free	Sync
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index" 				Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 5-5		Page=LFO1			Index
+Map	Button 6-5		Page=LFO2			Index
+Map	Button 5-6		Page=Env			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main" 				Main
+{{ rm.include_menus(curpage="Main") -}}
+Map	Knob V3		LFO2 to LFO1 Rate			Main	// template="FMisc"
+Map	Knob V4		LFO2 to LFO1 Level			Main	// template="FMisc"
+Map	Button 8-5		Sync LFO1 to LFO2			Main	// template="BRedOnOff"
+Map	Knob V7		Keyboard Track			Main	// template="FMisc"
+{% for lfonum in range(1,3) -%}
+// LFO {{ lfonum }}
+Map	PageName		"LFO {{ lfonum }}" 			LFO{{ lfonum }}
+{{ rm.include_menus(curpage="LFO"+lfonum|string) -}}
+Map	Sel1_0		TempoSync=Free			LFO{{ lfonum }}
+Map	Sel1_1		TempoSync=Sync			LFO{{ lfonum }}
+{% if lfonum == 1 -%}
+Map	Button 7-1		LFO{{ lfonum }} Env Sync			LFO{{ lfonum }}	// template="BRedOnOff"
+{% else -%}
+Map	Button 7-1		LFO{{ lfonum }} Enabled			LFO{{ lfonum }}	// template="BRedOnOff"
+{% endif -%}
+Map	Button 8-1		LFO{{ lfonum }} Tempo Sync		SEL1	LFO{{ lfonum }}	// template="BRedOnOff"
+Map	Fader 2		LFO{{ lfonum }} Rate Free			LFO{{ lfonum }}	Free	// template="FFreq"
+Map	UDVButton 7-2_8-2		LFO{{ lfonum }} Rate Synced			LFO{{ lfonum }}	Sync	// template="UDFreq"
+Map	UDVButton 1-3_2-3		LFO{{ lfonum }} Waveform			LFO{{ lfonum }}	// template="UDLFO"
+Map	Fader 4		LFO{{ lfonum }} Level			LFO{{ lfonum }}	// template="FAmount"
+Map	Fader 5		LFO{{ lfonum }} Phase			LFO{{ lfonum }}	// template="FLFO"
+Map	Fader 6		LFO{{ lfonum }} Shuffle			LFO{{ lfonum }}	// template="FLFO"
+Map	Fader 7		LFO{{ lfonum }} Lag			LFO{{ lfonum }}	// template="FFreq"
+{% endfor -%}
+// Env
+Map	PageName		"Env" 				Env
+{{ rm.include_menus(curpage="Env") -}}
+Map	Button 1-1		LFO2 Triggers Envelope			Env	// template="BRedOnOff"
+Map	Button 1-2		Trig			Env	// template="BRedOnOff"
+Map	Fader 3		Attack			Env	// template="FEnv"
+Map	Fader 4		Release			Env	// template="FEnv"
+Map	Knob V5		LFO1 Env Level			Env	// template="FAmount"
+Map	Knob V6		LFO1 Env Rate			Env	// template="FFreq"
+Map	Knob V7		LFO2 Env Level			Env	// template="FAmount"
+Map	Knob V8		LFO2 Env Rate			Env	// template="FFreq"
+{% endblock main %}

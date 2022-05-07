@@ -1,0 +1,20 @@
+{% extends "devices/player/player.remotemap" %}
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.BeatMap" -%}
+{% set devicename="BeatMap" -%}
+{% set shortname="beatmap" -%}
+{% block groups %}
+Define Group	Page	Main	Index	Internal
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+{{ rm.include_menus(curpage="Index") -}}
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main
+{{ rm.include_menus(curpage="Main") -}}
+Map	Button 1-1		On			Main	// template="BGreenOnOff"
+Map	Button 1-2		Run			Main	// template="BRun"
+{% endblock main %}

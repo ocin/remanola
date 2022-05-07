@@ -1,0 +1,5 @@
+Map	Button B1		Page=Main			{{ curpage }}	// template="BMainPage"
+Map	Button B2		Page=Band1-8			{{ curpage }}	// template="BEffectPage"
+Map	Button B3		Page=Band9-16			{{ curpage }}	// template="BEffectPage"
+Map	Button B4		Page=Band17-24			{{ curpage }}	// template="BEffectPage"
+Map	Button B5		Page=Band25-32			{{ curpage }}	// template="BEffectPage"

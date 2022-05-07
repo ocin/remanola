@@ -1,0 +1,32 @@
+{% extends "devices/effect/effect.remotemap" %}
+{% set deviceman="Propellerhead Software" -%}
+{% set devicescope="se.propellerheads.ReasonAmp" -%}
+{% set devicename="Softtube Amp" -%}
+{% set shortname="softtubeamp" -%}
+{% block groups %}
+Define Group	Page	Main	Eq	Index	Internal
+{% endblock groups %}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button 2-8		Page=Eq			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main
+{{ rm.include_menus(curpage="Main") -}}
+Map	EFSButton		Enabled			Main
+Map	UDVButton 1-2_2-2		Amp Switch			Main	// template="UDEffect", defaultvalue=0
+Map	UDVButton 5-2_6-2		Cab Switch			Main	// template="UDEffect", defaultvalue=0
+Map	Button 8-2		Boost			Main	// template="BRedOnOff"
+Map	Fader 3		Gate			Main	// template="FEffect", defaultvalue=0
+Map	Fader 4		Gain			Main	// template="FGain", defaultvalue=64
+Map	Fader 7		Poweramp Gain			Main	// template="FGain", defaultvalue=64
+Map	Fader 8		Volume			Main	// template="FVol", defaultvalue=64
+// Eq
+Map	PageName		"Eq"			Eq
+{{ rm.include_menus(curpage="Eq") -}}
+Map	Fader 3		Bass			Eq	// template="FGain", defaultvalue=64
+Map	Fader 4		Mid			Eq	// template="FGain", defaultvalue=64
+Map	Fader 5		Treble			Eq	// template="FGain", defaultvalue=64
+{% endblock main %}

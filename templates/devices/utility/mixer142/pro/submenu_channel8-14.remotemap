@@ -1,0 +1,7 @@
+Map	Button A1		Page=Chan8			{{ curpage }}	// template="BAmpPage"
+Map	Button A2		Page=Chan9			{{ curpage }}	// template="BAmpPage"
+Map	Button A3		Page=Chan10			{{ curpage }}	// template="BAmpPage"
+Map	Button A4		Page=Chan11			{{ curpage }}	// template="BAmpPage"
+Map	Button A5		Page=Chan12			{{ curpage }}	// template="BAmpPage"
+Map	Button A6		Page=Chan13			{{ curpage }}	// template="BAmpPage"
+Map	Button A7		Page=Chan14			{{ curpage }}	// template="BAmpPage"

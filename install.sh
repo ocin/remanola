@@ -17,13 +17,18 @@
 # You should have received a copy of the GNU General Public License
 # along with Remanola.  If not, see <http://www.gnu.org/licenses/>.
 
+set -e
+
 check_for_undef() {
 	if grep -q UNDEFINED $1; then 
 		echo "Found UNDEFINED tag in $1"
 	fi
 }
 
-INSTALLBASE="/Library/Application Support/Propellerhead Software/Remote"
+INSTALLBASE="$HOME/Library/Application Support/Propellerhead Software/Remote"
+#INSTALLBASE="/Library/Application Support/Propellerhead Software/Remote"
+
+echo "Installing Remanola in $INSTALLBASE"
 
 if [ ! -z $1 ];then
 	INSTALLBASE=$1
@@ -32,6 +37,7 @@ fi
 export CODECSDIR="$INSTALLBASE/Codecs/Lua Codecs/Remanola/"
 export MAPSDIR="$INSTALLBASE/Maps/Remanola/"
 OUTDIR="/tmp/remanola-out"
+TMPTEMPLATEDIR="templates/tmp/"
 
 if [ ! -d "$CODECSDIR" ]; then
 	mkdir -p "$CODECSDIR"
@@ -45,16 +51,24 @@ if [ ! -d "$OUTDIR" ]; then
 	mkdir -p "$OUTDIR"
 fi
 
+if [ ! -d "$TMPTEMPLATEDIR" ]; then
+	mkdir -p "$TMPTEMPLATEDIR"
+fi
+
 ./build_remotemap.py
-check_for_undef "$OUTDIR/Launchpad-Mini.remotemap"
+./build_confmap.py
+./stripconfmap_remotemap.py
+#check_for_undef "$OUTDIR/Launchpad-Mini.remotemap"
 check_for_undef "$OUTDIR/Launchpad-Pro.remotemap"
 ./build_lua.py
 
+#/opt/local/share/luarocks/bin/luacheck --config .luacheckrc /tmp/remanola-out/Launchpad-Pro.lua
+
 # Mini
-cp -r $OUTDIR/Launchpad-Mini.lua "$CODECSDIR"
-cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.luacodec "$CODECSDIR"
-cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.png "$CODECSDIR"
-cp -r $OUTDIR/Launchpad-Mini.remotemap "$MAPSDIR"
+#cp -r $OUTDIR/Launchpad-Mini.lua "$CODECSDIR"
+#cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.luacodec "$CODECSDIR"
+#cp -r Codecs/Lua\ Codecs/Remanola/Launchpad-Mini.png "$CODECSDIR"
+#cp -r $OUTDIR/Launchpad-Mini.remotemap "$MAPSDIR"
 
 # Pro
 cp -r $OUTDIR/Launchpad-Pro.lua "$CODECSDIR"

@@ -1,0 +1,8 @@
+Map	Button B1		Page=Main			{{ curpage }}	// template="FLFO"
+Map	Button B2		Page=Osc			{{ curpage }}	// template="BOscPage"
+Map	Button B3		Page=AmpEnv			{{ curpage }}	// template="BAmpPage"
+Map	Button B4		Page=Filter			{{ curpage }}	// template="BFilterPage"
+Map	Button B5		Page=FilterEnv			{{ curpage }}	// template="BFilterModPage"
+Map	Button B6		Page=LFO			{{ curpage }}	// template="BLFOPage"
+Map	Button B7		Page=Loop			{{ curpage }}	// template="BPerformancePage"
+Map	Button B8		Page=Performance			{{ curpage }}	// template="BPerformancePage"

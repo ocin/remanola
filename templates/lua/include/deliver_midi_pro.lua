@@ -1,10 +1,10 @@
 function deliver_midi_buttons(ret_events)
-        if(g_lightshow == 0 and not g_flashing and not g_scrolling) then
-                if(g_updateall) then
+	if(g_lightshow == 0 and not g_flashing and not g_scrolling) then
+		if(g_updateall) then
 			local gridmidimsg = "f0 00 20 29 02 10 0f 00"
 			for row=9,0,-1 do
 				for column=0,9 do
-			local buttonname
+					local buttonname
 					if(row == 0) then
 						buttonname = "Button C"..tostring(column)
 					elseif(row == 9) then
@@ -23,7 +23,21 @@ function deliver_midi_buttons(ret_events)
 					elseif(string.match(itemname, "Button C8") and g_valuemode) then
 						color = YELLOW
 					end
-		
+
+					if(string.match(itemname, "Button C5") and (g_debugupdate ~= 0)) then
+						if(g_debugupdate == 1) then
+							g_debugupdate = 2
+							color = RED
+						else
+							g_debugupdate = 1
+							color = BLUE
+						end
+					end
+
+					if(color == nil) then
+						error(string.format("Undefined color, device: %s page: %s item: %s", g_colorscheme, get_current_page(), itemname))
+					end
+
 					gridmidimsg = gridmidimsg.." "..get_rgb_midi(color)
 				end
 			end

@@ -1,0 +1,7 @@
+Map	Button A1		Page=PreAmp			{{ curpage }}	// template="BEffectPage"
+Map	Button A2		Page=Phaser			{{ curpage }}	// template="BEffectPage"
+Map	Button A3		Page=ModFilter			{{ curpage }}	// template="BEffectPage"
+Map	Button A4		Page=Speaker			{{ curpage }}	// template="BEffectPage"
+Map	Button A5		Page=Reverb			{{ curpage }}	// template="BEffectPage"
+Map	Button A6		Page=Delay			{{ curpage }}	// template="BEffectPage"
+Map	Button A7		Page=Limiter			{{ curpage }}	// template="BEffectPage"

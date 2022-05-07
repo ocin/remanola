@@ -1,0 +1,7 @@
+Map	Button A1		Page=EQBass			{{ curpage }}	// template="BEffectPage"
+Map	Button A2		Page=Dist			{{ curpage }}	// template="BEffectPage"
+Map	Button A3		Page=Phaser			{{ curpage }}	// template="BEffectPage"
+Map	Button A4		Page=Chorus			{{ curpage }}	// template="BEffectPage"
+Map	Button A5		Page=Delay			{{ curpage }}	// template="BEffectPage"
+Map	Button A6		Page=Reverb			{{ curpage }}	// template="BEffectPage"
+Map	Button A7		Page=Comp			{{ curpage }}	// template="BEffectPage"

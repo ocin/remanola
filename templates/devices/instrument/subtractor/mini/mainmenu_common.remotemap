@@ -1,0 +1,5 @@
+Map	Button 1-1		Page=Main			{{ curpage }}	// template="BMainPage"
+Map	Button 2-1		Page=Osc1			{{ curpage }}	// template="BOscPage"
+Map	Button 3-1		Page=Osc2			{{ curpage }}	// template="BOscPage"
+Map	Button 4-1		Page=Noise			{{ curpage }}	// template="BOscModPage"
+Map	Button 5-1		Page=Filter			{{ curpage }}	// template="BFilterPage"

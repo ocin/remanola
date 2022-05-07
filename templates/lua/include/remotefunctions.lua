@@ -1,6 +1,7 @@
 function remote_init()
 	init_buttons()
 	init_udbuttons()
+	init_minifaders()
 	init_sel()
 	init_itemsindex()
 	init_miditobutton()
@@ -37,22 +38,33 @@ function remote_set_state(changed_items)
 		g_updateditems[citemname] = true
 {% endif %}
 
-		if(citemname ~= nil) then
+		if(i ~= nil and citemname ~= nil) then
 			handle_changed_sel(citemindex, citemname)
-			handle_changed_devicescope(citemindex, citemname)
+			handle_changed_devicescope(citemname)
+{% if lptype == "mini" %}
 			handle_changed_barposition(citemindex, citemname)
-			handle_changed_barposition(citemindex, citemname)
-			handle_changed_playingstep(citemindex, citemname)
-			handle_changed_pagename(citemindex, citemname)
-			handle_changed_subpagename(citemindex, citemname)
-			handle_changed_kbdvel(citemindex, citemname)
-			handle_changed_basekey(citemindex, citemname)
+			handle_changed_beatposition(citemindex, citemname)
+			handle_changed_kbdvel(citemname)
+{% endif %}
+			handle_changed_playingstep(citemname)
+			handle_changed_pagename(citemname)
+			handle_changed_subpagename(citemname)
+			handle_changed_basekey(citemname)
+			handle_changed_custom(citemname)
 		end
 	end
 end
 
 function remote_deliver_midi(maxbytes, port)
 	local ret_events = {}
+
+	if(maxbytes == nil) then
+		error("Maxbytes is nil")
+	end
+
+	if(port == nil) then
+		error("Port is nil")
+	end
 
 	if(g_stopflashing) then
 {% if lptype == "mini" %}
@@ -70,6 +82,9 @@ function remote_deliver_midi(maxbytes, port)
 	deliver_midi_scrolltext(ret_events)
 	deliver_midi_endscroll(ret_events)
 	deliver_midi_sel(ret_events)
+	deliver_midi_velofader(ret_events)
+	deliver_midi_mfader(ret_events)
+	deliver_midi_repeatud(ret_events)
 {% if lptype == "mini" %}
 	-- Mini specific
 	deliver_midi_flashing(ret_events)
@@ -87,56 +102,73 @@ function remote_process_midi(event)
 
 	handle_input_select(event)
 
+	handle_input_velofader(event)
+	handle_input_mfader(event)
+	handle_input_repeatud(event)
+
 	if(handle_input_scrollend(event)) then
 		return(true)
 	end
-
+{% if lptype == "mini" %}
 	if(g_lightshow > 0) then
 		if(handle_input_lightshow(event)) then
 			return(true)
 		end
 	end
+{% endif %}
 
 	local button = remote.match_midi("xx yy zz", event)
 
 	if(isbutton(button)) then
 		if(g_helpmode) then
-			if(handle_input_helpmode(event, button)) then
+			if(handle_input_helpmode(button)) then
 				return(true)
 			end
 		elseif(g_valuemode) then
-			if(handle_input_valuemode(event, button)) then
+			if(handle_input_valuemode(button)) then
 				return(true)
 			end
 		else
-			if(handle_input_buttonendscroll(event, button)) then
+			if(handle_input_buttonendscroll(button)) then
 				return(true)
 			end
 
-			if(handle_input_kong(event, button)) then
+			if(handle_input_devices(event, button)) then
 				return(true)
 			end
-	
+
 			if(handle_input_keyboard(event, button)) then
 				return(true)
 			end
-	
+
 			if(handle_input_item(event, button)) then
 				return(true)
 			end
 
+{% if lptype == "mini" %}
 			if(handle_input_internalpage(event, button)) then
 				return(true)
 			end
+{% endif %}
 
 			if(handle_input_setveltomax(event, button)) then
 				return(true)
 			end
-	
-			if(handle_input_starthelpmode(event, button)) then
+
+			if(handle_input_starthelpmode(button)) then
 				return(true)
 			end
 
+		end
+	end
+
+	if(isaftertouch(button)) then
+		if(handle_input_keyboard_at(event, button)) then
+			return(true)
+		end
+
+		if(handle_input_aftertouch(button)) then
+			return(true)
 		end
 	end
 

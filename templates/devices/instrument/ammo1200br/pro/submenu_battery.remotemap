@@ -1,0 +1,5 @@
+Map	Button A1		Page=Battery			{{ curpage }}	// template="BOscPage"
+Map	Button A2		Page=SampleAndHold			{{ curpage }}	// template="BOscPage"
+Map	Button A3		Page=Comparator			{{ curpage }}	// template="BOscPage"
+Map	Button A4		Page=ElektroSwitch			{{ curpage }}	// template="BOscPage"
+Map	Button A5		Page=Attenuator			{{ curpage }}	// template="BOscPage"

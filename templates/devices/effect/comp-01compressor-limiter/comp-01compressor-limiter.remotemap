@@ -1,0 +1,19 @@
+{% extends "devices/effect/effect-nopatch.remotemap" %}
+{% set deviceman="Propellerheads" -%}
+{% set devicescope="COMP-01 Compressor/Limiter" -%}
+{% set devicename="COMP-01 Compressor/Limiter" -%}
+{% block main %}
+// Index
+Map	PageName		"Index"			Index
+Map	Button 1-1		Page=Main			Index
+Map	Button C7		Page=Internal			Index
+// Main
+Map	PageName		"Main"			Main
+Map	EFSButton		Enabled			Main
+Map	Meter 2		Peak Meter			Main
+Map	Fader 3		Ratio			Main	// template="FEffect", defaultvalue=64
+Map	Fader 4		Threshold			Main	// template="FEffect", defaultvalue=40
+Map	Fader 5		Attack			Main	// template="FEffect", defaultvalue=40
+Map	Fader 6		Release			Main	// template="FEffect", defaultvalue=64
+Map	Meter 8		Gain			Main	// template="FGain",bvmap="MeterSI"
+{% endblock main %}
