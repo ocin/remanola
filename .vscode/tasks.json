@@ -13,8 +13,9 @@
                 "isDefault": true
             },
             "presentation": {
-                "reveal": "always",
-                "panel": "new"
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "close": true
             }
         }
     ]

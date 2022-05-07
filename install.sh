@@ -55,6 +55,8 @@ if [ ! -d "$TMPTEMPLATEDIR" ]; then
 	mkdir -p "$TMPTEMPLATEDIR"
 fi
 
+source ~/venv/remanola/bin/activate
+
 ./build_remotemap.py
 ./build_confmap.py
 ./stripconfmap_remotemap.py
