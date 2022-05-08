@@ -17,6 +17,8 @@
 # You should have received a copy of the GNU General Public License
 # along with Remanola.  If not, see <http://www.gnu.org/licenses/>.
 
+set -e
+
 . ./VERSION
 
 INSTALLBASE="/Library/Application Support/Propellerhead Software/Remote"
