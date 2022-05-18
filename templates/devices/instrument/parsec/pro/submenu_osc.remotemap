@@ -1,2 +1,4 @@
 Map	Button A1		Page=GenereratorA			{{ curpage }}	// template="BOscPage"
-Map	Button A2		Page=GenereratorB			{{ curpage }}	// template="BOscPage"
+Map	Button A2		Page=GenereratorAFilter			{{ curpage }}	// template="BFilterPage"
+Map	Button A3		Page=GenereratorB			{{ curpage }}	// template="BOscPage"
+Map	Button A4		Page=GenereratorBFilter			{{ curpage }}	// template="BFilterPage"
