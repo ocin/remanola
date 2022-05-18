@@ -67,7 +67,7 @@ Map	Fader 7		Amp Release			AmpEnv	// template="FVol", defaultvalue=13
 {% for oscnum in ['A', 'B'] -%}
 // Generator {{ oscnum }}
 Map	PageName		"Generator {{ oscnum }}"			Genererator{{ oscnum }}
-{{ rm.include_menus(curpage="Genererator"+oscnum, submenu="osc", oscpage="GenereratorA") -}}
+{{ rm.include_menus(curpage="Genererator"+oscnum, submenu="osc", oscpage="Genererator"+oscnum|string) -}}
 {% if oscnum == 'B' %}
 Map	Button 1-1		B Enable			GenereratorB	// template="BBlueOnOff"
 {% endif %}
@@ -83,7 +83,7 @@ Map	MFader 3-6		{{ oscnum }} Cutoff Freq			Genererator{{ oscnum }}	// template="
 Map	MFader 3-7		{{ oscnum }} Cutoff Kbd			Genererator{{ oscnum }}	// template="FPerf", defaultvalue=64
 // Sound Engine {{ oscnum }}
 Map	PageName		"Sound Engine {{ oscnum }}"			SoundEngine{{ oscnum }}
-{{ rm.include_menus(curpage="SoundEngine"+oscnum, submenu="filter", filterpage="SoundEngineB") -}}
+{{ rm.include_menus(curpage="SoundEngine"+oscnum, submenu="filter", filterpage="SoundEngine"+oscnum|string) -}}
 {% if oscnum == 'B' %}
 Map	Button 1-1		B Enable			SoundEngine{{ oscnum }}	// template="BBlueOnOff"
 {% endif %}
