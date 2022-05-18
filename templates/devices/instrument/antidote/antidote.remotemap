@@ -9,11 +9,10 @@
 {% set modpagedefault="LFO1" -%}
 {% set filterpagedefault="Filter" -%}
 {% set perfpagedefault="Arp" -%}
-{% set osc1pagedefault="Osc1" -%}
-{% set osc2pagedefault="Osc2" -%}
+{% set oscpagedefault="Wave" -%}
 {# End Variables -#}
 {% block groups %}
-Define Group	Page	Main	Perf	Osc1	Osc2	Mixer	Filter	FilterEnv	Effects	EQBass	Dist	Phaser	Chorus	Delay	Reverb	Comp	LFO1	LFO2	AmpEnv	ModEnv	Arp	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	Index	Keyboard	Internal
+Define Group	Page	Main	Perf	Osc1Wave	Osc1Mod	Osc1Tune	Osc2Wave	Osc2Mod	Osc2Tune	Mixer	Filter	FilterEnv	Effects	EQBass	Dist	Phaser	Chorus	Delay	Reverb	Comp	LFO1	LFO2	AmpEnv	ModEnv	Arp	ModMatrix1	ModMatrix2	ModMatrix3	ModMatrix4	ModMatrix5	Index	Keyboard	Internal
 Define Group	TempoSync	Free	Sync
 {% endblock groups %}
 {% block main %}
@@ -25,8 +24,12 @@ Map	Button 1-2		Page=Mixer			Index
 Map	Button 1-3		Page=AmpEnv			Index
 Map	Button 1-5		Page=Perf			Index
 Map	Button 1-6		Page=Arp			Index
-Map	Button 2-1		Page=Osc1			Index
-Map	Button 3-1		Page=Osc2			Index
+Map	Button 2-1		Page=Osc1Wave			Index
+Map	Button 2-2		Page=Osc1Mod			Index
+Map	Button 2-3		Page=Osc1Tune			Index
+Map	Button 3-1		Page=Osc2Wave			Index
+Map	Button 3-2		Page=Osc2Mod			Index
+Map	Button 3-3		Page=Osc2Tune			Index
 Map	Button 2-5		Page=Filter			Index
 Map	Button 2-6		Page=FilterEnv			Index
 Map	Button 8-1		Page=ModMatrix1			Index	// template="BPerformancePageHigh"
@@ -59,22 +62,30 @@ Map	UDVButton 7-2_8-2		Polyphony			Perf	// template="UDOsc", inverted=true, defa
 Map	Fader 3		Glide			Perf	// template="FPerf", defaultvalue=0
 // End Page Perf
 {% for oscnum in range(1,3) -%}
-// Begin Page Osc{{ oscnum }}
-Map	PageName		"Osc {{ oscnum }}"			Osc{{ oscnum }}
-{{ rm.include_menus(curpage="Osc"+oscnum|string) -}}
-Map	UDVButton 1-1_2-1		Osc {{ oscnum }} Semi			Osc{{ oscnum }}	// template="UDFreq", defaultvalue=24
-Map	UDVButton 1-2_2-2		Osc {{ oscnum }} Fine			Osc{{ oscnum }}	// template="UDFreq", defaultvalue=50
-Map	UDVButton 1-3_2-3		Osc {{ oscnum }} Detune			Osc{{ oscnum }}	// template="UDFreq", defaultvalue=50
-Map	MFader 1-4		Osc {{ oscnum }} Spread			Osc{{ oscnum }}	// template="FEffect", defaultvalue=0
-Map	UDVButton 5-1_6-1		Osc {{ oscnum }} Waveform			Osc{{ oscnum }}	// template="UDOsc", inverted=true, defaultvalue=0
-Map	UDVButton 5-3_6-3		Osc {{ oscnum }} Voices			Osc{{ oscnum }}	// template="UDOsc", defaultvalue=1
-Map	UDVButton 5-4_6-4		Osc {{ oscnum }} Dyad			Osc{{ oscnum }}	// template="UDOsc", defaultvalue=0
-Map	MFader 3-1		Osc {{ oscnum }} Phase			Osc{{ oscnum }}	// template="FOsc", defaultvalue=127
-Map	MFader 3-2		Osc {{ oscnum }} Modifier			Osc{{ oscnum }}	// template="FOsc", defaultvalue=0
-Map	MFader 3-3		Osc {{ oscnum }} Key Track			Osc{{ oscnum }}	// template="FPerf", defaultvalue=127
-Map	MFader 3-4		Osc {{ oscnum }} Pan			Osc{{ oscnum }}	// template="FVol", defaultvalue=64
-Map	Fader 8		Osc {{ oscnum }} Volume			Osc{{ oscnum }}	// template="FVol", defaultvalue=64
-// End Page Osc{{ oscnum }}
+// Begin Page Osc{{ oscnum }}Wave
+Map	PageName		"Osc {{ oscnum }} Wave"			Osc{{ oscnum }}Wave
+{{ rm.include_menus(curpage="Osc"+oscnum|string+"Wave", submenu="osc", oscpage="Wave", oscnum=oscnum) -}}
+Map	UDVButton 1-1_2-1		Osc {{ oscnum }} Waveform			Osc{{ oscnum }}Wave	// template="UDOsc", inverted=true, defaultvalue=0
+Map	UDVButton 1-3_2-3		Osc {{ oscnum }} Voices			Osc{{ oscnum }}Wave	// template="UDOsc", defaultvalue=1
+Map	UDVButton 1-4_2-4		Osc {{ oscnum }} Dyad			Osc{{ oscnum }}Wave	// template="UDOsc", defaultvalue=0
+Map	Fader 8		Osc {{ oscnum }} Volume			Osc{{ oscnum }}Wave	// template="FVol", defaultvalue=64
+// End Page Osc{{ oscnum }}Wave
+// Begin Page Osc{{ oscnum }}Mod
+Map	PageName		"Osc {{ oscnum }} Mod"			Osc{{ oscnum }}Mod
+{{ rm.include_menus(curpage="Osc"+oscnum|string+"Mod", submenu="osc", oscpage="Mod", oscnum=oscnum) -}}
+Map	Fader 2		Osc {{ oscnum }} Phase			Osc{{ oscnum }}Mod	// template="FOsc", defaultvalue=127
+Map	Fader 3		Osc {{ oscnum }} Modifier			Osc{{ oscnum }}Mod	// template="FOsc", defaultvalue=0
+Map	Fader 4		Osc {{ oscnum }} Key Track			Osc{{ oscnum }}Mod	// template="FPerf", defaultvalue=127
+Map	Knob V5		Osc {{ oscnum }} Pan			Osc{{ oscnum }}Mod	// template="FVol"
+// End Page Osc{{ oscnum }}Mod
+// Begin Page Osc{{ oscnum }}Tune
+Map	PageName		"Osc {{ oscnum }} Tune"			Osc{{ oscnum }}Tune
+{{ rm.include_menus(curpage="Osc"+oscnum|string+"Tune", submenu="osc", oscpage="Tune", oscnum=oscnum) -}}
+Map	UDVButton 1-2_2-2		Osc {{ oscnum }} Semi			Osc{{ oscnum }}Tune	// template="UDFreq", defaultvalue=24
+Map	UDVButton 1-3_2-3		Osc {{ oscnum }} Fine			Osc{{ oscnum }}Tune	// template="UDFreq", defaultvalue=50
+Map	UDVButton 1-4_2-4		Osc {{ oscnum }} Detune			Osc{{ oscnum }}Tune	// template="UDFreq", defaultvalue=50
+Map	Fader 5		Osc {{ oscnum }} Spread			Osc{{ oscnum }}Tune	// template="FEffect", defaultvalue=0
+// End Page Osc{{ oscnum }}Tune
 {% endfor -%}
 // Begin Page Mixer
 Map	PageName		"Mixer"			Mixer
